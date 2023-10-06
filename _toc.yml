@@ -1,0 +1,116 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+    - caption: Preparation
+      numbered: 3
+      chapters:
+      - file: Chapter0_PrepWork/MT_wk0_intro.md
+        sections:
+        - file: Chapter0_PrepWork/MT_wk0_datacamp.md
+        - file: Chapter0_PrepWork/MT_wk0_For.ipynb
+        - file: Chapter0_PrepWork/MT_wk0_ForIf.ipynb
+        - file: Chapter0_PrepWork/MT_wk0_random.ipynb
+    - caption: Exploring Data
+      numbered: 3
+      chapters:
+      - file: Chapter1_DescribingData/MT_wk1_intro.md
+        sections:
+        - file: Chapter1_DescribingData/MT_wk1_outcomes.md
+        - file: Chapter1_DescribingData/MT_wk1_MeanMedianMode.md
+        - file: Chapter1_DescribingData/MT_wk1_StDevIQR.md
+        - file: Chapter1_DescribingData/MT_wk1_Skew.md
+        - file: Chapter1_DescribingData/MT_wk1_Correlation.md
+        - file: Chapter1_DescribingData/MT_wk1_conceptCheck.md
+        - file: Chapter1_DescribingData/MT_wk1_PythonIndexing.ipynb
+        - file: Chapter1_DescribingData/MT_wk1_tables.ipynb
+        - file: Chapter1_DescribingData/MT_wk1_TutorialExercises.ipynb
+      - file: Chapter2_DataVisualization/MT_wk2_intro.md
+        sections:
+        - file: Chapter2_DataVisualization/MT_wk2_outcomes.md
+        - file: Chapter2_DataVisualization/MT_wk2_snsplt.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_histogram.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_boxplot.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_scatterplot.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_LinePlot.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_tweaks.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_TutorialExercises.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_additionalMaterials.md
+      - file: Chapter3_DataWrangling/MT_wk3_intro.md
+        sections:
+        - file: Chapter3_DataWrangling/MT_wk3_outcomes.md
+        - file: Chapter3_DataWrangling/MT_wk3_FindOutliers.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_NaNing.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_NanHandling.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_disaggregation.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_CreateColumns.ipynb
+        - file: Chapter3_DataWrangling/MT_wk3_TutorialExercises.md
+    - caption: Statistical Theory
+      numbered: 3
+      chapters:
+      - file: UnderConstruction1.md
+    - caption: Hypothesis Testing
+      numbered: 3
+      chapters:
+      - file: UnderConstruction2.md
+    - caption: Regression Models
+      numbered: 3
+      chapters:
+      - file: Chapter10_Regression1/regression1_intro.md
+        sections:
+        - file: regression1_outcomes.md
+        - file: regression1_concepts.md
+        - file: regression1_interpretingSlope.md
+        - file: regression1_QandA.md
+        - file: regression1_prepwork.ipynb
+        - file: regression1_TutorialExercises.ipynb
+      - file: Chapter11_Regression2/regression2_intro.md
+        sections:
+        - file: regression2_outcomes.md
+        - file: regression2_concepts.md
+        - file: regression2_typesOfRelationship.md
+        - file: regression2_QandA.md
+        - file: regression2_TutorialExercises.ipynb
+        - file: regression3_intro.md
+      - file: Chapter12_Regression3/regression3_intro.md
+        sections:
+        - file: regression3_outcomes.md
+        - file: regression3_conceptsR2.md
+        - file: regression3_conceptsConditionals.md
+        - file: regression3_conceptsSignificance.md
+        - file: regression3_assumptions.md
+        - file: regression3_prepwork.ipynb
+        - file: regression3_TutorialExercises.ipynb
+        - file: regression4_intro.md
+      - file: Chapter13_Regression4/regression4_intro.md
+        sections:
+        - file: regression4_outcomes.md
+        - file: regression4_concepts.md
+        - file: regression4_longhandExample.md
+        - file: regression4_equations.md
+        - file: regression4_KWtest.md
+        - file: regression4_ANOVAregression.md
+        - file: regression4_prepwork.ipynb
+        - file: regression4_TutorialExercises.ipynb
+        - file: regression5_intro.md
+      - file: Chapter14_Regression5/regression5_intro.md
+        sections:
+        - file: regression5_outcomes.md
+        - file: regression5_concepts.md
+        - file: regression5_LogisticEquation.md
+        - file: regression5_workedExample.md
+        - file: regression5_prepwork.ipynb
+        - file: regression5_TutorialExercises.ipynb
+        - file: regression6_intro.md
+      - file: Chapter15_Regression6/regression6_intro.md
+        sections:
+        - file: regression6_outcomes.md
+        - file: regression6_concepts.md
+        - file: regression6_causality.md
+        - file: regression6_TutorialExercises.md
+
+
+

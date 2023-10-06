@@ -1,0 +1,15 @@
+# Logistic Regression basics
+
+The equation uses the log of the odd, $\log{ \left( \frac{p(y=1)}{1-p(y=1)} \right)} $ as the outcome
+
+We model the logit (the log of the odds) as follows:
+
+$$ logit(p) = \log{ left( \frac{p(y=1)}{1-p(y=1)} right)} = \alpha + \beta_1 x_1 + \beta_2 x_2 + \dots \beta_k x_k $$
+
+In a regression model with $k$ independent variables
+
+The natural log of the odds would take a value of zero when the probability is 0.5. With a probability of 1 logit(p) would be infinity, and with a probability of 0, logit(p) would be minus infinity.
+
+The logit transformation gets around the problem that the assumption of linearity has been violated. The transformation is a way of expressing a non-linear relationship in a linear way.
+
+Apart from the outcome variable, the form of the regression equation is very familiar! Like in linear regression the slope estimate $\beta$ describes the change in the outcome variable for each unit of $x$, and like in linear regression, the intercept $\alpha$ is the value of the outcome variable when all $x$ variables take the value zero. However, in interpreting the coefficients, we need to keep in mind the transformation function of $y$, which we’ll practice in the next section. 

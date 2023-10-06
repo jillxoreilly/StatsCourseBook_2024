@@ -1,0 +1,123 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: 2
+chapters:
+- file: prepwork_intro.md
+  sections:
+  - file: prepwork_datacamp.md
+  - file: prepwork_forloop.ipynb
+  - file: prepwork_diceroll_for.ipynb
+  - file: prepwork_diceroll_while.ipynb
+  - file: prepwork_simExercises.ipynb
+- file: descriptives_intro.md
+  sections:
+  - file: descriptives_outcomes.md
+  - file: descriptives_conceptCheck.md
+  - file: descriptives_MeanAndMedian.ipynb
+  - file: descriptives_SDandIQR.ipynb
+  - file: descriptives_DataCleaning.ipynb
+  - file: descriptives_groupby.ipynb
+  - file: descriptives_PythonCheck.ipynb
+  - file: descriptives_TutorialExercises.ipynb
+  - file: descriptives_TutorialExercisesII.ipynb
+- file: plotting_intro.md
+  sections:
+  - file: plotting_outcomes.md
+  - file: plotting_histogram.ipynb
+  - file: plotting_KDE.ipynb
+  - file: plotting_boxplot.ipynb
+  - file: plotting_scatterplot.ipynb
+  - file: plotting_pandas.ipynb
+  - file: plotting_tweaks.ipynb
+  - file: plotting_additionalMaterials.md  
+  - file: plotting_TutorialExercises.md
+- file: CorrCov_intro.md
+  sections:
+  - file: CorrCov_outcomes.md
+  - file: CorrCov_conceptCheck.md
+  - file: CorrCov_introCorrCov.ipynb
+  - file: CorrCov_ClimateExample.ipynb
+  - file: CorrCov_Spearman.ipynb
+  - file: CorrCov_PythonCheck.ipynb
+  - file: CorrCov_TutorialExercises.ipynb
+  - file: CorrCov_HandInAssignment.ipynb
+- file: binomial_overallIntro.md
+  sections:
+  - file: binomial_intro.md
+  - file: binomial_objectives.md
+  - file: binomial_singlecoin.ipynb
+  - file: binomial_10000reps.ipynb
+  - file: binomial_nandp.ipynb
+  - file: binomial_PMFandCDF.ipynb
+  - file: binomial_normal.ipynb
+  - file: binomial_PythonCheck.ipynb
+  - file: binomial_TutorialExercises1.ipynb
+  - file: binomial_TutorialExercises2.ipynb
+- file: CLT_intro.md
+  sections:
+  - file: CLT_outcomes.md
+  - file: CLT_ConceptCheck.md
+  - file: CLT_sampling.ipynb
+  - file: CLT_CI.ipynb
+  - file: CLT_TutorialExercises.ipynb
+  - file: CLT_Tutorial2tdist.ipynb
+- file: bootstrapping_intro.md
+  sections:
+  - file: bootstrap_outcomes.md
+  - file: bootstrap_samplingIntro.ipynb
+  - file: bootstrap_TheBootstrap.ipynb
+  - file: bootstrap_TutorialExercises1.ipynb
+- file: Assignment_intro.md
+  sections:
+  - file: IMDb_exercise.ipynb
+- file: Cheatsheet_intro.md
+  sections:
+  - file: coding_cheatsheet.ipynb
+- file: permutation_intro.md
+  sections:
+  - file: permutation_outcomes.md
+  - file: permutation_technicalnote.ipynb
+  - file: permutation_paired.ipynb
+  - file: permutation_independentSamples.ipynb
+  - file: permutation_correlation.ipynb
+  - file: permutation_more.ipynb
+  - file: permutation_TutorialExercises.ipynb
+- file: classictests_intro.md
+  sections:
+  - file: ttest_intro.md
+  - file: ttest_independentSamples.ipynb
+  - file: ttest_pairedSamples.ipynb
+  - file: ttest_oneSample.ipynb
+  - file: nonpara_intro.md
+  - file: nonpara_MannWhitneyU.ipynb
+  - file: nonpara_WilcoxonSignRank.ipynb
+  - file: ttest_furtherExercises.ipynb
+- file: power_intro.md
+  sections:
+  - file: power_outcomes.md
+  - file: power_conceptCheck.md
+  - file: power_analysis.ipynb
+  - file: power_placeholder.md
+  - file: CSVreading_instructions.ipynb
+- file: regression1_intro.md
+  sections:
+  - file: regression1_outcomes.md
+  - file: regression1_concepts.md
+  - file: regression1_interpretingSlope.md
+  - file: regression1_QandA.md
+  - file: regression1_prepwork.ipynb
+  - file: regression1_TutorialExercises.ipynb
+- file: regression2_intro.md
+  sections:
+  - file: regression2_outcomes.md
+  - file: regression2_concepts.md
+  - file: regression2_typesOfRelationship.md
+  - file: regression2_QandA.md
+  - file: regression2_TutorialExercises.ipynb
+
+  
+  

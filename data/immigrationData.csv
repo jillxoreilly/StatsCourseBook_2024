@@ -1,0 +1,2205 @@
+﻿1,vote,better,bornuk,sex,age,educ
+2,Conservative,0,0,Male,75,
+3,Conservative,7,0,Male,70,Upper secondary
+4,Conservative,8,0,Female,54,Tertiary
+5,Conservative,0,0,Male,58,Upper secondary
+6,Conservative,7,0,Male,76,Lower secondary
+7,Conservative,5,0,Male,72,Upper secondary
+8,Conservative,6,0,Male,63,Tertiary
+9,Conservative,5,1,Female,76,Lower secondary
+10,Conservative,3,0,Female,58,Lower secondary
+11,Conservative,7,0,Male,21,Upper secondary
+12,Conservative,5,0,Male,80,Lower secondary
+13,Conservative,,0,Male,82,Upper secondary
+14,Conservative,0,0,Male,90,Tertiary
+15,Conservative,4,1,Male,62,Upper secondary
+16,Conservative,5,0,Male,40,Upper secondary
+17,Conservative,7,0,Male,48,Upper secondary
+18,Conservative,5,0,Male,73,Tertiary
+19,Conservative,5,0,Female,71,Upper secondary
+20,Conservative,5,0,Male,67,Lower secondary
+21,Conservative,5,0,Female,38,Tertiary
+22,Conservative,5,0,Male,73,Lower secondary
+23,Conservative,0,1,Male,36,Tertiary
+24,Conservative,9,0,Female,62,Tertiary
+25,Conservative,8,0,Male,70,Upper secondary
+26,Conservative,8,0,Female,76,Upper secondary
+27,Conservative,7,0,Male,57,Upper secondary
+28,Conservative,3,0,Female,66,
+29,Conservative,7,0,Male,61,Tertiary
+30,Conservative,7,0,Male,33,Upper secondary
+31,Conservative,10,0,Male,59,Tertiary
+32,Conservative,6,0,Female,48,Tertiary
+33,Conservative,6,0,Male,51,Lower secondary
+34,Conservative,4,0,Male,50,Lower secondary
+35,Conservative,6,0,Female,66,Lower secondary
+36,Conservative,3,0,Female,70,Lower secondary
+37,Conservative,10,1,Male,34,Tertiary
+38,Conservative,8,0,Female,90,Upper secondary
+39,Conservative,2,0,Male,70,
+40,Conservative,5,0,Female,55,Tertiary
+41,Conservative,3,0,Male,42,Upper secondary
+42,Conservative,6,0,Female,36,Tertiary
+43,Conservative,4,0,Female,64,Lower secondary
+44,Conservative,7,0,Male,24,Tertiary
+45,Conservative,5,0,Male,80,Lower secondary
+46,Conservative,4,0,Female,68,Upper secondary
+47,Conservative,5,0,Female,37,Upper secondary
+48,Conservative,4,0,Male,71,Tertiary
+49,Conservative,8,1,Male,49,Upper secondary
+50,Conservative,5,0,Female,47,Lower secondary
+51,Conservative,7,0,Male,35,Tertiary
+52,Conservative,2,0,Male,68,Upper secondary
+53,Conservative,7,0,Female,80,Upper secondary
+54,Conservative,10,0,Male,61,Upper secondary
+55,Conservative,3,0,Female,66,Upper secondary
+56,Conservative,5,0,Female,59,Lower secondary
+57,Conservative,8,0,Female,48,Tertiary
+58,Conservative,7,0,Male,67,Upper secondary
+59,Conservative,5,0,Male,72,Tertiary
+60,Conservative,6,0,Male,55,Lower secondary
+61,Conservative,3,0,Female,63,Lower secondary
+62,Conservative,10,0,Male,38,Tertiary
+63,Conservative,5,0,Male,52,Tertiary
+64,Conservative,2,0,Female,45,Upper secondary
+65,Conservative,8,0,Female,66,
+66,Conservative,5,0,Male,71,Lower secondary
+67,Conservative,4,0,Male,82,Lower secondary
+68,Conservative,6,0,Male,60,Lower secondary
+69,Conservative,6,0,Female,89,Tertiary
+70,Conservative,,0,Male,56,Lower secondary
+71,Conservative,7,0,Male,56,Upper secondary
+72,Conservative,3,0,Female,80,Lower secondary
+73,Conservative,5,0,Female,67,Upper secondary
+74,Conservative,5,0,Female,40,Upper secondary
+75,Conservative,4,0,Male,55,Upper secondary
+76,Conservative,5,0,Male,77,Upper secondary
+77,Conservative,7,0,Male,71,Upper secondary
+78,Conservative,9,0,Male,57,Lower secondary
+79,Conservative,2,0,Male,62,Upper secondary
+80,Conservative,3,0,Female,56,Upper secondary
+81,Conservative,5,0,Female,77,Lower secondary
+82,Conservative,5,0,Female,77,Lower secondary
+83,Conservative,9,0,Male,63,Tertiary
+84,Conservative,5,0,Female,80,Upper secondary
+85,Conservative,,0,Female,75,Upper secondary
+86,Conservative,3,0,Female,57,Upper secondary
+87,Conservative,3,0,Male,68,
+88,Conservative,2,0,Male,63,Upper secondary
+89,Conservative,1,0,Female,44,Upper secondary
+90,Conservative,3,0,Male,59,Tertiary
+91,Conservative,3,0,Female,25,Lower secondary
+92,Conservative,5,0,Female,76,Upper secondary
+93,Conservative,8,0,Female,19,Upper secondary
+94,Conservative,5,0,Male,56,Upper secondary
+95,Conservative,7,0,Male,50,Tertiary
+96,Conservative,7,0,Male,77,Upper secondary
+97,Conservative,7,0,Male,36,Tertiary
+98,Conservative,5,0,Female,67,Upper secondary
+99,Conservative,5,0,Male,51,Upper secondary
+100,Conservative,7,1,Female,90,Lower secondary
+101,Conservative,5,0,Female,32,Tertiary
+102,Conservative,5,0,Male,56,Lower secondary
+103,Conservative,5,0,Female,61,Lower secondary
+104,Conservative,5,0,Female,56,Upper secondary
+105,Conservative,1,0,Male,72,Upper secondary
+106,Conservative,4,0,Female,55,Upper secondary
+107,Conservative,5,0,Female,57,Lower secondary
+108,Conservative,5,0,Female,46,Upper secondary
+109,Conservative,5,0,Male,36,Tertiary
+110,Conservative,4,0,Male,82,Tertiary
+111,Conservative,4,0,Female,47,Upper secondary
+112,Conservative,8,0,Female,64,Lower secondary
+113,Conservative,3,0,Female,74,Lower secondary
+114,Conservative,4,0,Male,41,Tertiary
+115,Conservative,2,0,Male,60,Upper secondary
+116,Conservative,8,0,Male,58,Lower secondary
+117,Conservative,2,0,Male,71,Upper secondary
+118,Conservative,5,0,Male,78,Upper secondary
+119,Conservative,3,0,Male,87,Tertiary
+120,Conservative,6,0,Male,64,Tertiary
+121,Conservative,7,0,Female,59,Upper secondary
+122,Conservative,6,0,Female,57,Upper secondary
+123,Conservative,6,0,Male,80,Lower secondary
+124,Conservative,3,0,Male,80,Upper secondary
+125,Conservative,7,0,Female,49,Tertiary
+126,Conservative,4,0,Female,82,Lower secondary
+127,Conservative,7,0,Female,58,Tertiary
+128,Conservative,0,0,Female,70,
+129,Conservative,5,0,Male,63,Tertiary
+130,Conservative,1,0,Male,50,Upper secondary
+131,Conservative,4,0,Female,57,Upper secondary
+132,Conservative,7,0,Male,39,Tertiary
+133,Conservative,5,0,Male,36,Tertiary
+134,Conservative,3,0,Female,74,Lower secondary
+135,Conservative,3,0,Female,60,Lower secondary
+136,Conservative,4,0,Male,79,Lower secondary
+137,Conservative,5,0,Female,78,Upper secondary
+138,Conservative,5,0,Male,79,Upper secondary
+139,Conservative,2,0,Male,71,Upper secondary
+140,Conservative,,0,Female,58,Tertiary
+141,Conservative,7,0,Female,80,Lower secondary
+142,Conservative,0,0,Male,76,Lower secondary
+143,Conservative,4,1,Male,74,Upper secondary
+144,Conservative,5,0,Male,69,Lower secondary
+145,Conservative,5,0,Female,84,Upper secondary
+146,Conservative,5,0,Female,35,Tertiary
+147,Conservative,5,0,Female,62,Upper secondary
+148,Conservative,5,0,Male,56,Lower secondary
+149,Conservative,5,0,Female,43,Upper secondary
+150,Conservative,7,0,Female,55,Upper secondary
+151,Conservative,6,0,Female,58,Lower secondary
+152,Conservative,1,0,Female,31,Lower secondary
+153,Conservative,4,0,Male,35,Upper secondary
+154,Conservative,3,0,Female,79,Lower secondary
+155,Conservative,2,0,Female,78,Upper secondary
+156,Conservative,3,0,Male,90,Tertiary
+157,Conservative,7,0,Female,67,Lower secondary
+158,Conservative,6,0,Female,56,Upper secondary
+159,Conservative,7,0,Female,44,Upper secondary
+160,Conservative,4,0,Male,54,Upper secondary
+161,Conservative,6,0,Female,56,Upper secondary
+162,Conservative,5,0,Male,55,Upper secondary
+163,Conservative,5,0,Female,33,Lower secondary
+164,Conservative,3,0,Male,75,Lower secondary
+165,Conservative,5,0,Male,72,Lower secondary
+166,Conservative,9,0,Female,71,Upper secondary
+167,Conservative,0,0,Male,54,Upper secondary
+168,Conservative,4,0,Male,77,
+169,Conservative,5,0,Female,35,Upper secondary
+170,Conservative,5,0,Female,68,Lower secondary
+171,Conservative,2,0,Male,45,Upper secondary
+172,Conservative,5,1,Female,66,Upper secondary
+173,Conservative,5,0,Female,48,Tertiary
+174,Conservative,10,0,Female,67,
+175,Conservative,1,0,Male,65,Upper secondary
+176,Conservative,4,0,Female,27,Upper secondary
+177,Conservative,,0,Male,73,Upper secondary
+178,Conservative,5,0,Male,77,Tertiary
+179,Conservative,8,0,Female,55,Upper secondary
+180,Conservative,8,1,Female,50,Upper secondary
+181,Conservative,5,0,Male,31,Upper secondary
+182,Conservative,4,0,Male,37,Tertiary
+183,Conservative,7,0,Female,79,Lower secondary
+184,Conservative,6,0,Male,69,Upper secondary
+185,Conservative,7,0,Male,84,Lower secondary
+186,Conservative,3,0,Female,86,Lower secondary
+187,Conservative,6,0,Male,55,Lower secondary
+188,Conservative,8,0,Female,,Tertiary
+189,Conservative,0,0,Male,48,Upper secondary
+190,Conservative,5,0,Male,60,Tertiary
+191,Conservative,8,0,Female,73,Lower secondary
+192,Conservative,8,0,Male,65,Upper secondary
+193,Conservative,5,0,Female,83,Tertiary
+194,Conservative,5,0,Male,69,Lower secondary
+195,Conservative,5,0,Male,58,Upper secondary
+196,Conservative,4,0,Male,71,Lower secondary
+197,Conservative,5,0,Female,70,Tertiary
+198,Conservative,6,0,Male,65,Upper secondary
+199,Conservative,7,0,Female,48,Tertiary
+200,Conservative,2,0,Male,59,Upper secondary
+201,Conservative,0,0,Male,80,Lower secondary
+202,Conservative,5,0,Female,35,Tertiary
+203,Conservative,9,0,Female,71,Lower secondary
+204,Conservative,7,0,Male,79,Tertiary
+205,Conservative,7,1,Female,66,Lower secondary
+206,Conservative,0,0,Male,53,Lower secondary
+207,Conservative,2,0,Male,33,Upper secondary
+208,Conservative,5,0,Male,89,Lower secondary
+209,Conservative,6,0,Female,35,Tertiary
+210,Conservative,5,0,Male,74,Upper secondary
+211,Conservative,4,0,Female,62,Upper secondary
+212,Conservative,10,0,Male,54,Upper secondary
+213,Conservative,3,0,Female,68,Lower secondary
+214,Conservative,1,0,Male,85,Lower secondary
+215,Conservative,8,0,Female,66,Upper secondary
+216,Conservative,8,0,Female,47,Tertiary
+217,Conservative,4,0,Female,77,Upper secondary
+218,Conservative,5,0,Male,,Upper secondary
+219,Conservative,5,0,Female,78,Lower secondary
+220,Conservative,5,0,Male,80,Upper secondary
+221,Conservative,1,0,Male,75,Tertiary
+222,Conservative,4,0,Male,82,Tertiary
+223,Conservative,7,0,Male,56,Tertiary
+224,Conservative,5,0,Female,71,Upper secondary
+225,Conservative,5,0,Male,50,Tertiary
+226,Conservative,0,0,Male,64,Tertiary
+227,Conservative,8,0,Male,37,Tertiary
+228,Conservative,8,0,Female,30,Tertiary
+229,Conservative,9,0,Female,88,Lower secondary
+230,Conservative,6,0,Male,52,Tertiary
+231,Conservative,5,0,Male,51,Upper secondary
+232,Conservative,2,0,Male,63,Tertiary
+233,Conservative,5,0,Male,79,Upper secondary
+234,Conservative,5,0,Male,78,Lower secondary
+235,Conservative,6,0,Female,26,Upper secondary
+236,Conservative,7,0,Female,52,Upper secondary
+237,Conservative,5,0,Male,49,Upper secondary
+238,Conservative,5,0,Female,40,Upper secondary
+239,Conservative,2,1,Female,63,Tertiary
+240,Conservative,5,0,Female,74,Lower secondary
+241,Conservative,5,0,Female,70,Upper secondary
+242,Conservative,5,0,Male,67,Upper secondary
+243,Conservative,2,0,Female,60,Lower secondary
+244,Conservative,6,0,Female,78,Lower secondary
+245,Conservative,2,0,Female,32,Tertiary
+246,Conservative,7,0,Female,63,Upper secondary
+247,Conservative,4,0,Female,49,Upper secondary
+248,Conservative,6,0,Male,62,Lower secondary
+249,Conservative,5,0,Male,30,Upper secondary
+250,Conservative,5,0,Male,78,Lower secondary
+251,Conservative,5,0,Female,85,Lower secondary
+252,Conservative,4,0,Female,84,Lower secondary
+253,Conservative,5,0,Male,63,Lower secondary
+254,Conservative,6,0,Female,69,Lower secondary
+255,Conservative,3,0,Male,75,Upper secondary
+256,Conservative,5,0,Female,81,Lower secondary
+257,Conservative,7,1,Male,74,Lower secondary
+258,Conservative,4,0,Female,37,Upper secondary
+259,Conservative,,1,Female,65,
+260,Conservative,7,0,Male,66,Tertiary
+261,Conservative,5,0,Female,61,Upper secondary
+262,Conservative,4,0,Female,57,Upper secondary
+263,Conservative,10,1,Male,76,Lower secondary
+264,Conservative,4,0,Female,54,Lower secondary
+265,Conservative,3,0,Female,84,Lower secondary
+266,Conservative,5,0,Male,72,Tertiary
+267,Conservative,5,0,Female,58,Tertiary
+268,Conservative,6,0,Female,70,Tertiary
+269,Conservative,6,0,Male,41,Tertiary
+270,Conservative,0,0,Female,36,Upper secondary
+271,Conservative,2,0,Female,73,Upper secondary
+272,Conservative,7,0,Male,71,Tertiary
+273,Conservative,7,0,Female,51,Lower secondary
+274,Conservative,1,0,Female,81,Lower secondary
+275,Conservative,5,0,Male,87,Lower secondary
+276,Conservative,4,0,Male,34,Tertiary
+277,Conservative,6,0,Male,73,Upper secondary
+278,Conservative,2,0,Female,68,Lower secondary
+279,Conservative,7,0,Male,32,Tertiary
+280,Conservative,5,0,Male,54,Upper secondary
+281,Conservative,6,0,Male,45,Tertiary
+282,Conservative,1,0,Female,77,Upper secondary
+283,Conservative,5,0,Female,59,Tertiary
+284,Conservative,8,0,Male,26,Tertiary
+285,Conservative,9,0,Female,53,Tertiary
+286,Conservative,8,0,Male,88,
+287,Conservative,5,0,Male,73,Lower secondary
+288,Conservative,6,0,Female,67,Lower secondary
+289,Conservative,5,1,Male,62,
+290,Conservative,5,0,Female,84,Lower secondary
+291,Conservative,1,0,Male,90,Upper secondary
+292,Conservative,3,0,Male,72,Upper secondary
+293,Conservative,9,0,Female,59,Upper secondary
+294,Conservative,6,0,Female,65,Lower secondary
+295,Conservative,5,0,Male,76,Upper secondary
+296,Conservative,8,0,Male,63,Tertiary
+297,Conservative,6,0,Male,56,Upper secondary
+298,Conservative,3,0,Female,69,Upper secondary
+299,Conservative,8,0,Male,88,
+300,Conservative,4,0,Female,74,Upper secondary
+301,Conservative,0,0,Female,73,
+302,Conservative,7,0,Male,25,Tertiary
+303,Conservative,6,0,Female,39,Upper secondary
+304,Conservative,3,0,Female,61,Tertiary
+305,Conservative,7,0,Male,22,Tertiary
+306,Conservative,6,0,Male,67,Lower secondary
+307,Conservative,5,0,Female,79,Lower secondary
+308,Conservative,5,0,Male,89,Lower secondary
+309,Conservative,8,0,Male,52,Tertiary
+310,Conservative,3,0,Male,75,Tertiary
+311,Conservative,2,0,Male,72,Upper secondary
+312,Conservative,2,0,Male,67,Upper secondary
+313,Conservative,7,0,Male,80,Upper secondary
+314,Conservative,5,0,Female,39,Lower secondary
+315,Conservative,5,0,Female,,Tertiary
+316,Conservative,8,0,Female,28,Tertiary
+317,Conservative,6,0,Male,72,Upper secondary
+318,Conservative,10,0,Male,34,Tertiary
+319,Conservative,10,0,Male,34,Tertiary
+320,Conservative,7,0,Female,79,Upper secondary
+321,Conservative,8,0,Male,65,Tertiary
+322,Conservative,5,0,Female,51,
+323,Conservative,6,0,Female,90,Lower secondary
+324,Conservative,8,0,Female,75,Upper secondary
+325,Conservative,9,0,Female,26,Upper secondary
+326,Conservative,0,0,Female,64,Upper secondary
+327,Conservative,7,0,Female,88,Lower secondary
+328,Conservative,4,0,Male,36,Upper secondary
+329,Conservative,5,0,Male,70,Tertiary
+330,Conservative,7,0,Male,63,Lower secondary
+331,Conservative,5,0,Male,69,Upper secondary
+332,Conservative,6,0,Female,74,Upper secondary
+333,Conservative,5,0,Female,68,Tertiary
+334,Conservative,4,0,Female,65,Upper secondary
+335,Conservative,5,0,Male,23,Lower secondary
+336,Conservative,5,0,Female,52,Lower secondary
+337,Conservative,9,0,Female,24,Tertiary
+338,Conservative,4,0,Female,73,Lower secondary
+339,Conservative,5,0,Female,60,Upper secondary
+340,Conservative,7,0,Female,64,Upper secondary
+341,Conservative,9,1,Female,26,Tertiary
+342,Conservative,3,0,Female,76,Upper secondary
+343,Conservative,3,0,Male,52,Lower secondary
+344,Conservative,8,0,Female,87,Upper secondary
+345,Conservative,8,0,Male,63,Tertiary
+346,Conservative,5,0,Female,35,Lower secondary
+347,Conservative,7,0,Female,36,Upper secondary
+348,Conservative,7,0,Male,83,Lower secondary
+349,Conservative,4,0,Male,21,Upper secondary
+350,Conservative,5,0,Male,78,Tertiary
+351,Conservative,4,0,Male,76,Upper secondary
+352,Conservative,6,0,Female,73,Lower secondary
+353,Conservative,5,0,Male,32,Upper secondary
+354,Conservative,0,0,Male,77,Tertiary
+355,Conservative,7,0,Female,48,Lower secondary
+356,Conservative,3,0,Female,60,Lower secondary
+357,Conservative,8,0,Female,44,Tertiary
+358,Conservative,1,0,Female,47,Upper secondary
+359,Conservative,6,0,Female,51,Upper secondary
+360,Conservative,7,0,Female,54,Upper secondary
+361,Conservative,0,0,Female,61,Upper secondary
+362,Conservative,4,0,Male,84,Lower secondary
+363,Conservative,5,0,Male,54,Upper secondary
+364,Conservative,5,0,Female,57,Upper secondary
+365,Conservative,8,0,Female,65,Upper secondary
+366,Conservative,7,0,Male,55,Upper secondary
+367,Conservative,5,0,Female,55,Upper secondary
+368,Conservative,10,0,Male,30,Lower secondary
+369,Conservative,2,0,Male,72,Tertiary
+370,Conservative,3,0,Male,81,Lower secondary
+371,Conservative,5,0,Female,,Upper secondary
+372,Conservative,6,0,Female,35,Tertiary
+373,Conservative,3,0,Female,60,Upper secondary
+374,Conservative,8,1,Female,60,Tertiary
+375,Conservative,7,0,Female,56,
+376,Conservative,3,0,Male,64,Tertiary
+377,Conservative,10,0,Male,73,Lower secondary
+378,Conservative,5,0,Male,65,Upper secondary
+379,Conservative,2,0,Female,70,Upper secondary
+380,Conservative,6,0,Female,21,Upper secondary
+381,Conservative,6,0,Male,58,Upper secondary
+382,Conservative,3,0,Male,27,Upper secondary
+383,Conservative,6,1,Male,60,Tertiary
+384,Conservative,9,0,Male,71,Lower secondary
+385,Conservative,4,0,Female,71,Upper secondary
+386,Conservative,0,0,Male,59,Upper secondary
+387,Conservative,7,0,Male,62,Tertiary
+388,Conservative,4,0,Male,73,Upper secondary
+389,Conservative,7,0,Male,70,Upper secondary
+390,Conservative,7,0,Female,66,Upper secondary
+391,Conservative,8,0,Male,69,Upper secondary
+392,Conservative,6,0,Female,90,Upper secondary
+393,Conservative,4,0,Male,19,Upper secondary
+394,Conservative,5,0,Female,74,Lower secondary
+395,Conservative,7,0,Male,47,Upper secondary
+396,Conservative,6,0,Female,51,Upper secondary
+397,Conservative,8,0,Female,33,Tertiary
+398,Conservative,4,0,Female,30,Upper secondary
+399,Conservative,5,0,Female,62,Upper secondary
+400,Conservative,6,1,Female,81,Lower secondary
+401,Conservative,5,0,Male,47,Tertiary
+402,Conservative,7,0,Male,46,Upper secondary
+403,Conservative,8,0,Female,51,Upper secondary
+404,Conservative,4,0,Male,52,
+405,Conservative,2,0,Male,53,Upper secondary
+406,Conservative,2,0,Female,84,Lower secondary
+407,Conservative,3,0,Male,61,Upper secondary
+408,Conservative,5,0,Female,61,Upper secondary
+409,Conservative,5,0,Female,59,Upper secondary
+410,Conservative,8,1,Male,42,Tertiary
+411,Conservative,3,0,Female,59,Upper secondary
+412,Conservative,5,1,Female,37,Tertiary
+413,Conservative,10,1,Female,54,Tertiary
+414,Conservative,7,0,Female,65,Upper secondary
+415,Conservative,3,0,Female,67,Upper secondary
+416,Conservative,2,0,Female,58,Lower secondary
+417,Conservative,3,0,Male,67,Upper secondary
+418,Conservative,0,0,Female,65,Tertiary
+419,Conservative,5,0,Female,62,Upper secondary
+420,Conservative,5,0,Female,56,Tertiary
+421,Conservative,6,0,Female,37,Tertiary
+422,Conservative,0,0,Male,71,Tertiary
+423,Conservative,7,0,Male,76,Upper secondary
+424,Conservative,5,0,Male,64,Tertiary
+425,Conservative,4,0,Male,59,Tertiary
+426,Conservative,6,0,Male,58,
+427,Conservative,5,0,Female,75,
+428,Conservative,6,0,Female,84,Lower secondary
+429,Conservative,8,1,Male,62,Lower secondary
+430,Conservative,7,0,Female,82,Upper secondary
+431,Conservative,7,0,Female,86,Upper secondary
+432,Conservative,5,0,Male,79,Tertiary
+433,Conservative,5,0,Female,77,Tertiary
+434,Conservative,6,0,Female,39,Lower secondary
+435,Conservative,4,0,Male,72,Lower secondary
+436,Conservative,5,0,Male,67,Lower secondary
+437,Conservative,2,0,Male,47,Lower secondary
+438,Conservative,4,0,Male,69,Tertiary
+439,Conservative,9,1,Male,47,Upper secondary
+440,Conservative,8,0,Male,77,Lower secondary
+441,Conservative,5,0,Male,36,Upper secondary
+442,Conservative,6,0,Female,37,Tertiary
+443,Conservative,5,0,Female,78,Tertiary
+444,Conservative,4,0,Male,44,Upper secondary
+445,Conservative,4,0,Male,57,Upper secondary
+446,Conservative,4,0,Female,60,Upper secondary
+447,Conservative,8,0,Female,31,Tertiary
+448,Conservative,7,0,Female,61,Upper secondary
+449,Conservative,0,0,Female,82,Lower secondary
+450,Conservative,2,0,Male,41,Lower secondary
+451,Conservative,3,0,Male,61,Upper secondary
+452,Conservative,6,0,Female,54,
+453,Conservative,5,0,Female,27,Tertiary
+454,Conservative,5,0,Male,83,
+455,Conservative,8,0,Male,31,Tertiary
+456,Conservative,5,0,Female,47,Upper secondary
+457,Conservative,7,0,Female,71,Lower secondary
+458,Conservative,6,0,Male,41,Tertiary
+459,Conservative,5,0,Male,76,Lower secondary
+460,Conservative,7,0,Male,48,Upper secondary
+461,Conservative,5,0,Male,87,Upper secondary
+462,Conservative,7,0,Male,48,Tertiary
+463,Conservative,7,0,Female,65,Upper secondary
+464,Conservative,6,0,Female,58,Upper secondary
+465,Conservative,5,1,Female,72,Lower secondary
+466,Conservative,5,0,Female,56,Upper secondary
+467,Conservative,7,0,Male,63,Upper secondary
+468,Conservative,6,0,Female,57,Upper secondary
+469,Conservative,5,0,Male,48,Lower secondary
+470,Conservative,5,0,Female,74,Lower secondary
+471,Conservative,7,0,Female,80,Upper secondary
+472,Conservative,5,0,Male,90,Lower secondary
+473,Conservative,5,0,Female,54,Upper secondary
+474,Conservative,5,0,Male,32,Tertiary
+475,Conservative,8,0,Male,68,Upper secondary
+476,Conservative,6,0,Male,86,Tertiary
+477,Conservative,7,0,Female,59,Tertiary
+478,Conservative,8,0,Female,48,Lower secondary
+479,Conservative,5,0,Female,64,Upper secondary
+480,Conservative,8,0,Female,39,Upper secondary
+481,Conservative,5,1,Male,46,Tertiary
+482,Conservative,5,0,Female,37,Tertiary
+483,Conservative,7,0,Male,46,Upper secondary
+484,Conservative,6,0,Female,75,Lower secondary
+485,Conservative,8,0,Male,66,Upper secondary
+486,Conservative,4,0,Female,38,Upper secondary
+487,Conservative,5,0,Male,45,Upper secondary
+488,Conservative,0,0,Male,69,Lower secondary
+489,Conservative,6,0,Female,46,Upper secondary
+490,Conservative,5,0,Female,36,Upper secondary
+491,Conservative,5,0,Female,68,Upper secondary
+492,Conservative,5,0,Female,41,Upper secondary
+493,Conservative,7,0,Male,58,Tertiary
+494,Conservative,8,0,Female,85,Tertiary
+495,Conservative,5,0,Male,61,Upper secondary
+496,Conservative,7,0,Female,67,Upper secondary
+497,Conservative,5,0,Male,54,Upper secondary
+498,Conservative,1,0,Male,52,Upper secondary
+499,Conservative,10,0,Female,42,Tertiary
+500,Conservative,5,0,Female,37,Upper secondary
+501,Conservative,6,0,Male,76,Upper secondary
+502,Conservative,5,0,Female,63,Tertiary
+503,Conservative,8,0,Female,54,Lower secondary
+504,Conservative,7,0,Male,49,Tertiary
+505,Conservative,6,0,Male,71,Tertiary
+506,Conservative,7,0,Female,73,Upper secondary
+507,Conservative,5,0,Male,82,Lower secondary
+508,Conservative,7,0,Male,83,Upper secondary
+509,Conservative,6,0,Male,63,Upper secondary
+510,Conservative,10,0,Male,56,Upper secondary
+511,Conservative,7,0,Female,35,Lower secondary
+512,Conservative,7,1,Male,68,Tertiary
+513,Conservative,5,0,Female,85,Upper secondary
+514,Conservative,7,0,Male,50,Tertiary
+515,Conservative,5,0,Female,64,Upper secondary
+516,Conservative,5,0,Female,55,Upper secondary
+517,Conservative,3,1,Female,66,Lower secondary
+518,Conservative,7,0,Male,57,Upper secondary
+519,Conservative,8,0,Female,22,Upper secondary
+520,Conservative,5,0,Female,65,Upper secondary
+521,Conservative,8,0,Female,42,Tertiary
+522,Conservative,5,0,Male,50,Upper secondary
+523,Conservative,6,1,Female,29,Tertiary
+524,Conservative,5,0,Female,69,Upper secondary
+525,Conservative,4,0,Male,49,Lower secondary
+526,Conservative,2,0,Male,32,Lower secondary
+527,Conservative,5,0,Male,61,Tertiary
+528,Conservative,4,0,Female,39,Tertiary
+529,Conservative,6,0,Male,89,Lower secondary
+530,Conservative,8,0,Male,83,Tertiary
+531,Conservative,1,0,Female,58,Upper secondary
+532,Conservative,3,0,Female,82,Lower secondary
+533,Conservative,9,0,Male,79,Upper secondary
+534,Conservative,7,0,Female,72,Lower secondary
+535,Conservative,8,0,Male,90,Lower secondary
+536,Conservative,7,0,Female,58,Tertiary
+537,Conservative,3,0,Male,82,Upper secondary
+538,Conservative,2,0,Female,71,Upper secondary
+539,Conservative,8,0,Male,70,Upper secondary
+540,Conservative,8,0,Male,81,Lower secondary
+541,Conservative,8,0,Male,57,Tertiary
+542,Conservative,8,0,Female,85,Upper secondary
+543,Conservative,10,0,Male,73,Tertiary
+544,Conservative,5,0,Male,49,Upper secondary
+545,Conservative,6,0,Male,72,Lower secondary
+546,Conservative,3,0,Female,73,Lower secondary
+547,Conservative,7,0,Female,62,Upper secondary
+548,Conservative,5,0,Female,78,Tertiary
+549,Conservative,4,0,Male,65,Upper secondary
+550,Conservative,9,0,Male,48,Lower secondary
+551,Conservative,10,0,Male,73,Tertiary
+552,Conservative,7,0,Male,33,Upper secondary
+553,Conservative,2,0,Female,76,Lower secondary
+554,Conservative,6,0,Male,71,Lower secondary
+555,Conservative,2,0,Female,74,Lower secondary
+556,Conservative,6,0,Male,42,Upper secondary
+557,Conservative,1,0,Female,52,Lower secondary
+558,Conservative,1,0,Male,44,Upper secondary
+559,Conservative,6,0,Male,53,Upper secondary
+560,Conservative,6,0,Female,73,Lower secondary
+561,Conservative,4,0,Male,58,Upper secondary
+562,Conservative,7,0,Male,85,Upper secondary
+563,Conservative,7,0,Male,78,Upper secondary
+564,Conservative,6,0,Male,25,Upper secondary
+565,Conservative,7,0,Male,57,Upper secondary
+566,Conservative,4,0,Male,57,Upper secondary
+567,Conservative,6,0,Female,67,Upper secondary
+568,Conservative,8,0,Female,59,Upper secondary
+569,Conservative,6,0,Male,72,Lower secondary
+570,Conservative,8,1,Female,35,Tertiary
+571,Conservative,2,0,Female,79,Lower secondary
+572,Conservative,5,0,Male,65,Lower secondary
+573,Conservative,0,0,Female,69,Lower secondary
+574,Conservative,6,0,Female,49,Tertiary
+575,Conservative,8,0,Female,69,Upper secondary
+576,Conservative,2,0,Male,61,Lower secondary
+577,Conservative,5,0,Male,62,Tertiary
+578,Conservative,2,0,Male,67,Tertiary
+579,Conservative,4,0,Female,37,Tertiary
+580,Conservative,7,0,Male,36,Upper secondary
+581,Conservative,2,0,Female,73,Lower secondary
+582,Conservative,4,0,Female,56,Upper secondary
+583,Conservative,0,0,Female,77,Lower secondary
+584,Conservative,6,1,Male,82,Upper secondary
+585,Conservative,5,0,Female,38,Upper secondary
+586,Conservative,1,0,Female,75,Lower secondary
+587,Conservative,5,0,Male,74,Lower secondary
+588,Conservative,5,0,Male,75,Tertiary
+589,Conservative,3,0,Male,86,Tertiary
+590,Conservative,5,0,Male,70,Lower secondary
+591,Conservative,2,0,Male,78,Lower secondary
+592,Conservative,5,0,Female,75,Upper secondary
+593,Conservative,9,0,Female,45,Tertiary
+594,Conservative,8,0,Female,79,Upper secondary
+595,Conservative,2,0,Male,69,Lower secondary
+596,Conservative,3,0,Female,69,Lower secondary
+597,Conservative,3,0,Male,62,Upper secondary
+598,Conservative,,0,Female,75,Upper secondary
+599,Conservative,4,0,Male,76,Tertiary
+600,Conservative,10,1,Male,34,Tertiary
+601,Conservative,5,0,Male,58,Tertiary
+602,Conservative,2,0,Female,76,Lower secondary
+603,Conservative,4,0,Female,64,Upper secondary
+604,Conservative,7,0,Male,57,Lower secondary
+605,Conservative,5,0,Male,33,Upper secondary
+606,Conservative,1,0,Female,54,Upper secondary
+607,Conservative,8,0,Male,41,Lower secondary
+608,Conservative,8,0,Male,33,Tertiary
+609,Conservative,1,0,Female,48,Upper secondary
+610,Conservative,5,0,Male,74,Upper secondary
+611,Conservative,3,0,Male,34,Upper secondary
+612,Conservative,,0,Male,66,Tertiary
+613,Conservative,3,0,Female,66,Upper secondary
+614,Conservative,6,0,Female,55,Tertiary
+615,Conservative,8,0,Male,29,Tertiary
+616,Conservative,4,0,Female,70,Lower secondary
+617,Conservative,1,0,Male,56,Upper secondary
+618,Conservative,1,1,Female,69,Upper secondary
+619,Conservative,8,0,Male,55,Tertiary
+620,Conservative,5,0,Female,59,Upper secondary
+621,Conservative,6,0,Male,68,Tertiary
+622,Conservative,7,0,Female,86,Lower secondary
+623,Conservative,7,0,Female,70,
+624,Conservative,6,0,Female,66,Lower secondary
+625,Conservative,0,0,Female,41,Tertiary
+626,Conservative,4,0,Female,74,Upper secondary
+627,Conservative,2,0,Female,63,Tertiary
+628,Conservative,7,0,Female,44,Tertiary
+629,Conservative,3,0,Male,52,Upper secondary
+630,Conservative,5,0,Male,90,
+631,Conservative,5,0,Female,65,
+632,Conservative,2,0,Male,76,Upper secondary
+633,Conservative,0,0,Female,38,Lower secondary
+634,Conservative,7,0,Male,50,Tertiary
+635,Conservative,7,0,Female,62,Tertiary
+636,Conservative,9,0,Female,73,Upper secondary
+637,Conservative,5,0,Male,58,Upper secondary
+638,Conservative,7,0,Male,58,Upper secondary
+639,Conservative,4,0,Male,74,Upper secondary
+640,Labour,4,1,Male,51,Tertiary
+641,Labour,8,0,Female,34,Tertiary
+642,Labour,8,0,Female,60,Tertiary
+643,Labour,5,0,Female,64,Upper secondary
+644,Labour,10,1,Female,42,Upper secondary
+645,Labour,0,0,Male,65,Tertiary
+646,Labour,5,0,Female,68,Lower secondary
+647,Labour,7,0,Female,68,Tertiary
+648,Labour,8,0,Male,65,Lower secondary
+649,Labour,9,0,Male,41,Tertiary
+650,Labour,6,0,Female,40,Tertiary
+651,Labour,8,0,Female,21,Lower secondary
+652,Labour,6,0,Female,36,Upper secondary
+653,Labour,7,0,Female,57,Upper secondary
+654,Labour,3,0,Male,23,Tertiary
+655,Labour,10,0,Male,56,Tertiary
+656,Labour,5,0,Female,37,Tertiary
+657,Labour,8,0,Female,56,Tertiary
+658,Labour,2,0,Female,57,Lower secondary
+659,Labour,5,0,Female,24,Upper secondary
+660,Labour,3,0,Female,56,Tertiary
+661,Labour,5,0,Female,55,Upper secondary
+662,Labour,6,0,Male,31,Upper secondary
+663,Labour,5,1,Female,47,Tertiary
+664,Labour,,0,Male,71,Upper secondary
+665,Labour,3,1,Female,71,Tertiary
+666,Labour,4,0,Female,68,Lower secondary
+667,Labour,7,0,Female,66,Upper secondary
+668,Labour,5,0,Male,79,Upper secondary
+669,Labour,1,0,Female,87,Lower secondary
+670,Labour,5,0,Female,77,Lower secondary
+671,Labour,0,0,Female,60,Lower secondary
+672,Labour,5,0,Female,60,Lower secondary
+673,Labour,8,1,Female,32,Tertiary
+674,Labour,6,0,Male,34,Upper secondary
+675,Labour,8,1,Male,55,Upper secondary
+676,Labour,5,0,Male,31,Upper secondary
+677,Labour,5,0,Male,43,Upper secondary
+678,Labour,9,0,Female,35,Tertiary
+679,Labour,7,0,Male,32,Tertiary
+680,Labour,7,1,Female,68,Upper secondary
+681,Labour,4,0,Female,66,Upper secondary
+682,Labour,5,0,Female,26,Upper secondary
+683,Labour,8,1,Male,51,Tertiary
+684,Labour,8,0,Female,30,Lower secondary
+685,Labour,6,0,Female,28,Tertiary
+686,Labour,7,0,Female,49,Tertiary
+687,Labour,8,0,Female,51,Lower secondary
+688,Labour,2,0,Female,44,Tertiary
+689,Labour,8,0,Male,47,Upper secondary
+690,Labour,6,0,Female,45,Upper secondary
+691,Labour,8,0,Female,77,Lower secondary
+692,Labour,5,0,Female,47,Upper secondary
+693,Labour,5,0,Female,49,Tertiary
+694,Labour,7,0,Male,36,Upper secondary
+695,Labour,7,0,Female,71,Lower secondary
+696,Labour,8,0,Male,59,Upper secondary
+697,Labour,2,0,Male,55,Upper secondary
+698,Labour,6,0,Female,25,Tertiary
+699,Labour,2,0,Male,80,Lower secondary
+700,Labour,6,0,Female,35,Tertiary
+701,Labour,8,0,Female,45,Tertiary
+702,Labour,3,0,Male,73,Upper secondary
+703,Labour,7,0,Male,55,Tertiary
+704,Labour,1,0,Female,49,Lower secondary
+705,Labour,7,0,Female,46,Tertiary
+706,Labour,10,0,Male,85,Tertiary
+707,Labour,0,0,Female,59,Upper secondary
+708,Labour,7,1,Male,32,Upper secondary
+709,Labour,6,0,Male,24,Tertiary
+710,Labour,2,0,Male,90,Lower secondary
+711,Labour,7,1,Female,48,Tertiary
+712,Labour,7,0,Male,21,Upper secondary
+713,Labour,7,0,Male,51,Lower secondary
+714,Labour,2,0,Female,51,Tertiary
+715,Labour,10,0,Male,36,Tertiary
+716,Labour,7,0,Male,26,Tertiary
+717,Labour,3,0,Female,63,Upper secondary
+718,Labour,1,0,Male,64,Upper secondary
+719,Labour,7,1,Female,38,Upper secondary
+720,Labour,1,0,Female,73,Lower secondary
+721,Labour,8,0,Male,44,Tertiary
+722,Labour,6,0,Female,34,Upper secondary
+723,Labour,6,0,Male,23,
+724,Labour,7,0,Female,71,Lower secondary
+725,Labour,10,0,Male,42,Tertiary
+726,Labour,7,0,Male,33,Tertiary
+727,Labour,5,0,Male,51,Upper secondary
+728,Labour,7,0,Female,66,Lower secondary
+729,Labour,6,0,Female,25,Tertiary
+730,Labour,5,0,Female,49,Upper secondary
+731,Labour,7,0,Male,70,Tertiary
+732,Labour,2,0,Female,46,Upper secondary
+733,Labour,5,0,Male,70,Lower secondary
+734,Labour,,1,Male,42,Lower secondary
+735,Labour,7,1,Female,23,Tertiary
+736,Labour,9,1,Female,61,Upper secondary
+737,Labour,3,0,Male,83,Lower secondary
+738,Labour,3,0,Female,38,Upper secondary
+739,Labour,9,0,Male,24,Tertiary
+740,Labour,8,1,Male,33,Tertiary
+741,Labour,10,0,Male,72,Tertiary
+742,Labour,7,0,Female,48,Upper secondary
+743,Labour,7,0,Female,60,Upper secondary
+744,Labour,5,0,Female,71,Lower secondary
+745,Labour,8,0,Male,37,Upper secondary
+746,Labour,6,1,Male,40,Tertiary
+747,Labour,6,0,Female,68,Lower secondary
+748,Labour,8,0,Male,60,Upper secondary
+749,Labour,10,1,Female,78,Tertiary
+750,Labour,9,0,Male,51,Lower secondary
+751,Labour,5,0,Female,90,Lower secondary
+752,Labour,9,0,Female,62,Upper secondary
+753,Labour,4,0,Male,75,Lower secondary
+754,Labour,8,1,Female,50,Lower secondary
+755,Labour,4,0,Female,60,Upper secondary
+756,Labour,7,1,Female,29,Tertiary
+757,Labour,5,0,Female,24,Upper secondary
+758,Labour,7,1,Male,40,Tertiary
+759,Labour,5,0,Female,57,Tertiary
+760,Labour,10,0,Male,36,Tertiary
+761,Labour,6,0,Male,71,Tertiary
+762,Labour,3,1,Female,38,Upper secondary
+763,Labour,9,0,Female,30,Tertiary
+764,Labour,10,0,Female,61,Tertiary
+765,Labour,7,0,Male,51,Tertiary
+766,Labour,5,0,Female,61,Upper secondary
+767,Labour,4,0,Female,72,Upper secondary
+768,Labour,4,0,Female,53,Upper secondary
+769,Labour,8,0,Female,30,Upper secondary
+770,Labour,5,0,Female,78,Upper secondary
+771,Labour,2,0,Female,67,Upper secondary
+772,Labour,7,0,Female,41,Upper secondary
+773,Labour,0,0,Female,66,Lower secondary
+774,Labour,6,1,Female,33,Tertiary
+775,Labour,5,0,Female,37,Upper secondary
+776,Labour,0,0,Female,54,Upper secondary
+777,Labour,10,0,Female,24,Upper secondary
+778,Labour,7,1,Male,25,Upper secondary
+779,Labour,1,0,Female,60,Upper secondary
+780,Labour,9,1,Female,38,Tertiary
+781,Labour,6,0,Female,63,Lower secondary
+782,Labour,10,0,Female,43,Tertiary
+783,Labour,10,0,Female,39,Tertiary
+784,Labour,8,0,Female,63,Upper secondary
+785,Labour,10,1,Male,23,Tertiary
+786,Labour,5,0,Male,64,Tertiary
+787,Labour,5,0,Male,31,Upper secondary
+788,Labour,8,0,Female,33,Tertiary
+789,Labour,8,0,Male,73,Upper secondary
+790,Labour,6,0,Male,64,Upper secondary
+791,Labour,3,0,Female,46,Lower secondary
+792,Labour,3,0,Female,72,Lower secondary
+793,Labour,6,1,Female,35,Upper secondary
+794,Labour,7,0,Male,28,Tertiary
+795,Labour,6,0,Male,26,Tertiary
+796,Labour,5,1,Male,21,Upper secondary
+797,Labour,10,0,Female,73,Lower secondary
+798,Labour,9,1,Female,71,Tertiary
+799,Labour,5,0,Male,72,Upper secondary
+800,Labour,0,0,Female,90,Lower secondary
+801,Labour,8,0,Female,45,Upper secondary
+802,Labour,4,0,Male,70,Lower secondary
+803,Labour,2,0,Female,42,Upper secondary
+804,Labour,5,0,Female,41,Upper secondary
+805,Labour,5,1,Male,66,Lower secondary
+806,Labour,3,0,Male,49,Lower secondary
+807,Labour,6,1,Female,23,Upper secondary
+808,Labour,6,0,Female,,Upper secondary
+809,Labour,9,0,Male,84,Tertiary
+810,Labour,6,0,Male,20,Upper secondary
+811,Labour,5,0,Female,64,Lower secondary
+812,Labour,7,0,Male,38,Lower secondary
+813,Labour,3,0,Female,67,Upper secondary
+814,Labour,3,1,Female,68,Lower secondary
+815,Labour,8,0,Female,65,Tertiary
+816,Labour,5,1,Male,68,Tertiary
+817,Labour,9,1,Female,43,Tertiary
+818,Labour,5,0,Female,44,Tertiary
+819,Labour,7,0,Female,49,Lower secondary
+820,Labour,7,0,Male,26,Tertiary
+821,Labour,2,0,Female,64,Lower secondary
+822,Labour,6,0,Male,43,Upper secondary
+823,Labour,10,0,Female,47,Tertiary
+824,Labour,8,0,Female,28,Tertiary
+825,Labour,5,0,Female,70,Lower secondary
+826,Labour,3,0,Male,56,Lower secondary
+827,Labour,8,0,Male,54,Lower secondary
+828,Labour,7,0,Female,61,Upper secondary
+829,Labour,10,0,Female,33,Upper secondary
+830,Labour,5,0,Female,39,Upper secondary
+831,Labour,8,0,Male,71,Upper secondary
+832,Labour,8,0,Female,51,Tertiary
+833,Labour,3,0,Female,,Tertiary
+834,Labour,7,0,Male,65,Upper secondary
+835,Labour,1,0,Male,56,Upper secondary
+836,Labour,5,0,Female,37,Upper secondary
+837,Labour,7,0,Female,47,Upper secondary
+838,Labour,7,0,Male,28,Upper secondary
+839,Labour,10,0,Male,21,Upper secondary
+840,Labour,6,0,Male,41,Lower secondary
+841,Labour,5,0,Male,39,Lower secondary
+842,Labour,7,1,Female,50,Upper secondary
+843,Labour,9,0,Male,47,Upper secondary
+844,Labour,0,0,Female,88,Lower secondary
+845,Labour,5,1,Female,35,Upper secondary
+846,Labour,7,0,Female,66,Tertiary
+847,Labour,8,0,Female,60,Upper secondary
+848,Labour,5,0,Female,43,Tertiary
+849,Labour,4,0,Female,68,Lower secondary
+850,Labour,5,0,Female,62,Upper secondary
+851,Labour,5,0,Female,54,Tertiary
+852,Labour,5,0,Female,70,Lower secondary
+853,Labour,10,0,Female,71,Upper secondary
+854,Labour,8,0,Female,53,Upper secondary
+855,Labour,8,0,Male,33,Tertiary
+856,Labour,7,0,Female,36,Lower secondary
+857,Labour,7,0,Female,36,Tertiary
+858,Labour,0,0,Female,50,Upper secondary
+859,Labour,7,0,Female,69,Upper secondary
+860,Labour,4,0,Female,70,Lower secondary
+861,Labour,10,0,Male,50,Upper secondary
+862,Labour,9,0,Female,27,Tertiary
+863,Labour,9,1,Male,42,Lower secondary
+864,Labour,3,0,Male,79,Lower secondary
+865,Labour,7,0,Female,64,Tertiary
+866,Labour,8,0,Female,39,Tertiary
+867,Labour,8,0,Female,30,Upper secondary
+868,Labour,9,0,Male,28,Tertiary
+869,Labour,10,0,Male,47,
+870,Labour,8,0,Male,42,Tertiary
+871,Labour,3,0,Male,46,Upper secondary
+872,Labour,4,0,Male,29,Tertiary
+873,Labour,7,0,Male,62,Upper secondary
+874,Labour,7,0,Female,43,Lower secondary
+875,Labour,10,0,Male,68,Tertiary
+876,Labour,5,1,Female,40,Lower secondary
+877,Labour,5,0,Female,50,Upper secondary
+878,Labour,2,0,Female,74,Lower secondary
+879,Labour,4,0,Female,27,Upper secondary
+880,Labour,9,0,Female,40,Tertiary
+881,Labour,10,0,Female,45,Tertiary
+882,Labour,1,0,Male,58,Lower secondary
+883,Labour,8,0,Male,36,Tertiary
+884,Labour,6,0,Male,31,Upper secondary
+885,Labour,10,0,Female,33,Tertiary
+886,Labour,6,0,Male,80,Lower secondary
+887,Labour,6,0,Male,48,Lower secondary
+888,Labour,8,1,Female,47,Upper secondary
+889,Labour,8,0,Female,45,Tertiary
+890,Labour,10,0,Male,57,Tertiary
+891,Labour,0,0,Female,83,Upper secondary
+892,Labour,5,0,Female,34,Tertiary
+893,Labour,3,0,Male,69,Upper secondary
+894,Labour,5,0,Female,36,Upper secondary
+895,Labour,5,0,Male,41,Lower secondary
+896,Labour,6,0,Male,44,Upper secondary
+897,Labour,7,0,Male,44,Tertiary
+898,Labour,7,1,Male,30,Lower secondary
+899,Labour,5,0,Female,28,Upper secondary
+900,Labour,3,0,Female,56,Upper secondary
+901,Labour,8,0,Male,29,Upper secondary
+902,Labour,7,0,Male,50,Upper secondary
+903,Labour,5,0,Male,24,Upper secondary
+904,Labour,5,0,Female,35,Tertiary
+905,Labour,4,0,Male,65,Lower secondary
+906,Labour,8,0,Male,42,Upper secondary
+907,Labour,5,0,Female,47,Upper secondary
+908,Labour,0,0,Female,67,Upper secondary
+909,Labour,7,0,Male,28,Upper secondary
+910,Labour,8,0,Male,71,Upper secondary
+911,Labour,5,0,Male,72,Upper secondary
+912,Labour,8,0,Male,55,Tertiary
+913,Labour,7,0,Female,36,Tertiary
+914,Labour,7,0,Female,48,Tertiary
+915,Labour,10,0,Female,26,Tertiary
+916,Labour,,0,Female,52,Upper secondary
+917,Labour,2,0,Female,70,Upper secondary
+918,Labour,9,0,Male,46,Tertiary
+919,Labour,8,0,Male,57,Tertiary
+920,Labour,8,0,Female,36,Tertiary
+921,Labour,7,0,Female,41,Tertiary
+922,Labour,8,1,Male,36,Tertiary
+923,Labour,5,0,Female,87,Lower secondary
+924,Labour,6,0,Female,74,Upper secondary
+925,Labour,8,0,Male,42,Tertiary
+926,Labour,7,0,Female,83,Upper secondary
+927,Labour,8,0,Male,42,Tertiary
+928,Labour,4,0,Female,44,Tertiary
+929,Labour,8,0,Female,57,Upper secondary
+930,Labour,10,0,Female,69,Tertiary
+931,Labour,5,0,Female,40,Upper secondary
+932,Labour,6,0,Female,32,Tertiary
+933,Labour,8,0,Female,68,Tertiary
+934,Labour,8,1,Male,61,Upper secondary
+935,Labour,9,0,Male,69,Upper secondary
+936,Labour,10,0,Female,40,Tertiary
+937,Labour,5,1,Female,54,Tertiary
+938,Labour,10,0,Male,35,Tertiary
+939,Labour,2,0,Male,41,Upper secondary
+940,Labour,9,0,Female,45,Tertiary
+941,Labour,8,0,Female,35,Tertiary
+942,Labour,2,0,Male,50,Lower secondary
+943,Labour,3,0,Male,26,Upper secondary
+944,Labour,6,0,Male,88,Tertiary
+945,Labour,7,1,Male,69,Lower secondary
+946,Labour,4,0,Male,68,Upper secondary
+947,Labour,8,0,Female,80,Tertiary
+948,Labour,6,0,Female,57,Upper secondary
+949,Labour,9,0,Male,32,Tertiary
+950,Labour,10,0,Male,40,Tertiary
+951,Labour,5,0,Female,48,Tertiary
+952,Labour,5,0,Female,56,Tertiary
+953,Labour,9,0,Male,30,Tertiary
+954,Labour,8,0,Female,52,Upper secondary
+955,Labour,9,0,Male,32,Tertiary
+956,Labour,4,0,Female,54,Lower secondary
+957,Labour,5,0,Male,66,Lower secondary
+958,Labour,2,0,Male,85,Lower secondary
+959,Labour,10,1,Female,38,Tertiary
+960,Labour,5,0,Female,30,Lower secondary
+961,Labour,8,0,Female,60,Tertiary
+962,Labour,3,0,Female,43,Lower secondary
+963,Labour,5,0,Male,82,Lower secondary
+964,Labour,6,0,Female,75,Lower secondary
+965,Labour,8,0,Male,35,Tertiary
+966,Labour,7,0,Male,70,Upper secondary
+967,Labour,6,0,Male,73,Upper secondary
+968,Labour,7,1,Female,52,Tertiary
+969,Labour,10,0,Female,68,Tertiary
+970,Labour,8,0,Female,41,Tertiary
+971,Labour,4,0,Female,54,Upper secondary
+972,Labour,5,0,Female,23,Upper secondary
+973,Labour,3,0,Female,42,Lower secondary
+974,Labour,5,0,Male,56,Lower secondary
+975,Labour,8,1,Male,67,Upper secondary
+976,Labour,10,0,Female,30,Upper secondary
+977,Labour,1,0,Male,58,Lower secondary
+978,Labour,10,1,Female,43,Lower secondary
+979,Labour,10,1,Female,43,Tertiary
+980,Labour,7,0,Male,27,Tertiary
+981,Labour,,0,Male,40,Tertiary
+982,Labour,5,0,Female,38,Upper secondary
+983,Labour,6,0,Female,52,Lower secondary
+984,Labour,5,0,Male,49,Upper secondary
+985,Labour,8,0,Male,30,Upper secondary
+986,Labour,5,0,Female,41,Upper secondary
+987,Labour,6,1,Female,56,Tertiary
+988,Labour,7,0,Female,59,
+989,Labour,7,0,Female,63,Lower secondary
+990,Labour,7,1,Female,30,Upper secondary
+991,Labour,6,0,Male,61,Upper secondary
+992,Labour,10,1,Female,41,Lower secondary
+993,Labour,8,0,Male,45,Tertiary
+994,Labour,9,1,Male,37,Tertiary
+995,Labour,6,0,Male,57,Upper secondary
+996,Labour,3,0,Male,76,Upper secondary
+997,Labour,8,0,Male,49,Upper secondary
+998,Labour,5,0,Male,51,Upper secondary
+999,Labour,5,0,Female,78,Lower secondary
+1000,Labour,7,0,Male,34,Tertiary
+1001,Labour,7,0,Female,41,Tertiary
+1002,Labour,9,0,Male,28,Tertiary
+1003,Labour,0,0,Female,63,Upper secondary
+1004,Labour,4,0,Female,38,Upper secondary
+1005,Labour,5,1,Male,61,Lower secondary
+1006,Labour,5,0,Female,50,Tertiary
+1007,Labour,4,0,Male,36,Tertiary
+1008,Labour,5,0,Female,66,Upper secondary
+1009,Labour,8,0,Female,48,Upper secondary
+1010,Labour,6,1,Female,60,Tertiary
+1011,Labour,5,0,Female,,Lower secondary
+1012,Labour,7,0,Female,46,Lower secondary
+1013,Labour,7,0,Male,37,Upper secondary
+1014,Labour,5,0,Female,45,Tertiary
+1015,Labour,0,0,Male,85,Lower secondary
+1016,Labour,7,0,Male,55,Tertiary
+1017,Labour,8,1,Female,41,Tertiary
+1018,Labour,10,0,Female,74,Tertiary
+1019,Labour,5,0,Male,34,Upper secondary
+1020,Labour,,0,Female,47,Tertiary
+1021,Labour,8,0,Male,47,Tertiary
+1022,Labour,8,0,Female,24,Tertiary
+1023,Labour,7,0,Male,79,Lower secondary
+1024,Labour,9,0,Male,74,Upper secondary
+1025,Labour,4,0,Female,46,Upper secondary
+1026,Labour,0,0,Female,61,Upper secondary
+1027,Labour,4,0,Male,73,
+1028,Labour,9,1,Female,70,Tertiary
+1029,Labour,5,0,Male,74,Lower secondary
+1030,Labour,9,0,Female,72,
+1031,Labour,6,0,Female,41,Tertiary
+1032,Labour,7,0,Male,56,Upper secondary
+1033,Labour,3,0,Female,68,Lower secondary
+1034,Labour,10,0,Female,46,Tertiary
+1035,Labour,7,0,Female,22,Tertiary
+1036,Labour,9,1,Female,47,Upper secondary
+1037,Labour,10,0,Male,56,Upper secondary
+1038,Labour,9,1,Female,43,Tertiary
+1039,Labour,10,0,Male,42,Upper secondary
+1040,Labour,1,0,Male,77,Lower secondary
+1041,Labour,5,0,Male,48,Lower secondary
+1042,Labour,7,0,Female,29,Tertiary
+1043,Labour,5,0,Female,83,Upper secondary
+1044,Labour,8,0,Male,23,Upper secondary
+1045,Labour,8,0,Female,31,Upper secondary
+1046,Labour,5,0,Male,48,Lower secondary
+1047,Labour,9,0,Female,52,Tertiary
+1048,Labour,,0,Female,27,Upper secondary
+1049,Labour,7,0,Female,66,Upper secondary
+1050,Labour,10,1,Male,63,Tertiary
+1051,Labour,3,0,Female,59,Lower secondary
+1052,Labour,3,0,Female,53,Lower secondary
+1053,Labour,9,1,Female,47,Tertiary
+1054,Labour,2,0,Male,42,Upper secondary
+1055,Labour,8,0,Female,57,Upper secondary
+1056,Labour,7,0,Female,64,Upper secondary
+1057,Labour,5,0,Male,33,Tertiary
+1058,Labour,4,0,Male,51,Tertiary
+1059,Labour,8,0,Male,57,Lower secondary
+1060,Labour,9,0,Female,30,Tertiary
+1061,Labour,5,0,Male,81,Upper secondary
+1062,Labour,6,0,Male,78,Upper secondary
+1063,Labour,8,0,Male,49,Tertiary
+1064,Labour,7,1,Male,45,Lower secondary
+1065,Labour,6,0,Male,43,Upper secondary
+1066,Labour,7,0,Female,33,
+1067,Labour,8,0,Male,59,Lower secondary
+1068,Labour,7,0,Female,26,Upper secondary
+1069,Labour,10,0,Male,66,Tertiary
+1070,Labour,7,0,Female,30,Tertiary
+1071,Labour,9,0,Female,63,Tertiary
+1072,Labour,6,0,Female,48,
+1073,Labour,10,0,Male,26,Tertiary
+1074,Labour,7,0,Male,24,Tertiary
+1075,Labour,8,0,Female,27,Upper secondary
+1076,Labour,7,0,Female,32,Tertiary
+1077,Labour,7,0,Male,31,Tertiary
+1078,Labour,4,0,Male,78,Lower secondary
+1079,Labour,6,0,Female,62,Upper secondary
+1080,Labour,8,0,Male,58,Tertiary
+1081,Labour,5,0,Female,39,Lower secondary
+1082,Labour,8,0,Female,69,Upper secondary
+1083,Labour,8,0,Female,45,Tertiary
+1084,Labour,5,0,Female,63,Upper secondary
+1085,Labour,7,0,Male,70,Upper secondary
+1086,Labour,7,1,Female,40,Upper secondary
+1087,Labour,3,0,Female,50,Lower secondary
+1088,Labour,6,0,Female,77,Lower secondary
+1089,Labour,2,0,Female,51,Upper secondary
+1090,Labour,7,0,Female,64,Tertiary
+1091,Labour,5,0,Male,59,Upper secondary
+1092,Labour,9,0,Male,32,Tertiary
+1093,Labour,8,0,Female,37,Tertiary
+1094,Labour,5,0,Male,85,Lower secondary
+1095,Labour,5,0,Female,51,Lower secondary
+1096,Labour,6,0,Male,69,Upper secondary
+1097,Labour,10,1,Male,41,Lower secondary
+1098,Labour,6,0,Female,40,Tertiary
+1099,Labour,4,0,Female,,Upper secondary
+1100,Labour,7,0,Female,60,Tertiary
+1101,Labour,8,0,Male,54,Tertiary
+1102,Labour,3,0,Male,30,Lower secondary
+1103,Labour,9,0,Female,51,Tertiary
+1104,Labour,5,0,Male,62,Tertiary
+1105,Labour,1,0,Female,24,Upper secondary
+1106,Labour,7,0,Male,46,Upper secondary
+1107,Labour,5,0,Female,25,Tertiary
+1108,Labour,7,0,Male,29,Upper secondary
+1109,Labour,7,0,Female,84,Lower secondary
+1110,Labour,9,0,Female,40,Upper secondary
+1111,Labour,5,0,Male,50,Upper secondary
+1112,Labour,8,0,Female,50,Upper secondary
+1113,Labour,10,0,Male,32,Tertiary
+1114,Labour,10,0,Male,43,Tertiary
+1115,Labour,8,0,Male,40,Tertiary
+1116,Labour,8,0,Female,60,Lower secondary
+1117,Labour,6,1,Female,37,Upper secondary
+1118,Labour,4,0,Male,89,Lower secondary
+1119,Labour,10,0,Male,40,Tertiary
+1120,Labour,7,1,Male,,Lower secondary
+1121,Labour,6,0,Male,24,Upper secondary
+1122,Labour,8,0,Female,36,Tertiary
+1123,Labour,5,0,Female,55,Tertiary
+1124,Labour,8,0,Female,38,Tertiary
+1125,Labour,9,0,Male,42,Tertiary
+1126,Labour,5,0,Female,47,Upper secondary
+1127,Labour,9,0,Male,67,Upper secondary
+1128,Labour,3,1,Male,58,Upper secondary
+1129,Labour,5,0,Male,82,Upper secondary
+1130,Labour,4,0,Male,63,Lower secondary
+1131,Labour,10,0,Male,57,Upper secondary
+1132,Labour,8,0,Female,59,Tertiary
+1133,Labour,10,0,Female,71,Tertiary
+1134,Labour,7,0,Female,42,Upper secondary
+1135,Labour,8,0,Female,43,Tertiary
+1136,Labour,5,0,Female,46,Upper secondary
+1137,Labour,6,0,Female,73,Upper secondary
+1138,Labour,7,0,Male,64,Tertiary
+1139,Labour,6,0,Female,56,Tertiary
+1140,Labour,2,0,Male,77,Upper secondary
+1141,Labour,5,0,Male,48,Lower secondary
+1142,Labour,8,1,Female,33,Tertiary
+1143,Labour,5,0,Female,29,Tertiary
+1144,Labour,10,0,Female,54,Tertiary
+1145,Labour,8,0,Female,38,Upper secondary
+1146,Labour,5,0,Male,52,Upper secondary
+1147,Labour,8,1,Female,46,Upper secondary
+1148,Labour,5,0,Male,48,Upper secondary
+1149,Labour,9,0,Male,71,Lower secondary
+1150,Labour,5,0,Female,57,Tertiary
+1151,Labour,8,0,Male,53,Upper secondary
+1152,Labour,10,1,Female,60,Upper secondary
+1153,Labour,6,0,Male,62,Lower secondary
+1154,Labour,6,0,Female,53,Upper secondary
+1155,Labour,5,0,Female,90,Lower secondary
+1156,Labour,9,0,Female,68,Tertiary
+1157,Labour,7,0,Male,71,Tertiary
+1158,Labour,2,0,Female,61,Upper secondary
+1159,Labour,8,0,Male,90,Lower secondary
+1160,Labour,10,0,Female,64,Lower secondary
+1161,Labour,7,0,Male,36,Tertiary
+1162,Labour,4,0,Male,48,Lower secondary
+1163,Labour,10,0,Male,49,Tertiary
+1164,Labour,7,1,Female,35,Upper secondary
+1165,Labour,8,0,Female,45,Tertiary
+1166,Labour,8,0,Male,32,Upper secondary
+1167,Labour,10,0,Male,25,Upper secondary
+1168,Labour,10,0,Female,37,Tertiary
+1169,Labour,7,0,Male,56,Lower secondary
+1170,Labour,9,0,Female,73,Upper secondary
+1171,Labour,6,1,Male,30,Lower secondary
+1172,Labour,6,0,Male,61,Lower secondary
+1173,Labour,8,0,Male,70,Lower secondary
+1174,Labour,6,0,Female,69,Tertiary
+1175,Labour,8,1,Male,69,Tertiary
+1176,Labour,8,1,Female,51,Upper secondary
+1177,Labour,0,0,Male,57,Lower secondary
+1178,Labour,5,0,Female,47,Tertiary
+1179,Labour,7,0,Female,75,Upper secondary
+1180,Labour,9,0,Female,44,Tertiary
+1181,Labour,8,0,Male,34,Tertiary
+1182,Labour,5,0,Male,55,Upper secondary
+1183,Labour,8,1,Female,57,Upper secondary
+1184,Labour,7,0,Male,62,Tertiary
+1185,Labour,6,0,Male,49,Upper secondary
+1186,Labour,10,1,Female,58,Tertiary
+1187,Labour,7,0,Male,44,Upper secondary
+1188,Labour,5,0,Male,23,Upper secondary
+1189,Labour,6,0,Female,49,Tertiary
+1190,Labour,6,0,Male,46,Upper secondary
+1191,Labour,1,0,Male,60,
+1192,Labour,7,0,Male,22,Tertiary
+1193,Labour,6,0,Female,30,Upper secondary
+1194,Labour,5,0,Female,29,Upper secondary
+1195,Labour,0,0,Male,51,Lower secondary
+1196,Labour,4,0,Male,36,Tertiary
+1197,Labour,9,0,Male,56,Tertiary
+1198,Labour,4,0,Male,61,Tertiary
+1199,Labour,7,0,Male,33,Upper secondary
+1200,Labour,8,0,Female,26,Upper secondary
+1201,Labour,8,0,Female,32,Tertiary
+1202,Labour,5,0,Male,77,Lower secondary
+1203,Labour,5,0,Female,51,Tertiary
+1204,Labour,9,0,Female,35,Lower secondary
+1205,Labour,2,0,Male,89,Upper secondary
+1206,Labour,8,0,Male,51,Upper secondary
+1207,Any other party,10,0,Female,69,Tertiary
+1208,Any other party,10,0,Female,45,Upper secondary
+1209,Any other party,6,0,Male,42,Tertiary
+1210,Any other party,5,0,Male,83,Upper secondary
+1211,Any other party,8,0,Male,72,Tertiary
+1212,Any other party,3,0,Male,33,Upper secondary
+1213,Any other party,,0,Female,62,Upper secondary
+1214,Any other party,5,0,Female,83,Upper secondary
+1215,Any other party,10,0,Female,49,Upper secondary
+1216,Any other party,8,0,Female,86,Lower secondary
+1217,Any other party,8,0,Female,54,Upper secondary
+1218,Any other party,10,0,Female,54,Tertiary
+1219,Any other party,7,0,Female,54,Tertiary
+1220,Any other party,6,1,Female,,Lower secondary
+1221,Any other party,9,0,Female,68,Tertiary
+1222,Any other party,9,0,Female,37,Tertiary
+1223,Any other party,6,0,Male,77,
+1224,Any other party,6,0,Female,68,Upper secondary
+1225,Any other party,6,0,Female,64,Upper secondary
+1226,Any other party,5,0,Female,50,Upper secondary
+1227,Any other party,7,0,Female,56,Tertiary
+1228,Any other party,7,0,Male,64,Tertiary
+1229,Any other party,8,0,Male,40,Tertiary
+1230,Any other party,5,0,Male,35,Lower secondary
+1231,Any other party,5,0,Female,30,Upper secondary
+1232,Any other party,10,1,Female,80,Lower secondary
+1233,Any other party,5,0,Male,62,Lower secondary
+1234,Any other party,10,1,Female,64,Tertiary
+1235,Any other party,6,0,Female,73,Tertiary
+1236,Any other party,10,0,Female,69,Tertiary
+1237,Any other party,9,0,Female,55,Tertiary
+1238,Any other party,5,0,Female,81,Upper secondary
+1239,Any other party,6,0,Male,28,Tertiary
+1240,Any other party,5,0,Male,71,Upper secondary
+1241,Any other party,4,0,Male,39,Tertiary
+1242,Any other party,10,0,Male,69,Upper secondary
+1243,Any other party,7,0,Female,70,Lower secondary
+1244,Any other party,9,0,Male,32,Upper secondary
+1245,Any other party,7,0,Male,41,Tertiary
+1246,Any other party,5,0,Female,42,Upper secondary
+1247,Any other party,9,0,Female,51,Upper secondary
+1248,Any other party,9,1,Male,59,Tertiary
+1249,Any other party,8,0,Male,80,Tertiary
+1250,Any other party,7,1,Male,48,Lower secondary
+1251,Any other party,5,0,Female,47,Upper secondary
+1252,Any other party,7,0,Female,43,Upper secondary
+1253,Any other party,5,0,Female,78,Upper secondary
+1254,Any other party,7,0,Female,38,Tertiary
+1255,Any other party,8,0,Male,72,Tertiary
+1256,Any other party,2,0,Male,28,Lower secondary
+1257,Any other party,1,0,Female,52,Lower secondary
+1258,Any other party,7,0,Female,40,Tertiary
+1259,Any other party,0,0,Male,56,Upper secondary
+1260,Any other party,5,0,Male,36,Lower secondary
+1261,Any other party,8,0,Female,49,Upper secondary
+1262,Any other party,7,1,Female,62,Upper secondary
+1263,Any other party,5,0,Female,46,Upper secondary
+1264,Any other party,4,0,Male,79,Lower secondary
+1265,Any other party,5,0,Male,67,Lower secondary
+1266,Any other party,8,1,Female,62,Tertiary
+1267,Any other party,9,0,Female,25,Lower secondary
+1268,Any other party,10,0,Female,27,Upper secondary
+1269,Any other party,8,0,Male,66,Tertiary
+1270,Any other party,0,0,Female,69,Lower secondary
+1271,Any other party,5,1,Female,39,Upper secondary
+1272,Any other party,3,1,Male,68,Lower secondary
+1273,Any other party,8,0,Female,59,Upper secondary
+1274,Any other party,3,0,Female,51,Tertiary
+1275,Any other party,4,0,Female,59,Upper secondary
+1276,Any other party,6,0,Male,63,Tertiary
+1277,Any other party,10,0,Male,53,Lower secondary
+1278,Any other party,8,0,Female,24,Tertiary
+1279,Any other party,9,0,Female,74,Upper secondary
+1280,Any other party,2,0,Male,75,Tertiary
+1281,Any other party,3,0,Female,71,Lower secondary
+1282,Any other party,9,0,Male,71,Lower secondary
+1283,Any other party,6,0,Male,40,Upper secondary
+1284,Any other party,4,0,Female,86,Lower secondary
+1285,Any other party,8,0,Male,51,Upper secondary
+1286,Any other party,7,0,Male,39,Tertiary
+1287,Any other party,3,0,Female,46,Upper secondary
+1288,Any other party,2,0,Male,72,Tertiary
+1289,Any other party,8,0,Male,27,Upper secondary
+1290,Any other party,5,1,Male,38,Upper secondary
+1291,Any other party,8,0,Male,46,Tertiary
+1292,Any other party,6,0,Female,68,Tertiary
+1293,Any other party,7,0,Male,47,Tertiary
+1294,Any other party,8,0,Male,62,Upper secondary
+1295,Any other party,7,0,Female,66,Upper secondary
+1296,Any other party,0,0,Male,63,Upper secondary
+1297,Any other party,1,0,Male,36,Upper secondary
+1298,Any other party,7,0,Male,61,Tertiary
+1299,Any other party,0,0,Male,21,Upper secondary
+1300,Any other party,7,0,Female,64,Upper secondary
+1301,Any other party,10,0,Female,51,Tertiary
+1302,Any other party,5,0,Female,28,Lower secondary
+1303,Any other party,5,0,Male,56,Upper secondary
+1304,Any other party,10,1,Male,59,Lower secondary
+1305,Any other party,10,0,Male,65,Tertiary
+1306,Any other party,2,0,Female,82,Lower secondary
+1307,Any other party,2,0,Female,57,Lower secondary
+1308,Any other party,10,0,Female,60,Upper secondary
+1309,Any other party,8,0,Female,55,Upper secondary
+1310,Any other party,10,0,Female,55,Upper secondary
+1311,Any other party,7,0,Female,56,Upper secondary
+1312,Any other party,10,0,Female,46,Upper secondary
+1313,Any other party,2,0,Male,63,Lower secondary
+1314,Any other party,8,0,Female,37,Upper secondary
+1315,Any other party,8,0,Male,23,Tertiary
+1316,Any other party,3,0,Female,70,Lower secondary
+1317,Any other party,7,0,Female,47,Tertiary
+1318,Any other party,6,0,Female,63,Tertiary
+1319,Any other party,8,0,Male,56,Tertiary
+1320,Any other party,6,0,Male,69,Upper secondary
+1321,Any other party,5,0,Female,67,Lower secondary
+1322,Any other party,5,0,Male,74,Upper secondary
+1323,Any other party,5,0,Female,49,Tertiary
+1324,Any other party,9,0,Male,47,Tertiary
+1325,Any other party,6,0,Male,83,Tertiary
+1326,Any other party,7,0,Female,72,Lower secondary
+1327,Any other party,8,0,Female,69,Tertiary
+1328,Any other party,4,0,Female,88,Lower secondary
+1329,Any other party,10,1,Female,30,Upper secondary
+1330,Any other party,8,0,Female,80,Tertiary
+1331,Any other party,7,0,Male,70,
+1332,Any other party,6,0,Female,31,Tertiary
+1333,Any other party,7,0,Male,69,Lower secondary
+1334,Any other party,5,0,Male,81,
+1335,Any other party,6,0,Female,33,Upper secondary
+1336,Any other party,3,0,Male,54,Upper secondary
+1337,Any other party,8,0,Female,60,Upper secondary
+1338,Any other party,10,0,Male,66,Tertiary
+1339,Any other party,5,0,Female,72,Upper secondary
+1340,Any other party,10,0,Female,44,Tertiary
+1341,Any other party,9,0,Male,54,Tertiary
+1342,Any other party,3,0,Male,65,Tertiary
+1343,Any other party,5,0,Male,69,Upper secondary
+1344,Any other party,5,0,Male,64,Lower secondary
+1345,Any other party,3,0,Male,53,Upper secondary
+1346,Any other party,5,0,Female,56,Upper secondary
+1347,Any other party,0,0,Male,47,Lower secondary
+1348,Any other party,5,1,Female,45,Tertiary
+1349,Any other party,10,0,Male,29,Tertiary
+1350,Any other party,5,0,Female,51,Tertiary
+1351,Any other party,5,0,Male,57,Upper secondary
+1352,Any other party,8,0,Male,58,Lower secondary
+1353,Any other party,8,0,Male,70,Tertiary
+1354,Any other party,9,0,Male,29,Tertiary
+1355,Any other party,8,0,Female,34,Tertiary
+1356,Any other party,8,0,Female,59,Upper secondary
+1357,Any other party,8,0,Male,20,Upper secondary
+1358,Any other party,8,0,Female,50,Upper secondary
+1359,Any other party,8,0,Male,69,Upper secondary
+1360,Any other party,8,1,Female,56,Tertiary
+1361,Any other party,7,0,Male,69,Tertiary
+1362,Any other party,9,0,Female,83,Upper secondary
+1363,Any other party,8,0,Female,53,Tertiary
+1364,Any other party,5,0,Female,67,Upper secondary
+1365,Any other party,6,0,Male,58,Tertiary
+1366,Any other party,7,0,Female,43,Tertiary
+1367,Any other party,10,0,Male,26,Upper secondary
+1368,Any other party,5,0,Female,28,Tertiary
+1369,Any other party,9,0,Male,32,Tertiary
+1370,Any other party,7,0,Female,62,Tertiary
+1371,Any other party,0,0,Female,32,Upper secondary
+1372,Any other party,8,0,Female,74,Upper secondary
+1373,Any other party,6,0,Female,48,Lower secondary
+1374,Any other party,8,0,Male,71,Tertiary
+1375,Any other party,7,0,Female,62,Upper secondary
+1376,Any other party,2,0,Female,54,Upper secondary
+1377,Any other party,5,0,Female,51,Lower secondary
+1378,Any other party,8,0,Female,53,Lower secondary
+1379,Any other party,7,0,Male,56,Tertiary
+1380,Any other party,7,0,Male,43,Tertiary
+1381,Any other party,8,0,Female,48,Upper secondary
+1382,Any other party,9,0,Male,46,Upper secondary
+1383,Any other party,3,0,Female,48,Lower secondary
+1384,Any other party,5,0,Female,36,Tertiary
+1385,Any other party,7,0,Male,64,
+1386,Any other party,5,0,Male,57,Upper secondary
+1387,Any other party,,0,Female,49,Tertiary
+1388,Any other party,4,0,Male,71,Tertiary
+1389,Any other party,8,0,Male,33,Upper secondary
+1390,Any other party,8,0,Female,54,Lower secondary
+1391,Any other party,8,0,Male,71,Upper secondary
+1392,Any other party,6,0,Male,83,
+1393,Any other party,9,0,Male,62,Tertiary
+1394,Any other party,3,0,Female,50,Upper secondary
+1395,Any other party,7,0,Female,57,Lower secondary
+1396,Any other party,5,0,Female,43,Upper secondary
+1397,Any other party,8,1,Female,40,Lower secondary
+1398,Any other party,5,0,Female,65,Lower secondary
+1399,Any other party,2,0,Male,66,Lower secondary
+1400,Any other party,9,0,Male,61,Tertiary
+1401,Any other party,8,0,Male,32,Upper secondary
+1402,Any other party,9,0,Female,58,Tertiary
+1403,Any other party,2,0,Male,54,Lower secondary
+1404,Any other party,5,0,Female,27,Lower secondary
+1405,Any other party,6,0,Female,49,Upper secondary
+1406,Any other party,6,0,Female,26,Tertiary
+1407,Any other party,,0,Male,51,Tertiary
+1408,Any other party,5,0,Female,37,Lower secondary
+1409,Any other party,0,0,Male,71,Upper secondary
+1410,Any other party,3,0,Female,59,Lower secondary
+1411,Any other party,5,0,Female,58,Upper secondary
+1412,Any other party,1,0,Female,73,Lower secondary
+1413,Any other party,8,0,Male,72,Upper secondary
+1414,Any other party,0,0,Male,42,Lower secondary
+1415,Any other party,8,0,Female,35,Upper secondary
+1416,Any other party,8,0,Male,72,Upper secondary
+1417,Any other party,10,1,Female,70,Tertiary
+1418,Any other party,10,0,Female,56,Upper secondary
+1419,Any other party,3,0,Male,80,Lower secondary
+1420,Any other party,9,0,Male,46,Tertiary
+1421,Any other party,3,0,Female,69,Lower secondary
+1422,Any other party,3,0,Female,43,Upper secondary
+1423,Any other party,8,0,Female,35,Tertiary
+1424,Any other party,3,0,Male,77,Upper secondary
+1425,Any other party,7,0,Male,63,Lower secondary
+1426,Any other party,4,0,Male,82,Upper secondary
+1427,Any other party,6,0,Female,45,Tertiary
+1428,Any other party,4,0,Female,35,Upper secondary
+1429,Any other party,4,0,Female,67,Upper secondary
+1430,Any other party,8,0,Male,70,Tertiary
+1431,Any other party,8,0,Male,90,Lower secondary
+1432,Any other party,5,0,Female,46,Upper secondary
+1433,Any other party,3,0,Female,29,Tertiary
+1434,Any other party,8,0,Male,63,Upper secondary
+1435,Any other party,9,0,Female,35,Tertiary
+1436,Any other party,1,0,Female,54,Lower secondary
+1437,Any other party,3,0,Female,47,Upper secondary
+1438,Any other party,3,0,Female,61,Lower secondary
+1439,Any other party,10,0,Female,44,Tertiary
+1440,Any other party,1,0,Male,56,Tertiary
+1441,Any other party,4,0,Male,59,Lower secondary
+1442,Any other party,7,0,Male,42,Upper secondary
+1443,Any other party,2,0,Female,22,Tertiary
+1444,Any other party,8,0,Female,45,Tertiary
+1445,Any other party,7,0,Male,57,Upper secondary
+1446,Any other party,8,0,Female,30,Tertiary
+1447,Any other party,8,0,Male,38,Upper secondary
+1448,Any other party,6,0,Female,71,
+1449,Any other party,8,0,Female,59,Upper secondary
+1450,Any other party,8,0,Female,90,Lower secondary
+1451,Any other party,5,0,Male,34,Tertiary
+1452,Any other party,7,0,Female,55,Tertiary
+1453,Any other party,8,0,Female,38,Tertiary
+1454,Any other party,4,0,Male,59,Upper secondary
+1455,Any other party,0,0,Female,67,Upper secondary
+1456,Any other party,5,0,Male,66,Upper secondary
+1457,Any other party,10,1,Female,37,Upper secondary
+1458,Any other party,10,0,Female,59,Tertiary
+1459,Any other party,7,0,Female,71,Upper secondary
+1460,Any other party,7,0,Female,31,Tertiary
+1461,Any other party,8,1,Female,51,Upper secondary
+1462,Any other party,9,0,Female,32,Tertiary
+1463,Any other party,5,0,Male,66,Tertiary
+1464,Any other party,10,1,Male,80,Tertiary
+1465,Any other party,7,1,Female,39,Upper secondary
+1466,Any other party,3,0,Female,62,Upper secondary
+1467,Any other party,8,0,Male,69,
+1468,Any other party,3,0,Female,55,Upper secondary
+1469,Any other party,6,0,Female,85,Upper secondary
+1470,Any other party,9,0,Female,45,Tertiary
+1471,Any other party,5,0,Male,71,Upper secondary
+1472,Any other party,0,0,Male,61,Tertiary
+1473,Any other party,10,0,Female,54,Upper secondary
+1474,Any other party,2,0,Male,69,Lower secondary
+1475,Any other party,7,0,Female,82,Upper secondary
+1476,Any other party,7,0,Female,43,Upper secondary
+1477,Any other party,6,0,Female,85,Lower secondary
+1478,Any other party,5,0,Male,35,Upper secondary
+1479,Any other party,5,0,Male,72,Upper secondary
+1480,Any other party,7,0,Male,71,Upper secondary
+1481,Any other party,8,0,Male,83,
+1482,Any other party,3,1,Female,90,Lower secondary
+1483,Any other party,5,0,Female,42,Tertiary
+1484,Any other party,,0,Female,75,Lower secondary
+1485,Any other party,8,0,Male,44,Upper secondary
+1486,Any other party,7,0,Female,47,Tertiary
+1487,Any other party,8,0,Female,56,Upper secondary
+1488,Any other party,7,0,Male,78,Upper secondary
+1489,Any other party,3,0,Female,66,Upper secondary
+1490,Any other party,7,0,Male,67,Upper secondary
+1491,Any other party,,0,Female,52,Tertiary
+1492,Any other party,8,0,Male,45,Upper secondary
+1493,Any other party,8,1,Male,56,Tertiary
+1494,Any other party,7,0,Female,35,Tertiary
+1495,Any other party,10,1,Female,32,Lower secondary
+1496,Any other party,2,0,Female,42,Tertiary
+1497,Any other party,8,0,Female,62,Tertiary
+1498,Any other party,6,0,Female,31,Tertiary
+1499,Any other party,5,0,Male,75,Tertiary
+1500,Any other party,6,0,Female,64,Lower secondary
+1501,Any other party,4,0,Female,50,Tertiary
+1502,Any other party,5,0,Female,83,Lower secondary
+1503,Any other party,2,0,Female,30,Tertiary
+1504,Any other party,7,0,Male,55,Tertiary
+1505,Any other party,7,0,Male,64,Tertiary
+1506,Any other party,3,0,Male,31,Lower secondary
+1507,Any other party,0,0,Female,76,Lower secondary
+1508,Any other party,6,0,Female,74,
+1509,Any other party,5,0,Female,46,Upper secondary
+1510,Any other party,8,0,Female,67,Lower secondary
+1511,Any other party,8,0,Female,38,Tertiary
+1512,Any other party,5,0,Female,87,Upper secondary
+1513,Any other party,5,0,Female,63,Upper secondary
+1514,Any other party,5,0,Male,40,Upper secondary
+1515,Any other party,2,0,Female,72,Upper secondary
+1516,Any other party,10,0,Female,38,Tertiary
+1517,Any other party,5,0,Male,75,Lower secondary
+1518,Any other party,7,0,Male,61,Lower secondary
+1519,Any other party,7,0,Female,60,Upper secondary
+1520,Any other party,4,0,Female,51,Tertiary
+1521,Any other party,5,0,Female,87,Tertiary
+1522,Any other party,4,0,Male,53,Upper secondary
+1523,Any other party,8,1,Male,46,Upper secondary
+1524,Any other party,8,0,Female,55,Upper secondary
+1525,Any other party,5,0,Male,81,Tertiary
+1526,Any other party,8,0,Female,76,Upper secondary
+1527,Any other party,5,0,Female,58,Upper secondary
+1528,Any other party,1,0,Male,66,Upper secondary
+1529,Any other party,8,0,Female,28,Upper secondary
+1530,Any other party,2,0,Male,57,Upper secondary
+1531,Any other party,0,0,Male,59,Upper secondary
+1532,Any other party,,0,Female,63,Lower secondary
+1533,Any other party,4,1,Female,38,Upper secondary
+1534,Any other party,8,0,Male,31,
+1535,Any other party,8,0,Male,58,Upper secondary
+1536,Any other party,3,0,Female,36,Lower secondary
+1537,Any other party,6,0,Female,61,Lower secondary
+1538,Any other party,3,0,Female,63,Lower secondary
+1539,Any other party,5,0,Male,75,Upper secondary
+1540,Any other party,6,0,Male,26,Upper secondary
+1541,Any other party,5,0,Female,89,Lower secondary
+1542,Any other party,8,1,Male,38,Tertiary
+1543,,3,0,Male,54,Upper secondary
+1544,,5,0,Female,33,Upper secondary
+1545,,9,0,Female,32,Tertiary
+1546,,10,0,Female,23,Upper secondary
+1547,,6,0,Female,17,Lower secondary
+1548,,5,1,Female,48,Upper secondary
+1549,,5,0,Male,39,Lower secondary
+1550,,5,0,Male,26,Upper secondary
+1551,,6,0,Male,37,Upper secondary
+1552,,10,1,Male,52,Tertiary
+1553,,10,1,Male,19,Upper secondary
+1554,,7,0,Female,76,Lower secondary
+1555,,8,1,Female,77,Tertiary
+1556,,4,0,Male,71,Lower secondary
+1557,,6,1,Male,27,Lower secondary
+1558,,6,1,Male,32,Tertiary
+1559,,9,0,Female,20,Lower secondary
+1560,,2,0,Male,67,Lower secondary
+1561,,7,0,Female,24,Upper secondary
+1562,,7,1,Male,31,Lower secondary
+1563,,2,1,Female,28,Upper secondary
+1564,,5,0,Female,52,Lower secondary
+1565,,3,0,Female,50,Tertiary
+1566,,5,0,Male,28,Lower secondary
+1567,,5,0,Female,56,Upper secondary
+1568,,10,1,Male,56,Tertiary
+1569,,5,0,Female,33,Lower secondary
+1570,,9,1,Female,25,Tertiary
+1571,,7,1,Male,32,Lower secondary
+1572,,3,0,Male,56,Upper secondary
+1573,,8,0,Male,38,Lower secondary
+1574,,8,0,Male,33,Upper secondary
+1575,,,0,Female,33,Lower secondary
+1576,,5,1,Male,18,Lower secondary
+1577,,2,0,Male,84,Lower secondary
+1578,,5,0,Female,56,Lower secondary
+1579,,4,0,Female,57,Lower secondary
+1580,,7,1,Male,26,Upper secondary
+1581,,9,1,Male,42,Tertiary
+1582,,5,0,Female,52,Upper secondary
+1583,,8,0,Male,89,Lower secondary
+1584,,0,0,Female,74,Lower secondary
+1585,,3,0,Male,57,Lower secondary
+1586,,8,0,Male,31,Upper secondary
+1587,,5,0,Male,47,Upper secondary
+1588,,0,0,Male,69,Upper secondary
+1589,,7,0,Male,38,Upper secondary
+1590,,5,0,Male,62,Tertiary
+1591,,8,0,Male,68,Upper secondary
+1592,,9,0,Male,58,Upper secondary
+1593,,8,0,Female,38,Upper secondary
+1594,,4,0,Male,62,Upper secondary
+1595,,5,0,Male,55,Upper secondary
+1596,,3,0,Male,16,Lower secondary
+1597,,7,1,Male,27,Tertiary
+1598,,5,0,Female,86,Lower secondary
+1599,,3,0,Female,17,Lower secondary
+1600,,0,0,Female,55,Lower secondary
+1601,,,0,Male,41,Upper secondary
+1602,,7,0,Female,31,Upper secondary
+1603,,8,1,Female,56,Upper secondary
+1604,,7,1,Female,31,Tertiary
+1605,,5,0,Male,58,Lower secondary
+1606,,,1,Female,25,Tertiary
+1607,,3,0,Male,56,Lower secondary
+1608,,8,1,Male,50,Tertiary
+1609,,2,0,Male,81,Lower secondary
+1610,,7,1,Female,31,Lower secondary
+1611,,5,0,Female,29,Upper secondary
+1612,,4,0,Female,41,Lower secondary
+1613,,5,1,Male,39,Lower secondary
+1614,,8,0,Male,17,Upper secondary
+1615,,4,0,Female,49,Upper secondary
+1616,,6,0,Female,56,Upper secondary
+1617,,5,0,Female,16,Lower secondary
+1618,,10,0,Female,17,Lower secondary
+1619,,5,0,Male,18,Upper secondary
+1620,,7,1,Male,54,Tertiary
+1621,,9,1,Male,19,Lower secondary
+1622,,5,1,Male,36,Upper secondary
+1623,,0,0,Female,41,Lower secondary
+1624,,6,1,Female,30,Upper secondary
+1625,,6,0,Female,39,Upper secondary
+1626,,7,1,Female,35,Upper secondary
+1627,,2,0,Male,59,Upper secondary
+1628,,4,0,Male,56,Upper secondary
+1629,,0,0,Male,54,Lower secondary
+1630,,2,0,Female,22,Tertiary
+1631,,9,1,Female,43,Tertiary
+1632,,5,0,Female,28,Upper secondary
+1633,,7,1,Female,41,Tertiary
+1634,,3,0,Female,60,Lower secondary
+1635,,2,0,Female,18,Upper secondary
+1636,,5,0,Male,24,Upper secondary
+1637,,7,0,Male,17,Lower secondary
+1638,,3,0,Female,28,Upper secondary
+1639,,7,1,Female,47,Tertiary
+1640,,5,1,Female,37,Lower secondary
+1641,,4,0,Female,27,Upper secondary
+1642,,8,1,Male,29,Tertiary
+1643,,9,0,Female,18,Upper secondary
+1644,,7,0,Female,31,Lower secondary
+1645,,9,0,Female,58,Lower secondary
+1646,,5,0,Male,28,Lower secondary
+1647,,2,0,Male,57,Upper secondary
+1648,,1,0,Male,32,Upper secondary
+1649,,5,1,Female,49,Tertiary
+1650,,7,1,Female,39,Lower secondary
+1651,,8,1,Female,28,Tertiary
+1652,,0,0,Female,74,Lower secondary
+1653,,9,1,Female,35,Lower secondary
+1654,,9,0,Female,17,Lower secondary
+1655,,8,0,Male,21,Upper secondary
+1656,,3,0,Female,70,Lower secondary
+1657,,7,0,Male,71,Tertiary
+1658,,9,0,Female,18,Upper secondary
+1659,,6,0,Female,33,Upper secondary
+1660,,8,1,Male,18,Upper secondary
+1661,,7,0,Female,17,Upper secondary
+1662,,10,1,Male,22,Tertiary
+1663,,5,0,Female,38,Upper secondary
+1664,,5,0,Male,15,Lower secondary
+1665,,7,0,Male,52,Upper secondary
+1666,,8,1,Male,63,Lower secondary
+1667,,2,0,Female,45,Lower secondary
+1668,,1,0,Female,22,Lower secondary
+1669,,3,0,Male,60,Lower secondary
+1670,,8,0,Female,58,Tertiary
+1671,,6,0,Male,30,Upper secondary
+1672,,0,0,Male,42,Upper secondary
+1673,,6,0,Female,15,Lower secondary
+1674,,5,0,Male,19,Lower secondary
+1675,,8,1,Female,28,Lower secondary
+1676,,4,0,Female,49,Upper secondary
+1677,,8,1,Male,56,Tertiary
+1678,,3,0,Male,43,Upper secondary
+1679,,5,0,Female,36,Upper secondary
+1680,,5,0,Male,48,Tertiary
+1681,,5,1,Male,30,Tertiary
+1682,,2,0,Female,81,Lower secondary
+1683,,7,0,Female,29,Upper secondary
+1684,,2,0,Female,47,Upper secondary
+1685,,,0,Male,,Lower secondary
+1686,,2,0,Female,57,Upper secondary
+1687,,4,0,Female,34,Upper secondary
+1688,,1,0,Female,64,Lower secondary
+1689,,5,1,Female,32,Tertiary
+1690,,0,0,Female,53,Upper secondary
+1691,,5,0,Male,66,Tertiary
+1692,,8,1,Female,30,Upper secondary
+1693,,6,0,Male,24,Upper secondary
+1694,,7,0,Female,69,Lower secondary
+1695,,10,1,Female,38,Upper secondary
+1696,,,1,Male,27,Upper secondary
+1697,,7,1,Male,34,Upper secondary
+1698,,0,0,Female,54,Upper secondary
+1699,,7,1,Male,36,Upper secondary
+1700,,8,1,Male,,Tertiary
+1701,,0,0,Female,49,Upper secondary
+1702,,1,1,Female,30,Tertiary
+1703,,7,0,Male,80,Lower secondary
+1704,,8,1,Male,28,Lower secondary
+1705,,7,0,Male,48,Upper secondary
+1706,,5,1,Female,33,Tertiary
+1707,,5,0,Male,41,Upper secondary
+1708,,1,0,Male,40,Lower secondary
+1709,,1,0,Female,39,Lower secondary
+1710,,7,1,Female,49,Tertiary
+1711,,5,1,Male,27,Lower secondary
+1712,,4,0,Female,77,Lower secondary
+1713,,4,0,Female,56,Lower secondary
+1714,,2,0,Male,54,Lower secondary
+1715,,5,1,Male,21,Upper secondary
+1716,,5,1,Female,26,Tertiary
+1717,,9,0,Female,30,Lower secondary
+1718,,1,0,Female,23,Lower secondary
+1719,,10,1,Male,48,Tertiary
+1720,,7,0,Male,15,Lower secondary
+1721,,7,1,Male,31,Tertiary
+1722,,7,0,Male,53,Tertiary
+1723,,7,1,Male,36,Upper secondary
+1724,,6,1,Female,36,Tertiary
+1725,,10,1,Male,51,Upper secondary
+1726,,2,1,Male,42,Tertiary
+1727,,6,0,Female,19,Lower secondary
+1728,,,0,Female,82,Lower secondary
+1729,,,0,Male,51,Lower secondary
+1730,,7,0,Female,31,Upper secondary
+1731,,7,0,Female,26,Tertiary
+1732,,7,1,Male,32,Tertiary
+1733,,6,0,Male,17,
+1734,,7,0,Male,27,Upper secondary
+1735,,5,0,Male,49,Lower secondary
+1736,,7,0,Male,21,Upper secondary
+1737,,5,0,Female,58,Tertiary
+1738,,4,0,Male,,Lower secondary
+1739,,5,1,Female,31,Upper secondary
+1740,,5,0,Male,36,Upper secondary
+1741,,10,1,Female,36,Tertiary
+1742,,5,0,Female,52,Upper secondary
+1743,,8,0,Female,46,Upper secondary
+1744,,3,1,Male,46,Tertiary
+1745,,1,0,Male,41,Lower secondary
+1746,,2,0,Female,54,
+1747,,9,1,Female,50,Upper secondary
+1748,,1,0,Female,28,Upper secondary
+1749,,8,0,Female,54,Upper secondary
+1750,,6,0,Male,21,Lower secondary
+1751,,1,0,Male,63,Lower secondary
+1752,,9,1,Female,29,Tertiary
+1753,,3,0,Female,49,Upper secondary
+1754,,7,0,Male,24,Upper secondary
+1755,,6,1,Female,33,Upper secondary
+1756,,5,0,Male,53,Lower secondary
+1757,,1,0,Male,52,Lower secondary
+1758,,2,0,Female,19,Lower secondary
+1759,,5,0,Female,41,Upper secondary
+1760,,5,1,Female,48,Lower secondary
+1761,,3,0,Female,27,Lower secondary
+1762,,6,1,Female,39,Upper secondary
+1763,,6,0,Male,58,Upper secondary
+1764,,1,0,Male,26,Tertiary
+1765,,6,0,Female,62,Lower secondary
+1766,,5,1,Female,25,Lower secondary
+1767,,0,0,Male,21,Lower secondary
+1768,,3,0,Male,38,Tertiary
+1769,,5,1,Male,40,Upper secondary
+1770,,5,0,Male,20,Lower secondary
+1771,,5,0,Female,19,Upper secondary
+1772,,4,0,Male,55,Lower secondary
+1773,,7,0,Female,54,Upper secondary
+1774,,5,0,Female,72,Upper secondary
+1775,,1,0,Male,76,Lower secondary
+1776,,9,1,Female,30,Tertiary
+1777,,8,1,Female,19,Lower secondary
+1778,,4,0,Male,50,Lower secondary
+1779,,5,0,Female,51,Upper secondary
+1780,,5,0,Female,34,Upper secondary
+1781,,3,0,Male,68,Lower secondary
+1782,,7,1,Female,,Tertiary
+1783,,5,0,Female,29,Lower secondary
+1784,,5,1,Female,32,Lower secondary
+1785,,5,0,Male,44,Upper secondary
+1786,,8,0,Female,41,Upper secondary
+1787,,9,1,Female,38,Tertiary
+1788,,7,0,Male,20,Upper secondary
+1789,,6,1,Female,40,
+1790,,10,0,Male,51,Upper secondary
+1791,,5,0,Female,22,Tertiary
+1792,,0,0,Female,90,Lower secondary
+1793,,7,0,Male,76,Lower secondary
+1794,,6,1,Male,90,Lower secondary
+1795,,7,1,Female,47,Lower secondary
+1796,,9,1,Male,47,Tertiary
+1797,,5,1,Male,42,Tertiary
+1798,,9,0,Female,18,Upper secondary
+1799,,6,0,Male,29,Upper secondary
+1800,,9,0,Female,45,Tertiary
+1801,,2,0,Female,34,Upper secondary
+1802,,10,1,Female,44,Upper secondary
+1803,,6,0,Male,31,Tertiary
+1804,,4,0,Male,16,Lower secondary
+1805,,7,1,Male,56,Upper secondary
+1806,,5,0,Female,56,Lower secondary
+1807,,0,1,Female,71,Upper secondary
+1808,,5,0,Male,60,Upper secondary
+1809,,7,1,Female,35,Tertiary
+1810,,2,0,Male,35,Lower secondary
+1811,,10,1,Male,63,Lower secondary
+1812,,9,1,Female,33,Lower secondary
+1813,,7,0,Male,61,Lower secondary
+1814,,6,0,Male,58,Lower secondary
+1815,,4,0,Female,69,Upper secondary
+1816,,5,0,Male,18,Lower secondary
+1817,,3,0,Female,30,Upper secondary
+1818,,3,0,Male,42,Upper secondary
+1819,,2,0,Male,47,Upper secondary
+1820,,5,0,Male,51,Upper secondary
+1821,,6,0,Male,22,Upper secondary
+1822,,3,0,Male,54,Lower secondary
+1823,,9,1,Female,33,Upper secondary
+1824,,6,0,Female,74,Upper secondary
+1825,,10,1,Female,37,Tertiary
+1826,,4,0,Male,52,Upper secondary
+1827,,0,0,Female,59,Lower secondary
+1828,,1,0,Male,58,Lower secondary
+1829,,7,1,Female,28,Lower secondary
+1830,,5,0,Female,68,
+1831,,5,1,Female,48,Tertiary
+1832,,8,1,Female,43,Tertiary
+1833,,5,0,Female,48,Upper secondary
+1834,,0,0,Female,51,Lower secondary
+1835,,1,0,Female,50,Lower secondary
+1836,,4,1,Male,43,Tertiary
+1837,,3,0,Male,66,Lower secondary
+1838,,8,1,Male,23,Lower secondary
+1839,,3,0,Male,68,Upper secondary
+1840,,5,0,Male,45,Tertiary
+1841,,0,0,Male,53,Lower secondary
+1842,,4,0,Female,54,Lower secondary
+1843,,1,0,Female,63,Upper secondary
+1844,,10,0,Female,44,Tertiary
+1845,,3,0,Female,43,Upper secondary
+1846,,8,0,Female,31,Upper secondary
+1847,,9,1,Female,30,Tertiary
+1848,,8,1,Female,30,Tertiary
+1849,,10,1,Female,57,Lower secondary
+1850,,0,0,Male,47,Lower secondary
+1851,,3,0,Female,60,Upper secondary
+1852,,5,0,Female,21,Lower secondary
+1853,,5,0,Female,77,Lower secondary
+1854,,5,0,Male,28,Upper secondary
+1855,,10,0,Female,40,Tertiary
+1856,,5,0,Female,43,Tertiary
+1857,,7,1,Female,45,Tertiary
+1858,,5,0,Female,65,Upper secondary
+1859,,8,1,Male,35,Upper secondary
+1860,,2,0,Female,66,Lower secondary
+1861,,5,0,Male,53,Upper secondary
+1862,,4,0,Female,40,Upper secondary
+1863,,0,0,Female,30,Lower secondary
+1864,,6,0,Female,38,Tertiary
+1865,,4,0,Female,36,Upper secondary
+1866,,9,0,Female,18,Upper secondary
+1867,,8,0,Male,56,Lower secondary
+1868,,5,0,Male,19,Upper secondary
+1869,,5,1,Female,31,Tertiary
+1870,,3,0,Male,38,Upper secondary
+1871,,5,1,Female,70,Lower secondary
+1872,,8,0,Female,26,Tertiary
+1873,,5,1,Male,36,Tertiary
+1874,,9,1,Male,41,Tertiary
+1875,,6,1,Female,56,Tertiary
+1876,,0,0,Female,16,Tertiary
+1877,,7,0,Female,19,Upper secondary
+1878,,5,1,Female,39,Lower secondary
+1879,,5,0,Female,34,Lower secondary
+1880,,7,0,Male,21,Tertiary
+1881,,4,0,Female,50,Lower secondary
+1882,,10,1,Female,36,Tertiary
+1883,,0,0,Female,39,Lower secondary
+1884,,10,1,Female,23,Upper secondary
+1885,,10,1,Male,32,Upper secondary
+1886,,0,0,Female,25,Lower secondary
+1887,,8,1,Female,77,Upper secondary
+1888,,6,0,Female,65,Lower secondary
+1889,,7,1,Female,30,
+1890,,3,0,Female,53,Lower secondary
+1891,,5,0,Male,48,Tertiary
+1892,,0,0,Female,54,Upper secondary
+1893,,1,0,Male,53,Lower secondary
+1894,,9,0,Male,50,Upper secondary
+1895,,7,0,Male,26,Upper secondary
+1896,,5,0,Female,17,Lower secondary
+1897,,5,0,Female,45,Upper secondary
+1898,,8,0,Female,17,Lower secondary
+1899,,5,0,Male,20,Lower secondary
+1900,,7,1,Male,54,Tertiary
+1901,,8,0,Male,40,Tertiary
+1902,,5,0,Male,70,Lower secondary
+1903,,8,0,Male,19,Upper secondary
+1904,,5,0,Female,51,Upper secondary
+1905,,2,0,Female,62,Lower secondary
+1906,,9,1,Female,32,Tertiary
+1907,,6,0,Male,18,Upper secondary
+1908,,2,0,Female,68,Upper secondary
+1909,,3,0,Female,26,Tertiary
+1910,,9,0,Female,44,Lower secondary
+1911,,8,0,Female,71,
+1912,,7,0,Female,16,Lower secondary
+1913,,3,0,Male,21,Upper secondary
+1914,,5,1,Female,55,Upper secondary
+1915,,8,0,Female,31,Lower secondary
+1916,,1,0,Male,30,Lower secondary
+1917,,2,0,Female,85,Lower secondary
+1918,,,0,Female,33,Upper secondary
+1919,,2,1,Male,83,Upper secondary
+1920,,9,0,Male,52,Tertiary
+1921,,4,0,Female,37,Upper secondary
+1922,,7,0,Male,83,Lower secondary
+1923,,6,0,Female,27,Lower secondary
+1924,,7,1,Female,29,Tertiary
+1925,,3,0,Female,22,Lower secondary
+1926,,5,0,Male,38,Lower secondary
+1927,,4,0,Female,55,Lower secondary
+1928,,5,0,Female,28,Lower secondary
+1929,,5,0,Male,39,Upper secondary
+1930,,5,0,Female,26,Upper secondary
+1931,,8,1,Female,39,Upper secondary
+1932,,8,1,Female,23,Tertiary
+1933,,10,1,Female,20,
+1934,,5,0,Female,41,Tertiary
+1935,,10,0,Male,64,Upper secondary
+1936,,8,0,Male,36,Tertiary
+1937,,1,0,Female,36,Lower secondary
+1938,,3,0,Male,45,Lower secondary
+1939,,2,0,Female,22,Lower secondary
+1940,,8,0,Female,18,Lower secondary
+1941,,3,0,Male,50,Lower secondary
+1942,,3,0,Female,45,Tertiary
+1943,,0,0,Female,19,Lower secondary
+1944,,7,0,Male,49,Lower secondary
+1945,,6,0,Male,39,Upper secondary
+1946,,6,1,Female,25,Upper secondary
+1947,,1,0,Female,74,Lower secondary
+1948,,2,1,Male,54,Tertiary
+1949,,3,0,Male,24,Upper secondary
+1950,,7,0,Female,16,Lower secondary
+1951,,2,0,Female,49,Lower secondary
+1952,,5,0,Male,77,Upper secondary
+1953,,8,0,Female,23,Upper secondary
+1954,,2,0,Female,53,Upper secondary
+1955,,2,0,Male,38,Upper secondary
+1956,,4,0,Female,25,Upper secondary
+1957,,6,0,Male,44,Upper secondary
+1958,,7,0,Female,39,Tertiary
+1959,,8,1,Female,55,Tertiary
+1960,,7,1,Female,40,Tertiary
+1961,,6,0,Female,52,Tertiary
+1962,,,0,Male,47,Upper secondary
+1963,,0,0,Male,28,Lower secondary
+1964,,7,0,Male,49,Lower secondary
+1965,,4,0,Male,38,Lower secondary
+1966,,10,1,Male,38,Tertiary
+1967,,6,1,Male,23,Lower secondary
+1968,,7,0,Male,27,Upper secondary
+1969,,7,0,Female,52,Lower secondary
+1970,,3,0,Male,31,Lower secondary
+1971,,0,0,Female,50,Upper secondary
+1972,,0,0,Male,36,Upper secondary
+1973,,5,0,Male,16,Upper secondary
+1974,,10,0,Male,18,Upper secondary
+1975,,5,0,Female,73,Lower secondary
+1976,,1,0,Female,31,Tertiary
+1977,,,0,Female,32,Tertiary
+1978,,7,0,Female,17,Upper secondary
+1979,,8,1,Female,52,Upper secondary
+1980,,2,0,Female,33,Upper secondary
+1981,,5,1,Female,21,Tertiary
+1982,,5,0,Female,35,Upper secondary
+1983,,6,1,Male,36,
+1984,,4,0,Female,80,Lower secondary
+1985,,5,0,Female,34,Upper secondary
+1986,,1,0,Male,57,Upper secondary
+1987,,5,0,Male,56,Lower secondary
+1988,,4,0,Female,87,Upper secondary
+1989,,9,1,Male,41,Lower secondary
+1990,,0,0,Female,70,Upper secondary
+1991,,5,1,Female,47,Tertiary
+1992,,7,1,Male,39,Tertiary
+1993,,5,0,Female,18,Upper secondary
+1994,,5,0,Male,30,Lower secondary
+1995,,0,0,Male,63,Upper secondary
+1996,,4,0,Female,71,Lower secondary
+1997,,5,0,Male,20,Lower secondary
+1998,,0,0,Female,55,Lower secondary
+1999,,5,0,Male,38,Upper secondary
+2000,,7,0,Male,15,Lower secondary
+2001,,3,0,Male,38,Upper secondary
+2002,,7,1,Male,33,Tertiary
+2003,,7,0,Female,41,Upper secondary
+2004,,8,1,Female,36,Lower secondary
+2005,,9,0,Male,58,Upper secondary
+2006,,8,1,Male,38,
+2007,,10,0,Female,15,Lower secondary
+2008,,5,0,Female,30,Tertiary
+2009,,4,1,Female,80,Lower secondary
+2010,,10,1,Female,47,Lower secondary
+2011,,5,0,Female,34,Upper secondary
+2012,,1,0,Female,41,Upper secondary
+2013,,5,1,Female,79,Upper secondary
+2014,,5,1,Male,23,
+2015,,0,1,Female,49,Upper secondary
+2016,,5,0,Female,44,Tertiary
+2017,,5,0,Male,76,Lower secondary
+2018,,4,0,Male,26,Upper secondary
+2019,,3,0,Female,49,Lower secondary
+2020,,7,0,Female,39,Upper secondary
+2021,,7,0,Female,27,Upper secondary
+2022,,5,0,Male,69,Upper secondary
+2023,,6,0,Female,33,Upper secondary
+2024,,3,1,Male,23,Upper secondary
+2025,,9,1,Male,30,Tertiary
+2026,,5,0,Male,33,Upper secondary
+2027,,6,1,Female,17,Lower secondary
+2028,,9,0,Male,16,Lower secondary
+2029,,5,0,Female,17,Lower secondary
+2030,,7,0,Female,39,Lower secondary
+2031,,,0,Female,39,Upper secondary
+2032,,5,0,Male,52,Upper secondary
+2033,,7,1,Male,25,Tertiary
+2034,,5,0,Female,35,Lower secondary
+2035,,5,0,Female,17,Upper secondary
+2036,,7,1,Male,24,Tertiary
+2037,,5,0,Female,15,Lower secondary
+2038,,7,0,Female,26,Upper secondary
+2039,,3,0,Male,31,Upper secondary
+2040,,3,0,Female,19,Upper secondary
+2041,,5,0,Male,26,Lower secondary
+2042,,4,0,Female,44,Upper secondary
+2043,,4,0,Female,18,Lower secondary
+2044,,0,0,Female,19,Lower secondary
+2045,,7,1,Female,37,Tertiary
+2046,,6,0,Female,90,Lower secondary
+2047,,8,1,Female,25,Tertiary
+2048,,5,0,Female,78,Upper secondary
+2049,,1,0,Male,30,Lower secondary
+2050,,0,1,Male,56,Lower secondary
+2051,,9,1,Female,34,Lower secondary
+2052,,5,0,Male,26,Lower secondary
+2053,,7,1,Female,35,Tertiary
+2054,,0,0,Female,18,Lower secondary
+2055,,9,0,Male,18,Upper secondary
+2056,,2,0,Female,39,Upper secondary
+2057,,5,0,Female,33,Upper secondary
+2058,,5,0,Female,70,Lower secondary
+2059,,7,0,Male,36,Upper secondary
+2060,,9,0,Female,33,Tertiary
+2061,,2,0,Female,77,Lower secondary
+2062,,5,0,Female,18,Upper secondary
+2063,,8,0,Female,63,Lower secondary
+2064,,5,0,Male,49,Tertiary
+2065,,0,0,Female,32,Upper secondary
+2066,,6,0,Female,80,Upper secondary
+2067,,,1,Male,44,Upper secondary
+2068,,10,1,Male,39,Tertiary
+2069,,0,0,Female,70,Lower secondary
+2070,,10,1,Female,61,
+2071,,5,0,Female,15,Lower secondary
+2072,,6,1,Female,29,Upper secondary
+2073,,5,0,Male,19,
+2074,,5,0,Male,33,Upper secondary
+2075,,3,0,Male,32,Lower secondary
+2076,,3,0,Male,66,Upper secondary
+2077,,2,0,Female,31,Lower secondary
+2078,,8,1,Male,23,Upper secondary
+2079,,8,1,Female,36,Upper secondary
+2080,,8,0,Female,83,Lower secondary
+2081,,5,0,Female,36,Upper secondary
+2082,,1,0,Female,22,
+2083,,3,1,Female,40,Tertiary
+2084,,9,1,Female,32,Tertiary
+2085,,9,0,Male,85,Lower secondary
+2086,,7,0,Female,89,Upper secondary
+2087,,1,0,Female,58,Lower secondary
+2088,,5,0,Female,30,Upper secondary
+2089,,5,0,Female,56,Upper secondary
+2090,,5,0,Male,74,Upper secondary
+2091,,5,0,Female,65,Upper secondary
+2092,,4,0,Male,49,Lower secondary
+2093,,10,0,Female,81,Lower secondary
+2094,,7,0,Female,72,Upper secondary
+2095,,5,0,Female,45,Tertiary
+2096,,9,0,Female,69,Upper secondary
+2097,,6,0,Female,49,Upper secondary
+2098,,5,0,Male,76,Tertiary
+2099,,6,0,Female,56,Tertiary
+2100,,8,0,Male,72,Tertiary
+2101,,5,0,Male,54,Upper secondary
+2102,,5,0,Male,72,Tertiary
+2103,,4,0,Male,67,Lower secondary
+2104,,6,0,Female,79,Upper secondary
+2105,,8,0,Female,50,Tertiary
+2106,,1,0,Female,78,Lower secondary
+2107,,8,0,Female,55,Upper secondary
+2108,,7,0,Female,72,Lower secondary
+2109,,6,0,Female,66,Tertiary
+2110,,5,0,Female,36,Upper secondary
+2111,,8,0,Female,51,Tertiary
+2112,,10,0,Female,42,Tertiary
+2113,,5,0,Male,63,Upper secondary
+2114,,5,0,Male,35,Upper secondary
+2115,,,0,Female,78,Lower secondary
+2116,,7,0,Male,34,Lower secondary
+2117,,0,0,Female,28,Upper secondary
+2118,,7,1,Male,46,Tertiary
+2119,,2,0,Female,58,
+2120,,0,0,Female,77,Lower secondary
+2121,,0,0,Female,58,Lower secondary
+2122,,5,0,Male,58,Lower secondary
+2123,,10,0,Female,72,
+2124,,2,0,Female,67,Lower secondary
+2125,,7,0,Female,29,Upper secondary
+2126,,4,0,Male,63,Upper secondary
+2127,,5,0,Female,87,Tertiary
+2128,,10,0,Female,67,Tertiary
+2129,,,0,Female,65,Tertiary
+2130,,9,0,Female,41,Tertiary
+2131,,8,0,Male,,Tertiary
+2132,,6,0,Male,59,Upper secondary
+2133,,7,0,Male,76,Tertiary
+2134,,8,1,Male,38,Tertiary
+2135,,8,0,Female,,Tertiary
+2136,,6,0,Male,75,
+2137,,5,0,Female,88,Upper secondary
+2138,,5,0,Male,40,Upper secondary
+2139,,5,0,Female,60,Lower secondary
+2140,,0,0,Male,84,Lower secondary
+2141,,8,0,Female,60,Tertiary
+2142,,5,0,Male,26,Lower secondary
+2143,,4,0,Female,87,Upper secondary
+2144,,5,0,Male,59,Lower secondary
+2145,,7,0,Male,49,Upper secondary
+2146,,3,0,Female,67,Lower secondary
+2147,,2,0,Female,69,Tertiary
+2148,,10,0,Female,39,Tertiary
+2149,,7,0,Female,36,Tertiary
+2150,,7,0,Female,48,Upper secondary
+2151,,6,0,Male,29,Upper secondary
+2152,,0,0,Female,52,Tertiary
+2153,,8,0,Female,70,Upper secondary
+2154,,3,0,Male,63,Upper secondary
+2155,,0,0,Male,78,Tertiary
+2156,,1,0,Male,76,Upper secondary
+2157,,2,0,Female,61,Upper secondary
+2158,,6,0,Female,69,Upper secondary
+2159,,5,0,Female,28,Upper secondary
+2160,,7,0,Male,85,
+2161,,6,0,Male,84,
+2162,,6,0,Female,51,Upper secondary
+2163,,5,0,Female,47,Tertiary
+2164,,4,1,Female,36,Upper secondary
+2165,,5,0,Female,90,Upper secondary
+2166,,6,0,Male,58,Lower secondary
+2167,,8,1,Male,40,Lower secondary
+2168,,8,0,Male,55,Upper secondary
+2169,,5,0,Female,31,Upper secondary
+2170,,10,0,Male,42,Tertiary
+2171,,10,0,Male,45,Lower secondary
+2172,,4,0,Female,27,Lower secondary
+2173,,3,0,Female,42,Upper secondary
+2174,,6,0,Female,49,Tertiary
+2175,,7,1,Male,61,Tertiary
+2176,,5,0,Female,76,Lower secondary
+2177,,1,0,Female,71,Upper secondary
+2178,,8,0,Female,30,Lower secondary
+2179,,1,0,Female,33,Upper secondary
+2180,,7,0,Female,61,Tertiary
+2181,,9,0,Female,65,Upper secondary
+2182,,7,1,Female,39,Upper secondary
+2183,,9,0,Female,46,Tertiary
+2184,,1,1,Female,31,Lower secondary
+2185,,7,0,Female,36,Tertiary
+2186,,6,0,Female,32,Upper secondary
+2187,,8,0,Female,41,Upper secondary
+2188,,7,0,Male,41,Tertiary
+2189,,8,0,Male,67,Tertiary
+2190,,7,0,Female,35,Tertiary
+2191,,4,0,Male,64,Upper secondary
+2192,,2,1,Female,85,Lower secondary
+2193,,4,0,Female,31,Lower secondary
+2194,,5,0,Male,77,Lower secondary
+2195,,5,0,Female,68,Lower secondary
+2196,,5,0,Male,33,Upper secondary
+2197,,4,0,Male,53,Tertiary
+2198,,7,0,Female,26,Upper secondary
+2199,,5,0,Female,33,Upper secondary
+2200,,5,0,Male,70,Upper secondary
+2201,,9,0,Female,32,Tertiary
+2202,,5,0,Female,69,Lower secondary
+2203,,5,0,Female,34,Upper secondary
+2204,,2,0,Male,23,Lower secondary
+2205,,0,0,Female,54,Upper secondary

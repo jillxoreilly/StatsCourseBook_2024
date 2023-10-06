@@ -1,0 +1,165 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# output the relevant descriptive statistics
+heartRate.quantile([0.25,0.5,0.75])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[17], line 2[0m
+[1;32m      1[0m [38;5;66;03m# output the relevant descriptive statistics[39;00m
+[0;32m----> 2[0m [43mheartRate[49m[38;5;241;43m.[39;49m[43mquantile[49m[43m([49m[43m[[49m[38;5;241;43m0.25[39;49m[43m,[49m[38;5;241;43m0.5[39;49m[43m,[49m[38;5;241;43m0.75[39;49m[43m][49m[43m)[49m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:10927[0m, in [0;36mDataFrame.quantile[0;34m(self, q, axis, numeric_only, interpolation, method)[0m
+[1;32m  10923[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m  10924[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mInvalid method: [39m[38;5;132;01m{[39;00mmethod[38;5;132;01m}[39;00m[38;5;124m. Method must be in [39m[38;5;132;01m{[39;00mvalid_method[38;5;132;01m}[39;00m[38;5;124m.[39m[38;5;124m"[39m
+[1;32m  10925[0m     )
+[1;32m  10926[0m [38;5;28;01mif[39;00m method [38;5;241m==[39m [38;5;124m"[39m[38;5;124msingle[39m[38;5;124m"[39m:
+[0;32m> 10927[0m     res [38;5;241m=[39m [43mdata[49m[38;5;241;43m.[39;49m[43m_mgr[49m[38;5;241;43m.[39;49m[43mquantile[49m[43m([49m[43mqs[49m[38;5;241;43m=[39;49m[43mq[49m[43m,[49m[43m [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[43minterpolation[49m[38;5;241;43m=[39;49m[43minterpolation[49m[43m)[49m
+[1;32m  10928[0m [38;5;28;01melif[39;00m method [38;5;241m==[39m [38;5;124m"[39m[38;5;124mtable[39m[38;5;124m"[39m:
+[1;32m  10929[0m     valid_interpolation [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mnearest[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mlower[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mhigher[39m[38;5;124m"[39m}
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1587[0m, in [0;36mBlockManager.quantile[0;34m(self, qs, axis, interpolation)[0m
+[1;32m   1584[0m new_axes [38;5;241m=[39m [38;5;28mlist[39m([38;5;28mself[39m[38;5;241m.[39maxes)
+[1;32m   1585[0m new_axes[[38;5;241m1[39m] [38;5;241m=[39m Index(qs, dtype[38;5;241m=[39mnp[38;5;241m.[39mfloat64)
+[0;32m-> 1587[0m blocks [38;5;241m=[39m [
+[1;32m   1588[0m     blk[38;5;241m.[39mquantile(axis[38;5;241m=[39maxis, qs[38;5;241m=[39mqs, interpolation[38;5;241m=[39minterpolation)
+[1;32m   1589[0m     [38;5;28;01mfor[39;00m blk [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mblocks
+[1;32m   1590[0m ]
+[1;32m   1592[0m [38;5;28;01mreturn[39;00m [38;5;28mtype[39m([38;5;28mself[39m)(blocks, new_axes)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1588[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m   1584[0m new_axes [38;5;241m=[39m [38;5;28mlist[39m([38;5;28mself[39m[38;5;241m.[39maxes)
+[1;32m   1585[0m new_axes[[38;5;241m1[39m] [38;5;241m=[39m Index(qs, dtype[38;5;241m=[39mnp[38;5;241m.[39mfloat64)
+[1;32m   1587[0m blocks [38;5;241m=[39m [
+[0;32m-> 1588[0m     [43mblk[49m[38;5;241;43m.[39;49m[43mquantile[49m[43m([49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m[43m [49m[43mqs[49m[38;5;241;43m=[39;49m[43mqs[49m[43m,[49m[43m [49m[43minterpolation[49m[38;5;241;43m=[39;49m[43minterpolation[49m[43m)[49m
+[1;32m   1589[0m     [38;5;28;01mfor[39;00m blk [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mblocks
+[1;32m   1590[0m ]
+[1;32m   1592[0m [38;5;28;01mreturn[39;00m [38;5;28mtype[39m([38;5;28mself[39m)(blocks, new_axes)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/blocks.py:1463[0m, in [0;36mBlock.quantile[0;34m(self, qs, interpolation, axis)[0m
+[1;32m   1460[0m [38;5;28;01massert[39;00m axis [38;5;241m==[39m [38;5;241m1[39m  [38;5;66;03m# only ever called this way[39;00m
+[1;32m   1461[0m [38;5;28;01massert[39;00m is_list_like(qs)  [38;5;66;03m# caller is responsible for this[39;00m
+[0;32m-> 1463[0m result [38;5;241m=[39m [43mquantile_compat[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mvalues[49m[43m,[49m[43m [49m[43mnp[49m[38;5;241;43m.[39;49m[43masarray[49m[43m([49m[43mqs[49m[38;5;241;43m.[39;49m[43m_values[49m[43m)[49m[43m,[49m[43m [49m[43minterpolation[49m[43m)[49m
+[1;32m   1464[0m [38;5;66;03m# ensure_block_shape needed for cases where we start with EA and result[39;00m
+[1;32m   1465[0m [38;5;66;03m#  is ndarray, e.g. IntegerArray, SparseArray[39;00m
+[1;32m   1466[0m result [38;5;241m=[39m ensure_block_shape(result, ndim[38;5;241m=[39m[38;5;241m2[39m)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:37[0m, in [0;36mquantile_compat[0;34m(values, qs, interpolation)[0m
+[1;32m     35[0m     fill_value [38;5;241m=[39m na_value_for_dtype(values[38;5;241m.[39mdtype, compat[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m     36[0m     mask [38;5;241m=[39m isna(values)
+[0;32m---> 37[0m     [38;5;28;01mreturn[39;00m [43mquantile_with_mask[49m[43m([49m[43mvalues[49m[43m,[49m[43m [49m[43mmask[49m[43m,[49m[43m [49m[43mfill_value[49m[43m,[49m[43m [49m[43mqs[49m[43m,[49m[43m [49m[43minterpolation[49m[43m)[49m
+[1;32m     38[0m [38;5;28;01melse[39;00m:
+[1;32m     39[0m     [38;5;28;01mreturn[39;00m values[38;5;241m.[39m_quantile(qs, interpolation)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:95[0m, in [0;36mquantile_with_mask[0;34m(values, mask, fill_value, qs, interpolation)[0m
+[1;32m     93[0m     result [38;5;241m=[39m np[38;5;241m.[39mrepeat(flat, [38;5;28mlen[39m(values))[38;5;241m.[39mreshape([38;5;28mlen[39m(values), [38;5;28mlen[39m(qs))
+[1;32m     94[0m [38;5;28;01melse[39;00m:
+[0;32m---> 95[0m     result [38;5;241m=[39m [43m_nanpercentile[49m[43m([49m
+[1;32m     96[0m [43m        [49m[43mvalues[49m[43m,[49m
+[1;32m     97[0m [43m        [49m[43mqs[49m[43m [49m[38;5;241;43m*[39;49m[43m [49m[38;5;241;43m100.0[39;49m[43m,[49m
+[1;32m     98[0m [43m        [49m[43mna_value[49m[38;5;241;43m=[39;49m[43mfill_value[49m[43m,[49m
+[1;32m     99[0m [43m        [49m[43mmask[49m[38;5;241;43m=[39;49m[43mmask[49m[43m,[49m
+[1;32m    100[0m [43m        [49m[43minterpolation[49m[38;5;241;43m=[39;49m[43minterpolation[49m[43m,[49m
+[1;32m    101[0m [43m    [49m[43m)[49m
+[1;32m    103[0m     result [38;5;241m=[39m np[38;5;241m.[39marray(result, copy[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m    104[0m     result [38;5;241m=[39m result[38;5;241m.[39mT
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:216[0m, in [0;36m_nanpercentile[0;34m(values, qs, na_value, mask, interpolation)[0m
+[1;32m    214[0m     [38;5;28;01mreturn[39;00m result
+[1;32m    215[0m [38;5;28;01melse[39;00m:
+[0;32m--> 216[0m     [38;5;28;01mreturn[39;00m [43mnp[49m[38;5;241;43m.[39;49m[43mpercentile[49m[43m([49m
+[1;32m    217[0m [43m        [49m[43mvalues[49m[43m,[49m
+[1;32m    218[0m [43m        [49m[43mqs[49m[43m,[49m
+[1;32m    219[0m [43m        [49m[43maxis[49m[38;5;241;43m=[39;49m[38;5;241;43m1[39;49m[43m,[49m
+[1;32m    220[0m [43m        [49m[38;5;66;43;03m# error: No overload variant of "percentile" matches argument types[39;49;00m
+[1;32m    221[0m [43m        [49m[38;5;66;43;03m# "ndarray[Any, Any]", "ndarray[Any, dtype[floating[_64Bit]]]",[39;49;00m
+[1;32m    222[0m [43m        [49m[38;5;66;43;03m# "int", "Dict[str, str]"  [call-overload][39;49;00m
+[1;32m    223[0m [43m        [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43m{[49m[43mnp_percentile_argname[49m[43m:[49m[43m [49m[43minterpolation[49m[43m}[49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[call-overload][39;49;00m
+[1;32m    224[0m [43m    [49m[43m)[49m
+
+File [0;32m<__array_function__ internals>:200[0m, in [0;36mpercentile[0;34m(*args, **kwargs)[0m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4205[0m, in [0;36mpercentile[0;34m(a, q, axis, out, overwrite_input, method, keepdims, interpolation)[0m
+[1;32m   4203[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m _quantile_is_valid(q):
+[1;32m   4204[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mPercentiles must be in the range [0, 100][39m[38;5;124m"[39m)
+[0;32m-> 4205[0m [38;5;28;01mreturn[39;00m [43m_quantile_unchecked[49m[43m([49m
+[1;32m   4206[0m [43m    [49m[43ma[49m[43m,[49m[43m [49m[43mq[49m[43m,[49m[43m [49m[43maxis[49m[43m,[49m[43m [49m[43mout[49m[43m,[49m[43m [49m[43moverwrite_input[49m[43m,[49m[43m [49m[43mmethod[49m[43m,[49m[43m [49m[43mkeepdims[49m[43m)[49m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4473[0m, in [0;36m_quantile_unchecked[0;34m(a, q, axis, out, overwrite_input, method, keepdims)[0m
+[1;32m   4465[0m [38;5;28;01mdef[39;00m [38;5;21m_quantile_unchecked[39m(a,
+[1;32m   4466[0m                         q,
+[1;32m   4467[0m                         axis[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[0;32m   (...)[0m
+[1;32m   4470[0m                         method[38;5;241m=[39m[38;5;124m"[39m[38;5;124mlinear[39m[38;5;124m"[39m,
+[1;32m   4471[0m                         keepdims[38;5;241m=[39m[38;5;28;01mFalse[39;00m):
+[1;32m   4472[0m [38;5;250m    [39m[38;5;124;03m"""Assumes that q is in [0, 1], and is an ndarray"""[39;00m
+[0;32m-> 4473[0m     [38;5;28;01mreturn[39;00m [43m_ureduce[49m[43m([49m[43ma[49m[43m,[49m
+[1;32m   4474[0m [43m                    [49m[43mfunc[49m[38;5;241;43m=[39;49m[43m_quantile_ureduce_func[49m[43m,[49m
+[1;32m   4475[0m [43m                    [49m[43mq[49m[38;5;241;43m=[39;49m[43mq[49m[43m,[49m
+[1;32m   4476[0m [43m                    [49m[43mkeepdims[49m[38;5;241;43m=[39;49m[43mkeepdims[49m[43m,[49m
+[1;32m   4477[0m [43m                    [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m
+[1;32m   4478[0m [43m                    [49m[43mout[49m[38;5;241;43m=[39;49m[43mout[49m[43m,[49m
+[1;32m   4479[0m [43m                    [49m[43moverwrite_input[49m[38;5;241;43m=[39;49m[43moverwrite_input[49m[43m,[49m
+[1;32m   4480[0m [43m                    [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mmethod[49m[43m)[49m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:3752[0m, in [0;36m_ureduce[0;34m(a, func, keepdims, **kwargs)[0m
+[1;32m   3749[0m             index_out [38;5;241m=[39m ([38;5;241m0[39m, ) [38;5;241m*[39m nd
+[1;32m   3750[0m             kwargs[[38;5;124m'[39m[38;5;124mout[39m[38;5;124m'[39m] [38;5;241m=[39m out[([38;5;28mEllipsis[39m, ) [38;5;241m+[39m index_out]
+[0;32m-> 3752[0m r [38;5;241m=[39m [43mfunc[49m[43m([49m[43ma[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   3754[0m [38;5;28;01mif[39;00m out [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   3755[0m     [38;5;28;01mreturn[39;00m out
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4639[0m, in [0;36m_quantile_ureduce_func[0;34m(a, q, axis, out, overwrite_input, method)[0m
+[1;32m   4637[0m     [38;5;28;01melse[39;00m:
+[1;32m   4638[0m         arr [38;5;241m=[39m a[38;5;241m.[39mcopy()
+[0;32m-> 4639[0m result [38;5;241m=[39m [43m_quantile[49m[43m([49m[43marr[49m[43m,[49m
+[1;32m   4640[0m [43m                   [49m[43mquantiles[49m[38;5;241;43m=[39;49m[43mq[49m[43m,[49m
+[1;32m   4641[0m [43m                   [49m[43maxis[49m[38;5;241;43m=[39;49m[43maxis[49m[43m,[49m
+[1;32m   4642[0m [43m                   [49m[43mmethod[49m[38;5;241;43m=[39;49m[43mmethod[49m[43m,[49m
+[1;32m   4643[0m [43m                   [49m[43mout[49m[38;5;241;43m=[39;49m[43mout[49m[43m)[49m
+[1;32m   4644[0m [38;5;28;01mreturn[39;00m result
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4756[0m, in [0;36m_quantile[0;34m(arr, quantiles, axis, method, out)[0m
+[1;32m   4754[0m     result_shape [38;5;241m=[39m virtual_indexes[38;5;241m.[39mshape [38;5;241m+[39m ([38;5;241m1[39m,) [38;5;241m*[39m (arr[38;5;241m.[39mndim [38;5;241m-[39m [38;5;241m1[39m)
+[1;32m   4755[0m     gamma [38;5;241m=[39m gamma[38;5;241m.[39mreshape(result_shape)
+[0;32m-> 4756[0m     result [38;5;241m=[39m [43m_lerp[49m[43m([49m[43mprevious[49m[43m,[49m
+[1;32m   4757[0m [43m                   [49m[38;5;28;43mnext[39;49m[43m,[49m
+[1;32m   4758[0m [43m                   [49m[43mgamma[49m[43m,[49m
+[1;32m   4759[0m [43m                   [49m[43mout[49m[38;5;241;43m=[39;49m[43mout[49m[43m)[49m
+[1;32m   4760[0m [38;5;28;01mif[39;00m np[38;5;241m.[39many(slices_having_nans):
+[1;32m   4761[0m     [38;5;28;01mif[39;00m result[38;5;241m.[39mndim [38;5;241m==[39m [38;5;241m0[39m [38;5;129;01mand[39;00m out [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   4762[0m         [38;5;66;03m# can't write to a scalar[39;00m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4573[0m, in [0;36m_lerp[0;34m(a, b, t, out)[0m
+[1;32m   4559[0m [38;5;28;01mdef[39;00m [38;5;21m_lerp[39m(a, b, t, out[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m   4560[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m   4561[0m [38;5;124;03m    Compute the linear interpolation weighted by gamma on each point of[39;00m
+[1;32m   4562[0m [38;5;124;03m    two same shape array.[39;00m
+[0;32m   (...)[0m
+[1;32m   4571[0m [38;5;124;03m        Output array.[39;00m
+[1;32m   4572[0m [38;5;124;03m    """[39;00m
+[0;32m-> 4573[0m     diff_b_a [38;5;241m=[39m [43msubtract[49m[43m([49m[43mb[49m[43m,[49m[43m [49m[43ma[49m[43m)[49m
+[1;32m   4574[0m     [38;5;66;03m# asanyarray is a stop-gap until gh-13105[39;00m
+[1;32m   4575[0m     lerp_interpolation [38;5;241m=[39m asanyarray(add(a, diff_b_a [38;5;241m*[39m t, out[38;5;241m=[39mout))
+
+[0;31mTypeError[0m: unsupported operand type(s) for -: 'str' and 'str'
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+

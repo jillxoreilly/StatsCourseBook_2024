@@ -1,0 +1,11 @@
+- file: ttest_intro.md
+  sections:
+  - file: ttest_intro.ipynb
+  - file: ttest_oneSample.ipynb
+  - file: ttest_pairedSamples.ipynb
+  - file: ttest_independentSamples.ipynb
+  - file: ttest_furtherExercises.ipynb
+- file: nonpara_intro.md
+  sections:
+  - file: nonpara_MannWhitneyU.ipynb
+  - file: WilcoxonSignRank.ipynb

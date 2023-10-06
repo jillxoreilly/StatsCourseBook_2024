@@ -1,0 +1,69 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "683c5931-696c-41b1-a04e-2d447a35854f",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "# FOR loop with IF statement\n",
+    "\n",
+    "Sometimes we don't just want to do the same operation on every input - we might want to do different operations depending on some condition.\n",
+    "\n",
+    "For this we need a statement of the form IF...THEN"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3f2d53ec-b08b-4e49-8164-26aecc04dce2",
+   "metadata": {},
+   "source": [
+    "### Set up Python libraries\n",
+    "\n",
+    "As usual, run the code cell below to import the relevant Python libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "0e34136e-67de-447a-90b3-709e996637d3",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# Set-up Python libraries - you need to run this but you don't need to change it\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "import scipy.stats as stats\n",
+    "import pandas as pd\n",
+    "import seaborn as sns\n",
+    "sns.set_theme(style='white')\n",
+    "import statsmodels.api as sm\n",
+    "import statsmodels.formula.api as smf"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.18"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,1991 @@
+treatment,income,age,ladder
+Control group,Medium-high,18,3
+Control group,Low,18,7
+Control group,Low,19,7
+Control group,High,19,9
+Control group,High,19,10
+Control group,Medium-high,19,6
+Control group,High,19,
+Control group,Medium-high,19,6
+Control group,High,19,7
+Control group,Medium-high,19,7
+Control group,Low-medium,19,6
+Control group,High,20,7
+Control group,Medium-high,20,5
+Control group,Medium-high,20,6
+Control group,Low,20,7
+Control group,Low,20,6
+Control group,Low,20,3
+Control group,Low,20,7
+Control group,Low-medium,20,8
+Control group,High,20,7
+Control group,Medium-high,21,4
+Control group,Medium-high,21,7
+Control group,Medium-high,21,7
+Control group,Low,21,6
+Control group,Low-medium,22,6
+Control group,Low-medium,22,6
+Control group,Low,22,6
+Control group,High,22,10
+Control group,Medium-high,22,8
+Control group,Low,22,5
+Control group,Low-medium,22,6
+Control group,Low-medium,22,7
+Control group,Low-medium,22,3
+Control group,High,22,4
+Control group,Medium-high,23,9
+Control group,High,23,7
+Control group,Low,23,4
+Control group,Medium-high,23,9
+Control group,High,23,7
+Control group,Low,23,3
+Control group,Low,23,11
+Control group,High,23,9
+Control group,Low-medium,23,7
+Control group,Low-medium,24,6
+Control group,Low-medium,24,7
+Control group,High,24,7
+Control group,High,24,8
+Control group,Low-medium,24,4
+Control group,Medium-high,24,9
+Control group,Medium-high,25,9
+Control group,High,25,8
+Control group,High,25,9
+Control group,Low,25,6
+Control group,Medium-high,25,9
+Control group,High,25,5
+Control group,Low-medium,25,2
+Control group,Low,25,6
+Control group,Low-medium,25,9
+Control group,Medium-high,25,6
+Control group,Medium-high,25,7
+Control group,Medium-high,25,6
+Control group,High,25,6
+Control group,Medium-high,26,6
+Control group,Low,26,4
+Control group,Medium-high,26,5
+Control group,Low-medium,26,
+Control group,Low,26,
+Control group,Low,27,3
+Control group,Low,27,7
+Control group,Low-medium,27,5
+Control group,High,27,7
+Control group,High,27,6
+Control group,Low-medium,27,7
+Control group,High,27,8
+Control group,Medium-high,27,8
+Control group,High,27,6
+Control group,Medium-high,28,8
+Control group,Low-medium,28,4
+Control group,High,28,7
+Control group,Medium-high,28,6
+Control group,High,28,6
+Control group,Medium-high,28,6
+Control group,Medium-high,28,
+Control group,High,28,9
+Control group,Medium-high,29,6
+Control group,Low-medium,29,6
+Control group,Medium-high,29,6
+Control group,Low-medium,29,7
+Control group,Medium-high,29,4
+Control group,Medium-high,29,7
+Control group,Low-medium,29,6
+Control group,Low-medium,30,5
+Control group,High,30,8
+Control group,Low,30,8
+Control group,Low-medium,30,9
+Control group,High,30,8
+Control group,Medium-high,30,7
+Control group,High,30,9
+Control group,Low-medium,30,7
+Control group,Low-medium,30,
+Control group,Low,30,5
+Control group,Low,31,6
+Control group,Low-medium,31,7
+Control group,High,31,8
+Control group,High,31,7
+Control group,Medium-high,31,5
+Control group,Low-medium,31,6
+Control group,High,31,8
+Control group,Low,31,3
+Control group,Medium-high,31,8
+Control group,High,32,6
+Control group,Medium-high,32,7
+Control group,High,32,9
+Control group,High,32,7
+Control group,High,32,6
+Control group,Medium-high,32,8
+Control group,Low,32,4
+Control group,High,33,7
+Control group,Medium-high,33,8
+Control group,Low-medium,33,2
+Control group,Medium-high,33,5
+Control group,Low-medium,33,7
+Control group,Low-medium,33,6
+Control group,Low,33,3
+Control group,High,33,7
+Control group,Low,34,6
+Control group,Low,34,2
+Control group,Low-medium,34,4
+Control group,Medium-high,34,7
+Control group,Medium-high,34,6
+Control group,Low-medium,35,6
+Control group,High,35,7
+Control group,Low,35,4
+Control group,Medium-high,35,8
+Control group,High,35,6
+Control group,Low,35,2
+Control group,High,35,9
+Control group,Low-medium,35,3
+Control group,Low-medium,35,9
+Control group,Low-medium,35,
+Control group,Medium-high,36,7
+Control group,Low,36,5
+Control group,Medium-high,36,6
+Control group,Low,36,
+Control group,Low-medium,36,7
+Control group,Low-medium,36,6
+Control group,Medium-high,36,7
+Control group,Low-medium,36,8
+Control group,Medium-high,36,7
+Control group,High,36,8
+Control group,Low,36,1
+Control group,Low,37,4
+Control group,Low-medium,37,6
+Control group,High,37,8
+Control group,Low-medium,37,6
+Control group,Medium-high,37,7
+Control group,Low-medium,37,8
+Control group,High,37,7
+Control group,High,37,4
+Control group,High,37,9
+Control group,Low-medium,37,4
+Control group,Low,37,
+Control group,Low-medium,37,7
+Control group,Medium-high,37,6
+Control group,Low-medium,38,6
+Control group,Low,38,4
+Control group,Medium-high,38,4
+Control group,Medium-high,38,8
+Control group,Medium-high,38,
+Control group,Low-medium,38,7
+Control group,Low-medium,38,6
+Control group,Low,38,
+Control group,Low,38,3
+Control group,High,38,8
+Control group,Low,38,5
+Control group,Medium-high,38,8
+Control group,Low,38,1
+Control group,Medium-high,38,7
+Control group,Medium-high,38,6
+Control group,High,38,7
+Control group,High,38,7
+Control group,Low-medium,38,7
+Control group,Low-medium,39,5
+Control group,Medium-high,39,10
+Control group,Low,39,4
+Control group,High,39,
+Control group,High,39,9
+Control group,Medium-high,39,6
+Control group,Low-medium,39,8
+Control group,Low,39,6
+Control group,Low-medium,39,6
+Control group,Medium-high,39,6
+Control group,Low,39,2
+Control group,Low,39,7
+Control group,Medium-high,39,5
+Control group,High,39,4
+Control group,High,39,8
+Control group,Low-medium,40,6
+Control group,Low-medium,40,5
+Control group,Medium-high,40,6
+Control group,High,40,9
+Control group,Medium-high,40,6
+Control group,Medium-high,40,6
+Control group,Low-medium,40,7
+Control group,High,40,6
+Control group,Low,40,4
+Control group,High,40,7
+Control group,Low-medium,40,6
+Control group,High,40,7
+Control group,Medium-high,40,5
+Control group,Medium-high,40,8
+Control group,Low-medium,40,5
+Control group,Low-medium,41,7
+Control group,Medium-high,41,7
+Control group,High,41,6
+Control group,Low,41,
+Control group,High,41,7
+Control group,Low,41,1
+Control group,Low-medium,41,8
+Control group,Low,41,7
+Control group,Low-medium,41,4
+Control group,High,42,8
+Control group,Low,42,6
+Control group,Medium-high,42,5
+Control group,Low,42,4
+Control group,Low,42,5
+Control group,Low,42,6
+Control group,High,43,4
+Control group,High,43,8
+Control group,Low,43,6
+Control group,High,43,9
+Control group,High,43,6
+Control group,Low,43,8
+Control group,Low,43,3
+Control group,Low-medium,43,6
+Control group,High,43,5
+Control group,Medium-high,43,6
+Control group,Low-medium,43,5
+Control group,Medium-high,43,8
+Control group,Low-medium,44,6
+Control group,Low,44,2
+Control group,Low-medium,44,6
+Control group,Medium-high,44,7
+Control group,High,44,6
+Control group,Low,44,7
+Control group,Low,44,4
+Control group,Low-medium,44,5
+Control group,Medium-high,44,7
+Control group,High,44,6
+Control group,High,44,
+Control group,Medium-high,44,4
+Control group,High,45,8
+Control group,High,45,7
+Control group,Medium-high,45,6
+Control group,Low,45,6
+Control group,High,45,6
+Control group,Medium-high,45,
+Control group,High,45,6
+Control group,Medium-high,45,6
+Control group,High,45,9
+Control group,Low-medium,45,6
+Control group,Medium-high,45,8
+Control group,Low,45,6
+Control group,Medium-high,45,6
+Control group,Medium-high,45,5
+Control group,High,46,8
+Control group,High,46,8
+Control group,Medium-high,46,5
+Control group,High,46,7
+Control group,Low,46,2
+Control group,Low,46,3
+Control group,High,46,7
+Control group,High,46,8
+Control group,Medium-high,46,8
+Control group,Low,46,6
+Control group,Low-medium,46,6
+Control group,High,46,7
+Control group,Low-medium,47,4
+Control group,High,47,7
+Control group,High,47,6
+Control group,High,47,7
+Control group,High,47,9
+Control group,Low,47,6
+Control group,Low,47,6
+Control group,High,47,6
+Control group,Medium-high,47,7
+Control group,Low-medium,47,4
+Control group,Low,47,6
+Control group,Low,47,3
+Control group,Low,47,5
+Control group,Low-medium,48,5
+Control group,Low,48,7
+Control group,High,48,5
+Control group,High,48,8
+Control group,Low-medium,48,8
+Control group,Low,48,8
+Control group,Low,48,3
+Control group,Medium-high,48,8
+Control group,Low-medium,48,6
+Control group,High,48,
+Control group,Low-medium,48,
+Control group,Low,48,4
+Control group,Low,49,8
+Control group,Low-medium,49,2
+Control group,High,49,7
+Control group,High,49,8
+Control group,Medium-high,49,7
+Control group,High,49,8
+Control group,Low-medium,49,5
+Control group,High,49,8
+Control group,Low,49,3
+Control group,Low-medium,49,5
+Control group,Low-medium,49,5
+Control group,High,49,6
+Control group,High,50,7
+Control group,Low,50,7
+Control group,High,50,6
+Control group,High,50,5
+Control group,High,50,9
+Control group,Low,50,8
+Control group,Low-medium,50,6
+Control group,Medium-high,51,7
+Control group,Medium-high,51,7
+Control group,High,51,6
+Control group,Low-medium,51,
+Control group,Low-medium,51,4
+Control group,Medium-high,51,5
+Control group,High,51,7
+Control group,Low-medium,52,7
+Control group,Medium-high,52,6
+Control group,Low,52,5
+Control group,Low,52,8
+Control group,Low,52,4
+Control group,Medium-high,52,6
+Control group,Low,52,2
+Control group,Low-medium,52,3
+Control group,Low-medium,52,2
+Control group,High,53,6
+Control group,High,53,8
+Control group,Low-medium,53,8
+Control group,Low,53,3
+Control group,Low,53,
+Control group,Low,53,6
+Control group,Low-medium,53,7
+Control group,Low-medium,53,7
+Control group,High,54,8
+Control group,Medium-high,54,8
+Control group,Low,54,5
+Control group,High,54,7
+Control group,Medium-high,54,6
+Control group,Low-medium,54,6
+Control group,Medium-high,54,6
+Control group,High,54,6
+Control group,Low-medium,54,5
+Control group,High,54,8
+Control group,High,54,6
+Control group,Low-medium,54,7
+Control group,Medium-high,55,7
+Control group,Low-medium,55,6
+Control group,Low-medium,55,8
+Control group,High,55,6
+Control group,Medium-high,55,6
+Control group,Low,55,8
+Control group,Low-medium,55,
+Control group,Medium-high,55,6
+Control group,Medium-high,55,6
+Control group,Medium-high,55,6
+Control group,High,55,8
+Control group,Medium-high,55,9
+Control group,Low-medium,55,3
+Control group,Low,55,6
+Control group,Low-medium,55,7
+Control group,Low-medium,55,5
+Control group,Low,56,6
+Control group,High,56,8
+Control group,Low,56,6
+Control group,Low-medium,56,2
+Control group,Medium-high,56,6
+Control group,Low,56,6
+Control group,Low,56,6
+Control group,High,56,9
+Control group,Low-medium,56,8
+Control group,Medium-high,57,6
+Control group,High,57,8
+Control group,Low,57,7
+Control group,Low,57,5
+Control group,Medium-high,57,8
+Control group,Low,57,6
+Control group,Low,57,6
+Control group,Low,57,7
+Control group,High,57,6
+Control group,Low-medium,57,7
+Control group,Low-medium,57,6
+Control group,Medium-high,57,5
+Control group,Low,57,7
+Control group,Low,57,4
+Control group,Medium-high,57,6
+Control group,Low,57,4
+Control group,Medium-high,57,6
+Control group,Low,58,6
+Control group,Low,58,5
+Control group,High,58,9
+Control group,Medium-high,58,5
+Control group,High,58,9
+Control group,High,58,7
+Control group,Low-medium,58,8
+Control group,Medium-high,58,
+Control group,Low-medium,58,5
+Control group,Medium-high,58,9
+Control group,Low,58,6
+Control group,High,58,7
+Control group,Medium-high,58,7
+Control group,Medium-high,59,8
+Control group,Low-medium,59,7
+Control group,Low,59,4
+Control group,High,59,6
+Control group,High,59,7
+Control group,Low,59,5
+Control group,High,59,7
+Control group,Medium-high,59,9
+Control group,High,59,8
+Control group,High,60,8
+Control group,Low-medium,60,9
+Control group,Medium-high,60,9
+Control group,High,60,8
+Control group,High,60,8
+Control group,Low,60,5
+Control group,Low,60,6
+Control group,High,60,8
+Control group,Low-medium,61,7
+Control group,Low-medium,61,7
+Control group,Medium-high,61,
+Control group,Low-medium,61,8
+Control group,Low-medium,61,6
+Control group,Low,61,5
+Control group,High,61,7
+Control group,Medium-high,61,6
+Control group,Medium-high,61,7
+Control group,Low-medium,61,5
+Control group,Low,61,4
+Control group,Low-medium,61,7
+Control group,High,61,6
+Control group,High,61,6
+Control group,High,62,9
+Control group,Low-medium,62,4
+Control group,Medium-high,62,7
+Control group,High,62,8
+Control group,Low,62,6
+Control group,Medium-high,62,6
+Control group,High,62,10
+Control group,Low-medium,62,6
+Control group,Low,62,6
+Control group,Medium-high,62,6
+Control group,Low,62,6
+Control group,Low-medium,62,7
+Control group,Medium-high,62,7
+Control group,Low-medium,62,6
+Control group,Medium-high,62,6
+Control group,High,63,
+Control group,Low,63,6
+Control group,Low,63,5
+Control group,Low-medium,63,9
+Control group,Low-medium,63,7
+Control group,Low-medium,64,8
+Control group,Medium-high,64,8
+Control group,Low-medium,64,8
+Control group,Low,64,6
+Control group,Low,64,6
+Control group,Low-medium,64,9
+Control group,Low-medium,64,6
+Control group,Low-medium,64,6
+Control group,Medium-high,64,7
+Control group,Low-medium,64,6
+Control group,Low-medium,65,6
+Control group,Medium-high,65,7
+Control group,Low,65,
+Control group,Low-medium,65,5
+Control group,Low,65,4
+Control group,Low,65,4
+Control group,Low-medium,65,4
+Control group,Low-medium,65,4
+Control group,Low-medium,65,6
+Control group,Low,65,8
+Control group,Medium-high,65,9
+Control group,High,65,6
+Control group,Low-medium,65,6
+Control group,Low-medium,65,8
+Control group,High,65,7
+Control group,Medium-high,66,7
+Control group,Low-medium,66,7
+Control group,Low,66,7
+Control group,Low,66,6
+Control group,Low-medium,66,6
+Control group,Medium-high,66,6
+Control group,Low-medium,66,4
+Control group,Low-medium,66,8
+Control group,Low-medium,66,6
+Control group,Low,66,6
+Control group,Low,66,8
+Control group,High,66,9
+Control group,Medium-high,66,8
+Control group,Low,66,6
+Control group,Low,66,8
+Control group,Low,67,6
+Control group,Low-medium,67,8
+Control group,High,67,
+Control group,Medium-high,67,6
+Control group,Low-medium,67,4
+Control group,High,67,8
+Control group,Low,67,6
+Control group,Low,67,7
+Control group,Low-medium,67,6
+Control group,Low-medium,67,6
+Control group,Low,67,5
+Control group,Low,67,3
+Control group,Low-medium,67,5
+Control group,Low-medium,67,6
+Control group,High,67,7
+Control group,Medium-high,67,4
+Control group,Low-medium,67,6
+Control group,Low-medium,67,5
+Control group,Medium-high,67,7
+Control group,Low-medium,67,5
+Control group,Low-medium,67,5
+Control group,Medium-high,68,7
+Control group,Low-medium,68,9
+Control group,Medium-high,68,5
+Control group,Low-medium,68,6
+Control group,Medium-high,68,7
+Control group,High,68,9
+Control group,Low,68,7
+Control group,Low,68,6
+Control group,High,68,7
+Control group,High,68,6
+Control group,Medium-high,68,8
+Control group,Medium-high,68,6
+Control group,Low,68,8
+Control group,Low-medium,68,7
+Control group,Low,68,9
+Control group,Low-medium,68,5
+Control group,Low,69,7
+Control group,Low,69,5
+Control group,Medium-high,69,6
+Control group,Medium-high,69,8
+Control group,Low,69,2
+Control group,Medium-high,69,6
+Control group,Low,69,4
+Control group,Medium-high,69,8
+Control group,Low-medium,69,7
+Control group,Low,70,1
+Control group,Medium-high,70,8
+Control group,Low-medium,70,6
+Control group,Medium-high,70,6
+Control group,Low-medium,70,6
+Control group,Low-medium,70,7
+Control group,High,70,6
+Control group,Low-medium,70,8
+Control group,High,70,6
+Control group,Low,70,5
+Control group,Low-medium,70,7
+Control group,Low,71,5
+Control group,Low-medium,71,7
+Control group,Low-medium,71,
+Control group,Medium-high,71,9
+Control group,Low-medium,71,6
+Control group,Low-medium,71,6
+Control group,Medium-high,71,6
+Control group,High,71,8
+Control group,High,71,6
+Control group,High,71,8
+Control group,Low,71,6
+Control group,Low,71,4
+Control group,Medium-high,71,9
+Control group,Low-medium,71,8
+Control group,Low,71,7
+Control group,Low-medium,72,7
+Control group,Medium-high,72,9
+Control group,Low-medium,72,7
+Control group,Low-medium,72,6
+Control group,Low,72,5
+Control group,Low,72,7
+Control group,Medium-high,72,8
+Control group,Medium-high,72,8
+Control group,Low,72,7
+Control group,Medium-high,72,8
+Control group,Low,72,7
+Control group,Low-medium,73,7
+Control group,Low,73,7
+Control group,Low,73,7
+Control group,Low,73,7
+Control group,Low-medium,73,6
+Control group,Medium-high,73,7
+Control group,Low-medium,73,6
+Control group,Low,73,10
+Control group,Low,73,6
+Control group,High,73,8
+Control group,Low,73,7
+Control group,Low,74,8
+Control group,Low-medium,74,7
+Control group,Low,74,6
+Control group,Low,74,8
+Control group,High,74,7
+Control group,Medium-high,74,8
+Control group,Low-medium,74,8
+Control group,Low-medium,74,8
+Control group,Low,74,8
+Control group,High,74,7
+Control group,Low-medium,75,7
+Control group,Low,75,6
+Control group,Low-medium,75,7
+Control group,Low,75,7
+Control group,Low,75,
+Control group,High,75,8
+Control group,Low,75,7
+Control group,Medium-high,75,10
+Control group,Low,75,8
+Control group,Low-medium,75,7
+Control group,Low-medium,76,6
+Control group,Medium-high,76,8
+Control group,Low-medium,76,9
+Control group,Low-medium,76,6
+Control group,Low-medium,76,6
+Control group,Low,76,4
+Control group,Low,76,6
+Control group,Low,76,8
+Control group,High,76,7
+Control group,Medium-high,76,7
+Control group,Low-medium,77,7
+Control group,Low-medium,77,7
+Control group,Medium-high,77,7
+Control group,Low,77,7
+Control group,High,77,9
+Control group,Low,77,6
+Control group,Low-medium,78,7
+Control group,Medium-high,78,8
+Control group,Low-medium,78,
+Control group,Medium-high,78,7
+Control group,Low,79,9
+Control group,Low-medium,79,5
+Control group,Low-medium,79,6
+Control group,Low-medium,80,6
+Control group,Low-medium,80,6
+Control group,Medium-high,80,7
+Control group,Medium-high,81,6
+Control group,Low-medium,81,5
+Control group,Low,82,6
+Control group,Low-medium,83,10
+Control group,Low-medium,83,7
+Control group,Low-medium,84,8
+Control group,High,84,8
+Control group,Medium-high,85,10
+Control group,Low-medium,86,7
+Control group,Low-medium,89,6
+Inequality with poverty,Low,18,5
+Inequality with poverty,Low-medium,18,6
+Inequality with poverty,Low,18,3
+Inequality with poverty,Low,19,4
+Inequality with poverty,Low,19,5
+Inequality with poverty,Low,19,7
+Inequality with poverty,Low,19,6
+Inequality with poverty,Low,20,4
+Inequality with poverty,Low,20,
+Inequality with poverty,Low,20,5
+Inequality with poverty,High,20,6
+Inequality with poverty,Low,20,6
+Inequality with poverty,Medium-high,20,7
+Inequality with poverty,Medium-high,20,7
+Inequality with poverty,Medium-high,21,6
+Inequality with poverty,Medium-high,21,8
+Inequality with poverty,Low,21,4
+Inequality with poverty,Medium-high,21,5
+Inequality with poverty,High,21,
+Inequality with poverty,Medium-high,21,6
+Inequality with poverty,Medium-high,22,6
+Inequality with poverty,Low,22,6
+Inequality with poverty,High,22,6
+Inequality with poverty,Medium-high,22,9
+Inequality with poverty,Low,23,4
+Inequality with poverty,Low-medium,23,5
+Inequality with poverty,Low,23,
+Inequality with poverty,Low-medium,23,5
+Inequality with poverty,Low,23,4
+Inequality with poverty,Low,23,
+Inequality with poverty,Low-medium,24,5
+Inequality with poverty,Low,24,4
+Inequality with poverty,Low-medium,24,4
+Inequality with poverty,Low-medium,24,9
+Inequality with poverty,High,24,7
+Inequality with poverty,High,25,7
+Inequality with poverty,High,25,6
+Inequality with poverty,High,25,6
+Inequality with poverty,High,25,6
+Inequality with poverty,Low,25,8
+Inequality with poverty,Medium-high,26,6
+Inequality with poverty,Low,26,4
+Inequality with poverty,High,26,6
+Inequality with poverty,Low-medium,26,4
+Inequality with poverty,Medium-high,26,5
+Inequality with poverty,Low,26,7
+Inequality with poverty,High,26,5
+Inequality with poverty,High,26,6
+Inequality with poverty,High,26,5
+Inequality with poverty,High,26,8
+Inequality with poverty,Medium-high,26,6
+Inequality with poverty,Low,26,7
+Inequality with poverty,High,26,7
+Inequality with poverty,Low-medium,26,7
+Inequality with poverty,Medium-high,27,5
+Inequality with poverty,High,27,5
+Inequality with poverty,High,27,7
+Inequality with poverty,Low-medium,27,6
+Inequality with poverty,Low-medium,27,7
+Inequality with poverty,Low,27,
+Inequality with poverty,Low-medium,27,5
+Inequality with poverty,Medium-high,27,4
+Inequality with poverty,Medium-high,27,6
+Inequality with poverty,Medium-high,27,6
+Inequality with poverty,Low-medium,27,7
+Inequality with poverty,Low,27,4
+Inequality with poverty,Medium-high,27,6
+Inequality with poverty,High,27,4
+Inequality with poverty,Low-medium,27,6
+Inequality with poverty,Medium-high,28,7
+Inequality with poverty,High,28,6
+Inequality with poverty,High,28,8
+Inequality with poverty,High,28,9
+Inequality with poverty,Medium-high,28,5
+Inequality with poverty,High,28,7
+Inequality with poverty,Medium-high,28,5
+Inequality with poverty,Medium-high,28,7
+Inequality with poverty,High,28,6
+Inequality with poverty,High,29,8
+Inequality with poverty,Medium-high,29,6
+Inequality with poverty,Medium-high,29,6
+Inequality with poverty,Medium-high,29,8
+Inequality with poverty,High,29,6
+Inequality with poverty,High,29,8
+Inequality with poverty,Low-medium,29,3
+Inequality with poverty,Low,29,11
+Inequality with poverty,Medium-high,29,8
+Inequality with poverty,High,29,10
+Inequality with poverty,Medium-high,29,7
+Inequality with poverty,High,29,8
+Inequality with poverty,Low-medium,29,4
+Inequality with poverty,High,29,7
+Inequality with poverty,Low-medium,29,5
+Inequality with poverty,High,30,6
+Inequality with poverty,Low-medium,30,4
+Inequality with poverty,Low,30,6
+Inequality with poverty,High,30,8
+Inequality with poverty,High,30,8
+Inequality with poverty,High,30,9
+Inequality with poverty,Medium-high,30,4
+Inequality with poverty,Low,30,3
+Inequality with poverty,High,30,8
+Inequality with poverty,Low-medium,30,3
+Inequality with poverty,High,30,7
+Inequality with poverty,Medium-high,31,5
+Inequality with poverty,High,31,7
+Inequality with poverty,Medium-high,31,8
+Inequality with poverty,Low,31,5
+Inequality with poverty,Low,31,2
+Inequality with poverty,Low-medium,31,7
+Inequality with poverty,Low-medium,31,6
+Inequality with poverty,Medium-high,31,2
+Inequality with poverty,Medium-high,31,5
+Inequality with poverty,Low,31,3
+Inequality with poverty,Low-medium,31,7
+Inequality with poverty,High,32,5
+Inequality with poverty,Medium-high,32,4
+Inequality with poverty,Low,32,2
+Inequality with poverty,High,32,7
+Inequality with poverty,High,32,6
+Inequality with poverty,Medium-high,32,8
+Inequality with poverty,Low,32,3
+Inequality with poverty,High,32,7
+Inequality with poverty,High,32,7
+Inequality with poverty,Medium-high,32,6
+Inequality with poverty,High,32,9
+Inequality with poverty,Low,32,4
+Inequality with poverty,Medium-high,33,7
+Inequality with poverty,Medium-high,33,8
+Inequality with poverty,High,33,6
+Inequality with poverty,Medium-high,33,6
+Inequality with poverty,Low-medium,33,5
+Inequality with poverty,Medium-high,33,6
+Inequality with poverty,High,33,7
+Inequality with poverty,Medium-high,33,8
+Inequality with poverty,High,34,8
+Inequality with poverty,Low-medium,34,6
+Inequality with poverty,Medium-high,34,
+Inequality with poverty,Medium-high,34,3
+Inequality with poverty,Low,34,4
+Inequality with poverty,Low,34,6
+Inequality with poverty,High,34,9
+Inequality with poverty,High,34,6
+Inequality with poverty,Low-medium,34,7
+Inequality with poverty,Medium-high,34,6
+Inequality with poverty,Low-medium,35,5
+Inequality with poverty,Low-medium,35,7
+Inequality with poverty,Medium-high,35,4
+Inequality with poverty,High,35,8
+Inequality with poverty,Medium-high,35,6
+Inequality with poverty,Low,35,3
+Inequality with poverty,High,35,5
+Inequality with poverty,Medium-high,35,6
+Inequality with poverty,Medium-high,35,4
+Inequality with poverty,High,35,7
+Inequality with poverty,High,35,4
+Inequality with poverty,Medium-high,35,6
+Inequality with poverty,Low-medium,35,6
+Inequality with poverty,High,35,6
+Inequality with poverty,Medium-high,35,6
+Inequality with poverty,Medium-high,35,6
+Inequality with poverty,Low-medium,35,6
+Inequality with poverty,Medium-high,36,5
+Inequality with poverty,High,36,7
+Inequality with poverty,Low-medium,36,5
+Inequality with poverty,Low-medium,36,3
+Inequality with poverty,High,36,8
+Inequality with poverty,Low,36,3
+Inequality with poverty,High,36,6
+Inequality with poverty,High,36,7
+Inequality with poverty,Low,36,5
+Inequality with poverty,Low-medium,36,6
+Inequality with poverty,Medium-high,36,4
+Inequality with poverty,Low,36,5
+Inequality with poverty,Medium-high,36,7
+Inequality with poverty,Medium-high,36,5
+Inequality with poverty,Low-medium,37,4
+Inequality with poverty,High,37,9
+Inequality with poverty,High,37,7
+Inequality with poverty,Low-medium,37,6
+Inequality with poverty,Medium-high,37,6
+Inequality with poverty,High,37,7
+Inequality with poverty,High,37,5
+Inequality with poverty,High,37,8
+Inequality with poverty,Low,37,5
+Inequality with poverty,High,37,4
+Inequality with poverty,Medium-high,37,8
+Inequality with poverty,Low-medium,37,6
+Inequality with poverty,Medium-high,37,8
+Inequality with poverty,High,37,8
+Inequality with poverty,Medium-high,37,6
+Inequality with poverty,Low-medium,37,5
+Inequality with poverty,High,37,7
+Inequality with poverty,Low-medium,38,6
+Inequality with poverty,Low,38,6
+Inequality with poverty,Low-medium,38,6
+Inequality with poverty,Medium-high,38,7
+Inequality with poverty,Medium-high,38,4
+Inequality with poverty,High,38,6
+Inequality with poverty,High,38,7
+Inequality with poverty,Low-medium,38,5
+Inequality with poverty,Low,39,
+Inequality with poverty,Medium-high,39,6
+Inequality with poverty,Low,39,1
+Inequality with poverty,Medium-high,39,7
+Inequality with poverty,Low-medium,39,6
+Inequality with poverty,Medium-high,39,8
+Inequality with poverty,Low-medium,39,6
+Inequality with poverty,High,39,6
+Inequality with poverty,Medium-high,39,6
+Inequality with poverty,Low-medium,39,8
+Inequality with poverty,Medium-high,39,6
+Inequality with poverty,Low,39,3
+Inequality with poverty,High,39,7
+Inequality with poverty,High,39,7
+Inequality with poverty,High,39,7
+Inequality with poverty,High,39,7
+Inequality with poverty,Low-medium,40,4
+Inequality with poverty,Medium-high,40,4
+Inequality with poverty,Medium-high,40,4
+Inequality with poverty,Low-medium,40,2
+Inequality with poverty,High,40,8
+Inequality with poverty,Low-medium,40,7
+Inequality with poverty,Low-medium,40,2
+Inequality with poverty,High,40,7
+Inequality with poverty,High,40,6
+Inequality with poverty,High,40,7
+Inequality with poverty,High,40,5
+Inequality with poverty,Low,40,2
+Inequality with poverty,Medium-high,41,6
+Inequality with poverty,Low-medium,41,5
+Inequality with poverty,Low,41,3
+Inequality with poverty,Low-medium,41,6
+Inequality with poverty,Medium-high,41,5
+Inequality with poverty,Low-medium,41,8
+Inequality with poverty,Low,41,5
+Inequality with poverty,Medium-high,41,4
+Inequality with poverty,Low-medium,41,3
+Inequality with poverty,Low,41,2
+Inequality with poverty,Medium-high,41,
+Inequality with poverty,Low-medium,42,5
+Inequality with poverty,Low-medium,42,2
+Inequality with poverty,Low-medium,42,3
+Inequality with poverty,High,42,9
+Inequality with poverty,Medium-high,42,5
+Inequality with poverty,High,42,6
+Inequality with poverty,Medium-high,42,6
+Inequality with poverty,Low-medium,42,5
+Inequality with poverty,Low-medium,43,8
+Inequality with poverty,High,43,5
+Inequality with poverty,High,43,6
+Inequality with poverty,High,43,6
+Inequality with poverty,Low-medium,43,6
+Inequality with poverty,High,43,8
+Inequality with poverty,High,43,6
+Inequality with poverty,High,43,6
+Inequality with poverty,High,43,5
+Inequality with poverty,Low,43,6
+Inequality with poverty,Low-medium,43,8
+Inequality with poverty,Low,43,4
+Inequality with poverty,Low-medium,43,6
+Inequality with poverty,Low-medium,43,
+Inequality with poverty,Low,43,4
+Inequality with poverty,Low-medium,44,5
+Inequality with poverty,Low-medium,44,3
+Inequality with poverty,Low-medium,44,6
+Inequality with poverty,Medium-high,44,5
+Inequality with poverty,High,44,8
+Inequality with poverty,Low,44,3
+Inequality with poverty,High,44,8
+Inequality with poverty,High,44,8
+Inequality with poverty,High,44,6
+Inequality with poverty,Low-medium,44,6
+Inequality with poverty,Medium-high,44,6
+Inequality with poverty,Low,44,3
+Inequality with poverty,High,44,6
+Inequality with poverty,High,44,7
+Inequality with poverty,High,45,8
+Inequality with poverty,Medium-high,45,9
+Inequality with poverty,High,45,6
+Inequality with poverty,Medium-high,45,4
+Inequality with poverty,Low-medium,45,6
+Inequality with poverty,High,45,6
+Inequality with poverty,High,45,7
+Inequality with poverty,Low,45,5
+Inequality with poverty,High,45,7
+Inequality with poverty,Medium-high,45,5
+Inequality with poverty,Low-medium,45,6
+Inequality with poverty,High,46,7
+Inequality with poverty,Low-medium,46,4
+Inequality with poverty,Low-medium,46,5
+Inequality with poverty,Low-medium,46,6
+Inequality with poverty,High,46,8
+Inequality with poverty,High,46,4
+Inequality with poverty,Low-medium,46,6
+Inequality with poverty,Medium-high,46,5
+Inequality with poverty,Low-medium,47,5
+Inequality with poverty,Low,47,2
+Inequality with poverty,Low-medium,47,7
+Inequality with poverty,Low-medium,47,6
+Inequality with poverty,High,47,7
+Inequality with poverty,Low-medium,47,6
+Inequality with poverty,High,47,6
+Inequality with poverty,High,47,7
+Inequality with poverty,High,47,8
+Inequality with poverty,High,47,8
+Inequality with poverty,High,47,7
+Inequality with poverty,High,47,6
+Inequality with poverty,High,47,6
+Inequality with poverty,High,47,8
+Inequality with poverty,Low-medium,47,6
+Inequality with poverty,Low-medium,47,6
+Inequality with poverty,Low,47,1
+Inequality with poverty,High,47,7
+Inequality with poverty,Low,47,2
+Inequality with poverty,Low,48,2
+Inequality with poverty,Low,48,2
+Inequality with poverty,Low-medium,48,2
+Inequality with poverty,Medium-high,48,7
+Inequality with poverty,Low-medium,48,1
+Inequality with poverty,High,48,6
+Inequality with poverty,Low,48,3
+Inequality with poverty,Medium-high,48,5
+Inequality with poverty,Medium-high,48,8
+Inequality with poverty,Low-medium,48,7
+Inequality with poverty,Low,48,3
+Inequality with poverty,Low-medium,48,4
+Inequality with poverty,Low,48,4
+Inequality with poverty,Medium-high,49,7
+Inequality with poverty,High,49,6
+Inequality with poverty,Low-medium,49,3
+Inequality with poverty,High,49,6
+Inequality with poverty,Low,49,5
+Inequality with poverty,Medium-high,49,8
+Inequality with poverty,Low-medium,49,6
+Inequality with poverty,Low-medium,49,7
+Inequality with poverty,High,49,6
+Inequality with poverty,Low-medium,49,7
+Inequality with poverty,High,49,7
+Inequality with poverty,Low,49,8
+Inequality with poverty,High,49,7
+Inequality with poverty,High,49,6
+Inequality with poverty,Low,49,5
+Inequality with poverty,Low,49,2
+Inequality with poverty,Medium-high,49,4
+Inequality with poverty,High,50,6
+Inequality with poverty,High,50,6
+Inequality with poverty,Low-medium,50,6
+Inequality with poverty,Low,50,3
+Inequality with poverty,High,50,7
+Inequality with poverty,Low,50,1
+Inequality with poverty,Low-medium,51,5
+Inequality with poverty,Low,51,5
+Inequality with poverty,High,51,9
+Inequality with poverty,Low-medium,51,7
+Inequality with poverty,Low-medium,51,
+Inequality with poverty,High,51,6
+Inequality with poverty,High,51,6
+Inequality with poverty,High,51,7
+Inequality with poverty,Medium-high,52,6
+Inequality with poverty,Low,52,6
+Inequality with poverty,Low-medium,52,6
+Inequality with poverty,Low,52,5
+Inequality with poverty,High,52,5
+Inequality with poverty,Low-medium,52,6
+Inequality with poverty,Low-medium,52,6
+Inequality with poverty,Low-medium,52,6
+Inequality with poverty,Low,52,3
+Inequality with poverty,High,52,9
+Inequality with poverty,Low,52,2
+Inequality with poverty,Low,52,3
+Inequality with poverty,High,53,8
+Inequality with poverty,Low-medium,53,6
+Inequality with poverty,Low-medium,53,6
+Inequality with poverty,High,53,6
+Inequality with poverty,Low-medium,53,5
+Inequality with poverty,Low,53,4
+Inequality with poverty,High,53,7
+Inequality with poverty,Medium-high,53,7
+Inequality with poverty,Low-medium,53,7
+Inequality with poverty,Low-medium,53,6
+Inequality with poverty,Low,54,6
+Inequality with poverty,High,54,7
+Inequality with poverty,Medium-high,54,2
+Inequality with poverty,Medium-high,54,6
+Inequality with poverty,Low-medium,54,6
+Inequality with poverty,Medium-high,54,7
+Inequality with poverty,Medium-high,54,6
+Inequality with poverty,Low,54,3
+Inequality with poverty,Low,54,9
+Inequality with poverty,Low-medium,54,5
+Inequality with poverty,High,55,9
+Inequality with poverty,High,55,6
+Inequality with poverty,Low,55,2
+Inequality with poverty,High,55,7
+Inequality with poverty,Low,55,6
+Inequality with poverty,Low,55,7
+Inequality with poverty,High,55,6
+Inequality with poverty,Low-medium,55,3
+Inequality with poverty,Low-medium,55,5
+Inequality with poverty,Medium-high,55,7
+Inequality with poverty,Low,56,7
+Inequality with poverty,Low-medium,56,8
+Inequality with poverty,Low-medium,56,6
+Inequality with poverty,Low,56,3
+Inequality with poverty,Medium-high,56,6
+Inequality with poverty,Medium-high,56,7
+Inequality with poverty,Low-medium,56,6
+Inequality with poverty,Medium-high,56,7
+Inequality with poverty,Medium-high,56,7
+Inequality with poverty,High,56,9
+Inequality with poverty,High,56,6
+Inequality with poverty,Low-medium,56,7
+Inequality with poverty,High,56,6
+Inequality with poverty,Medium-high,56,6
+Inequality with poverty,High,57,8
+Inequality with poverty,High,57,7
+Inequality with poverty,Low,57,4
+Inequality with poverty,Low,57,4
+Inequality with poverty,High,57,8
+Inequality with poverty,Medium-high,57,6
+Inequality with poverty,Low-medium,57,6
+Inequality with poverty,Low-medium,57,7
+Inequality with poverty,High,57,6
+Inequality with poverty,Low,57,6
+Inequality with poverty,High,57,7
+Inequality with poverty,Low,57,6
+Inequality with poverty,Low-medium,58,6
+Inequality with poverty,Low-medium,58,4
+Inequality with poverty,Low-medium,58,7
+Inequality with poverty,Medium-high,58,6
+Inequality with poverty,Medium-high,58,7
+Inequality with poverty,High,58,7
+Inequality with poverty,Medium-high,58,5
+Inequality with poverty,Low,58,3
+Inequality with poverty,Low-medium,58,6
+Inequality with poverty,Medium-high,58,8
+Inequality with poverty,Medium-high,58,6
+Inequality with poverty,Low-medium,58,8
+Inequality with poverty,Medium-high,58,5
+Inequality with poverty,Medium-high,59,6
+Inequality with poverty,Low,59,3
+Inequality with poverty,Low-medium,59,6
+Inequality with poverty,Low,59,3
+Inequality with poverty,Low-medium,59,8
+Inequality with poverty,High,59,6
+Inequality with poverty,Low-medium,59,
+Inequality with poverty,High,59,5
+Inequality with poverty,Low-medium,59,6
+Inequality with poverty,Low-medium,60,8
+Inequality with poverty,Low-medium,60,7
+Inequality with poverty,High,60,6
+Inequality with poverty,Low-medium,60,8
+Inequality with poverty,Medium-high,60,5
+Inequality with poverty,Low-medium,60,5
+Inequality with poverty,Low-medium,60,6
+Inequality with poverty,Medium-high,60,6
+Inequality with poverty,High,60,7
+Inequality with poverty,Low-medium,60,6
+Inequality with poverty,Medium-high,61,7
+Inequality with poverty,High,61,5
+Inequality with poverty,Low,61,2
+Inequality with poverty,Low-medium,61,8
+Inequality with poverty,Low,61,6
+Inequality with poverty,Medium-high,61,7
+Inequality with poverty,Low,61,6
+Inequality with poverty,Low,61,4
+Inequality with poverty,Low-medium,61,7
+Inequality with poverty,Low-medium,61,9
+Inequality with poverty,High,61,7
+Inequality with poverty,Medium-high,61,6
+Inequality with poverty,High,61,7
+Inequality with poverty,Low-medium,61,7
+Inequality with poverty,Low-medium,61,7
+Inequality with poverty,Low,62,7
+Inequality with poverty,Low-medium,62,6
+Inequality with poverty,Low-medium,62,6
+Inequality with poverty,Low-medium,62,5
+Inequality with poverty,High,62,8
+Inequality with poverty,High,62,6
+Inequality with poverty,Medium-high,62,6
+Inequality with poverty,Low-medium,62,6
+Inequality with poverty,High,62,6
+Inequality with poverty,Medium-high,62,7
+Inequality with poverty,Low-medium,62,3
+Inequality with poverty,Low,62,7
+Inequality with poverty,Low,63,6
+Inequality with poverty,Low-medium,63,7
+Inequality with poverty,Medium-high,63,8
+Inequality with poverty,Low-medium,63,8
+Inequality with poverty,Low,63,6
+Inequality with poverty,High,63,6
+Inequality with poverty,Low,63,7
+Inequality with poverty,Low-medium,63,7
+Inequality with poverty,Low,64,3
+Inequality with poverty,Low,64,1
+Inequality with poverty,Low,64,3
+Inequality with poverty,Low,64,6
+Inequality with poverty,Low-medium,64,6
+Inequality with poverty,Low,64,2
+Inequality with poverty,Low-medium,64,8
+Inequality with poverty,Low-medium,65,7
+Inequality with poverty,Low,65,4
+Inequality with poverty,Medium-high,65,6
+Inequality with poverty,High,65,8
+Inequality with poverty,Low,65,4
+Inequality with poverty,High,65,8
+Inequality with poverty,High,65,9
+Inequality with poverty,Low,65,6
+Inequality with poverty,Low-medium,65,7
+Inequality with poverty,High,65,7
+Inequality with poverty,High,65,8
+Inequality with poverty,Medium-high,66,7
+Inequality with poverty,High,66,5
+Inequality with poverty,Medium-high,66,8
+Inequality with poverty,Low-medium,66,7
+Inequality with poverty,High,66,6
+Inequality with poverty,Low-medium,66,7
+Inequality with poverty,High,66,8
+Inequality with poverty,Low-medium,66,6
+Inequality with poverty,Medium-high,66,7
+Inequality with poverty,Low,66,3
+Inequality with poverty,Low,66,6
+Inequality with poverty,Low,66,5
+Inequality with poverty,Low,66,6
+Inequality with poverty,Low,66,5
+Inequality with poverty,Low-medium,66,7
+Inequality with poverty,High,66,5
+Inequality with poverty,Medium-high,66,6
+Inequality with poverty,Low-medium,66,6
+Inequality with poverty,Medium-high,66,8
+Inequality with poverty,Low,66,6
+Inequality with poverty,Low,66,1
+Inequality with poverty,Low-medium,66,6
+Inequality with poverty,Low-medium,67,5
+Inequality with poverty,Medium-high,67,6
+Inequality with poverty,Low-medium,67,6
+Inequality with poverty,Low-medium,67,6
+Inequality with poverty,Low-medium,67,7
+Inequality with poverty,Low-medium,67,5
+Inequality with poverty,Low,67,9
+Inequality with poverty,Low,67,6
+Inequality with poverty,Low,67,7
+Inequality with poverty,High,67,8
+Inequality with poverty,Low-medium,67,6
+Inequality with poverty,Low,67,4
+Inequality with poverty,High,67,8
+Inequality with poverty,Low,67,6
+Inequality with poverty,Low-medium,67,8
+Inequality with poverty,Low,67,6
+Inequality with poverty,Medium-high,67,7
+Inequality with poverty,High,67,6
+Inequality with poverty,Low-medium,67,6
+Inequality with poverty,Low-medium,68,6
+Inequality with poverty,Medium-high,68,9
+Inequality with poverty,Low-medium,68,7
+Inequality with poverty,Low,68,6
+Inequality with poverty,Low,68,7
+Inequality with poverty,Low-medium,68,5
+Inequality with poverty,Low,68,6
+Inequality with poverty,Medium-high,68,6
+Inequality with poverty,Low-medium,68,6
+Inequality with poverty,High,68,6
+Inequality with poverty,High,68,9
+Inequality with poverty,Low-medium,68,5
+Inequality with poverty,Low-medium,68,9
+Inequality with poverty,Low-medium,68,7
+Inequality with poverty,Low-medium,69,6
+Inequality with poverty,Low,69,6
+Inequality with poverty,Low,69,4
+Inequality with poverty,High,69,7
+Inequality with poverty,Low-medium,69,8
+Inequality with poverty,Low-medium,69,6
+Inequality with poverty,Medium-high,69,6
+Inequality with poverty,Low-medium,69,5
+Inequality with poverty,Low-medium,69,7
+Inequality with poverty,High,69,7
+Inequality with poverty,Low,69,5
+Inequality with poverty,Low-medium,70,4
+Inequality with poverty,Low-medium,70,8
+Inequality with poverty,High,70,
+Inequality with poverty,Low-medium,70,7
+Inequality with poverty,Low-medium,70,6
+Inequality with poverty,Medium-high,70,8
+Inequality with poverty,Low,70,7
+Inequality with poverty,Low-medium,70,6
+Inequality with poverty,Low-medium,70,8
+Inequality with poverty,Low-medium,70,8
+Inequality with poverty,Low-medium,70,6
+Inequality with poverty,High,70,9
+Inequality with poverty,Medium-high,70,7
+Inequality with poverty,Low-medium,70,6
+Inequality with poverty,Medium-high,70,6
+Inequality with poverty,Low-medium,71,8
+Inequality with poverty,Low-medium,71,6
+Inequality with poverty,Low,71,6
+Inequality with poverty,Medium-high,71,7
+Inequality with poverty,Low,71,7
+Inequality with poverty,Low,71,5
+Inequality with poverty,Low,71,7
+Inequality with poverty,Medium-high,71,7
+Inequality with poverty,Low-medium,71,7
+Inequality with poverty,Low,71,6
+Inequality with poverty,Low-medium,71,6
+Inequality with poverty,Low-medium,71,7
+Inequality with poverty,Medium-high,71,7
+Inequality with poverty,Low,72,6
+Inequality with poverty,Medium-high,72,7
+Inequality with poverty,Low-medium,72,6
+Inequality with poverty,High,72,7
+Inequality with poverty,Low-medium,72,6
+Inequality with poverty,Low-medium,72,5
+Inequality with poverty,Low-medium,72,5
+Inequality with poverty,Low,72,6
+Inequality with poverty,Low,72,5
+Inequality with poverty,Low,72,6
+Inequality with poverty,High,72,7
+Inequality with poverty,Low,72,5
+Inequality with poverty,Medium-high,73,5
+Inequality with poverty,Medium-high,73,8
+Inequality with poverty,Low,73,8
+Inequality with poverty,Low,73,3
+Inequality with poverty,High,73,9
+Inequality with poverty,Low,73,6
+Inequality with poverty,Low-medium,73,5
+Inequality with poverty,High,73,8
+Inequality with poverty,Medium-high,73,8
+Inequality with poverty,Low,73,3
+Inequality with poverty,High,73,10
+Inequality with poverty,Low,73,6
+Inequality with poverty,Low,74,5
+Inequality with poverty,High,74,7
+Inequality with poverty,Low-medium,74,7
+Inequality with poverty,Low,74,7
+Inequality with poverty,Low,74,4
+Inequality with poverty,Low-medium,74,5
+Inequality with poverty,Low-medium,74,5
+Inequality with poverty,Low-medium,74,7
+Inequality with poverty,Low,75,6
+Inequality with poverty,Low,75,6
+Inequality with poverty,Medium-high,75,8
+Inequality with poverty,Low,75,5
+Inequality with poverty,Low,75,7
+Inequality with poverty,Medium-high,75,7
+Inequality with poverty,High,75,9
+Inequality with poverty,Low,75,8
+Inequality with poverty,Low-medium,76,6
+Inequality with poverty,Low-medium,76,6
+Inequality with poverty,Low-medium,76,7
+Inequality with poverty,Low-medium,76,8
+Inequality with poverty,Medium-high,76,6
+Inequality with poverty,High,77,8
+Inequality with poverty,Low,77,3
+Inequality with poverty,High,77,8
+Inequality with poverty,Low,77,6
+Inequality with poverty,Medium-high,77,8
+Inequality with poverty,Low,77,5
+Inequality with poverty,Low,77,6
+Inequality with poverty,Low-medium,78,6
+Inequality with poverty,Low,79,9
+Inequality with poverty,High,79,9
+Inequality with poverty,Low-medium,80,9
+Inequality with poverty,Low-medium,80,8
+Inequality with poverty,Low,80,1
+Inequality with poverty,Low,80,1
+Inequality with poverty,Low,81,7
+Inequality with poverty,Low-medium,81,5
+Inequality with poverty,Low,81,5
+Inequality with poverty,Low-medium,81,7
+Inequality with poverty,Low-medium,82,9
+Inequality with poverty,Low,83,8
+Inequality with poverty,Medium-high,83,6
+Inequality with poverty,Low,84,6
+General inequality,Low,18,7
+General inequality,Low,18,4
+General inequality,High,18,4
+General inequality,Low-medium,18,6
+General inequality,Low,19,4
+General inequality,High,19,8
+General inequality,High,19,8
+General inequality,Medium-high,19,
+General inequality,Low,19,2
+General inequality,Medium-high,20,8
+General inequality,Medium-high,20,1
+General inequality,Medium-high,20,4
+General inequality,Low,20,5
+General inequality,Low,20,6
+General inequality,Low-medium,21,5
+General inequality,Low,21,5
+General inequality,High,22,7
+General inequality,Low,22,4
+General inequality,Medium-high,22,6
+General inequality,Medium-high,23,4
+General inequality,Low-medium,23,5
+General inequality,High,23,9
+General inequality,High,23,7
+General inequality,Medium-high,23,5
+General inequality,Low,23,3
+General inequality,High,23,8
+General inequality,Low-medium,24,8
+General inequality,Low,24,6
+General inequality,High,24,7
+General inequality,Low-medium,24,4
+General inequality,High,24,6
+General inequality,Low-medium,25,9
+General inequality,Medium-high,25,8
+General inequality,Low,25,4
+General inequality,High,25,7
+General inequality,Low-medium,25,7
+General inequality,High,25,4
+General inequality,Low,25,3
+General inequality,High,25,4
+General inequality,Medium-high,25,
+General inequality,High,25,9
+General inequality,Low-medium,26,6
+General inequality,Medium-high,26,9
+General inequality,High,26,3
+General inequality,Low-medium,26,5
+General inequality,Medium-high,26,5
+General inequality,Low-medium,26,3
+General inequality,Low,26,6
+General inequality,High,26,7
+General inequality,Medium-high,26,5
+General inequality,Low-medium,26,
+General inequality,High,26,6
+General inequality,High,26,6
+General inequality,Low-medium,26,5
+General inequality,Low-medium,26,5
+General inequality,Medium-high,26,3
+General inequality,Medium-high,26,3
+General inequality,Low-medium,27,6
+General inequality,Low-medium,27,7
+General inequality,Medium-high,27,5
+General inequality,High,27,9
+General inequality,Low-medium,27,
+General inequality,Low-medium,27,5
+General inequality,High,27,7
+General inequality,High,27,7
+General inequality,Low-medium,27,6
+General inequality,Low-medium,27,3
+General inequality,High,27,7
+General inequality,High,27,7
+General inequality,High,28,6
+General inequality,Low,28,4
+General inequality,Medium-high,28,4
+General inequality,Low,28,7
+General inequality,High,28,6
+General inequality,High,28,9
+General inequality,Low,28,11
+General inequality,Medium-high,28,7
+General inequality,High,28,7
+General inequality,High,28,7
+General inequality,High,28,8
+General inequality,Low-medium,29,4
+General inequality,Low-medium,29,7
+General inequality,Low,29,
+General inequality,Medium-high,29,4
+General inequality,Low-medium,29,8
+General inequality,Low-medium,29,5
+General inequality,High,29,8
+General inequality,High,29,7
+General inequality,Medium-high,29,3
+General inequality,Low,29,5
+General inequality,Low-medium,29,6
+General inequality,Low-medium,29,4
+General inequality,High,29,6
+General inequality,Medium-high,30,5
+General inequality,Low,30,5
+General inequality,Low-medium,30,5
+General inequality,Medium-high,30,6
+General inequality,Low,30,
+General inequality,Medium-high,30,5
+General inequality,Low-medium,30,6
+General inequality,Low,30,4
+General inequality,Medium-high,30,6
+General inequality,Medium-high,30,8
+General inequality,Low-medium,30,6
+General inequality,Low-medium,30,5
+General inequality,Medium-high,31,7
+General inequality,Low-medium,31,6
+General inequality,High,31,8
+General inequality,Low,31,4
+General inequality,Medium-high,31,4
+General inequality,High,31,8
+General inequality,Medium-high,31,4
+General inequality,Medium-high,31,6
+General inequality,Low-medium,31,6
+General inequality,High,31,8
+General inequality,Medium-high,32,6
+General inequality,Medium-high,32,
+General inequality,Low-medium,32,3
+General inequality,High,32,8
+General inequality,Low,32,4
+General inequality,High,33,5
+General inequality,Medium-high,33,6
+General inequality,Low,33,6
+General inequality,Low-medium,33,5
+General inequality,Low-medium,33,5
+General inequality,Medium-high,33,8
+General inequality,Medium-high,33,8
+General inequality,Medium-high,33,6
+General inequality,Medium-high,34,6
+General inequality,Low,34,3
+General inequality,Medium-high,34,6
+General inequality,Low-medium,34,6
+General inequality,High,34,8
+General inequality,High,34,5
+General inequality,Low-medium,34,
+General inequality,Low-medium,34,6
+General inequality,Low-medium,34,
+General inequality,High,34,8
+General inequality,Low-medium,34,5
+General inequality,High,34,7
+General inequality,High,34,7
+General inequality,Medium-high,34,6
+General inequality,Low,34,6
+General inequality,Low,34,
+General inequality,Low-medium,35,5
+General inequality,High,35,7
+General inequality,Low-medium,35,4
+General inequality,Low,35,7
+General inequality,Low-medium,35,6
+General inequality,Medium-high,35,6
+General inequality,Low,35,3
+General inequality,Medium-high,35,5
+General inequality,Low,35,4
+General inequality,High,35,8
+General inequality,Low-medium,35,6
+General inequality,High,35,8
+General inequality,Medium-high,36,4
+General inequality,Low-medium,36,4
+General inequality,Low-medium,36,3
+General inequality,Medium-high,36,4
+General inequality,Medium-high,36,7
+General inequality,High,36,5
+General inequality,Medium-high,36,5
+General inequality,Low-medium,36,5
+General inequality,Low-medium,36,5
+General inequality,Low-medium,36,6
+General inequality,Low,36,2
+General inequality,Medium-high,37,5
+General inequality,Low,37,4
+General inequality,High,37,9
+General inequality,Low,37,4
+General inequality,Low,37,1
+General inequality,Medium-high,37,7
+General inequality,Low-medium,37,6
+General inequality,High,37,8
+General inequality,Low,37,3
+General inequality,Low-medium,37,6
+General inequality,High,37,9
+General inequality,Medium-high,37,6
+General inequality,Low-medium,37,3
+General inequality,High,37,6
+General inequality,High,37,7
+General inequality,Low-medium,37,4
+General inequality,Medium-high,37,7
+General inequality,High,37,7
+General inequality,High,37,7
+General inequality,Medium-high,37,9
+General inequality,Low,37,1
+General inequality,Low,38,6
+General inequality,High,38,6
+General inequality,Medium-high,38,6
+General inequality,Low,38,6
+General inequality,High,38,6
+General inequality,Medium-high,38,8
+General inequality,Low-medium,38,2
+General inequality,Low-medium,38,6
+General inequality,High,38,8
+General inequality,High,38,8
+General inequality,High,38,6
+General inequality,Medium-high,38,6
+General inequality,Low,38,4
+General inequality,Low,38,11
+General inequality,Medium-high,38,6
+General inequality,High,39,6
+General inequality,Low,39,5
+General inequality,Low-medium,39,4
+General inequality,Low,39,1
+General inequality,Medium-high,39,7
+General inequality,High,39,6
+General inequality,Low-medium,39,5
+General inequality,Low,39,6
+General inequality,High,39,3
+General inequality,High,39,8
+General inequality,Medium-high,39,4
+General inequality,High,39,9
+General inequality,High,39,8
+General inequality,Low,40,3
+General inequality,High,40,3
+General inequality,Medium-high,40,2
+General inequality,Low-medium,40,6
+General inequality,Low,40,7
+General inequality,High,40,7
+General inequality,Medium-high,40,7
+General inequality,High,40,8
+General inequality,Low-medium,40,6
+General inequality,High,40,7
+General inequality,Medium-high,40,6
+General inequality,Low,40,5
+General inequality,Low-medium,40,5
+General inequality,High,40,3
+General inequality,High,41,7
+General inequality,Medium-high,41,5
+General inequality,High,41,7
+General inequality,Medium-high,41,6
+General inequality,Low,41,7
+General inequality,High,41,7
+General inequality,Low-medium,41,
+General inequality,High,41,5
+General inequality,High,41,7
+General inequality,Low,41,6
+General inequality,Medium-high,41,8
+General inequality,Low,41,5
+General inequality,Low,41,
+General inequality,Low,41,1
+General inequality,High,42,6
+General inequality,Low,42,3
+General inequality,High,42,8
+General inequality,High,42,
+General inequality,High,42,3
+General inequality,Low-medium,42,6
+General inequality,Low,43,4
+General inequality,Low,43,4
+General inequality,High,43,8
+General inequality,Low-medium,43,5
+General inequality,High,43,6
+General inequality,Medium-high,43,6
+General inequality,High,43,5
+General inequality,High,43,6
+General inequality,Low-medium,43,7
+General inequality,Low,43,4
+General inequality,High,43,6
+General inequality,Low-medium,43,8
+General inequality,Medium-high,43,6
+General inequality,High,43,8
+General inequality,Low-medium,43,7
+General inequality,Low,43,6
+General inequality,High,43,8
+General inequality,High,44,8
+General inequality,Medium-high,44,6
+General inequality,High,44,6
+General inequality,Medium-high,44,6
+General inequality,High,44,7
+General inequality,Low,44,4
+General inequality,Low-medium,44,5
+General inequality,High,44,4
+General inequality,High,44,8
+General inequality,Low,44,5
+General inequality,High,44,7
+General inequality,High,44,7
+General inequality,High,44,7
+General inequality,High,44,9
+General inequality,High,44,7
+General inequality,Low-medium,44,6
+General inequality,Medium-high,45,6
+General inequality,Low,45,4
+General inequality,High,45,6
+General inequality,Medium-high,45,9
+General inequality,High,45,7
+General inequality,Low,45,2
+General inequality,Low-medium,45,4
+General inequality,Low-medium,45,3
+General inequality,Low-medium,45,6
+General inequality,Low,45,4
+General inequality,High,45,8
+General inequality,Low,45,3
+General inequality,Low,46,7
+General inequality,Medium-high,46,7
+General inequality,Low-medium,46,6
+General inequality,Low-medium,46,5
+General inequality,Low-medium,46,6
+General inequality,Medium-high,46,5
+General inequality,Low,46,7
+General inequality,Low-medium,46,4
+General inequality,Low,46,4
+General inequality,Low-medium,46,4
+General inequality,Medium-high,46,6
+General inequality,High,46,8
+General inequality,Medium-high,47,6
+General inequality,High,47,9
+General inequality,Low-medium,47,4
+General inequality,Low,47,5
+General inequality,Medium-high,47,8
+General inequality,Low-medium,47,7
+General inequality,Low-medium,47,6
+General inequality,Low-medium,47,6
+General inequality,High,47,6
+General inequality,Low-medium,47,6
+General inequality,Medium-high,47,5
+General inequality,Medium-high,47,5
+General inequality,Low,47,2
+General inequality,Low,48,1
+General inequality,Low,48,3
+General inequality,Low-medium,48,6
+General inequality,Low,48,5
+General inequality,Low,48,4
+General inequality,Low-medium,48,6
+General inequality,Low-medium,48,6
+General inequality,High,48,6
+General inequality,Medium-high,48,5
+General inequality,Low-medium,48,7
+General inequality,Low,48,1
+General inequality,Medium-high,48,7
+General inequality,Low,48,3
+General inequality,Low-medium,48,5
+General inequality,Low,48,5
+General inequality,Medium-high,48,6
+General inequality,Low,48,3
+General inequality,Low-medium,49,7
+General inequality,Low-medium,49,5
+General inequality,High,49,7
+General inequality,Low-medium,49,6
+General inequality,High,49,10
+General inequality,High,49,7
+General inequality,Low,49,5
+General inequality,Low-medium,49,6
+General inequality,High,49,8
+General inequality,Medium-high,49,5
+General inequality,High,49,9
+General inequality,Low,49,1
+General inequality,Medium-high,49,
+General inequality,Low,49,5
+General inequality,High,49,5
+General inequality,Low,49,5
+General inequality,High,49,6
+General inequality,Low-medium,49,6
+General inequality,Medium-high,49,6
+General inequality,Low-medium,49,8
+General inequality,High,50,6
+General inequality,High,50,8
+General inequality,Low-medium,50,6
+General inequality,Low,50,6
+General inequality,Low-medium,50,6
+General inequality,High,50,8
+General inequality,Low-medium,50,5
+General inequality,High,50,8
+General inequality,Low-medium,50,5
+General inequality,High,50,7
+General inequality,Low-medium,51,6
+General inequality,High,51,8
+General inequality,High,51,7
+General inequality,High,51,6
+General inequality,Low,52,3
+General inequality,Medium-high,52,6
+General inequality,High,52,7
+General inequality,Low,52,3
+General inequality,High,52,6
+General inequality,Low,53,5
+General inequality,Low-medium,53,3
+General inequality,Low,53,3
+General inequality,High,53,6
+General inequality,Low,53,5
+General inequality,Low-medium,53,5
+General inequality,Low-medium,53,
+General inequality,Low-medium,53,4
+General inequality,Low-medium,54,6
+General inequality,Low-medium,54,8
+General inequality,Low,54,1
+General inequality,Low-medium,54,8
+General inequality,High,54,10
+General inequality,Low,54,6
+General inequality,Low-medium,54,8
+General inequality,Medium-high,54,6
+General inequality,Medium-high,54,5
+General inequality,High,55,9
+General inequality,High,55,8
+General inequality,Medium-high,55,6
+General inequality,High,55,6
+General inequality,Low,55,3
+General inequality,Low-medium,55,7
+General inequality,Medium-high,55,7
+General inequality,Low-medium,55,9
+General inequality,High,55,7
+General inequality,Low,55,5
+General inequality,Low,56,6
+General inequality,Low-medium,56,7
+General inequality,Low,56,7
+General inequality,Low-medium,56,6
+General inequality,Low,56,2
+General inequality,High,56,8
+General inequality,Low,56,3
+General inequality,Low,56,6
+General inequality,Low,56,5
+General inequality,Low-medium,56,6
+General inequality,High,56,9
+General inequality,Low-medium,57,6
+General inequality,Low,57,2
+General inequality,Low,57,3
+General inequality,High,57,6
+General inequality,Low,57,5
+General inequality,Low-medium,57,8
+General inequality,Low-medium,57,6
+General inequality,Low,57,5
+General inequality,Low-medium,57,6
+General inequality,Low-medium,57,5
+General inequality,Low,57,7
+General inequality,Low,57,3
+General inequality,Low-medium,57,4
+General inequality,Low,57,9
+General inequality,Low-medium,58,6
+General inequality,Low,58,5
+General inequality,Low-medium,58,6
+General inequality,Medium-high,58,7
+General inequality,Medium-high,58,11
+General inequality,Low-medium,58,7
+General inequality,Low-medium,58,4
+General inequality,Low-medium,58,4
+General inequality,Medium-high,58,7
+General inequality,Low,58,5
+General inequality,Low,58,7
+General inequality,High,59,9
+General inequality,Medium-high,59,8
+General inequality,Medium-high,59,8
+General inequality,Low,59,5
+General inequality,Low,59,4
+General inequality,Low-medium,59,8
+General inequality,Low-medium,59,4
+General inequality,Low,59,2
+General inequality,Low-medium,59,6
+General inequality,Low-medium,59,8
+General inequality,High,59,8
+General inequality,Low-medium,59,3
+General inequality,Medium-high,59,6
+General inequality,Low-medium,59,5
+General inequality,High,59,8
+General inequality,Low-medium,60,6
+General inequality,Low,60,8
+General inequality,High,60,6
+General inequality,Low,60,4
+General inequality,Medium-high,60,6
+General inequality,Low,60,5
+General inequality,Medium-high,60,8
+General inequality,Low-medium,60,
+General inequality,Low,60,6
+General inequality,Low,60,4
+General inequality,Low,60,1
+General inequality,Medium-high,60,10
+General inequality,Medium-high,60,5
+General inequality,High,60,6
+General inequality,High,61,5
+General inequality,Low-medium,61,8
+General inequality,Low-medium,61,4
+General inequality,Low,61,6
+General inequality,Low-medium,61,6
+General inequality,High,61,8
+General inequality,High,61,8
+General inequality,High,61,8
+General inequality,Low-medium,61,3
+General inequality,Low,61,4
+General inequality,Medium-high,61,7
+General inequality,Low-medium,61,4
+General inequality,Low,62,8
+General inequality,Medium-high,62,6
+General inequality,Low,62,4
+General inequality,Low-medium,62,6
+General inequality,Medium-high,62,6
+General inequality,Low-medium,62,7
+General inequality,Medium-high,62,6
+General inequality,Low-medium,62,7
+General inequality,Low,62,6
+General inequality,Low,63,4
+General inequality,High,63,9
+General inequality,Low,63,6
+General inequality,Low-medium,63,6
+General inequality,High,63,9
+General inequality,High,63,8
+General inequality,Medium-high,63,6
+General inequality,High,63,7
+General inequality,High,63,7
+General inequality,Low,63,6
+General inequality,Low,63,4
+General inequality,Low,63,1
+General inequality,Low,63,8
+General inequality,High,64,8
+General inequality,High,64,9
+General inequality,Low,64,3
+General inequality,Medium-high,64,5
+General inequality,High,64,7
+General inequality,Low,64,6
+General inequality,Low-medium,64,7
+General inequality,Low-medium,65,6
+General inequality,Low-medium,65,4
+General inequality,High,65,7
+General inequality,Low,65,8
+General inequality,Low,65,7
+General inequality,Low-medium,65,7
+General inequality,Low-medium,65,7
+General inequality,Low,65,8
+General inequality,Low,65,4
+General inequality,Low,65,3
+General inequality,Medium-high,65,4
+General inequality,Low-medium,65,6
+General inequality,Low,66,5
+General inequality,Low,66,8
+General inequality,Low-medium,66,6
+General inequality,Low-medium,66,7
+General inequality,Low,66,5
+General inequality,High,66,9
+General inequality,Low,66,7
+General inequality,Low,66,6
+General inequality,Low-medium,66,7
+General inequality,Low,66,7
+General inequality,Low-medium,66,5
+General inequality,Low,66,2
+General inequality,Medium-high,66,7
+General inequality,Low-medium,66,7
+General inequality,Low-medium,67,8
+General inequality,Low,67,4
+General inequality,Medium-high,67,9
+General inequality,High,67,11
+General inequality,Medium-high,67,8
+General inequality,Low,67,4
+General inequality,Low-medium,67,4
+General inequality,Medium-high,67,7
+General inequality,High,67,6
+General inequality,Low,67,4
+General inequality,Medium-high,67,7
+General inequality,Low-medium,68,5
+General inequality,Low-medium,68,5
+General inequality,Medium-high,68,6
+General inequality,High,68,7
+General inequality,Low,68,3
+General inequality,Medium-high,68,4
+General inequality,Low-medium,68,4
+General inequality,Low,68,6
+General inequality,Low-medium,68,8
+General inequality,Low-medium,68,6
+General inequality,Low-medium,68,8
+General inequality,Low-medium,68,6
+General inequality,Low-medium,68,6
+General inequality,Low,69,4
+General inequality,Medium-high,69,6
+General inequality,Low,69,5
+General inequality,Medium-high,69,8
+General inequality,Medium-high,69,8
+General inequality,Low-medium,69,8
+General inequality,Low-medium,69,6
+General inequality,Low-medium,69,8
+General inequality,Low-medium,69,6
+General inequality,Low,69,7
+General inequality,Low,69,4
+General inequality,Low-medium,69,6
+General inequality,Low,69,5
+General inequality,Low-medium,70,6
+General inequality,Low,70,7
+General inequality,Medium-high,70,6
+General inequality,Low,70,
+General inequality,Medium-high,70,7
+General inequality,High,70,8
+General inequality,Low-medium,70,5
+General inequality,Low-medium,70,9
+General inequality,Low-medium,70,7
+General inequality,Low-medium,70,9
+General inequality,Low-medium,70,7
+General inequality,Low,70,6
+General inequality,Low-medium,70,6
+General inequality,Medium-high,70,8
+General inequality,Medium-high,70,6
+General inequality,Low-medium,70,6
+General inequality,Low,70,6
+General inequality,Low,71,10
+General inequality,Low,71,6
+General inequality,Low,71,6
+General inequality,High,71,8
+General inequality,Low,71,2
+General inequality,Low,71,4
+General inequality,Medium-high,71,8
+General inequality,Low,71,5
+General inequality,Medium-high,71,5
+General inequality,Low,71,7
+General inequality,Low-medium,71,5
+General inequality,Low-medium,71,4
+General inequality,Medium-high,71,7
+General inequality,Medium-high,71,8
+General inequality,High,71,9
+General inequality,Low-medium,72,7
+General inequality,Low,72,6
+General inequality,Low-medium,72,8
+General inequality,Medium-high,72,5
+General inequality,Low,72,8
+General inequality,Low,72,7
+General inequality,Low,72,6
+General inequality,Low-medium,72,9
+General inequality,High,72,
+General inequality,Low-medium,72,6
+General inequality,Medium-high,72,9
+General inequality,Low,72,6
+General inequality,Medium-high,72,6
+General inequality,High,72,7
+General inequality,Low,72,5
+General inequality,Low-medium,73,8
+General inequality,Low-medium,73,7
+General inequality,Low-medium,73,6
+General inequality,High,73,9
+General inequality,Low-medium,73,7
+General inequality,Medium-high,73,6
+General inequality,Medium-high,74,6
+General inequality,Low,74,6
+General inequality,Low,74,7
+General inequality,Low-medium,75,
+General inequality,High,75,11
+General inequality,Low,75,7
+General inequality,Low,75,6
+General inequality,High,75,8
+General inequality,Medium-high,75,9
+General inequality,Medium-high,75,8
+General inequality,Low,75,2
+General inequality,Low-medium,75,6
+General inequality,Low,75,6
+General inequality,Low,76,6
+General inequality,Low-medium,76,6
+General inequality,Low,76,5
+General inequality,Low,76,7
+General inequality,Low-medium,76,8
+General inequality,Low-medium,76,6
+General inequality,Low-medium,77,7
+General inequality,Low-medium,77,3
+General inequality,Low-medium,77,4
+General inequality,Low,77,6
+General inequality,Low-medium,77,9
+General inequality,Medium-high,78,7
+General inequality,Low-medium,78,7
+General inequality,Low,78,5
+General inequality,Low-medium,78,6
+General inequality,Low-medium,78,7
+General inequality,High,78,11
+General inequality,Medium-high,78,8
+General inequality,Low-medium,79,7
+General inequality,Low-medium,79,6
+General inequality,High,80,8
+General inequality,Low-medium,80,5
+General inequality,Low,81,5
+General inequality,Low-medium,82,7
+General inequality,Low,83,6
+General inequality,High,86,9

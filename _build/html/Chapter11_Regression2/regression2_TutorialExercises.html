@@ -1,0 +1,1241 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter11_Regression2/regression2_TutorialExercises';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter11_Regression2/regression2_TutorialExercises.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter11_Regression2/regression2_TutorialExercises.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter11_Regression2/regression2_TutorialExercises.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">ESS data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-regression-model">Simple regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-regression-model">Multiple regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-categorical-variable">Add a categorical variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-reference-category">Choosing the reference category</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-categorical-variable">Further categorical variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<p>This week, you will be investigating attitudes to immigration using data from the <a href='https://www.europeansocialsurvey.org'>European Social Survey (ESS)</a>.</p>
+<p>The ESS is a highly respected survey and uses random sampling to achieve a sample that is representative of the population. The survey includes lots of questions about the social and economic circumstances of the household as well as asking a set of questions on political preferences and attitudes.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.graphics</span> <span class="k">as</span> <span class="nn">smg</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ess-data">
+<h2>ESS data<a class="headerlink" href="#ess-data" title="Permalink to this heading">#</a></h2>
+<p>Today’s data file is restricted to respondents in the UK. The outcome measure of interest is ‘better’ and is a score from 0-10 in answer to the following question: “Is the UK made a worse or a better place to live by people coming to live here from other countries?” 0 is labelled as “Worse place to live” and 10 as “better place to live”, or respondents could choose an answer in between. Thus, high scores indicate more open attitudes, i.e., those who feel more positive about the consequences of immigration, and low scores the opposite.</p>
+<p>This file contains several explanatory/ controls variables:</p>
+<ul class="simple">
+<li><p>age (a continuous measure in years)</p></li>
+<li><p>sex (Male, Female)</p></li>
+<li><p>educ (a categorical measure with 3 levels, where ‘tertiary’ is higher education such as university)</p></li>
+<li><p>vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)</p></li>
+<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and view the data</span>
+<span class="n">ess</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/immigrationData.csv&#39;</span><span class="p">)</span>
+<span class="n">ess</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1</th>
+      <th>vote</th>
+      <th>better</th>
+      <th>bornuk</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>educ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>Conservative</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>Male</td>
+      <td>75.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>Conservative</td>
+      <td>7.0</td>
+      <td>0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>Upper secondary</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>Conservative</td>
+      <td>8.0</td>
+      <td>0</td>
+      <td>Female</td>
+      <td>54.0</td>
+      <td>Tertiary</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5</td>
+      <td>Conservative</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>Male</td>
+      <td>58.0</td>
+      <td>Upper secondary</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6</td>
+      <td>Conservative</td>
+      <td>7.0</td>
+      <td>0</td>
+      <td>Male</td>
+      <td>76.0</td>
+      <td>Lower secondary</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2199</th>
+      <td>2201</td>
+      <td>NaN</td>
+      <td>9.0</td>
+      <td>0</td>
+      <td>Female</td>
+      <td>32.0</td>
+      <td>Tertiary</td>
+    </tr>
+    <tr>
+      <th>2200</th>
+      <td>2202</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>Female</td>
+      <td>69.0</td>
+      <td>Lower secondary</td>
+    </tr>
+    <tr>
+      <th>2201</th>
+      <td>2203</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>0</td>
+      <td>Female</td>
+      <td>34.0</td>
+      <td>Upper secondary</td>
+    </tr>
+    <tr>
+      <th>2202</th>
+      <td>2204</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>Male</td>
+      <td>23.0</td>
+      <td>Lower secondary</td>
+    </tr>
+    <tr>
+      <th>2203</th>
+      <td>2205</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>Female</td>
+      <td>54.0</td>
+      <td>Upper secondary</td>
+    </tr>
+  </tbody>
+</table>
+<p>2204 rows × 7 columns</p>
+</div></div></div>
+</div>
+<section id="data-cleaning">
+<h3>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h3>
+<p>Get to know your data.</p>
+<ul class="simple">
+<li><p>How survey respondants are there?</p></li>
+<li><p>For each variable, check whether there are many missing values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here to check for missing data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-regression-model">
+<h3>Simple regression model<a class="headerlink" href="#simple-regression-model" title="Permalink to this heading">#</a></h3>
+<p>Some of the common ideas about attitudes to immigration include that younger people tend to be more positive about immigration. Let’s test this idea using regression analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x = age</span>
+<span class="c1"># You can refer back to last week&#39;s work for how to do this!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What does the result tell us?</p></li>
+<li><p>Is the age coefficient positive or negative and how do we interpret the size of the slope?</p></li>
+</ul>
+</section>
+<section id="multiple-regression-model">
+<h3>Multiple regression model<a class="headerlink" href="#multiple-regression-model" title="Permalink to this heading">#</a></h3>
+<p>We are going to add a further explanatory variable to the model: sex.</p>
+<p>This is a string variable with two categories: Male and Female.</p>
+<p>Add sex to your model, keeping age in the model too. ou will need to change the formula from <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span></code> to <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span> <span class="pre">+</span> <span class="pre">sex</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What does the coefficient for sex tell us?</p></li>
+<li><p>Do men or women have more positive attitudes towards immigration?</p></li>
+<li><p>In the new model that includes sex, does the age coefficient change from model 1?</p></li>
+</ul>
+<p>NB: The eagle-eyed among you might spot that the coefficient for sex is not statistically significant. Well spotted! We will spend more time looking at statistical significance next week.</p>
+</section>
+<section id="add-a-categorical-variable">
+<h3>Add a categorical variable<a class="headerlink" href="#add-a-categorical-variable" title="Permalink to this heading">#</a></h3>
+<p>Next, we are going to add education as a further explanatory variable.</p>
+<ul class="simple">
+<li><p>This is a categorical variable - what are its possible values?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ess</span><span class="p">[</span><span class="s1">&#39;educ&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([nan, &#39;Upper secondary&#39;, &#39;Tertiary&#39;, &#39;Lower secondary&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Think:</p>
+<ul class="simple">
+<li><p>How many categories does the education variable have?</p></li>
+<li><p>How many dummy variables are needed in the regression model?</p></li>
+</ul>
+<p>Before you run the model, think about what you expect to see. Do you think the coefficients will be positive or negative?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ age + sex + educ&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>better</td>      <th>  R-squared:         </th> <td>   0.112</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.110</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Fri, 06 Oct 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>18:16:59</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>  2092</td>      <th>  BIC:               </th> <td>   9647.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     4</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+             <td></td>                <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>               <td>    5.5960</td> <td>    0.198</td> <td>   28.298</td> <td> 0.000</td> <td>    5.208</td> <td>    5.984</td>
+</tr>
+<tr>
+  <th>sex[T.Male]</th>             <td>    0.0138</td> <td>    0.105</td> <td>    0.131</td> <td> 0.896</td> <td>   -0.193</td> <td>    0.220</td>
+</tr>
+<tr>
+  <th>educ[T.Tertiary]</th>        <td>    1.9270</td> <td>    0.140</td> <td>   13.750</td> <td> 0.000</td> <td>    1.652</td> <td>    2.202</td>
+</tr>
+<tr>
+  <th>educ[T.Upper secondary]</th> <td>    0.6291</td> <td>    0.129</td> <td>    4.891</td> <td> 0.000</td> <td>    0.377</td> <td>    0.881</td>
+</tr>
+<tr>
+  <th>age</th>                     <td>   -0.0152</td> <td>    0.003</td> <td>   -5.208</td> <td> 0.000</td> <td>   -0.021</td> <td>   -0.009</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>42.646</td> <th>  Durbin-Watson:     </th> <td>   1.930</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  43.726</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.337</td> <th>  Prob(JB):          </th> <td>3.20e-10</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.787</td> <th>  Cond. No.          </th> <td>    245.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<section id="choosing-the-reference-category">
+<h4>Choosing the reference category<a class="headerlink" href="#choosing-the-reference-category" title="Permalink to this heading">#</a></h4>
+<p>Which category was used as the reference category?</p>
+<p>You should be able to tell from the summary table, as there will be no <span class="math notranslate nohighlight">\(\beta\)</span> value for the reference category - If we have categories A,B,C and B is the reference, then <span class="math notranslate nohighlight">\(\beta_A\)</span> and <span class="math notranslate nohighlight">\(\beta_C\)</span> tell us how much the expected value of <span class="math notranslate nohighlight">\(y\)</span> increases or decreases in catgories A and C compared to category B.</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> chooses the least frequent category as the reference, which in this case is ‘lower secondary’. So the <span class="math notranslate nohighlight">\(\beta\)</span> values for ‘Upper secondary’ and ‘Tertiary’ tells us how much higher the value of ‘better’ is expected to be for survey respondants with ‘Upper secondary’ or ‘Tertiary’ education respectively.</p>
+<p>You may wish to choose the reference category. You can do this by using slightly different syntax - for example to choose ‘Upper secondary’ as teh reference category, in the formula we replace the simple variable name <code class="docutils literal notranslate"><span class="pre">educ</span></code> with the code <code class="docutils literal notranslate"><span class="pre">C(educ,</span> <span class="pre">Treatment(reference=&quot;Upper</span> <span class="pre">secondary&quot;)</span></code></p>
+<p>I chose the middle category (Upper secondary) as the reference, so I am expecting opposite signed beta values for those with a level of education below (Lower secondary) or abobve (Tertiary) my reference category.</p>
+<ul class="simple">
+<li><p>Run the model, and check the output.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ age + sex + C(educ, Treatment(reference=&quot;Upper secondary&quot;))&#39;</span><span class="p">)</span>
+                                                          
+                                                        
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>better</td>      <th>  R-squared:         </th> <td>   0.112</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.110</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Fri, 06 Oct 2023</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>18:16:59</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>  2092</td>      <th>  BIC:               </th> <td>   9647.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     4</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+                                   <td></td>                                     <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>                                                          <td>    6.2251</td> <td>    0.175</td> <td>   35.606</td> <td> 0.000</td> <td>    5.882</td> <td>    6.568</td>
+</tr>
+<tr>
+  <th>sex[T.Male]</th>                                                        <td>    0.0138</td> <td>    0.105</td> <td>    0.131</td> <td> 0.896</td> <td>   -0.193</td> <td>    0.220</td>
+</tr>
+<tr>
+  <th>C(educ, Treatment(reference="Upper secondary"))[T.Lower secondary]</th> <td>   -0.6291</td> <td>    0.129</td> <td>   -4.891</td> <td> 0.000</td> <td>   -0.881</td> <td>   -0.377</td>
+</tr>
+<tr>
+  <th>C(educ, Treatment(reference="Upper secondary"))[T.Tertiary]</th>        <td>    1.2979</td> <td>    0.125</td> <td>   10.344</td> <td> 0.000</td> <td>    1.052</td> <td>    1.544</td>
+</tr>
+<tr>
+  <th>age</th>                                                                <td>   -0.0152</td> <td>    0.003</td> <td>   -5.208</td> <td> 0.000</td> <td>   -0.021</td> <td>   -0.009</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>42.646</td> <th>  Durbin-Watson:     </th> <td>   1.930</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  43.726</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.337</td> <th>  Prob(JB):          </th> <td>3.20e-10</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.787</td> <th>  Cond. No.          </th> <td>    202.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+</section>
+</section>
+<section id="interpretation">
+<h3>Interpretation<a class="headerlink" href="#interpretation" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>How should you interpret the education coefficients in the model?</p></li>
+<li><p>Which is the “omitted category” or “reference group” (these two terms are used interchangeably here).</p></li>
+<li><p>Can you explain in words the relationship between education and immigration attitudes?</p></li>
+</ul>
+</section>
+<section id="further-categorical-variable">
+<h3>Further categorical variable<a class="headerlink" href="#further-categorical-variable" title="Permalink to this heading">#</a></h3>
+<p>What do you think the attitudes will be like of people who are immigrants themselves, versus people who were born in the UK?</p>
+<p>Let’s test your hypothesis, by adding ‘bornuk’ to the model. This is another binary variable where 0 = born in the UK, and 1 = born outside the UK.</p>
+<p>Run the code. What does it show?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What about you? Plug your own values into the regression equation and find out what the model predicts YOUR answer to the immigration question to be. (NB: I know you are all still doing your degree! Assume you have finished it for the purpose of this exercise).</p>
+<p>You could use pencil and paper or Excel, or type the equation in a code block as I have done below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># edit this equation - </span>
+<span class="c1"># you will need to replace the B values with coefficients from the regression summary table, </span>
+<span class="c1"># and the variable names with actual values (so if your age is 20, replace &#39;age&#39; with 20)</span>
+<span class="c1"># for categorical variables you need to work out which B value to use - </span>
+
+<span class="c1"># better = B0 + B1*age + B2*sex + B3*education + B4*bornuk</span>
+
+<span class="c1"># In the following examples I used &#39;upper secondary&#39; as the reference category for the categorical variable &#39;educ&#39;</span>
+
+<span class="c1"># For example, for a person who is 41, female and tertiary educated, and was born in the UK, the value should be calculated as follows:</span>
+<span class="c1"># better = intercept + coef(age)*41 + coef(sex[T.male])*0 + coef(educ[T.tertiary])*1 + coef(bornuk)*1</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">41</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mf">1.1765</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># For example, for a person who is 43, male and lower secondary educated, and was born outside the UK, the value should be calculated as follows:</span>
+<span class="c1"># better = intercept + coef(age)*43 + coef(sex[T.male])*1 + coef(educ[T.Lower Secondary])*1 + coef(bornuk)*0</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">44</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.6699</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.8002
+4.7763
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interaction-terms">
+<h3>Interaction terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h3>
+<p>Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable.</p>
+<p>We will do this by modelling the effect of ‘age’ and ‘vote’ on ‘better’, and adding an <strong>interaction term</strong> of age*vote to the model.</p>
+<p>The code in Python for an interaction between A and B is A:B</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote</span>
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ age + sex + vote + age:vote&#39;</span><span class="p">)</span>
+                                                          
+                                                        
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+ 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>better</td>      <th>  R-squared:         </th> <td>   0.077</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.073</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   20.77</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Fri, 06 Oct 2023</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>18:16:59</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>  1511</td>      <th>  AIC:               </th> <td>   6903.</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>  1504</td>      <th>  BIC:               </th> <td>   6940.</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     6</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+              <td></td>                <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>                <td>    6.9235</td> <td>    0.464</td> <td>   14.909</td> <td> 0.000</td> <td>    6.013</td> <td>    7.834</td>
+</tr>
+<tr>
+  <th>sex[T.Male]</th>              <td>    0.0403</td> <td>    0.123</td> <td>    0.329</td> <td> 0.742</td> <td>   -0.200</td> <td>    0.281</td>
+</tr>
+<tr>
+  <th>vote[T.Conservative]</th>     <td>   -0.6885</td> <td>    0.589</td> <td>   -1.170</td> <td> 0.242</td> <td>   -1.843</td> <td>    0.466</td>
+</tr>
+<tr>
+  <th>vote[T.Labour]</th>           <td>    1.1944</td> <td>    0.564</td> <td>    2.119</td> <td> 0.034</td> <td>    0.089</td> <td>    2.300</td>
+</tr>
+<tr>
+  <th>age</th>                      <td>   -0.0145</td> <td>    0.008</td> <td>   -1.823</td> <td> 0.068</td> <td>   -0.030</td> <td>    0.001</td>
+</tr>
+<tr>
+  <th>age:vote[T.Conservative]</th> <td>   -0.0033</td> <td>    0.010</td> <td>   -0.332</td> <td> 0.740</td> <td>   -0.023</td> <td>    0.016</td>
+</tr>
+<tr>
+  <th>age:vote[T.Labour]</th>       <td>   -0.0213</td> <td>    0.010</td> <td>   -2.133</td> <td> 0.033</td> <td>   -0.041</td> <td>   -0.002</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>41.378</td> <th>  Durbin-Watson:     </th> <td>   1.968</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  43.572</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.403</td> <th>  Prob(JB):          </th> <td>3.46e-10</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 2.796</td> <th>  Cond. No.          </th> <td>    951.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<section id="id1">
+<h4>Interpretation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>The interaction <code class="docutils literal notranslate"><span class="pre">age:vote</span></code> breaks down the relationship between <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">better</span></code> into three separate relationships for the three categories of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
+<p>We can visualize this using <code class="docutils literal notranslate"><span class="pre">sns.lmeplot</span></code> which plots the linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> - if we use the argument <code class="docutils literal notranslate"><span class="pre">hue='vote'</span></code> this will be done separately for each category of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ess</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;better&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;vote&#39;</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Labour&#39;</span><span class="p">:</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;Any other party&#39;</span><span class="p">:</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;Conservative&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
+  self._figure.tight_layout(*args, **kwargs)
+</pre></div>
+</div>
+<img alt="../_images/98b946daec0440e6db5b163fd322f0fcca4004f9cbb8a82c6832635b5576bd57.png" src="../_images/98b946daec0440e6db5b163fd322f0fcca4004f9cbb8a82c6832635b5576bd57.png" />
+</div>
+</div>
+<p>Interpret the results in your own words.</p>
+<p>Check your understanding with your classmates or your tutor.</p>
+<p>(Hint: where is the gap between between Labour and Conservative supporters smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?)</p>
+</section>
+</section>
+</section>
+<section id="further-exercises">
+<h2>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Can you run 3 separate regression models for Conservative voters, Labour voters, and Other?</p></li>
+</ol>
+<ul class="simple">
+<li><p>I’d recommend creating three separate data frames for each political preference</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Just by eyeballing the coefficients, do you think there might be any other significant interactions?</p></li>
+<li><p>A conceptual question: What other variables would you like to include in the model for explaining attitudes to immigration? (Things that are not included in this data set, but you think are likely to be important. Just assume the measures would be available!)</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter11_Regression2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">ESS data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-regression-model">Simple regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-regression-model">Multiple regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-categorical-variable">Add a categorical variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-reference-category">Choosing the reference category</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-categorical-variable">Further categorical variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

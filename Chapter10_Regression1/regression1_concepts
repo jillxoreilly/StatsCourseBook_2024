@@ -1,0 +1,31 @@
+# Regression Concepts
+
+Let’s begin with a ‘toy’ dataset, by which I mean a dataset with a small number of data points so that we can easily see what is going on.
+
+There are only 10 data points here, but the data are real! These are country average levels of life satisfaction and GDP per capita for a selection of countries in Europe in 2020.
+
+I downloaded these data from the Our World in Data website for all of Europe, then randomly selected 10 countries. There are a lot of real-world studies on the topic of the relationship between wealth and happiness.
+
+Here, we’ll focus on the concepts. We’ll get onto the Python code for regression later.
+
+<img src="images/regression1_happinessTable.png" width=80% >
+
+First, we can examine the relationship visually in a scatter plot:
+
+<img src="images/regression1_happinessScatter.png" width=80% >
+
+* What can you say about the relationship from eyeballing the scatter plot?
+
+
+```{admonition} Click to reveal answer
+:class: dropdown
+There is a positive relationship
+```
+The correlation between life satisfaction and GDP per capita is 0.65 meaning, as you recall from topic 4, that there is a positive relationship of moderate strength. As GDP increases, so does average life satisfaction.
+
+* The regression equation takes the form $\hat{y}=a+bx$ where $\hat{y}$̂ (known as “y-hat”) is the predicted value of $y$, $a$ is the intercept, and $b$ is the slope. What are the $y$ and $x$ in the life satisfaction example?
+
+```{admonition} Click to reveal answer
+:class: dropdown
+In our example, $y$ is life satisfaction and $x$ is GDP per capita
+```

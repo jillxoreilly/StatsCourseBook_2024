@@ -1,0 +1,1505 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Histogram and KDE plot &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_DataVisualization/MT_wk2_histogram-Copy1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter2_DataVisualization/MT_wk2_histogram-Copy1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter2_DataVisualization/MT_wk2_histogram-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter2_DataVisualization/MT_wk2_histogram-Copy1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Histogram and KDE plot</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-inspect-the-data">Load and inspect the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-bin-boundaries-and-width">Choosing the bin boundaries and width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-is-unstable-for-small-n">Histogram is unstable for small <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bin-width">Bin width</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kde-plot">KDE plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kde-plot-without-histogram">KDE plot (without histogram)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density">Probability density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bandwidth">Bandwidth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations-when-comparing-distributions">Considerations when comparing distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-plot-placement-with-plt-subplot">Controlling plot placement with <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-in-a-grid">Multiple plots in a grid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-appearance-of-your-plots">Customizing the appearance of your plots</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="histogram-and-kde-plot">
+<h1>Histogram and KDE plot<a class="headerlink" href="#histogram-and-kde-plot" title="Permalink to this heading">#</a></h1>
+<p>If we want to see the shape of a data distribution, the <strong>histogram</strong> can be a good choice. From a histogram we can easily see if a data distribution:</p>
+<ul class="simple">
+<li><p>is unimodal or multimodel</p></li>
+<li><p>has skew, or is symmetrical</p></li>
+<li><p>differs between two samples</p></li>
+</ul>
+<p>In this section we will see how to plot a histogram using Python and what choices we can make to show the data distribution clearly and accurately</p>
+<p>We will also consider some of the limitations of the histogram for small datasets, and explore a related plot, the <strong>Kernel Density Estimate (KDE)</strong> plot, which can mitigate these limitations.</p>
+<p>To summarize the conceptual content of this page, when plotting a histogram we should consider:</p>
+<ul class="simple">
+<li><p>the width of the bins - narrow bins give more detail but may make it harder to perceive the overall pattern</p>
+<ul>
+<li><p>the KDE-plot equivalent is <strong>bandwidth</strong> which determines the smoothness of the KDE shape</p></li>
+</ul>
+</li>
+<li><p>the bin boundaries - do we want to place them at round numbers or some other meaningful point?</p></li>
+</ul>
+<p>When using histograms (and KDE plots) to compare distributions, we should consider:</p>
+<ul class="simple">
+<li><p>matching the scale on the axes to facilitate comparison</p></li>
+<li><p>whether to place the two plots next to each other (horizontally), above one another (vertically) or overlaid (on the same axis), to facilitate comparison</p></li>
+</ul>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<p>We will look at a small sample of height data (these are made-up data designed for the exercise).</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/tallVshort.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/tallVshort.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/tallVshort.jpg" style="width: 50%;" /></a>
+<section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-and-inspect-the-data">
+<h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
+<p>Load the file BodyData.csv which contains body measurements for 50 (fictional) people</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heightData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/BodyData.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heightData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="histogram">
+<h2>Histogram<a class="headerlink" href="#histogram" title="Permalink to this heading">#</a></h2>
+<p>Let’s start by plotting a histogram of the data to see what the distribution of heights is.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> function <code class="docutils literal notranslate"><span class="pre">sns.histplot()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="c1"># set the x axis label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># this command asks Python to output the plot created above </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/324f67535d97f461744d38b02f743226bc8305859823bce4cdf8bac47cefbdb7.png" src="../_images/324f67535d97f461744d38b02f743226bc8305859823bce4cdf8bac47cefbdb7.png" />
+</div>
+</div>
+<p>If we want to <em>disaggregate</em> (separate out) the data, for example by sex, this is super easy using the <code class="docutils literal notranslate"><span class="pre">hue</span></code> property in <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="c1"># set the x axis label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># this command asks Python to output the plot created above </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/cee72b355d3fa2a03c98f15dad74d16b9c82f946488ea28329d37231fecbef56.png" src="../_images/cee72b355d3fa2a03c98f15dad74d16b9c82f946488ea28329d37231fecbef56.png" />
+</div>
+</div>
+<section id="choosing-the-bin-boundaries-and-width">
+<h3>Choosing the bin boundaries and width<a class="headerlink" href="#choosing-the-bin-boundaries-and-width" title="Permalink to this heading">#</a></h3>
+<p>In a histogram, we group data into <em>bins</em>, and count how many data values fall in each bin</p>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> chooses a set of bins that its algorithm suggests should best display the shape of the data distribution.</p>
+<p>However, we may prefer to set the bin widths to values that are more easily interpretable.</p>
+<p>For example, below I used bins of 5cm to group the heights (in a range from 150 to 200 cm that includes all the data points in my sample). This means I can easily read off from the graph how many men in my sample have a height between, say, 170 and 175cm).</p>
+<ul class="simple">
+<li><p>Can you find where in the code this is specified?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># this command asks Python to output the plot created above</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20917e27d08b0c32cf81b33561743fcda2b7ed952307ca60ad44550fac0d6db8.png" src="../_images/20917e27d08b0c32cf81b33561743fcda2b7ed952307ca60ad44550fac0d6db8.png" />
+</div>
+</div>
+</section>
+<section id="histogram-is-unstable-for-small-n">
+<h3>Histogram is unstable for small <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#histogram-is-unstable-for-small-n" title="Permalink to this heading">#</a></h3>
+<p>One problem with using a histogram when you have only a small number of data points is
+that the shape of the histogram can depend a lot on where the bin boundaries happen to fall.</p>
+<p>Look at the following plot of brothers’ heights, again grouped into 5cm bins but with different bin boundaries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">152</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e41a4f9c0764034b149a581444b268cde70341864c5b208e178a1d19c34ff6d0.png" src="../_images/e41a4f9c0764034b149a581444b268cde70341864c5b208e178a1d19c34ff6d0.png" />
+</div>
+</div>
+<p>Compare the histogram to the one above with  bin boundaries at 150, 155 etc. The shape of the distribution looks quite different! In the top plot, we seem to have quite a broad distribution, whereas in the bottom one, there is a big spike of people with heights betweem 172 and 177 cm.</p>
+<p>Moving the bin boundaries changed how many observations fell in each bin and thus the shape of the histogram. This can happen easily just due to chance when you have a small number of observations in each bin (check the y-axis in the above histogram - you can see that most bins contain fewer than 10 people, which means that moving just one or two observations between bins makes a big difference to the apparent shape of the histogram).</p>
+<p>For this reason, a histogram may not be the best representation of the data for a small sample.</p>
+<section id="exercises">
+<h4>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>What change in the code moved the bin boundaries?</p></li>
+<li><p>What were the old bin boundaries? What are the new bin boundaries?</p></li>
+<li><p>Create a new histogram in which the bin boundaries are at 153,158,163 etc</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bin-width">
+<h3>Bin width<a class="headerlink" href="#bin-width" title="Permalink to this heading">#</a></h3>
+<p>The code below creates histograms of the mens’ heights</p>
+<ul class="simple">
+<li><p>try changing the bin width to 1cm - can you guess how to do this?</p>
+<ul>
+<li><p>note how much spikier the histogram looks with 1cm bins - it is hard to see the overall shape of the distribution</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kde-plot">
+<h2>KDE plot<a class="headerlink" href="#kde-plot" title="Permalink to this heading">#</a></h2>
+<p>Whist a histogram shows the number of observations in each of a set of discrete bins, the KDE plot estimates a smooth distribution shape that fits the underlying observations.</p>
+<p>You can think of it as the average of all the histograms you would get if you tried all the possible sets of bin boundaries (for a fixed bin width).</p>
+<p>We can add a kde plot to the histogram by adding an extra <i>argument</i> to the function <tt>sns.histplot</tt>. Here we reproduce the two different histograms of brothers’ heights with different bin boundaries, with the KDE plot added.</p>
+<ul class="simple">
+<li><p>although the histograms look rather different, the KDE plots look exactly the same as each other</p></li>
+</ul>
+<p><em>note-</em></p>
+<ul class="simple">
+<li><p>I used some additional commands from <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> to make sure the x and y axes cover the same range of values for both plots, to make them easier to compare</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">kde</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># note that without the command plt.show(), Jupyter will put all plots onto the same axes, </span>
+<span class="c1"># or (if that is impossible, eg when different plot types were used) </span>
+<span class="c1"># display only the final plot created in the cell</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">152</span><span class="p">,</span><span class="mi">202</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">kde</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/db57a50ed26ea918a8a985f151ed2ca1165cecfd386532219f07636bd4fadd29.png" src="../_images/db57a50ed26ea918a8a985f151ed2ca1165cecfd386532219f07636bd4fadd29.png" />
+<img alt="../_images/2d631b9776e538396a534f1933f0807f0630de5e372abdff0e9287d292ec0b7e.png" src="../_images/2d631b9776e538396a534f1933f0807f0630de5e372abdff0e9287d292ec0b7e.png" />
+</div>
+</div>
+<section id="id1">
+<h3>Exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Can you find the extra argument that adds the KDE plot?</p></li>
+<li><p>Try to switch the KDE plot off!</p></li>
+</ul>
+</section>
+</section>
+<section id="kde-plot-without-histogram">
+<h2>KDE plot (without histogram)<a class="headerlink" href="#kde-plot-without-histogram" title="Permalink to this heading">#</a></h2>
+<p>If you don’t want the histogram, you can plot the KDE plot independently (without a histogram), using the <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> function <code class="docutils literal notranslate"><span class="pre">sns.kdeplot()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># I think KDE plots look nice filled with shading, hence fill=True</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="c1"># set the x axis label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/70f0a6271a04bc2b522357c82e247466ec380ed82319983f80e21844836808de.png" src="../_images/70f0a6271a04bc2b522357c82e247466ec380ed82319983f80e21844836808de.png" />
+</div>
+</div>
+<section id="probability-density">
+<h3>Probability density<a class="headerlink" href="#probability-density" title="Permalink to this heading">#</a></h3>
+<p>When we plot the KDE as a standalone (rather than over a histogram) the x-axis changes to ‘Density’ rather than ‘count’.</p>
+<p>The values of density are such that the area under the curve of the KDE plot is 1. Technically it is a <i>probability density</i>. It means that probabilities could be read off the graph - so the probability of a member of our sample (one of the brothers) having a height between 160 and 170cm is the same as the area under the curve between 160 and 170cm.</p>
+<p>• this is calculated as 10cm (width of the shaded area) x 0.025 (average ‘density’ in this area) = 0.25 or 25%</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/densityFig.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/densityFig.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/densityFig.png" style="width: 50%;" /></a>
+<p>One consequence of this is that you cannot tell from the KDE plot how many data points were in the dataset (which we should care about, as laarger datasets are more likely to reliably represent the population!). To counter this you can add a <strong>rugplot</strong>, which shows the individual datapoints - this gives you ‘the best of both worlds’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="c1"># set the x axis label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5bd6159c16031d47f0b49f52366c1fdf88f8d769dde04abec2ae6c82a5b240a2.png" src="../_images/5bd6159c16031d47f0b49f52366c1fdf88f8d769dde04abec2ae6c82a5b240a2.png" />
+</div>
+</div>
+</section>
+<section id="bandwidth">
+<h3>Bandwidth<a class="headerlink" href="#bandwidth" title="Permalink to this heading">#</a></h3>
+<p>I said you can think of the KDE plot as a kind of average of all the histograms you would get if you tried all the possible locations for bin boundaries (150,155,160, vs 151,156,161 etc)</p>
+<p>This is true but it only averages histograms for one possible bin <i>width</i>, which is chosen by the computer to give (generally) a good result.</p>
+<p>You saw above that changing the bin width from 5cm to 1cm changed the balance between showing to overall shape of the distribution (where is the main peak) vs the details (details more visible with a small bin boundary). Bandwidth does the equivalent adjustment in a KDE plot.</p>
+<p>The code below shows the height KDE with three bandwidths. The argument <tt>bw_adjust</tt> is a scaling factor for the default bandwidth chosen by the computer:</p>
+<ul class="simple">
+<li><p>If <tt>bw_adjust = 1.0</tt> the default bandwidth is used (grey KDE)</p></li>
+<li><p>If <tt>bw_adjust = 0.5</tt>, a narrower bandwith of half the default is used (red KDE)</p></li>
+<li><p>If <tt>bw_adjust = 2.0</tt>, a wider bandwith of twice the default is used (blue KDE)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bw_adjust</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bw_adjust</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bw_adjust</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="c1"># set the x axis label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/639f6926c1c9557dedbbb7da88f7bcfcbda6cc97680d27916ca7e5613009acb0.png" src="../_images/639f6926c1c9557dedbbb7da88f7bcfcbda6cc97680d27916ca7e5613009acb0.png" />
+</div>
+</div>
+<p><strong>Note</strong> With its high bandwidth, the blue KDE plot looks very smooth with just one peak.</p>
+<p>In contrast, with low bandwidth, the red KDE plot tracks local peaks in the data distribution, resulting in lots of little bumps in the KDE plot.</p>
+<section id="exercise">
+<h4>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h4>
+<p>Try out some different values for <tt>bw_adjust</tt> - can you make the KDE plot go even wobblier? or even smoother?</p>
+</section>
+</section>
+</section>
+<section id="considerations-when-comparing-distributions">
+<h2>Considerations when comparing distributions<a class="headerlink" href="#considerations-when-comparing-distributions" title="Permalink to this heading">#</a></h2>
+<p>Histograms and KDE plots are good for showing the shape of a data distribution, and hence they are also good for comparing the shape of multiple data distributions</p>
+<p>An easy way to commpare two groups is to overlay the histograms or KDE plots, using the <code class="docutils literal notranslate"><span class="pre">hue</span></code> property:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/41077ee59006f8b91b94aecfa268ff8d5c349c9e9be6ccd71610c09e193e3e9c.png" src="../_images/41077ee59006f8b91b94aecfa268ff8d5c349c9e9be6ccd71610c09e193e3e9c.png" />
+</div>
+</div>
+<p>You might find that too crowded in which case you may want to separate out the plots onto two separate axes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2a21fc82abb26a9811f43ee63d9134d9f0ba13c0eca3269c92b7ddccdac03ff1.png" src="../_images/2a21fc82abb26a9811f43ee63d9134d9f0ba13c0eca3269c92b7ddccdac03ff1.png" />
+<img alt="../_images/143f532dacfc98bc8ea412505010453277157b688670332c42c467652b7a16e5.png" src="../_images/143f532dacfc98bc8ea412505010453277157b688670332c42c467652b7a16e5.png" />
+</div>
+</div>
+<p>However, when we try to compare the two plots on separate axes, the matter is confused by non-matching axis ranges</p>
+<ul class="simple">
+<li><p>It looks like there are more tall women than tall men, because the peak fo the distribution is further right for the women - but check out the numbers on the <span class="math notranslate nohighlight">\(x\)</span>-axes</p></li>
+<li><p>The most common bin for men contains 9 people, but for women, 7 people - this is not immediately apparent as the <span class="math notranslate nohighlight">\(y\)</span>-axes don’t match</p></li>
+<li><p>luckily <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> grouped both men and women into 6 bins - but the bin widths are not actually the same in the two plots</p></li>
+</ul>
+<p>To make the plots more directly comparable, we should fix the range of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes and the bin boundaries on both plots:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0db45bcd54a8897f55b43b007ff4a5822f994c952fd140f9691b3b30f5cc0c20.png" src="../_images/0db45bcd54a8897f55b43b007ff4a5822f994c952fd140f9691b3b30f5cc0c20.png" />
+<img alt="../_images/8ca2dbd82feb6ee740f547cc888a5ec617e24e15661a05c4568fbf2b821e9874.png" src="../_images/8ca2dbd82feb6ee740f547cc888a5ec617e24e15661a05c4568fbf2b821e9874.png" />
+</div>
+</div>
+</section>
+<section id="controlling-plot-placement-with-plt-subplot">
+<h2>Controlling plot placement with <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code><a class="headerlink" href="#controlling-plot-placement-with-plt-subplot" title="Permalink to this heading">#</a></h2>
+<p>If we make one plot after another as above, they appear in a vertical series.</p>
+<p>We might prefer them to sit next to eachother horizontally. Or, if we have multiple plots, to be arranged in a 2x2 or 2x3 grid.</p>
+<p>This can be achieved using the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> function <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code>, which creates a grid of axes and places each figure within it.</p>
+<p>For example, a 2x1 grid (2 rows, 1 column):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># optimize the white space between the axes - needed when using plt.subplot()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/655a77b42ffaa1ff9eca4972ed7f76f27bca504fb5a57745218b1e9eb7f4583b.png" src="../_images/655a77b42ffaa1ff9eca4972ed7f76f27bca504fb5a57745218b1e9eb7f4583b.png" />
+</div>
+</div>
+<p>… or a 1x2 grid (one row, 2 columns)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># optimize the white space between the axes - needed when using plt.subplot()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c4b790664e313d5f2913525b2d0bf29ce690ba0892247c9270196bdfb36e163b.png" src="../_images/c4b790664e313d5f2913525b2d0bf29ce690ba0892247c9270196bdfb36e163b.png" />
+</div>
+</div>
+<p>Perhaps you will agree that the vertical arrangement allows for an easier comparison between men and women in this case - in the vertical arrangement we can easily see that the men are generally taller</p>
+<section id="multiple-plots-in-a-grid">
+<h3>Multiple plots in a grid<a class="headerlink" href="#multiple-plots-in-a-grid" title="Permalink to this heading">#</a></h3>
+<p>Say we now want to plot weights as well as heights - how about a 2x2 grid (2 rows, 2 columns)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;M&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;sex==&quot;F&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># optimize the white space between the axes - needed when using plt.subplot()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/63a137c798ff82db85ea76c062165a97a45f4441f6cdbb6ecf1fcd9f350db720.png" src="../_images/63a137c798ff82db85ea76c062165a97a45f4441f6cdbb6ecf1fcd9f350db720.png" />
+</div>
+</div>
+<p>The syntax of <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code> is:</p>
+<ul class="simple">
+<li><p>the first number inside brackets is the number of <strong>rows</strong> of axes within your compound figure</p></li>
+<li><p>the second number inside brackets is the number of <strong>columns</strong> of axes within your compound figure</p></li>
+<li><p>the third number inside brackets is the location in which you want to place the next plot, numbered as if reading from top to bottom and left to right - some examples are shown in the following figure</p></li>
+</ul>
+</section>
+</section>
+<section id="customizing-the-appearance-of-your-plots">
+<h2>Customizing the appearance of your plots<a class="headerlink" href="#customizing-the-appearance-of-your-plots" title="Permalink to this heading">#</a></h2>
+<p>I told you that <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> produces publication quality figures, but some of the figures above look a bit ugly.</p>
+<p>We can easily change the appearance of our plots using some additional arguments to the functions <code class="docutils literal notranslate"><span class="pre">sns.histplot()</span></code> and <code class="docutils literal notranslate"><span class="pre">sns.kdeplot()</span></code>.</p>
+<p>You can find many examples of how to change the appearance of histograms and KDE plots in the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> manual pages:
+for <a href='https://seaborn.pydata.org/generated/seaborn.histplot.html'><tt>sns.histplot()</tt></a> and <a href='https://seaborn.pydata.org/generated/seaborn.kdeplot.html'><tt>sns.kdeplot()</tt></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter2_DataVisualization"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-and-inspect-the-data">Load and inspect the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-bin-boundaries-and-width">Choosing the bin boundaries and width</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-is-unstable-for-small-n">Histogram is unstable for small <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bin-width">Bin width</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kde-plot">KDE plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Exercises</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kde-plot-without-histogram">KDE plot (without histogram)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-density">Probability density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bandwidth">Bandwidth</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations-when-comparing-distributions">Considerations when comparing distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-plot-placement-with-plt-subplot">Controlling plot placement with <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots-in-a-grid">Multiple plots in a grid</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-appearance-of-your-plots">Customizing the appearance of your plots</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
