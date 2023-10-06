@@ -1,0 +1,1561 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Mann Whitney U, or Wilcoxon Rank Sum Test &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nonpara_MannWhitneyU';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/nonpara_MannWhitneyU.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2Fnonpara_MannWhitneyU.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/nonpara_MannWhitneyU.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Mann Whitney U, or Wilcoxon Rank Sum Test</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples">Independent samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motor-learning-and-visualization">Example: motor learning and visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-the-test">Carry out the test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works">How the Mann Whiney U or Wilcoxon Rank Sum test works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-the-data-to-ranks">Step 1: Convert the data to ranks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-test-statistic">Calculate the test statistic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-the-null-distriubtion">Establish the null distriubtion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-mean-by-if-the-null-were-true">What do we mean by “If the null were true”?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estalbishing-the-null-by-complete-enumeration">Estalbishing the null by complete enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-the-null-by-simulation">Establishing the null by simulation</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-mann-whitney-u-or-wilcoxon-rank-sum-test">
+<h1>The Mann Whitney U, or Wilcoxon Rank Sum Test<a class="headerlink" href="#the-mann-whitney-u-or-wilcoxon-rank-sum-test" title="Permalink to this heading">#</a></h1>
+<p>The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed</p>
+<p>As we have seen in the lecture, many real life data distributions are normal, but many others are not.</p>
+<p>For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.</p>
+<section id="independent-samples">
+<h2>Independent samples<a class="headerlink" href="#independent-samples" title="Permalink to this heading">#</a></h2>
+<p>The Mann Whitney U, or Wilcoxon Rank Sum Test is a test for a difference in median between two independent samples. As such it is often considered to be a non-parametric equivalent for the independent samples t-test.</p>
+<p>The terms Mann Whitney U and Wilcoxon Rank Sum are used interchangeably in a lot of literature and statistical packages, although technically the Mann Whitney version, which came slightly later, is correct in a greater range of cases.</p>
+<p>The Python function we will use is called Mann-Whitney but you will see the same test elsewhere called Rank Sum or Wilcoxon Rank Sum.</p>
+</section>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-motor-learning-and-visualization">
+<h2>Example: motor learning and visualization<a class="headerlink" href="#example-motor-learning-and-visualization" title="Permalink to this heading">#</a></h2>
+<p>A researcher hypothesises that when a person learns a new motor skill, imaginary practice (visualising performing the skill between sessions of actual practice) can enhance learning.</p>
+<p>She decides to test the hypothesis by training people to juggle. The participants complete 1-hour juggling practice sessions each day until they can juggle for 2 minutes without dropping a ball. Participants are randomly assigned to one of two groups: The Visualisation Group spend time between sessions visualising juggling, whilst the Standard Group do not.</p>
+<p>The researcher records the number of sessions taken to reach criterion (2 min juggling without dropping the ball) for each participant.</p>
+<p>Test the hypothesis that visualisation reduces the number of sessions required to reach criterion.</p>
+<section id="inspect-the-data">
+<h3>Inspect the data<a class="headerlink" href="#inspect-the-data" title="Permalink to this heading">#</a></h3>
+<p>The data are provided in a text (.csv) file.</p>
+<p>Let’s load the data as a Pandas dataframe, and plot them to get a sense for their distribution (is it normal?) and any outliers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Group</th>
+      <th>SessionsToCriterion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Standard</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Standard</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Standard</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Standard</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Standard</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Standard</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Standard</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Standard</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Standard</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Standard</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Standard</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Visualisation</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Visualisation</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Visualisation</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Visualisation</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Visualisation</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Visualisation</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Visualisation</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Visualisation</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Visualisation</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s plot the data and see if they look Normally distributed.</p>
+<p>As we saw in the session on plotting, a good choice here will be a KDE plot (to get an estimate of the shape of the distribution) and a rug plot (individual data values as the KDE plot is based on only a small sample)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># make new dataframes for the Standard and Visualisation groups</span>
+<span class="n">juggling_Std</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">]</span>
+<span class="n">juggling_Vis</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">]</span>
+
+<span class="c1"># Plot the KDE (distribution)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Std</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Standard Training&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Vis</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Visualisation Training&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Plot individual data points</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Std</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Vis</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># axis labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;sessions to criterion&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76372/3712789007.py:8: FutureWarning: 
+
+`shade` is now deprecated in favor of `fill`; setting `fill=True`.
+This will become an error in seaborn v0.14.0; please update your code.
+
+  sns.kdeplot(data=juggling_Std, x=&#39;SessionsToCriterion&#39;, color=&#39;b&#39;, shade=True, label=&#39;Standard Training&#39;)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76372/3712789007.py:9: FutureWarning: 
+
+`shade` is now deprecated in favor of `fill`; setting `fill=True`.
+This will become an error in seaborn v0.14.0; please update your code.
+
+  sns.kdeplot(data=juggling_Vis, x=&#39;SessionsToCriterion&#39;, color=&#39;r&#39;, shade=True, label=&#39;Visualisation Training&#39;)
+</pre></div>
+</div>
+<img alt="_images/5652d3f20d6536f54be22e4e9ce336edec94b47306f7d6c6c0473e5a6e56ae01.png" src="_images/5652d3f20d6536f54be22e4e9ce336edec94b47306f7d6c6c0473e5a6e56ae01.png" />
+</div>
+</div>
+<p>The data do not look normal, as some people (especially in the standard group) took much longer to reach criterion (the distribution has positive skew).</p>
+<p>Even if the data were not grossly non-Normal, it would be hard to be confident of a normal distribution with such a small sample, unless there waas some theoretical reason (for example, relating to the Central Limit Theorem) why the data should be normal. In this case, we might even have expected a positive skew as it is possible for an individual to take many many more than the median number of sessions to reach criterion, but impossible to take many many fewer sessions (as we cannot take fewer than zero sessions; data values are <i>bounded below</i>).</p>
+<p>We therefore turn to the Mann Whitney non-parametric test.</p>
+</section>
+<section id="hypotheses">
+<h3>Hypotheses<a class="headerlink" href="#hypotheses" title="Permalink to this heading">#</a></h3>
+<p>Ho: the <b>median</b> number of sessions needed is the same for participants in the Visualisation and Standard Groups</p>
+<p>Ha: the <b>median</b> number of sessions is lower for participants in the Visualisation Group</p>
+<p>This is a one tailed test as the hypothesis is directional (we expect visualisation to help not hinder)</p>
+<p>We will test at the <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> significance level</p>
+<ul>
+    <li> note we are testing for a difference of medians here, not a difference of means as in the t-test
+</ul></section>
+<section id="descriptive-statistics">
+<h3>Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h3>
+<p>We obtain the relevant descriptive statistics. For the t-test we reported the summary statistics (mean, s.d. and n) that went into the formula for t. The same approach won’t quite work here as the test is not based on summary statistics. However, common sense suggests that reporting the median for each group, a measure of spread, and the sample size woudl give the reader an idea of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="8" halign="left">SessionsToCriterion</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>Group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Standard</th>
+      <td>11.0</td>
+      <td>16.818182</td>
+      <td>7.730694</td>
+      <td>7.0</td>
+      <td>14.0</td>
+      <td>15.0</td>
+      <td>18.5</td>
+      <td>36.0</td>
+    </tr>
+    <tr>
+      <th>Visualisation</th>
+      <td>9.0</td>
+      <td>6.888889</td>
+      <td>2.368778</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The median number of sessions to criterion is lower in the Visualisation Group (median=6, q1=5, q3=9, n=9) than the Standaard Group (median=15, q1=14, q3=18.5, n=11)</p>
+</section>
+<section id="carry-out-the-test">
+<h3>Carry out the test<a class="headerlink" href="#carry-out-the-test" title="Permalink to this heading">#</a></h3>
+<p>We carry out the test using the function <tt>mannwhitneyu</tt> from <tt>scipy.stats</tt>, here loaded as <tt>stats</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">],</span> 
+                   <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">],</span>
+                   <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MannwhitneyuResult(statistic=91.0, pvalue=0.0008910429856493874)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The inputs to stats.mannwhitneyu are:</p>
+<ul>
+    <li >the two samples to be compared (the values of <tt>SessionsToCriterion</tt> from our Pandas data frame <tt>juggling</tt>), grouped by the value in the column <tt>Group</tt>)
+<li>the argument <tt>alternative='greater'</tt>, which tells the computer to run a one tailed test 
+that mean of the first input (Standard Group) is greater than the second (Visualisation Group).
+</ul>
+<p>The outputs are a value of the test statistic (<span class="math notranslate nohighlight">\(U=91\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.00089\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
+<p>More explanation of how U is calculated below.</p>
+</section>
+<section id="draw-conclusions">
+<h3>Draw conclusions<a class="headerlink" href="#draw-conclusions" title="Permalink to this heading">#</a></h3>
+<p>As the p value of 0.00089 is less than our alpha value of 0.05, the test is significant.</p>
+<p>We can conclude that the median number of sessions to criterion is indeed greater in the Standard training group</p>
+</section>
+</section>
+<section id="how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works">
+<h2>How the Mann Whiney U or Wilcoxon Rank Sum test works<a class="headerlink" href="#how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works" title="Permalink to this heading">#</a></h2>
+<p>You have seen how to carry out the Mann Whitney test using <tt>scipy.stats</tt> but you may be none the wiser about how the computer arrived at the test statistic and p value.</p>
+<p>In this section we will build our own version of the test step by step to understand how it worked.</p>
+<section id="step-1-convert-the-data-to-ranks">
+<h3>Step 1: Convert the data to ranks<a class="headerlink" href="#step-1-convert-the-data-to-ranks" title="Permalink to this heading">#</a></h3>
+<p>As seen in the lecture, the key step in the Mann Whitney test is to replace the data with their ranks.</p>
+<p>We will then obtain a summary statistics U (closely related to R in the rank sum test) which roughly tells us what proportion of the high ranks fall into one experimental group.</p>
+<p>The null distribution of U (or R) is the same for any samples of given size (in this case our samples are <span class="math notranslate nohighlight">\(n_1=11\)</span> and <span class="math notranslate nohighlight">\(n_2=9\)</span> - the null distribubtion of U would be the same for <i>any data</i> with these sample sizes</p>
+<p>Note also that data ranks are less affected by outliers than the data values themselves: whether the lowest data value is a million units lower than the second-lowest data value, or only one unit lower, they will still take ranks 1 and 2.</p>
+<p>We can rank the data using the <tt>rank</tt> method in <tt>pandas</tt></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     14.5
+1     12.5
+2     14.5
+3      7.0
+4      6.0
+5     19.0
+6     20.0
+7     18.0
+8     12.5
+9     17.0
+10    16.0
+11     9.0
+12     1.5
+13     9.0
+14    11.0
+15     4.5
+16     4.5
+17     1.5
+18     3.0
+19     9.0
+Name: SessionsToCriterion, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s make that more user friendly by saving it as an additional column in out dataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+<span class="n">juggling</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Group</th>
+      <th>SessionsToCriterion</th>
+      <th>Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Standard</td>
+      <td>15</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Standard</td>
+      <td>14</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Standard</td>
+      <td>15</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Standard</td>
+      <td>8</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Standard</td>
+      <td>7</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Standard</td>
+      <td>22</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Standard</td>
+      <td>36</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Standard</td>
+      <td>19</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Standard</td>
+      <td>14</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Standard</td>
+      <td>18</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Standard</td>
+      <td>17</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Visualisation</td>
+      <td>4</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Visualisation</td>
+      <td>10</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Visualisation</td>
+      <td>6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Visualisation</td>
+      <td>6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Visualisation</td>
+      <td>4</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Visualisation</td>
+      <td>5</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It might be even clearer if we display the dataframe sorted by rank</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Group</th>
+      <th>SessionsToCriterion</th>
+      <th>Rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17</th>
+      <td>Visualisation</td>
+      <td>4</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Visualisation</td>
+      <td>4</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Visualisation</td>
+      <td>5</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Visualisation</td>
+      <td>6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Visualisation</td>
+      <td>6</td>
+      <td>4.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Standard</td>
+      <td>7</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Standard</td>
+      <td>8</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Visualisation</td>
+      <td>9</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Visualisation</td>
+      <td>10</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Standard</td>
+      <td>14</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Standard</td>
+      <td>14</td>
+      <td>12.5</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Standard</td>
+      <td>15</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Standard</td>
+      <td>15</td>
+      <td>14.5</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Standard</td>
+      <td>17</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Standard</td>
+      <td>18</td>
+      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Standard</td>
+      <td>19</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Standard</td>
+      <td>22</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Standard</td>
+      <td>36</td>
+      <td>20.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note the following:</p>
+<ul class="simple">
+<li><p>The lowest value has rank 1</p></li>
+<li><p>The highest value has rank <span class="math notranslate nohighlight">\(n_1 + n_2\)</span>, ie the total number of data points across both groups together</p></li>
+<li><p>Tied values are given the average of the ranks they would have got (ranks 1 and 2 are tied so both get 1.5)</p></li>
+<li><p>Many of the higher ranked values are in the Standard group, hinting that most of the slowest participants to reach criterion were in the Standard Group</p></li>
+<li><p>Many of the lower ranked values are in the Visualisation group, hinting that most of the fastest participants to reach criterion were in the Visualisation Group</p></li>
+</ul>
+</section>
+<section id="calculate-the-test-statistic">
+<h3>Calculate the test statistic<a class="headerlink" href="#calculate-the-test-statistic" title="Permalink to this heading">#</a></h3>
+<p>The test statistic is the larger of <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span>, given by</p>
+<div class="math notranslate nohighlight">
+\[ U_1 = R_1 - \frac{n_1(n_1+1)}{2}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(R_1\)</span> is the sum of all the ranks in group 1, and <span class="math notranslate nohighlight">\(n_1\)</span> is the size of group 1</p>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ U_2 = R_2 - \frac{n_2(n_2+1)}{2}\]</div>
+<p>We can work it out in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum of ranks for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and sum() the values </span>
+<span class="n">R1</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># Get n for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and count() the values </span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="c1"># calculate U from the formula</span>
+<span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">U1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U1 = 91.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum of ranks for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and sum() the values </span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># Get n for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and count() the values </span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="c1"># calculate U from the formula</span>
+<span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">U2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U2 = 8.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The larger of <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span> becomes the test statistic, so <span class="math notranslate nohighlight">\(U=91\)</span></p>
+<ul>
+    <li> Go back and check if this matches what we got from <tt>scipy.stats.mannwhitneyu</tt> - it should!
+</ul>
+<p>(some stats packages define <span class="math notranslate nohighlight">\(U\)</span> as the smaller of <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span>, confusingly - either could be used but the null distribtion for the larger and smaller U will obviously be different)</p>
+</section>
+<section id="establish-the-null-distriubtion">
+<h3>Establish the null distriubtion<a class="headerlink" href="#establish-the-null-distriubtion" title="Permalink to this heading">#</a></h3>
+<p>To convert our <span class="math notranslate nohighlight">\(U\)</span> to a <span class="math notranslate nohighlight">\(p\)</span>-value, we need to know how the probability of obtaining that value of <span class="math notranslate nohighlight">\(U\)</span> due to chance if the null hypothesis were true.</p>
+<p>More precisely:</p>
+<ul class="simple">
+<li><p>If the value we have chosen as <span class="math notranslate nohighlight">\(U\)</span> is associated with the sample we expect to have higher ranks, we need to know the probability of getting a <span class="math notranslate nohighlight">\(U\)</span> value this large or larger, if the null were true</p></li>
+<li><p>Conversely if the value we have chosen as <span class="math notranslate nohighlight">\(U\)</span> is associated with the sample we expect to have lower ranks, we need to know the probabbility of getting a <span class="math notranslate nohighlight">\(U\)</span> value this small or smaller, if the null were true</p></li>
+</ul>
+<p>In the current example, <span class="math notranslate nohighlight">\(U\)</span> ended up being the <span class="math notranslate nohighlight">\(U\)</span> value for the Standard training regime, which we expected to have more of the higher ranks (more of the people who needed longer to reach the criterion for fluent juggling).</p>
+<p>So we are looking for the probability of obtaining <span class="math notranslate nohighlight">\(U&gt;=91\)</span> if the null were true.</p>
+</section>
+<section id="what-do-we-mean-by-if-the-null-were-true">
+<h3>What do we mean by “If the null were true”?<a class="headerlink" href="#what-do-we-mean-by-if-the-null-were-true" title="Permalink to this heading">#</a></h3>
+<p>If the null were true, participants should on average need the same number of sessions to reach the criterion of 2 min juggling, regardless of whether they were in the Visualisation condition or the Standard Condition. It could still happen that the Standard Group got a lot of high ranks (and hence a high value of <span class="math notranslate nohighlight">\(U\)</span>) by chance, but as we get to higher values of <span class="math notranslate nohighlight">\(U\)</span>, that becomes less and less likely.</p>
+<p>So if the null were true, high and low ranks would occur randomly in the Standard and Visualisation groups. So the possible ranks (in this case, the numbers 1-20 as <span class="math notranslate nohighlight">\(n_1 + N_2 = 20\)</span>) could be deal out randomly into the two groups.</p>
+</section>
+<section id="estalbishing-the-null-by-complete-enumeration">
+<h3>Estalbishing the null by complete enumeration<a class="headerlink" href="#estalbishing-the-null-by-complete-enumeration" title="Permalink to this heading">#</a></h3>
+<p>For a much smaller sample size, we could work out all the possible ways the ranks could be randomly dealt into the Standard and Visualisation groups, calculate <span class="math notranslate nohighlight">\(U\)</span> for each case, and work out in what proportion of cases this <i>simulated</i> <span class="math notranslate nohighlight">\(U\)</span> was as large as, or larger than, the value of <span class="math notranslate nohighlight">\(U\)</span> from our experiment.</p>
+<p>This is not practical for larger samples as there are too many possible ways to deal the ranks (too many <i>combbinations</i>). In the example above where <span class="math notranslate nohighlight">\(n_1 = 9\)</span> and <span class="math notranslate nohighlight">\(n_2 = 11\)</span>, the number of possible deals or combinations is 167960 - for larger <span class="math notranslate nohighlight">\(n\)</span> the number of combinations becomes astronomical.</p>
+</section>
+<section id="establishing-the-null-by-simulation">
+<h3>Establishing the null by simulation<a class="headerlink" href="#establishing-the-null-by-simulation" title="Permalink to this heading">#</a></h3>
+<p>We can work out the null approximately by doing a lot of random ‘deals’ of the ranks to the Standard and Visualisation groups, calculating <span class="math notranslate nohighlight">\(U\)</span> for each case, and work out in what proportion of cases this <i>simulated</i> <span class="math notranslate nohighlight">\(U\)</span> was as large as, or larger than, the value of <span class="math notranslate nohighlight">\(U\)</span> from our experiment.</p>
+<p>“A lot” might be 10,000 or more (this is still much lower than the number of possible deals under complete enumeration)</p>
+<p>Let’s try it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Possible ranks are the numbers 1 to 20 (remember Python uses the counterintuitive syntax [1,21))</span>
+<span class="n">ranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span>
+<span class="n">ranks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shuffle them!</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
+<span class="n">ranks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9,  2, 12,  5, 11, 20, 18, 13,  8,  6,  7, 19, 14,  3, 15, 10, 17,
+        1, 16,  4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R1 is the sum of the first 11 ranks</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">R1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>111
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate U1</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">U1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R2 is the sum of the rest of the ranks</span>
+<span class="n">R2</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">R2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate U2</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">U2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># U is the larger of U1 and U2</span>
+<span class="n">U</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="p">)</span>
+<span class="n">U</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Phew! That was on random ‘deal’ or shuffle, resulting in a <span class="math notranslate nohighlight">\(U\)</span> value of 52.</p>
+<p>Now we need to make a loop to do that 10,000 times!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">n1</span><span class="o">+</span><span class="n">n2</span>
+<span class="n">ranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">maxR</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">):]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">maxU</span> <span class="o">=</span> <span class="n">maxR</span> <span class="o">-</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">maxU</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">maxU</span><span class="p">)</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">simulated_U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
+    
+    <span class="n">R1</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+   
+    <span class="n">R2</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+    
+    <span class="n">U</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="p">)</span>
+    <span class="n">simulated_U</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">U</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally we plot a histogram of our U values, and count the proportion of times U exceeds the value from our actual dataset, <span class="math notranslate nohighlight">\(U=91\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">simulated_U</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion of simulated datasets in which U&gt;=91 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulated_U</span><span class="o">&gt;=</span><span class="mi">91</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0008
+</pre></div>
+</div>
+<img alt="_images/404565359f76a783e43784d1b806621ae7eb013352946ae0fbfc2e5aaff23c31.png" src="_images/404565359f76a783e43784d1b806621ae7eb013352946ae0fbfc2e5aaff23c31.png" />
+</div>
+</div>
+<p>We obtain a value of <span class="math notranslate nohighlight">\(U\)</span> as extreme as the one in our real dataset less than 1% of the time.</p>
+<p>The p value of the test, which is the same as the proportion of simulated datasets in which U&gt;=91, is aout 0.001, or 0.01%  (it will vary slightly each time you run the code as the null distribubtion is built from random samples). This is not a bad match for the value we got from the built-in function, which was 0.00089 or 0.009%</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples">Independent samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-motor-learning-and-visualization">Example: motor learning and visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-the-test">Carry out the test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works">How the Mann Whiney U or Wilcoxon Rank Sum test works</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-the-data-to-ranks">Step 1: Convert the data to ranks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-test-statistic">Calculate the test statistic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-the-null-distriubtion">Establish the null distriubtion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-mean-by-if-the-null-were-true">What do we mean by “If the null were true”?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estalbishing-the-null-by-complete-enumeration">Estalbishing the null by complete enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-the-null-by-simulation">Establishing the null by simulation</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

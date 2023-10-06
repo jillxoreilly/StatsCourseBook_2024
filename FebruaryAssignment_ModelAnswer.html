@@ -1,0 +1,1653 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>February Assignment model answer &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'FebruaryAssignment_ModelAnswer';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/FebruaryAssignment_ModelAnswer.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FFebruaryAssignment_ModelAnswer.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/FebruaryAssignment_ModelAnswer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>February Assignment model answer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-cloud-seeding">Question 1 - Cloud seeding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-independent-samples-t-test">I. Independent samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-permutation-test-for-difference-of-means-independent-samples">II. Permutation test for difference of means (independent samples)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-colouring-books">Question 2: Colouring books</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-paired-samples-t-test">I. Paired samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-permutation-test-for-difference-of-means-paired-samples">II. Permutation test for difference of means: paired samples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-sign-rank-test">III. Sign rank test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-reaction-times">Question 3: Reaction times</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="february-assignment-model-answer">
+<h1>February Assignment model answer<a class="headerlink" href="#february-assignment-model-answer" title="Permalink to this heading">#</a></h1>
+<p>This can be distributed to students as a model answer but not until 5th week please, so students have to try by themself first!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-1-cloud-seeding">
+<h2>Question 1 - Cloud seeding<a class="headerlink" href="#question-1-cloud-seeding" title="Permalink to this heading">#</a></h2>
+<p><em>a)  Download the data file and load the data into a <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> dataframe called <code class="docutils literal notranslate"><span class="pre">clouds</span></code></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clouds</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CloudSeeding.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>b) Plot the data for seeded and unseeded clouds in a way that shows the distribution of rainfall yields</em></p>
+<p>I chose a KDE plot to show the distribution (for example the long positive tail is clearly seen), and plotted individual data points as the sample is small; for example we can see that the long positive tail is based on just a couple of clouds in each case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">clouds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;rainfall&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">clouds</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;rainfall&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76202/3607577844.py:1: FutureWarning: 
+
+`shade` is now deprecated in favor of `fill`; setting `fill=True`.
+This will become an error in seaborn v0.14.0; please update your code.
+
+  sns.kdeplot(data=clouds, x=&#39;rainfall&#39;, hue=&#39;status&#39;, shade=True)
+</pre></div>
+</div>
+<img alt="_images/6f959d406047d04abb5bba1e2aaa45d1c56ded3b203e753b3348fafc6ba4f18b.png" src="_images/6f959d406047d04abb5bba1e2aaa45d1c56ded3b203e753b3348fafc6ba4f18b.png" />
+</div>
+</div>
+<p><em>c) Calculate the best fitting Normal distributions for seeded and unseeded clouds respectively and overlay a plot of the probability density functions (PDF) of these two normal distributions on the plot created in part (b)</em></p>
+<p><em>Note- the best fitting normal distribution is a normal distribution that shares the same mean and standard deviation as the data sample – plotting of the normal PDF is covered in section 5.7 of the online course book</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">seeded</span><span class="o">=</span><span class="n">clouds</span><span class="p">[</span><span class="n">clouds</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Seeded&#39;</span><span class="p">][</span><span class="s1">&#39;rainfall&#39;</span><span class="p">]</span>
+<span class="n">unseeded</span><span class="o">=</span><span class="n">clouds</span><span class="p">[</span><span class="n">clouds</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Unseeded&#39;</span><span class="p">][</span><span class="s1">&#39;rainfall&#39;</span><span class="p">]</span>
+
+<span class="c1"># seeded clouds</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">seeded</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">seeded</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">seeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">seeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0022</span><span class="p">])</span>
+
+<span class="c1"># unseeded clouds</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">unseeded</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">seeded</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">unseeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">unseeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0022</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76202/3986564570.py:11: FutureWarning: 
+
+`shade` is now deprecated in favor of `fill`; setting `fill=True`.
+This will become an error in seaborn v0.14.0; please update your code.
+
+  sns.kdeplot(data=seeded, color=[1,0,0], shade=True)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76202/3986564570.py:20: FutureWarning: 
+
+`shade` is now deprecated in favor of `fill`; setting `fill=True`.
+This will become an error in seaborn v0.14.0; please update your code.
+
+  sns.kdeplot(data=unseeded, color=[0,0,1], shade=True)
+</pre></div>
+</div>
+<img alt="_images/6dbd64ec349d39f6a59794255bcd5a2fcf2b72a329f6f855f57d93eaa4dcf10e.png" src="_images/6dbd64ec349d39f6a59794255bcd5a2fcf2b72a329f6f855f57d93eaa4dcf10e.png" />
+</div>
+</div>
+<p><em>d)	Based on the plot in part (c), the data are not well fitted by a normal distribution. Comment on the what you can see in the graph that suggests the normal distribution is a poor fit.</em></p>
+<p>The mean of the fitted normal seems to fall above almmost all the datapoints in each sample.</p>
+<p>The long tail of high rainfall events (positive skew) is not fitted by the normal which is necessarily symetrical</p>
+<p>The best fitting normal assigns a lot of probability mass to rainfall values below zero (to be fair the KDE plot also does this!)</p>
+<p><em>e) Conduct three statistical tests of the researcher’s hypothesis, based on</em></p>
+<p><em>I.	Assumption of normality</em></p>
+<p><em>II.	Permutation</em></p>
+<p><em>III.	Ranked values</em></p>
+<p><em>… in each case you should:</em></p>
+<ul class="simple">
+<li><p>State the null and alternative hypothesis and the alpha value</p></li>
+<li><p>Report appropriate descriptive statistics for the test in question</p></li>
+<li><p>Carry out the test</p></li>
+<li><p>State the results of the test including the test statistic and p value. For the t-test, degrees of freedom should also be stated.</p></li>
+<li><p>Report your practical conclusion in plain English</p></li>
+</ul>
+<section id="i-independent-samples-t-test">
+<h3>I. Independent samples t-test<a class="headerlink" href="#i-independent-samples-t-test" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in mean rainfall between seeded and unseeded clouds</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean rainfall is higher for seeded clouds</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">clouds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;rainfall&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">rainfall</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Seeded</th>
+      <td>441.984615</td>
+      <td>650.787171</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>Unseeded</th>
+      <td>164.588462</td>
+      <td>278.426404</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The mean rainfall is higher for seeded clouds (mean = 441.98 standard units, s.d. = 650.78) than for unseeded clouds (mean = 164.59 standard units, s.d. = 278.42)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">seeded</span><span class="p">,</span><span class="n">unseeded</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=1.9982446280649688, pvalue=0.025571601199239034)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rainfall was significantly higher for seeded clouds (t(50)=2.00, p=0.0256 one-tailed).</p>
+<p>We conclude that cloud seeding increases rainfall.</p>
+</section>
+<section id="ii-permutation-test-for-difference-of-means-independent-samples">
+<h3>II. Permutation test for difference of means (independent samples)<a class="headerlink" href="#ii-permutation-test-for-difference-of-means-independent-samples" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in mean rainfall between seeded and unseeded clouds</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean rainfall is higher for seeded clouds</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">clouds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;rainfall&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="3" halign="left">rainfall</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Seeded</th>
+      <td>441.984615</td>
+      <td>650.787171</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>Unseeded</th>
+      <td>164.588462</td>
+      <td>278.426404</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The mean rainfall is higher for seeded clouds (mean = 441.98 standard units, s.d. = 650.78) than for unseeded clouds (mean = 164.59 standard units, s.d. = 278.42)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function for difference of means in the suitalbe formmat for stats.permutation_test()</span>
+<span class="c1"># note the difference between this function and mDiff for paired samples below!</span>
+<span class="k">def</span> <span class="nf">dMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">seeded</span><span class="p">,</span><span class="n">unseeded</span><span class="p">),</span><span class="n">dMeans</span><span class="p">,</span><span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0215, null_distribution=array([ -37.52692308, -252.58076923,  -54.77307692, ...,  137.00384615,
+       -174.25769231, -219.10384615]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rainfall was significantly higher for seeded clouds (difference of means = 277.40, df = 50, p=0.0206 one-tailed).</p>
+<p>We conclude that cloud seeding increases rainfall.</p>
+<p>Note - the degrees of freedom for this test are 50 (52 datapoints - 2 estimated means for each shuffle; However I don’t necessarily expect students to work this out as I haven’t really explained it; it would be fine to just report sample sizes instead for the permutation test)</p>
+<p>III. Rank sum test</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in median rainfall between seeded and unseeded clouds</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The median rainfall is higher for seeded clouds</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">clouds</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>rainfall</th>
+    </tr>
+    <tr>
+      <th>status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">Seeded</th>
+      <th>0.25</th>
+      <td>98.125</td>
+    </tr>
+    <tr>
+      <th>0.50</th>
+      <td>221.600</td>
+    </tr>
+    <tr>
+      <th>0.75</th>
+      <td>406.025</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">Unseeded</th>
+      <th>0.25</th>
+      <td>24.825</td>
+    </tr>
+    <tr>
+      <th>0.50</th>
+      <td>44.200</td>
+    </tr>
+    <tr>
+      <th>0.75</th>
+      <td>159.200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The median rainfall is higher for seeded clouds (median = 221.60 standard units, q1=98.13, q3=406.03) than for unseeded clouds (median = 44.20 standard units, q1=24.825, q3=159.20)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">seeded</span><span class="p">,</span><span class="n">unseeded</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MannwhitneyuResult(statistic=473.0, pvalue=0.0069156486351175175)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A rank sum test shows that the median rainfall is significantly higher for seeded clouds (R=473.0, n1,n2=26, p=0.00692)</p>
+<p>We conclude that cloud seeding does indeed increase rainfall</p>
+<p>Note - I think students should report the sample sizes for rank based tests so that the reader knows how many data points the inference was based on, and also because the test statistic R is uninterpretable without the sample sizes; some stats packages convert the test statistic R to a Z score which would be nice but statsmodels doesn’t do that.</p>
+<p><em>f) Comment on the relative merits of each possible choice of test for this dataset.</em></p>
+<p>I would choose the permutation test. The t-test is clearly not appropriate due to the non-normal data distribution. Ranking of the data downplays the role of the extreme rainfall events which, though rare, are of significant practical importance.</p>
+<p>Note - Students may prefer the rank sum test ot permutation, for example if they regard the extreme rainfall events as outliers not to be trusted. I am fine with taht answer as long as coherently justified.</p>
+</section>
+</section>
+<section id="question-2-colouring-books">
+<h2>Question 2: Colouring books<a class="headerlink" href="#question-2-colouring-books" title="Permalink to this heading">#</a></h2>
+<p><em>A researcher hypothesises that working on adult colouring books is particularly relaxing and will lower resting heart rate.</em></p>
+<p><em>She measures resting heart rate after one hour of colouring and after one hour of reading a novel in the same participants. The data are provided in the file ColouringHeartRate.csv. These are made-up data.</em></p>
+<p><em>a)	Download the data file and load the data into a Pandas dataframe called colouring</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heartRate</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/ColouringHeartRate.csv&#39;</span><span class="p">)</span>
+<span class="n">heartRate</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participantID</th>
+      <th>colouring</th>
+      <th>reading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>62</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>66</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c</td>
+      <td>61</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>d</td>
+      <td>68</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>e</td>
+      <td>74</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>f</td>
+      <td>62</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>g</td>
+      <td>68</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>h</td>
+      <td>62</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>i</td>
+      <td>55</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>j</td>
+      <td>59</td>
+      <td>65</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>b) Plot the data and comment.</em></p>
+<p>As the data are paired I will make a scatterplot; I plot the line x=y for reference</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartRate</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;colouring&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;reading&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">55</span><span class="p">,</span><span class="mi">75</span><span class="p">],[</span><span class="mi">55</span><span class="p">,</span><span class="mi">75</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc52eb70400&gt;]
+</pre></div>
+</div>
+<img alt="_images/d0a23447b12f8a2894c27213d03e76aeee814f6ff3dfa0ef6cf8168ab230bde4.png" src="_images/d0a23447b12f8a2894c27213d03e76aeee814f6ff3dfa0ef6cf8168ab230bde4.png" />
+</div>
+</div>
+<p>There appears to be a positive correlation (people with high heart rates in one condition also have high heart rates in the other condition)</p>
+<p>Almost all the participants have a higher heart rate in the reading condition (points lie above the line x=y)</p>
+<p><em>c)	This is a within-subjects or repeated-measures design. Explain what a within-subjects design is and what its advantages are. With reference to your graph, explain the advantages of a within-subjects design in this particular experiment.</em></p>
+<p>A within subjects design is one in which each participant completes mmultiple conditions, so each person can be compared to themself arcoss conditions. The advantage is that all interpersonal confounding variables are cancelled out.</p>
+<p>In the current study, we see that there are large idividual differences in heart rate, meaning that people with high heart rate in the colouring condition also have a high heart rate in the reading condition; the change in heart rate between conditions is relatively small an could be dwarfed by these individual differences in a between-subjects design.</p>
+<p>A possible disadvantage is order effects - in the current example, if the colouring condition is always completed second, people could have a lower heart rate due to being more relaxed on the second visit to the lab.</p>
+<p><em>d) Why do you think the researcher chose to compare heart rate after one hour of colouring to heart rate after one hour of reading, as opposed to comparing heart rate before and after colouring?</em></p>
+<p>To avoid order effects within a session - eg heart rate likely to be higher when the participant just arrived (from walking/cycling, plus possible nerves in the lab situation) than at the end of the session.</p>
+<p><em>e)	Conduct three statistical tests of the researcher’s hypothesis, based on</em></p>
+<p><em>I.	Assumption of normality</em></p>
+<p><em>II.	Permutation</em></p>
+<p><em>III.	Ranked values</em></p>
+<p><em>… in each case you should:</em></p>
+<ul class="simple">
+<li><p>State the null and alternative hypothesis and the alpha value</p></li>
+<li><p>Report appropriate descriptive statistics for the test in question</p></li>
+<li><p>Carry out the test</p></li>
+<li><p>State the results of the test including the test statistic and p value. For the t-test, degrees of freedom should also be stated.</p></li>
+<li><p>Report your practical conclusion in plain English</p></li>
+</ul>
+<section id="i-paired-samples-t-test">
+<h3>I. Paired samples t-test<a class="headerlink" href="#i-paired-samples-t-test" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in mean heart rate between reading and colouring conditions</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean heartrate is lower in the colouring condition</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">heartRate</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;colouring&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="s1">&#39;reading&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>colouring</th>
+      <th>reading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>63.700000</td>
+      <td>69.40000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.396501</td>
+      <td>5.25357</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>10.000000</td>
+      <td>10.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The mean heart rate is lower after colouring (mean = 67.3 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=3.4753513368432465, pvalue=0.0034947821057590726, df=9)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A paired samples t-test showed that there was a significant difference such that heart rate was lower after colouring than reading (t(9)=3.48, p=0.00349)</p>
+<p>We conclude that colouring is a successful intervention to lower heart rate, compared to reading.</p>
+</section>
+<section id="ii-permutation-test-for-difference-of-means-paired-samples">
+<h3>II. Permutation test for difference of means: paired samples<a class="headerlink" href="#ii-permutation-test-for-difference-of-means-paired-samples" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in mean heart rate between reading and colouring conditions</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean heartrate is lower in the colouring condition</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">heartRate</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;colouring&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="s1">&#39;reading&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>colouring</th>
+      <th>reading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>63.700000</td>
+      <td>69.40000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.396501</td>
+      <td>5.25357</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>10.000000</td>
+      <td>10.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The mean heart rate is lower after colouring (mean = 67.3 bpm, s.d. = 5.40) than after reading (mean = 69.4 bpm, s.d. = 5.25)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># note the difference between this function and dMeans for independent sammples above!)</span>
+<span class="k">def</span> <span class="nf">mDiff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span> <span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">]),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=5.7, pvalue=0.0078125, null_distribution=array([ 5.7,  4.5,  4.3, ..., -4.3, -4.5, -5.7]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>A permutation test for paired samples showed a significant difference of means such that heart rate was lower after colouring than reading (mean difference in heart rate 5.7 bpm, p=0.0000781, df = 9).</p>
+<p>Note - the degrees of freedom for this test are 9 (10 pairs - 1 mean difference for each shuffle); However I don’t necessarily expect students to work this out as I haven’t really explained it; it would be fine to just report sample sizes instead for the permutation test). However students should be aware that the relevant sample size here for statistical purposes is 10 (number of pairs) not 20 (number of measurements).</p>
+</section>
+<section id="iii-sign-rank-test">
+<h3>III. Sign rank test<a class="headerlink" href="#iii-sign-rank-test" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> There is no difference in median heart rate between reading and colouring conditions</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The median heartrate is lower in the colouring condition</p>
+<p>I will test at the 5% level, one tailed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># output the relevant descriptive statistics</span>
+<span class="n">heartRate</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># output the relevant descriptive statistics</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">heartRate</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:10927,</span> in <span class="ni">DataFrame.quantile</span><span class="nt">(self, q, axis, numeric_only, interpolation, method)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10923</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">  </span><span class="mi">10924</span>         <span class="sa">f</span><span class="s2">&quot;Invalid method: </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">. Method must be in </span><span class="si">{</span><span class="n">valid_method</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="g g-Whitespace">  </span><span class="mi">10925</span>     <span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10926</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;single&quot;</span><span class="p">:</span>
+<span class="ne">&gt; </span><span class="mi">10927</span>     <span class="n">res</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">qs</span><span class="o">=</span><span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">10928</span> <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;table&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">  </span><span class="mi">10929</span>     <span class="n">valid_interpolation</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="s2">&quot;lower&quot;</span><span class="p">,</span> <span class="s2">&quot;higher&quot;</span><span class="p">}</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1587,</span> in <span class="ni">BlockManager.quantile</span><span class="nt">(self, qs, axis, interpolation)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1584</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> <span class="n">new_axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Index</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1587</span> <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">   </span><span class="mi">1588</span>     <span class="n">blk</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">qs</span><span class="o">=</span><span class="n">qs</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1589</span>     <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1590</span> <span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1592</span> <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">new_axes</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1588,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1584</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span> <span class="n">new_axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">Index</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1587</span> <span class="n">blocks</span> <span class="o">=</span> <span class="p">[</span>
+<span class="ne">-&gt; </span><span class="mi">1588</span>     <span class="n">blk</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">qs</span><span class="o">=</span><span class="n">qs</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1589</span>     <span class="k">for</span> <span class="n">blk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span>
+<span class="g g-Whitespace">   </span><span class="mi">1590</span> <span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1592</span> <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">new_axes</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/blocks.py:1463,</span> in <span class="ni">Block.quantile</span><span class="nt">(self, qs, interpolation, axis)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="k">assert</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">1</span>  <span class="c1"># only ever called this way</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">assert</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">qs</span><span class="p">)</span>  <span class="c1"># caller is responsible for this</span>
+<span class="ne">-&gt; </span><span class="mi">1463</span> <span class="n">result</span> <span class="o">=</span> <span class="n">quantile_compat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">_values</span><span class="p">),</span> <span class="n">interpolation</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1464</span> <span class="c1"># ensure_block_shape needed for cases where we start with EA and result</span>
+<span class="g g-Whitespace">   </span><span class="mi">1465</span> <span class="c1">#  is ndarray, e.g. IntegerArray, SparseArray</span>
+<span class="g g-Whitespace">   </span><span class="mi">1466</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ensure_block_shape</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:37,</span> in <span class="ni">quantile_compat</span><span class="nt">(values, qs, interpolation)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">fill_value</span> <span class="o">=</span> <span class="n">na_value_for_dtype</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">mask</span> <span class="o">=</span> <span class="n">isna</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">37</span>     <span class="k">return</span> <span class="n">quantile_with_mask</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">fill_value</span><span class="p">,</span> <span class="n">qs</span><span class="p">,</span> <span class="n">interpolation</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">_quantile</span><span class="p">(</span><span class="n">qs</span><span class="p">,</span> <span class="n">interpolation</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:95,</span> in <span class="ni">quantile_with_mask</span><span class="nt">(values, mask, fill_value, qs, interpolation)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">flat</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">qs</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_nanpercentile</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="n">values</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>         <span class="n">qs</span> <span class="o">*</span> <span class="mf">100.0</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="n">na_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="n">interpolation</span><span class="o">=</span><span class="n">interpolation</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/array_algos/quantile.py:216,</span> in <span class="ni">_nanpercentile</span><span class="nt">(values, qs, na_value, mask, interpolation)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">216</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>         <span class="n">values</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>         <span class="n">qs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="c1"># error: No overload variant of &quot;percentile&quot; matches argument types</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="c1"># &quot;ndarray[Any, Any]&quot;, &quot;ndarray[Any, dtype[floating[_64Bit]]]&quot;,</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="c1"># &quot;int&quot;, &quot;Dict[str, str]&quot;  [call-overload]</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="o">**</span><span class="p">{</span><span class="n">np_percentile_argname</span><span class="p">:</span> <span class="n">interpolation</span><span class="p">},</span>  <span class="c1"># type: ignore[call-overload]</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="p">)</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:200,</span> in <span class="ni">percentile</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4205,</span> in <span class="ni">percentile</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims, interpolation)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4203</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">_quantile_is_valid</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4204</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Percentiles must be in the range [0, 100]&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4205</span> <span class="k">return</span> <span class="n">_quantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4206</span>     <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4473,</span> in <span class="ni">_quantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4465</span> <span class="k">def</span> <span class="nf">_quantile_unchecked</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4466</span>                         <span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4467</span>                         <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4470</span>                         <span class="n">method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4471</span>                         <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4472</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Assumes that q is in [0, 1], and is an ndarray&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4473</span>     <span class="k">return</span> <span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4474</span>                     <span class="n">func</span><span class="o">=</span><span class="n">_quantile_ureduce_func</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4475</span>                     <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4476</span>                     <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4477</span>                     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4478</span>                     <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4479</span>                     <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4480</span>                     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:3752,</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, keepdims, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3749</span>             <span class="n">index_out</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">)</span> <span class="o">*</span> <span class="n">nd</span>
+<span class="g g-Whitespace">   </span><span class="mi">3750</span>             <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;out&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="p">[(</span><span class="bp">Ellipsis</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">index_out</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">3752</span> <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3754</span> <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3755</span>     <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4639,</span> in <span class="ni">_quantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4637</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4638</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">4639</span> <span class="n">result</span> <span class="o">=</span> <span class="n">_quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4640</span>                    <span class="n">quantiles</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4641</span>                    <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4642</span>                    <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4643</span>                    <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4644</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4756,</span> in <span class="ni">_quantile</span><span class="nt">(arr, quantiles, axis, method, out)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4754</span>     <span class="n">result_shape</span> <span class="o">=</span> <span class="n">virtual_indexes</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4755</span>     <span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">result_shape</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4756</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_lerp</span><span class="p">(</span><span class="n">previous</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4757</span>                    <span class="nb">next</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4758</span>                    <span class="n">gamma</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4759</span>                    <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4760</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">slices_having_nans</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4761</span>     <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">out</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4762</span>         <span class="c1"># can&#39;t write to a scalar</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/lib/function_base.py:4573,</span> in <span class="ni">_lerp</span><span class="nt">(a, b, t, out)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4559</span> <span class="k">def</span> <span class="nf">_lerp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4560</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">4561</span><span class="sd">     Compute the linear interpolation weighted by gamma on each point of</span>
+<span class="g g-Whitespace">   </span><span class="mi">4562</span><span class="sd">     two same shape array.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4571</span><span class="sd">         Output array.</span>
+<span class="g g-Whitespace">   </span><span class="mi">4572</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4573</span>     <span class="n">diff_b_a</span> <span class="o">=</span> <span class="n">subtract</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4574</span>     <span class="c1"># asanyarray is a stop-gap until gh-13105</span>
+<span class="g g-Whitespace">   </span><span class="mi">4575</span>     <span class="n">lerp_interpolation</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">diff_b_a</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The median heart rate is lower after colouring (median = 62.00 bpm, q1=61.25, q3=67.50) than after reading (median = 71.0 bpm, q1=66.0, q3=71.75)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">],</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">],</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=50.5, pvalue=0.009765625)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A sign rank test showed that heart rates were significantly lower after colouring than reading (T=50.5, p=0.00976, n=10 pairs).</p>
+<p>We conclude that colouring is effective in lowering heart, rate compared to reading.</p>
+<p><em>f) The use of the t-test rests on an assumption of normality. What exactly must be normally distributed for the t-test to be valid in this case?</em></p>
+<p>The differences in heart rate would have to be normmally distriubted. Let’s check if that is the case</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;colouring&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;reading&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a74dc36bad00dd39893509b4c6908f07476f06f1d718b0e88e301a6c6b68d4cd.png" src="_images/a74dc36bad00dd39893509b4c6908f07476f06f1d718b0e88e301a6c6b68d4cd.png" />
+</div>
+</div>
+<p>It seems not - the differences have a distribution with positive skew (to be fair the sample size is too small to be really confident abbout this, but if unsure, it is better to avoid assuming normality)</p>
+<p>Note-  I wouldn’t expect students to produce this plot unless explicitly asked, which they wer enot in the question abbove - I include it for interest/completelness</p>
+<p><em>g) Which statistical test do you think was the best choice for this dataset?</em></p>
+<p>I would choose the permutation test.</p>
+<p>The t-test is not valid (assumption of normality not met as per my graph above; or even without the graph we could say that with a tiny sample size and no a priori reason to this the differences should be normal, we cannot assume normality)</p>
+<p>The sign rank test is less powerful than the permutation test as it uses less information</p>
+<p>Note - students may make another choice; for example they may prefer the sign rank test as there is one outlier difference; this is OK as long as there is a coherent justification. I am less keen on students choosing the t-test as with the small sample, and lack of a priori reason to this the data should be normal, the assumption of normality is hard to justify.</p>
+</section>
+</section>
+<section id="question-3-reaction-times">
+<h2>Question 3: Reaction times<a class="headerlink" href="#question-3-reaction-times" title="Permalink to this heading">#</a></h2>
+<p><em>Two participants, A and B, perform a choice reaction time task in which they must press one of two buttons depending on whether a word was a real or made-up word</em></p>
+<p><em>The data are provided in the file ChoiceRTs.csv. These are made-up data</em></p>
+<p><em>a) Download the data file and load the data into a Pandas dataframe called ChoiceRTs</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ChoiceRTs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/ChoiceRTs.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>b) Plot the data for each participant in a way that illustrates the distribution of reaction times for each person and allows them to be compared. Two subplots within a single figure would be a good choice here.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ChoiceRTs</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;RT: participant A&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">ChoiceRTs</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;RT: participant B&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/da3729e00261fa8db43f3a6103ef66daa901e58877ab5db7c387b1a7fd655c83.png" src="_images/da3729e00261fa8db43f3a6103ef66daa901e58877ab5db7c387b1a7fd655c83.png" />
+</div>
+</div>
+<p>Note - two plots placed vertically allow for better comparison than horizontally
+X axes ranges should match to allow for direct comparison of the distributions
+KDE plot would also be fine here</p>
+<p><em>c) Comment on how the distributions differ between conditions, and in what respect they are the same across conditions</em></p>
+<p>Both participants have a multimomdal distribution with the bulk of RTs grouped around 400 ms, but a smaller group of fast RTs (around 200ms) and a few slow RTs (&gt;600 ms)</p>
+<p>Participant B seems to be slightly slower in the ‘main’ distribution of RTs aroung 400ms, and also has a higher number of very fast RTs.</p>
+<p><em>The researcher decides that reaction times under 300ms (very fast responses) and over 700ms (very slow responses) should be excluded.</em></p>
+<p><em>d) Do you think this is justified? Explain your answer.</em></p>
+<p>Yes, the RTs below 300ms clearly belong to a separate distribution from the bulk of RTs - maybe they represent false starts. The RTs above 700mms also seem to be outliers (maybe missed trials)</p>
+<p><em>e)	Find the mean and standard deviation of reaction time for each condition of the experiment, using</em></p>
+<p>I.	all the data</p>
+<p>II.	the data with RTs outside the range 300-700ms excluded</p>
+<p><em>Comment on the difference in results between cases I and II</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new dataframe with fast and slow RTs replaced by NaN</span>
+<span class="n">ChoiceRTs_clean</span> <span class="o">=</span> <span class="n">ChoiceRTs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ChoiceRTs_clean</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">300</span><span class="p">),[</span><span class="s1">&#39;A&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ChoiceRTs_clean</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">700</span><span class="p">),[</span><span class="s1">&#39;A&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ChoiceRTs_clean</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">300</span><span class="p">),[</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ChoiceRTs_clean</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">700</span><span class="p">),[</span><span class="s1">&#39;B&#39;</span><span class="p">]]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ChoiceRTs</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span><span class="s1">&#39;B&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>391.915404</td>
+      <td>407.901106</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>92.417086</td>
+      <td>114.115202</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>235.000000</td>
+      <td>235.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span><span class="s1">&#39;B&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>401.752356</td>
+      <td>431.175663</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>57.575202</td>
+      <td>49.184896</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>208.000000</td>
+      <td>196.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>f) For each of the two cases</p></li>
+</ul>
+<p>*I.	all the data *</p>
+<p><em>II. the data with RTs outside the range 300-700ms excluded</em></p>
+<p>*…Conduct a t test to determine whether there is a difference in the mean reaction time between the two participants. *</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># all the data</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">ChoiceRTs</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">ChoiceRTs</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">,</span> <span class="n">nan_policy</span><span class="o">=</span><span class="s1">&#39;omit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=-5.321100617211454, pvalue=1.8573862506275612e-07)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data with extreme values excluded</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">ChoiceRTs_clean</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">,</span> <span class="n">nan_policy</span><span class="o">=</span><span class="s1">&#39;omit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=-5.321100617211454, pvalue=1.8573862506275612e-07)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note - we need to add the argument nan_policy=’omit’ otherwise the function ttest_ind returns a nan when there are nans in the dataset</p>
+<p>Comments - we get a more significant difference when the extreme RTs are omitted. This is because removing extreme values reduces the standard deviation <span class="math notranslate nohighlight">\(s\)</span>, and thus the standard error of the mean for each sample.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-cloud-seeding">Question 1 - Cloud seeding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-independent-samples-t-test">I. Independent samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-permutation-test-for-difference-of-means-independent-samples">II. Permutation test for difference of means (independent samples)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-colouring-books">Question 2: Colouring books</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#i-paired-samples-t-test">I. Paired samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ii-permutation-test-for-difference-of-means-paired-samples">II. Permutation test for difference of means: paired samples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iii-sign-rank-test">III. Sign rank test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-reaction-times">Question 3: Reaction times</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

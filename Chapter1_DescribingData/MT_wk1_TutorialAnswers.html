@@ -1,0 +1,2973 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter1_DescribingData/MT_wk1_TutorialAnswers';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter1_DescribingData/MT_wk1_TutorialAnswers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter1_DescribingData/MT_wk1_TutorialAnswers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter1_DescribingData/MT_wk1_TutorialAnswers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-heat">Part 1: Heat</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-what-was-the-hottest-temperature-on-record">a. What was the hottest temperature on record?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-on-what-date-did-the-hottest-temperature-occur">b. On what date did the hottest temperature occur?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-display-the-10-hottest-days-on-record-and-comment">c. Display the 10 hottest days on record and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-find-the-mean-of-maximum-daily-temperature-tmax-for-each-month-and-comment">d. Find the mean of maximum daily temperature (Tmax) for each month and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-make-a-table-displaying-the-mean-and-standard-deviation-of-tmax-in-each-month">e. Make a table displaying the mean and standard deviation of Tmax in each month</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-make-a-table-displaying-the-mean-of-tmax-and-tmin-in-each-month">e. Make a table displaying the mean of Tmax and Tmin in each month</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-rain">Part 2: Rain</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-run-this-code-block-to-add-a-column-called-tt-wet-tt-containing-a-tt-true-tt-for-days-on-which-it-rained-and-tt-false-tt-otherwise">a. Run this code block to add a column called <tt>wet</tt> containing a <tt>True</tt> for days on which it rained and <tt>False</tt> otherwise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-what-is-the-proportion-of-wet-days-overall">b. What is the proportion of wet days overall?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-what-is-the-proportion-of-wet-days-in-each-month-comment-on-your-findings">c. What is the proportion of wet days in each month? Comment on your findings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-what-is-the-mean-quantity-of-rainfall-in-mm-in-each-month-comment-on-your-findings">d. What is the mean quantity of rainfall (in mm) in each month? Comment on your findings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-display-the-10-wettest-days-on-record-and-comment">e. Display the 10 wettest days on record and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-compare-and-contrast-the-different-findings-in-part-2-c-d-and-e">f. Compare and contrast the different findings in part 2 c,d, and e</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snow">Snow</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-dataframe-containing-the-weather-on-christmas-day-for-all-the-years-in-which-there-was-a-white-christmas">a. Create a dataframe containing the weather on Christmas day, for all the years in which there was a White Christmas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-sort-the-dataframe-tt-whitechristmas-tt-by-year-and-comment">b. Sort the dataframe <tt>WhiteChristmas</tt> by year and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-any-issues-with-our-definition-of-snow">c. Any issues with our definition of ‘snow’?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-how-common-is-proper-snowfall-in-oxford">d. How common is ‘proper’ snowfall in Oxford?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<p>This week’s tutorial exercises focus on indexing and obtaining descriptive statistics</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual you will need to run this code block to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-a-dataset-to-work-with">
+<h2>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>You will need to download the file OxfordWeather.csv from Canvas to your computer, then import it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8.3</td>
+      <td>5.6</td>
+      <td>7.0</td>
+      <td>2.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>2.2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>3</td>
+      <td>-2.2</td>
+      <td>-8.3</td>
+      <td>-5.3</td>
+      <td>6.1</td>
+      <td>9.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>4</td>
+      <td>-1.7</td>
+      <td>-7.8</td>
+      <td>-4.8</td>
+      <td>6.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>-10.6</td>
+      <td>-5.3</td>
+      <td>10.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>71338</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>26</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71339</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>27</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71340</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>28</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71341</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>29</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71342</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>30</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>71343 rows × 8 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<p>In the following questions, we descriptive statistics and indexing to answer some questions about the weather and climate in Oxford.</p>
+<p>Where you are asked to calculate a value (such as the mean) rather than output a table, you should <strong>report your answer in words</strong> in the text box below the code block.</p>
+<p>Where the question asks you to “comment”, you are simmply being asked to engage with the data/ explain what  you notice in plain English. Please discuss with your fellow students and your tutor as this is a really important skill for data analysis.</p>
+<section id="part-1-heat">
+<h3>Part 1: Heat<a class="headerlink" href="#part-1-heat" title="Permalink to this heading">#</a></h3>
+<section id="a-what-was-the-hottest-temperature-on-record">
+<h4>a. What was the hottest temperature on record?<a class="headerlink" href="#a-what-was-the-hottest-temperature-on-record" title="Permalink to this heading">#</a></h4>
+<p>Note that the dataset ends in April 2022 and therefore does not include the record heatwave of summer 2022.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.5
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Your text here</em></p>
+</section>
+<section id="b-on-what-date-did-the-hottest-temperature-occur">
+<h4>b. On what date did the hottest temperature occur?<a class="headerlink" href="#b-on-what-date-did-the-hottest-temperature-occur" title="Permalink to this heading">#</a></h4>
+<p>Hint: you could use <code class="docutils literal notranslate"><span class="pre">df.query()</span></code> to help you here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Tmax == 36.5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>70332</th>
+      <td>2019</td>
+      <td>7</td>
+      <td>25</td>
+      <td>36.5</td>
+      <td>16.4</td>
+      <td>26.5</td>
+      <td>20.1</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Your text here</em></p>
+</section>
+<section id="c-display-the-10-hottest-days-on-record-and-comment">
+<h4>c. Display the 10 hottest days on record and comment<a class="headerlink" href="#c-display-the-10-hottest-days-on-record-and-comment" title="Permalink to this heading">#</a></h4>
+<p>Hint: you can use <code class="docutils literal notranslate"><span class="pre">df.values_sort()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.head()</span></code> or <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code> to help you here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Tmax&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>70715</th>
+      <td>2020</td>
+      <td>8</td>
+      <td>11</td>
+      <td>34.1</td>
+      <td>17.9</td>
+      <td>26.0</td>
+      <td>16.2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>54599</th>
+      <td>1976</td>
+      <td>6</td>
+      <td>27</td>
+      <td>34.3</td>
+      <td>17.8</td>
+      <td>26.1</td>
+      <td>16.5</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>70716</th>
+      <td>2020</td>
+      <td>8</td>
+      <td>12</td>
+      <td>34.4</td>
+      <td>20.4</td>
+      <td>27.4</td>
+      <td>14.0</td>
+      <td>8.4</td>
+    </tr>
+    <tr>
+      <th>64503</th>
+      <td>2003</td>
+      <td>8</td>
+      <td>9</td>
+      <td>34.6</td>
+      <td>16.0</td>
+      <td>25.3</td>
+      <td>18.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>30900</th>
+      <td>1911</td>
+      <td>8</td>
+      <td>9</td>
+      <td>34.8</td>
+      <td>15.2</td>
+      <td>25.0</td>
+      <td>19.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>65578</th>
+      <td>2006</td>
+      <td>7</td>
+      <td>19</td>
+      <td>34.8</td>
+      <td>15.4</td>
+      <td>25.1</td>
+      <td>19.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>38581</th>
+      <td>1932</td>
+      <td>8</td>
+      <td>19</td>
+      <td>35.1</td>
+      <td>16.3</td>
+      <td>25.7</td>
+      <td>18.8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>59749</th>
+      <td>1990</td>
+      <td>8</td>
+      <td>3</td>
+      <td>35.1</td>
+      <td>16.4</td>
+      <td>25.8</td>
+      <td>18.7</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>70704</th>
+      <td>2020</td>
+      <td>7</td>
+      <td>31</td>
+      <td>35.1</td>
+      <td>14.8</td>
+      <td>25.0</td>
+      <td>20.3</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>70332</th>
+      <td>2019</td>
+      <td>7</td>
+      <td>25</td>
+      <td>36.5</td>
+      <td>16.4</td>
+      <td>26.5</td>
+      <td>20.1</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>71170</th>
+      <td>2021</td>
+      <td>11</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Your comment here</em></p>
+<p>Six out of the ten hottest days on record occurred in the last 20 years</p>
+</section>
+<section id="d-find-the-mean-of-maximum-daily-temperature-tmax-for-each-month-and-comment">
+<h4>d. Find the mean of maximum daily temperature (Tmax) for each month and comment<a class="headerlink" href="#d-find-the-mean-of-maximum-daily-temperature-tmax-for-each-month-and-comment" title="Permalink to this heading">#</a></h4>
+<p>Hint: you can use <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> to help you here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;MM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Tmax</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
+1      6.554444
+2      7.401048
+3      9.944914
+4     13.187517
+5     16.795252
+6     20.011487
+7     21.799007
+8     21.192936
+9     18.451043
+10    14.112639
+11     9.640041
+12     7.290571
+Name: Tmax, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Your coment here</em></p>
+<p>Unsurprisingly the warmest months are in summer and the coolest are in winter</p>
+</section>
+<section id="e-make-a-table-displaying-the-mean-and-standard-deviation-of-tmax-in-each-month">
+<h4>e. Make a table displaying the mean and standard deviation of Tmax in each month<a class="headerlink" href="#e-make-a-table-displaying-the-mean-and-standard-deviation-of-tmax-in-each-month" title="Permalink to this heading">#</a></h4>
+<p>Hint: A combination of <code class="docutils literal notranslate"><span class="pre">df.agg()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> will help you here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;MM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Tmax&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">Tmax</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>MM</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6.554444</td>
+      <td>3.831624</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.401048</td>
+      <td>3.723290</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.944914</td>
+      <td>3.641816</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13.187517</td>
+      <td>3.648047</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>16.795252</td>
+      <td>3.761523</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>20.011487</td>
+      <td>3.585932</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>21.799007</td>
+      <td>3.511055</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>21.192936</td>
+      <td>3.232944</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>18.451043</td>
+      <td>3.088003</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>14.112639</td>
+      <td>3.090256</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>9.640041</td>
+      <td>3.254649</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7.290571</td>
+      <td>3.801597</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="e-make-a-table-displaying-the-mean-of-tmax-and-tmin-in-each-month">
+<h4>e. Make a table displaying the mean of Tmax and Tmin in each month<a class="headerlink" href="#e-make-a-table-displaying-the-mean-of-tmax-and-tmin-in-each-month" title="Permalink to this heading">#</a></h4>
+<p>Hint: A combination of <code class="docutils literal notranslate"><span class="pre">df.agg()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> will help you here</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;MM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Tmax&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">],</span> <span class="s1">&#39;Tmin&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>mean</th>
+    </tr>
+    <tr>
+      <th>MM</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6.554444</td>
+      <td>1.319437</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.401048</td>
+      <td>1.470683</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.944914</td>
+      <td>2.396840</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>13.187517</td>
+      <td>4.301786</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>16.795252</td>
+      <td>7.165062</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>20.011487</td>
+      <td>10.328291</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>21.799007</td>
+      <td>12.238098</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>21.192936</td>
+      <td>11.965261</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>18.451043</td>
+      <td>9.824855</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>14.112639</td>
+      <td>6.874028</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>9.640041</td>
+      <td>3.692014</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>7.290571</td>
+      <td>2.067461</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="part-2-rain">
+<h3>Part 2: Rain<a class="headerlink" href="#part-2-rain" title="Permalink to this heading">#</a></h3>
+<section id="a-run-this-code-block-to-add-a-column-called-tt-wet-tt-containing-a-tt-true-tt-for-days-on-which-it-rained-and-tt-false-tt-otherwise">
+<h4>a. Run this code block to add a column called <tt>wet</tt> containing a <tt>True</tt> for days on which it rained and <tt>False</tt> otherwise<a class="headerlink" href="#a-run-this-code-block-to-add-a-column-called-tt-wet-tt-containing-a-tt-true-tt-for-days-on-which-it-rained-and-tt-false-tt-otherwise" title="Permalink to this heading">#</a></h4>
+<p>We will practice adding columns in a later session</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="p">[</span><span class="s1">&#39;wet&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">weather</span><span class="o">.</span><span class="n">Rainfall_mm</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="n">weather</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+      <th>wet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8.3</td>
+      <td>5.6</td>
+      <td>7.0</td>
+      <td>2.7</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>1.1</td>
+      <td>2.2</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>3</td>
+      <td>-2.2</td>
+      <td>-8.3</td>
+      <td>-5.3</td>
+      <td>6.1</td>
+      <td>9.7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>4</td>
+      <td>-1.7</td>
+      <td>-7.8</td>
+      <td>-4.8</td>
+      <td>6.1</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1827</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>-10.6</td>
+      <td>-5.3</td>
+      <td>10.6</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>71338</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>26</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71339</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>27</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71340</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>28</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71341</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>29</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71342</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>30</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>71343 rows × 9 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="b-what-is-the-proportion-of-wet-days-overall">
+<h4>b. What is the proportion of wet days overall?<a class="headerlink" href="#b-what-is-the-proportion-of-wet-days-overall" title="Permalink to this heading">#</a></h4>
+<p>Hint: The values <tt>True</tt> and <tt>False</tt> can be treated as <tt>1</tt> and <tt>0</tt> respectively.</p>
+<p>To get the proportion of days on which <tt>wet==True</tt>, we can use a programmming trick which is to simply take the mean of the column <tt>wet</tt>:</p>
+<ul class="simple">
+<li><p>say there are 100 days in my sample</p>
+<ul>
+<li><p>say 66 of them, <tt>wet==True==1</tt></p></li>
+<li><p>for the other 44, <tt>wet==False==0</tt></p></li>
+</ul>
+</li>
+<li><p>If we take the mean, this gives us the proportion of wet days because we:</p>
+<ul>
+<li><p>add up all the values (answer=66)</p></li>
+<li><p>divide by the number of cases (100)</p></li>
+<li><p>result is 66/100 = 0.66 or 66%, the proportion of wet days</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">wet</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46311481154423
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Your text here</em></p>
+<p>It rains on 46% of days</p>
+</section>
+<section id="c-what-is-the-proportion-of-wet-days-in-each-month-comment-on-your-findings">
+<h4>c. What is the proportion of wet days in each month? Comment on your findings<a class="headerlink" href="#c-what-is-the-proportion-of-wet-days-in-each-month-comment-on-your-findings" title="Permalink to this heading">#</a></h4>
+<p>Hint: use <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;MM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">wet</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
+1     0.530941
+2     0.479046
+3     0.448321
+4     0.441156
+5     0.422829
+6     0.405128
+7     0.414723
+8     0.431596
+9     0.421538
+10    0.503722
+11    0.529231
+12    0.528536
+Name: wet, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Your comments here</em></p>
+<p>The proportion of wet days is always between 40 and 53% (ie, it rains a lot).
+Unsurprisingly, the dryest months are in early summer (May,June,July) and the months with the most wet days are in winter (December/January)</p>
+</section>
+<section id="d-what-is-the-mean-quantity-of-rainfall-in-mm-in-each-month-comment-on-your-findings">
+<h4>d. What is the mean quantity of rainfall (in mm) in each month? Comment on your findings<a class="headerlink" href="#d-what-is-the-mean-quantity-of-rainfall-in-mm-in-each-month-comment-on-your-findings" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;MM&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rainfall_mm</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
+1     1.768186
+2     1.513909
+3     1.384546
+4     1.471871
+5     1.666600
+6     1.813607
+7     1.888238
+8     1.935203
+9     1.889658
+10    2.173002
+11    2.043350
+12    1.878412
+Name: Rainfall_mm, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Your comment here</em></p>
+<p>The quantity of rain follows a different pattern from the proportion of wet days - March has the lowest mean rainfall (perhaps it tends to drizzle in March?!) and October has the highest (it rains like it means it)</p>
+</section>
+<section id="e-display-the-10-wettest-days-on-record-and-comment">
+<h4>e. Display the 10 wettest days on record and comment<a class="headerlink" href="#e-display-the-10-wettest-days-on-record-and-comment" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">weather</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Rainfall_mm&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+      <th>wet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17726</th>
+      <td>1875</td>
+      <td>7</td>
+      <td>14</td>
+      <td>15.1</td>
+      <td>11.9</td>
+      <td>13.5</td>
+      <td>3.2</td>
+      <td>42.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17823</th>
+      <td>1875</td>
+      <td>10</td>
+      <td>19</td>
+      <td>10.7</td>
+      <td>8.9</td>
+      <td>9.8</td>
+      <td>1.8</td>
+      <td>43.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>52078</th>
+      <td>1969</td>
+      <td>8</td>
+      <td>2</td>
+      <td>24.7</td>
+      <td>16.5</td>
+      <td>20.6</td>
+      <td>8.2</td>
+      <td>43.4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>32407</th>
+      <td>1915</td>
+      <td>9</td>
+      <td>24</td>
+      <td>19.3</td>
+      <td>12.7</td>
+      <td>16.0</td>
+      <td>6.6</td>
+      <td>43.7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20636</th>
+      <td>1883</td>
+      <td>7</td>
+      <td>2</td>
+      <td>25.7</td>
+      <td>16.1</td>
+      <td>20.9</td>
+      <td>9.6</td>
+      <td>43.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>65581</th>
+      <td>2006</td>
+      <td>7</td>
+      <td>22</td>
+      <td>29.5</td>
+      <td>19.1</td>
+      <td>24.3</td>
+      <td>10.4</td>
+      <td>44.2</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>51336</th>
+      <td>1967</td>
+      <td>7</td>
+      <td>22</td>
+      <td>22.8</td>
+      <td>10.4</td>
+      <td>16.6</td>
+      <td>12.4</td>
+      <td>44.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19553</th>
+      <td>1880</td>
+      <td>7</td>
+      <td>14</td>
+      <td>15.8</td>
+      <td>13.7</td>
+      <td>14.8</td>
+      <td>2.1</td>
+      <td>46.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>21755</th>
+      <td>1886</td>
+      <td>7</td>
+      <td>25</td>
+      <td>21.9</td>
+      <td>10.9</td>
+      <td>16.4</td>
+      <td>11.0</td>
+      <td>46.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>62725</th>
+      <td>1998</td>
+      <td>9</td>
+      <td>26</td>
+      <td>19.9</td>
+      <td>12.8</td>
+      <td>16.4</td>
+      <td>7.1</td>
+      <td>46.4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29699</th>
+      <td>1908</td>
+      <td>4</td>
+      <td>25</td>
+      <td>1.3</td>
+      <td>-0.7</td>
+      <td>0.3</td>
+      <td>2.0</td>
+      <td>46.7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29421</th>
+      <td>1907</td>
+      <td>7</td>
+      <td>22</td>
+      <td>20.5</td>
+      <td>12.8</td>
+      <td>16.7</td>
+      <td>7.7</td>
+      <td>47.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>12624</th>
+      <td>1861</td>
+      <td>7</td>
+      <td>25</td>
+      <td>19.2</td>
+      <td>13.1</td>
+      <td>16.2</td>
+      <td>6.1</td>
+      <td>47.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17813</th>
+      <td>1875</td>
+      <td>10</td>
+      <td>9</td>
+      <td>13.2</td>
+      <td>2.8</td>
+      <td>8.0</td>
+      <td>10.4</td>
+      <td>48.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>64837</th>
+      <td>2004</td>
+      <td>7</td>
+      <td>8</td>
+      <td>19.3</td>
+      <td>12.3</td>
+      <td>15.8</td>
+      <td>7.0</td>
+      <td>50.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>67076</th>
+      <td>2010</td>
+      <td>8</td>
+      <td>25</td>
+      <td>16.4</td>
+      <td>11.3</td>
+      <td>13.9</td>
+      <td>5.1</td>
+      <td>51.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>27922</th>
+      <td>1903</td>
+      <td>6</td>
+      <td>14</td>
+      <td>10.4</td>
+      <td>6.4</td>
+      <td>8.4</td>
+      <td>4.0</td>
+      <td>51.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>49525</th>
+      <td>1962</td>
+      <td>8</td>
+      <td>6</td>
+      <td>16.1</td>
+      <td>10.7</td>
+      <td>13.4</td>
+      <td>5.4</td>
+      <td>53.6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>47705</th>
+      <td>1957</td>
+      <td>8</td>
+      <td>12</td>
+      <td>20.0</td>
+      <td>15.6</td>
+      <td>17.8</td>
+      <td>4.4</td>
+      <td>56.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70768</th>
+      <td>2020</td>
+      <td>10</td>
+      <td>3</td>
+      <td>13.9</td>
+      <td>11.2</td>
+      <td>12.6</td>
+      <td>2.7</td>
+      <td>60.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>53503</th>
+      <td>1973</td>
+      <td>6</td>
+      <td>27</td>
+      <td>17.8</td>
+      <td>12.3</td>
+      <td>15.1</td>
+      <td>5.5</td>
+      <td>67.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>34915</th>
+      <td>1922</td>
+      <td>8</td>
+      <td>6</td>
+      <td>17.2</td>
+      <td>8.9</td>
+      <td>13.1</td>
+      <td>8.3</td>
+      <td>70.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>48750</th>
+      <td>1960</td>
+      <td>6</td>
+      <td>22</td>
+      <td>26.1</td>
+      <td>12.2</td>
+      <td>19.2</td>
+      <td>13.9</td>
+      <td>81.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>45538</th>
+      <td>1951</td>
+      <td>9</td>
+      <td>6</td>
+      <td>20.6</td>
+      <td>16.1</td>
+      <td>18.4</td>
+      <td>4.5</td>
+      <td>84.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>51690</th>
+      <td>1968</td>
+      <td>7</td>
+      <td>10</td>
+      <td>15.1</td>
+      <td>12.8</td>
+      <td>14.0</td>
+      <td>2.3</td>
+      <td>87.9</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Your comment here</em></p>
+<ul class="simple">
+<li><p>Almost all the wettest days are in summer, suggesting extreme rainfall is more likely in summer (perhaps due to convection storms?)</p></li>
+<li><p>There is no obvious trend for more of the wettest days to be recent (evidence for climate change less clear than in temperature data)</p></li>
+</ul>
+</section>
+<section id="f-compare-and-contrast-the-different-findings-in-part-2-c-d-and-e">
+<h4>f. Compare and contrast the different findings in part 2 c,d, and e<a class="headerlink" href="#f-compare-and-contrast-the-different-findings-in-part-2-c-d-and-e" title="Permalink to this heading">#</a></h4>
+<p>Different descriptive statistics tell us different things about the same data!</p>
+<p><em>Your comments here!</em></p>
+<p>Bring together the observations on rainfall</p>
+<ul class="simple">
+<li><p>It rains on pretty much half of all days in Oxford!</p></li>
+<li><p>Rain is more likely in winter than summer</p></li>
+<li><p>The total volume of rain is greatest in Autumn and lowest in spring</p></li>
+<li><p>Extreme rain is almost always in summer</p></li>
+</ul>
+</section>
+</section>
+<section id="snow">
+<h3>Snow<a class="headerlink" href="#snow" title="Permalink to this heading">#</a></h3>
+<section id="a-create-a-dataframe-containing-the-weather-on-christmas-day-for-all-the-years-in-which-there-was-a-white-christmas">
+<h4>a. Create a dataframe containing the weather on Christmas day, for all the years in which there was a White Christmas<a class="headerlink" href="#a-create-a-dataframe-containing-the-weather-on-christmas-day-for-all-the-years-in-which-there-was-a-white-christmas" title="Permalink to this heading">#</a></h4>
+<p>Hint: we don’t have a column telling us when is has snowed, but it is reasonable to assume this happens when the minimum temperature dips below zero, and Rainfall_mm is above zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># </span>
+<span class="n">WhiteChristmas</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;MM==12 and DD==25 and Tmin&lt;0 and wet==True&#39;</span><span class="p">)</span>
+<span class="n">WhiteChristmas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+      <th>wet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5472</th>
+      <td>1841</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.3</td>
+      <td>-1.5</td>
+      <td>2.4</td>
+      <td>7.8</td>
+      <td>0.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8394</th>
+      <td>1849</td>
+      <td>12</td>
+      <td>25</td>
+      <td>4.4</td>
+      <td>-0.7</td>
+      <td>1.9</td>
+      <td>5.1</td>
+      <td>1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18256</th>
+      <td>1876</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.2</td>
+      <td>-0.6</td>
+      <td>0.3</td>
+      <td>1.8</td>
+      <td>1.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18621</th>
+      <td>1877</td>
+      <td>12</td>
+      <td>25</td>
+      <td>3.4</td>
+      <td>-2.1</td>
+      <td>0.7</td>
+      <td>5.5</td>
+      <td>0.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18986</th>
+      <td>1878</td>
+      <td>12</td>
+      <td>25</td>
+      <td>4.0</td>
+      <td>-2.7</td>
+      <td>0.7</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19351</th>
+      <td>1879</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.1</td>
+      <td>-1.7</td>
+      <td>-0.3</td>
+      <td>2.8</td>
+      <td>0.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23369</th>
+      <td>1890</td>
+      <td>12</td>
+      <td>25</td>
+      <td>-3.1</td>
+      <td>-4.8</td>
+      <td>-4.0</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23734</th>
+      <td>1891</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.7</td>
+      <td>-6.8</td>
+      <td>-2.6</td>
+      <td>8.5</td>
+      <td>0.7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25195</th>
+      <td>1895</td>
+      <td>12</td>
+      <td>25</td>
+      <td>3.2</td>
+      <td>-0.5</td>
+      <td>1.4</td>
+      <td>3.7</td>
+      <td>5.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>28482</th>
+      <td>1904</td>
+      <td>12</td>
+      <td>25</td>
+      <td>2.7</td>
+      <td>-1.5</td>
+      <td>0.6</td>
+      <td>4.2</td>
+      <td>0.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29212</th>
+      <td>1906</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.4</td>
+      <td>-2.2</td>
+      <td>2.1</td>
+      <td>8.6</td>
+      <td>1.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>30308</th>
+      <td>1909</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.5</td>
+      <td>-1.4</td>
+      <td>2.6</td>
+      <td>7.9</td>
+      <td>0.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>31769</th>
+      <td>1913</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.5</td>
+      <td>-1.0</td>
+      <td>2.8</td>
+      <td>7.5</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>35421</th>
+      <td>1923</td>
+      <td>12</td>
+      <td>25</td>
+      <td>5.6</td>
+      <td>-3.5</td>
+      <td>1.1</td>
+      <td>9.1</td>
+      <td>10.4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>36152</th>
+      <td>1925</td>
+      <td>12</td>
+      <td>25</td>
+      <td>7.1</td>
+      <td>-0.1</td>
+      <td>3.5</td>
+      <td>7.2</td>
+      <td>1.6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>40900</th>
+      <td>1938</td>
+      <td>12</td>
+      <td>25</td>
+      <td>0.6</td>
+      <td>-0.6</td>
+      <td>0.0</td>
+      <td>1.2</td>
+      <td>3.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>47475</th>
+      <td>1956</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.1</td>
+      <td>-1.1</td>
+      <td>0.0</td>
+      <td>2.2</td>
+      <td>4.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>50031</th>
+      <td>1963</td>
+      <td>12</td>
+      <td>25</td>
+      <td>8.3</td>
+      <td>-3.6</td>
+      <td>2.4</td>
+      <td>11.9</td>
+      <td>3.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>52588</th>
+      <td>1970</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.0</td>
+      <td>-3.5</td>
+      <td>-1.3</td>
+      <td>4.5</td>
+      <td>1.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>55875</th>
+      <td>1979</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.0</td>
+      <td>-4.0</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>61354</th>
+      <td>1994</td>
+      <td>12</td>
+      <td>25</td>
+      <td>9.4</td>
+      <td>-5.0</td>
+      <td>2.2</td>
+      <td>14.4</td>
+      <td>1.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70120</th>
+      <td>2018</td>
+      <td>12</td>
+      <td>25</td>
+      <td>8.6</td>
+      <td>-1.0</td>
+      <td>3.8</td>
+      <td>9.6</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="b-sort-the-dataframe-tt-whitechristmas-tt-by-year-and-comment">
+<h4>b. Sort the dataframe <tt>WhiteChristmas</tt> by year and comment<a class="headerlink" href="#b-sort-the-dataframe-tt-whitechristmas-tt-by-year-and-comment" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">WhiteChristmas</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;YYYY&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+      <th>wet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5472</th>
+      <td>1841</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.3</td>
+      <td>-1.5</td>
+      <td>2.4</td>
+      <td>7.8</td>
+      <td>0.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8394</th>
+      <td>1849</td>
+      <td>12</td>
+      <td>25</td>
+      <td>4.4</td>
+      <td>-0.7</td>
+      <td>1.9</td>
+      <td>5.1</td>
+      <td>1.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18256</th>
+      <td>1876</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.2</td>
+      <td>-0.6</td>
+      <td>0.3</td>
+      <td>1.8</td>
+      <td>1.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18621</th>
+      <td>1877</td>
+      <td>12</td>
+      <td>25</td>
+      <td>3.4</td>
+      <td>-2.1</td>
+      <td>0.7</td>
+      <td>5.5</td>
+      <td>0.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18986</th>
+      <td>1878</td>
+      <td>12</td>
+      <td>25</td>
+      <td>4.0</td>
+      <td>-2.7</td>
+      <td>0.7</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19351</th>
+      <td>1879</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.1</td>
+      <td>-1.7</td>
+      <td>-0.3</td>
+      <td>2.8</td>
+      <td>0.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23369</th>
+      <td>1890</td>
+      <td>12</td>
+      <td>25</td>
+      <td>-3.1</td>
+      <td>-4.8</td>
+      <td>-4.0</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23734</th>
+      <td>1891</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.7</td>
+      <td>-6.8</td>
+      <td>-2.6</td>
+      <td>8.5</td>
+      <td>0.7</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25195</th>
+      <td>1895</td>
+      <td>12</td>
+      <td>25</td>
+      <td>3.2</td>
+      <td>-0.5</td>
+      <td>1.4</td>
+      <td>3.7</td>
+      <td>5.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>28482</th>
+      <td>1904</td>
+      <td>12</td>
+      <td>25</td>
+      <td>2.7</td>
+      <td>-1.5</td>
+      <td>0.6</td>
+      <td>4.2</td>
+      <td>0.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29212</th>
+      <td>1906</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.4</td>
+      <td>-2.2</td>
+      <td>2.1</td>
+      <td>8.6</td>
+      <td>1.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>30308</th>
+      <td>1909</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.5</td>
+      <td>-1.4</td>
+      <td>2.6</td>
+      <td>7.9</td>
+      <td>0.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>31769</th>
+      <td>1913</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.5</td>
+      <td>-1.0</td>
+      <td>2.8</td>
+      <td>7.5</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>35421</th>
+      <td>1923</td>
+      <td>12</td>
+      <td>25</td>
+      <td>5.6</td>
+      <td>-3.5</td>
+      <td>1.1</td>
+      <td>9.1</td>
+      <td>10.4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>36152</th>
+      <td>1925</td>
+      <td>12</td>
+      <td>25</td>
+      <td>7.1</td>
+      <td>-0.1</td>
+      <td>3.5</td>
+      <td>7.2</td>
+      <td>1.6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>40900</th>
+      <td>1938</td>
+      <td>12</td>
+      <td>25</td>
+      <td>0.6</td>
+      <td>-0.6</td>
+      <td>0.0</td>
+      <td>1.2</td>
+      <td>3.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>47475</th>
+      <td>1956</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.1</td>
+      <td>-1.1</td>
+      <td>0.0</td>
+      <td>2.2</td>
+      <td>4.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>50031</th>
+      <td>1963</td>
+      <td>12</td>
+      <td>25</td>
+      <td>8.3</td>
+      <td>-3.6</td>
+      <td>2.4</td>
+      <td>11.9</td>
+      <td>3.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>52588</th>
+      <td>1970</td>
+      <td>12</td>
+      <td>25</td>
+      <td>1.0</td>
+      <td>-3.5</td>
+      <td>-1.3</td>
+      <td>4.5</td>
+      <td>1.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>55875</th>
+      <td>1979</td>
+      <td>12</td>
+      <td>25</td>
+      <td>6.0</td>
+      <td>-4.0</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>61354</th>
+      <td>1994</td>
+      <td>12</td>
+      <td>25</td>
+      <td>9.4</td>
+      <td>-5.0</td>
+      <td>2.2</td>
+      <td>14.4</td>
+      <td>1.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70120</th>
+      <td>2018</td>
+      <td>12</td>
+      <td>25</td>
+      <td>8.6</td>
+      <td>-1.0</td>
+      <td>3.8</td>
+      <td>9.6</td>
+      <td>0.1</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Your comments here</em></p>
+<p>General descriptive coments/ engageent with the data to be encouraged, e.g.</p>
+<ul class="simple">
+<li><p>White Christmasses are not very common now (only three in the last 50 years)</p></li>
+<li><p>They have never been all that common although there was a run of them in the 1870’s</p></li>
+<li><p>The most recent one was in 2018, however there wasn’t enough snow to play in (0.1mm of rain - so maybe 1mm of snow!)</p></li>
+<li><p>There have been only a handful of Christmas days with a worthwhile amount of snow, notably 1878 and and 1923 (&gt;10mm rainfall, which would mean more than 10cm of snow)</p></li>
+</ul>
+</section>
+<section id="c-any-issues-with-our-definition-of-snow">
+<h4>c. Any issues with our definition of ‘snow’?<a class="headerlink" href="#c-any-issues-with-our-definition-of-snow" title="Permalink to this heading">#</a></h4>
+<p>We defined snow as when the <tt>Tmin</tt> falls below zero and Rainfall is non-zero.</p>
+<ul class="simple">
+<li><p>Do you think this over- or under- estiamtes the number of snowy days?</p></li>
+<li><p>Why?</p></li>
+</ul>
+<p><em>Your comments here</em></p>
+</section>
+<section id="d-how-common-is-proper-snowfall-in-oxford">
+<h4>d. How common is ‘proper’ snowfall in Oxford?<a class="headerlink" href="#d-how-common-is-proper-snowfall-in-oxford" title="Permalink to this heading">#</a></h4>
+<p>Let’s focus on days with enough snowfall to make at least a tiny snowman! Assume that this happens when TMin is below zero and there is more than 4mm of rainfall</p>
+<ul class="simple">
+<li><p>4mm of rain makes about 5cm of soggy snow in Oxford conditions, although it would make a uch greater depth of powder in a cold dry atmosphere like Utah or Colorado</p></li>
+</ul>
+<p>Create a dataframe called <tt>SnowDays</tt> containing only days with enough snow to make a snowman.</p>
+<p>You can check how often this happened in recent years using <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SnowDays</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Tmin&lt;0 and Rainfall_mm&gt;4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">SnowDays</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+      <th>wet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>68718</th>
+      <td>2015</td>
+      <td>2</td>
+      <td>22</td>
+      <td>9.8</td>
+      <td>-1.0</td>
+      <td>4.4</td>
+      <td>10.8</td>
+      <td>6.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>68749</th>
+      <td>2015</td>
+      <td>3</td>
+      <td>25</td>
+      <td>9.5</td>
+      <td>-1.2</td>
+      <td>4.2</td>
+      <td>10.7</td>
+      <td>5.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>68992</th>
+      <td>2015</td>
+      <td>11</td>
+      <td>23</td>
+      <td>9.2</td>
+      <td>-1.6</td>
+      <td>3.8</td>
+      <td>10.8</td>
+      <td>6.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69098</th>
+      <td>2016</td>
+      <td>3</td>
+      <td>8</td>
+      <td>8.7</td>
+      <td>-2.1</td>
+      <td>3.3</td>
+      <td>10.8</td>
+      <td>28.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69343</th>
+      <td>2016</td>
+      <td>11</td>
+      <td>8</td>
+      <td>5.0</td>
+      <td>-2.2</td>
+      <td>1.4</td>
+      <td>7.2</td>
+      <td>20.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69396</th>
+      <td>2016</td>
+      <td>12</td>
+      <td>31</td>
+      <td>8.0</td>
+      <td>-0.3</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>7.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69402</th>
+      <td>2017</td>
+      <td>1</td>
+      <td>6</td>
+      <td>8.7</td>
+      <td>-2.9</td>
+      <td>2.9</td>
+      <td>11.6</td>
+      <td>6.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69410</th>
+      <td>2017</td>
+      <td>1</td>
+      <td>14</td>
+      <td>5.9</td>
+      <td>-0.9</td>
+      <td>2.5</td>
+      <td>6.8</td>
+      <td>5.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69433</th>
+      <td>2017</td>
+      <td>2</td>
+      <td>6</td>
+      <td>7.5</td>
+      <td>-1.7</td>
+      <td>2.9</td>
+      <td>9.2</td>
+      <td>6.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69740</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>10</td>
+      <td>1.9</td>
+      <td>-1.8</td>
+      <td>0.0</td>
+      <td>3.7</td>
+      <td>16.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69743</th>
+      <td>2017</td>
+      <td>12</td>
+      <td>13</td>
+      <td>7.7</td>
+      <td>-2.8</td>
+      <td>2.5</td>
+      <td>10.5</td>
+      <td>4.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69800</th>
+      <td>2018</td>
+      <td>2</td>
+      <td>8</td>
+      <td>7.2</td>
+      <td>-0.6</td>
+      <td>3.3</td>
+      <td>7.8</td>
+      <td>5.4</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69806</th>
+      <td>2018</td>
+      <td>2</td>
+      <td>14</td>
+      <td>8.0</td>
+      <td>-1.4</td>
+      <td>3.3</td>
+      <td>9.4</td>
+      <td>6.5</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69822</th>
+      <td>2018</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1.1</td>
+      <td>-4.8</td>
+      <td>-1.9</td>
+      <td>5.9</td>
+      <td>4.9</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70110</th>
+      <td>2018</td>
+      <td>12</td>
+      <td>15</td>
+      <td>8.3</td>
+      <td>-1.6</td>
+      <td>3.4</td>
+      <td>9.9</td>
+      <td>12.2</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70148</th>
+      <td>2019</td>
+      <td>1</td>
+      <td>22</td>
+      <td>5.3</td>
+      <td>-0.3</td>
+      <td>2.5</td>
+      <td>5.6</td>
+      <td>5.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70157</th>
+      <td>2019</td>
+      <td>1</td>
+      <td>31</td>
+      <td>3.0</td>
+      <td>-5.7</td>
+      <td>-1.4</td>
+      <td>8.7</td>
+      <td>6.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70158</th>
+      <td>2019</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2.4</td>
+      <td>-4.4</td>
+      <td>-1.0</td>
+      <td>6.8</td>
+      <td>6.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70160</th>
+      <td>2019</td>
+      <td>2</td>
+      <td>3</td>
+      <td>6.9</td>
+      <td>-4.7</td>
+      <td>1.1</td>
+      <td>11.6</td>
+      <td>5.0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70162</th>
+      <td>2019</td>
+      <td>2</td>
+      <td>5</td>
+      <td>9.8</td>
+      <td>-1.0</td>
+      <td>4.4</td>
+      <td>10.8</td>
+      <td>5.8</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70439</th>
+      <td>2019</td>
+      <td>11</td>
+      <td>9</td>
+      <td>6.1</td>
+      <td>-1.4</td>
+      <td>2.4</td>
+      <td>7.5</td>
+      <td>21.6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70868</th>
+      <td>2021</td>
+      <td>1</td>
+      <td>11</td>
+      <td>9.4</td>
+      <td>-0.1</td>
+      <td>4.7</td>
+      <td>9.5</td>
+      <td>4.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70958</th>
+      <td>2021</td>
+      <td>4</td>
+      <td>11</td>
+      <td>9.1</td>
+      <td>-1.6</td>
+      <td>3.8</td>
+      <td>10.7</td>
+      <td>4.3</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>71230</th>
+      <td>2022</td>
+      <td>1</td>
+      <td>8</td>
+      <td>10.7</td>
+      <td>-2.1</td>
+      <td>4.3</td>
+      <td>12.8</td>
+      <td>4.1</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>71315</th>
+      <td>2022</td>
+      <td>4</td>
+      <td>3</td>
+      <td>9.8</td>
+      <td>-2.6</td>
+      <td>3.6</td>
+      <td>12.4</td>
+      <td>4.4</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>Your comments here</em></p>
+<ul class="simple">
+<li><p>It snows most years!</p></li>
+<li><p>It mostly snows in January of February, but sometimes in November or December and occasionally in April</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter1_DescribingData"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-heat">Part 1: Heat</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-what-was-the-hottest-temperature-on-record">a. What was the hottest temperature on record?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-on-what-date-did-the-hottest-temperature-occur">b. On what date did the hottest temperature occur?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-display-the-10-hottest-days-on-record-and-comment">c. Display the 10 hottest days on record and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-find-the-mean-of-maximum-daily-temperature-tmax-for-each-month-and-comment">d. Find the mean of maximum daily temperature (Tmax) for each month and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-make-a-table-displaying-the-mean-and-standard-deviation-of-tmax-in-each-month">e. Make a table displaying the mean and standard deviation of Tmax in each month</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-make-a-table-displaying-the-mean-of-tmax-and-tmin-in-each-month">e. Make a table displaying the mean of Tmax and Tmin in each month</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-rain">Part 2: Rain</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-run-this-code-block-to-add-a-column-called-tt-wet-tt-containing-a-tt-true-tt-for-days-on-which-it-rained-and-tt-false-tt-otherwise">a. Run this code block to add a column called <tt>wet</tt> containing a <tt>True</tt> for days on which it rained and <tt>False</tt> otherwise</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-what-is-the-proportion-of-wet-days-overall">b. What is the proportion of wet days overall?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-what-is-the-proportion-of-wet-days-in-each-month-comment-on-your-findings">c. What is the proportion of wet days in each month? Comment on your findings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-what-is-the-mean-quantity-of-rainfall-in-mm-in-each-month-comment-on-your-findings">d. What is the mean quantity of rainfall (in mm) in each month? Comment on your findings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#e-display-the-10-wettest-days-on-record-and-comment">e. Display the 10 wettest days on record and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f-compare-and-contrast-the-different-findings-in-part-2-c-d-and-e">f. Compare and contrast the different findings in part 2 c,d, and e</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#snow">Snow</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-create-a-dataframe-containing-the-weather-on-christmas-day-for-all-the-years-in-which-there-was-a-white-christmas">a. Create a dataframe containing the weather on Christmas day, for all the years in which there was a White Christmas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-sort-the-dataframe-tt-whitechristmas-tt-by-year-and-comment">b. Sort the dataframe <tt>WhiteChristmas</tt> by year and comment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-any-issues-with-our-definition-of-snow">c. Any issues with our definition of ‘snow’?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-how-common-is-proper-snowfall-in-oxford">d. How common is ‘proper’ snowfall in Oxford?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1244 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Permutation test for unpaired or independent samples data &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_PermutationTest/permutation_independentSamples-Copy1 copy';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter7_PermutationTest/permutation_independentSamples-Copy1 copy.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter7_PermutationTest/permutation_independentSamples-Copy1 copy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter7_PermutationTest/permutation_independentSamples-Copy1 copy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Permutation test for unpaired or independent samples data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">Toy example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-result-statistically-significant">Is this result statistically significant?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-the-null-distribution-by-permutation-testing">Obtaining the null distribution by permutation testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-simulation">Run the simulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-randoms-shuffles-in-the-yoghurt-data">Visualizing randoms shuffles in the yoghurt data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-the-summary-statistic-of-interest">Obtain the summary statistic of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-null-distribution-for-a-large-number-of-shuffles">Plot the null distribution for a large number of shuffles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">The <span class="math notranslate nohighlight">\(𝑝\)</span>-value¶</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-tt-stats-permutation-test-tt">Syntax of <tt>stats.permutation_test</tt></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-function">Defining a function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">Another example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-unpaired-or-independent-samples-data">
+<h1>Permutation test for unpaired or independent samples data<a class="headerlink" href="#permutation-test-for-unpaired-or-independent-samples-data" title="Permalink to this heading">#</a></h1>
+<p>We now look at the case of unpaired data - data in which we wish to compare two groups but there are no particular links between individuals in one group and individuals in another group</p>
+<p>Examples of experimental designs using independent samples would be (say) a comparison of science and humanities students, or first- and final-year students, where the individuals in each group are distinct.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="toy-example">
+<h2>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this heading">#</a></h2>
+<p>[A toy example is an example witha  very small dataset, just to show how it works]</p>
+<p>We are interested in whether cat owners or dog owners eat more yoghurt. We survey five cat owners and four dog owners and ask how many times in the last week they ate yogurt. We obtain the following data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yog</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">])</span>
+<span class="n">yog</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pet</th>
+      <th>Yoghurt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cat</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cat</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cat</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>cat</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>cat</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>dog</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>dog</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>dog</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>dog</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean for cat owners: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean for dog owners: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;difference of means (cat-dog): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean for cat owners: 5.4
+mean for dog owners: 2.5
+difference of means (cat-dog): 2.9000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+<p>It seems the cat owners eat more yoghurt, on average, than the dog owners.</p>
+<p>Let’s plot the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">yog</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.9</span><span class="p">],</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">yog</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># this bit plots the dots</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_75968/2717881652.py:1: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(data=yog, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Pet&#39;, ylabel=&#39;Yoghurt&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/c8e4908b5f28b12b48faf1b612ee564dab44fcb3cabb02b11416fb1d4654b51f.png" src="../_images/c8e4908b5f28b12b48faf1b612ee564dab44fcb3cabb02b11416fb1d4654b51f.png" />
+</div>
+</div>
+<p>We note that the mean number of yoghurts eaten is higher for cat owners, but this may be skewed by one cat-owning yogurt enthusiast.</p>
+<section id="is-this-result-statistically-significant">
+<h3>Is this result statistically significant?<a class="headerlink" href="#is-this-result-statistically-significant" title="Permalink to this heading">#</a></h3>
+<p>That is, would the result (on average cat owners eat yoghurt 2.9 more times per week) be very unlikely to occur due to chance, if the null hypothesis were true, ie if there were no pet-based differences in the number of times a person eats yoghurt?</p>
+<p>To answer this question, we need to know what values difference of mean yoghurt consuption (for [cat - dog] owners) we would get due to chance - if actually all the people cat- and dog onders) were drawn from some distribution where the number of times yoghurt is eaten does not depend on which pet you have.</p>
+<p>If we drew lots of samples of 9 people from that yoghurt-eating population, even though there is no overall difference in yoghurt consumption between cat and dog owners, nonetheless we would almost always get some difference between the cat- and dog owners due to random chance. The distribution of these differences is called the <b>null distribution</b> of difference of means, that is, it is <b>the distribution we would expect to obtain if the null hypothesis were true</b>.</p>
+</section>
+<section id="obtaining-the-null-distribution-by-permutation-testing">
+<h3>Obtaining the null distribution by permutation testing<a class="headerlink" href="#obtaining-the-null-distribution-by-permutation-testing" title="Permalink to this heading">#</a></h3>
+<p>In previous weeks we have obtained simulated distributions of statistics such as the sample mean, by drawing many samples from a (known) parent population (as in the exercises on the Central Limit Theorem) or by bootstrapping. Here we will attempt to do something similar:</p>
+<p>We don’t have access to the parent population, only the sample of 9 yoghurt-eaters. The sample tells us several interesting things about the parent distribution, regardless of pet-based effects:</p>
+<ul>
+    <li> most people eat yoghurt less than once a day
+    <li> some people eat loads of yoghurt
+        <ul><li> ie the distriution of differences has positive skew </ul>
+</ul>
+<p>It also tells us about some potential pet-based effects:</p>
+<ul>
+    <li> the number of times yoghurt is eaten tends to be higher for cat owners
+    <li> the outlier individual who ate loads of yoghurt was a cat owner
+</ul>
+<p>What we are going to do is shuffle the data around to create many new (re)samples preserving the non-pet-related information but ignoring the pet of the yoghurt-eater. Using these simulated (shuffled) datasets we will work out how often we get a difference of 2.9 or more iin the mean numbver of times yoghurt is eaten, between cat- and dog owners. This is equivalent to determining how likely our difference is to have occurred due to chance.</p>
+</section>
+<section id="run-the-simulation">
+<h3>Run the simulation<a class="headerlink" href="#run-the-simulation" title="Permalink to this heading">#</a></h3>
+<p>To generate new simulated datasets, we will shuffle around the datapoints in our original dataset.</p>
+<p>Which ones can we shuffle?</p>
+<ul>
+<li>We assume there are no pet-based differences, so we can swap the pet-labels for any individuals in the sample
+<li>We stick to the original sample sizes, ie 5 people should always be labelled as cat-owners and 4 as dog-owners
+</ul>
+<p>To generate each new simulated dataset, we will randomly shuffle the values for number of times yoghurt was eaten, and then assign five values to ‘cat owners’ and four to ‘dog owners’</p>
+<p>Here is one such shuffle, try running it a few times and watching how the resulting dataframe changes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yog_shuffled</span> <span class="o">=</span> <span class="n">yog</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">yog</span><span class="o">.</span><span class="n">Pet</span><span class="p">)</span> <span class="c1"># replace the column &#39;Pet&#39; with a random permutation of itself</span>
+<span class="n">yog_shuffled</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pet</th>
+      <th>Yoghurt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cat</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dog</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cat</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>dog</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>dog</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>cat</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>cat</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>dog</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>cat</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>For each shuffled dataframe we obtain the relevant summary statistic, that is the mean number of times yogurt is eaten by cat owners - mean number of times yogurt is eaten by dog owners:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-randoms-shuffles-in-the-yoghurt-data">
+<h3>Visualizing randoms shuffles in the yoghurt data<a class="headerlink" href="#visualizing-randoms-shuffles-in-the-yoghurt-data" title="Permalink to this heading">#</a></h3>
+<p>Let’s see how the difference of means changes over a few random shuffles.</p>
+<p>Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat-= or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">yog_shuffled</span> <span class="o">=</span> <span class="n">yog</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># work on a copy of the original dataframe</span>
+    <span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">yog</span><span class="o">.</span><span class="n">Pet</span><span class="p">)</span> <span class="c1"># replace the column &#39;Pet&#39; with a random permutation of itself</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">yog_shuffled</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mf">0.9</span><span class="p">],</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">yog_shuffled</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># this bit plots the dots</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_75968/771150145.py:6: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_75968/771150145.py:6: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_75968/771150145.py:6: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_75968/771150145.py:6: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
+
+  sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
+</pre></div>
+</div>
+<img alt="../_images/79856d7ef0be13d7e8c11b0e3312289a395a3da9454982c5dcdc0ec20746aba7.png" src="../_images/79856d7ef0be13d7e8c11b0e3312289a395a3da9454982c5dcdc0ec20746aba7.png" />
+</div>
+</div>
+<p>You can see that the difference of means (difference in heights of the bars) depends on whether more of the high-yoghurt individuals are assigned as cat owners, and also depends quite a lot on which group the 14-yoghurt individual ends up in.</p>
+</section>
+<section id="obtain-the-summary-statistic-of-interest">
+<h3>Obtain the summary statistic of interest<a class="headerlink" href="#obtain-the-summary-statistic-of-interest" title="Permalink to this heading">#</a></h3>
+<p>We are interested in the difference between the mean number of times cat- and dog-owners eat yoghurt. For each shuffle this is obtained as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dMeans</span> <span class="o">=</span> <span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean difference for the last shuffle = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dMeans</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 2.9000000000000004
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-the-null-distribution-for-a-large-number-of-shuffles">
+<h3>Plot the null distribution for a large number of shuffles<a class="headerlink" href="#plot-the-null-distribution-for-a-large-number-of-shuffles" title="Permalink to this heading">#</a></h3>
+<p>Now we can repeat the process for a large number of shuffles and get the mean number of times cat- and dog-owners eat yoghurt for each shuffle. The distribution of these differences of means is the null distribution to which our observed difference (the average for cat owners is 2.9 higher) is to be compared.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># (number of shuffles)</span>
+<span class="n">dMeans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span> <span class="c1"># array to store mean difference for each shuffle</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">yog_shuffled</span> <span class="o">=</span> <span class="n">yog</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># work on a copy of the original dataframe</span>
+    <span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">yog</span><span class="o">.</span><span class="n">Pet</span><span class="p">)</span> <span class="c1"># replace the column &#39;Pet&#39; with a random permutation of itself</span>
+    <span class="n">dMeans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">-</span> <span class="n">yog_shuffled</span><span class="p">[</span><span class="n">yog_shuffled</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">dMeans</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion &gt;2.9 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dMeans</span><span class="o">&gt;</span><span class="mf">2.9</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/389e9ac8c6ca30f0631acfc2720ef08c6cb8ce4d483e048eff5d8a2101ea3994.png" src="../_images/389e9ac8c6ca30f0631acfc2720ef08c6cb8ce4d483e048eff5d8a2101ea3994.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.61%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-p-value">
+<h3>The <span class="math notranslate nohighlight">\(𝑝\)</span>-value¶<a class="headerlink" href="#the-p-value" title="Permalink to this heading">#</a></h3>
+<p>We can also calculate the proportion of cases in which the difference of means for cat- minus dog-owners exceeds the value we observed in our original sample, 2.9. This proportion is about 19%. It tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still a 19% chance that we would get an apparent pet-based difference as large as the one we observed in our ‘real’ data.</p>
+<p>The probability that the test statistic (in this case, the difference in mean times yoghurt is eaten) would be observed if the null hypothesis were true, is sometimes called the <span class="math notranslate nohighlight">\(𝑝\)</span>-value.</p>
+<p>Our permutation test shows that the <span class="math notranslate nohighlight">\(𝑝\)</span>-value associated with the observed difference of means is 0.19.</p>
+<p>The result is considered statistically significant if <span class="math notranslate nohighlight">\(𝑝\)</span> is smaller than some predetermined level, known as <span class="math notranslate nohighlight">\(\alpha\)</span>. Usually <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> or <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> is used, so the result is significant if <span class="math notranslate nohighlight">\(p=0.05\)</span> or <span class="math notranslate nohighlight">\(p=0.01\)</span>. Our result would not normally be considered statistically significant (not even close).</p>
+</section>
+</section>
+<section id="use-a-built-in-function">
+<h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
+<p>Now you have seen how the permutation test works, we can learn how to run it more easily using the built in function <tt>scipy.stats.permutation_test</tt></p>
+<p><b>Note-</b> You need scipy stats version &gt; 1.8.0 to run this. You may need to check your version yb running the following code block.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">scipy</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.10.0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If this is less than 1.8.0 you need to update it -</p>
+<p>Mac: open a terminal (Applications–Utilities–Terminal and type:
+<tt> conda install -c conda-forge scipy=1.10.0 </tt></p>
+<p>Windows: open an Anaconda terminal (spotlight search for anaconda and select the anaconda terminal app) and type:
+<tt> conda install -c conda-forge scipy=1.10.0 </tt></p>
+<p>Please try and do this before the tutorial - otherwise your tutor will know you didn’t read the prep work thoroughly ;-)</p>
+<section id="syntax-of-tt-stats-permutation-test-tt">
+<h3>Syntax of <tt>stats.permutation_test</tt><a class="headerlink" href="#syntax-of-tt-stats-permutation-test-tt" title="Permalink to this heading">#</a></h3>
+<p>Here is how we run the permutation test (same as the one we did with our own code above, although note how much more quickly this one runs!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">],</span> <span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]),</span> <span class="n">dMeans</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">,</span> <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.9000000000000004, pvalue=0.18253968253968253, null_distribution=array([ 2.9 , -2.95, -2.95, -0.25, -1.15,  2.  ,  2.  ,  4.7 ,  3.8 ,
+       -3.85, -1.15, -2.05, -1.15, -2.05,  0.65,  0.65,  0.65,  3.35,
+        2.45, -5.2 , -2.5 , -3.4 , -2.5 , -3.4 , -0.7 , -0.25,  2.45,
+        1.55,  2.45,  1.55,  4.25, -3.4 , -4.3 , -1.6 , -1.6 , -0.25,
+       -0.25,  2.45,  1.55, -6.1 , -3.4 , -4.3 , -3.4 , -4.3 , -1.6 ,
+       -1.15,  1.55,  0.65,  1.55,  0.65,  3.35, -4.3 , -5.2 , -2.5 ,
+       -2.5 , -2.5 ,  0.2 , -0.7 ,  0.2 , -0.7 ,  2.  , -5.65, -6.55,
+       -3.85, -3.85, -0.7 , -1.6 ,  1.1 ,  1.1 , -4.75,  2.9 ,  2.9 ,
+        5.6 ,  4.7 , -2.95, -0.25, -1.15, -0.25, -1.15,  1.55,  2.  ,
+        4.7 ,  3.8 ,  4.7 ,  3.8 ,  6.5 , -1.15, -2.05,  0.65,  0.65,
+        0.65,  3.35,  2.45,  3.35,  2.45,  5.15, -2.5 , -3.4 , -0.7 ,
+       -0.7 ,  2.45,  1.55,  4.25,  4.25, -1.6 , -0.25,  2.45,  1.55,
+        2.45,  1.55,  4.25, -3.4 , -4.3 , -1.6 , -1.6 ,  1.55,  0.65,
+        3.35,  3.35, -2.5 ,  0.2 , -0.7 ,  2.  ,  2.  , -3.85,  1.1 ]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Firstly, to reassure you this is doing a very similar job to our home-made code, check the p-value (should be about 0.18).</p>
+<p>We can also plot the null distribution, which hopefully looks simimlar to what we got from the home-made code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;cat&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">],</span> <span class="n">yog</span><span class="p">[</span><span class="n">yog</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;dog&#39;</span><span class="p">][</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">]),</span> <span class="n">dMeans</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">,</span> <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">null_distribution</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a64c5f6754d30517ffdef6eaef71ced97e83c9b0f89b91f0621ab6cb3eb2182a.png" src="../_images/a64c5f6754d30517ffdef6eaef71ced97e83c9b0f89b91f0621ab6cb3eb2182a.png" />
+</div>
+</div>
+<p>The syntax is very similar to that which we used for the paired test.</p>
+<p>Firstly, we had to give the function <tt>stats.permutation_test</tt> our two samples (number of yogurts eaten by each cat owner, number of yogurts eaten by each dog owner) as a pair of <b>series</b>, rather than giving it the whole pandas dataframe as we do for many other stats functions.</p>
+<p>Secondly, to tell <tt>stats.permutation_test</tt> the test statistic we want to get the null distribution of, we had to pass it a <i>function</i> called <tt>mDiff</tt>, and this function had to have the property that it takes in two series (number of yogurts eaten by each cat owner, number of yogurts eaten by each dog owner) and returns a single number the difference of means</p>
+</section>
+<section id="defining-a-function">
+<h3>Defining a function<a class="headerlink" href="#defining-a-function" title="Permalink to this heading">#</a></h3>
+<p>You will have come across this in datacamp but we haven’t used it since. Don’t be scared! It’s unfamiliar but quite handy. On the other hand for an independent samples permutation test, the function I have given you for dMeans is always going to work, so if in doubt you can just copy it :-)</p>
+<p>A function is a little computer programme that takes in some information (in this case, it takes in two series, (number of yogurts eaten by each cat owner, number of yogurts eaten by each dog owner) and returns some value (in this case the difference of means</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function - note how this differs from the function for mean difference, in the paired example</span>
+<span class="k">def</span> <span class="nf">dMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>here’s another example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definte a new function that divides each element of x by 5 and each elemment of y by 2, and then adds up the results</span>
+<span class="k">def</span> <span class="nf">jackfruit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">sausages</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># one input array - have given it an arbitrary name</span>
+<span class="n">beans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span> <span class="c1"># another input array - have given it an arbitrary name</span>
+
+<span class="n">jackfruit</span><span class="p">(</span><span class="n">sausages</span><span class="p">,</span><span class="n">beans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can see how we could run <tt>stats.permutation_test</tt> on our function <tt>jackfruit</tt> and our data <tt>sausages</tt> and <tt>beans</tt></p>
+</section>
+</section>
+<section id="another-example">
+<h2>Another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
+<p>Let’s go through another example. Take our college welfare data (made up data on the welfare of students at Lonsdale and Beaufort college).</p>
+<section id="import-and-view-the-data">
+<h3>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
+<span class="n">wb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_code</th>
+      <th>College</th>
+      <th>Subject</th>
+      <th>Score_preVac</th>
+      <th>Score_postVac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>247610</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>60</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>448590</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>43</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>491100</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>79</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>316150</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>55</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>251870</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>440570</td>
+      <td>Beaufort</td>
+      <td>history</td>
+      <td>75</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>826030</td>
+      <td>Beaufort</td>
+      <td>maths</td>
+      <td>52</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>856260</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>83</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>947060</td>
+      <td>Beaufort</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>165780</td>
+      <td>Beaufort</td>
+      <td>PPE</td>
+      <td>48</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+<p>301 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Let</span><span class="s1">&#39;s test</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">Let</span><span class="s1">&#39;s test</span>
+              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter7_PermutationTest"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">Toy example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-this-result-statistically-significant">Is this result statistically significant?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-the-null-distribution-by-permutation-testing">Obtaining the null distribution by permutation testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-simulation">Run the simulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-randoms-shuffles-in-the-yoghurt-data">Visualizing randoms shuffles in the yoghurt data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtain-the-summary-statistic-of-interest">Obtain the summary statistic of interest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-null-distribution-for-a-large-number-of-shuffles">Plot the null distribution for a large number of shuffles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">The <span class="math notranslate nohighlight">\(𝑝\)</span>-value¶</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-tt-stats-permutation-test-tt">Syntax of <tt>stats.permutation_test</tt></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-a-function">Defining a function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">Another example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

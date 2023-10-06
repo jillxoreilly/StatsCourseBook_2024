@@ -1,0 +1,1654 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Movie data &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IMDb_exercise';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/IMDb_exercise.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FIMDb_exercise.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/IMDb_exercise.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Movie data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-a-good-report">What makes a good report?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-start">Where to start?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-are-movies-getting-worse-over-time">Example 1: Are movies getting worse over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-point">Thinking point -</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-does-swearing-spoil-a-good-movie">Example 2: Does swearing spoil a good movie?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#by-the-way">By the way….</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-information-movie-certificates">Useful information: Movie Certificates</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="movie-data">
+<h1>Movie data<a class="headerlink" href="#movie-data" title="Permalink to this heading">#</a></h1>
+<p>The file ‘imdb.csv’ contains data about 6178 movies and TV shows, which were scraped from the website <a href="https://www.imdb.com/">IMDb.com</a> (and which I downloaded from <a href="https://www.kaggle.com/datasets/mazenramadan/imdb-most-popular-films-and-series">Kaggle.com</a>)</p>
+<p>Your task is to investigate what makes a good movie and write up your claims in a blog-style report, “10 ingredients for a good movie”. You don’t have to have exactly 10 (try for at least 5!).</p>
+<p>Our metric of a ‘good movie’ shall be the IMDb rating (base on users’ votes). You may like to comment on whether this is a reliable metric.</p>
+<p>This is a blog for geeky movie enthusiasts so you can support your claims with some numbers (correlations, decriptive statistics and the like) but try to avoid jargon and use the data to support the points you are making in the text, rather than robotically reporting statistics.</p>
+<p>Below I will suggest some avenues to explore but I encourage you to investigate the data yourself - play around with plotting the relationship between different variables before you settle down to write your report.</p>
+<section id="what-makes-a-good-report">
+<h2>What makes a good report?<a class="headerlink" href="#what-makes-a-good-report" title="Permalink to this heading">#</a></h2>
+<p>Write a (very) short introduction explaining what the data are and what you are using as a measure of movie ‘quality’</p>
+<p>It’s up to you to find some interesting features in the data and show them effectively using plots</p>
+<p>You should support your claims using descriptive statistics such the mean rating for different groups of movies or correlation coefficients</p>
+<p>No need to use this notebook for your report - you can start a new ‘clean’ one without my notes in.</p>
+<p>You might even like to start two notebooks - one for rough work (you experimenting with plotting the data, and saving any analyses you want to discuss with you tutor) and one for your final report.</p>
+<section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-the-data">
+<h3>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imdb</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/imdb.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># get only the movies (ignoring TV shows)</span>
+<span class="n">movies</span><span class="o">=</span><span class="n">imdb</span><span class="p">[</span><span class="n">imdb</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Film&#39;</span><span class="p">]</span>
+<span class="n">movies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Votes</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <th>Type</th>
+      <th>Certificate</th>
+      <th>Episodes</th>
+      <th>Nudity</th>
+      <th>Violence</th>
+      <th>Profanity</th>
+      <th>Alcohol</th>
+      <th>Frightening</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>No Time to Die</td>
+      <td>2021</td>
+      <td>7.6</td>
+      <td>107163.0</td>
+      <td>Action, Adventure, Thriller</td>
+      <td>163.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>The Guilty</td>
+      <td>2021</td>
+      <td>6.3</td>
+      <td>64375.0</td>
+      <td>Crime, Drama, Thriller</td>
+      <td>90.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Severe</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The Many Saints of Newark</td>
+      <td>2021</td>
+      <td>6.4</td>
+      <td>27145.0</td>
+      <td>Crime, Drama</td>
+      <td>120.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Venom: Let There Be Carnage</td>
+      <td>2021</td>
+      <td>6.4</td>
+      <td>30443.0</td>
+      <td>Action, Adventure, Sci-Fi</td>
+      <td>97.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dune</td>
+      <td>2021</td>
+      <td>8.3</td>
+      <td>84636.0</td>
+      <td>Action, Adventure, Drama</td>
+      <td>155.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6173</th>
+      <td>The Human Centipede II (Full Sequence)</td>
+      <td>2011</td>
+      <td>3.8</td>
+      <td>37492.0</td>
+      <td>Horror</td>
+      <td>91.0</td>
+      <td>Film</td>
+      <td>Not Rated</td>
+      <td>NaN</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Mild</td>
+      <td>Severe</td>
+    </tr>
+    <tr>
+      <th>6174</th>
+      <td>Double Indemnity</td>
+      <td>1944</td>
+      <td>8.3</td>
+      <td>150448.0</td>
+      <td>Crime, Drama, Film-Noir</td>
+      <td>107.0</td>
+      <td>Film</td>
+      <td>Passed</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>6175</th>
+      <td>Before the Devil Knows You're Dead</td>
+      <td>2007</td>
+      <td>7.3</td>
+      <td>100668.0</td>
+      <td>Crime, Drama, Thriller</td>
+      <td>117.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Severe</td>
+      <td>Moderate</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Severe</td>
+    </tr>
+    <tr>
+      <th>6176</th>
+      <td>Queen Bees</td>
+      <td>2021</td>
+      <td>6.0</td>
+      <td>887.0</td>
+      <td>Comedy, Drama, Romance</td>
+      <td>100.0</td>
+      <td>Film</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6177</th>
+      <td>Death Race</td>
+      <td>2008</td>
+      <td>6.3</td>
+      <td>203578.0</td>
+      <td>Action, Sci-Fi, Thriller</td>
+      <td>105.0</td>
+      <td>Film</td>
+      <td>R</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Severe</td>
+      <td>Severe</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+    </tr>
+  </tbody>
+</table>
+<p>4446 rows × 14 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="where-to-start">
+<h2>Where to start?<a class="headerlink" href="#where-to-start" title="Permalink to this heading">#</a></h2>
+<p>Here are some myths (or truths?) for you to investigate to get you started</p>
+<ol>
+<li> Movies are getting worse over time
+<li> Longer movies are better
+    <ul> <li>As well as investigating the general relationship, can you find some points of interest - for example, name cases of long movies that were also bad (certainly to be avoided!)? Are there any surprisingly long movies in the dataset? What about those that were short but sweet?</ul>
+<li> More nudity makes for a highly rated movie
+<li> Movies rated 15 are the worst!
+    <ul><li>To do this you will need to create a new column converting the US and international certificates into their closest UK equivalent - U,PG,12,15 or 18</ul>
+<li> Straight-to-TV movies have lower ratings than those shown in cinemas
+    <ul><li>The straight-to-TV movies have certificates beginning in 'TV'</ul>
+<li> Popular movies are better (you can use the number of votes as a measure of popularity of a movie, since people should only vote if they watched it - you may like to comment on whether this is a reasonabble measure of popularity or whether it may be biased)
+</ol>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<p>Here are a couple of examples to get you started:</p>
+<section id="example-1-are-movies-getting-worse-over-time">
+<h3>Example 1: Are movies getting worse over time?<a class="headerlink" href="#example-1-are-movies-getting-worse-over-time" title="Permalink to this heading">#</a></h3>
+<p>According to IMDb raters, yes they are. Or to be more accurate, the number of low-rated movies increased over time, whilst a steady flow of high rated movies was also maintained.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">movies</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rating&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">1920</span><span class="p">,</span><span class="mi">2020</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Movie ratings over time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Movie ratings over time&#39;)
+</pre></div>
+</div>
+<img alt="_images/bd0b0881abd79ae6d6bf5fa36d469d6f1a63baf231dbae6430921c1c646e1f87.png" src="_images/bd0b0881abd79ae6d6bf5fa36d469d6f1a63baf231dbae6430921c1c646e1f87.png" />
+</div>
+</div>
+<p>Rating was negatively correlated with year of release (Spearman’s r = -0.29)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span><span class="p">[[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;Rating&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Date</th>
+      <td>1.000000</td>
+      <td>-0.298428</td>
+    </tr>
+    <tr>
+      <th>Rating</th>
+      <td>-0.298428</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="thinking-point">
+<h4>Thinking point -<a class="headerlink" href="#thinking-point" title="Permalink to this heading">#</a></h4>
+<p>No need to put this in your blog, but you could test if that correlation would be likely to have happened due to chance (is it significant?) by bootstrapping and seeing how often you got a correlation as far from zero as r=-0.29 if you resampled the data.</p>
+</section>
+</section>
+<section id="example-2-does-swearing-spoil-a-good-movie">
+<h3>Example 2: Does swearing spoil a good movie?<a class="headerlink" href="#example-2-does-swearing-spoil-a-good-movie" title="Permalink to this heading">#</a></h3>
+<p>Perhaps surpisingly, yes it does. At least, movies with no swearing (Profanity) at all seem to get slightly higher ratings.</p>
+<p>In the plot below there is a small but perceptible advantage in ratings for movies with no Profanity - the average rating for a movie with no profanity was a third of one point (out of ten) higher than one with profanity!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean rating - no profanity = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">][</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean rating - with profanity = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">][</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean rating - no profanity = nan
+mean rating - with profanity = 6.625366193908393
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot ratings by &#39;alcohol content&#39; of the movie</span>
+<span class="c1"># note that I have set the order of the violins to increasing alcohol, rather than the default order which wasn&#39;t meaningful</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">movies</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Profanity&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Rating&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;None&#39;</span><span class="p">,</span><span class="s1">&#39;Mild&#39;</span><span class="p">,</span><span class="s1">&#39;Moderate&#39;</span><span class="p">,</span><span class="s1">&#39;Severe&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Profanity&#39;, ylabel=&#39;Rating&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/e70946e12b0b488d751e11f11ddfe0285b9051e395e11006af4573c8d765e272.png" src="_images/e70946e12b0b488d751e11f11ddfe0285b9051e395e11006af4573c8d765e272.png" />
+</div>
+</div>
+<p>That said, there was an explosion in profanity from the 1960s onwards - so maybe this just reflects the fact that the old classics are the best movies!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s1">&#39;rocket&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">movies</span><span class="p">,</span> 
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span>  
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Profanity&#39;</span><span class="p">,</span> 
+    <span class="n">multiple</span><span class="o">=</span><span class="s1">&#39;stack&#39;</span><span class="p">,</span>
+    <span class="n">hue_order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;None&#39;</span><span class="p">,</span><span class="s1">&#39;Mild&#39;</span><span class="p">,</span><span class="s1">&#39;Moderate&#39;</span><span class="p">,</span><span class="s1">&#39;Severe&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Distribution profanity ratings over time&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Distribution profanity ratings over time&#39;)
+</pre></div>
+</div>
+<img alt="_images/888edac5079a099a2952cccbc4b415855206c04160354719a1ae5bdb4585a84d.png" src="_images/888edac5079a099a2952cccbc4b415855206c04160354719a1ae5bdb4585a84d.png" />
+</div>
+</div>
+<section id="by-the-way">
+<h4>By the way….<a class="headerlink" href="#by-the-way" title="Permalink to this heading">#</a></h4>
+<p>Don’t put this in your blog as it is too technical, but you might be interested to see it:</p>
+<p>It looks like there is only a tiny effect of Profanity on ratings, but could it have occurred due to chance?</p>
+<p>We construct a bootstrapped confidence interval for the difference in ratings between movies with and without profanity:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">mDiff</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n1</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">])</span>
+<span class="n">n2</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample1</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sample2</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">sample1</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">sample2</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Difference of means: no profanity- profanity&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+4446
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Difference of means: no profanity- profanity&#39;)
+</pre></div>
+</div>
+<img alt="_images/4a0c725f63fb815886842e50560bc5d3fd3a748e353f7d58c97d71c9c4448c8a.png" src="_images/4a0c725f63fb815886842e50560bc5d3fd3a748e353f7d58c97d71c9c4448c8a.png" />
+</div>
+</div>
+<p>Since the difference of means is almost always greater than ero, we can be confident that movies with no profanity really do have higher mean ratings - even if the difference is less than 0.3/10 points!</p>
+</section>
+</section>
+</section>
+<section id="useful-information-movie-certificates">
+<h2>Useful information: Movie Certificates<a class="headerlink" href="#useful-information-movie-certificates" title="Permalink to this heading">#</a></h2>
+<p>The movie certificates given are mostly US certificates but there are different schemes in use for movies shown in cinema and on TV. There are a fair few certificates in use in the database, some of which relate to only a few titles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Certificate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Certificate
+R            1885
+PG-13        1145
+PG            530
+Not Rated     189
+TV-MA         109
+G              70
+Approved       42
+TV-14          35
+Passed         24
+NC-17          14
+TV-PG          13
+E              12
+(Banned)       10
+TV-G           10
+GP              6
+X               6
+TV-Y7           5
+M               3
+M/PG            2
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are also some old (pre 1968) or international certificates mixed in there</p>
+<p>To meaningfully use these data (for example to answer the question, are movies rated 15 the worst?) it would be helpful to group these into a smaller set of classifications - for example the closest UK equivalent</p>
+<p>UK movie ratings are:</p>
+<ul>
+    <li> U - Universal - suitable for all (including young children)
+    <li> PG - Parental Guidance - may be unsuitable for very young children
+    <li> 12,15,18 - Not suitable for persons under the age of 12,15 or 18 respectively
+</ul>
+<p>Alternatively, to answer the question about straight-to-TV movies, you will want to separate out those with a certificate beginning ‘TV’ (only ever shown on TV) from the others</p>
+<p>The meaning of certificates should be Googlable but here are my notes on the certificates used in the dataset:</p>
+<ul>
+<li>TV-Y: Designed to be appropriate for all children
+<li>TV-Y7: Suitable for ages 7 and up
+<li>G: Suitable for General Audiences
+<li>TV-G: Suitable for General Audiences
+<li>PG: Parental Guidance suggested
+<li>TV-PG: Parental Guidance suggested
+<li>PG-13: Parents strongly cautioned. May be Inappropriate for ages 12 and under.
+<li>TV-14: Parents strongly cautioned. May not be suitable for ages 14 and under.
+<li>R: Restricted. May be inappropriate for ages 17 and under.
+<li>TV-MA: For Mature Audiences. May not be suitable for ages 17 and under.
+<li>NC-17: Inappropriate for ages 17 and under
+<li>M - Mature
+<li>TV-Y7 - suitable for children over 7
+<li>banned/approved/passed - pre 1968 classifications
+</ul>
+<p>In reclassifying the movies you may consider excluding some cases that don’t clearly fall into one category or another, for example the pre-1968 movies.</p>
+<p>There are also some remaining mysteries, for example, one certificate I was not able to understand was ‘E’: Google tells me that ‘E’ stands for educational or exempt but if I look which movies have this rating, I’m not so sure this is correct:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Certificate&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;E&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Votes</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <th>Type</th>
+      <th>Certificate</th>
+      <th>Episodes</th>
+      <th>Nudity</th>
+      <th>Violence</th>
+      <th>Profanity</th>
+      <th>Alcohol</th>
+      <th>Frightening</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>429</th>
+      <td>Luca</td>
+      <td>2021</td>
+      <td>7.5</td>
+      <td>112694.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>95.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>521</th>
+      <td>Space Jam: A New Legacy</td>
+      <td>2021</td>
+      <td>4.4</td>
+      <td>56919.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>115.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>526</th>
+      <td>Godzilla vs. Kong</td>
+      <td>2021</td>
+      <td>6.4</td>
+      <td>176046.0</td>
+      <td>Action, Sci-Fi, Thriller</td>
+      <td>113.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+    </tr>
+    <tr>
+      <th>581</th>
+      <td>PAW Patrol: The Movie</td>
+      <td>2021</td>
+      <td>6.2</td>
+      <td>3898.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>86.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>851</th>
+      <td>In the Heights</td>
+      <td>2021</td>
+      <td>7.4</td>
+      <td>35374.0</td>
+      <td>Drama, Musical, Romance</td>
+      <td>143.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>872</th>
+      <td>The Boss Baby: Family Business</td>
+      <td>2021</td>
+      <td>5.9</td>
+      <td>11863.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>107.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>The Comeback Trail</td>
+      <td>2020</td>
+      <td>5.6</td>
+      <td>4961.0</td>
+      <td>Comedy, Crime</td>
+      <td>104.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+      <td>Mild</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>2654</th>
+      <td>Peter Rabbit 2: The Runaway</td>
+      <td>2021</td>
+      <td>6.2</td>
+      <td>7310.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>93.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>2877</th>
+      <td>Spirit Untamed</td>
+      <td>2021</td>
+      <td>5.4</td>
+      <td>2585.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>88.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>3156</th>
+      <td>AINBO: Spirit of the Amazon</td>
+      <td>2021</td>
+      <td>4.7</td>
+      <td>933.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>84.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>No Rate</td>
+      <td>No Rate</td>
+      <td>No Rate</td>
+      <td>No Rate</td>
+      <td>No Rate</td>
+    </tr>
+    <tr>
+      <th>4814</th>
+      <td>Dragon Rider</td>
+      <td>2020</td>
+      <td>5.6</td>
+      <td>1199.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>91.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+    </tr>
+    <tr>
+      <th>5964</th>
+      <td>Dragon Rider</td>
+      <td>2020</td>
+      <td>5.6</td>
+      <td>1199.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>91.0</td>
+      <td>Film</td>
+      <td>E</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>Mild</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>You may find this example useful in creating a new column for UK classifications:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first, create a new column with the default value &#39;None&#39;</span>
+<span class="n">movies</span> <span class="o">=</span> <span class="n">movies</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">classification</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+<span class="c1">#np.isin to do a boolean check on every element of the array and see if it is in a different list (your list of interest)</span>
+<span class="c1"># use np.where to get booleans where that condition is met, assign a new value if true, or do nothing if not true</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-G&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-7&#39;</span><span class="p">]),</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+<span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">movies</span><span class="o">.</span><span class="n">Certificate</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="s1">&#39;TV-PG&#39;</span><span class="p">]),</span> <span class="s1">&#39;PG&#39;</span><span class="p">,</span> <span class="n">movies</span><span class="o">.</span><span class="n">classification</span><span class="p">)</span>
+
+
+<span class="c1">#the syntax for this is:</span>
+<span class="c1"># np.where(set condition, do this if condition is met, otherwise do this)</span>
+<span class="c1"># np.isin(array_to_test, list of values you want to check if the element matches)</span>
+
+<span class="c1">#so the code is doing:</span>
+<span class="c1"># finding where the movie certificate is either G, TV-G, TV-Y or TV-7</span>
+<span class="c1"># setting the value of &#39;classification&#39; to &#39;U&#39; if that movie meets the condition</span>
+<span class="c1"># if not, it sets the value of &#39;classification&#39; to itself (i.e. it does nothing)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;classification&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;U&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Votes</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <th>Type</th>
+      <th>Certificate</th>
+      <th>Episodes</th>
+      <th>Nudity</th>
+      <th>Violence</th>
+      <th>Profanity</th>
+      <th>Alcohol</th>
+      <th>Frightening</th>
+      <th>classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>392</th>
+      <td>Halloweentown</td>
+      <td>1998</td>
+      <td>6.7</td>
+      <td>15617.0</td>
+      <td>Adventure, Comedy, Family</td>
+      <td>84.0</td>
+      <td>Film</td>
+      <td>TV-G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>426</th>
+      <td>Love Strikes Twice</td>
+      <td>2021</td>
+      <td>7.2</td>
+      <td>458.0</td>
+      <td>Comedy, Mystery, Romance</td>
+      <td>84.0</td>
+      <td>Film</td>
+      <td>TV-G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>Cars</td>
+      <td>2006</td>
+      <td>7.1</td>
+      <td>388952.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>117.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>1002</th>
+      <td>2001: A Space Odyssey</td>
+      <td>1968</td>
+      <td>8.3</td>
+      <td>631754.0</td>
+      <td>Adventure, Sci-Fi</td>
+      <td>149.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>1073</th>
+      <td>The Lion King</td>
+      <td>1994</td>
+      <td>8.5</td>
+      <td>986883.0</td>
+      <td>Animation, Adventure, Drama</td>
+      <td>88.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Moderate</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5701</th>
+      <td>Pocahontas</td>
+      <td>1995</td>
+      <td>6.7</td>
+      <td>177837.0</td>
+      <td>Animation, Adventure, Drama</td>
+      <td>81.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>5803</th>
+      <td>Robin Hood</td>
+      <td>1973</td>
+      <td>7.6</td>
+      <td>120934.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>83.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>5903</th>
+      <td>The Polar Express</td>
+      <td>2004</td>
+      <td>6.6</td>
+      <td>188010.0</td>
+      <td>Animation, Adventure, Comedy</td>
+      <td>100.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>5944</th>
+      <td>Chitty Chitty Bang Bang</td>
+      <td>1968</td>
+      <td>6.9</td>
+      <td>43331.0</td>
+      <td>Adventure, Family, Fantasy</td>
+      <td>144.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>NaN</td>
+      <td>Mild</td>
+      <td>Mild</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <th>6064</th>
+      <td>The Princess Diaries 2: Royal Engagement</td>
+      <td>2004</td>
+      <td>5.8</td>
+      <td>77450.0</td>
+      <td>Comedy, Family, Romance</td>
+      <td>113.0</td>
+      <td>Film</td>
+      <td>G</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>U</td>
+    </tr>
+  </tbody>
+</table>
+<p>80 rows × 15 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-makes-a-good-report">What makes a good report?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-start">Where to start?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-are-movies-getting-worse-over-time">Example 1: Are movies getting worse over time?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thinking-point">Thinking point -</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-does-swearing-spoil-a-good-movie">Example 2: Does swearing spoil a good movie?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#by-the-way">By the way….</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-information-movie-certificates">Useful information: Movie Certificates</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

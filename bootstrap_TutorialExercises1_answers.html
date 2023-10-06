@@ -1,0 +1,1769 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bootstrap_TutorialExercises1_answers';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/bootstrap_TutorialExercises1_answers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2Fbootstrap_TutorialExercises1_answers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/bootstrap_TutorialExercises1_answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-distribution-of-wellbeing-scores">Plot the distribution of wellbeing scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#did-wellbeing-increase-over-the-vacation">Did wellbeing increase over the vacation?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval">95% confidence interval</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-wellbeing-higher-in-lonsdale-than-in-beaufort-engineering-students">Is wellbeing higher in Lonsdale than in Beaufort engineering students?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation">Bootstrapped correlation between wellbeing scores before and after the vacation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapped-correlation-in-a-smaller-sample">Bootstrapped correlation in a smaller sample</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Further exercises</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<p>In these exercises we will create bootstrapped sampling distributions for all sorts of stuff!</p>
+<p>We will work with a (made up) dataset containing scores on a wellbeing survey before and after the Christmas vaacation for some Oxford University students</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-and-view-the-data">
+<h2>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
+<span class="n">wb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_code</th>
+      <th>College</th>
+      <th>Subject</th>
+      <th>Score_preVac</th>
+      <th>Score_postVac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>247610</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>60</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>448590</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>43</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>491100</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>79</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>316150</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>55</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>251870</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>440570</td>
+      <td>Beaufort</td>
+      <td>history</td>
+      <td>75</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>826030</td>
+      <td>Beaufort</td>
+      <td>maths</td>
+      <td>52</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>856260</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>83</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>947060</td>
+      <td>Beaufort</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>165780</td>
+      <td>Beaufort</td>
+      <td>PPE</td>
+      <td>48</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+<p>301 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="plot-the-distribution-of-wellbeing-scores">
+<h2>Plot the distribution of wellbeing scores<a class="headerlink" href="#plot-the-distribution-of-wellbeing-scores" title="Permalink to this heading">#</a></h2>
+<p>It’s always a good idea to plot the data to familiarize yourself with them and spot any outliers!</p>
+<p>Below is a basic plot of the wellbeing scores before and after the vacation</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;before vacation&#39;</span><span class="p">,</span> <span class="s1">&#39;after vacation&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3ed6e1cdc633eb33ed8af7ccc067bb1997b75ab3c12f0a99fc790afda78e2460.png" src="_images/3ed6e1cdc633eb33ed8af7ccc067bb1997b75ab3c12f0a99fc790afda78e2460.png" />
+</div>
+</div>
+</section>
+<section id="did-wellbeing-increase-over-the-vacation">
+<h2>Did wellbeing increase over the vacation?<a class="headerlink" href="#did-wellbeing-increase-over-the-vacation" title="Permalink to this heading">#</a></h2>
+<p>Say I am interested in the change in wellbeing score across the vacation for psychology students.</p>
+<p>We are going to calculate the mean change in wellbeing score from pre- to post-vacation measuremments and then obtain a bbootstrapped confidence interval for this difference</p>
+<p>If only a small percentage of simulated samples have a negative change in wellbeing over the vacation, we will conclude that we are confident mean wellbbeing increased over the vacation for psychology students</p>
+<p>Let’s start by creating a column in our dataframe for the difference in wellbeing score between pre- and post-vacation measurements</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s</p>
+<ul>
+    <li>get the mean change in wellbeing for psychology students
+<li>find out how many psychology students there are
+    </ul><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean change = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">][</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean change = 2.68
+n = 25
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean increase in wellbeing score across the vacation for the 25 Psychology students is 2.68</p>
+<p>How confident can we be that wellbeing <i>really</i> increases across the vacation, though? If we surveyed a new sample of Psychology students, how close would the change in wellbeing be to 2.68? Would it still be greater than zero (ie would the vacation still increase wellbeing)?</p>
+<p>We need the sampling distribution of the mean! (the mean change in wellbeing across the vac, that is)</p>
+<p>Let’s simulate it by bootstrapping!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="c1"># your code here</span>
+<span class="n">m</span> <span class="o">=</span> <span class="c1"># create an empty array to store the sample means</span>
+<span class="n">n</span> <span class="o">=</span> <span class="c1"># your code here</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="c1"># your code here to draw a sample of size n with replacement fromthe dataframe wb</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># the mean change in wellbeing across the vacation for this sample</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">nReps</span> <span class="o">=</span> <span class="c1"># your code here</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ANSWER</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_diff&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/a7706a2b9470a0b938a5a70ef6d1259e3aebe75c1fe263cfa1a8b1c1bb78977c.png" src="_images/a7706a2b9470a0b938a5a70ef6d1259e3aebe75c1fe263cfa1a8b1c1bb78977c.png" />
+</div>
+</div>
+<p>We can also work out exactly what percentage of the samples have a negative change in wellbeing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">m</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>I make it about 8.7% of random (re)samples in which the change in wellbeing is negative.</p>
+<p>This is some evidence that the change in wellbeing over the vacation is positive but would not be considered staatstically significant in general - more on statistical significance next term</p>
+<section id="confidence-interval">
+<h3>95% confidence interval<a class="headerlink" href="#confidence-interval" title="Permalink to this heading">#</a></h3>
+<p>We can define a 95% confidence interval for the change in wellbeing over the vacation in psychology students as the range in which 95% of (re)sample means fall:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The boundaries of the 95% confidence interval </span>
+<span class="c1"># exclude the lowest and highest 2.5% of sample means </span>
+<span class="c1"># (ie exclude 5% of sample means overall)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;lower bound = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mf">0.025</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;upper bound = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mf">0.975</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lower bound = -1.24
+upper bound = 6.36
+</pre></div>
+</div>
+</div>
+</div>
+<p>The confidence interval includes ero, meaning no change in wellbeing (or a negative change) is a plausible value for the population change in wellbbeing over the vac</p>
+</section>
+</section>
+<section id="is-wellbeing-higher-in-lonsdale-than-in-beaufort-engineering-students">
+<h2>Is wellbeing higher in Lonsdale than in Beaufort engineering students?<a class="headerlink" href="#is-wellbeing-higher-in-lonsdale-than-in-beaufort-engineering-students" title="Permalink to this heading">#</a></h2>
+<p>Let’s try bootstrapping something else!</p>
+<p>Say we want to know if wellbeing (as measured before the vacation) is higher in biology students at Lonsdale or Beaufort college.</p>
+<p>Let’s have a look at the relevant data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the biology students only from the dataframe</span>
+<span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_code</th>
+      <th>College</th>
+      <th>Subject</th>
+      <th>Score_preVac</th>
+      <th>Score_postVac</th>
+      <th>Score_diff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13</th>
+      <td>171910</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>94</td>
+      <td>86</td>
+      <td>-8</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>714640</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>85</td>
+      <td>80</td>
+      <td>-5</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>412830</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>59</td>
+      <td>61</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145410</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>44</td>
+      <td>51</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>957870</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>55</td>
+      <td>75</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>127470</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>78</td>
+      <td>75</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>342660</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>44</td>
+      <td>66</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>466680</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>57</td>
+      <td>69</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>222450</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>80</td>
+      <td>93</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>402100</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>81</td>
+      <td>100</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>795390</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>56</td>
+      <td>47</td>
+      <td>-9</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>182190</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>75</td>
+      <td>78</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>594080</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>75</td>
+      <td>87</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>102430</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>74</td>
+      <td>76</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>436580</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>79</td>
+      <td>89</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>714290</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>72</td>
+      <td>89</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>586290</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>78</td>
+      <td>85</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>274650</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>67</td>
+      <td>76</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>552200</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>65</td>
+      <td>76</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>458220</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>72</td>
+      <td>85</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>523680</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>87</td>
+      <td>86</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>156240</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>66</td>
+      <td>58</td>
+      <td>-8</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>399610</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>69</td>
+      <td>76</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>117530</td>
+      <td>Lonsdale</td>
+      <td>Biology</td>
+      <td>68</td>
+      <td>73</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>230750</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>84</td>
+      <td>81</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>643120</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>55</td>
+      <td>59</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>136940</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>63</td>
+      <td>62</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>128230</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>91</td>
+      <td>88</td>
+      <td>-3</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>166850</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>77</td>
+      <td>69</td>
+      <td>-8</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>282330</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>81</td>
+      <td>93</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>824130</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>63</td>
+      <td>70</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>898380</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>46</td>
+      <td>57</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>425700</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>80</td>
+      <td>94</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>401040</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>78</td>
+      <td>82</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>612960</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>63</td>
+      <td>73</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>272480</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>74</td>
+      <td>80</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>942840</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>81</td>
+      <td>79</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>209410</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>69</td>
+      <td>90</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>902670</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>69</td>
+      <td>88</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>161690</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>76</td>
+      <td>75</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>595320</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>77</td>
+      <td>66</td>
+      <td>-11</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>950790</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>75</td>
+      <td>73</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>649410</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>77</td>
+      <td>83</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>145110</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>89</td>
+      <td>79</td>
+      <td>-10</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>300070</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>84</td>
+      <td>87</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>499130</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>80</td>
+      <td>87</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>964640</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>82</td>
+      <td>81</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>735340</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>84</td>
+      <td>78</td>
+      <td>-6</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>320220</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>78</td>
+      <td>76</td>
+      <td>-2</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>467310</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>49</td>
+      <td>50</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>856260</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>83</td>
+      <td>84</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count how many bibology students in each college using df.value_counts()</span>
+<span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">][</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>PLot their wellbeing scores (before the vac) in a violin plot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">my_pal</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Lonsdale&quot;</span><span class="p">:</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;Beaufort&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">}</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;College&#39;</span><span class="p">,</span> <span class="n">pallete</span><span class="o">=</span><span class="n">my_pal</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/178a8988c4380863be60b90145bec76eb7d5cad4623e8ab2f26d08278511edea.png" src="_images/178a8988c4380863be60b90145bec76eb7d5cad4623e8ab2f26d08278511edea.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bio</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">bio</span><span class="p">[</span><span class="n">bio</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lonsdale&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;wellbeing score&#39;)
+</pre></div>
+</div>
+<img alt="_images/419ef0c9284577462bf02c607c6730c2b6979c2dc02a840c12a24d6c09dedb92.png" src="_images/419ef0c9284577462bf02c607c6730c2b6979c2dc02a840c12a24d6c09dedb92.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bio</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">bio</span><span class="p">[</span><span class="n">bio</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Beaufort&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;wellbeing score&#39;)
+</pre></div>
+</div>
+<img alt="_images/11d5d1d74496d3d2aedd56e6bf684026228bda97a50b92c90e8c218d2d366d0b.png" src="_images/11d5d1d74496d3d2aedd56e6bf684026228bda97a50b92c90e8c218d2d366d0b.png" />
+</div>
+</div>
+<p>It looks like Beaufort biologists had slightly higher wellbeing scores but how confident can we be in that difference?</p>
+<p>We need the sampling distribution for the difference of means for wellbeing score between colleges</p>
+<p>We can adapt our bootstrap code to do this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bio</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">]</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">bio</span><span class="p">[</span><span class="n">bio</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Beaufort&#39;</span><span class="p">][</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="n">resample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">resample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">resample</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">resample</span><span class="o">.</span><span class="n">mean</span><span class="p">()],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;wellbeing score&#39;)
+</pre></div>
+</div>
+<img alt="_images/80e771b1b04ef1310080ebfe6cb657d3bb6ed4de5d242aaf91bd7aeeed81c0cb.png" src="_images/80e771b1b04ef1310080ebfe6cb657d3bb6ed4de5d242aaf91bd7aeeed81c0cb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="c1"># your code here</span>
+<span class="n">mDiff</span> <span class="o">=</span> <span class="c1"># create an empty array to store the sample means</span>
+<span class="n">nL</span> <span class="o">=</span> <span class="c1"># number of biologists in Lonsdale college</span>
+<span class="n">nB</span> <span class="o">=</span> <span class="c1"># number of biologists in Beaufort college</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_Lonsdale</span> <span class="o">=</span> <span class="c1"># </span>
+    <span class="n">sample_Beaufort</span> <span class="o">=</span> 
+    <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists</span>
+    
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#ANSWER</span>
+
+<span class="n">LonsdaleBiol</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lonsdale&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">)]</span>
+<span class="n">BeaufortBiol</span> <span class="o">=</span> <span class="n">wb</span><span class="p">[(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;College&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Beaufort&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Biology&#39;</span><span class="p">)]</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">mDiff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">nL</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">LonsdaleBiol</span><span class="p">)</span>
+<span class="n">nB</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">BeaufortBiol</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_Lonsdale</span> <span class="o">=</span> <span class="n">LonsdaleBiol</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nL</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sample_Beaufort</span> <span class="o">=</span> <span class="n">BeaufortBiol</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nB</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_Beaufort</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">sample_Lonsdale</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists</span>
+    
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">])</span> <span class="c1"># plot the sample means</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;difference of sample means: Beaufort-Lonsdale&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;difference of sample means: Beaufort-Lonsdale&#39;)
+</pre></div>
+</div>
+<img alt="_images/0da00e335a284d4ce702f1e8098cd9896f5baca13de82509292f9d579d907828.png" src="_images/0da00e335a284d4ce702f1e8098cd9896f5baca13de82509292f9d579d907828.png" />
+</div>
+</div>
+<p>In what proportion of (re)samples do Lonsdale biologists actually have higher mean wellbeing?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">mDiff</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0932
+</pre></div>
+</div>
+</div>
+</div>
+<section id="bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation">
+<h3>Bootstrapped correlation between wellbeing scores before and after the vacation<a class="headerlink" href="#bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation" title="Permalink to this heading">#</a></h3>
+<p>Over the vacation, wellbeing went up overall - but are the students with higher wellbeing before the vacation generally also the ones with higher wellbeing after the vacation?</p>
+<p>Let’s get an overview by plotting the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">wb</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score before vacation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;wellbeing score after vacation&#39;</span><span class="p">)</span>
+
+<span class="n">tmp</span><span class="o">=</span><span class="n">wb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tmp</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;wellbeing score before vacation&#39;, ylabel=&#39;wellbeing score after vacation&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/e8c12840da0ada4705daee24c13d8fa8251c9fa9cd640e9b81faf3c96be4bdea.png" src="_images/e8c12840da0ada4705daee24c13d8fa8251c9fa9cd640e9b81faf3c96be4bdea.png" />
+</div>
+</div>
+<p>It looks like there is a fairly strong correlation between wellbeing scores before and after the vacation for the same individual.</p>
+<p>The correlation might be exaggerated by a few outliers with particularly low scores, so let’s use Spearman’s correlation coefficient:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.683268050615877
+</pre></div>
+</div>
+</div>
+</div>
+<p>I want to know how confident I can be that wellbeing before and after the vacation are correlated</p>
+<p>I need a sampling distriubtion for the correlation coefficient <span class="math notranslate nohighlight">\(r\)</span></p>
+<p>I can obtain this using bootstrapping:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample correlation, $r_s$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ba9ccfdd0453fab15ac45077e12ab7f61b0b5c772599ea760b001443930f8504.png" src="_images/ba9ccfdd0453fab15ac45077e12ab7f61b0b5c772599ea760b001443930f8504.png" />
+</div>
+</div>
+<p>We can see that all the (re)samples have a strong positive correlation between wellbeing before and after the vacation</p>
+<p>Can you obtain a 95% confidence interval for the correlation coefficient <span class="math notranslate nohighlight">\(r_s\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mf">0.025</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mf">0.975</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6093127139772399,0.7456487747511137
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="further-exercises">
+<h1>Further exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h1>
+<section id="bootstrapped-correlation-in-a-smaller-sample">
+<h2>Bootstrapped correlation in a smaller sample<a class="headerlink" href="#bootstrapped-correlation-in-a-smaller-sample" title="Permalink to this heading">#</a></h2>
+<p>The sample correlation between wellbeing before and after the vacation was very reliably positive, partly because the correlation coefficient was high (in other words, we ca see there <em>is</em> a strong correlation in the scatterplot) and partly because <span class="math notranslate nohighlight">\(n\)</span> is large</p>
+<p>Let’s look at the same correlation- wellbeing before and after the vac- in a smaller sample- just the Psychology students:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psy</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">psy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Score_preVac&#39;, ylabel=&#39;Score_postVac&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/155beb55838ba2e49a43756e2761711dcb1700955ffd6df8c4c9a8f5729e1e92.png" src="_images/155beb55838ba2e49a43756e2761711dcb1700955ffd6df8c4c9a8f5729e1e92.png" />
+</div>
+</div>
+<p>Let’s get the correlation coefficient:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psy</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">psy</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3935596127608406
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a positive correlation,although it is weaker than the correlation in the whole dataset of 300 students.</p>
+<p>Intuitively, just from looking at the scatterplot, it feels that if we drew random samples from just the psychology students, we would find some random samples with a zero or even negative correlation between wellbeing before and after the vacation - much more likely that when we were working with the full dataset of 300 students.</p>
+<ul>
+    <li> Obtain a bootstrapped sampling distriubtion for the correlation coefficient $r_s$
+    <li> What proportion of the (re)samples have $r_s<0$?
+    <li> Obtain at 95% confidence interval for $r_s$
+</ul><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">psy</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample correlation, $r_s$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/46662335ca833c3424a8c4aa57066d2bffc43abd251e2c4f74a88b93455321c3.png" src="_images/46662335ca833c3424a8c4aa57066d2bffc43abd251e2c4f74a88b93455321c3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+
+<span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.06</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Further exercises<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Let’s investigate some more questions using bootstrapping!</p>
+<ol>
+    <li> Do PPE students have higher wellbeing (before the vacation) than Psychology students? 
+        <ul><li>What percentage of random resamples is the mean wellbeing higher for PPE students?</ul>
+    <li> The 5th centile of the wellbeing distriubtion is the score below which the students with the lowest 5% of wellbeing scores fall. The 5th centile of wellbeing is exactly the same pre- and post vacation (49). 
+        <ul><li>Obtain a sampling distribution for the difference in the 5th centile pre- and post vacation</ul>
+</ol><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 1 solution</span>
+
+<span class="n">PPE</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PPE&#39;</span><span class="p">]</span>
+<span class="n">psy</span><span class="o">=</span><span class="n">wb</span><span class="p">[</span><span class="n">wb</span><span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Psychology&#39;</span><span class="p">]</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">mDiff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">nPPE</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">PPE</span><span class="p">)</span>
+<span class="n">nPsy</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">psy</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample_PPE</span> <span class="o">=</span> <span class="n">PPE</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nPPE</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sample_psy</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">nPsy</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample_PPE</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">sample_psy</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># mean wellbeing of Beaufort biologists minus mean wellbeing of Lonsdale biologists</span>
+    
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion of resamples in which PPE wellbeing is higher: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">mDiff</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of resamples in whihc PPE wellbeing is higher: 0.1197
+</pre></div>
+</div>
+<img alt="_images/5fb73e675e41c4fa22bd057ea614b14ed7a8b13d34e7b5e2782f5987c1e4ad8e.png" src="_images/5fb73e675e41c4fa22bd057ea614b14ed7a8b13d34e7b5e2782f5987c1e4ad8e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exercise 2 solution</span>
+
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">diff_q05</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wb</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">diff_q05</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_postVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span><span class="o">-</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Score_preVac&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">diff_q05</span><span class="p">)</span> <span class="c1"># plot the sample means</span>
+
+<span class="c1"># CI - note the irritatingly different syntax to get quantile of an np array vs pandas df</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">diff_q05</span><span class="p">,</span><span class="mf">0.025</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">diff_q05</span><span class="p">,</span><span class="mf">0.975</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.0,3.0
+</pre></div>
+</div>
+<img alt="_images/576f54cf6b0363a1cdaa38f9888f98e4df1da6d4414d66b35c86b28d82e06ebc.png" src="_images/576f54cf6b0363a1cdaa38f9888f98e4df1da6d4414d66b35c86b28d82e06ebc.png" />
+</div>
+</div>
+<p>Note the discrete distribution as there are only a small number of dataapoints that can reasonablbe end up being the 5th centile in either college in any given resample</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tutorial Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">Import and view the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-distribution-of-wellbeing-scores">Plot the distribution of wellbeing scores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#did-wellbeing-increase-over-the-vacation">Did wellbeing increase over the vacation?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval">95% confidence interval</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#is-wellbeing-higher-in-lonsdale-than-in-beaufort-engineering-students">Is wellbeing higher in Lonsdale than in Beaufort engineering students?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapped-correlation-between-wellbeing-scores-before-and-after-the-vacation">Bootstrapped correlation between wellbeing scores before and after the vacation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bootstrapped-correlation-in-a-smaller-sample">Bootstrapped correlation in a smaller sample</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Further exercises</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,3795 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Coding support sheet &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'coding_cheatsheet';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction1.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="UnderConstruction2.html">1. Under Construction!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/coding_cheatsheet.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2Fcoding_cheatsheet.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/coding_cheatsheet.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Coding support sheet</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Coding support sheet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-functions">Pandas Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-head-and-df-tail"><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-columns"><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">query allows us to <em>filter</em> a dataframe and get only rows where a condition is met</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-columns">Creating new columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-assign">Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">Sampling from a dataframe (e.g. if bootstrapping)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-data">Grouping data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-data">Aggregating data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-functions">Numpy functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-arrays">Describing arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-in-arrays">Searching in arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-where"><code class="docutils literal notranslate"><span class="pre">np.where</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-statements-in-numpy">Logical statements in numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-and"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-or"><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-not"><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy-random">Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randint"><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-random"><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randn"><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-shuffle"><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-data-types">Differences between data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-vs-pandas">Numpy vs. Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-numpy-pandas">Going from Numpy -&gt; Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-pandas-numpy">Going from Pandas -&gt; Numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="coding-support-sheet">
+<h1>Coding support sheet<a class="headerlink" href="#coding-support-sheet" title="Permalink to this heading">#</a></h1>
+<p>The aim of this document is to show you some functions and how they can be used. This should help you with learning how to manipulate data - both the arrays and dataframes that we are using each week in class. These will be run on a basic dataframe to show you how they are used, and what the resulting output is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+
+<span class="c1">### Import and inspect data</span>
+<span class="n">df2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heartAttack.csv&#39;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/fruitsAndVeg.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="pandas-functions">
+<h2>Pandas Functions<a class="headerlink" href="#pandas-functions" title="Permalink to this heading">#</a></h2>
+<p>Pandas is a library that allows effective use of dataframes (similar to excel sheets). Using Pandas, we can do a variety of things that you will see below.</p>
+<p>In this cheat sheet, we will take a short hand for any data frame – dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code></p>
+<section id="df-head-and-df-tail">
+<h3><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code><a class="headerlink" href="#df-head-and-df-tail" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>these functions show you the <em>first five</em> and <em>last five</em> rows of your dataframe, respectively</p></li>
+<li><p>if you add a number inside the brackets, you can change how many rows you see (e.g. <code class="docutils literal notranslate"><span class="pre">df.head(10)</span></code>)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>type</th>
+      <th>colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>type</th>
+      <th>colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lychee</td>
+      <td>fruit</td>
+      <td>white</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
+      <td>green</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>#### <code class="docutils literal notranslate"><span class="pre">df.shape</span></code></p>
+<ul class="simple">
+<li><p>this function allows us to look at the dimensions (or shape) of a dataframe</p></li>
+<li><p>it tells us how many rows and how many columns we have in the data</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># this dataframe has 12 rows and 3 columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12, 3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="df-columns">
+<h3><code class="docutils literal notranslate"><span class="pre">df.columns</span></code><a class="headerlink" href="#df-columns" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>this function lets us look at the names of the columns we have in the data</p></li>
+<li><p>you can also use it to <em>set</em> column names too</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">]</span> <span class="c1">#we can pass a list (that has the same number of items as there are columns) and give the columns new names</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;name&#39;, &#39;type&#39;, &#39;colour&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Name&#39;, &#39;Type&#39;, &#39;Colour&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>### Indexing dataframes</p>
+<ul class="simple">
+<li><p>indexing describes how we subset specific parts of a dataframe, and can be done in a few different ways, namely:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.iloc[]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.query()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.column_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df['column_name']</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df.loc is primarily label based. we can use the names of columns to take specific columns, e.g.:</span>
+<span class="c1">#df.loc[:,&#39;Type&#39;]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;Type&#39;</span><span class="p">])</span>
+<span class="c1"># the : is a shorthand for &#39;all&#39;, and lets us select all rows observations of the &#39;Type&#39; column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       veg
+1       veg
+2     fruit
+3     fruit
+4     fruit
+5     fruit
+6       veg
+7       veg
+8       veg
+9     fruit
+10    fruit
+11    fruit
+Name: Type, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="c1">#you can also specify rows you want to see (like the first 5 rows)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      veg
+1      veg
+2    fruit
+3    fruit
+4    fruit
+Name: Type, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<section id="query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">
+<h4>query allows us to <em>filter</em> a dataframe and get only rows where a condition is met<a class="headerlink" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met" title="Permalink to this heading">#</a></h4>
+<p>some caveats:</p>
+<ul class="simple">
+<li><p>you need to pass a query (a request) to the function that comes as a string using quote marks <code class="docutils literal notranslate"><span class="pre">'</span></code></p>
+<ul>
+<li><p>e.g. <code class="docutils literal notranslate"><span class="pre">df.query('Color</span> <span class="pre">==</span> <span class="pre">&quot;orange&quot;')</span></code></p></li>
+<li><p>when you want to filter and your variable can be a string, you should put it in speech marks <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> as above</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Colour == &quot;orange&quot;&#39;</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Type == &quot;veg&quot;&#39;</span><span class="p">))</span>
+<span class="c1"># this function will give you the subset of rows where your condition is met</span>
+<span class="c1"># it is nice for taking only parts of your data (e.g. only one value of a categorical variable)</span>
+<span class="c1"># or dropping all rows you want to exclude based on a column that marks things for removal</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>an alternative to this that you have already seen is using the <code class="docutils literal notranslate"><span class="pre">df[column_name]</span></code> syntax to subset the dataframe</p>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">df[df['Type']</span> <span class="pre">==</span> <span class="pre">'veg']</span></code></p>
+<p>as you can see in the cell below, this is equivalent to using the inbuilt query function. The major drawbacks to this method are that there are more parts you can make mistakes on (brackets etc), and that pandas functions can be ‘chained’ and multiple used at the same time</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;veg&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>you can get variables from a specific column just using its column name</p>
+<ul class="simple">
+<li><p>this takes it down from a 2-D data frame (rows x columns) to a <em>series</em> or 1-D array</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="p">)</span> <span class="c1">#it looks like a dataframe with just one column</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1">#but when you look at its shape, there is only one dimension</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span> <span class="c1">#and you can treat it like an array, getting specific values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      green
+1      green
+2     orange
+3     yellow
+4      brown
+5        red
+6      brown
+7     orange
+8      white
+9      white
+10    purple
+11     green
+Name: Colour, dtype: object
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12,)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     green
+1     green
+2    orange
+3    yellow
+4     brown
+Name: Colour, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">])</span>
+<span class="c1"># as you can see, these are equivalent to the methods in the cell above</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      green
+1      green
+2     orange
+3     yellow
+4      brown
+5        red
+6      brown
+7     orange
+8      white
+9      white
+10    purple
+11     green
+Name: Colour, dtype: object
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12,)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     green
+1     green
+2    orange
+3    yellow
+4     brown
+Name: Colour, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="creating-new-columns">
+<h3>Creating new columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this heading">#</a></h3>
+<p>There are two main ways of creating a new column:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df['column_name']</span> <span class="pre">=</span> </code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.assign</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="c1">#when specifying an array, it should have the same length as the number of rows in the dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="using-df-assign">
+<h4>Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code><a class="headerlink" href="#using-df-assign" title="Permalink to this heading">#</a></h4>
+<p>with the <code class="docutils literal notranslate"><span class="pre">df.assign</span></code>, you specify the name and a value, for example:
+<code class="docutils literal notranslate"><span class="pre">df.assign(length</span> <span class="pre">=</span> <span class="pre">0)</span></code> will create a new column called ‘length’ and set every value of it to 0</p>
+<p>overall, the syntax is: <code class="docutils literal notranslate"><span class="pre">df.assign(column_name</span> <span class="pre">=</span> <span class="pre">value_or_values)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">length2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>rather than just giving the column one single value, we can also use <code class="docutils literal notranslate"><span class="pre">assign</span></code> and supply an array of values to put into our dataframe!</p>
+<p>this is nice if you are wanting to simulate data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span> <span class="c1">#we have created 12 random numbers to assign as the length of the foods</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">length2</span> <span class="o">=</span> <span class="n">lengths</span><span class="p">)</span> <span class="c1">#we can now give each row these random numbers</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11, 19, 15, 14,  4,  3,  6, 18,  4, 11, 13,  9])
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="sampling-from-a-dataframe-e-g-if-bootstrapping">
+<h3>Sampling from a dataframe (e.g. if bootstrapping)<a class="headerlink" href="#sampling-from-a-dataframe-e-g-if-bootstrapping" title="Permalink to this heading">#</a></h3>
+<p>Pandas has an in-built function that allows you to sample from a dataframe: <code class="docutils literal notranslate"><span class="pre">df.sample()</span></code></p>
+<p>With this function, you can either:</p>
+<ul class="simple">
+<li><p>specify a number of rows to randomly sample using the ‘n’ option:</p>
+<ul>
+<li><p>e.g. <code class="docutils literal notranslate"><span class="pre">df.sample(n</span> <span class="pre">=</span> <span class="pre">30)</span></code> will sample 30 random rows from the dataframe <code class="docutils literal notranslate"><span class="pre">df</span></code></p></li>
+</ul>
+</li>
+<li><p>specify a fraction of the dataframe to sample using the ‘frac’ option:</p>
+<ul>
+<li><p>e.g. <code class="docutils literal notranslate"><span class="pre">df.sample(frac</span> <span class="pre">=</span> <span class="pre">0.75)</span></code> will return 75% of rows, selected randomly</p></li>
+</ul>
+</li>
+</ul>
+<p>Note: by default, this does not ‘replace’ a row once it’s selected – this prevents you from sampling the same row more than once.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="c1">#selects 4 random rows to keep</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5</th>
+      <td>strawberry</td>
+      <td>fruit</td>
+      <td>red</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span> <span class="c1">#selects 30% of rows (in this case, 4 rows) to keep</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="grouping-data">
+<h2>Grouping data<a class="headerlink" href="#grouping-data" title="Permalink to this heading">#</a></h2>
+<p>Grouping data is important to do. It allows us to group data that are similar along a dimension (for example, group parts of our dataset by their type - veg or fruit) and do something with that grouped data</p>
+<p>In practice, this is useful in psychology experiments as it allows us to do the same thing across many participants by grouping based on a participant ID. When analysing other types of data, it helps us get statistics by grouping based on categorical variables</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> has some important syntax that is useful to understand:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">by</span></code> : the columns which you want to group by. this can be a single column (e.g. <code class="docutils literal notranslate"><span class="pre">df.groupby('Type')</span></code> or a list of columns (e.g. <code class="docutils literal notranslate"><span class="pre">df.groupby(['Type',</span> <span class="pre">'Colour'])</span></code>).</p>
+<ul>
+<li><p>Note that if you are grouping by multiple variables, you need to put them in a list!</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">as_index</span></code> : this specifies whether the grouping variables are stored as row indices (probably not ideal).</p>
+<ul>
+<li><p>By default this is set to ‘True’, but you will more often than not want to specify that this is infact <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>By setting it to False, the values of your grouping variable are included as <em>columns</em> in your data which makes it much easier for plotting. <em><strong>This is more useful for what you are doing</strong></em></p></li>
+</ul>
+</li>
+</ul>
+<p>calling <code class="docutils literal notranslate"><span class="pre">df.groupby()</span></code> won’t return something you can view easily, but gives you something you can do things with (see below)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7faf4de2cf40&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="c1">#we can group by type, and see how many instances of the veg/fruit types we have</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type
+fruit    7
+veg      5
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
+<span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
+<span class="c1"># the actual output displayed is a pandas series, not a dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type   Colour
+fruit  brown     1
+       green     1
+       orange    1
+       purple    1
+       red       1
+       white     1
+       yellow    1
+veg    brown     1
+       green     2
+       orange    1
+       white     1
+dtype: int64
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76337/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># the actual output displayed is a pandas series, not a dataframe</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5985</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
+<span class="g g-Whitespace">   </span><span class="mi">5986</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5987</span>         <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">5988</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">5989</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Series&#39; object has no attribute &#39;columns&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+<span class="c1"># this outputs a dataframe, where we can see that type and colour are left in as columns instead.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># and we can see that they are columns</span>
+
+<span class="c1">#so generally when using the &#39;groupby&#39; function, make sure to set as_index = False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fruit</td>
+      <td>green</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>fruit</td>
+      <td>purple</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>fruit</td>
+      <td>red</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>fruit</td>
+      <td>white</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>veg</td>
+      <td>brown</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>veg</td>
+      <td>green</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>veg</td>
+      <td>orange</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Type&#39;, &#39;Colour&#39;, &#39;size&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="aggregating-data">
+<h2>Aggregating data<a class="headerlink" href="#aggregating-data" title="Permalink to this heading">#</a></h2>
+<p>This describes how we can apply a function over our data, creating aggregate (summary) measures. You have done this already by now, getting the mean of a variable, for example.</p>
+<p>Some functions are relatively straightforward based on their name, and there is a slightly different (but potentially more useful) way of doing it too:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">df.mean()</span></code>   -  gets the mean</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.median()</span></code> - gets the median</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.var()</span></code> - gets the variance</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.std()</span></code> - gets the standard deviation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.min()</span></code> - gets the minimum value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.max()</span></code> - gets the maximum value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> - gets descriptive statistics across a variety of data types, good for a first look</p>
+<ul>
+<li><p>this by default only takes numeric variables, but you can summarise others by using <code class="docutils literal notranslate"><span class="pre">df.describe(include='all')</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>some of these functions won’t work on some data types (for example, mean will not work on string values). These functions work well with the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> function too!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1">#see that this cuts out non-numeric variables :(</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_57161/2665821020.py:1: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with &#39;numeric_only=None&#39;) is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  display(df.mean()) #see that this cuts out non-numeric variables :(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>length      2.916667
+length2    12.416667
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span> <span class="c1">#by default this excludes non-numeric variables</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">))</span> <span class="c1">#but we can add them in if we want, and get some other info from them</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>2.916667</td>
+      <td>12.416667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.781640</td>
+      <td>5.350588</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.750000</td>
+      <td>8.750000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>4.000000</td>
+      <td>17.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>6.000000</td>
+      <td>19.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>12</td>
+      <td>2</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>lettuce</td>
+      <td>fruit</td>
+      <td>green</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1</td>
+      <td>7</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.916667</td>
+      <td>12.416667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.781640</td>
+      <td>5.350588</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.750000</td>
+      <td>8.750000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.000000</td>
+      <td>13.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>4.000000</td>
+      <td>17.250000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6.000000</td>
+      <td>19.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>### Using <code class="docutils literal notranslate"><span class="pre">df.agg</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">df.agg</span></code> allows you to use different functions on different columns if you wanted to, or apply multiple functions to the same column. this is quite useful to get different statistics in one line of code</p>
+<p>This function uses a ‘dictionary’ object to do so, and follows this general pattern:</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.agg(</span> <span class="pre">{'column_name':'function'}</span> <span class="pre">)</span></code></p>
+<p>or</p>
+<p><code class="docutils literal notranslate"><span class="pre">df.agg(</span> <span class="pre">{'column_name':['list',</span> <span class="pre">'of',</span> <span class="pre">'functions']}</span> <span class="pre">)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">df.acc(</span> <span class="pre">{'column1':'function1',</span> <span class="pre">'column2':'function2}</span> <span class="pre">)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;length&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">})</span> <span class="c1">#this will output just the mean length across all rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>length    2.916667
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;length&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>2.916667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.781640</td>
+    </tr>
+    <tr>
+      <th>count</th>
+      <td>12.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span> <span class="p">{</span><span class="s1">&#39;length&#39;</span><span class="p">:</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">:</span><span class="s1">&#39;unique&#39;</span><span class="p">}</span> <span class="p">)</span>
+
+<span class="c1"># for length it tells us the mean length of all items</span>
+<span class="c1"># for Colour, it outputs the unique values found in that column (not that useful for now, but highlights the point)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>length                                             2.916667
+Colour    [green, orange, yellow, brown, red, white, pur...
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>both types of function work well in conjunction with <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code>, but <code class="docutils literal notranslate"><span class="pre">agg</span></code> gives you more options where necessary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Colour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+    <tr>
+      <th>Colour</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>brown</th>
+      <td>2.500000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>green</th>
+      <td>2.333333</td>
+      <td>13.666667</td>
+    </tr>
+    <tr>
+      <th>orange</th>
+      <td>2.500000</td>
+      <td>10.500000</td>
+    </tr>
+    <tr>
+      <th>purple</th>
+      <td>3.000000</td>
+      <td>18.000000</td>
+    </tr>
+    <tr>
+      <th>red</th>
+      <td>4.000000</td>
+      <td>17.000000</td>
+    </tr>
+    <tr>
+      <th>white</th>
+      <td>2.500000</td>
+      <td>14.000000</td>
+    </tr>
+    <tr>
+      <th>yellow</th>
+      <td>6.000000</td>
+      <td>4.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Colour&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;length&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]})</span>
+<span class="c1">#this gives us multiple descriptive statistics for the variable of interest in one line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Colour</th>
+      <th colspan="4" halign="left">length</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>var</th>
+      <th>std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>brown</td>
+      <td>2.500000</td>
+      <td>0.707107</td>
+      <td>0.500000</td>
+      <td>0.707107</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>green</td>
+      <td>2.333333</td>
+      <td>1.527525</td>
+      <td>2.333333</td>
+      <td>1.527525</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>2.500000</td>
+      <td>3.535534</td>
+      <td>12.500000</td>
+      <td>3.535534</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>purple</td>
+      <td>3.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>red</td>
+      <td>4.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>white</td>
+      <td>2.500000</td>
+      <td>2.121320</td>
+      <td>4.500000</td>
+      <td>2.121320</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>yellow</td>
+      <td>6.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>in the Heart Attack dataset example, we can see how this could be really useful</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;SEX&#39;</span><span class="p">,</span> <span class="s1">&#39;DIED&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;CHARGES&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;LOS&#39;</span>     <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;AGE&#39;</span>     <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span>   
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="c1"># with this, it becomes easy to add more variables of interest to aggregate,</span>
+<span class="c1"># or more grouping variables if you are interested in them</span>
+<span class="c1"># you can apply different functions to different columns if you wanted to</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>SEX</th>
+      <th>DIED</th>
+      <th colspan="2" halign="left">CHARGES</th>
+      <th colspan="3" halign="left">LOS</th>
+      <th colspan="2" halign="left">AGE</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>F</td>
+      <td>0.0</td>
+      <td>10681.360123</td>
+      <td>6800.453296</td>
+      <td>11.217979</td>
+      <td>152.553272</td>
+      <td>4294</td>
+      <td>72.654554</td>
+      <td>152.430047</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>F</td>
+      <td>1.0</td>
+      <td>7917.134800</td>
+      <td>7692.358142</td>
+      <td>4.581486</td>
+      <td>5.526421</td>
+      <td>767</td>
+      <td>77.835724</td>
+      <td>10.042033</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>M</td>
+      <td>0.0</td>
+      <td>9732.093270</td>
+      <td>5975.841230</td>
+      <td>7.355992</td>
+      <td>4.439826</td>
+      <td>7135</td>
+      <td>62.103308</td>
+      <td>13.097863</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>M</td>
+      <td>1.0</td>
+      <td>8521.169542</td>
+      <td>8526.110850</td>
+      <td>4.628305</td>
+      <td>5.817602</td>
+      <td>643</td>
+      <td>72.939347</td>
+      <td>12.347426</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numpy-functions">
+<h1>Numpy functions<a class="headerlink" href="#numpy-functions" title="Permalink to this heading">#</a></h1>
+<p>Numpy is a python library that has functions that help you deal with arrays, or lists. Here you’ll see a few functions in numpy that are really helpful and interact well with pandas dataframes to help you manipulate your data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#lets make an array from a list</span>
+
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="describing-arrays">
+<h2>Describing arrays<a class="headerlink" href="#describing-arrays" title="Permalink to this heading">#</a></h2>
+<p>We can describe arrays with functions similar to pandas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">array.mean()</span></code> - gets the mean value of the array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.median(array)</span></code> - gets the median value of the array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array.var()</span></code> - gets the variance of the array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array.std()</span></code> - gets the standard deviation of the arry</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array.size</span></code>  - gets the size of the array (the number of elements). For a 1-D array, this is its length</p></li>
+</ul>
+</section>
+<section id="searching-in-arrays">
+<h2>Searching in arrays<a class="headerlink" href="#searching-in-arrays" title="Permalink to this heading">#</a></h2>
+<p>Sometimes we want to search arrays to find if certain conditions are met. Numpy has a few functions that are very useful for doing exactly that. These funcions interact with pandas dataframes <strong>really well</strong>, and help us manipulate our data more easily.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.where</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.equal</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.greater</span></code> and <code class="docutils literal notranslate"><span class="pre">np.greater_equal</span></code> – x &gt; y and x &gt;= y</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.less</span></code> and <code class="docutils literal notranslate"><span class="pre">np.less_equal</span></code> – x &lt; y and x &lt;= y</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.isin</span></code></p></li>
+</ul>
+<section id="np-where">
+<h3><code class="docutils literal notranslate"><span class="pre">np.where</span></code><a class="headerlink" href="#np-where" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">np.where</span></code> is a function that we can read easily. it finds “where” elements of an array meet a condition. It has two types of use.</p>
+<p>Firstly,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.where(condition)</span></code> – condition usually is something like a logical statement, e.g.:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.where(df['Type']</span> <span class="pre">==</span> <span class="pre">'veg')</span></code></p></li>
+<li><p>this outputs a list of indices (locations) where a condition is true.</p></li>
+<li><p>this list of indices can be used to find where this condition is true, and only get those things</p>
+<ul>
+<li><p>this is particularly useful when trying to find things in a dataframe!</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;veg&#39;</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;veg&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([0, 1, 6, 7, 8]),)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>### <code class="docutils literal notranslate"><span class="pre">np.equal</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.where</span></code> functions finds us the locations where a condition is met. If you have 12 items and only 3 meet this criteria, it outputs those 3 locations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.equal</span></code> is slightly different. It lets you iterate over every element (item) in an array and check to see if those elements are the same as your test. It then outputs an array that is the same length as your original array but each value is either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> depending on what the value was. It’s syntax is below:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.equal(your_array,</span> <span class="pre">value_to_test)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">equal</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Type</span><span class="p">,</span> <span class="s1">&#39;veg&#39;</span><span class="p">)</span>
+<span class="c1">#as you can see, this is quite different to the output of np.where !</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2     False
+3     False
+4     False
+5     False
+6      True
+7      True
+8      True
+9     False
+10    False
+11    False
+Name: Type, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>The logical functions <code class="docutils literal notranslate"><span class="pre">np.greater</span></code>, <code class="docutils literal notranslate"><span class="pre">np.greater_equal</span></code>, <code class="docutils literal notranslate"><span class="pre">np.less</span></code> and <code class="docutils literal notranslate"><span class="pre">np.less_equal</span></code> all use a similar syntax. One important aspect is that they can only work on <em>numeric</em> data (not strings). Similar to <code class="docutils literal notranslate"><span class="pre">np.equal</span></code>, the output of this function has the same length as your original array, and contains <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> values depending on what it found.</p>
+<p>They all follow the same syntax as below:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.greater(your_array,</span> <span class="pre">value)</span></code></p>
+<p>note: this is equivalent to <code class="docutils literal notranslate"><span class="pre">your_array</span> <span class="pre">&gt;</span> <span class="pre">value</span></code> but it is computed faster, and you can treat it as its own object in your code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">greater</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">length2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">length2</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># as you can see,these two are equivalent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2      True
+3     False
+4      True
+5      True
+6      True
+7      True
+8      True
+9      True
+10     True
+11     True
+Name: length2, dtype: bool
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2      True
+3     False
+4      True
+5      True
+6      True
+7      True
+8      True
+9      True
+10     True
+11     True
+Name: length2, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>### <code class="docutils literal notranslate"><span class="pre">np.isin</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">np.isin</span></code> does something slightly different. It allows you to check if each element of your array is in a list of different options. It’s a slightly more versatile version of <code class="docutils literal notranslate"><span class="pre">np.equal</span></code> and is nice for grouping variables in your dataframes. It’s syntax is as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.isin(your_array,</span> <span class="pre">[list</span> <span class="pre">of</span> <span class="pre">options])</span></code></p>
+<p>This will output an array that has the same length as your original array, set to <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> depending on whether it met the criteria</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True, False, False, False, False,  True, False,
+       False, False,  True])
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True,  True, False,  True, False,  True,
+        True, False, False])
+</pre></div>
+</div>
+</div>
+</div>
+<p>this can then be used to filter a dataframe. If the value is <code class="docutils literal notranslate"><span class="pre">True</span></code> it takes the corresponding row. If the value is <code class="docutils literal notranslate"><span class="pre">False</span></code> it ignores the corresponding row. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">])]</span> <span class="c1">#this only takes foods that were orange or green</span>
+
+<span class="c1">#checking multiple values isn&#39;t possible with normal syntax (note that the code below spits out a nasty error..)</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;orange&#39;</span> <span class="ow">or</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">q4</span><span class="o">/</span><span class="n">twg1yll54y142rc02m5wwbt40000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_57161</span><span class="o">/</span><span class="mf">902233080.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#checking multiple values isn&#39;t possible with normal syntax (note that the code below spits out a nasty error..)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;orange&#39;</span> <span class="ow">or</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Colour&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;green&#39;</span><span class="p">]</span>
+
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py</span> in <span class="ni">__nonzero__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1525</span>     <span class="nd">@final</span>
+<span class="g g-Whitespace">   </span><span class="mi">1526</span>     <span class="k">def</span> <span class="nf">__nonzero__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1527</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1528</span>             <span class="sa">f</span><span class="s2">&quot;The truth value of a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> is ambiguous. &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1529</span>             <span class="s2">&quot;Use a.empty, a.bool(), a.item(), a.any() or a.all().&quot;</span>
+
+<span class="ne">ValueError</span>: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+</pre></div>
+</div>
+</div>
+</div>
+<p>the error message above can be fixed by using numpy-based <em>logical statements</em></p>
+</section>
+<section id="logical-statements-in-numpy">
+<h3>Logical statements in numpy<a class="headerlink" href="#logical-statements-in-numpy" title="Permalink to this heading">#</a></h3>
+<p>numpy has inbuilt functions that let you do logical comparisons between two equally sized arrays. This is nice if you want to have multiple conditions met. The following statements are likely to be useful to you:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></p></li>
+</ul>
+<section id="np-logical-and">
+<h4><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code><a class="headerlink" href="#np-logical-and" title="Permalink to this heading">#</a></h4>
+<p>this looks to see if two criteria are both met. If the two criteria are met, it outputs a <code class="docutils literal notranslate"><span class="pre">True</span></code>. If only one (or neither) are met, it outputs a <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for example, we can take columns of our dataframe and find where two criteria are met</span>
+<span class="c1"># let&#39;s say we wanted to find the rows where the colour of our food object was &#39;green&#39; and where it was a &#39;veg&#39; type</span>
+<span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Type</span> <span class="o">==</span> <span class="s1">&#39;veg&#39;</span><span class="p">))</span>
+
+<span class="c1">#this interacts nicely with pandas dataframe indexing!</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Type</span> <span class="o">==</span> <span class="s1">&#39;veg&#39;</span><span class="p">)])</span>
+<span class="c1">#this outputs only rows where the food item is green and a vegetable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2     False
+3     False
+4     False
+5     False
+6     False
+7     False
+8     False
+9     False
+10    False
+11    False
+dtype: bool
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>as you can imagine, we can do something very similar with a <code class="docutils literal notranslate"><span class="pre">df.query</span></code> call when using dataframes!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Colour == &quot;green&quot; and Type == &quot;veg&quot;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="np-logical-or">
+<h4><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code><a class="headerlink" href="#np-logical-or" title="Permalink to this heading">#</a></h4>
+<p>this function looks to see if either one of the criteria is met (rather than both). If either of the criteria are True, its output will be True. If both are False, its output will be False</p>
+<p>For example, we can find all instances where the colour of our food is either green <em>or</em> yellow</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;yellow&#39;</span><span class="p">))</span>
+
+<span class="c1">#and we can use this function to help us filter out data we aren&#39;t interested in</span>
+<span class="n">df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)]</span> 
+
+<span class="c1">#df[np.logical_or(df[&#39;Colour&#39;] == &#39;green&#39;, df[&#39;Colour&#39;] == &#39;yellow&#39;)] #this is the same </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      True
+1      True
+2     False
+3      True
+4     False
+5     False
+6     False
+7     False
+8     False
+9     False
+10    False
+11     True
+Name: Colour, dtype: bool
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
+      <td>green</td>
+      <td>2</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>again, we can get a similar result using a <code class="docutils literal notranslate"><span class="pre">query</span></code> call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Colour == &quot;green&quot; or Colour == &quot;yellow&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
+      <td>green</td>
+      <td>2</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>finally….</p>
+</section>
+<section id="np-logical-not">
+<h4><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code><a class="headerlink" href="#np-logical-not" title="Permalink to this heading">#</a></h4>
+<p>this checks that neither criteria is met. If neither criteria is met, it outputs a <code class="docutils literal notranslate"><span class="pre">True</span></code>. If one or more criteria are met, if outputs a <code class="docutils literal notranslate"><span class="pre">False</span></code>. This is mostly useful for when you want to find where something is <em>not</em> true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">))</span> <span class="c1">#tells us if a value of df.Colour is NOT green</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Colour</span> <span class="o">==</span> <span class="s1">&#39;green&#39;</span><span class="p">)])</span> <span class="c1">#and we can use that boolean (true/false) array to filter our data frame</span>
+<span class="c1">#note that none of the values for Colour are green!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     False
+1     False
+2      True
+3      True
+4      True
+5      True
+6      True
+7      True
+8      True
+9      True
+10     True
+11    False
+Name: Colour, dtype: bool
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>strawberry</td>
+      <td>fruit</td>
+      <td>red</td>
+      <td>4</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lychee</td>
+      <td>fruit</td>
+      <td>white</td>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># again, we can do something equivalet (maybe more straightforward) with a query</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Colour != &quot;green&quot;&#39;</span><span class="p">)</span> <span class="c1">#note that != means not equal</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>strawberry</td>
+      <td>fruit</td>
+      <td>red</td>
+      <td>4</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lychee</td>
+      <td>fruit</td>
+      <td>white</td>
+      <td>4</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="using-numpy-random">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code><a class="headerlink" href="#using-numpy-random" title="Permalink to this heading">#</a></h2>
+<p>Numpy has a sub-package that is used for doing random things! Not random things, <em>random</em> things. It has functions that enable us to create sequences of random numbers both as integers (whole numbers) and decimals. It also has functions that let us make random choices between items of arrays so we can sample things randomly. Below are some functions that will be useful for you:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></p></li>
+</ul>
+<section id="np-random-randint">
+<h3><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code><a class="headerlink" href="#np-random-randint" title="Permalink to this heading">#</a></h3>
+<p>This function allows us to create an array of random numbers from a specific bound. These numbers are drawn from a <em>discrete uniform distribution</em>. That means that there should be an equal probability of getting any number within this bound. It uses the following syntax:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.randint(low</span> <span class="pre">=</span> <span class="pre">lower_bound,</span> <span class="pre">high</span> <span class="pre">=</span> <span class="pre">upper_bound,</span> <span class="pre">size</span> <span class="pre">=</span> <span class="pre">number_of_random_numbers_you_want)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">low</span></code>: the lower bound of your random numbers (e.g. if you wanted the numbers between 10 and 20, you’d set 10)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">high</span></code>: the upper bound of your random numbers. This is <strong>not</strong> inclusive.</p>
+<ul>
+<li><p>That means if you wanted the numbers between 10 and 20, your upper bound would be 21</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: the number of samples you wanted to generate</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#to get a sample of 1000 numbers randomly drawn from 10 and 20, we would do:</span>
+<span class="n">randints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">21</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">randints</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([17, 14, 13, 18, 19, 10, 20, 15, 10, 10])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#we can plot this as a histogram to show you</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">randints</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">11</span><span class="p">)</span> <span class="c1"># 11 bins just bcause we have 11 unique values!</span>
+
+<span class="c1">#this looks pretty uniform!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([104.,  96.,  78.,  93.,  91., 101.,  90., 100.,  75.,  92.,  80.]),
+ array([10.        , 10.90909091, 11.81818182, 12.72727273, 13.63636364,
+        14.54545455, 15.45454545, 16.36363636, 17.27272727, 18.18181818,
+        19.09090909, 20.        ]),
+ &lt;BarContainer object of 11 artists&gt;)
+</pre></div>
+</div>
+<img alt="_images/a541a75323ca5ac132dda7b6b24cd0b637eca25c24762cf411bc4f363901c5f9.png" src="_images/a541a75323ca5ac132dda7b6b24cd0b637eca25c24762cf411bc4f363901c5f9.png" />
+</div>
+</div>
+</section>
+<section id="np-random-random">
+<h3><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code><a class="headerlink" href="#np-random-random" title="Permalink to this heading">#</a></h3>
+<p>While <code class="docutils literal notranslate"><span class="pre">np.randint</span></code> takes whole numbers in a range of values, <code class="docutils literal notranslate"><span class="pre">np.random</span></code> takes a random number of decimal values within the range 0 and 1. You can choose how many random numbers you generate:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.random(size</span> <span class="pre">=</span> <span class="pre">n_samples)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">randfloats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">randfloats</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.36749217, 0.93532443, 0.79328312, 0.82180164, 0.86385785,
+       0.36770064, 0.80527383, 0.76189206, 0.08625485, 0.87386351,
+       0.03849577, 0.0500301 , 0.91810191, 0.10520093, 0.83598459])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">randfloats</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">11</span><span class="p">);</span>
+<span class="c1">#here we can see that it is roughly uniform between 0 and 1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8a5058fcced5f4a8c260180cdae07c6e6791e49a4f1b8d236470e5add98196b9.png" src="_images/8a5058fcced5f4a8c260180cdae07c6e6791e49a4f1b8d236470e5add98196b9.png" />
+</div>
+</div>
+</section>
+<section id="np-random-randn">
+<h3><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code><a class="headerlink" href="#np-random-randn" title="Permalink to this heading">#</a></h3>
+<p>This function allows us to draw samples from the <em>standard normal</em> distribution - i.e. a normal distribution with mean = 0 and std = 1. We can draw as many samples as we want by passing a number:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.randn(1000)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">randnorms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">randnorms</span><span class="p">[:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.80559072,  0.46900481,  0.31017451, -1.35252634,  1.49642797,
+        0.61237395,  0.43183374, -1.7193214 ,  0.53727849, -0.92000384,
+       -0.42688629,  1.49101009, -0.08610773,  0.29744211, -0.48303494])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">randnorms</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">21</span><span class="p">);</span>
+<span class="c1">#as you can see, the distribution of these randomly generated numbers is normally distributed and centred on zero</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/68c833d5f008aa6e30f2083131126c1618d90e7312802b36dfb94a93dea7cfe1.png" src="_images/68c833d5f008aa6e30f2083131126c1618d90e7312802b36dfb94a93dea7cfe1.png" />
+</div>
+</div>
+<p>#### <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code> function allows us to randomly choose from elements of an array - this is particularly useful for things like bootstrapping. This function takes a few parameters:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.random.choice(array,</span> <span class="pre">size,</span> <span class="pre">replace,</span> <span class="pre">p)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code>: this is the array that you want to sample from</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: the number of samples you want to draw</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace</span></code>: whether we sample with replacement (i.e. you can sample the same element twice) or without replacement (no duplicates)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span></code>: the probability associated with an element</p>
+<ul>
+<li><p><strong>this is not useful for you now and can be ignored</strong>. By ignoring it, by default each element of your array is equally likely to be sampled.</p></li>
+<li><p>if you set something for p (it must be an array of the same length as your array) then it assigns a probability to each element so you can vary how likely something is to be sampled</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samp_randnorms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">randnorms</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1">#takes 200 random samples from our normally distributed, randomly generated numbers</span>
+<span class="n">display</span><span class="p">(</span><span class="n">samp_randnorms</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samp_randnorms</span><span class="p">);</span> <span class="c1">#this sample will be roughly normally distributed because our parent distribution is Normal.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.44319356, -1.08209552, -0.48303494, -0.20046917,  0.15510191,
+       -0.63747085, -1.32850728,  1.09102103, -0.29201184,  0.26282167,
+        1.5536981 , -0.81021613,  1.03252248, -0.24121646,  0.25466204])
+</pre></div>
+</div>
+<img alt="_images/7198d877f55b5e19463c9633397dab78807205c3151bc18e75695b01711da208.png" src="_images/7198d877f55b5e19463c9633397dab78807205c3151bc18e75695b01711da208.png" />
+</div>
+</div>
+</section>
+<section id="np-random-shuffle">
+<h3><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code><a class="headerlink" href="#np-random-shuffle" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>this function can be used to randomly shuffle the elements of an array</p></li>
+<li><p>this is nice if you want to do random permutations of an array and look at differences</p></li>
+</ul>
+<p>note: this function works <strong>in place</strong> – that means that you do not need to do e.g. <code class="docutils literal notranslate"><span class="pre">array</span> <span class="pre">=</span> <span class="pre">np.random.shuffle(array)</span></code>. Simply calling <code class="docutils literal notranslate"><span class="pre">np.random.shuffle(array)</span></code> will shuffle the array and you don’t need to set the variable to itself again</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4, 8, 2, 7, 9, 4, 3, 8, 3, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#rather than doing x = np.random.shuffle(x)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#this has shuffled it, randomising the elements in your array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 6, 7, 9, 5, 8, 6, 5, 8, 0])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="differences-between-data-types">
+<h2>Differences between data types<a class="headerlink" href="#differences-between-data-types" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>this is an extra section that just highlights the difference between the different data types mentioned so far, and how we can convert between them.</p></li>
+<li><p>some bits of this may be confusing. It is an extra section that isn’t immediately relevant, but good information to have.</p></li>
+</ul>
+</section>
+<section id="numpy-vs-pandas">
+<h2>Numpy vs. Pandas<a class="headerlink" href="#numpy-vs-pandas" title="Permalink to this heading">#</a></h2>
+<p>Numpy arrays are an ‘efficient’ way of storing data within python. The functions that work on them from within the numpy package are optimised to be quick. This doesn’t matter when handling small amounts of data, but when you are handling large datasets this quickly becomes incredibly important.</p>
+<p>Pandas is a package for dataframe manipulation and has two key data formats.</p>
+<ul class="simple">
+<li><p>1: Dataframe</p></li>
+<li><p>2: Series</p></li>
+</ul>
+<p>Pandas and numpy are designed to be overlapping, and complement each other well. Here I will highlight the differences (and similarities) between them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first, lets get a random sample of heights</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span><span class="mi">1</span> <span class="c1">#simulate some heights in metres (between 1 and 2 metres, let&#39;s say)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span>
+<span class="c1"># an array is basically just a list of numbers contained within one data structure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.1297021 , 1.78976438, 1.14794526, 1.64391754, 1.48808852,
+       1.81864771, 1.10944457, 1.56555431, 1.72126832, 1.53674952,
+       1.544403  , 1.4355711 , 1.34506898, 1.43584476, 1.22816796,
+       1.73304311, 1.94483411, 1.51089383, 1.15061696, 1.81864828,
+       1.26328792, 1.95152586, 1.22871931, 1.21489481, 1.84477962,
+       1.83601856, 1.15165385, 1.60018284, 1.33922026, 1.7887086 ,
+       1.8568366 , 1.04931024, 1.96911527, 1.84336203, 1.70804633,
+       1.52591916, 1.91526118, 1.15723016, 1.7945069 , 1.67290041,
+       1.43886242, 1.7336805 , 1.61668215, 1.18590251, 1.43081923,
+       1.6290099 , 1.63178879, 1.92623912, 1.7403184 , 1.83740908])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Numpy arrays can be converted to heights very easily, by creating a new dataframe from the array. We can do this and see what it looks like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heights_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heights_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.129702</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.789764</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.147945</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.643918</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.488089</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>by default it just creates a dataframe with as many rows as there are items in heights (50), and there is only one column (which has no name, because we didn’t set one. Let’s set one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">heights_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">heights_df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.129702</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.789764</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.147945</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.643918</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.488089</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we had the heights as a numpy array, we didn’t really have much to help us know what is going on. With dataframes, we can put as much data as we want in (they can have different formats too, like strings or numbers or booleans) and assign headers that let us know what is contained within a column. This lets us store lots of information about individual observations in our dataset very clearly).</p>
+<p>Dataframes are different to numpy arrays. A dataframe is basically an excel sheet within python. Each column can have a header (like in excel) and it looks like a big table. An array is just a list of information one after the other. Sometimes we want things in dataframes, sometimes we want things in numpy arrays.</p>
+<section id="pandas-series">
+<h3>pandas series<a class="headerlink" href="#pandas-series" title="Permalink to this heading">#</a></h3>
+<p>When we take a single column from a dataframe, it is no longer a dataframe. Pandas call it a <em>Series</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">heights_df</span><span class="o">.</span><span class="n">height</span><span class="p">))</span>
+<span class="n">heights_df</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.129702
+1    1.789764
+2    1.147945
+3    1.643918
+4    1.488089
+Name: height, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>A pandas series and a numpy array are very, very similar. As we can see, it is just a list of the values for that column. Pandas series and numpy arrays have slightly different functions built in. You can use a pandas series as the input to any numpy function and it will basically make it into a numpy array, do the function, then output a numpy array.</p>
+<p>Because Pandas structures and Numpy arrays are two different data structures, they have slightly different syntax for doing things. For example:</p>
+<ul class="simple">
+<li><p>If you want to sample a dataframe randomly, you can use <code class="docutils literal notranslate"><span class="pre">df.sample(n</span> <span class="pre">=</span> <span class="pre">10)</span></code> to randomly select 10 rows. If you wanted to randomly sample a numpy array, you would need to use <code class="docutils literal notranslate"><span class="pre">np.random.choice(array,</span> <span class="pre">10)</span></code>.</p></li>
+<li><p>If you wanted to get the median, you would use <code class="docutils literal notranslate"><span class="pre">df.median()</span></code>, whereas to get the median of a numpy array you need to use <code class="docutils literal notranslate"><span class="pre">np.median(array)</span></code>.</p></li>
+<li><p>If you wanted to get the unique values for a dataframe column you would use <code class="docutils literal notranslate"><span class="pre">df.column.unique()</span></code>. For a numpy array, you would use <code class="docutils literal notranslate"><span class="pre">np.unique(array)</span></code>.</p></li>
+</ul>
+<p>Broadly speaking, there are equivalent ways of doing things between the two data structures, but they are slightly different.</p>
+<p>### Moving between pandas and numpy</p>
+<p>As the two packages are similar, we can move between them pretty easily.</p>
+</section>
+<section id="going-from-numpy-pandas">
+<h3>Going from Numpy -&gt; Pandas<a class="headerlink" href="#going-from-numpy-pandas" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>we can create a dataframe from an array simply by calling:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataframe</span> <span class="pre">=</span> <span class="pre">pd.DataFrame(array,</span> <span class="pre">columns</span> <span class="pre">=</span> <span class="pre">['list',</span> <span class="pre">'of',</span> <span class="pre">'column',</span> <span class="pre">'names'])</span></code></p></li>
+<li><p>the list of column names needs to be as long as the number of columns in your array if it is a 2-D array</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="going-from-pandas-numpy">
+<h3>Going from Pandas -&gt; Numpy<a class="headerlink" href="#going-from-pandas-numpy" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>we can turn a dataframe into a numpy array by calling:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">df.to_numpy()</span></code></p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>length</th>
+      <th>length2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cucumber</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>4</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>orange</td>
+      <td>fruit</td>
+      <td>orange</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>banana</td>
+      <td>fruit</td>
+      <td>yellow</td>
+      <td>6</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwi</td>
+      <td>fruit</td>
+      <td>brown</td>
+      <td>2</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;lettuce&#39;, &#39;veg&#39;, &#39;green&#39;, 1, 12],
+       [&#39;cucumber&#39;, &#39;veg&#39;, &#39;green&#39;, 4, 3],
+       [&#39;orange&#39;, &#39;fruit&#39;, &#39;orange&#39;, 5, 12],
+       [&#39;banana&#39;, &#39;fruit&#39;, &#39;yellow&#39;, 6, 10],
+       [&#39;kiwi&#39;, &#39;fruit&#39;, &#39;brown&#39;, 2, 19],
+       [&#39;strawberry&#39;, &#39;fruit&#39;, &#39;red&#39;, 4, 11],
+       [&#39;onion&#39;, &#39;veg&#39;, &#39;brown&#39;, 3, 6],
+       [&#39;carrot&#39;, &#39;veg&#39;, &#39;orange&#39;, 0, 4],
+       [&#39;potato&#39;, &#39;veg&#39;, &#39;white&#39;, 1, 13],
+       [&#39;lychee&#39;, &#39;fruit&#39;, &#39;white&#39;, 4, 18],
+       [&#39;plum&#39;, &#39;fruit&#39;, &#39;purple&#39;, 3, 4],
+       [&#39;apple&#39;, &#39;fruit&#39;, &#39;green&#39;, 2, 17]], dtype=object)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, this converts the 12 x 5 dataframe into a 12 x 5 numpy array, where each row of the numpy array was a row of the dataframe. We lose the header information doing this, so have to try to guess it (another benefit to pandas dataframes!</p>
+<p>We can also take individual columns from our dataframe and turn them into a numpy array. This is used quite commonly when you need just the one variable and want to do something with it</p>
+<p>To do this, we would do: <code class="docutils literal notranslate"><span class="pre">df.column_name.to_numpy()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">length2</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([12,  3, 12, 10, 19, 11,  6,  4, 13, 18,  4, 17])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">length2</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span> <span class="c1">#and we can also make individual columns into lists if you wanted to</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 3, 12, 10, 19, 11, 6, 4, 13, 18, 4, 17]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Coding support sheet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-functions">Pandas Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-head-and-df-tail"><code class="docutils literal notranslate"><span class="pre">df.head()</span></code> and <code class="docutils literal notranslate"><span class="pre">df.tail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-columns"><code class="docutils literal notranslate"><span class="pre">df.columns</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#query-allows-us-to-filter-a-dataframe-and-get-only-rows-where-a-condition-is-met">query allows us to <em>filter</em> a dataframe and get only rows where a condition is met</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-columns">Creating new columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-assign">Using <code class="docutils literal notranslate"><span class="pre">df.assign</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-from-a-dataframe-e-g-if-bootstrapping">Sampling from a dataframe (e.g. if bootstrapping)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-data">Grouping data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregating-data">Aggregating data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-functions">Numpy functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-arrays">Describing arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-in-arrays">Searching in arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-where"><code class="docutils literal notranslate"><span class="pre">np.where</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-statements-in-numpy">Logical statements in numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-and"><code class="docutils literal notranslate"><span class="pre">np.logical_and</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-or"><code class="docutils literal notranslate"><span class="pre">np.logical_or</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#np-logical-not"><code class="docutils literal notranslate"><span class="pre">np.logical_not</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-numpy-random">Using <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randint"><code class="docutils literal notranslate"><span class="pre">np.random.randint</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-random"><code class="docutils literal notranslate"><span class="pre">np.random.random</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-randn"><code class="docutils literal notranslate"><span class="pre">np.random.randn</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#np-random-shuffle"><code class="docutils literal notranslate"><span class="pre">np.random.shuffle</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-data-types">Differences between data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-vs-pandas">Numpy vs. Pandas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-series">pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-numpy-pandas">Going from Numpy -&gt; Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#going-from-pandas-numpy">Going from Pandas -&gt; Numpy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
