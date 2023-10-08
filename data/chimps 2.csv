@@ -1,0 +1,20 @@
+chimp,group,yawns,age3
+13,Baboons,2,young
+12,Baboons,1,young
+14,Baboons,1,young
+10,Baboons,2,middle
+11,Baboons,0,old
+15,"Control (human, no yawn)",0,young
+16,"Control (human, no yawn)",2,young
+19,"Control (human, no yawn)",1,middle
+18,"Control (human, no yawn)",0,old
+17,"Control (human, no yawn)",1,old
+4,Familiar humans,5,young
+5,Familiar humans,3,middle
+2,Familiar humans,4,middle
+3,Familiar humans,2,old
+1,Familiar humans,3,old
+7,Unfamiliar humans,3,young
+9,Unfamiliar humans,5,middle
+6,Unfamiliar humans,4,middle
+8,Unfamiliar humans,3,old

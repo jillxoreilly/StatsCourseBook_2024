@@ -1,0 +1,1001 @@
+﻿happy,ladder,sex,marital,educ,work,income,region,age,leftout
+0,3,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,South East,36,Agree
+7,7,Male,Single,Lower secondary or below,Employed,Low,South East,53,Disagree
+3,10,Male,Single,Tertiary education,Employed,Medium-high,North West,60,Disagree
+5,7,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,East of England,41,Disagree
+9,8,Male,Married/living with a partner,Tertiary education,Other,,London,70,Neither agree nor disagree
+2,5,Female,Married/living with a partner,Lower secondary or below,Employed,Low,Yorkshire and the Humber,54,Strongly agree
+8,4,Female,Single,Upper secondary education,Other,,South West,75,Agree
+9,8,Female,Married/living with a partner,Tertiary education,Other,High,South East,73,Strongly disagree
+5,2,Female,Single,Lower secondary or below,Employed,Low,West Midlands,74,Neither agree nor disagree
+10,6,Male,Single,Lower secondary or below,Other,Medium-high,North West,54,Strongly agree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,High,South East,25,Disagree
+7,7,Female,Married/living with a partner,Tertiary education,Employed,,London,36,Disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,,South West,43,Disagree
+5,6,Male,Married/living with a partner,Upper secondary education,Employed,,South East,50,Neither agree nor disagree
+0,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Yorkshire and the Humber,75,Agree
+6,3,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,24,Neither agree nor disagree
+6,99,Male,Married/living with a partner,Tertiary education,Employed,High,London,37,
+1,6,Female,Single,Upper secondary education,Employed,Low,South West,30,Strongly agree
+8,5,Female,Married/living with a partner,Tertiary education,Other,Low-medium,North West,79,Disagree
+10,7,Female,Married/living with a partner,Upper secondary education,Other,,West Midlands,75,Strongly disagree
+5,99,Male,Married/living with a partner,Upper secondary education,Employed,,North East,30,Neither agree nor disagree
+9,7,Male,Married/living with a partner,Tertiary education,Other,Medium-high,South West,71,Strongly disagree
+7,3,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,26,Agree
+6,6,Female,Married/living with a partner,Upper secondary education,Employed,High,North West,38,Disagree
+5,7,Female,Married/living with a partner,Lower secondary or below,Employed,Medium-high,South West,39,Neither agree nor disagree
+5,6,Female,Single,Upper secondary education,Full time student,,East Midlands,20,Disagree
+5,6,Male,Single,Upper secondary education,Other,Low,Yorkshire and the Humber,61,Agree
+9,99,Female,Single,Upper secondary education,Full time student,High,East of England,21,Strongly disagree
+7,6,Male,Single,Tertiary education,Employed,Medium-high,South East,47,Disagree
+6,7,Male,Single,Tertiary education,Employed,Medium-high,North West,28,Strongly agree
+9,8,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,66,Disagree
+10,9,Male,Married/living with a partner,Tertiary education,Employed,,South East,79,Strongly disagree
+2,6,Male,Married/living with a partner,Upper secondary education,Other,Low,East of England,76,Agree
+8,6,Female,Married/living with a partner,Upper secondary education,Employed,Low,East of England,48,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Lower secondary or below,Employed,,East of England,55,Strongly disagree
+10,99,Male,Married/living with a partner,Upper secondary education,Employed,High,North West,45,Disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,East Midlands,63,Disagree
+4,7,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,36,Disagree
+7,6,Male,,Lower secondary or below,Employed,,East Midlands,57,Strongly disagree
+7,8,Female,Single,Upper secondary education,Full time student,,Scotland,21,Disagree
+2,6,Male,Single,Tertiary education,Unemployed/not working,Low,London,54,Agree
+6,6,Male,Married/living with a partner,Upper secondary education,Employed,High,London,54,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,London,54,Disagree
+7,8,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,34,Neither agree nor disagree
+8,6,Female,Single,Lower secondary or below,Other,,East Midlands,71,Neither agree nor disagree
+6,7,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,53,Neither agree nor disagree
+6,7,Male,Married/living with a partner,Upper secondary education,Other,,South West,71,Neither agree nor disagree
+10,7,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,South East,77,Strongly disagree
+5,7,Female,Married/living with a partner,Tertiary education,Employed,,South East,54,Neither agree nor disagree
+9,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,South West,68,Agree
+7,4,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,North West,58,Agree
+6,5,Male,Single,Upper secondary education,Other,Low-medium,South East,69,Neither agree nor disagree
+10,7,Male,Single,Lower secondary or below,Employed,Low,Yorkshire and the Humber,40,Neither agree nor disagree
+8,8,Female,Single,Tertiary education,Employed,High,North East,30,Agree
+9,6,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,67,Disagree
+8,9,Male,Married/living with a partner,Tertiary education,Employed,,London,46,Neither agree nor disagree
+5,3,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,West Midlands,49,Neither agree nor disagree
+7,4,Female,Single,Upper secondary education,Other,Low,London,67,Strongly disagree
+7,7,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,South West,53,Disagree
+6,7,Female,Married/living with a partner,Tertiary education,Employed,High,South East,39,Strongly disagree
+7,99,Male,Divorced/Separated,Upper secondary education,Employed,,London,20,Strongly disagree
+3,7,Female,Married/living with a partner,Upper secondary education,Employed,Low,Yorkshire and the Humber,57,Disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Other,Medium-high,North West,62,Disagree
+7,7,Female,Single,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,31,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Scotland,69,Neither agree nor disagree
+6,4,Female,Single,Upper secondary education,Employed,High,Scotland,26,Disagree
+0,1,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,West Midlands,51,Strongly agree
+5,5,Female,Married/living with a partner,Tertiary education,Employed,High,London,54,Disagree
+9,9,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,West Midlands,51,Disagree
+3,5,Female,Single,Lower secondary or below,Unemployed/not working,Low,East Midlands,61,Disagree
+2,3,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,London,57,Agree
+6,11,Male,Married/living with a partner,Upper secondary education,Full time student,Low-medium,London,19,Strongly agree
+8,9,Male,Married/living with a partner,Tertiary education,Other,High,South East,66,Strongly disagree
+7,8,Female,Single,Upper secondary education,Unemployed/not working,,East of England,51,Strongly disagree
+7,8,Male,Married/living with a partner,Tertiary education,Employed,,West Midlands,72,Strongly disagree
+9,7,Female,Married/living with a partner,Upper secondary education,Other,Medium-high,London,68,Strongly disagree
+6,7,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,Northern Ireland,59,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Other,High,London,65,Strongly disagree
+8,8,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,Yorkshire and the Humber,56,Strongly disagree
+0,2,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,46,Agree
+8,9,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,South West,32,Strongly disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,South East,47,Strongly disagree
+2,6,Male,Married/living with a partner,Lower secondary or below,Other,Medium-high,East Midlands,68,Agree
+10,99,Male,Married/living with a partner,Tertiary education,Other,,East Midlands,71,Strongly disagree
+10,10,Male,Single,Tertiary education,Employed,High,London,32,Strongly disagree
+7,7,Female,Married/living with a partner,Tertiary education,Other,Medium-high,West Midlands,62,Strongly disagree
+7,6,Female,Single,Tertiary education,Full time student,Low-medium,Yorkshire and the Humber,24,Strongly disagree
+7,99,Male,Married/living with a partner,Tertiary education,Employed,,London,48,Neither agree nor disagree
+7,5,Female,Married/living with a partner,Lower secondary or below,Employed,Medium-high,North West,58,Disagree
+10,8,Female,Single,Tertiary education,Employed,,Scotland,33,Disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,High,East Midlands,50,Neither agree nor disagree
+4,6,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,South West,48,Agree
+8,9,Female,Married/living with a partner,Lower secondary or below,Employed,Medium-high,North West,22,Agree
+8,7,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,East Midlands,61,Strongly disagree
+5,3,Female,Single,Upper secondary education,Unemployed/not working,Low,West Midlands,49,Agree
+5,99,Female,Married/living with a partner,Upper secondary education,Employed,,Yorkshire and the Humber,49,
+5,99,Female,Single,Upper secondary education,Employed,,North East,23,Agree
+7,8,Male,Single,Upper secondary education,Employed,High,Wales,24,Disagree
+5,5,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,Yorkshire and the Humber,37,Neither agree nor disagree
+6,7,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,West Midlands,56,Disagree
+9,3,Female,Married/living with a partner,Upper secondary education,Employed,,South East,27,Disagree
+7,7,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,South East,31,Disagree
+8,8,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,East Midlands,64,Strongly disagree
+6,8,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North East,48,Neither agree nor disagree
+7,6,Female,Married/living with a partner,Tertiary education,Other,Low,Scotland,72,Strongly disagree
+5,8,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,46,Disagree
+8,7,Female,Married/living with a partner,Tertiary education,Employed,High,London,24,Disagree
+4,6,Female,Married/living with a partner,Tertiary education,Employed,,East of England,37,Strongly disagree
+8,6,Female,Single,Tertiary education,Employed,Low-medium,South East,27,Disagree
+7,7,Male,Married/living with a partner,Tertiary education,Other,Low-medium,North West,62,Strongly disagree
+7,8,Male,Married/living with a partner,Upper secondary education,Employed,,North West,52,Disagree
+7,5,Female,Single,Tertiary education,Full time student,,South West,20,Neither agree nor disagree
+4,4,Female,Married/living with a partner,Tertiary education,Employed,High,North West,57,Disagree
+3,7,Male,Married/living with a partner,Tertiary education,Employed,,North West,60,Agree
+9,8,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,East of England,66,Strongly disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,Wales,39,Strongly disagree
+5,8,Female,Single,Tertiary education,Employed,Medium-high,South East,29,Neither agree nor disagree
+3,5,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,West Midlands,64,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Tertiary education,Employed,High,London,41,Disagree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,South East,56,Disagree
+0,99,Female,Single,Lower secondary or below,Employed,,South West,63,Neither agree nor disagree
+8,8,Female,Married/living with a partner,Tertiary education,Employed,High,East of England,28,Strongly disagree
+5,9,Female,Married/living with a partner,Upper secondary education,Employed,High,London,34,Strongly disagree
+9,6,Female,Single,Upper secondary education,Full time student,,London,19,Disagree
+8,8,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,South East,54,Disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Employed,,North West,54,Strongly disagree
+3,9,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,North West,37,Agree
+0,7,Male,Married/living with a partner,Tertiary education,Employed,High,East Midlands,37,Agree
+8,8,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,West Midlands,59,Disagree
+7,99,Female,Single,Upper secondary education,Employed,,Scotland,55,Neither agree nor disagree
+6,9,Male,Married/living with a partner,Tertiary education,Employed,,Scotland,33,Neither agree nor disagree
+5,6,Female,Single,Tertiary education,Other,,Yorkshire and the Humber,70,Disagree
+9,7,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,North East,65,Disagree
+8,8,Female,Married/living with a partner,Upper secondary education,Employed,High,Scotland,60,Strongly disagree
+2,6,Female,Single,Tertiary education,Employed,Low-medium,North West,37,Neither agree nor disagree
+6,6,Male,Single,Upper secondary education,Full time student,Medium-high,East of England,19,Disagree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,,West Midlands,56,Disagree
+3,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Yorkshire and the Humber,35,Disagree
+4,6,Female,Single,Tertiary education,Employed,,South West,23,Neither agree nor disagree
+3,4,Female,Single,Upper secondary education,Employed,Low-medium,East of England,65,Agree
+2,3,Female,Married/living with a partner,Upper secondary education,Employed,High,Yorkshire and the Humber,39,Agree
+9,6,Female,Married/living with a partner,Upper secondary education,Other,Low,South West,62,Disagree
+0,6,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,45,Neither agree nor disagree
+7,6,Male,Single,Tertiary education,Employed,High,London,30,Strongly disagree
+6,7,Female,Single,Lower secondary or below,Employed,Low,West Midlands,64,Disagree
+7,6,Female,Single,Tertiary education,Unemployed/not working,,Yorkshire and the Humber,29,Neither agree nor disagree
+5,7,Female,Single,Lower secondary or below,Full time student,,London,24,Neither agree nor disagree
+7,9,Female,Married/living with a partner,Tertiary education,Employed,High,London,30,Strongly disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Other,,East Midlands,65,Neither agree nor disagree
+6,6,Female,Single,Tertiary education,Employed,,Yorkshire and the Humber,29,Disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,High,Wales,44,Strongly disagree
+5,1,Female,Married/living with a partner,Upper secondary education,Other,Low,South East,80,
+9,7,Male,Single,Upper secondary education,Other,Low-medium,North East,63,Strongly disagree
+3,3,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,North West,60,Neither agree nor disagree
+7,6,Female,Married/living with a partner,Tertiary education,Other,Low-medium,Wales,64,Disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,High,South East,41,Disagree
+6,8,Male,Married/living with a partner,Tertiary education,Other,Low-medium,East Midlands,67,Disagree
+2,5,Female,Single,Upper secondary education,Unemployed/not working,Low-medium,North West,26,Agree
+6,7,Female,Single,Upper secondary education,Employed,Low,South East,59,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Medium-high,South East,55,Disagree
+3,4,Female,Married/living with a partner,Tertiary education,Full time student,Low-medium,Wales,41,Neither agree nor disagree
+4,8,Female,Single,Lower secondary or below,Employed,Medium-high,East Midlands,30,Neither agree nor disagree
+2,7,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,57,Agree
+8,7,Male,Single,Tertiary education,Employed,Low-medium,London,26,Disagree
+6,7,Female,Married/living with a partner,Tertiary education,Employed,,South West,31,Strongly disagree
+8,8,Female,Single,Upper secondary education,Employed,Medium-high,London,70,Strongly disagree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,High,Wales,60,Disagree
+6,6,Male,Married/living with a partner,Tertiary education,Employed,High,Wales,36,Neither agree nor disagree
+6,6,Male,Married/living with a partner,Tertiary education,Employed,High,Wales,40,Disagree
+5,10,Male,Married/living with a partner,Tertiary education,Employed,High,Scotland,54,Neither agree nor disagree
+5,7,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Wales,33,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Other,High,Scotland,55,Disagree
+9,6,Male,Single,Upper secondary education,Full time student,,Scotland,18,Neither agree nor disagree
+0,5,Female,Single,Lower secondary or below,Other,,North West,73,Agree
+8,8,Male,Single,Tertiary education,Employed,High,South East,44,Disagree
+6,6,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,East of England,58,Strongly disagree
+4,5,Female,Single,Tertiary education,Employed,,London,26,Neither agree nor disagree
+7,6,Male,Single,Tertiary education,Full time student,,West Midlands,21,Agree
+5,6,Male,Divorced/Separated,Lower secondary or below,Other,Low,Scotland,75,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,East of England,57,Strongly disagree
+8,7,Female,Married/living with a partner,Lower secondary or below,Employed,High,Wales,34,Disagree
+10,6,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,Yorkshire and the Humber,73,Strongly disagree
+6,6,Female,Single,Upper secondary education,Employed,,Wales,28,Disagree
+9,2,Male,Single,Lower secondary or below,Employed,Medium-high,East of England,54,Agree
+8,7,Female,Single,Lower secondary or below,Other,,Wales,68,Disagree
+7,99,Female,Married/living with a partner,Lower secondary or below,Employed,High,North East,63,Strongly disagree
+5,4,Male,Married/living with a partner,Lower secondary or below,Other,,East Midlands,63,Disagree
+6,6,Male,Married/living with a partner,Tertiary education,Employed,High,South East,27,Strongly agree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,West Midlands,28,Neither agree nor disagree
+1,6,Female,Single,Lower secondary or below,Other,,South West,85,Neither agree nor disagree
+3,6,Male,Married/living with a partner,Upper secondary education,Employed,High,North West,33,Disagree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,44,Disagree
+0,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,London,67,Disagree
+0,7,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,North East,58,Strongly agree
+8,8,Female,Married/living with a partner,Upper secondary education,Other,Low,Scotland,66,Strongly disagree
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,London,31,Neither agree nor disagree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,South West,60,Disagree
+3,8,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,West Midlands,63,Disagree
+8,99,Female,Married/living with a partner,Upper secondary education,Employed,,East of England,29,Neither agree nor disagree
+7,6,Male,Single,Tertiary education,Other,Low-medium,East of England,64,Disagree
+3,4,Male,Single,Tertiary education,Employed,Low,North East,52,Agree
+4,5,Male,Single,Tertiary education,Employed,Low-medium,South East,33,Neither agree nor disagree
+7,5,Male,Single,Tertiary education,Other,Low-medium,South East,73,Disagree
+5,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,South West,45,Agree
+10,99,Male,Married/living with a partner,Upper secondary education,Employed,,Wales,52,Strongly disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,,South West,57,Neither agree nor disagree
+3,8,Male,Single,Tertiary education,Employed,,East Midlands,48,Disagree
+6,8,Female,Married/living with a partner,Lower secondary or below,Other,High,South East,54,Agree
+10,99,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,South East,60,Neither agree nor disagree
+5,5,Female,Single,Upper secondary education,Employed,,East of England,22,Agree
+7,4,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,West Midlands,30,Disagree
+7,7,Male,Married/living with a partner,Tertiary education,Other,,South East,73,Disagree
+7,9,Female,Single,Tertiary education,Employed,Medium-high,East Midlands,39,Neither agree nor disagree
+5,3,Female,Married/living with a partner,Upper secondary education,Employed,,North West,33,Agree
+1,2,Female,Single,Tertiary education,Employed,Low,West Midlands,37,Strongly agree
+3,8,Female,Married/living with a partner,Tertiary education,Other,,South East,60,Disagree
+6,5,Female,Single,Lower secondary or below,Unemployed/not working,,South East,29,Neither agree nor disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Employed,High,South West,53,Agree
+5,6,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,Yorkshire and the Humber,50,Neither agree nor disagree
+10,7,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,London,60,Strongly disagree
+7,6,Female,Married/living with a partner,Tertiary education,Other,Medium-high,London,63,Disagree
+7,8,Female,Single,Tertiary education,Employed,High,London,36,Disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,High,North West,58,Disagree
+5,6,Male,Single,Tertiary education,Employed,,South West,57,Neither agree nor disagree
+7,1,Male,Married/living with a partner,Upper secondary education,Other,Low,South West,60,Agree
+6,7,Male,Married/living with a partner,Upper secondary education,Employed,High,North East,46,Disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,High,London,37,Neither agree nor disagree
+10,9,Female,Married/living with a partner,Tertiary education,Other,High,West Midlands,63,Strongly disagree
+6,6,Female,Single,Tertiary education,Employed,Medium-high,Scotland,45,Neither agree nor disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,London,29,Disagree
+5,7,Female,Married/living with a partner,Tertiary education,Full time student,,London,22,Disagree
+2,9,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low-medium,West Midlands,25,Disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,31,Disagree
+3,6,Male,Married/living with a partner,Tertiary education,Employed,High,North West,32,Disagree
+10,6,Female,Married/living with a partner,Lower secondary or below,Other,,Wales,72,Disagree
+10,8,Male,Married/living with a partner,Tertiary education,Employed,High,London,31,Disagree
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,East of England,42,Neither agree nor disagree
+8,3,Male,Married/living with a partner,Upper secondary education,Other,Low,North West,64,Disagree
+9,4,Male,Married/living with a partner,Tertiary education,Other,Medium-high,Scotland,65,Agree
+7,7,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,North East,33,Strongly disagree
+2,5,Male,Married/living with a partner,Upper secondary education,Employed,High,South West,61,Agree
+5,7,Male,Married/living with a partner,Tertiary education,Employed,,North West,81,Disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Employed,,Scotland,49,Strongly disagree
+5,8,Male,Married/living with a partner,Upper secondary education,Employed,High,Yorkshire and the Humber,57,Disagree
+10,6,Male,Married/living with a partner,Lower secondary or below,Employed,High,North West,48,Strongly disagree
+10,9,Male,Married/living with a partner,Upper secondary education,Employed,High,South West,39,Strongly disagree
+0,5,Female,Single,Lower secondary or below,Other,Low,East of England,72,Agree
+7,5,Female,Single,Tertiary education,Employed,Medium-high,South East,26,Neither agree nor disagree
+6,6,Male,Single,Upper secondary education,Employed,Medium-high,South West,44,Disagree
+2,4,Male,Married/living with a partner,Tertiary education,Employed,High,West Midlands,27,Strongly disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,North West,73,Disagree
+8,5,Female,Married/living with a partner,Upper secondary education,Other,,West Midlands,59,Neither agree nor disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,,Wales,43,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,West Midlands,35,Disagree
+8,7,Female,Single,Lower secondary or below,Other,Low,East of England,81,Disagree
+9,7,Male,Married/living with a partner,Tertiary education,Employed,High,West Midlands,63,Strongly disagree
+9,7,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,,South West,49,Disagree
+8,8,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,London,29,Strongly disagree
+6,9,Female,Single,Tertiary education,Full time student,Low,South West,24,Strongly disagree
+8,9,Female,Married/living with a partner,Upper secondary education,Employed,Low,Scotland,62,Strongly disagree
+8,5,Male,Married/living with a partner,Tertiary education,Employed,High,North West,30,Disagree
+5,99,Male,Single,Tertiary education,Employed,High,Scotland,53,Neither agree nor disagree
+6,7,Male,Married/living with a partner,Tertiary education,Other,,East Midlands,84,Disagree
+7,7,Female,Married/living with a partner,Tertiary education,Employed,High,West Midlands,27,Disagree
+2,7,Female,Married/living with a partner,Upper secondary education,Employed,High,East of England,59,Disagree
+9,8,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,South East,64,Strongly disagree
+8,99,Female,Single,Upper secondary education,Other,,East of England,67,Neither agree nor disagree
+6,6,Female,Single,Tertiary education,Full time student,Low,Scotland,22,Disagree
+5,7,Male,Single,Tertiary education,Employed,High,East of England,25,Disagree
+6,6,Male,Married/living with a partner,Tertiary education,Unemployed/not working,Medium-high,South East,39,Disagree
+5,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,South East,33,Neither agree nor disagree
+0,1,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,East of England,54,Strongly agree
+4,5,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,Wales,71,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Employed,Low,South West,43,Disagree
+9,7,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,51,Disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Employed,,East of England,57,Neither agree nor disagree
+6,5,Male,Single,Upper secondary education,Employed,,Yorkshire and the Humber,58,Neither agree nor disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,East Midlands,38,Disagree
+8,8,Male,Single,Tertiary education,Employed,High,London,50,Disagree
+6,7,Female,Married/living with a partner,Tertiary education,Full time student,High,East of England,26,Disagree
+6,8,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,South East,64,Disagree
+2,3,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,Scotland,57,Agree
+0,6,Female,Married/living with a partner,Upper secondary education,Employed,,West Midlands,36,Strongly agree
+9,10,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,East of England,45,Strongly disagree
+6,9,Female,Married/living with a partner,Tertiary education,Employed,High,South East,30,Disagree
+6,7,Female,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,36,Neither agree nor disagree
+7,6,Male,Single,Tertiary education,Employed,Medium-high,South West,35,Disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,High,South East,32,Disagree
+6,7,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,Scotland,32,Disagree
+2,6,Male,Divorced/Separated,Tertiary education,Other,,South West,61,Neither agree nor disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Employed,,Scotland,65,Neither agree nor disagree
+3,4,Female,Married/living with a partner,Lower secondary or below,Employed,Low,East of England,54,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Other,Low,North West,70,Neither agree nor disagree
+10,3,Female,Single,Tertiary education,Employed,Low-medium,East of England,29,Agree
+7,6,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,55,Neither agree nor disagree
+4,5,Female,Single,Tertiary education,Employed,High,Yorkshire and the Humber,34,Agree
+8,6,Female,Single,Upper secondary education,Employed,Low-medium,Wales,30,Strongly disagree
+10,8,Female,Single,Upper secondary education,Other,,East Midlands,63,Agree
+2,6,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,East of England,62,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Other,,South East,65,Disagree
+7,4,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low,South East,60,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,45,Disagree
+5,7,Female,Married/living with a partner,Upper secondary education,Employed,High,East of England,40,Strongly disagree
+10,9,Male,Married/living with a partner,Tertiary education,Other,Low-medium,East Midlands,70,Strongly disagree
+8,7,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,South West,70,Strongly disagree
+8,8,Female,Married/living with a partner,Upper secondary education,Other,Low,Yorkshire and the Humber,65,Strongly disagree
+5,8,Female,Single,Tertiary education,Employed,High,London,43,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,East Midlands,56,Disagree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,South West,59,Disagree
+9,6,Female,Single,Upper secondary education,Employed,Low-medium,London,27,Disagree
+6,6,Male,Married/living with a partner,Lower secondary or below,Other,Medium-high,North West,83,Strongly disagree
+7,4,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,East of England,57,Agree
+8,5,Male,Single,Upper secondary education,Other,Low,North East,71,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,West Midlands,47,Disagree
+6,7,Male,Single,Tertiary education,Employed,Low-medium,North West,38,Disagree
+8,8,Female,Single,Upper secondary education,Employed,,East of England,26,Neither agree nor disagree
+4,7,Female,Single,Upper secondary education,Employed,,East of England,28,Disagree
+8,7,Female,Single,Tertiary education,Employed,,North West,24,Disagree
+7,7,Female,Married/living with a partner,Tertiary education,Other,Low-medium,Scotland,63,Strongly disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,Scotland,61,Neither agree nor disagree
+3,3,Female,Single,Upper secondary education,Unemployed/not working,,Scotland,39,Agree
+3,5,Male,Divorced/Separated,Upper secondary education,Unemployed/not working,,North East,29,Agree
+6,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,North East,37,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Tertiary education,Employed,High,London,54,Strongly disagree
+8,8,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,South East,58,Agree
+2,4,Female,Married/living with a partner,Lower secondary or below,Employed,Low,South West,65,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,53,Strongly disagree
+7,6,Male,Married/living with a partner,Lower secondary or below,Other,,Scotland,71,Disagree
+0,3,Female,Married/living with a partner,Upper secondary education,Employed,Low,East of England,40,Strongly agree
+5,2,Female,Single,Upper secondary education,Unemployed/not working,Low,North West,28,Agree
+6,7,Male,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,40,Disagree
+6,4,Male,Divorced/Separated,Lower secondary or below,Employed,Low-medium,North West,57,Agree
+8,6,Male,Married/living with a partner,Upper secondary education,Other,Low,South East,75,Disagree
+9,8,Female,Married/living with a partner,Tertiary education,Other,High,London,61,Disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Other,High,Yorkshire and the Humber,71,Strongly disagree
+6,4,Male,Single,Lower secondary or below,Other,Low-medium,South East,77,Strongly agree
+5,7,Female,Married/living with a partner,Lower secondary or below,Employed,High,East of England,61,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,North West,66,Disagree
+8,6,Female,Married/living with a partner,Tertiary education,Other,,East Midlands,63,Disagree
+7,5,Female,Married/living with a partner,Tertiary education,Employed,High,Scotland,32,Neither agree nor disagree
+5,99,Female,Single,Lower secondary or below,Employed,Low,East Midlands,38,Neither agree nor disagree
+0,6,Female,Single,Tertiary education,Unemployed/not working,,North West,36,Neither agree nor disagree
+8,6,Female,Single,Tertiary education,Unemployed/not working,,South East,21,Disagree
+7,7,Female,Married/living with a partner,Lower secondary or below,Other,Low,Yorkshire and the Humber,68,Disagree
+5,7,Female,Single,Upper secondary education,Employed,Medium-high,Scotland,36,Neither agree nor disagree
+7,8,Female,Single,Upper secondary education,Employed,Low-medium,East of England,55,Strongly disagree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,Wales,60,Neither agree nor disagree
+1,7,Male,Single,Upper secondary education,Unemployed/not working,Low,South East,56,Strongly agree
+8,6,Female,Married/living with a partner,Tertiary education,Other,,Scotland,71,Disagree
+5,4,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Medium-high,South West,40,Neither agree nor disagree
+8,7,Female,,Upper secondary education,Employed,,East of England,55,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Upper secondary education,Other,,South West,62,Disagree
+5,5,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low-medium,Yorkshire and the Humber,30,Disagree
+7,6,Female,Single,Tertiary education,Employed,Low-medium,South East,31,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Scotland,57,Strongly disagree
+6,7,Female,Single,Upper secondary education,Full time student,,Yorkshire and the Humber,22,Neither agree nor disagree
+8,7,Female,Married/living with a partner,Tertiary education,Other,Low-medium,North West,61,Disagree
+5,5,Female,Single,Upper secondary education,Unemployed/not working,Low,Wales,39,Strongly agree
+9,5,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,West Midlands,61,Disagree
+6,7,Female,Single,Tertiary education,Full time student,,Scotland,26,Disagree
+6,7,Male,Married/living with a partner,Tertiary education,Other,Low-medium,South East,58,Neither agree nor disagree
+6,6,Female,Single,Tertiary education,Other,Low-medium,London,78,Disagree
+4,7,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,Scotland,48,Disagree
+8,7,Female,Married/living with a partner,Tertiary education,Other,Low,Wales,62,Disagree
+7,9,Male,Married/living with a partner,Tertiary education,Employed,,East of England,60,Neither agree nor disagree
+3,7,Female,Single,Tertiary education,Full time student,Low,North East,26,Strongly disagree
+7,7,Male,Married/living with a partner,Tertiary education,Other,Medium-high,West Midlands,60,Disagree
+2,7,Male,Married/living with a partner,Tertiary education,Employed,,North West,55,Strongly agree
+1,3,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,West Midlands,62,Agree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,High,London,43,Disagree
+3,4,Female,Single,Upper secondary education,Unemployed/not working,Low,South West,34,Disagree
+8,9,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Yorkshire and the Humber,45,Strongly disagree
+8,6,Male,Married/living with a partner,Upper secondary education,Employed,High,Scotland,50,Neither agree nor disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,51,Neither agree nor disagree
+9,6,Female,Married/living with a partner,Tertiary education,Employed,High,East Midlands,37,Agree
+5,6,Male,Married/living with a partner,Upper secondary education,Employed,High,Yorkshire and the Humber,42,Strongly disagree
+3,7,Female,Married/living with a partner,Lower secondary or below,Other,Low,Scotland,68,Neither agree nor disagree
+7,7,Male,Married/living with a partner,Tertiary education,Other,High,South East,43,Disagree
+3,5,Female,Single,Tertiary education,Employed,Low,West Midlands,55,Agree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,,Scotland,53,Disagree
+5,7,Female,Married/living with a partner,Upper secondary education,Employed,High,West Midlands,58,Strongly agree
+6,7,Male,Single,Tertiary education,Employed,High,South West,50,Disagree
+5,99,Male,Married/living with a partner,Tertiary education,Employed,,South East,54,Strongly disagree
+8,8,Female,Married/living with a partner,Lower secondary or below,Other,Low,North West,75,Strongly disagree
+7,7,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,Wales,72,Strongly disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,High,South East,50,Neither agree nor disagree
+10,11,Male,Married/living with a partner,Tertiary education,Employed,High,South West,54,Strongly disagree
+10,99,Male,Married/living with a partner,Upper secondary education,Other,,South East,74,Strongly disagree
+6,7,Female,Single,Tertiary education,Employed,Medium-high,West Midlands,34,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,High,South East,49,Neither agree nor disagree
+8,6,Female,Single,Tertiary education,Other,Low,Wales,71,Neither agree nor disagree
+4,5,Female,Married/living with a partner,Upper secondary education,Employed,,South East,65,Neither agree nor disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,East of England,48,Disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Employed,,South East,56,Disagree
+4,5,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,South West,58,Strongly agree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,Yorkshire and the Humber,27,Neither agree nor disagree
+6,7,Female,Married/living with a partner,Upper secondary education,Employed,High,West Midlands,55,Disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Other,,North West,71,Strongly disagree
+0,6,Female,Single,Tertiary education,Unemployed/not working,,Scotland,47,Strongly agree
+7,8,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,South East,59,Strongly disagree
+5,5,Female,Single,Upper secondary education,Employed,Low-medium,North West,42,Agree
+6,6,Male,Married/living with a partner,Upper secondary education,Other,,Scotland,57,Disagree
+3,7,Male,Married/living with a partner,Upper secondary education,Employed,,West Midlands,57,Neither agree nor disagree
+4,7,Male,Single,Lower secondary or below,Other,Low,West Midlands,70,Disagree
+8,6,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,West Midlands,37,Neither agree nor disagree
+8,5,Female,Single,Upper secondary education,Employed,Low,East Midlands,30,Disagree
+8,99,Male,Married/living with a partner,Tertiary education,Employed,High,East Midlands,45,Neither agree nor disagree
+5,5,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,High,East of England,26,Disagree
+8,6,Female,Single,Upper secondary education,Other,Low-medium,Wales,71,Disagree
+2,8,Female,Married/living with a partner,Upper secondary education,Employed,,London,43,Agree
+7,5,Male,Single,Lower secondary or below,Employed,,Yorkshire and the Humber,39,Agree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,East of England,21,Disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Employed,,South East,28,Neither agree nor disagree
+8,8,Male,Married/living with a partner,Tertiary education,Employed,,Northern Ireland,45,Neither agree nor disagree
+10,3,Female,Married/living with a partner,Lower secondary or below,Other,,North West,76,Strongly disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Wales,68,Disagree
+7,7,Female,Single,Lower secondary or below,Employed,,East Midlands,24,Disagree
+6,3,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low-medium,South West,27,Agree
+4,6,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,49,Neither agree nor disagree
+6,7,Female,Married/living with a partner,Tertiary education,Employed,,South East,62,Disagree
+3,3,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,31,Agree
+8,7,Female,Married/living with a partner,Lower secondary or below,Other,,South East,71,Disagree
+5,8,Male,Married/living with a partner,Tertiary education,Other,Low-medium,South East,68,Disagree
+6,7,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,South East,35,Disagree
+6,5,Male,Married/living with a partner,Tertiary education,Employed,,South West,61,Disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,Scotland,59,Strongly disagree
+6,7,Female,Married/living with a partner,Tertiary education,Full time student,High,London,30,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,Yorkshire and the Humber,73,Strongly disagree
+6,8,Female,Married/living with a partner,Tertiary education,Employed,High,London,36,Disagree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,Northern Ireland,34,Neither agree nor disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low-medium,East of England,52,Strongly agree
+5,6,Female,Married/living with a partner,Lower secondary or below,Employed,Low,Wales,54,Disagree
+0,6,Male,Single,Upper secondary education,Employed,Low-medium,East Midlands,38,Agree
+2,4,Male,Single,Tertiary education,Employed,Low,South West,67,Agree
+3,7,Female,Single,Tertiary education,Employed,Medium-high,Wales,58,Strongly disagree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,,Yorkshire and the Humber,33,Disagree
+5,6,Male,Married/living with a partner,Tertiary education,Employed,High,North West,43,Neither agree nor disagree
+7,5,Male,Married/living with a partner,Tertiary education,Unemployed/not working,Low-medium,Scotland,23,Neither agree nor disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,71,Strongly disagree
+10,6,Female,Single,Upper secondary education,Other,,South East,69,Disagree
+7,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,South East,34,Agree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,West Midlands,37,Strongly disagree
+3,8,Male,Married/living with a partner,Tertiary education,Employed,High,North West,37,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Employed,,Wales,37,Disagree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,High,South East,28,Strongly disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,High,Wales,33,Disagree
+7,8,Female,Single,Upper secondary education,Other,Low-medium,London,68,Strongly disagree
+4,5,Male,Single,Tertiary education,Full time student,,North East,21,Agree
+5,8,Male,Married/living with a partner,Upper secondary education,Employed,High,North West,31,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,East Midlands,70,Disagree
+3,7,Female,Married/living with a partner,Tertiary education,Employed,,South West,30,Agree
+10,7,Male,Married/living with a partner,Tertiary education,Employed,,Wales,72,Strongly disagree
+6,99,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,51,Strongly disagree
+2,6,Male,Divorced/Separated,Upper secondary education,Unemployed/not working,,Scotland,52,Strongly agree
+7,6,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,Scotland,57,Disagree
+0,7,Female,Married/living with a partner,Tertiary education,Employed,,South East,37,Strongly agree
+7,7,Male,Married/living with a partner,Upper secondary education,Employed,High,East of England,61,Disagree
+4,5,Male,Single,Upper secondary education,Employed,Low-medium,West Midlands,44,Agree
+7,9,Male,Married/living with a partner,Tertiary education,Employed,High,London,27,Disagree
+5,3,Male,Married/living with a partner,Lower secondary or below,Other,Low,Scotland,73,Agree
+5,3,Female,Single,Upper secondary education,Unemployed/not working,,East of England,28,Agree
+0,5,Female,Single,Tertiary education,Employed,High,London,41,Agree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,High,North West,37,Agree
+8,7,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,London,54,Strongly disagree
+5,7,Female,Divorced/Separated,Tertiary education,Other,Low-medium,North East,70,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Tertiary education,Unemployed/not working,Low,Scotland,48,Neither agree nor disagree
+0,6,Male,Married/living with a partner,Tertiary education,Employed,,East Midlands,25,Agree
+2,6,Male,Single,Lower secondary or below,Unemployed/not working,Medium-high,Northern Ireland,54,Strongly disagree
+5,5,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Medium-high,South East,54,Agree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,38,Agree
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,High,Yorkshire and the Humber,49,Disagree
+8,3,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,,Northern Ireland,24,Strongly agree
+9,7,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Medium-high,North West,62,Neither agree nor disagree
+6,8,Female,Married/living with a partner,Lower secondary or below,Employed,High,London,66,Strongly disagree
+4,6,Female,Single,Upper secondary education,Employed,,Scotland,47,Disagree
+10,6,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,,West Midlands,42,Neither agree nor disagree
+8,7,Male,Single,Tertiary education,Other,,Scotland,73,Neither agree nor disagree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,High,East Midlands,28,Disagree
+5,8,Male,Married/living with a partner,Upper secondary education,Employed,High,South West,54,Strongly disagree
+2,4,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low-medium,Yorkshire and the Humber,49,Strongly agree
+8,8,Female,Married/living with a partner,Upper secondary education,Other,Low,North West,65,Disagree
+10,7,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,86,Disagree
+8,7,Female,Single,Tertiary education,Employed,High,Scotland,28,Disagree
+8,99,Male,Married/living with a partner,Upper secondary education,Other,,North East,66,Disagree
+8,6,Female,Married/living with a partner,Tertiary education,Other,Low,North West,64,Agree
+8,6,Female,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,51,Strongly disagree
+5,6,Male,Divorced/Separated,Lower secondary or below,Employed,Low,West Midlands,63,Agree
+7,8,Male,Single,Tertiary education,Employed,Medium-high,South East,25,Strongly disagree
+10,5,Female,Married/living with a partner,Tertiary education,Other,Low-medium,North West,81,Strongly disagree
+9,8,Male,Single,Lower secondary or below,Other,Low,North East,74,Strongly disagree
+2,99,Female,Single,Upper secondary education,Unemployed/not working,,West Midlands,22,Disagree
+7,9,Male,Married/living with a partner,Tertiary education,Employed,Low,East Midlands,53,Neither agree nor disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Other,,South West,68,Strongly disagree
+5,5,Male,Single,Tertiary education,Employed,Medium-high,Scotland,28,Agree
+7,4,Female,Single,Lower secondary or below,Unemployed/not working,Low,Yorkshire and the Humber,65,Neither agree nor disagree
+8,9,Female,Married/living with a partner,Tertiary education,Employed,High,West Midlands,39,Strongly disagree
+10,8,Male,Divorced/Separated,Lower secondary or below,Other,,Scotland,76,Strongly disagree
+6,4,Male,Single,Lower secondary or below,Other,Low,Scotland,52,Disagree
+2,6,Male,Single,Tertiary education,Employed,Low-medium,Yorkshire and the Humber,44,Neither agree nor disagree
+6,6,Female,Single,Upper secondary education,Employed,,South East,19,Disagree
+6,4,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,South East,54,Neither agree nor disagree
+5,6,Male,Single,Tertiary education,Employed,Low,North West,56,Neither agree nor disagree
+9,4,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,North East,71,Disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,,East Midlands,38,Agree
+4,6,Male,Single,Upper secondary education,Employed,,Scotland,42,Agree
+8,7,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,East of England,83,Strongly disagree
+7,8,Male,Married/living with a partner,Upper secondary education,Employed,High,North West,25,Disagree
+9,3,Female,Married/living with a partner,Lower secondary or below,Other,Low,East of England,75,Agree
+10,6,Male,Married/living with a partner,Tertiary education,Employed,High,South West,60,Strongly disagree
+10,6,Male,Married/living with a partner,Upper secondary education,Employed,,West Midlands,44,Disagree
+7,6,Female,Single,Tertiary education,Other,Low-medium,London,71,Neither agree nor disagree
+0,1,Female,Single,Upper secondary education,Employed,,South East,63,Strongly agree
+5,4,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,North East,39,Agree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,South West,44,Neither agree nor disagree
+6,8,Male,Divorced/Separated,Lower secondary or below,Employed,,South East,65,Disagree
+7,8,Male,Married/living with a partner,Upper secondary education,Other,Low,South West,81,Disagree
+0,6,Male,Married/living with a partner,Lower secondary or below,Other,Medium-high,Wales,69,Neither agree nor disagree
+5,8,Male,Single,Upper secondary education,Employed,High,North East,30,Neither agree nor disagree
+2,99,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,North West,53,Agree
+4,6,Male,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,45,Agree
+8,6,Female,Married/living with a partner,Tertiary education,Employed,,South East,33,Disagree
+8,5,Male,Married/living with a partner,Upper secondary education,Employed,High,North East,29,Agree
+7,6,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Scotland,65,Disagree
+2,6,Male,Divorced/Separated,Upper secondary education,Employed,Low-medium,South West,37,Disagree
+6,6,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,54,Disagree
+3,6,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,East Midlands,42,Strongly agree
+8,99,Male,Married/living with a partner,Tertiary education,Other,Medium-high,South East,70,Neither agree nor disagree
+4,4,Male,Single,Upper secondary education,Employed,Low,West Midlands,58,Strongly agree
+9,5,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,North West,68,Neither agree nor disagree
+7,5,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,,Scotland,69,Agree
+8,8,Female,Married/living with a partner,Upper secondary education,Employed,High,South East,39,Disagree
+0,1,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,Wales,55,Strongly agree
+7,8,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,West Midlands,60,Neither agree nor disagree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,,Yorkshire and the Humber,38,Disagree
+6,99,Male,Single,Tertiary education,Other,Low-medium,South East,60,Agree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,South West,56,Strongly disagree
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,West Midlands,58,Neither agree nor disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,West Midlands,35,Disagree
+4,5,Male,Married/living with a partner,Tertiary education,Full time student,,Scotland,24,Agree
+5,7,Female,Married/living with a partner,Upper secondary education,Employed,High,North West,52,Disagree
+2,5,Male,Married/living with a partner,Tertiary education,Other,Low-medium,North East,66,Neither agree nor disagree
+7,7,Female,Single,Tertiary education,Employed,Medium-high,Wales,36,Neither agree nor disagree
+6,8,Female,Married/living with a partner,Tertiary education,Employed,High,North West,31,Disagree
+10,7,Female,Married/living with a partner,Tertiary education,Other,,South East,66,Disagree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,Low,West Midlands,46,Disagree
+4,6,Male,Single,Upper secondary education,Unemployed/not working,Low,South East,56,Neither agree nor disagree
+5,7,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,72,Disagree
+5,3,Female,Married/living with a partner,Lower secondary or below,Employed,Low,East of England,34,Neither agree nor disagree
+3,5,Male,Married/living with a partner,Upper secondary education,Employed,,London,51,Agree
+8,6,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,62,Strongly disagree
+9,5,Female,Single,Upper secondary education,Employed,High,London,35,Disagree
+5,5,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,South East,30,Agree
+5,6,Male,Single,Upper secondary education,Employed,Medium-high,Scotland,35,Agree
+9,8,Male,Single,Tertiary education,Other,Medium-high,London,69,Disagree
+8,8,Male,Single,Tertiary education,Employed,High,London,29,Strongly disagree
+0,6,Female,Married/living with a partner,Upper secondary education,Other,,South East,66,Neither agree nor disagree
+3,4,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,South West,52,Agree
+1,4,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,Scotland,44,Agree
+8,4,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,Wales,67,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Employed,,Scotland,52,Strongly agree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,High,South East,43,Disagree
+6,4,Female,Married/living with a partner,Upper secondary education,Other,Low,South West,65,Disagree
+5,5,Female,Divorced/Separated,Lower secondary or below,Other,,South East,68,Strongly disagree
+6,4,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,Yorkshire and the Humber,57,Neither agree nor disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,East of England,72,Disagree
+8,9,Male,Married/living with a partner,Upper secondary education,Employed,High,South West,68,Strongly disagree
+5,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,London,73,Strongly disagree
+7,7,Female,Married/living with a partner,Tertiary education,Employed,High,South East,25,Disagree
+10,6,Male,Married/living with a partner,Lower secondary or below,Other,,South East,77,Disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,,Wales,24,Neither agree nor disagree
+8,8,Female,Married/living with a partner,Tertiary education,Other,Low-medium,South East,71,Strongly disagree
+8,99,Female,Married/living with a partner,Upper secondary education,Employed,High,North West,48,Disagree
+7,8,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Scotland,44,Disagree
+7,8,Male,Married/living with a partner,Tertiary education,Employed,High,East of England,47,Disagree
+2,4,Male,Married/living with a partner,Lower secondary or below,Other,,Scotland,73,Strongly agree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,32,Disagree
+8,9,Male,Married/living with a partner,Tertiary education,Employed,High,London,50,Strongly disagree
+7,8,Male,Married/living with a partner,Lower secondary or below,Employed,High,London,59,Disagree
+7,7,Female,Single,Upper secondary education,Full time student,High,East of England,19,Disagree
+8,8,Female,Married/living with a partner,Upper secondary education,Employed,High,South West,34,Strongly disagree
+10,6,Male,Married/living with a partner,Upper secondary education,Other,,South West,71,Strongly disagree
+8,8,Male,Married/living with a partner,Lower secondary or below,Other,,South West,65,Strongly disagree
+8,8,Male,Married/living with a partner,Tertiary education,Employed,,West Midlands,43,Neither agree nor disagree
+4,8,Female,Single,Upper secondary education,Employed,High,South West,30,Neither agree nor disagree
+7,7,Male,Married/living with a partner,Lower secondary or below,Other,Low,South East,67,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Other,,South West,69,Disagree
+7,7,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,North West,61,Disagree
+10,99,Female,Married/living with a partner,Upper secondary education,Other,Low,Scotland,75,Strongly disagree
+8,6,Male,Divorced/Separated,Upper secondary education,Other,Low,Yorkshire and the Humber,67,Strongly disagree
+8,3,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,40,Strongly agree
+6,5,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,Scotland,33,Disagree
+8,9,Female,Single,Tertiary education,Other,Low-medium,Wales,82,Strongly disagree
+6,5,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low,Yorkshire and the Humber,47,Agree
+7,7,Female,Single,Upper secondary education,Full time student,,South East,22,Strongly agree
+8,8,Male,Married/living with a partner,Tertiary education,Other,,South West,63,Disagree
+5,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,East Midlands,40,Neither agree nor disagree
+5,6,Female,Single,Upper secondary education,Employed,,South West,70,Disagree
+5,7,Female,Single,Tertiary education,Employed,Low-medium,London,53,Neither agree nor disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Other,Medium-high,North West,66,Disagree
+1,1,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,Scotland,59,Neither agree nor disagree
+6,8,Female,Married/living with a partner,Lower secondary or below,Other,Medium-high,Scotland,72,Disagree
+3,9,Female,Married/living with a partner,Upper secondary education,Other,,London,86,Strongly agree
+2,6,Male,Married/living with a partner,Tertiary education,Employed,High,South East,55,Disagree
+5,3,Female,Divorced/Separated,Lower secondary or below,Employed,Low,Scotland,45,Disagree
+4,6,Male,Married/living with a partner,Tertiary education,Employed,,London,49,Agree
+7,8,Male,Married/living with a partner,Upper secondary education,Other,,East Midlands,74,Disagree
+8,8,Male,Married/living with a partner,Tertiary education,Other,High,West Midlands,65,Strongly disagree
+2,6,Female,Married/living with a partner,Lower secondary or below,Other,,South East,69,Disagree
+5,3,Male,Single,Upper secondary education,Unemployed/not working,Low,East of England,46,Neither agree nor disagree
+7,6,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,East Midlands,47,Agree
+5,7,Female,Single,Tertiary education,Other,Medium-high,North East,66,Disagree
+8,8,Male,Married/living with a partner,Tertiary education,Other,,North East,70,Strongly disagree
+3,7,Male,Married/living with a partner,Tertiary education,Employed,,North West,27,Neither agree nor disagree
+6,5,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,South East,53,Disagree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,,Yorkshire and the Humber,42,Disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Employed,High,South West,32,Neither agree nor disagree
+6,7,Male,Single,Tertiary education,Employed,Medium-high,South East,29,Neither agree nor disagree
+8,7,Male,Married/living with a partner,Lower secondary or below,Employed,High,West Midlands,29,Agree
+2,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,35,Neither agree nor disagree
+9,99,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,East Midlands,53,Strongly disagree
+8,6,Female,Single,Tertiary education,Employed,Low,Northern Ireland,39,Disagree
+3,2,Male,Married/living with a partner,Lower secondary or below,Other,Low,Scotland,75,Neither agree nor disagree
+9,8,Female,Married/living with a partner,Upper secondary education,Other,,London,77,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Lower secondary or below,Other,,South East,71,Neither agree nor disagree
+7,9,Female,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,30,Disagree
+1,6,Male,Married/living with a partner,Upper secondary education,Employed,High,London,44,Strongly disagree
+7,8,Male,Married/living with a partner,Tertiary education,Other,High,North West,84,Strongly disagree
+8,7,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,South West,57,Neither agree nor disagree
+9,7,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,Yorkshire and the Humber,71,Strongly disagree
+4,7,Female,Married/living with a partner,Tertiary education,Employed,High,South East,56,Disagree
+3,5,Male,Single,Lower secondary or below,Employed,Low,Scotland,31,Strongly agree
+7,8,Female,Married/living with a partner,Upper secondary education,Other,,East Midlands,68,Neither agree nor disagree
+9,8,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,32,Strongly disagree
+8,8,Male,Divorced/Separated,Upper secondary education,Employed,,East of England,36,Strongly disagree
+6,8,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,Yorkshire and the Humber,59,Disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Other,,Yorkshire and the Humber,69,Disagree
+5,8,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,High,Scotland,42,Strongly disagree
+9,9,Male,Divorced/Separated,Upper secondary education,Employed,High,South East,58,Strongly disagree
+4,5,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Medium-high,North West,49,Neither agree nor disagree
+8,6,Female,Married/living with a partner,Lower secondary or below,Other,,East Midlands,65,Neither agree nor disagree
+5,7,Male,Single,Tertiary education,Unemployed/not working,Low,East of England,35,Disagree
+9,8,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,60,Strongly disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Low-medium,East Midlands,67,Neither agree nor disagree
+10,9,Female,Married/living with a partner,Lower secondary or below,Other,Low,East of England,73,Disagree
+3,6,Female,Married/living with a partner,Upper secondary education,Employed,,South East,22,Disagree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,High,North West,49,Neither agree nor disagree
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,West Midlands,60,Neither agree nor disagree
+1,7,Male,Single,Upper secondary education,Other,Medium-high,East Midlands,61,Strongly agree
+10,8,Male,Married/living with a partner,Tertiary education,Other,Medium-high,North West,59,Disagree
+7,8,Female,Married/living with a partner,Upper secondary education,Employed,High,East of England,40,Disagree
+3,99,Male,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,39,Disagree
+6,99,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,61,
+5,6,Male,Married/living with a partner,Lower secondary or below,Employed,,Wales,57,Disagree
+6,8,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,67,Disagree
+5,5,Male,Married/living with a partner,Lower secondary or below,Other,Low,London,76,Agree
+10,6,Female,Single,Upper secondary education,Unemployed/not working,Low,North East,25,Disagree
+7,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,North West,23,Disagree
+6,6,Female,Married/living with a partner,Tertiary education,Other,,East of England,73,Disagree
+7,7,Male,Married/living with a partner,Upper secondary education,Other,,West Midlands,75,Disagree
+4,4,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,West Midlands,64,Neither agree nor disagree
+4,8,Female,Married/living with a partner,Lower secondary or below,Employed,High,East Midlands,53,Strongly disagree
+9,9,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,West Midlands,59,Disagree
+9,9,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Scotland,76,Disagree
+9,7,Female,Married/living with a partner,Tertiary education,Other,Medium-high,East of England,66,Disagree
+7,8,Male,Married/living with a partner,Tertiary education,Employed,,West Midlands,43,Disagree
+9,6,Male,Married/living with a partner,Lower secondary or below,Other,,Scotland,80,Neither agree nor disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Other,,North West,61,Strongly disagree
+9,6,Male,Divorced/Separated,Upper secondary education,Other,High,South East,62,Disagree
+7,8,Male,Married/living with a partner,Lower secondary or below,Other,,North West,68,Disagree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,52,Strongly disagree
+5,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,62,Neither agree nor disagree
+9,8,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,South East,76,Strongly disagree
+2,5,Male,Married/living with a partner,Upper secondary education,Employed,High,East Midlands,48,Neither agree nor disagree
+8,9,Male,Married/living with a partner,Upper secondary education,Employed,,East Midlands,53,Neither agree nor disagree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,High,North West,28,Neither agree nor disagree
+6,7,Female,Single,Tertiary education,Other,Medium-high,Wales,67,Strongly disagree
+8,7,Female,Single,Upper secondary education,Other,,East Midlands,70,Strongly disagree
+9,6,Female,Married/living with a partner,Upper secondary education,Other,Low,East of England,77,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Wales,70,Strongly disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,North West,70,Disagree
+5,6,Female,Married/living with a partner,Tertiary education,Employed,Low,South West,60,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Yorkshire and the Humber,36,Disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Employed,,Yorkshire and the Humber,54,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,North West,74,Disagree
+2,7,Female,Divorced/Separated,Upper secondary education,Other,Low-medium,East of England,66,Disagree
+6,10,Male,Married/living with a partner,Tertiary education,Other,,London,76,Strongly disagree
+10,99,Male,Single,Tertiary education,Employed,,North West,32,Agree
+8,9,Female,Married/living with a partner,Tertiary education,Other,Low-medium,South West,67,Strongly disagree
+7,7,Female,Married/living with a partner,Tertiary education,Other,Medium-high,North East,63,Neither agree nor disagree
+2,6,Male,Single,Upper secondary education,Unemployed/not working,Low,East Midlands,53,Neither agree nor disagree
+3,6,Female,Single,Tertiary education,Employed,Low-medium,South West,34,Strongly disagree
+9,6,Female,Married/living with a partner,Tertiary education,Other,,East Midlands,57,Disagree
+1,1,Male,Single,Lower secondary or below,Other,Low,South East,61,Strongly agree
+3,5,Male,Single,Lower secondary or below,Employed,,Northern Ireland,36,Agree
+6,9,Female,Single,Upper secondary education,Other,Low-medium,East of England,70,Neither agree nor disagree
+9,6,Female,Married/living with a partner,Tertiary education,Employed,High,East of England,74,Disagree
+7,7,Male,Single,Upper secondary education,Other,Low,North West,76,Neither agree nor disagree
+10,8,Female,Married/living with a partner,Tertiary education,Employed,High,South East,35,Disagree
+3,3,Male,Married/living with a partner,Upper secondary education,Full time student,Medium-high,East of England,27,Disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,31,Disagree
+1,5,Female,Divorced/Separated,Upper secondary education,Unemployed/not working,Low,West Midlands,68,Neither agree nor disagree
+7,9,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,South West,71,Disagree
+5,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,North West,72,Disagree
+9,6,Female,Divorced/Separated,Upper secondary education,Employed,Low,North West,57,Disagree
+7,99,Male,Married/living with a partner,Lower secondary or below,Other,Low,North West,65,Disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Employed,,North West,53,Disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Other,Low,East Midlands,61,Neither agree nor disagree
+7,2,Male,Married/living with a partner,Lower secondary or below,Other,Low,West Midlands,44,Agree
+6,7,Female,Single,Lower secondary or below,Other,Low,Yorkshire and the Humber,74,Agree
+6,9,Male,Married/living with a partner,Tertiary education,Other,High,London,68,Disagree
+9,7,Male,Married/living with a partner,Upper secondary education,Other,High,North East,65,Disagree
+8,8,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,31,Disagree
+6,5,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Wales,67,Neither agree nor disagree
+6,4,Female,Single,Tertiary education,Unemployed/not working,Low,Wales,63,Disagree
+4,7,Female,Single,Upper secondary education,Other,,South West,72,Disagree
+9,8,Male,Married/living with a partner,Lower secondary or below,Employed,,London,56,Strongly disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,North West,78,Disagree
+2,2,Female,Single,Lower secondary or below,Other,Low,West Midlands,66,Agree
+8,99,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low-medium,East of England,30,
+4,99,Female,Married/living with a partner,Upper secondary education,Unemployed/not working,Medium-high,South East,28,Disagree
+3,7,Male,Married/living with a partner,Tertiary education,Employed,High,South East,37,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,High,London,35,Strongly disagree
+2,3,Female,Married/living with a partner,Lower secondary or below,Other,Low,Wales,67,Agree
+6,9,Male,Married/living with a partner,Tertiary education,Employed,High,West Midlands,46,Disagree
+7,8,Female,Married/living with a partner,Upper secondary education,Employed,High,Yorkshire and the Humber,36,Strongly disagree
+7,8,Female,Single,Upper secondary education,Full time student,,South West,21,Disagree
+5,7,Male,Single,Tertiary education,Employed,High,North West,31,Neither agree nor disagree
+10,7,Male,Single,Lower secondary or below,Other,Medium-high,Wales,75,Disagree
+7,7,Female,Single,Upper secondary education,Other,Low-medium,Wales,76,Neither agree nor disagree
+6,3,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Medium-high,Yorkshire and the Humber,34,Strongly agree
+7,5,Male,Married/living with a partner,Tertiary education,Employed,High,London,27,Disagree
+0,3,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,East of England,64,Strongly agree
+7,8,Female,Married/living with a partner,Tertiary education,Employed,,London,31,Disagree
+5,4,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,Northern Ireland,32,Neither agree nor disagree
+8,8,Female,Married/living with a partner,Tertiary education,Unemployed/not working,High,South West,44,Disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Employed,High,London,51,Disagree
+4,9,Female,Single,Upper secondary education,Employed,High,London,25,Disagree
+9,8,Male,Married/living with a partner,Lower secondary or below,Other,Low,South West,70,Strongly disagree
+6,6,Female,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,63,Neither agree nor disagree
+3,8,Female,Married/living with a partner,Tertiary education,Unemployed/not working,High,East Midlands,56,Strongly disagree
+10,8,Male,Married/living with a partner,Tertiary education,Other,High,South West,79,Strongly disagree
+7,6,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,Northern Ireland,59,Disagree
+7,5,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,East of England,55,Disagree
+5,6,Female,Married/living with a partner,Lower secondary or below,Employed,Low-medium,West Midlands,34,Neither agree nor disagree
+1,3,Female,Single,Tertiary education,Employed,Low,West Midlands,48,Neither agree nor disagree
+4,7,Female,Married/living with a partner,Tertiary education,Employed,High,East Midlands,20,Disagree
+8,5,Male,Married/living with a partner,Tertiary education,Other,Low-medium,North West,81,Disagree
+6,6,Female,Married/living with a partner,Upper secondary education,Other,Low-medium,South West,66,Disagree
+2,5,Female,Married/living with a partner,Lower secondary or below,Employed,,South East,32,Neither agree nor disagree
+8,8,Female,Single,Tertiary education,Employed,Low,Yorkshire and the Humber,28,Disagree
+8,6,Female,Single,Lower secondary or below,Employed,Low-medium,Northern Ireland,58,Disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Other,Low,East Midlands,70,Neither agree nor disagree
+5,6,Female,Single,Lower secondary or below,Other,,London,76,Agree
+6,6,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,Northern Ireland,43,Disagree
+9,7,Female,Married/living with a partner,Tertiary education,Other,Medium-high,Scotland,71,Disagree
+5,6,Female,Single,Upper secondary education,Employed,High,London,39,Neither agree nor disagree
+2,3,Male,Single,Tertiary education,Unemployed/not working,Low,London,56,Neither agree nor disagree
+4,8,Female,Married/living with a partner,Upper secondary education,Employed,High,Wales,45,Disagree
+6,5,Female,Divorced/Separated,Lower secondary or below,Other,Low,London,66,Disagree
+9,7,Female,Married/living with a partner,Tertiary education,Employed,High,South West,35,Disagree
+8,6,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,East of England,35,Strongly agree
+4,4,Male,Single,Tertiary education,Employed,,Wales,53,Agree
+3,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,40,Neither agree nor disagree
+9,8,Male,Married/living with a partner,Lower secondary or below,Other,,East of England,71,Disagree
+9,8,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Yorkshire and the Humber,54,Neither agree nor disagree
+4,6,Male,Married/living with a partner,Upper secondary education,Employed,Low,South East,39,Agree
+8,9,Male,Married/living with a partner,Tertiary education,Employed,High,South East,44,Strongly disagree
+2,99,Male,Married/living with a partner,Upper secondary education,Employed,,West Midlands,62,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Employed,Medium-high,West Midlands,51,Disagree
+8,7,Female,Married/living with a partner,Tertiary education,Other,,South West,70,Disagree
+10,99,Male,Single,Upper secondary education,Employed,,South East,28,Neither agree nor disagree
+8,5,Female,Single,Tertiary education,Employed,Medium-high,South East,36,Disagree
+7,5,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,South East,74,Neither agree nor disagree
+8,7,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,North West,59,Neither agree nor disagree
+7,7,Female,Married/living with a partner,Tertiary education,Other,Low-medium,Yorkshire and the Humber,63,Strongly disagree
+7,8,Female,Married/living with a partner,Tertiary education,Other,,Scotland,71,Strongly disagree
+0,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,56,Agree
+0,8,Female,Married/living with a partner,Tertiary education,Other,Low-medium,North West,61,Strongly agree
+4,3,Female,Single,Upper secondary education,Full time student,Medium-high,Northern Ireland,26,Strongly agree
+5,5,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,South East,61,Neither agree nor disagree
+8,5,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,South West,58,Disagree
+4,7,Female,Single,Upper secondary education,Full time student,Low,North West,20,Disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,East Midlands,37,Neither agree nor disagree
+10,4,Female,Married/living with a partner,Lower secondary or below,Other,Low,East of England,77,Neither agree nor disagree
+5,3,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,West Midlands,35,Neither agree nor disagree
+8,8,Female,Married/living with a partner,Tertiary education,Employed,,London,57,Strongly disagree
+4,6,Female,Married/living with a partner,Lower secondary or below,Other,Low,North West,70,Disagree
+1,6,Male,Married/living with a partner,Upper secondary education,Other,Low,South East,67,Agree
+9,6,Female,Married/living with a partner,Upper secondary education,Other,Low,Yorkshire and the Humber,69,Strongly disagree
+9,6,Female,Single,Lower secondary or below,Other,Low,North East,70,Disagree
+7,8,Male,Divorced/Separated,Upper secondary education,Employed,High,East of England,54,Disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,Northern Ireland,32,Disagree
+4,8,Female,Married/living with a partner,Tertiary education,Employed,High,West Midlands,35,Disagree
+9,9,Female,Married/living with a partner,Tertiary education,Employed,High,North West,66,Neither agree nor disagree
+5,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,North West,60,Neither agree nor disagree
+1,1,Female,Single,Lower secondary or below,Unemployed/not working,Low,London,41,Strongly agree
+5,7,Male,Married/living with a partner,Upper secondary education,Employed,,Yorkshire and the Humber,44,Disagree
+6,4,Female,Divorced/Separated,Tertiary education,Unemployed/not working,Low-medium,South West,53,Disagree
+5,7,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,Wales,61,Disagree
+7,99,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,East of England,78,Neither agree nor disagree
+0,3,Female,Single,Tertiary education,Unemployed/not working,Low,Wales,31,Strongly agree
+4,4,Female,Single,Tertiary education,Employed,Low,North East,27,
+6,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,Scotland,26,Neither agree nor disagree
+8,7,Female,Married/living with a partner,Tertiary education,Other,Low-medium,South West,54,Agree
+6,4,Male,Married/living with a partner,Lower secondary or below,Employed,,Yorkshire and the Humber,62,Neither agree nor disagree
+8,6,Male,Single,Tertiary education,Unemployed/not working,Low,East Midlands,56,Agree
+8,8,Female,Single,Upper secondary education,Other,Low,South East,82,Strongly disagree
+6,99,Female,Married/living with a partner,Tertiary education,Employed,Low,London,56,Strongly disagree
+6,99,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,,Yorkshire and the Humber,38,Agree
+8,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,West Midlands,53,Neither agree nor disagree
+5,4,Female,Married/living with a partner,Tertiary education,Other,,Yorkshire and the Humber,68,Neither agree nor disagree
+2,6,Male,Single,Upper secondary education,Employed,,North West,26,Neither agree nor disagree
+7,8,Female,Single,Tertiary education,Unemployed/not working,High,Wales,24,Strongly disagree
+6,5,Male,Married/living with a partner,Upper secondary education,Other,High,North West,66,Neither agree nor disagree
+5,7,Female,Married/living with a partner,Tertiary education,Employed,High,London,26,Disagree
+9,6,Female,Married/living with a partner,Upper secondary education,Other,Low,South East,69,Strongly disagree
+7,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,South West,39,Disagree
+2,6,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,London,27,Strongly agree
+8,7,Female,Single,Lower secondary or below,Other,Low,South West,72,Disagree
+6,9,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,59,Disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,,West Midlands,54,Neither agree nor disagree
+9,5,Female,Single,Lower secondary or below,Employed,,North East,28,Disagree
+7,8,Female,Married/living with a partner,Tertiary education,Other,Low-medium,South West,64,Disagree
+9,6,Female,Single,Tertiary education,Employed,,South East,23,Strongly disagree
+10,1,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,East Midlands,65,Strongly agree
+4,8,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,57,Strongly disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Other,,North East,80,Strongly disagree
+7,7,Female,Married/living with a partner,Upper secondary education,Employed,High,South East,44,Disagree
+0,4,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,South West,58,Agree
+10,6,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,North East,40,Agree
+6,7,Male,Single,Tertiary education,Employed,,Scotland,51,Disagree
+7,8,Male,Married/living with a partner,Upper secondary education,Employed,High,London,60,Strongly disagree
+5,4,Female,Married/living with a partner,Upper secondary education,Other,Low,South West,69,Agree
+7,4,Female,Married/living with a partner,Lower secondary or below,Employed,Medium-high,London,41,Disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Other,,South West,66,Disagree
+9,6,Male,Married/living with a partner,Upper secondary education,Employed,,North West,67,Strongly disagree
+7,7,Male,Married/living with a partner,Upper secondary education,Employed,,Wales,44,Strongly disagree
+7,8,Female,Married/living with a partner,Upper secondary education,Employed,,London,28,Disagree
+4,4,Male,Single,Tertiary education,Unemployed/not working,High,Yorkshire and the Humber,25,Agree
+1,3,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,East of England,52,Agree
+8,8,Male,Married/living with a partner,Upper secondary education,Other,High,South East,67,Strongly disagree
+8,7,Male,Married/living with a partner,Tertiary education,Other,Low-medium,Scotland,81,Disagree
+7,6,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Wales,73,Strongly disagree
+4,7,Female,Single,Tertiary education,Employed,Low-medium,West Midlands,29,Disagree
+7,6,Female,Married/living with a partner,Lower secondary or below,Other,Low,Wales,73,Disagree
+6,7,Male,Married/living with a partner,Tertiary education,Employed,High,Scotland,74,Strongly disagree
+6,3,Female,Married/living with a partner,Tertiary education,Other,Low,South West,76,Agree
+5,3,Male,Single,Lower secondary or below,Unemployed/not working,Low,North West,52,Agree
+7,4,Female,Married/living with a partner,Lower secondary or below,Other,Low,South West,71,Strongly disagree
+5,7,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,East Midlands,53,Neither agree nor disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Employed,High,London,48,Disagree
+5,6,Female,Single,Upper secondary education,Employed,Low,London,55,Neither agree nor disagree
+2,2,Male,Single,Upper secondary education,Unemployed/not working,Low-medium,Yorkshire and the Humber,52,Agree
+8,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,,North East,59,Strongly disagree
+8,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Medium-high,East Midlands,57,Strongly disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,East Midlands,46,Neither agree nor disagree
+2,6,Female,Single,Upper secondary education,Other,,South West,71,Neither agree nor disagree
+9,7,Male,Married/living with a partner,Lower secondary or below,Other,Medium-high,Wales,64,Strongly disagree
+7,7,Male,Married/living with a partner,Tertiary education,Employed,High,South East,46,Neither agree nor disagree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,Yorkshire and the Humber,53,Neither agree nor disagree
+9,11,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,South East,58,Strongly disagree
+7,8,Male,Married/living with a partner,Tertiary education,Other,Medium-high,South West,67,Strongly disagree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,South West,35,Disagree
+6,6,Female,Single,Upper secondary education,Other,Low,Wales,72,Neither agree nor disagree
+5,6,Female,Married/living with a partner,Tertiary education,Employed,High,London,42,Disagree
+3,4,Male,Single,Upper secondary education,Employed,High,London,43,Disagree
+9,6,Female,Married/living with a partner,Lower secondary or below,Employed,High,Yorkshire and the Humber,57,Disagree
+4,8,Female,Married/living with a partner,Upper secondary education,Other,Medium-high,Yorkshire and the Humber,56,Strongly disagree
+4,5,Female,Single,Upper secondary education,Employed,,Wales,29,Neither agree nor disagree
+9,6,Female,Married/living with a partner,Tertiary education,Employed,Low,Scotland,24,Disagree
+7,5,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,South East,60,Agree
+6,7,Male,Married/living with a partner,Lower secondary or below,Employed,Medium-high,North East,55,Strongly disagree
+3,9,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,North East,54,Neither agree nor disagree
+3,1,Male,Married/living with a partner,Lower secondary or below,Other,Low,North West,70,Strongly agree
+5,99,Female,Single,Upper secondary education,Unemployed/not working,Low,Northern Ireland,26,
+8,7,Female,Divorced/Separated,Lower secondary or below,Other,Low,South East,75,Disagree
+4,4,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,East Midlands,70,Disagree
+7,5,Male,Single,Lower secondary or below,Other,Low,South West,81,Disagree
+8,8,Male,Married/living with a partner,Tertiary education,Employed,High,North East,64,Strongly disagree
+7,6,Male,Single,Tertiary education,Employed,Medium-high,North West,41,Disagree
+7,8,Male,Single,Tertiary education,Employed,Medium-high,Scotland,69,Strongly disagree
+7,8,Male,Married/living with a partner,Upper secondary education,Employed,High,East of England,56,Neither agree nor disagree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,High,Yorkshire and the Humber,47,Disagree
+8,9,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,North West,72,Strongly disagree
+8,99,Female,Single,Upper secondary education,Full time student,,Yorkshire and the Humber,18,Disagree
+0,5,Male,Married/living with a partner,Upper secondary education,Other,Low,East of England,64,Strongly agree
+7,6,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,Wales,29,Neither agree nor disagree
+6,5,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,West Midlands,35,Disagree
+7,7,Female,Divorced/Separated,Lower secondary or below,Employed,,North West,63,Disagree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,High,North East,28,Disagree
+5,7,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,38,Disagree
+8,7,Male,Married/living with a partner,Upper secondary education,Employed,High,South East,37,Disagree
+7,7,Female,Single,Upper secondary education,Other,,North West,75,Neither agree nor disagree
+7,6,Male,Married/living with a partner,Tertiary education,Other,,London,64,Disagree
+8,8,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,South West,40,Disagree
+8,7,Male,Single,Upper secondary education,Employed,Medium-high,London,47,Neither agree nor disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Other,High,West Midlands,77,Neither agree nor disagree
+8,7,Male,Married/living with a partner,Tertiary education,Employed,High,North East,32,Disagree
+5,5,Female,Single,Tertiary education,Other,,Yorkshire and the Humber,80,Neither agree nor disagree
+6,5,Female,Married/living with a partner,Tertiary education,Other,Low,South West,61,Neither agree nor disagree
+10,6,Female,Married/living with a partner,Tertiary education,Employed,Low,South East,65,Disagree
+3,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low-medium,West Midlands,48,Neither agree nor disagree
+4,7,Male,Single,Upper secondary education,Full time student,,West Midlands,23,Disagree
+7,6,Male,Married/living with a partner,Lower secondary or below,Employed,,East of England,51,Neither agree nor disagree
+7,5,Female,Single,Tertiary education,Employed,Low-medium,Yorkshire and the Humber,30,Strongly disagree
+6,8,Male,Married/living with a partner,Tertiary education,Employed,High,London,60,Strongly disagree
+2,4,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,36,Agree
+8,8,Male,Married/living with a partner,Lower secondary or below,Employed,High,North West,43,Disagree
+7,6,Male,Single,Lower secondary or below,Employed,Medium-high,Yorkshire and the Humber,25,Disagree
+1,4,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Wales,58,Agree
+6,5,Male,Married/living with a partner,Upper secondary education,Employed,,South East,40,Neither agree nor disagree
+8,9,Female,Single,Tertiary education,Other,,South West,76,Neither agree nor disagree
+8,8,Male,Single,Upper secondary education,Employed,High,London,53,Disagree
+5,6,Male,Single,Lower secondary or below,Employed,Low-medium,South West,61,Agree
+8,6,Female,Married/living with a partner,Upper secondary education,Other,Low,Yorkshire and the Humber,66,Disagree
+7,7,Male,Married/living with a partner,Lower secondary or below,Other,Low,South West,71,Neither agree nor disagree
+4,5,Male,Single,Lower secondary or below,Unemployed/not working,Low,Northern Ireland,53,Agree
+7,8,Male,Single,Upper secondary education,Other,Low-medium,South West,73,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Other,,South East,78,Disagree
+4,8,Male,Married/living with a partner,Lower secondary or below,Other,Low,South West,72,Disagree
+8,99,Female,Single,Lower secondary or below,Unemployed/not working,Low,East of England,29,Neither agree nor disagree
+8,8,Female,Married/living with a partner,Tertiary education,Unemployed/not working,High,South East,29,Neither agree nor disagree
+7,99,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,34,Disagree
+7,9,Male,Single,Tertiary education,Other,Medium-high,South East,87,Strongly disagree
+7,99,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,North East,38,Disagree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,Wales,46,Strongly disagree
+3,6,Female,Single,Tertiary education,Employed,,South West,26,Neither agree nor disagree
+8,5,Female,Married/living with a partner,Tertiary education,Employed,Medium-high,North West,28,Neither agree nor disagree
+6,7,Male,Married/living with a partner,Upper secondary education,Other,,East of England,80,Disagree
+0,6,Female,Married/living with a partner,Upper secondary education,Employed,Low-medium,South East,57,Agree
+8,6,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,East of England,66,Disagree
+6,6,Male,Single,Lower secondary or below,Other,Low,Yorkshire and the Humber,82,Neither agree nor disagree
+9,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,South East,70,Strongly disagree
+9,5,Female,Married/living with a partner,Tertiary education,Employed,Low-medium,North East,26,Neither agree nor disagree
+9,7,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,Yorkshire and the Humber,73,Disagree
+10,6,Female,Married/living with a partner,Upper secondary education,Employed,,North East,41,Disagree
+6,6,Male,Married/living with a partner,Tertiary education,Employed,High,North West,47,Neither agree nor disagree
+9,7,Female,Single,Tertiary education,Employed,Medium-high,Scotland,21,Disagree
+6,7,Female,Married/living with a partner,Upper secondary education,Employed,Medium-high,East Midlands,31,Disagree
+9,6,Female,Married/living with a partner,Tertiary education,Other,Medium-high,East of England,69,Disagree
+7,6,Female,Married/living with a partner,Upper secondary education,Employed,,London,66,Neither agree nor disagree
+6,6,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,62,Strongly disagree
+0,4,Female,Married/living with a partner,Tertiary education,Unemployed/not working,Low,East of England,32,Agree
+4,8,Female,Single,Tertiary education,Employed,Low-medium,South West,59,Strongly disagree
+6,6,Male,Single,Upper secondary education,Other,Low-medium,Scotland,62,Neither agree nor disagree
+5,7,Female,Married/living with a partner,Tertiary education,Employed,,South East,49,Disagree
+5,7,Male,Single,Lower secondary or below,Employed,Low-medium,North West,27,Agree
+6,6,Male,Single,Upper secondary education,Employed,,Wales,36,Disagree
+9,7,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,North West,72,Strongly disagree
+7,4,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,South East,34,Neither agree nor disagree
+8,9,Male,Single,Tertiary education,Employed,High,London,28,Disagree
+5,99,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,,London,31,Neither agree nor disagree
+4,8,Female,Single,Tertiary education,Employed,,East of England,54,Disagree
+8,8,Male,Married/living with a partner,Upper secondary education,Other,Low-medium,East of England,74,Disagree
+7,99,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,North West,51,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,West Midlands,68,Strongly disagree
+8,3,Male,Single,Upper secondary education,Full time student,Low,Wales,20,Strongly disagree
+8,7,Female,Married/living with a partner,Tertiary education,Employed,,North West,59,Strongly disagree
+5,7,Male,Single,Upper secondary education,Employed,Low-medium,Scotland,27,Disagree
+5,5,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,South East,56,Strongly agree
+9,7,Female,Single,Tertiary education,Employed,Low-medium,South East,25,Strongly disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Unemployed/not working,Low,North West,56,Neither agree nor disagree
+9,7,Female,Single,Lower secondary or below,Other,Low-medium,East of England,69,Strongly disagree
+6,5,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,East Midlands,55,Neither agree nor disagree
+5,8,Male,Married/living with a partner,Tertiary education,Other,High,London,75,Disagree
+4,6,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,,West Midlands,61,Neither agree nor disagree
+6,5,Male,Married/living with a partner,Tertiary education,Employed,Low-medium,North West,60,Neither agree nor disagree
+5,7,Male,Single,Lower secondary or below,Employed,Low,London,56,Neither agree nor disagree
+4,4,Female,Married/living with a partner,Upper secondary education,Employed,,North East,34,Disagree
+5,7,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,London,49,Strongly agree
+6,9,Female,Married/living with a partner,Tertiary education,Unemployed/not working,,South East,58,Neither agree nor disagree
+8,99,Male,Married/living with a partner,Lower secondary or below,Employed,Low,East of England,46,Neither agree nor disagree
+7,6,Female,Single,Tertiary education,Employed,High,Yorkshire and the Humber,26,Disagree
+8,7,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,Yorkshire and the Humber,49,Disagree
+0,5,Male,Married/living with a partner,Upper secondary education,Employed,,London,37,Agree
+8,6,Male,Married/living with a partner,Lower secondary or below,Other,,North East,62,Disagree
+7,4,Female,Single,Tertiary education,Employed,Low,West Midlands,43,Neither agree nor disagree
+3,7,Male,Married/living with a partner,Upper secondary education,Employed,Medium-high,London,55,Neither agree nor disagree
+6,6,Female,Married/living with a partner,Lower secondary or below,Other,Low,Wales,73,Strongly disagree
+4,7,Female,Married/living with a partner,Tertiary education,Employed,High,South East,26,
+7,5,Female,Married/living with a partner,Upper secondary education,Employed,High,South East,25,Neither agree nor disagree
+8,1,Male,Married/living with a partner,Upper secondary education,Unemployed/not working,Low,South East,52,Disagree
+5,6,Male,Married/living with a partner,Lower secondary or below,Other,Low-medium,North East,72,Strongly disagree
+5,6,Female,Married/living with a partner,Upper secondary education,Employed,High,North West,47,Neither agree nor disagree
+8,6,Female,Married/living with a partner,Tertiary education,Other,High,South West,67,Disagree
+9,8,Male,Divorced/Separated,Upper secondary education,Other,,East of England,68,Disagree
+7,99,Male,Married/living with a partner,Upper secondary education,Other,,North West,78,Agree
+8,8,Female,Single,Tertiary education,Employed,High,Wales,31,Strongly disagree
+8,6,Female,Married/living with a partner,Upper secondary education,Other,,North East,71,Disagree
+4,6,Female,Married/living with a partner,Lower secondary or below,Other,Low-medium,Yorkshire and the Humber,57,Neither agree nor disagree
+5,6,Male,Married/living with a partner,Upper secondary education,Employed,Low-medium,North East,70,Neither agree nor disagree
+8,6,Male,Married/living with a partner,Upper secondary education,Other,High,West Midlands,70,Disagree
+0,1,Male,Married/living with a partner,Lower secondary or below,Unemployed/not working,,West Midlands,58,Neither agree nor disagree
+6,9,Female,Married/living with a partner,Upper secondary education,Other,,South East,67,Disagree
+6,7,Male,Married/living with a partner,Upper secondary education,Other,Medium-high,South East,67,Neither agree nor disagree
+9,8,Female,Married/living with a partner,Tertiary education,Employed,High,London,34,Strongly disagree
+8,6,Male,Single,Lower secondary or below,Employed,Low-medium,South East,66,Neither agree nor disagree
+6,5,Male,Married/living with a partner,Lower secondary or below,Employed,Low-medium,Yorkshire and the Humber,55,Disagree
+10,6,Male,Married/living with a partner,Tertiary education,Employed,Medium-high,London,30,Agree
+8,7,Male,Married/living with a partner,Upper secondary education,Employed,High,South West,38,Disagree

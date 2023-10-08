@@ -1,0 +1,97 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sns.scatterplot(data=happiness, x='GDPpc (in $ 000)', y='LifeSat')
+
+# Loop through the data points 
+for i in range(len(happiness)):
+    plt.text(happiness['GDPpc (in $ 000)'][i]+0.2, happiness['LifeSat'][i]+0.05, happiness['Country'][i])
+
+plt.xlim([0,140])
+plt.ylim([5,8])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m [43msns[49m[38;5;241;43m.[39;49m[43mscatterplot[49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mhappiness[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mGDPpc (in $ 000)[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mLifeSat[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m      3[0m [38;5;66;03m# Loop through the data points [39;00m
+[1;32m      4[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;28mlen[39m(happiness)):
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/relational.py:742[0m, in [0;36mscatterplot[0;34m(data, x, y, hue, size, style, palette, hue_order, hue_norm, sizes, size_order, size_norm, markers, style_order, legend, ax, **kwargs)[0m
+[1;32m    732[0m [38;5;28;01mdef[39;00m [38;5;21mscatterplot[39m(
+[1;32m    733[0m     data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m,
+[1;32m    734[0m     x[38;5;241m=[39m[38;5;28;01mNone[39;00m, y[38;5;241m=[39m[38;5;28;01mNone[39;00m, hue[38;5;241m=[39m[38;5;28;01mNone[39;00m, size[38;5;241m=[39m[38;5;28;01mNone[39;00m, style[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[0;32m   (...)[0m
+[1;32m    738[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs
+[1;32m    739[0m ):
+[1;32m    741[0m     variables [38;5;241m=[39m _ScatterPlotter[38;5;241m.[39mget_semantics([38;5;28mlocals[39m())
+[0;32m--> 742[0m     p [38;5;241m=[39m [43m_ScatterPlotter[49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m[43m [49m[43mvariables[49m[38;5;241;43m=[39;49m[43mvariables[49m[43m,[49m[43m [49m[43mlegend[49m[38;5;241;43m=[39;49m[43mlegend[49m[43m)[49m
+[1;32m    744[0m     p[38;5;241m.[39mmap_hue(palette[38;5;241m=[39mpalette, order[38;5;241m=[39mhue_order, norm[38;5;241m=[39mhue_norm)
+[1;32m    745[0m     p[38;5;241m.[39mmap_size(sizes[38;5;241m=[39msizes, order[38;5;241m=[39msize_order, norm[38;5;241m=[39msize_norm)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/relational.py:538[0m, in [0;36m_ScatterPlotter.__init__[0;34m(self, data, variables, legend)[0m
+[1;32m    529[0m [38;5;28;01mdef[39;00m [38;5;21m__init__[39m([38;5;28mself[39m, [38;5;241m*[39m, data[38;5;241m=[39m[38;5;28;01mNone[39;00m, variables[38;5;241m=[39m{}, legend[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m    530[0m 
+[1;32m    531[0m     [38;5;66;03m# TODO this is messy, we want the mapping to be agnostic about[39;00m
+[1;32m    532[0m     [38;5;66;03m# the kind of plot to draw, but for the time being we need to set[39;00m
+[1;32m    533[0m     [38;5;66;03m# this information so the SizeMapping can use it[39;00m
+[1;32m    534[0m     [38;5;28mself[39m[38;5;241m.[39m_default_size_range [38;5;241m=[39m (
+[1;32m    535[0m         np[38;5;241m.[39mr_[[38;5;241m.5[39m, [38;5;241m2[39m] [38;5;241m*[39m np[38;5;241m.[39msquare(mpl[38;5;241m.[39mrcParams[[38;5;124m"[39m[38;5;124mlines.markersize[39m[38;5;124m"[39m])
+[1;32m    536[0m     )
+[0;32m--> 538[0m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m[43m [49m[43mvariables[49m[38;5;241;43m=[39;49m[43mvariables[49m[43m)[49m
+[1;32m    540[0m     [38;5;28mself[39m[38;5;241m.[39mlegend [38;5;241m=[39m legend
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:640[0m, in [0;36mVectorPlotter.__init__[0;34m(self, data, variables)[0m
+[1;32m    635[0m [38;5;66;03m# var_ordered is relevant only for categorical axis variables, and may[39;00m
+[1;32m    636[0m [38;5;66;03m# be better handled by an internal axis information object that tracks[39;00m
+[1;32m    637[0m [38;5;66;03m# such information and is set up by the scale_* methods. The analogous[39;00m
+[1;32m    638[0m [38;5;66;03m# information for numeric axes would be information about log scales.[39;00m
+[1;32m    639[0m [38;5;28mself[39m[38;5;241m.[39m_var_ordered [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mx[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m, [38;5;124m"[39m[38;5;124my[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m}  [38;5;66;03m# alt., used DefaultDict[39;00m
+[0;32m--> 640[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43massign_variables[49m[43m([49m[43mdata[49m[43m,[49m[43m [49m[43mvariables[49m[43m)[49m
+[1;32m    642[0m [38;5;28;01mfor[39;00m var, [38;5;28mcls[39m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_semantic_mappings[38;5;241m.[39mitems():
+[1;32m    643[0m 
+[1;32m    644[0m     [38;5;66;03m# Create the mapping function[39;00m
+[1;32m    645[0m     map_func [38;5;241m=[39m partial([38;5;28mcls[39m[38;5;241m.[39mmap, plotter[38;5;241m=[39m[38;5;28mself[39m)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:701[0m, in [0;36mVectorPlotter.assign_variables[0;34m(self, data, variables)[0m
+[1;32m    699[0m [38;5;28;01melse[39;00m:
+[1;32m    700[0m     [38;5;28mself[39m[38;5;241m.[39minput_format [38;5;241m=[39m [38;5;124m"[39m[38;5;124mlong[39m[38;5;124m"[39m
+[0;32m--> 701[0m     plot_data, variables [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_assign_variables_longform[49m[43m([49m
+[1;32m    702[0m [43m        [49m[43mdata[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mvariables[49m[43m,[49m
+[1;32m    703[0m [43m    [49m[43m)[49m
+[1;32m    705[0m [38;5;28mself[39m[38;5;241m.[39mplot_data [38;5;241m=[39m plot_data
+[1;32m    706[0m [38;5;28mself[39m[38;5;241m.[39mvariables [38;5;241m=[39m variables
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:938[0m, in [0;36mVectorPlotter._assign_variables_longform[0;34m(self, data, **kwargs)[0m
+[1;32m    933[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(val, ([38;5;28mstr[39m, [38;5;28mbytes[39m)):
+[1;32m    934[0m 
+[1;32m    935[0m     [38;5;66;03m# This looks like a column name but we don't know what it means![39;00m
+[1;32m    937[0m     err [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCould not interpret value `[39m[38;5;132;01m{[39;00mval[38;5;132;01m}[39;00m[38;5;124m` for parameter `[39m[38;5;132;01m{[39;00mkey[38;5;132;01m}[39;00m[38;5;124m`[39m[38;5;124m"[39m
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(err)
+[1;32m    940[0m [38;5;28;01melse[39;00m:
+[1;32m    941[0m 
+[1;32m    942[0m     [38;5;66;03m# Otherwise, assume the value is itself data[39;00m
+[1;32m    943[0m 
+[1;32m    944[0m     [38;5;66;03m# Raise when data object is present and a vector can't matched[39;00m
+[1;32m    945[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(data, pd[38;5;241m.[39mDataFrame) [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(val, pd[38;5;241m.[39mSeries):
+
+[0;31mValueError[0m: Could not interpret value `GDPpc (in $ 000)` for parameter `x`
+ValueError: Could not interpret value `GDPpc (in $ 000)` for parameter `x`
+
