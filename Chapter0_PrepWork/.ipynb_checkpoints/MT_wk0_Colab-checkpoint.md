@@ -1,43 +1,9 @@
 
-# Using Anaconda and JupyterLab
+# Using Google Colab
 
-*For instructions on working in Colab, see the next section of these notes*
+Google Colab is a web-based coding environment in which you can run Jupyter Notebooks
 
-Once you have installed Anaconda Navigator on your computer, you will be able to open it from the Start Menu or Finder. It should be near the top of the list of Applications (because Anaconda begins with A!) and has a green circle symbol (actually an <a href=https://en.wikipedia.org/wiki/Ouroboros>Ouruboros</a>).
-
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_AnacondaLogo.svg
-:width: 30%
-:align: center
-```
-
-When you open Anaconda Navigator, you will see a window with lots of tiles for different Python-related apps:
-
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_Anaconda.png
-:width: 80%
-:align: center
-```
-
-## JupyterLab
-
-We will be using JupyterLab to work with Jupyter Notebooks. You can Launch JupyterLab from Anaconda Navigator by clicking "Launch".
-
-JupyterLab will open, not as its own window, but **as a tab in your default Web Browser**
-
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_JupyterLab.png
-:width: 80%
-:align: center
-```
-
-
-### File navigator
-
-At the left of the window you will see a file navigator - this shows you the files in your current folder.
-
-I suggest creating a folder specifically for this course and saving all your Jupyter Notebooks, data etc in it. You might like to create sub-folders for each week's class.
-
-### Workspace
-
-On the right there is a window where the Jupyter Notebooks themselves are opened.
+You can use Google Colab to complete the course if you don't want to install Anaconda on your laptop, or if you can't do so (this would be the case if you have a Chromebook for example). You can also run Colab on tablets and even phone if you want to.
 
 
 
@@ -45,18 +11,20 @@ On the right there is a window where the Jupyter Notebooks themselves are opened
 
 These course notes are made up of some pages that are just text ("Markdown") and some that are actual Jupyter Notebooks.
 
-Any file that is an actual Jupyter Notebook can be downloaded automatically to your computer by clicking the download button and selecting **.ipynb**, which is the extension for Jupyter Notebook files
+Any file that is an actual Jupyter Notebook can be opened automatically in Colab by clicking the little rocket button selecting **Colab**:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_DownloadNotebook.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_GoToColab.png
 :width: 80%
 :align: center
 ```
 
-* The file will go to wherever internet downloads go on your computer - probably your **Downloads** folder!
-* Move it to the folder you have created for this course
-* Open it in JupyterLab by going to JupyterLab, finding the file in the file browser pane at the left of the screen, and double-clicking it.
+* The notebook now opens in Colab in another tab of your browser
 
-You can now run and/or edit this Notebook file!
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_Colab.png
+:width: 80%
+:align: center
+```
+
 
 ### Markdown cells
 
@@ -89,43 +57,38 @@ Note that any code preceded by a hashtag # is a **commment** -  explanatory text
 
 ### Adding a new cell
 
-If you click the little plus button at the top of the Notebook window, it will add a new cell below the currently selected cell:
+If you click on 'Add Code' or 'Add Text' you will get a new code or markdown cell below the currently highlighted cell:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_AddCell.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ColabAddCell.png
 :width: 80%
 :align: center
 ```
 
-You can choose the cell type (you will want either **Code** or **Markdown**) fromm a dropdown box. 
-* If you forget to do this it will default to *code* which will probably then give you an error message if you write something in the cell that is not code
-* If this happens, simply change the cell type via the dropdown box.
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_CellType.png
+## Saving your work
+
+**You must save your work**. 
+
+Colab times out after a few minutes of inactivity and your changes will be lost unless you actively save them.
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_SaveInDrive.png
 :width: 80%
 :align: center
 ```
 
-### Saving your work
+Your files will be saved in your Google Drive (you would need to create one if you don't have one). 
+You can get to your drive by clicking File-->Locate in Drive
 
-Don't forget to save your work via the **File** menu in the top left of the JupyterLab Window.
-
-Click File --> Save Notebook As
-
-A dialogue box appears where you should enter the filename, includeing the complete **path** (folder your file is going into). Check that this path is correct - it will be automatically filled in to save the file in the folder you are "in" in the file browser pane (at the left of the screen).
-
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_SaveAs.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_GoogleDrive.png
 :width: 80%
 :align: center
 ```
 
 ## Creating a New Notebook
 
-You can create a new Jupyter Notebook by clicking **File --> New --> Notebook**:
+You can create a new Jupyter Notebook by clicking **File --> Notebook**:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_JupyterLabNewFile.png
-:width: 80%
-:align: center
-```
+**Remember to save this new notebook straight away, because if Colab times out, it will be lost!**
 
 ### Import Python libraries
 
@@ -145,6 +108,8 @@ You may be used to seeing data in files such as Excel spreadsheets. Often data a
 
 We will generally be reading .csv data files into Python as `Pandas` dataframes. This can be done using the tool `pd.read_csv()` as in the exercise below.
 
+You will need to save any data files you are using into your Google drive. This will generally mean downloading them from Canvas to your computer and then copying them to Google Drive.
+
 
 ### Note - loading data in example notebooks
 
@@ -156,24 +121,24 @@ For files pulled from GitHub, the filename will be a URL (webb address) rather t
 
 Let's practice making a new Jupyter notebook and reading in some data
 
-* Create a folder to contain the files for this course (perhaps on your Desktop)
+* Create a folder to contain the files for this course in your Google Drive
     * Create a subfolder for today's session (perhaps call it 'IntroSession')
     * Using the file browser pane in JupyterLab, navigate to 'IntroSession'
 
-* Download the example notebooks from the session (the sections on the For loop) into your folder 'IntroSession'
+* Open one of the example notebooks from the session (eg the sections on the For loop) in Colab and save it to your folder 'IntroSession'
 
-* Create a new blank Jupyter Notebook**
+* Create a new blank Jupyter Notebook in Colab
 
 * Add a code block to import the relevant Python libraries
     * You can copy-paste this from one of my example notebooks 
     
 * From Canvas, download the example data file 'ExampleData.csv'
-    * Save it in the folder IntroSession
+    * Upload it to Google Drive and save it in the folder IntroSession
     * You can open ExampleData.csv in a text editor (such as TextEdit) to have a look at it
     * Alternatively, you could open it in Excel or Numbers -
         * You may need to tell Excel that it is 'comma delimited' - In Excel, you open the App first, then do File-->Import, select 'ExampleData.csv' and click through the import options til you see 'delimited'; select 'comma'
         
-* In your Jupyter Notebbook, use the following code to load the data as a `Pandas` dataframe:
+* In your Jupyter Notebook on Colabb, use the following code to load the data as a `Pandas` dataframe:
 
 `cats = pd.read_csv('ExampleData.csv')`
 <br>

@@ -19,7 +19,7 @@ When you open Anaconda Navigator, you will see a window with lots of tiles for d
 
 ## JupyterLab
 
-We will be using JupyterLab to work with Jupyter Notebooks. You can Launch JupyterLab fromm Anaconda Navigator by clicking "Launch".
+We will be using JupyterLab to work with Jupyter Notebooks. You can Launch JupyterLab from Anaconda Navigator by clicking "Launch".
 
 JupyterLab will open, not as its own window, but **as a tab in your default Web Browser**
 
@@ -176,11 +176,13 @@ Let's practice making a new Jupyter notebook and reading in some data
 * In your Jupyter Notebbook, use the following code to load the data as a `Pandas` dataframe:
 
 `cats = pd.read_csv('ExampleData.csv')`
+<br>
 `display(cats)`
 
 * You may prefer to create a folder inside `IntroSession` called `data` and put the ExampleData.csv in there
     * If so use the following code to load it:
     
 `data = pd.read_csv('data/ExampleData.csv')`
+<br>
 `display(cats)`
 
