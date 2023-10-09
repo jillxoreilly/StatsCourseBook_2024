@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. ANOVA &#8212; Introduction to Statistics and Data Science</title>
+    <title>ANOVA &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter13_Regression4/regression4_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter13_Regression4/regression4_intro 2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Logistic Regression" href="../Chapter14_Regression5/regression5_intro.html" />
-    <link rel="prev" title="3. Regression - Statistical Tests" href="../Chapter12_Regression3/regression3_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -222,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
@@ -232,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. ANOVA</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
@@ -312,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter13_Regression4/regression4_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter13_Regression4/regression4_intro 2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -342,7 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter13_Regression4/regression4_intro.md" target="_blank"
+      <li><a href="../_sources/Chapter13_Regression4/regression4_intro 2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,7 +433,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">4.1. Tasks for this week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">Tasks for this week</a></li>
 </ul>
             </nav>
         </div>
@@ -447,7 +446,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="anova">
-<h1><span class="section-number">4. </span>ANOVA<a class="headerlink" href="#anova" title="Permalink to this heading">#</a></h1>
+<h1>ANOVA<a class="headerlink" href="#anova" title="Permalink to this heading">#</a></h1>
 <p>Welcome to Trinity Term!</p>
 <p>We’ll have three weeks of classes this term, covering Analysis of
 Variance, Logistic Regression, and Research Design.</p>
@@ -456,7 +455,7 @@ Variance, Logistic Regression, and Research Design.</p>
 as ANOVA.</p>
 <p>This method of statistical analysis has some overlap with Regression, and we will look at the similarities and differences of the two approaches.</p>
 <section id="tasks-for-this-week">
-<h2><span class="section-number">4.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
+<h2>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
 <p>Conceptual material is covered in the lecture. In addition to the live
 lecture, you can find the lecture recording and additional materials
 on Canvas.</p>
@@ -465,8 +464,6 @@ except the page labelled “Tutorial Exercises”) in advance of the
 computer-based tutorial session.</p>
 <p>The tutorial exercises for this week will form the basis of your hand-in assignment.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -499,24 +496,6 @@ computer-based tutorial session.</p>
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Chapter12_Regression3/regression3_intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Regression - Statistical Tests</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../Chapter14_Regression5/regression5_intro.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Logistic Regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -532,7 +511,7 @@ computer-based tutorial session.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">4.1. Tasks for this week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">Tasks for this week</a></li>
 </ul>
   </nav></div>
 

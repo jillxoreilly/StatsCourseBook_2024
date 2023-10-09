@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.6. Correlation &#8212; Introduction to Statistics and Data Science</title>
+    <title>Correlation &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -64,11 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter1_DescribingData/MT_wk1_Correlation';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter1_DescribingData/MT_wk1_Correlation 2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.7. Concepts Review" href="MT_wk1_conceptCheck.html" />
-    <link rel="prev" title="1.5. Skew" href="MT_wk1_Skew.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,17 +174,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk1_intro.html">1. Describing Data</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_Skew.html">1.5. Skew</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk1_Correlation.html">1.6. Correlation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
@@ -314,7 +313,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter1_DescribingData/MT_wk1_Correlation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter1_DescribingData/MT_wk1_Correlation 2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -344,7 +343,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter1_DescribingData/MT_wk1_Correlation.md" target="_blank"
+      <li><a href="../_sources/Chapter1_DescribingData/MT_wk1_Correlation 2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,12 +435,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance">1.6.1. Covariance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearson-s-correlation-r">1.6.2. Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance">Covariance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearson-s-correlation-r">Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearman-s-correlation-r-s">1.6.3. Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearman-s-correlation-r-s">Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
 </ul>
 </li>
@@ -457,7 +456,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="correlation">
-<h1><span class="section-number">1.6. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h1>
+<h1>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h1>
 <p><strong>Correlation</strong>, and the related measure <strong>covariance</strong>, tell us whether there is a relationship between two variables.</p>
 <p>Consider the following (made up) dataset, containing scores of 100 children on English and Maths tests:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrHists.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrHists.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrHists.png" style="width: 80%;" /></a>
@@ -475,7 +474,7 @@ document.write(`
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrFat.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrFat.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_CorrFat.png" style="width: 80%;" /></a>
 <p>Correlation and covariance are closely related. As a descriptive statistic, correlation is most often used, as it gives us a ‘pure’ measure of the strength of the relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (corrected for the spread within <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> independently).</p>
 <section id="covariance">
-<h2><span class="section-number">1.6.1. </span>Covariance<a class="headerlink" href="#covariance" title="Permalink to this heading">#</a></h2>
+<h2>Covariance<a class="headerlink" href="#covariance" title="Permalink to this heading">#</a></h2>
 <p>The <strong>variance</strong> in each variable, <span class="math notranslate nohighlight">\(x\)</span> (Maths score) and <span class="math notranslate nohighlight">\(y\)</span> (English score) is simply the standard deviation, squared.</p>
 <p>This tells us how spread out the data points are for Maths and English - we can see from the histograms above that the data are slightly more spread out for Maths than English (the histogram for Maths is flatter).</p>
 <p>A more mathematical way of thinking about variance (and standard deviation) is that they measure how far each data point is from the mean of the distribution:</p>
@@ -510,7 +509,7 @@ document.write(`
 </center>
 </section>
 <section id="pearson-s-correlation-r">
-<h2><span class="section-number">1.6.2. </span>Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span><a class="headerlink" href="#pearson-s-correlation-r" title="Permalink to this heading">#</a></h2>
+<h2>Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span><a class="headerlink" href="#pearson-s-correlation-r" title="Permalink to this heading">#</a></h2>
 <p>Correlation is closely related to covariance, but is corrected for the spread in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>The most commonly used form of correlation, Pearson’s <span class="math notranslate nohighlight">\(r\)</span>, is the covariance <span class="math notranslate nohighlight">\(s_{xy}\)</span>, divided by the standard deviations in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (<span class="math notranslate nohighlight">\(s_x\)</span> and <span class="math notranslate nohighlight">\(s_y\)</span>):</p>
 <div class="math notranslate nohighlight">
@@ -550,7 +549,7 @@ document.write(`
 </section>
 </section>
 <section id="spearman-s-correlation-r-s">
-<h2><span class="section-number">1.6.3. </span>Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span><a class="headerlink" href="#spearman-s-correlation-r-s" title="Permalink to this heading">#</a></h2>
+<h2>Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span><a class="headerlink" href="#spearman-s-correlation-r-s" title="Permalink to this heading">#</a></h2>
 <p>In Spearman’s correlation, we replace the actual datapoints with their ranks, so the smallest data point becomes rank 1, the next smallest rank 2, etc. We then calculate Pearson’s correlation on the ranks, rather than the actual data.</p>
 <p><strong>Spearman’s <span class="math notranslate nohighlight">\(r\)</span> is equivalent to Pearson’s <span class="math notranslate nohighlight">\(r\)</span> for the ranks rather than the data values</strong></p>
 <p>When running correlations on the computer, we can simply set the argument <code class="docutils literal notranslate"><span class="pre">method=spearman</span></code> and the ranking etc is all done for us.</p>
@@ -613,24 +612,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="MT_wk1_Skew.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Skew</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="MT_wk1_conceptCheck.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>Concepts Review</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -646,12 +627,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance">1.6.1. Covariance</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearson-s-correlation-r">1.6.2. Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covariance">Covariance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pearson-s-correlation-r">Pearson’s Correlation <span class="math notranslate nohighlight">\(r\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearman-s-correlation-r-s">1.6.3. Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spearman-s-correlation-r-s">Spearman’s Correlation <span class="math notranslate nohighlight">\(r_s\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video">Video</a></li>
 </ul>
 </li>

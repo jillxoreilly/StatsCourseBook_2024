@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter0_PrepWork/MT_wk0_random';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Describing Data" href="../Chapter1_DescribingData/MT_wk1_intro.html" />
+    <link rel="next" title="1.7. ChatGPT" href="MT_wk0_ChatGPT.html" />
     <link rel="prev" title="1.4. FOR loop with IF statement" href="MT_wk0_ForIf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. Simulating a random process</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -537,7 +538,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -583,20 +584,20 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
 TAILS
 HEADS
-HEADS
+TAILS
 TAILS
 HEADS
 TAILS
-HEADS
-HEADS
-HEADS
+TAILS
+TAILS
+TAILS
 </pre></div>
 </div>
 </div>
 </div>
 <section id="count-the-heads">
 <h2><span class="section-number">1.6.1. </span>Count the heads<a class="headerlink" href="#count-the-heads" title="Permalink to this heading">#</a></h2>
-<p>Ultimately we might not be so interested in the whole sequence as some summary of it - for exammple how likely is it that we can get 8/10 ‘heads’ for a fair coin?</p>
+<p>Ultimately we might not be so interested in the whole sequence as some summary of it - for example how likely is it that we can get 8/10 ‘heads’ for a fair coin?</p>
 <ul class="simple">
 <li><p>Uncomment the code below and modify it so that it fills up the output array ‘heads’ with 1s and 0s according to the random ‘coin toss’</p></li>
 </ul>
@@ -616,12 +617,35 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
 </pre></div>
 </div>
 </div>
 </div>
-<p>If you run your code multiple times you should find that the nummber of heads varies, although you will more often get values near to 5/10 (as the coin is fair) than extreme values (such as 9/10 or 1/10)</p>
+<p>If you run your code multiple times you should find that the number of heads varies, although you will more often get values near to 5/10 (as the coin is fair) than extreme values (such as 9/10 or 1/10)</p>
+<p>There are two differences from the previous example:</p>
+<ul class="simple">
+<li><p>We code the outputs as <tt>1</tt> and <tt>0</tt>, rather than the strings <tt>HEADS</tt> and <tt>TAILS</tt></p></li>
+<li><p>We store the outcomes in a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array (rather than printing them to the screen)</p>
+<ul>
+<li><p>This array is later summed to count the number of heads:</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;output array: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">heads</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sum = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">heads</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [0. 0. 0. 1. 1. 1. 1. 0. 1. 1.]
+sum = 6.0
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="double-loop">
 <h2><span class="section-number">1.6.2. </span>Double loop<a class="headerlink" href="#double-loop" title="Permalink to this heading">#</a></h2>
@@ -659,7 +683,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd1a1a35435bc8fe583dd775f1ac76e69f17f8b3ea4edd3a3c3856f8b60d416e.png" src="../_images/bd1a1a35435bc8fe583dd775f1ac76e69f17f8b3ea4edd3a3c3856f8b60d416e.png" />
+<img alt="../_images/4391ff12584f3d8c8a39dab5693d4c787235c15dfd9f6284461fe73fd5fcf916.png" src="../_images/4391ff12584f3d8c8a39dab5693d4c787235c15dfd9f6284461fe73fd5fcf916.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -745,7 +769,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46a51ab40a74f30de911b1c16407ddb2911fea3027eb92191496533abb5fb952.png" src="../_images/46a51ab40a74f30de911b1c16407ddb2911fea3027eb92191496533abb5fb952.png" />
+<img alt="../_images/aef45ae849d57b937afabc5eee1038ecd5f3a2122a4b1daea046f7cdaa87e590.png" src="../_images/aef45ae849d57b937afabc5eee1038ecd5f3a2122a4b1daea046f7cdaa87e590.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -905,7 +929,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d82d913cf2727a32445c3c993d6ec2b41259d6f25f3dcb23f54c38b4402c8984.png" src="../_images/d82d913cf2727a32445c3c993d6ec2b41259d6f25f3dcb23f54c38b4402c8984.png" />
+<img alt="../_images/ad86e8be36f49ebd6996488ad69c24f74fee21d682ad58e3a102531eb29b75d3.png" src="../_images/ad86e8be36f49ebd6996488ad69c24f74fee21d682ad58e3a102531eb29b75d3.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -930,7 +954,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea41cc4f2b14dc745c01be67a6e82a2738727fe75592793a84e4f6f2667b23ef.png" src="../_images/ea41cc4f2b14dc745c01be67a6e82a2738727fe75592793a84e4f6f2667b23ef.png" />
+<img alt="../_images/fb6556a2afd27dbd099205cd32a9ed1885b38bacb0b2421e2b4abee33393ca5f.png" src="../_images/fb6556a2afd27dbd099205cd32a9ed1885b38bacb0b2421e2b4abee33393ca5f.png" />
 </div>
 </div>
 </section>
@@ -988,11 +1012,11 @@ HEADS
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter1_DescribingData/MT_wk1_intro.html"
+       href="MT_wk0_ChatGPT.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Describing Data</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>ChatGPT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
