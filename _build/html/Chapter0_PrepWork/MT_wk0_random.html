@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.5. Simulating a random process &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.6. Simulating a random process &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter0_PrepWork/MT_wk0_random';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.7. ChatGPT" href="MT_wk0_ChatGPT.html" />
-    <link rel="prev" title="1.4. FOR loop with IF statement" href="MT_wk0_ForIf.html" />
+    <link rel="next" title="1.8. ChatGPT" href="MT_wk0_ChatGPT.html" />
+    <link rel="prev" title="1.5. FOR loop with IF statement" href="MT_wk0_ForIf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,11 +170,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk0_intro.html">1. Preparatory Work</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.3. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. Simulating a random process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.4. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.5. FOR loop with IF statement</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Simulating a random process</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.8. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -466,25 +467,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.5. Simulating a random process</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.5.2. Random number</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.6. Simulating a random process</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.6.2. Random number</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.6. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.6.1. Count the heads</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.6.2. Double loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.7. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.7.1. Count the heads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.7.2. Double loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension-questions">Comprehension questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.6.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.7.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-ball">Simulate a single ball</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Comprehension Questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.6.4. Double Loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.6.5. Exercises</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.6.6. Significance of the Galton Board simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.4. Double Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.7.5. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.7.6. Significance of the Galton Board simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -500,13 +501,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulating-a-random-process">
-<h1><span class="section-number">1.5. </span>Simulating a random process<a class="headerlink" href="#simulating-a-random-process" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.6. </span>Simulating a random process<a class="headerlink" href="#simulating-a-random-process" title="Permalink to this heading">#</a></h1>
 <p>In statistics we are interested in understanding how random variability affects a measurement.</p>
 <p>For example, a person takes a multiple choice style IQ test. Their score will reflect their true IQ, bubt also some elment of random chance (they will have guessed the questions they couldn’t answer, and may have been lucky or unlucky in terms of how many guesses were correct).</p>
 <p>As we will see in the course, randomness has predictable properties (!), for example, the influecne of randomm chance tends to average out over lots of measurements (you might be lucky and guess 3/3 questions correctly, but not 100/100)</p>
 <p>To understand the impact of randomess on our measureents, we can simulate a random process. That is what we will do in the next section.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,7 +526,7 @@ document.write(`
 </div>
 </section>
 <section id="random-number">
-<h2><span class="section-number">1.5.2. </span>Random number<a class="headerlink" href="#random-number" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.2. </span>Random number<a class="headerlink" href="#random-number" title="Permalink to this heading">#</a></h2>
 <p>We can ask the computer to generate a random number. The <code class="docutils literal notranslate"><span class="pre">np.random()</span></code> library is good for this!</p>
 <p>For example, the following code block generates a random integer between 0 and 9.</p>
 <ul class="simple">
@@ -560,7 +561,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simulated-coin-flip">
-<h1><span class="section-number">1.6. </span>Simulated coin flip<a class="headerlink" href="#simulated-coin-flip" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.7. </span>Simulated coin flip<a class="headerlink" href="#simulated-coin-flip" title="Permalink to this heading">#</a></h1>
 <p>A random number can act as a model for a real world process.</p>
 <p>For example, if we flip a fair coin, the chance of getting ‘heads’ is 0.5.</p>
 <p>If we pick a random integer in the range <tt>[0,2)</tt> (ie, we pick <tt>0</tt> or <tt>1</tt>), the chance of getting <tt>1</tt> is 0.5.</p>
@@ -596,7 +597,7 @@ TAILS
 </div>
 </div>
 <section id="count-the-heads">
-<h2><span class="section-number">1.6.1. </span>Count the heads<a class="headerlink" href="#count-the-heads" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.1. </span>Count the heads<a class="headerlink" href="#count-the-heads" title="Permalink to this heading">#</a></h2>
 <p>Ultimately we might not be so interested in the whole sequence as some summary of it - for example how likely is it that we can get 8/10 ‘heads’ for a fair coin?</p>
 <ul class="simple">
 <li><p>Uncomment the code below and modify it so that it fills up the output array ‘heads’ with 1s and 0s according to the random ‘coin toss’</p></li>
@@ -648,7 +649,7 @@ sum = 6.0
 </div>
 </section>
 <section id="double-loop">
-<h2><span class="section-number">1.6.2. </span>Double loop<a class="headerlink" href="#double-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.2. </span>Double loop<a class="headerlink" href="#double-loop" title="Permalink to this heading">#</a></h2>
 <p>What if we are interested in how much more often we get a ‘close-to-even’ outcome (4/10, 5/10, 6/10) vs an extreme outcome?</p>
 <p>We need to run the 10-coin-toss simulation lots of times and note how any heads we got (out of 10) each time.</p>
 <ul class="simple">
@@ -710,7 +711,7 @@ sum = 6.0
 </section>
 </section>
 <section id="exercise-galton-board-simulation">
-<h2><span class="section-number">1.6.3. </span>Exercise: Galton Board simulation<a class="headerlink" href="#exercise-galton-board-simulation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.3. </span>Exercise: Galton Board simulation<a class="headerlink" href="#exercise-galton-board-simulation" title="Permalink to this heading">#</a></h2>
 <p>In the Galton Board, ball bearings are dropped from a funnel onto a board with pins sticking out.</p>
 <p>As each ball bearing goes down the board, each time it hits a pin it bounces left or right:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg" style="width: 30%;" /></a>
@@ -832,7 +833,7 @@ sum = 6.0
 </section>
 </section>
 <section id="id2">
-<h2><span class="section-number">1.6.4. </span>Double Loop<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.4. </span>Double Loop<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>The point of the Galton Board is to release lots of ball bearings and observe where they are omre <em>likely</em> to end up</p>
 <p>To simulate this we create an outer loop that runs our one-ball simmulation many times</p>
 <p>If you are feeling adventurous, you can try yourself to complete the second loop around the outside of the code below!</p>
@@ -959,14 +960,14 @@ sum = 6.0
 </div>
 </section>
 <section id="exercises">
-<h2><span class="section-number">1.6.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.5. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You may like to increase the number of balls in the simulation - you should get a tidier-looking distribution of end points with more balls</p></li>
 <li><p>You could try increasing the number of pins. What happens to the histogram of endpoints when you do this?</p></li>
 </ul>
 </section>
 <section id="significance-of-the-galton-board-simulation">
-<h2><span class="section-number">1.6.6. </span>Significance of the Galton Board simulation<a class="headerlink" href="#significance-of-the-galton-board-simulation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.6. </span>Significance of the Galton Board simulation<a class="headerlink" href="#significance-of-the-galton-board-simulation" title="Permalink to this heading">#</a></h2>
 <p>The Galton board illustrates how a combination of multiple random influences produces a certain pattern of final outcomes, namely a Normal Distribution.</p>
 <p>We will meet this idea again in the block on Statistical Theory.</p>
 </section>
@@ -1008,7 +1009,7 @@ sum = 6.0
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>FOR loop with IF statement</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>FOR loop with IF statement</p>
       </div>
     </a>
     <a class="right-next"
@@ -1016,7 +1017,7 @@ sum = 6.0
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>ChatGPT</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>ChatGPT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1035,25 +1036,25 @@ sum = 6.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.5. Simulating a random process</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.5.2. Random number</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.6. Simulating a random process</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.6.2. Random number</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.6. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.6.1. Count the heads</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.6.2. Double loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.7. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.7.1. Count the heads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.7.2. Double loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension-questions">Comprehension questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.6.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.7.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-ball">Simulate a single ball</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Comprehension Questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.6.4. Double Loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.6.5. Exercises</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.6.6. Significance of the Galton Board simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.7.4. Double Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.7.5. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.7.6. Significance of the Galton Board simulation</a></li>
 </ul>
 </li>
 </ul>

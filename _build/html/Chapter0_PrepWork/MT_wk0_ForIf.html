@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.4. FOR loop with IF statement &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.5. FOR loop with IF statement &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter0_PrepWork/MT_wk0_ForIf';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. Simulating a random process" href="MT_wk0_random.html" />
-    <link rel="prev" title="1.3. The FOR loop" href="MT_wk0_For.html" />
+    <link rel="next" title="1.6. Simulating a random process" href="MT_wk0_random.html" />
+    <link rel="prev" title="1.4. The FOR loop" href="MT_wk0_For.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,11 +170,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk0_intro.html">1. Preparatory Work</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.3. The FOR loop</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_random.html">1.5. Simulating a random process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.4. The FOR loop</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_random.html">1.6. Simulating a random process</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.8. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -466,12 +467,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-a-condition">1.4.2. Checking a condition</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.5.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-a-condition">1.5.2. Checking a condition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension">Comprehension</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">1.4.3. IF statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">1.5.3. IF statement</a></li>
 </ul>
             </nav>
         </div>
@@ -484,11 +485,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="for-loop-with-if-statement">
-<h1><span class="section-number">1.4. </span>FOR loop with IF statement<a class="headerlink" href="#for-loop-with-if-statement" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.5. </span>FOR loop with IF statement<a class="headerlink" href="#for-loop-with-if-statement" title="Permalink to this heading">#</a></h1>
 <p>Sometimes we don’t just want to do the same operation on every input - we might want to do different operations depending on some condition.</p>
 <p>For this we need a statement of the form IF…THEN</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,7 +508,7 @@ document.write(`
 </div>
 </section>
 <section id="checking-a-condition">
-<h2><span class="section-number">1.4.2. </span>Checking a condition<a class="headerlink" href="#checking-a-condition" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.5.2. </span>Checking a condition<a class="headerlink" href="#checking-a-condition" title="Permalink to this heading">#</a></h2>
 <p>It is said that you should only eat shellfish in months that don’t have “r” in the name.</p>
 <p>We can check whether a word has an r in the name using the test <code class="docutils literal notranslate"><span class="pre">in</span></code>, which returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
@@ -584,7 +585,7 @@ document.write(`
 </section>
 </section>
 <section id="if-statement">
-<h2><span class="section-number">1.4.3. </span>IF statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.5.3. </span>IF statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h2>
 <p>We can set up an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to print different statements depending on whether there is an r in the name of the month</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,7 +675,7 @@ Don&#39;t eat shellfish in Decemeber
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>The FOR loop</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>The FOR loop</p>
       </div>
     </a>
     <a class="right-next"
@@ -682,7 +683,7 @@ Don&#39;t eat shellfish in Decemeber
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Simulating a random process</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>Simulating a random process</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -701,12 +702,12 @@ Don&#39;t eat shellfish in Decemeber
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-a-condition">1.4.2. Checking a condition</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.5.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-a-condition">1.5.2. Checking a condition</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension">Comprehension</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">1.4.3. IF statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">1.5.3. IF statement</a></li>
 </ul>
   </nav></div>
 

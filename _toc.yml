@@ -10,6 +10,7 @@ parts:
       - file: Chapter0_PrepWork/MT_wk0_intro.md
         sections:
         - file: Chapter0_PrepWork/MT_wk0_datacamp.md
+        - file: Chapter0_PrepWork/MT_wk0_JupyterLab.md
         - file: Chapter0_PrepWork/MT_wk0_For.ipynb
         - file: Chapter0_PrepWork/MT_wk0_ForIf.ipynb
         - file: Chapter0_PrepWork/MT_wk0_random.ipynb

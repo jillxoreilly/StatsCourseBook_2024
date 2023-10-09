@@ -3,9 +3,9 @@
 
 *For instructions on working in Colab, see the next section of these notes*
 
-Once you have installed Anaconda Navigator on your computer, you will be able to open it from the Start Menu or Finder. It should be near the top of the list of Applications (because Anaconda begins with A!) and has a green circle symbol (actually an <a href=https://en.wikipedia.org/wiki/Ouroboros>Ouruboros</a>.
+Once you have installed Anaconda Navigator on your computer, you will be able to open it from the Start Menu or Finder. It should be near the top of the list of Applications (because Anaconda begins with A!) and has a green circle symbol (actually an <a href=https://en.wikipedia.org/wiki/Ouroboros>Ouruboros</a>).
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_mean.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_AnacondaLogo.svg
 :width: 30%
 :align: center
 ```
@@ -118,7 +118,7 @@ A dialogue box appears where you should enter the filename, includeing the compl
 :align: center
 ```
 
-## Create Notebook
+## Creating a New Notebook
 
 You can create a new Jupyter Notebook by clicking **File --> New --> Notebook**:
 
@@ -143,9 +143,44 @@ This is a statistics course, so of course we will need to work with data files!
 
 You may be used to seeing data in files such as Excel spreadsheets. Often data are stored in text files such as **.csv** (comma separated values) files. This is a generic file type that can be read by Excel, Numbers, and by programming tools such as Python, R and Matlab.
 
+We will generally be reading .csv data files into Python as `Pandas` dataframes. This can be done using the tool `pd.read_csv()` as in the exercise below.
 
-### Note - loaading data in example notebooks
+
+### Note - loading data in example notebooks
 
 In the example notebooks on this course notes website, I tend to pull the data directly from my GitHub (a web-based platform where the course files are stored). This just means that you can run the examples without having to separately download data files and edit the code etc.
 
-For files pulled from GitHub, the filename will be a URL (webb address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example above.
+For files pulled from GitHub, the filename will be a URL (webb address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
+
+## Exercise
+
+Let's practice making a new Jupyter notebook and reading in some data
+
+* Create a folder to contain the files for this course (perhaps on your Desktop)
+    * Create a subfolder for today's session (perhaps call it 'IntroSession')
+    * Using the file browser pane in JupyterLab, navigate to 'IntroSession'
+
+* Download the example notebooks from the session (the sections on the For loop) into your folder 'IntroSession'
+
+* Create a new blank Jupyter Notebook**
+
+* Add a code block to import the relevant Python libraries
+    * You can copy-paste this from one of my example notebooks 
+    
+* From Canvas, download the example data file 'ExampleData.csv'
+    * Save it in the folder IntroSession
+    * You can open ExampleData.csv in a text editor (such as TextEdit) to have a look at it
+    * Alternatively, you could open it in Excel or Numbers -
+        * You may need to tell Excel that it is 'comma delimited' - In Excel, you open the App first, then do File-->Import, select 'ExampleData.csv' and click through the import options til you see 'delimited'; select 'comma'
+        
+* In your Jupyter Notebbook, use the following code to load the data as a `Pandas` dataframe:
+
+`cats = pd.read_csv('ExampleData.csv')`
+`display(cats)`
+
+* You may prefer to create a folder inside `IntroSession` called `data` and put the ExampleData.csv in there
+    * If so use the following code to load it:
+    
+`data = pd.read_csv('data/ExampleData.csv')`
+`display(cats)`
+
