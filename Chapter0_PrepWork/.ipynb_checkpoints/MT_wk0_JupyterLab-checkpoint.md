@@ -77,7 +77,7 @@ You can find examples of all of these in my example notebooks
 
 These contain Python code
 
-Note that any code preceded by a hashtag # is a **commment** -  explanatory text that is visible to human readers but is ignored by the computer
+Note that any code preceded by a hashtag # is a **comment** -  explanatory text that is visible to human readers but is ignored by the computer
 
 * Sometimes I **comment out** code in notebooks that I don't want to automatically run - you can then **uncomment** it (by removing the hashtags at the start of the lines) when you are ready to run it.
 * The code block below is "commented out" - students are invited to think ahead about what the output of the code will be, before deleting the hashtags and running the code to check their answer.
@@ -95,8 +95,9 @@ If you click the little plus button at the top of the Notebook window, it will a
 :width: 80%
 :align: center
 ```
+<brb>
 
-You can choose the cell type (you will want either **Code** or **Markdown**) fromm a dropdown box. 
+You can choose the cell type (you will want either **Code** or **Markdown**) from a dropdown box. 
 * If you forget to do this it will default to *code* which will probably then give you an error message if you write something in the cell that is not code
 * If this happens, simply change the cell type via the dropdown box.
 
@@ -111,7 +112,7 @@ Don't forget to save your work via the **File** menu in the top left of the Jupy
 
 Click File --> Save Notebook As
 
-A dialogue box appears where you should enter the filename, includeing the complete **path** (folder your file is going into). Check that this path is correct - it will be automatically filled in to save the file in the folder you are "in" in the file browser pane (at the left of the screen).
+A dialogue box appears where you should enter the filename, including the complete **path** (folder your file is going into). Check that this path is correct - it will be automatically filled in to save the file in the folder you are "in" in the file browser pane (at the left of the screen).
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_SaveAs.png
 :width: 80%
@@ -162,7 +163,7 @@ Let's practice making a new Jupyter notebook and reading in some data
 
 * Download the example notebooks from the session (the sections on the For loop) into your folder 'IntroSession'
 
-* Create a new blank Jupyter Notebook**
+* Create a new blank Jupyter Notebook
 
 * Add a code block to import the relevant Python libraries
     * You can copy-paste this from one of my example notebooks 

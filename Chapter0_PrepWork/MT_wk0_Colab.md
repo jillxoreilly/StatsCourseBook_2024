@@ -12,19 +12,19 @@ You can use Google Colab to complete the course if you don't want to install Ana
 These course notes are made up of some pages that are just text ("Markdown") and some that are actual Jupyter Notebooks.
 
 Any file that is an actual Jupyter Notebook can be opened automatically in Colab by clicking the little rocket button selecting **Colab**:
-
+<br>
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_GoToColab.png
 :width: 80%
 :align: center
 ```
-
+<br>
 * The notebook now opens in Colab in another tab of your browser
-
+<br>
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_Colab.png
 :width: 80%
 :align: center
 ```
-
+<br>
 
 ### Markdown cells
 
@@ -45,7 +45,7 @@ You can find examples of all of these in my example notebooks
 
 These contain Python code
 
-Note that any code preceded by a hashtag # is a **commment** -  explanatory text that is visible to human readers but is ignored by the computer
+Note that any code preceded by a hashtag # is a **comment** -  explanatory text that is visible to human readers but is ignored by the computer
 
 * Sometimes I **comment out** code in notebooks that I don't want to automatically run - you can then **uncomment** it (by removing the hashtags at the start of the lines) when you are ready to run it.
 * The code block below is "commented out" - students are invited to think ahead about what the output of the code will be, before deleting the hashtags and running the code to check their answer.

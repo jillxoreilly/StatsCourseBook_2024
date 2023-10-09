@@ -45,7 +45,7 @@ You can find examples of all of these in my example notebooks
 
 These contain Python code
 
-Note that any code preceded by a hashtag # is a **commment** -  explanatory text that is visible to human readers but is ignored by the computer
+Note that any code preceded by a hashtag # is a **comment** -  explanatory text that is visible to human readers but is ignored by the computer
 
 * Sometimes I **comment out** code in notebooks that I don't want to automatically run - you can then **uncomment** it (by removing the hashtags at the start of the lines) when you are ready to run it.
 * The code block below is "commented out" - students are invited to think ahead about what the output of the code will be, before deleting the hashtags and running the code to check their answer.

@@ -22,7 +22,7 @@ You have two options here:
 
 You can open each workbook in an executalbe and editable format on the web, without downloading anything
 
-To do this you click on the little rocket icon in the top right (only on pages with actual code in - look on one of the "rolling a virtual dice" pages - and select "open in Colab"
+To do this you click on the little rocket icon in the top right (only on pages with actual code in - look on one of the "For loop" pages - and select "open in Colab"
 
 ```{warning}
 Note that although you can run  and editthe workbook on the web with Colab, you would need to save your work if you want it to last after you close the session (sessions will also timeout if left for a few minutes). You can save your edited notebook to your Google Drive if you have a Google account by clicking File > Save a copy in drive
@@ -30,7 +30,7 @@ Note that although you can run  and editthe workbook on the web with Colab, you 
 
 It will appear as a .ipynb file and can be reopened and further edited (or emailed to your tutor for hand-in exercises)
 
-This is the minimum-setup option but can be clunky. I'd recommmend if possible working on your local computer with Spyder.
+This is the minimum-setup option but can be clunky. I'd recommmend if possible working on your local computer with JupyterLab.
 
 #### Download and work locally (preferred)
 
@@ -44,7 +44,7 @@ I recommend working with JupyterLab if possible as you will also have the comman
 
 ### Know thy computer
 
-If you are using the teaching lab computers to run notebooks with Spyder (Psychology/PPL students only), watch out - files saved on the computers will not be saved after you log out
+If you are using the teaching lab computers to run notebooks with JupyterLab (Psychology/PPL students only), watch out - files saved on the computers will not be saved after you log out
 
 ```{warning}
 Psychology students working on the computing lab computers - you need to save your work to One Drive. Anything you save on the computer will be wiped when you log off.
@@ -54,7 +54,7 @@ Psychology students working on the computing lab computers - you need to save yo
 
 You may wish to set up Anaconda/JupyterLab so you can work locally on your own laptop. The alternative is to use Colab (cloud computing).
 
-This should be possible for most laptops and we have "cheat-sheets" to get you started.
+This should be possible for most laptops by following the instructions PDF (IT SetUp) on Canvas.
 
 We can't promise to make everyone's software work on their own computer but we will have a go and today is a good time to try as someone will be around to help.
 
@@ -66,7 +66,7 @@ You should have had a letter from me over the summer advising you to complete so
 If you didn't do this or didn't/couldn't finish it, you should come back to it today - tutors are here to help you if you get stuck
 
 
-### Do the further exercises in this book
+### Do the further exercises in these course notes
 
 The section "preparatory work" is intended to be completed in the preparatory session (although I realise not everyone will manage this - that is OK, all topics will be revisited in the course)
 
