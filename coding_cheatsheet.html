@@ -172,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -1279,7 +1280,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11, 19, 15, 14,  4,  3,  6, 18,  4, 11, 13,  9])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14,  2, 14,  3, 12,  5, 14,  5,  3, 17, 17, 14])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1314,7 +1315,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>11</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1322,7 +1323,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>19</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1330,7 +1331,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>15</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1338,7 +1339,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>14</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1346,7 +1347,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>4</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -1405,36 +1406,36 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>5</th>
-      <td>strawberry</td>
-      <td>fruit</td>
-      <td>red</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
       <th>3</th>
       <td>banana</td>
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>onion</td>
+      <td>veg</td>
+      <td>brown</td>
+      <td>3</td>
       <td>14</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>orange</td>
+      <th>10</th>
+      <td>plum</td>
       <td>fruit</td>
-      <td>orange</td>
-      <td>5</td>
-      <td>15</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>17</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>lettuce</td>
+      <th>7</th>
+      <td>carrot</td>
       <td>veg</td>
-      <td>green</td>
-      <td>1</td>
-      <td>11</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -1474,11 +1475,11 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>3</th>
-      <td>banana</td>
-      <td>fruit</td>
-      <td>yellow</td>
-      <td>6</td>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
       <td>14</td>
     </tr>
     <tr>
@@ -1487,23 +1488,23 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>orange</td>
       <td>0</td>
-      <td>18</td>
+      <td>5</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>lettuce</td>
+      <th>1</th>
+      <td>cucumber</td>
       <td>veg</td>
       <td>green</td>
-      <td>1</td>
-      <td>11</td>
+      <td>4</td>
+      <td>2</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>potato</td>
-      <td>veg</td>
-      <td>white</td>
-      <td>1</td>
-      <td>4</td>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
+      <td>green</td>
+      <td>2</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
@@ -1537,7 +1538,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7faf4de2cf40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ff7ae92e730&gt;
 </pre></div>
 </div>
 </div>
@@ -1584,7 +1585,7 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_76337/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_11190/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
