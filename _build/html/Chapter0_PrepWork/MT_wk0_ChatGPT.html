@@ -514,7 +514,7 @@ document.write(`
 <p>Coders have always worked by taking existing code (traditionally, written by other humans) and modifying it. This is how you learn to code, and how most code for practical applications is developed. For example, many research labs share all their code via an online repository called GitHub; new lab members will develop their data analysis code based on what other lab members have done in the past.</p>
 <p>In this course, I encourage you to use the code snippets in my worked examples to help you complete the exercises and assignments. You need to understand them so you can modify them as needed, but you don’t need to write them from scratch.</p>
 <p>Using code generated (or basically, found on the internet) by ChatGPT is no different from the above examples really and is an acceptable way to procede, but you should (in all cases where you are modifying existing code), try to understand what the code, otherwise you will end up with your code not doing what was intended.</p>
-<p>One caveat to be aware of is that at present it is forbidden to use ChatGPT in university exams, which would include the exam for this course. It is however permitted to use your own notes and the course notes (i.e. this website) in exams.</p>
+<p>One caveat to be aware of is that at present <strong>it is forbidden to use ChatGPT in University exams</strong>, which would include the exam for this course. It is however permitted to use your own notes and the course notes (i.e. this website) in the exam for this course, so you will not be examined on writing code from scratch, but rather sourcing and modifying suitable code.</p>
 </section>
 <section id="example">
 <h2><span class="section-number">1.9.2. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
@@ -580,8 +580,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Heads: 7
-Tails: 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Heads: 5
+Tails: 5
 </pre></div>
 </div>
 </div>
@@ -616,7 +616,7 @@ Tails: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -645,7 +645,7 @@ Tails: 3
 <br></p>
 <img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ChatGPT3.png" width=100% />
 <br>
-<p>Ooh, it looks like this is a little more efficient than my version, as ChatGPT has realised there is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function to generate  the array of 10 ‘coin tosses’ in one step, rather than goign round a loop 10 times.</p>
+<p>Ooh, it looks like this is a little more efficient than my version, as ChatGPT has realised there is a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> function to generate  the array of 10 ‘coin tosses’ in one step, rather than going round a loop 10 times.</p>
 <p>Let’s check it out on the command line</p>
 <p>We won’t need to install or import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> as we already have this (it is imported int he code block aat the top fo this notebook) so we can get straight down to business:</p>
 <div class="cell docutils container">
@@ -656,8 +656,8 @@ Tails: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [&#39;Tails&#39; &#39;Heads&#39; &#39;Heads&#39; &#39;Tails&#39; &#39;Heads&#39; &#39;Heads&#39; &#39;Heads&#39; &#39;Heads&#39; &#39;Heads&#39;
- &#39;Tails&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [&#39;Heads&#39; &#39;Tails&#39; &#39;Tails&#39; &#39;Tails&#39; &#39;Heads&#39; &#39;Heads&#39; &#39;Tails&#39; &#39;Tails&#39; &#39;Heads&#39;
+ &#39;Heads&#39;]
 </pre></div>
 </div>
 </div>
@@ -673,7 +673,7 @@ Tails: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [1 0 0 0 0 0 0 1 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [0 0 0 0 0 1 1 1 1 1]
 </pre></div>
 </div>
 </div>
@@ -685,7 +685,7 @@ Tails: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -705,7 +705,7 @@ Tails: 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [&#39;0&#39; &#39;0&#39; &#39;0&#39; &#39;1&#39; &#39;1&#39; &#39;1&#39; &#39;1&#39; &#39;1&#39; &#39;1&#39; &#39;0&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coin toss outcomes: [&#39;1&#39; &#39;1&#39; &#39;0&#39; &#39;0&#39; &#39;1&#39; &#39;0&#39; &#39;1&#39; &#39;0&#39; &#39;0&#39; &#39;1&#39;]
 </pre></div>
 </div>
 </div>
@@ -715,7 +715,7 @@ Tails: 3
 <section id="conclusion">
 <h2><span class="section-number">1.9.4. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>Chat GPT can really help with this coding task, but you may need to make some tweaks to get exactly what you want.</p>
-<p>Definitely to make use of it you will need to be able to <em>read</em> the code it outputs - this course should give you that ability.</p>
+<p>It can be very helpful, BUT in order to make use of it you will need to be able to <em>read</em> the code it outputs - this course should give you that ability.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ChatGPTbye.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ChatGPTbye.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ChatGPTbye.png" style="width: 100%;" /></a>
 <p>Aw, what a ray of sunshine.</p>
 <p>I don’t think it’s plotting to take over the world and enslave us all, do you?</p>

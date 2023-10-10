@@ -60,7 +60,7 @@ You can now run and/or edit this Notebook file!
 
 ### Markdown cells
 
-Cells with text and images are called **Markdown** cells. *Markdown* refers to the codes we use to format the txet in these cells, for example headings are indicated by hashtags (one hash is the biggest heading, more hashes = smaller subheadings)
+Cells with text and images are called **Markdown** cells. *Markdown* refers to the codes we use to format the text in these cells, for example headings are indicated by hashtags (one hash is the biggest heading, more hashes = smaller subheadings)
 
 If you double-click a markdown cell, you can edit the text, and can also see these markdown symbols.
 
@@ -85,7 +85,7 @@ Note that any code preceded by a hashtag # is a **comment** -  explanatory text 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_CommentedOut.png
 :width: 80%
 :align: center
-```
+<br>```
 
 ### Adding a new cell
 
@@ -95,7 +95,7 @@ If you click the little plus button at the top of the Notebook window, it will a
 :width: 80%
 :align: center
 ```
-<brb>
+<br>
 
 You can choose the cell type (you will want either **Code** or **Markdown**) from a dropdown box. 
 * If you forget to do this it will default to *code* which will probably then give you an error message if you write something in the cell that is not code

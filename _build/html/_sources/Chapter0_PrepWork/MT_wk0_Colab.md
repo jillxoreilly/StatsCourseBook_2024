@@ -19,7 +19,9 @@ Any file that is an actual Jupyter Notebook can be opened automatically in Colab
 ```
 <br>
 * The notebook now opens in Colab in another tab of your browser
+
 <br>
+
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_Colab.png
 :width: 80%
 :align: center

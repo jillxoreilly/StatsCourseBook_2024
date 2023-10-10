@@ -170,11 +170,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -540,7 +542,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/968ec56485ab338c3835fd261a813d7418c630be180b2bea0ccde494648d21a6.png" src="_images/968ec56485ab338c3835fd261a813d7418c630be180b2bea0ccde494648d21a6.png" />
+<img alt="_images/19c62263650e43504380e221f7f3fcc28297c88183a350534125e008e4cba1fc.png" src="_images/19c62263650e43504380e221f7f3fcc28297c88183a350534125e008e4cba1fc.png" />
 </div>
 </div>
 <p><b>Python Note - matching the PDF to the histogram</b></p>
@@ -591,7 +593,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ca60b5bd3f5547a9d0194dd4b8d97b0fff437c1bc7f0b50b23276b163e89bbc.png" src="_images/4ca60b5bd3f5547a9d0194dd4b8d97b0fff437c1bc7f0b50b23276b163e89bbc.png" />
+<img alt="_images/a532aeee7c1970d2ebacdb220fb25cac2d2b1d8ba57c3dca83ec8dcd22856b90.png" src="_images/a532aeee7c1970d2ebacdb220fb25cac2d2b1d8ba57c3dca83ec8dcd22856b90.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -621,7 +623,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/61fe21cdc6aeb45c3206c2902872daa964318923dbf172bec50ea6f6df4b4f72.png" src="_images/61fe21cdc6aeb45c3206c2902872daa964318923dbf172bec50ea6f6df4b4f72.png" />
+<img alt="_images/12dd1fe2d3450d2e7abc952cdcfee4b57a60e736d24622463894379051de7bac.png" src="_images/12dd1fe2d3450d2e7abc952cdcfee4b57a60e736d24622463894379051de7bac.png" />
 </div>
 </div>
 <p>Note that the Central Limit Theorem does <b><i>not</i></b> tell us that <span class="math notranslate nohighlight">\(s\)</span> is normally distributed - only <span class="math notranslate nohighlight">\(m\)</span> has that honour.</p>
@@ -653,10 +655,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.99707832461848
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.875519093640671
 </pre></div>
 </div>
-<img alt="_images/884ff0754ed846626cffd92eecf090a32d4f11c382496b69765d10e094e72a6a.png" src="_images/884ff0754ed846626cffd92eecf090a32d4f11c382496b69765d10e094e72a6a.png" />
+<img alt="_images/632f01845effbbe4e34cafc1fa9adf287ea7288b955fb8408662aab35a18b430.png" src="_images/632f01845effbbe4e34cafc1fa9adf287ea7288b955fb8408662aab35a18b430.png" />
 </div>
 </div>
 </section>
@@ -736,13 +738,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 161.99754280562018
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 161.9534909922174
+mean simulated value of s is 6.879116938952234
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 7.007490094114932
-</pre></div>
-</div>
-<img alt="_images/280eeac1792b51124a914b89d950df4eefa7acb5732d621233debbffacb9b5f9.png" src="_images/280eeac1792b51124a914b89d950df4eefa7acb5732d621233debbffacb9b5f9.png" />
+<img alt="_images/a8db73c943a21fea0e50f803a1d715c32451053fe5fa8a2487fb2a7feb8b478a.png" src="_images/a8db73c943a21fea0e50f803a1d715c32451053fe5fa8a2487fb2a7feb8b478a.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="_images/Minion_what.jpg"><img alt="What?!" src="_images/Minion_what.jpg" style="width: 10%;" /></a>
@@ -818,7 +818,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/81bc0bfd66011069b055a5935c078df7a28bddb86aedacf248f67a0be1263b9d.png" src="_images/81bc0bfd66011069b055a5935c078df7a28bddb86aedacf248f67a0be1263b9d.png" />
+<img alt="_images/a4584b0735c69b896b3682d54122f6a20e8ece02b2f1453fcef98364deca08fe.png" src="_images/a4584b0735c69b896b3682d54122f6a20e8ece02b2f1453fcef98364deca08fe.png" />
 </div>
 </div>
 <p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
@@ -830,7 +830,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.72
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.28
 </pre></div>
 </div>
 </div>
@@ -874,8 +874,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/73376d94776ffeb96cc7182807398275b97aa15b7de775b69e57d64c02301a1e.png" src="_images/73376d94776ffeb96cc7182807398275b97aa15b7de775b69e57d64c02301a1e.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0994
+<img alt="_images/63ee0485d0a78553443f88833dfa5f3273c13f37f4e790f2a8562f675f3420a1.png" src="_images/63ee0485d0a78553443f88833dfa5f3273c13f37f4e790f2a8562f675f3420a1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1054
 </pre></div>
 </div>
 </div>

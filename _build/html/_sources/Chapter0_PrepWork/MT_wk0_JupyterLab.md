@@ -60,7 +60,7 @@ You can now run and/or edit this Notebook file!
 
 ### Markdown cells
 
-Cells with text and images are called **Markdown** cells. *Markdown* refers to the codes we use to format the txet in these cells, for example headings are indicated by hashtags (one hash is the biggest heading, more hashes = smaller subheadings)
+Cells with text and images are called **Markdown** cells. *Markdown* refers to the codes we use to format the text in these cells, for example headings are indicated by hashtags (one hash is the biggest heading, more hashes = smaller subheadings)
 
 If you double-click a markdown cell, you can edit the text, and can also see these markdown symbols.
 
@@ -85,7 +85,7 @@ Note that any code preceded by a hashtag # is a **comment** -  explanatory text 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_CommentedOut.png
 :width: 80%
 :align: center
-```
+<br>```
 
 ### Adding a new cell
 
@@ -95,7 +95,7 @@ If you click the little plus button at the top of the Notebook window, it will a
 :width: 80%
 :align: center
 ```
-<brb>
+<br>
 
 You can choose the cell type (you will want either **Code** or **Markdown**) from a dropdown box. 
 * If you forget to do this it will default to *code* which will probably then give you an error message if you write something in the cell that is not code
@@ -151,7 +151,7 @@ We will generally be reading .csv data files into Python as `Pandas` dataframes.
 
 In the example notebooks on this course notes website, I tend to pull the data directly from my GitHub (a web-based platform where the course files are stored). This just means that you can run the examples without having to separately download data files and edit the code etc.
 
-For files pulled from GitHub, the filename will be a URL (webb address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
+For files pulled from GitHub, the filename will be a URL (web address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
 
 ## Exercise
 
