@@ -170,11 +170,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.3. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.5. Simulating a random process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -696,13 +698,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_11247/3712789007.py:8: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_22583/3712789007.py:8: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
 
   sns.kdeplot(data=juggling_Std, x=&#39;SessionsToCriterion&#39;, color=&#39;b&#39;, shade=True, label=&#39;Standard Training&#39;)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_11247/3712789007.py:9: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_22583/3712789007.py:9: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -1313,8 +1315,8 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 8, 12, 19,  6, 13,  9,  2, 18,  5, 20,  3, 10, 15,  7, 17,  1, 11,
-       16, 14,  4])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9,  8,  3, 17, 10, 19, 15,  2,  5, 12,  4,  6, 13,  7,  1, 11, 20,
+       18, 14, 16])
 </pre></div>
 </div>
 </div>
@@ -1328,7 +1330,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>115
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104
 </pre></div>
 </div>
 </div>
@@ -1343,7 +1345,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.0
 </pre></div>
 </div>
 </div>
@@ -1357,7 +1359,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>106
 </pre></div>
 </div>
 </div>
@@ -1372,7 +1374,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.0
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1388,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>61.0
 </pre></div>
 </div>
 </div>
@@ -1430,10 +1432,10 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0011
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0001
 </pre></div>
 </div>
-<img alt="_images/3d79c5b04dd6c4cef01e051005b18ef9806862949d5ec21a775ea6bcac2d2251.png" src="_images/3d79c5b04dd6c4cef01e051005b18ef9806862949d5ec21a775ea6bcac2d2251.png" />
+<img alt="_images/0b7a94a9d4cef25bdfa51acc90d83f0892f0ea37a9b018c4eeeed43dd6a57dc7.png" src="_images/0b7a94a9d4cef25bdfa51acc90d83f0892f0ea37a9b018c4eeeed43dd6a57dc7.png" />
 </div>
 </div>
 <p>We obtain a value of <span class="math notranslate nohighlight">\(U\)</span> as extreme as the one in our real dataset less than 1% of the time.</p>

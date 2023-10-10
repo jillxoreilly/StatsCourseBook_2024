@@ -33,7 +33,7 @@ pages of this book.
 It would be great if you have a go at some of the exercises in this
 book in the introductory session, so you get
 familiar with opening the notebooks in Google colab or downloading to
-work locally with Spyder, and with saving your work.
+work locally with JupyterLab, and with saving your work.
 
 Do have at least a little go with them even if you still need to
 complete datacamp.

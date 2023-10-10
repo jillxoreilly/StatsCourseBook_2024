@@ -168,11 +168,13 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.3. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.4. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_random.html">1.5. Simulating a random process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_random.html">1.7. Simulating a random process</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.7. ChatGPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
 </ul>
 </li>
 </ul>
@@ -500,9 +502,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="simulating-a-random-process">
 <h1>Simulating a random process<a class="headerlink" href="#simulating-a-random-process" title="Permalink to this heading">#</a></h1>
 <p>In statistics we are interested in understanding how random variability affects a measurement.</p>
-<p>For example, a person takes a multiple choice style IQ test. Their score will reflect their true IQ, bubt also some elment of random chance (they will have guessed the questions they couldn’t answer, and may have been lucky or unlucky in terms of how many guesses were correct).</p>
-<p>As we will see in the course, randomness has predictable properties (!), for example, the influecne of randomm chance tends to average out over lots of measurements (you might be lucky and guess 3/3 questions correctly, but not 100/100)</p>
-<p>To understand the impact of randomess on our measureents, we can simulate a random process. That is what we will do in the next section.</p>
+<p>For example, a person takes a multiple choice style IQ test. Their score will reflect their true IQ, but also some element of random chance (they will have guessed the questions they couldn’t answer, and may have been lucky or unlucky in terms of how many guesses were correct).</p>
+<p>As we will see in the course, randomness has predictable properties (!), for example, the influence of random chance tends to average out over lots of measurements (you might be lucky and guess 3/3 questions correctly, but not 100/100)</p>
+<p>To understand the impact of randomess on our measurements, we can simulate a random process. That is what we will do in the next section.</p>
 <section id="set-up-python-libraries">
 <h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -536,7 +538,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -584,11 +586,11 @@ HEADS
 TAILS
 TAILS
 TAILS
-HEADS
 TAILS
 TAILS
+TAILS
 HEADS
-HEADS
+TAILS
 </pre></div>
 </div>
 </div>
@@ -615,7 +617,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
 </pre></div>
 </div>
 </div>
@@ -658,7 +660,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/748db62961182b90ecee540ef6d3d963be33c95eecb357208b790b7a5ec3f168.png" src="../_images/748db62961182b90ecee540ef6d3d963be33c95eecb357208b790b7a5ec3f168.png" />
+<img alt="../_images/d632041157be94b9ef89e87fbbafcc90100f2003dd2396281c700cd4f9ccebcb.png" src="../_images/d632041157be94b9ef89e87fbbafcc90100f2003dd2396281c700cd4f9ccebcb.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -744,7 +746,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/514dc94e71299b29286592a99788dac4c7cf5225d939b5a75be06151c5225f91.png" src="../_images/514dc94e71299b29286592a99788dac4c7cf5225d939b5a75be06151c5225f91.png" />
+<img alt="../_images/282f588dc6164c06df651c55bbcbf593d3da8a44891e8a514c0f31ee050a0014.png" src="../_images/282f588dc6164c06df651c55bbcbf593d3da8a44891e8a514c0f31ee050a0014.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -904,7 +906,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98b88a8e796e0bbe996f9f2fb1e7ec18b55bc858934f205bfdf493f3b2f6fefe.png" src="../_images/98b88a8e796e0bbe996f9f2fb1e7ec18b55bc858934f205bfdf493f3b2f6fefe.png" />
+<img alt="../_images/926dfbc61d3a927f4670604593d37fb38ab80c7a288804a1d3a6fc1d93657f29.png" src="../_images/926dfbc61d3a927f4670604593d37fb38ab80c7a288804a1d3a6fc1d93657f29.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -929,7 +931,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7dfbcac216bb7d4f3e82335544147212cd406ec4584c351b5f5f1a549aa0084a.png" src="../_images/7dfbcac216bb7d4f3e82335544147212cd406ec4584c351b5f5f1a549aa0084a.png" />
+<img alt="../_images/6e388a40f935e7026978fe7de5777dfd97a4582361aee319e668f83f96e6f1a2.png" src="../_images/6e388a40f935e7026978fe7de5777dfd97a4582361aee319e668f83f96e6f1a2.png" />
 </div>
 </div>
 </section>
