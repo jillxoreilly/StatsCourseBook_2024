@@ -5,7 +5,13 @@ Google Colab is a web-based coding environment in which you can run Jupyter Note
 
 You can use Google Colab to complete the course if you don't want to install Anaconda on your laptop, or if you can't do so (this would be the case if you have a Chromebook for example). You can also run Colab on tablets and even phone if you want to.
 
+In this section you will see how to: 
+* Access ready-made example Jupyter Notebooks via Colab
+* Save our work to your Google Drive
+* Create your own Jupyter Notebbooks
+* Upload and read data files including those downloaded from Canvas
 
+Read through and check you can **complete the Exercise at the bottom of this page**
 
 ### Open an existing Notebook
 
@@ -71,20 +77,27 @@ If you click on 'Add Code' or 'Add Text' you will get a new code or markdown cel
 
 **You must save your work**. 
 
-Colab times out after a few minutes of inactivity and your changes will be lost unless you actively save them.
+Colab times out after a few minutes of inactivity and your changes will be lost unless you actively save them to your Google Drive
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_SaveInDrive.png
 :width: 80%
 :align: center
 ```
+<br>
+
+They will go to a folder called **Colab Notebooks**  
+* You can get to your drive by clicking File-->Locate in Drive
+
 
 Your files will be saved in your Google Drive (you would need to create one if you don't have one). 
-You can get to your drive by clicking File-->Locate in Drive
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_GoogleDrive.png
 :width: 80%
 :align: center
 ```
+
+The file will be saved as **"Copy of ...**. for example if you download a file called **ExampleNotebook.ipynb**, it will be saved in your drive as **"Copy of ExampleNotebook.ipynbb**. You will therefore probably want to rename this file (click on the three dots by the file
+
 
 ## Creating a New Notebook
 
@@ -125,9 +138,8 @@ Let's practice making a new Jupyter notebook and reading in some data
 
 * Create a folder to contain the files for this course in your Google Drive
     * Create a subfolder for today's session (perhaps call it 'IntroSession')
-    * Using the file browser pane in JupyterLab, navigate to 'IntroSession'
 
-* Open one of the example notebooks from the session (eg the sections on the For loop) in Colab and save it to your folder 'IntroSession'
+* Open one of the example notebooks from the session (eg the sections on the For loop) in Colab and save a copy to your Google Drive
 
 * Create a new blank Jupyter Notebook in Colab
 
@@ -139,17 +151,19 @@ Let's practice making a new Jupyter notebook and reading in some data
     * You can open ExampleData.csv in a text editor (such as TextEdit) to have a look at it
     * Alternatively, you could open it in Excel or Numbers -
         * You may need to tell Excel that it is 'comma delimited' - In Excel, you open the App first, then do File-->Import, select 'ExampleData.csv' and click through the import options til you see 'delimited'; select 'comma'
-        
-* In your Jupyter Notebook on Colabb, use the following code to load the data as a `Pandas` dataframe:
 
-`cats = pd.read_csv('ExampleData.csv')`
+* Mount your Google drive in Colab
+You need to give Colab access to files in your Google drive by adding this code in a code block:
+
+`from google.colab import drive`
+<br>
+`drive.mount('/content/drive')`
+
+* In your Jupyter Notebook on Colab, use the following code to load the data as a `Pandas` dataframe:
+
+`cats = pd.read_csv('/content/drive/MyDrive/IntroSession/ExampleData.csv')`
 <br>
 `display(cats)`
 
-* You may prefer to create a folder inside `IntroSession` called `data` and put the ExampleData.csv in there
-    * If so use the following code to load it:
-    
-`data = pd.read_csv('data/ExampleData.csv')`
-<br>
-`display(cats)`
+
 

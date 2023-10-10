@@ -6,6 +6,15 @@ This section is intended for use in the introductory sessions held in 1st week f
 
 The objectives for the introductory session are as follows:
 
+### Sort IT issues
+
+You may wish to set up Anaconda/JupyterLab so you can work locally on your own laptop. The alternative is to use Colab (cloud computing).
+
+This should be possible for most laptops by following the instructions PDF (IT SetUp) on Canvas.
+
+We can't promise to make everyone's software work on their own computer but we will have a go and today is a good time to try as someone will be around to help.
+
+
 ### Familiarise yourself with Jupyter
 
 Throughout this course we will work with Python exercises and worked examples gathered in this book.
@@ -16,47 +25,13 @@ When you view the book online you see the code already 'executed' - each code bl
 
 However, you will want to interact with the code not just look at it!
 
-You have two options here:
+You have two options here: Use Google Colab (in the cloud), or use JupyterLab (on your computer). The next two pages in these notes introduce how your create and save Jupyter notebooks in these two environments. It is important you work through the instructions for your chosen environment (JupyterLab or Colab) and complete the exercise in which you load the example "cats" data, whilst we are here to support you if you get stuck.
 
-#### Google colab
 
-You can open each workbook in an executalbe and editable format on the web, without downloading anything
-
-To do this you click on the little rocket icon in the top right (only on pages with actual code in - look on one of the "For loop" pages - and select "open in Colab"
 
 ```{warning}
-Note that although you can run  and editthe workbook on the web with Colab, you would need to save your work if you want it to last after you close the session (sessions will also timeout if left for a few minutes). You can save your edited notebook to your Google Drive if you have a Google account by clicking File > Save a copy in drive
+Students working the the Anna Watts computing lab can choose to use the desktop computers. However, if you do this, you need to save your work to One Drive. Anything you save on the computer will be wiped when you log off.
 ```
-
-It will appear as a .ipynb file and can be reopened and further edited (or emailed to your tutor for hand-in exercises)
-
-This is the minimum-setup option but can be clunky. I'd recommmend if possible working on your local computer with JupyterLab.
-
-#### Download and work locally (preferred)
-
-Your other option is to download the notebook to your computer (or the lab PC if your tutorial session is in the computing lab).
-
-You can then open the notebook locally using either Jupyterlab, or Jupyter
-
-```{tip}
-I recommend working with JupyterLab if possible as you will also have the command line available to quickly check bits of code (this jargon will make sense soon even if it sounds obscure right now!)
-```
-
-### Know thy computer
-
-If you are using the teaching lab computers to run notebooks with JupyterLab (Psychology/PPL students only), watch out - files saved on the computers will not be saved after you log out
-
-```{warning}
-Psychology students working on the computing lab computers - you need to save your work to One Drive. Anything you save on the computer will be wiped when you log off.
-```
-
-### Sort IT issues
-
-You may wish to set up Anaconda/JupyterLab so you can work locally on your own laptop. The alternative is to use Colab (cloud computing).
-
-This should be possible for most laptops by following the instructions PDF (IT SetUp) on Canvas.
-
-We can't promise to make everyone's software work on their own computer but we will have a go and today is a good time to try as someone will be around to help.
 
 
 ### Get up to date with datacamp

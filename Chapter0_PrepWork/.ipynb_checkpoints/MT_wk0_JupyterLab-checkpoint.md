@@ -3,6 +3,15 @@
 
 *For instructions on working in Colab, see the next section of these notes*
 
+In this section you will see how to: 
+* Access ready-made example Jupyter Notebooks in JupyterLab
+* Create your own Jupyter Notebbooks
+* Download and read data files including those downloaded from Canvas
+
+Read through and check you can **complete the Exercise at the bottom of this page**
+
+## Anaconda
+
 Once you have installed Anaconda Navigator on your computer, you will be able to open it from the Start Menu or Finder. It should be near the top of the list of Applications (because Anaconda begins with A!) and has a green circle symbol (actually an <a href=https://en.wikipedia.org/wiki/Ouroboros>Ouruboros</a>).
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_AnacondaLogo.svg
@@ -151,7 +160,7 @@ We will generally be reading .csv data files into Python as `Pandas` dataframes.
 
 In the example notebooks on this course notes website, I tend to pull the data directly from my GitHub (a web-based platform where the course files are stored). This just means that you can run the examples without having to separately download data files and edit the code etc.
 
-For files pulled from GitHub, the filename will be a URL (webb address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
+For files pulled from GitHub, the filename will be a URL (web address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
 
 ## Exercise
 

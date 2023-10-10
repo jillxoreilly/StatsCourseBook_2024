@@ -3,6 +3,15 @@
 
 *For instructions on working in Colab, see the next section of these notes*
 
+In this section you will see how to: 
+* Access ready-made example Jupyter Notebooks in JupyterLab
+* Create your own Jupyter Notebbooks
+* Download and read data files including those downloaded from Canvas
+
+Read through and check you can **complete the Exercise at the bottom of this page**
+
+## Anaconda
+
 Once you have installed Anaconda Navigator on your computer, you will be able to open it from the Start Menu or Finder. It should be near the top of the list of Applications (because Anaconda begins with A!) and has a green circle symbol (actually an <a href=https://en.wikipedia.org/wiki/Ouroboros>Ouruboros</a>).
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_AnacondaLogo.svg
