@@ -90,7 +90,7 @@ The covariance is calculated by adding up these contributions for all data point
 Here is a video of me explaining covariance:
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_CovIntro.mp4"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uC35OeAYfak?si=Bdkmb-vJCeKrqir0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
 ## Pearson's Correlation $r$
@@ -126,7 +126,7 @@ $$ r = \frac{s_{xy}}{s_x s_y} $$
 Here is a video of me explaining the relationship between covariance and correlation:
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_CorrIntro.mp4"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cO1YdQYv6iY?si=XcJTdKGntgOt84P-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
 
@@ -188,5 +188,5 @@ Here is a video of me explaining the assumptions of Pearson's correlation and wh
 * In the video I also show a formula for calculating Spearman's from ranks - you don't need to worry about this, it is sufficent to know how to change the correlation method in Python, and that Spearman's $r$ is equivalent to Pearson's $r$ for ranks.
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_Spearman.mp4"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XAFsqLUZmfA?si=BjYZg25EODGeYLH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>

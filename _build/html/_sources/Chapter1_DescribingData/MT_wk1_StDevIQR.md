@@ -14,7 +14,7 @@ Standard deviaiton and IQR both tell you something about the typical or average 
 Here is a video summarizing the conceptual differences between these measures.
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_spread.mp4"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ffTYyENqriI?si=NSVjWGYdX0N-QaZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
 ## The Standard Deviation
