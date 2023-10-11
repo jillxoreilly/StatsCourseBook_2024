@@ -713,6 +713,59 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heartAttack</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;LOS&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py:2273,</span> in <span class="ni">jointplot</span><span class="nt">(data, x, y, hue, kind, height, ratio, space, dropna, xlim, ylim, color, palette, hue_order, hue_norm, marginal_ticks, joint_kws, marginal_kws, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2267</span> <span class="k">elif</span> <span class="n">kind</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;hist&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2268</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2269</span>     <span class="c1"># TODO process pair parameters for bins, etc. and pass</span>
+<span class="g g-Whitespace">   </span><span class="mi">2270</span>     <span class="c1"># to both joint and marginal plots</span>
+<span class="g g-Whitespace">   </span><span class="mi">2272</span>     <span class="n">joint_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2273</span>     <span class="n">grid</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">histplot</span><span class="p">,</span> <span class="o">**</span><span class="n">joint_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2275</span>     <span class="n">marginal_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2276</span>     <span class="n">marginal_kws</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/axisgrid.py:1826,</span> in <span class="ni">JointGrid.plot_joint</span><span class="nt">(self, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1823</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_inject_kwargs</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hue_params</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1825</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;seaborn&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1826</span>     <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1827</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1828</span>     <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py:1450,</span> in <span class="ni">histplot</span><span class="nt">(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1432</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_univariate_histogram</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span>         <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1434</span>         <span class="n">element</span><span class="o">=</span><span class="n">element</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1446</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1450</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_bivariate_histogram</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span>         <span class="n">common_bins</span><span class="o">=</span><span class="n">common_bins</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>         <span class="n">thresh</span><span class="o">=</span><span class="n">thresh</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1454</span>         <span class="n">pthresh</span><span class="o">=</span><span class="n">pthresh</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1455</span>         <span class="n">pmax</span><span class="o">=</span><span class="n">pmax</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1456</span>         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1457</span>         <span class="n">legend</span><span class="o">=</span><span class="n">legend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1458</span>         <span class="n">cbar</span><span class="o">=</span><span class="n">cbar</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>         <span class="n">cbar_ax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span>         <span class="n">cbar_kws</span><span class="o">=</span><span class="n">cbar_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span>         <span class="n">estimate_kws</span><span class="o">=</span><span class="n">estimate_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1462</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1463</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1465</span> <span class="k">return</span> <span class="n">ax</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="your-conclusions">

@@ -7,7 +7,11 @@ The mean, median and mode all give us an idea of the 'average' or 'typical' valu
 Here is a video summarizing the conceptual differences between these measures.
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_location.mp4"></video>
+
+<video autoplay="false" width="640" height="480" controls="controls">
+    <source src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_location.mp4" type="video/mp4"  />
+</video>
+
 </center>
 
 ## Mean
