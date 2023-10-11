@@ -8,9 +8,7 @@ Here is a video summarizing the conceptual differences between these measures.
 
 <center>
 
-<video autoplay="false" width="640" height="480" controls="controls">
-    <source src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_location.mp4" type="video/mp4"  />
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b2RH5ZvekH0?si=B6QqKQF4BB5pydU3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </center>
 
