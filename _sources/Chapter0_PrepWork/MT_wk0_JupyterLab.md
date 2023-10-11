@@ -42,7 +42,12 @@ JupyterLab will open, not as its own window, but **as a tab in your default Web 
 
 At the left of the window you will see a file navigator - this shows you the files in your current folder.
 
-I suggest creating a folder specifically for this course and saving all your Jupyter Notebooks, data etc in it. You might like to create sub-folders for each week's class.
+It is a good idea to create a folder (eg on your Desktop) to keep the documents for this course. Say for example you create a folder on your desktop called "StatsCourse". You can navigate to this folder using the browser pane in JupyterLab and can the open documents (such as the downloaded Jupyter Notebook) by double clicking them.
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_FilePane.png
+:width: 80%
+:align: center
+```
 
 ### Workspace
 
@@ -50,7 +55,9 @@ On the right there is a window where the Jupyter Notebooks themselves are opened
 
 
 
-### Open an existing Notebook
+## Exercise 1: Open an existing Notebook
+
+First we will explore the Jupyter Notebook format using a ready made notebook downloaded from the course notes website.
 
 These course notes are made up of some pages that are just text ("Markdown") and some that are actual Jupyter Notebooks.
 
@@ -64,6 +71,11 @@ Any file that is an actual Jupyter Notebook can be downloaded automatically to y
 * The file will go to wherever internet downloads go on your computer - probably your **Downloads** folder!
 * Move it to the folder you have created for this course
 * Open it in JupyterLab by going to JupyterLab, finding the file in the file browser pane at the left of the screen, and double-clicking it.
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_FilePane.png
+:width: 80%
+:align: center
+```
 
 You can now run and/or edit this Notebook file!
 
@@ -117,18 +129,22 @@ You can choose the cell type (you will want either **Code** or **Markdown**) fro
 
 ### Saving your work
 
-Don't forget to save your work via the **File** menu in the top left of the JupyterLab Window.
+Don't forget to save your work! You can do this via the **File** menu in the top left of the JupyterLab Window.
 
 Click File --> Save Notebook As
 
 A dialogue box appears where you should enter the filename, including the complete **path** (folder your file is going into). Check that this path is correct - it will be automatically filled in to save the file in the folder you are "in" in the file browser pane (at the left of the screen).
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_SaveAs.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_JupyterLabSaveAs.png
 :width: 80%
 :align: center
 ```
 
-## Creating a New Notebook
+## Exercise 2: Creating a New Notebook
+
+Now let's try to create a totally new notebook. You will see there are a couple of things we have to do to 'set up' the notebook.
+
+### Create a new Notebook file
 
 You can create a new Jupyter Notebook by clicking **File --> New --> Notebook**:
 
@@ -143,11 +159,16 @@ At the top of each Notebook you will need to import the Python libraries that ar
 
 You will see the same block of code repeated in all my example notebooks; this imports the libraries we use in this course
 
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_ImportBlock.png
+:width: 80%
+:align: center
+```
+
 You will need to copy this block into any new notebooks you create
 
 * You could add other libraries to the input list if you found one you wanted to use (another plotting library for example)
 
-### Load data
+## Exercise 3: Load data
 
 This is a statistics course, so of course we will need to work with data files!
 
@@ -155,33 +176,8 @@ You may be used to seeing data in files such as Excel spreadsheets. Often data a
 
 We will generally be reading .csv data files into Python as `Pandas` dataframes. This can be done using the tool `pd.read_csv()` as in the exercise below.
 
-
-### Note - loading data in example notebooks
-
-In the example notebooks on this course notes website, I tend to pull the data directly from my GitHub (a web-based platform where the course files are stored). This just means that you can run the examples without having to separately download data files and edit the code etc.
-
-For files pulled from GitHub, the filename will be a URL (web address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
-
-## Exercise
-
-Let's practice making a new Jupyter notebook and reading in some data
-
-* Create a folder to contain the files for this course (perhaps on your Desktop)
-    * Create a subfolder for today's session (perhaps call it 'IntroSession')
-    * Using the file browser pane in JupyterLab, navigate to 'IntroSession'
-
-* Download the example notebooks from the session (the sections on the For loop) into your folder 'IntroSession'
-
-* Create a new blank Jupyter Notebook
-
-* Add a code block to import the relevant Python libraries
-    * You can copy-paste this from one of my example notebooks 
-    
-* From Canvas, download the example data file 'ExampleData.csv'
-    * Save it in the folder IntroSession
-    * You can open ExampleData.csv in a text editor (such as TextEdit) to have a look at it
-    * Alternatively, you could open it in Excel or Numbers -
-        * You may need to tell Excel that it is 'comma delimited' - In Excel, you open the App first, then do File-->Import, select 'ExampleData.csv' and click through the import options til you see 'delimited'; select 'comma'
+* From Canvas, downlad the example data file 'ExampleData.csv'
+    * Save it in the folder you made for this course, eg **Desktop/StatsData**
         
 * In your Jupyter Notebbook, use the following code to load the data as a `Pandas` dataframe:
 
@@ -196,3 +192,20 @@ Let's practice making a new Jupyter notebook and reading in some data
 <br>
 `display(cats)`
 
+#### What is in the data file?
+
+The example data file is a text file (.csv) with words (column headers) and numbers in it.
+
+This is a universal file type for storing data and can be opened by other programmes such as Excel
+
+ * If you like, you can open ExampleData.csv in a text editor (such as TextEdit) to have a look at it
+
+Once we read it into `Pandas` it is in the computer's memory so to speak, in a formmat that Python recognizes and upon which we can perform statistical operations (like testing for a difference between the values in two columnms of the datafiles).
+
+
+
+### Note - loading data in example notebooks
+
+In the example notebooks on this course notes website, I tend to pull the data directly from my GitHub (a web-based platform where the course files are stored). This just means that you can run the examples without having to separately download data files and edit the code etc.
+
+For files pulled from GitHub, the filename will be a URL (web address) rather than a filename in a folder on your computer. You don't need to know how to fill in these URLs, I'm just explaining why these look different to the Data Loading example below.
