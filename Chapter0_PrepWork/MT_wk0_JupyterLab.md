@@ -44,7 +44,10 @@ At the left of the window you will see a file navigator - this shows you the fil
 
 It is a good idea to create a folder (eg on your Desktop) to keep the documents for this course. Say for example you create a folder on your desktop called "StatsCourse". You can navigate to this folder using the browser pane in JupyterLab and can the open documents (such as the downloaded Jupyter Notebook) by double clicking them.
 
-
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk0_FilePane.png
+:width: 80%
+:align: center
+```
 
 ### Workspace
 
