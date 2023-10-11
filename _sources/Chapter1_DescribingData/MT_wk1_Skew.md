@@ -46,7 +46,7 @@ Similarly, the distribution of age at death in modern times is negatively skewed
 Here is a video of me talking about skew and its interpretation.
 
 <center>
-<video width="640" height="480" controls> <source  src="http://46.32.240.35/jillxoreilly.com/video/MT_wk1_skew.mp4"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vzAV61Y491E?si=Y9zrFVUNTHmXmz6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
 
