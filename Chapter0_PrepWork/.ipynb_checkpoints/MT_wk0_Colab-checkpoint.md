@@ -11,11 +11,14 @@ In this section you will see how to:
 * Create your own Jupyter Notebbooks
 * Upload and read data files including those downloaded from Canvas
 
-Read through and check you can **complete the Exercise at the bottom of this page**
+Read through and **complete the Exercises** to make sure you are confident using the Colab interface.
+
+
+
+
+### Exercise 1: Open an existing Notebook
 
 First we will explore the Jupyter Notebook format using a ready made notebook "launched" directly from the course notes website.
-
-### Open an existing Notebook
 
 These course notes are made up of some pages that are just text ("Markdown") and some that are actual Jupyter Notebooks.
 
@@ -26,6 +29,7 @@ Any file that is an actual Jupyter Notebook can be opened automatically in Colab
 :align: center
 ```
 <br>
+
 * The notebook now opens in Colab in another tab of your browser
 
 <br>
@@ -101,7 +105,7 @@ Your files will be saved in your Google Drive (you would need to create one if y
 The file will be saved as **"Copy of ...**. for example if you download a file called **ExampleNotebook.ipynb**, it will be saved in your drive as **"Copy of ExampleNotebook.ipynbb**. You will therefore probably want to rename this file (click on the three dots by the file
 
 
-## Exercise 1: Creating a New Notebook
+## Exercise 2: Creating a New Notebook
 
 Now let's try to create a totally new notebook. You will see there are a couple of things we have to do to 'set up' the notebook.
 
@@ -130,7 +134,7 @@ You will need to copy this block into any new notebooks you create
 
 You are now ready to write so code. The first thing we will probably want to do is load in an example data file.
 
-## Exercise 2: Load data
+## Exercise 3: Load data
 
     
 * From Canvas, download the example data file 'ExampleData.csv'

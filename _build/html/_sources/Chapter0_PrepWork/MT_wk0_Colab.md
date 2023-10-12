@@ -29,6 +29,7 @@ Any file that is an actual Jupyter Notebook can be opened automatically in Colab
 :align: center
 ```
 <br>
+
 * The notebook now opens in Colab in another tab of your browser
 
 <br>

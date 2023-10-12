@@ -37,7 +37,7 @@ parts:
         - file: Chapter2_DataVisualization/MT_wk2_histogram.ipynb
         - file: Chapter2_DataVisualization/MT_wk2_boxplot.ipynb
         - file: Chapter2_DataVisualization/MT_wk2_scatterplot.ipynb
-        - file: Chapter2_DataVisualization/MT_wk2_LinePlot.ipynb
+        - file: Chapter2_DataVisualization/MT_wk2_lineplot.ipynb
         - file: Chapter2_DataVisualization/MT_wk2_tweaks.ipynb
         - file: Chapter2_DataVisualization/MT_wk2_TutorialExercises.ipynb
         - file: Chapter2_DataVisualization/MT_wk2_additionalMaterials.md
