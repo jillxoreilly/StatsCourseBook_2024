@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.7. Tweaking plots &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.8. Tweaking plots &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_DataVisualization/MT_wk2_tweaks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.8. Tutorial Exercises" href="MT_wk2_TutorialExercises.html" />
-    <link rel="prev" title="2.6. 2D Data: Correlation and Pairwise Effects" href="MT_wk2_scatterplot.html" />
+    <link rel="next" title="2.9. Tutorial Exercises" href="MT_wk2_TutorialExercises.html" />
+    <link rel="prev" title="2.7. Timeseries data" href="MT_wk2_lineplot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -202,8 +202,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -470,21 +471,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">2.7.1. <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">2.8.1. <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-title">2.7.2. Axis Labels &amp; Title</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legend">2.7.3. Legend</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering">2.7.4. Ordering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">2.7.5. Subplots</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-title">2.8.2. Axis Labels &amp; Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legend">2.8.3. Legend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering">2.8.4. Ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">2.8.5. Subplots</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplot-syntax">plt.subplot() syntax</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-tight-layout">plt.tight_layout()</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-range">2.7.6. Axis range</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-size">2.7.7. Figure size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-range">2.8.6. Axis range</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-size">2.8.7. Figure size</a></li>
 </ul>
             </nav>
         </div>
@@ -497,7 +498,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tweaking-plots">
-<h1><span class="section-number">2.7. </span>Tweaking plots<a class="headerlink" href="#tweaking-plots" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.8. </span>Tweaking plots<a class="headerlink" href="#tweaking-plots" title="Permalink to this heading">#</a></h1>
 <p>In this section we cover some points about adjusting the appearance of plots:</p>
 <ul class="simple">
 <li><p>setting axis labels</p></li>
@@ -508,7 +509,7 @@ document.write(`
 </ul>
 <p>Whilst <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> does often get things right by default, all of the above ‘tweaks’ can be essential to produce a meaningful figure that is easy for the reader to interpret.</p>
 <section id="matplotlib">
-<h2><span class="section-number">2.7.1. </span><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> is designed to produce nice looking plots without us having to manually set many options. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> is built from components of an older plotting library called <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> (which is based on the plotting functions of MATLAB, another scientific programming environment). <code class="docutils literal notranslate"><span class="pre">Matplotlib</span> </code> contains a lot of lower level plotting functions (things that produce or edit bits of plots, rather than producing a whole nice figure in one step).</p>
 <p>If we want to manually set something like the axis labels or axis range, we may need to go back and call functions from <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> directly.</p>
 <p>In the olden days, people made plots just with <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> and had to write a lot more code to achieve a nice looking plot.</p>
@@ -753,7 +754,7 @@ document.write(`
 </section>
 </section>
 <section id="axis-labels-title">
-<h2><span class="section-number">2.7.2. </span>Axis Labels &amp; Title<a class="headerlink" href="#axis-labels-title" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.2. </span>Axis Labels &amp; Title<a class="headerlink" href="#axis-labels-title" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code></p></li>
@@ -779,7 +780,7 @@ document.write(`
 </div>
 </section>
 <section id="legend">
-<h2><span class="section-number">2.7.3. </span>Legend<a class="headerlink" href="#legend" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.3. </span>Legend<a class="headerlink" href="#legend" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>plt.legend()</p></li>
 </ul>
@@ -813,7 +814,7 @@ document.write(`
 </div>
 </section>
 <section id="ordering">
-<h2><span class="section-number">2.7.4. </span>Ordering<a class="headerlink" href="#ordering" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.4. </span>Ordering<a class="headerlink" href="#ordering" title="Permalink to this heading">#</a></h2>
 <p>When plotting categorical data in which the categories aare defined by strings, <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> tends to plot the data categories in the order in which they occur in the dataframe, when reading fromm top to bottom.</p>
 <p>Sometimes this is not the order we would prefer - consider the following example using the Oxford weather dataset:</p>
 <div class="cell docutils container">
@@ -847,7 +848,7 @@ document.write(`
 </div>
 </section>
 <section id="subplots">
-<h2><span class="section-number">2.7.5. </span>Subplots<a class="headerlink" href="#subplots" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.5. </span>Subplots<a class="headerlink" href="#subplots" title="Permalink to this heading">#</a></h2>
 <p>Often we wish to present a couple of different plots to make a point.</p>
 <p>Returning to the Titanic dataset, say we want to plot a histogram of age separately for men and women.</p>
 <p>We might like to show these plots next to each other as panels of a larger figure</p>
@@ -908,7 +909,7 @@ document.write(`
 </section>
 </section>
 <section id="axis-range">
-<h2><span class="section-number">2.7.6. </span>Axis range<a class="headerlink" href="#axis-range" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.6. </span>Axis range<a class="headerlink" href="#axis-range" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.xlim()</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">plt.ylim()</span></code></p></li>
@@ -942,7 +943,7 @@ document.write(`
 </ul>
 </section>
 <section id="figure-size">
-<h2><span class="section-number">2.7.7. </span>Figure size<a class="headerlink" href="#figure-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.7. </span>Figure size<a class="headerlink" href="#figure-size" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.figure(figsize=(x,y))</span></code></p>
 <p>Maybe the figures in your Jupyter notebook are too big or too small for your liking, or have the wrong aspect ratio.</p>
 <p>You can change this be ‘pre-creating’ your figure at a certain size using <code class="docutils literal notranslate"><span class="pre">plt.figure(figsize=(x,y))</span></code>, before running the plotting command (eg <code class="docutils literal notranslate"><span class="pre">sns.kdeplot()</span></code>).</p>
@@ -1045,12 +1046,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MT_wk2_scatterplot.html"
+       href="MT_wk2_lineplot.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>2D Data: Correlation and Pairwise Effects</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Timeseries data</p>
       </div>
     </a>
     <a class="right-next"
@@ -1058,7 +1059,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.8. </span>Tutorial Exercises</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Tutorial Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1077,21 +1078,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">2.7.1. <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">2.8.1. <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-title">2.7.2. Axis Labels &amp; Title</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legend">2.7.3. Legend</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering">2.7.4. Ordering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">2.7.5. Subplots</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-labels-title">2.8.2. Axis Labels &amp; Title</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legend">2.8.3. Legend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordering">2.8.4. Ordering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subplots">2.8.5. Subplots</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplot-syntax">plt.subplot() syntax</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-tight-layout">plt.tight_layout()</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-range">2.7.6. Axis range</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-size">2.7.7. Figure size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#axis-range">2.8.6. Axis range</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-size">2.8.7. Figure size</a></li>
 </ul>
   </nav></div>
 
