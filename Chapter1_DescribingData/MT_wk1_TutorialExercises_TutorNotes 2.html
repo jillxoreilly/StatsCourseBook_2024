@@ -198,8 +198,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -580,6 +581,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -593,10 +595,11 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>8.3</td>
       <td>5.6</td>
       <td>7.0</td>
@@ -605,10 +608,11 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
       <td>2.2</td>
       <td>0.0</td>
       <td>1.1</td>
@@ -617,10 +621,11 @@ document.write(`
     </tr>
     <tr>
       <th>2</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
       <td>-2.2</td>
       <td>-8.3</td>
       <td>-5.3</td>
@@ -629,10 +634,11 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
       <td>-1.7</td>
       <td>-7.8</td>
       <td>-4.8</td>
@@ -641,10 +647,11 @@ document.write(`
     </tr>
     <tr>
       <th>4</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
       <td>0.0</td>
       <td>-10.6</td>
       <td>-5.3</td>
@@ -662,70 +669,76 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71338</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>26</td>
+      <td>116</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71339</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>27</td>
+      <td>117</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71340</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>28</td>
+      <td>118</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71341</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>29</td>
+      <td>119</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73779</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71342</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>30</td>
+      <td>120</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>73780 rows × 9 columns</p>
+<p>71343 rows × 10 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -785,6 +798,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -798,10 +812,11 @@ document.write(`
   <tbody>
     <tr>
       <th>70332</th>
-      <td>2019.0</td>
-      <td>7.0</td>
-      <td>25.0</td>
-      <td>206.0</td>
+      <td>2019</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>25</td>
+      <td>206</td>
       <td>36.5</td>
       <td>16.4</td>
       <td>26.5</td>
@@ -844,6 +859,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -856,136 +872,147 @@ document.write(`
   </thead>
   <tbody>
     <tr>
-      <th>73769</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>70715</th>
+      <td>2020</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>11</td>
+      <td>224</td>
+      <td>34.1</td>
+      <td>17.9</td>
+      <td>26.0</td>
+      <td>16.2</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73770</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>54599</th>
+      <td>1976</td>
+      <td>Jun</td>
+      <td>6</td>
+      <td>27</td>
+      <td>179</td>
+      <td>34.3</td>
+      <td>17.8</td>
+      <td>26.1</td>
+      <td>16.5</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73771</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>70716</th>
+      <td>2020</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>12</td>
+      <td>225</td>
+      <td>34.4</td>
+      <td>20.4</td>
+      <td>27.4</td>
+      <td>14.0</td>
+      <td>8.4</td>
     </tr>
     <tr>
-      <th>73772</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>64503</th>
+      <td>2003</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>9</td>
+      <td>221</td>
+      <td>34.6</td>
+      <td>16.0</td>
+      <td>25.3</td>
+      <td>18.6</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73773</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>30900</th>
+      <td>1911</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>9</td>
+      <td>221</td>
+      <td>34.8</td>
+      <td>15.2</td>
+      <td>25.0</td>
+      <td>19.6</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73774</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>65578</th>
+      <td>2006</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>19</td>
+      <td>200</td>
+      <td>34.8</td>
+      <td>15.4</td>
+      <td>25.1</td>
+      <td>19.4</td>
+      <td>0.2</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>38581</th>
+      <td>1932</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>19</td>
+      <td>232</td>
+      <td>35.1</td>
+      <td>16.3</td>
+      <td>25.7</td>
+      <td>18.8</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>59749</th>
+      <td>1990</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>3</td>
+      <td>215</td>
+      <td>35.1</td>
+      <td>16.4</td>
+      <td>25.8</td>
+      <td>18.7</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>70704</th>
+      <td>2020</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>31</td>
+      <td>213</td>
+      <td>35.1</td>
+      <td>14.8</td>
+      <td>25.0</td>
+      <td>20.3</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>70332</th>
+      <td>2019</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>25</td>
+      <td>206</td>
+      <td>36.5</td>
+      <td>16.4</td>
+      <td>26.5</td>
+      <td>20.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73779</th>
+      <th>71170</th>
+      <td>2021</td>
+      <td>Nov</td>
+      <td>11</td>
+      <td>9</td>
+      <td>313</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -1006,18 +1033,18 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
-1.0      6.554444
-2.0      7.401048
-3.0      9.944914
-4.0     13.187517
-5.0     16.795252
-6.0     20.011487
-7.0     21.799007
-8.0     21.192936
-9.0     18.451043
-10.0    14.112639
-11.0     9.640041
-12.0     7.290571
+1      6.554444
+2      7.401048
+3      9.944914
+4     13.187517
+5     16.795252
+6     20.011487
+7     21.799007
+8     21.192936
+9     18.451043
+10    14.112639
+11     9.640041
+12     7.290571
 Name: Tmax, dtype: float64
 </pre></div>
 </div>
@@ -1074,62 +1101,62 @@ Name: Tmax, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>1.0</th>
+      <th>1</th>
       <td>6.554444</td>
       <td>3.831624</td>
     </tr>
     <tr>
-      <th>2.0</th>
+      <th>2</th>
       <td>7.401048</td>
       <td>3.723290</td>
     </tr>
     <tr>
-      <th>3.0</th>
+      <th>3</th>
       <td>9.944914</td>
       <td>3.641816</td>
     </tr>
     <tr>
-      <th>4.0</th>
+      <th>4</th>
       <td>13.187517</td>
       <td>3.648047</td>
     </tr>
     <tr>
-      <th>5.0</th>
+      <th>5</th>
       <td>16.795252</td>
       <td>3.761523</td>
     </tr>
     <tr>
-      <th>6.0</th>
+      <th>6</th>
       <td>20.011487</td>
       <td>3.585932</td>
     </tr>
     <tr>
-      <th>7.0</th>
+      <th>7</th>
       <td>21.799007</td>
       <td>3.511055</td>
     </tr>
     <tr>
-      <th>8.0</th>
+      <th>8</th>
       <td>21.192936</td>
       <td>3.232944</td>
     </tr>
     <tr>
-      <th>9.0</th>
+      <th>9</th>
       <td>18.451043</td>
       <td>3.088003</td>
     </tr>
     <tr>
-      <th>10.0</th>
+      <th>10</th>
       <td>14.112639</td>
       <td>3.090256</td>
     </tr>
     <tr>
-      <th>11.0</th>
+      <th>11</th>
       <td>9.640041</td>
       <td>3.254649</td>
     </tr>
     <tr>
-      <th>12.0</th>
+      <th>12</th>
       <td>7.290571</td>
       <td>3.801597</td>
     </tr>
@@ -1187,62 +1214,62 @@ Name: Tmax, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>1.0</th>
+      <th>1</th>
       <td>6.554444</td>
       <td>1.319437</td>
     </tr>
     <tr>
-      <th>2.0</th>
+      <th>2</th>
       <td>7.401048</td>
       <td>1.470683</td>
     </tr>
     <tr>
-      <th>3.0</th>
+      <th>3</th>
       <td>9.944914</td>
       <td>2.396840</td>
     </tr>
     <tr>
-      <th>4.0</th>
+      <th>4</th>
       <td>13.187517</td>
       <td>4.301786</td>
     </tr>
     <tr>
-      <th>5.0</th>
+      <th>5</th>
       <td>16.795252</td>
       <td>7.165062</td>
     </tr>
     <tr>
-      <th>6.0</th>
+      <th>6</th>
       <td>20.011487</td>
       <td>10.328291</td>
     </tr>
     <tr>
-      <th>7.0</th>
+      <th>7</th>
       <td>21.799007</td>
       <td>12.238098</td>
     </tr>
     <tr>
-      <th>8.0</th>
+      <th>8</th>
       <td>21.192936</td>
       <td>11.965261</td>
     </tr>
     <tr>
-      <th>9.0</th>
+      <th>9</th>
       <td>18.451043</td>
       <td>9.824855</td>
     </tr>
     <tr>
-      <th>10.0</th>
+      <th>10</th>
       <td>14.112639</td>
       <td>6.874028</td>
     </tr>
     <tr>
-      <th>11.0</th>
+      <th>11</th>
       <td>9.640041</td>
       <td>3.692014</td>
     </tr>
     <tr>
-      <th>12.0</th>
+      <th>12</th>
       <td>7.290571</td>
       <td>2.067461</td>
     </tr>
@@ -1285,6 +1312,7 @@ Name: Tmax, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -1299,10 +1327,11 @@ Name: Tmax, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>8.3</td>
       <td>5.6</td>
       <td>7.0</td>
@@ -1312,10 +1341,11 @@ Name: Tmax, dtype: float64
     </tr>
     <tr>
       <th>1</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
       <td>2.2</td>
       <td>0.0</td>
       <td>1.1</td>
@@ -1325,10 +1355,11 @@ Name: Tmax, dtype: float64
     </tr>
     <tr>
       <th>2</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
       <td>-2.2</td>
       <td>-8.3</td>
       <td>-5.3</td>
@@ -1338,10 +1369,11 @@ Name: Tmax, dtype: float64
     </tr>
     <tr>
       <th>3</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
       <td>-1.7</td>
       <td>-7.8</td>
       <td>-4.8</td>
@@ -1351,10 +1383,11 @@ Name: Tmax, dtype: float64
     </tr>
     <tr>
       <th>4</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
       <td>0.0</td>
       <td>-10.6</td>
       <td>-5.3</td>
@@ -1374,75 +1407,81 @@ Name: Tmax, dtype: float64
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71338</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>26</td>
+      <td>116</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71339</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>27</td>
+      <td>117</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71340</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>28</td>
+      <td>118</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71341</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>29</td>
+      <td>119</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
       <td>False</td>
     </tr>
     <tr>
-      <th>73779</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71342</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>30</td>
+      <td>120</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
       <td>False</td>
     </tr>
   </tbody>
 </table>
-<p>73780 rows × 10 columns</p>
+<p>71343 rows × 11 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1473,7 +1512,7 @@ Name: Tmax, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4478178368121442
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46311481154423
 </pre></div>
 </div>
 </div>
@@ -1493,18 +1532,18 @@ Name: Tmax, dtype: float64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
-1.0     0.530941
-2.0     0.479046
-3.0     0.448321
-4.0     0.441156
-5.0     0.422829
-6.0     0.405128
-7.0     0.414723
-8.0     0.431596
-9.0     0.421538
-10.0    0.503722
-11.0    0.529231
-12.0    0.528536
+1     0.530941
+2     0.479046
+3     0.448321
+4     0.441156
+5     0.422829
+6     0.405128
+7     0.414723
+8     0.431596
+9     0.421538
+10    0.503722
+11    0.529231
+12    0.528536
 Name: wet, dtype: float64
 </pre></div>
 </div>
@@ -1525,18 +1564,18 @@ Unsurprisingly, the dryest months are in early summer (May,June,July) and the mo
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MM
-1.0     1.768186
-2.0     1.513909
-3.0     1.384546
-4.0     1.471871
-5.0     1.666600
-6.0     1.813607
-7.0     1.888238
-8.0     1.935203
-9.0     1.889658
-10.0    2.173002
-11.0    2.043350
-12.0    1.878412
+1     1.768186
+2     1.513909
+3     1.384546
+4     1.471871
+5     1.666600
+6     1.813607
+7     1.888238
+8     1.935203
+9     1.889658
+10    2.173002
+11    2.043350
+12    1.878412
 Name: Rainfall_mm, dtype: float64
 </pre></div>
 </div>
@@ -1574,6 +1613,7 @@ Name: Rainfall_mm, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -1587,329 +1627,354 @@ Name: Rainfall_mm, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>73755</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>17726</th>
+      <td>1875</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>14</td>
+      <td>195</td>
+      <td>15.1</td>
+      <td>11.9</td>
+      <td>13.5</td>
+      <td>3.2</td>
+      <td>42.5</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73756</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>17823</th>
+      <td>1875</td>
+      <td>Oct</td>
+      <td>10</td>
+      <td>19</td>
+      <td>292</td>
+      <td>10.7</td>
+      <td>8.9</td>
+      <td>9.8</td>
+      <td>1.8</td>
+      <td>43.0</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73757</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>52078</th>
+      <td>1969</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>2</td>
+      <td>214</td>
+      <td>24.7</td>
+      <td>16.5</td>
+      <td>20.6</td>
+      <td>8.2</td>
+      <td>43.4</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73758</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>32407</th>
+      <td>1915</td>
+      <td>Sep</td>
+      <td>9</td>
+      <td>24</td>
+      <td>267</td>
+      <td>19.3</td>
+      <td>12.7</td>
+      <td>16.0</td>
+      <td>6.6</td>
+      <td>43.7</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73759</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>20636</th>
+      <td>1883</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>2</td>
+      <td>183</td>
+      <td>25.7</td>
+      <td>16.1</td>
+      <td>20.9</td>
+      <td>9.6</td>
+      <td>43.9</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73760</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>65581</th>
+      <td>2006</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>22</td>
+      <td>203</td>
+      <td>29.5</td>
+      <td>19.1</td>
+      <td>24.3</td>
+      <td>10.4</td>
+      <td>44.2</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73761</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>51336</th>
+      <td>1967</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>22</td>
+      <td>203</td>
+      <td>22.8</td>
+      <td>10.4</td>
+      <td>16.6</td>
+      <td>12.4</td>
+      <td>44.5</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73762</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>19553</th>
+      <td>1880</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>14</td>
+      <td>196</td>
+      <td>15.8</td>
+      <td>13.7</td>
+      <td>14.8</td>
+      <td>2.1</td>
+      <td>46.0</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73763</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>21755</th>
+      <td>1886</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>25</td>
+      <td>206</td>
+      <td>21.9</td>
+      <td>10.9</td>
+      <td>16.4</td>
+      <td>11.0</td>
+      <td>46.3</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73764</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>62725</th>
+      <td>1998</td>
+      <td>Sep</td>
+      <td>9</td>
+      <td>26</td>
+      <td>269</td>
+      <td>19.9</td>
+      <td>12.8</td>
+      <td>16.4</td>
+      <td>7.1</td>
+      <td>46.4</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73765</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>29700</th>
+      <td>1908</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>25</td>
+      <td>116</td>
+      <td>1.3</td>
+      <td>-0.7</td>
+      <td>0.3</td>
+      <td>2.0</td>
+      <td>46.7</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73766</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>29421</th>
+      <td>1907</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>22</td>
+      <td>203</td>
+      <td>20.5</td>
+      <td>12.8</td>
+      <td>16.7</td>
+      <td>7.7</td>
+      <td>47.0</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73767</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>12624</th>
+      <td>1861</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>25</td>
+      <td>206</td>
+      <td>19.2</td>
+      <td>13.1</td>
+      <td>16.2</td>
+      <td>6.1</td>
+      <td>47.8</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73768</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>17813</th>
+      <td>1875</td>
+      <td>Oct</td>
+      <td>10</td>
+      <td>9</td>
+      <td>282</td>
+      <td>13.2</td>
+      <td>2.8</td>
+      <td>8.0</td>
+      <td>10.4</td>
+      <td>48.3</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73769</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>64837</th>
+      <td>2004</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>8</td>
+      <td>190</td>
+      <td>19.3</td>
+      <td>12.3</td>
+      <td>15.8</td>
+      <td>7.0</td>
+      <td>50.0</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73770</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>27922</th>
+      <td>1903</td>
+      <td>Jun</td>
+      <td>6</td>
+      <td>14</td>
+      <td>165</td>
+      <td>10.4</td>
+      <td>6.4</td>
+      <td>8.4</td>
+      <td>4.0</td>
+      <td>51.1</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73771</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>67076</th>
+      <td>2010</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>25</td>
+      <td>237</td>
+      <td>16.4</td>
+      <td>11.3</td>
+      <td>13.9</td>
+      <td>5.1</td>
+      <td>51.1</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73772</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>49525</th>
+      <td>1962</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>6</td>
+      <td>218</td>
+      <td>16.1</td>
+      <td>10.7</td>
+      <td>13.4</td>
+      <td>5.4</td>
+      <td>53.6</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73773</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>47705</th>
+      <td>1957</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>12</td>
+      <td>224</td>
+      <td>20.0</td>
+      <td>15.6</td>
+      <td>17.8</td>
+      <td>4.4</td>
+      <td>56.1</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73774</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>70768</th>
+      <td>2020</td>
+      <td>Oct</td>
+      <td>10</td>
+      <td>3</td>
+      <td>277</td>
+      <td>13.9</td>
+      <td>11.2</td>
+      <td>12.6</td>
+      <td>2.7</td>
+      <td>60.0</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>53503</th>
+      <td>1973</td>
+      <td>Jun</td>
+      <td>6</td>
+      <td>27</td>
+      <td>178</td>
+      <td>17.8</td>
+      <td>12.3</td>
+      <td>15.1</td>
+      <td>5.5</td>
+      <td>67.3</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>34915</th>
+      <td>1922</td>
+      <td>Aug</td>
+      <td>8</td>
+      <td>6</td>
+      <td>219</td>
+      <td>17.2</td>
+      <td>8.9</td>
+      <td>13.1</td>
+      <td>8.3</td>
+      <td>70.8</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>48750</th>
+      <td>1960</td>
+      <td>Jun</td>
+      <td>6</td>
+      <td>22</td>
+      <td>174</td>
+      <td>26.1</td>
+      <td>12.2</td>
+      <td>19.2</td>
+      <td>13.9</td>
+      <td>81.3</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>45538</th>
+      <td>1951</td>
+      <td>Sep</td>
+      <td>9</td>
+      <td>6</td>
+      <td>249</td>
+      <td>20.6</td>
+      <td>16.1</td>
+      <td>18.4</td>
+      <td>4.5</td>
+      <td>84.8</td>
+      <td>True</td>
     </tr>
     <tr>
-      <th>73779</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
+      <th>51690</th>
+      <td>1968</td>
+      <td>Jul</td>
+      <td>7</td>
+      <td>10</td>
+      <td>192</td>
+      <td>15.1</td>
+      <td>12.8</td>
+      <td>14.0</td>
+      <td>2.3</td>
+      <td>87.9</td>
+      <td>True</td>
     </tr>
   </tbody>
 </table>
@@ -1967,6 +2032,7 @@ Name: Rainfall_mm, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -1981,10 +2047,11 @@ Name: Rainfall_mm, dtype: float64
   <tbody>
     <tr>
       <th>5472</th>
-      <td>1841.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1841</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.3</td>
       <td>-1.5</td>
       <td>2.4</td>
@@ -1994,10 +2061,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>8394</th>
-      <td>1849.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1849</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>4.4</td>
       <td>-0.7</td>
       <td>1.9</td>
@@ -2007,10 +2075,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18256</th>
-      <td>1876.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1876</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>1.2</td>
       <td>-0.6</td>
       <td>0.3</td>
@@ -2020,10 +2089,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18621</th>
-      <td>1877.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1877</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>3.4</td>
       <td>-2.1</td>
       <td>0.7</td>
@@ -2033,10 +2103,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18986</th>
-      <td>1878.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1878</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>4.0</td>
       <td>-2.7</td>
       <td>0.7</td>
@@ -2046,10 +2117,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>19351</th>
-      <td>1879.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1879</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.1</td>
       <td>-1.7</td>
       <td>-0.3</td>
@@ -2059,10 +2131,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>23369</th>
-      <td>1890.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1890</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>-3.1</td>
       <td>-4.8</td>
       <td>-4.0</td>
@@ -2072,10 +2145,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>23734</th>
-      <td>1891.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1891</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.7</td>
       <td>-6.8</td>
       <td>-2.6</td>
@@ -2085,10 +2159,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>25195</th>
-      <td>1895.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1895</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>3.2</td>
       <td>-0.5</td>
       <td>1.4</td>
@@ -2098,10 +2173,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>28482</th>
-      <td>1904.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1904</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>2.7</td>
       <td>-1.5</td>
       <td>0.6</td>
@@ -2111,10 +2187,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>29212</th>
-      <td>1906.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1906</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.4</td>
       <td>-2.2</td>
       <td>2.1</td>
@@ -2123,11 +2200,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>30308</th>
-      <td>1909.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>30309</th>
+      <td>1909</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>6.5</td>
       <td>-1.4</td>
       <td>2.6</td>
@@ -2136,11 +2214,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>31769</th>
-      <td>1913.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>31770</th>
+      <td>1913</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>6.5</td>
       <td>-1.0</td>
       <td>2.8</td>
@@ -2150,10 +2229,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>35421</th>
-      <td>1923.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1923</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>5.6</td>
       <td>-3.5</td>
       <td>1.1</td>
@@ -2162,11 +2242,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>36152</th>
-      <td>1925.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>36153</th>
+      <td>1925</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>7.1</td>
       <td>-0.1</td>
       <td>3.5</td>
@@ -2176,10 +2257,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>40900</th>
-      <td>1938.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1938</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>0.6</td>
       <td>-0.6</td>
       <td>0.0</td>
@@ -2189,10 +2271,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>47475</th>
-      <td>1956.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1956</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>1.1</td>
       <td>-1.1</td>
       <td>0.0</td>
@@ -2202,10 +2285,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>50031</th>
-      <td>1963.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1963</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>8.3</td>
       <td>-3.6</td>
       <td>2.4</td>
@@ -2215,10 +2299,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>52588</th>
-      <td>1970.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1970</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.0</td>
       <td>-3.5</td>
       <td>-1.3</td>
@@ -2228,10 +2313,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>55875</th>
-      <td>1979.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1979</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.0</td>
       <td>-4.0</td>
       <td>1.0</td>
@@ -2241,10 +2327,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>61354</th>
-      <td>1994.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1994</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>9.4</td>
       <td>-5.0</td>
       <td>2.2</td>
@@ -2254,10 +2341,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70120</th>
-      <td>2018.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>2018</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>8.6</td>
       <td>-1.0</td>
       <td>3.8</td>
@@ -2298,6 +2386,7 @@ Name: Rainfall_mm, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -2312,10 +2401,11 @@ Name: Rainfall_mm, dtype: float64
   <tbody>
     <tr>
       <th>5472</th>
-      <td>1841.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1841</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.3</td>
       <td>-1.5</td>
       <td>2.4</td>
@@ -2325,10 +2415,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>8394</th>
-      <td>1849.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1849</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>4.4</td>
       <td>-0.7</td>
       <td>1.9</td>
@@ -2338,10 +2429,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18256</th>
-      <td>1876.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1876</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>1.2</td>
       <td>-0.6</td>
       <td>0.3</td>
@@ -2351,10 +2443,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18621</th>
-      <td>1877.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1877</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>3.4</td>
       <td>-2.1</td>
       <td>0.7</td>
@@ -2364,10 +2457,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>18986</th>
-      <td>1878.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1878</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>4.0</td>
       <td>-2.7</td>
       <td>0.7</td>
@@ -2377,10 +2471,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>19351</th>
-      <td>1879.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1879</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.1</td>
       <td>-1.7</td>
       <td>-0.3</td>
@@ -2390,10 +2485,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>23369</th>
-      <td>1890.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1890</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>-3.1</td>
       <td>-4.8</td>
       <td>-4.0</td>
@@ -2403,10 +2499,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>23734</th>
-      <td>1891.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1891</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.7</td>
       <td>-6.8</td>
       <td>-2.6</td>
@@ -2416,10 +2513,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>25195</th>
-      <td>1895.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1895</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>3.2</td>
       <td>-0.5</td>
       <td>1.4</td>
@@ -2429,10 +2527,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>28482</th>
-      <td>1904.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1904</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>2.7</td>
       <td>-1.5</td>
       <td>0.6</td>
@@ -2442,10 +2541,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>29212</th>
-      <td>1906.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1906</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.4</td>
       <td>-2.2</td>
       <td>2.1</td>
@@ -2454,11 +2554,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>30308</th>
-      <td>1909.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>30309</th>
+      <td>1909</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>6.5</td>
       <td>-1.4</td>
       <td>2.6</td>
@@ -2467,11 +2568,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>31769</th>
-      <td>1913.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>31770</th>
+      <td>1913</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>6.5</td>
       <td>-1.0</td>
       <td>2.8</td>
@@ -2481,10 +2583,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>35421</th>
-      <td>1923.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1923</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>5.6</td>
       <td>-3.5</td>
       <td>1.1</td>
@@ -2493,11 +2596,12 @@ Name: Rainfall_mm, dtype: float64
       <td>True</td>
     </tr>
     <tr>
-      <th>36152</th>
-      <td>1925.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <th>36153</th>
+      <td>1925</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>7.1</td>
       <td>-0.1</td>
       <td>3.5</td>
@@ -2507,10 +2611,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>40900</th>
-      <td>1938.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1938</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>0.6</td>
       <td>-0.6</td>
       <td>0.0</td>
@@ -2520,10 +2625,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>47475</th>
-      <td>1956.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>360.0</td>
+      <td>1956</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>360</td>
       <td>1.1</td>
       <td>-1.1</td>
       <td>0.0</td>
@@ -2533,10 +2639,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>50031</th>
-      <td>1963.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1963</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>8.3</td>
       <td>-3.6</td>
       <td>2.4</td>
@@ -2546,10 +2653,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>52588</th>
-      <td>1970.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1970</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>1.0</td>
       <td>-3.5</td>
       <td>-1.3</td>
@@ -2559,10 +2667,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>55875</th>
-      <td>1979.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1979</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>6.0</td>
       <td>-4.0</td>
       <td>1.0</td>
@@ -2572,10 +2681,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>61354</th>
-      <td>1994.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>1994</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>9.4</td>
       <td>-5.0</td>
       <td>2.2</td>
@@ -2585,10 +2695,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70120</th>
-      <td>2018.0</td>
-      <td>12.0</td>
-      <td>25.0</td>
-      <td>359.0</td>
+      <td>2018</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>25</td>
+      <td>359</td>
       <td>8.6</td>
       <td>-1.0</td>
       <td>3.8</td>
@@ -2653,6 +2764,7 @@ Name: Rainfall_mm, dtype: float64
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -2667,10 +2779,11 @@ Name: Rainfall_mm, dtype: float64
   <tbody>
     <tr>
       <th>68718</th>
-      <td>2015.0</td>
-      <td>2.0</td>
-      <td>22.0</td>
-      <td>53.0</td>
+      <td>2015</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>22</td>
+      <td>53</td>
       <td>9.8</td>
       <td>-1.0</td>
       <td>4.4</td>
@@ -2680,10 +2793,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>68749</th>
-      <td>2015.0</td>
-      <td>3.0</td>
-      <td>25.0</td>
-      <td>84.0</td>
+      <td>2015</td>
+      <td>Mar</td>
+      <td>3</td>
+      <td>25</td>
+      <td>84</td>
       <td>9.5</td>
       <td>-1.2</td>
       <td>4.2</td>
@@ -2693,10 +2807,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>68992</th>
-      <td>2015.0</td>
-      <td>11.0</td>
-      <td>23.0</td>
-      <td>327.0</td>
+      <td>2015</td>
+      <td>Nov</td>
+      <td>11</td>
+      <td>23</td>
+      <td>327</td>
       <td>9.2</td>
       <td>-1.6</td>
       <td>3.8</td>
@@ -2706,10 +2821,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69098</th>
-      <td>2016.0</td>
-      <td>3.0</td>
-      <td>8.0</td>
-      <td>68.0</td>
+      <td>2016</td>
+      <td>Mar</td>
+      <td>3</td>
+      <td>8</td>
+      <td>68</td>
       <td>8.7</td>
       <td>-2.1</td>
       <td>3.3</td>
@@ -2719,10 +2835,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69343</th>
-      <td>2016.0</td>
-      <td>11.0</td>
-      <td>8.0</td>
-      <td>313.0</td>
+      <td>2016</td>
+      <td>Nov</td>
+      <td>11</td>
+      <td>8</td>
+      <td>313</td>
       <td>5.0</td>
       <td>-2.2</td>
       <td>1.4</td>
@@ -2732,10 +2849,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69396</th>
-      <td>2016.0</td>
-      <td>12.0</td>
-      <td>31.0</td>
-      <td>366.0</td>
+      <td>2016</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>31</td>
+      <td>366</td>
       <td>8.0</td>
       <td>-0.3</td>
       <td>3.9</td>
@@ -2745,10 +2863,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69402</th>
-      <td>2017.0</td>
-      <td>1.0</td>
-      <td>6.0</td>
-      <td>6.0</td>
+      <td>2017</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>6</td>
+      <td>6</td>
       <td>8.7</td>
       <td>-2.9</td>
       <td>2.9</td>
@@ -2758,10 +2877,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69410</th>
-      <td>2017.0</td>
-      <td>1.0</td>
-      <td>14.0</td>
-      <td>14.0</td>
+      <td>2017</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>14</td>
+      <td>14</td>
       <td>5.9</td>
       <td>-0.9</td>
       <td>2.5</td>
@@ -2771,10 +2891,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69433</th>
-      <td>2017.0</td>
-      <td>2.0</td>
-      <td>6.0</td>
-      <td>37.0</td>
+      <td>2017</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>6</td>
+      <td>37</td>
       <td>7.5</td>
       <td>-1.7</td>
       <td>2.9</td>
@@ -2784,10 +2905,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69740</th>
-      <td>2017.0</td>
-      <td>12.0</td>
-      <td>10.0</td>
-      <td>344.0</td>
+      <td>2017</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>10</td>
+      <td>344</td>
       <td>1.9</td>
       <td>-1.8</td>
       <td>0.0</td>
@@ -2797,10 +2919,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69743</th>
-      <td>2017.0</td>
-      <td>12.0</td>
-      <td>13.0</td>
-      <td>347.0</td>
+      <td>2017</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>13</td>
+      <td>347</td>
       <td>7.7</td>
       <td>-2.8</td>
       <td>2.5</td>
@@ -2810,10 +2933,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69800</th>
-      <td>2018.0</td>
-      <td>2.0</td>
-      <td>8.0</td>
-      <td>39.0</td>
+      <td>2018</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>8</td>
+      <td>39</td>
       <td>7.2</td>
       <td>-0.6</td>
       <td>3.3</td>
@@ -2823,10 +2947,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69806</th>
-      <td>2018.0</td>
-      <td>2.0</td>
-      <td>14.0</td>
-      <td>45.0</td>
+      <td>2018</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>14</td>
+      <td>45</td>
       <td>8.0</td>
       <td>-1.4</td>
       <td>3.3</td>
@@ -2836,10 +2961,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>69822</th>
-      <td>2018.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
-      <td>61.0</td>
+      <td>2018</td>
+      <td>Mar</td>
+      <td>3</td>
+      <td>2</td>
+      <td>61</td>
       <td>1.1</td>
       <td>-4.8</td>
       <td>-1.9</td>
@@ -2849,10 +2975,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70110</th>
-      <td>2018.0</td>
-      <td>12.0</td>
-      <td>15.0</td>
-      <td>349.0</td>
+      <td>2018</td>
+      <td>Dec</td>
+      <td>12</td>
+      <td>15</td>
+      <td>349</td>
       <td>8.3</td>
       <td>-1.6</td>
       <td>3.4</td>
@@ -2862,10 +2989,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70148</th>
-      <td>2019.0</td>
-      <td>1.0</td>
-      <td>22.0</td>
-      <td>22.0</td>
+      <td>2019</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>22</td>
+      <td>22</td>
       <td>5.3</td>
       <td>-0.3</td>
       <td>2.5</td>
@@ -2875,10 +3003,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70157</th>
-      <td>2019.0</td>
-      <td>1.0</td>
-      <td>31.0</td>
-      <td>31.0</td>
+      <td>2019</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>31</td>
+      <td>31</td>
       <td>3.0</td>
       <td>-5.7</td>
       <td>-1.4</td>
@@ -2888,10 +3017,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70158</th>
-      <td>2019.0</td>
-      <td>2.0</td>
-      <td>1.0</td>
-      <td>32.0</td>
+      <td>2019</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>1</td>
+      <td>32</td>
       <td>2.4</td>
       <td>-4.4</td>
       <td>-1.0</td>
@@ -2901,10 +3031,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70160</th>
-      <td>2019.0</td>
-      <td>2.0</td>
-      <td>3.0</td>
-      <td>34.0</td>
+      <td>2019</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>3</td>
+      <td>34</td>
       <td>6.9</td>
       <td>-4.7</td>
       <td>1.1</td>
@@ -2914,10 +3045,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70162</th>
-      <td>2019.0</td>
-      <td>2.0</td>
-      <td>5.0</td>
-      <td>36.0</td>
+      <td>2019</td>
+      <td>Feb</td>
+      <td>2</td>
+      <td>5</td>
+      <td>36</td>
       <td>9.8</td>
       <td>-1.0</td>
       <td>4.4</td>
@@ -2927,10 +3059,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70439</th>
-      <td>2019.0</td>
-      <td>11.0</td>
-      <td>9.0</td>
-      <td>313.0</td>
+      <td>2019</td>
+      <td>Nov</td>
+      <td>11</td>
+      <td>9</td>
+      <td>313</td>
       <td>6.1</td>
       <td>-1.4</td>
       <td>2.4</td>
@@ -2940,10 +3073,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70868</th>
-      <td>2021.0</td>
-      <td>1.0</td>
-      <td>11.0</td>
-      <td>11.0</td>
+      <td>2021</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>11</td>
+      <td>11</td>
       <td>9.4</td>
       <td>-0.1</td>
       <td>4.7</td>
@@ -2953,10 +3087,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>70958</th>
-      <td>2021.0</td>
-      <td>4.0</td>
-      <td>11.0</td>
-      <td>101.0</td>
+      <td>2021</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>11</td>
+      <td>101</td>
       <td>9.1</td>
       <td>-1.6</td>
       <td>3.8</td>
@@ -2966,10 +3101,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>71230</th>
-      <td>2022.0</td>
-      <td>1.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
+      <td>2022</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>8</td>
+      <td>8</td>
       <td>10.7</td>
       <td>-2.1</td>
       <td>4.3</td>
@@ -2979,10 +3115,11 @@ Name: Rainfall_mm, dtype: float64
     </tr>
     <tr>
       <th>71315</th>
-      <td>2022.0</td>
-      <td>4.0</td>
-      <td>3.0</td>
-      <td>93.0</td>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>3</td>
+      <td>93</td>
       <td>9.8</td>
       <td>-2.6</td>
       <td>3.6</td>

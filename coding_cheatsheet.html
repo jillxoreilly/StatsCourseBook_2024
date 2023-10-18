@@ -198,8 +198,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -1282,7 +1283,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([15, 13,  6,  6,  7, 10,  2, 16,  3, 13, 14,  3])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11,  6,  7, 13, 11,  6,  9, 12,  1, 19, 11, 12])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1317,7 +1318,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>15</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1325,7 +1326,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>13</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1333,7 +1334,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>6</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1341,7 +1342,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>6</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1349,7 +1350,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>7</td>
+      <td>11</td>
     </tr>
   </tbody>
 </table>
@@ -1408,36 +1409,36 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>orange</td>
-      <td>fruit</td>
-      <td>orange</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>kiwi</td>
-      <td>fruit</td>
-      <td>brown</td>
-      <td>2</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>lettuce</td>
+      <th>1</th>
+      <td>cucumber</td>
       <td>veg</td>
       <td>green</td>
-      <td>1</td>
-      <td>15</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>banana</td>
+      <th>7</th>
+      <td>carrot</td>
+      <td>veg</td>
+      <td>orange</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>potato</td>
+      <td>veg</td>
+      <td>white</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>apple</td>
       <td>fruit</td>
-      <td>yellow</td>
-      <td>6</td>
-      <td>6</td>
+      <td>green</td>
+      <td>2</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -1477,20 +1478,28 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>9</th>
-      <td>lychee</td>
-      <td>fruit</td>
-      <td>white</td>
-      <td>4</td>
-      <td>13</td>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>11</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>potato</td>
-      <td>veg</td>
-      <td>white</td>
-      <td>1</td>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
       <td>3</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>strawberry</td>
+      <td>fruit</td>
+      <td>red</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1498,15 +1507,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>apple</td>
-      <td>fruit</td>
-      <td>green</td>
-      <td>2</td>
-      <td>3</td>
+      <td>13</td>
     </tr>
   </tbody>
 </table>
@@ -1540,7 +1541,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f890cb0ba60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ffecd82e880&gt;
 </pre></div>
 </div>
 </div>
@@ -1587,7 +1588,7 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40897/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97564/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>
