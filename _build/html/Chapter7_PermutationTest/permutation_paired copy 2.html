@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -690,7 +691,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/629423090.py:9: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/629423090.py:9: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
@@ -772,7 +773,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 <p>Conceptually, to generate a new simulated dataset (one <em>resample</em>), we go through each couple in turn and ‘flip a virtual coin’ to decide whether the labels ‘Husband’ and ‘Wife’ are flipped.</p>
 <p>If you are interested you can read more about how this would work in code at the bottom of this page.</p>
 <p><strong>Here are the original data and four random permutations:</strong></p>
-<a class="reference internal image-reference" href="../_images/HT_wk1_4Permutations.png"><img alt="../_images/HT_wk1_4Permutations.png" src="../_images/HT_wk1_4Permutations.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="images/HT_wk1_4Permutations.png"><img alt="images/HT_wk1_4Permutations.png" src="images/HT_wk1_4Permutations.png" style="width: 100%;" /></a>
 <p>Look closely. Each coloured line represents on couple. Note that some of the lines are left-right flipped, but the lines never move up or down overall (because we are only flipping people within couples).</p>
 <p>The grey bars show the group means in each permutation.</p>
 <ul class="simple">
@@ -842,8 +843,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>2</th>
-      <td>20</td>
       <td>48</td>
+      <td>20</td>
       <td>28</td>
     </tr>
     <tr>
@@ -860,8 +861,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>5</th>
-      <td>16</td>
       <td>14</td>
+      <td>16</td>
       <td>2</td>
     </tr>
     <tr>
@@ -878,14 +879,14 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>8</th>
-      <td>22</td>
       <td>27</td>
+      <td>22</td>
       <td>5</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>14</td>
       <td>22</td>
+      <td>14</td>
       <td>8</td>
     </tr>
   </tbody>
@@ -943,8 +944,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
       <td>12</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
@@ -993,34 +994,34 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/2198263489.py:3: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/2198263489.py:3: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40583/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_90544/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
 </pre></div>
 </div>
-<img alt="../_images/814ca713fbe283fc381de5480261a2dccabe63999632060c6b4213710734ad85.png" src="../_images/814ca713fbe283fc381de5480261a2dccabe63999632060c6b4213710734ad85.png" />
+<img alt="../_images/a90e7cbc03c4bc6fa3cc4b220f2bca2a49031a570a3f1dcea9d6c0062ff90fe4.png" src="../_images/a90e7cbc03c4bc6fa3cc4b220f2bca2a49031a570a3f1dcea9d6c0062ff90fe4.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -1040,7 +1041,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -2.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 1.8
 </pre></div>
 </div>
 </div>
@@ -1072,8 +1073,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a7ef946b098215da8131aabf1aac4892e76d1a49e588960f6f06229d1d99655.png" src="../_images/0a7ef946b098215da8131aabf1aac4892e76d1a49e588960f6f06229d1d99655.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.12%
+<img alt="../_images/141126165d311f3569e26552d9749f61aa42ca6b6f5edc981565e3e1c4fe69a0.png" src="../_images/141126165d311f3569e26552d9749f61aa42ca6b6f5edc981565e3e1c4fe69a0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.09%
 </pre></div>
 </div>
 </div>
