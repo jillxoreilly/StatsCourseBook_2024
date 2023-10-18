@@ -198,8 +198,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -568,6 +569,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -581,10 +583,11 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>8.3</td>
       <td>5.6</td>
       <td>7.0</td>
@@ -593,10 +596,11 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
       <td>2.2</td>
       <td>0.0</td>
       <td>1.1</td>
@@ -605,10 +609,11 @@ document.write(`
     </tr>
     <tr>
       <th>2</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
       <td>-2.2</td>
       <td>-8.3</td>
       <td>-5.3</td>
@@ -617,10 +622,11 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
       <td>-1.7</td>
       <td>-7.8</td>
       <td>-4.8</td>
@@ -629,10 +635,11 @@ document.write(`
     </tr>
     <tr>
       <th>4</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
       <td>0.0</td>
       <td>-10.6</td>
       <td>-5.3</td>
@@ -650,70 +657,76 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71338</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>26</td>
+      <td>116</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71339</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>27</td>
+      <td>117</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71340</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>28</td>
+      <td>118</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71341</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>29</td>
+      <td>119</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73779</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71342</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>30</td>
+      <td>120</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>73780 rows × 9 columns</p>
+<p>71343 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>Have a look at the dataframe.</p>
@@ -736,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f45e2e966655360142be351aef6217d8d4efaf5c323ce5c18c1019d4a509cc1d.png" src="../_images/f45e2e966655360142be351aef6217d8d4efaf5c323ce5c18c1019d4a509cc1d.png" />
+<img alt="../_images/91c6c401928345b1d823f20c4391fc6b573960d81047482c85325b7d57182089.png" src="../_images/91c6c401928345b1d823f20c4391fc6b573960d81047482c85325b7d57182089.png" />
 </div>
 </div>
 <p>The boxplot is designed to show a handful of key features of the data distribution:</p>
@@ -774,7 +787,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/16d0249764b664c24f03a950dc56756466b6da9b3f6299f83958a9c7fb0a11d9.png" src="../_images/16d0249764b664c24f03a950dc56756466b6da9b3f6299f83958a9c7fb0a11d9.png" />
+<img alt="../_images/dd308eaf96b816124b73402dcefa24682f7e88d7d646346d1d4a88a56a9dcb45.png" src="../_images/dd308eaf96b816124b73402dcefa24682f7e88d7d646346d1d4a88a56a9dcb45.png" />
 </div>
 </div>
 <p>This is a nice compromise - still easy to “eyeball” the pattern across categories (in this case, across months) but giving plenty of detail within each category also</p>
@@ -796,7 +809,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2466bc872f8729ac43de186ef752f37ddb4d8bb80619e22e74b97166b00020c3.png" src="../_images/2466bc872f8729ac43de186ef752f37ddb4d8bb80619e22e74b97166b00020c3.png" />
+<img alt="../_images/8399b407a5aaf35d79ac065de134aefbf732e22dc8e77c01c051e0fe77e3a600.png" src="../_images/8399b407a5aaf35d79ac065de134aefbf732e22dc8e77c01c051e0fe77e3a600.png" />
 </div>
 </div>
 </section>
@@ -814,7 +827,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66c0e1e051ce8723e3086071e4d93e127272d2f6f2f11eba95411b25e20f4d35.png" src="../_images/66c0e1e051ce8723e3086071e4d93e127272d2f6f2f11eba95411b25e20f4d35.png" />
+<img alt="../_images/8f339f73536908f3b5c02696058687288225607637d8e0e9f04720b659147a1e.png" src="../_images/8f339f73536908f3b5c02696058687288225607637d8e0e9f04720b659147a1e.png" />
 </div>
 </div>
 <p>The height of each bar is the mean temperature in that month; the error bars show the 95% confidence interval (but could be altered to show the standard deviation or standard error if you liked - don’t worry if these terms are unfamiliar as confidence intervals and standard error will be covered later in the course)</p>
@@ -855,7 +868,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45cfe005e1f33c127ce335b288842c5d6c376f84c577455e1241678449f9194c.png" src="../_images/45cfe005e1f33c127ce335b288842c5d6c376f84c577455e1241678449f9194c.png" />
+<img alt="../_images/4f20d54015065983990d2dd165a464a55bf1ba539ba4f7264bcc6a448e6c5a51.png" src="../_images/4f20d54015065983990d2dd165a464a55bf1ba539ba4f7264bcc6a448e6c5a51.png" />
 </div>
 </div>
 <p>Another way we could use <code class="docutils literal notranslate"><span class="pre">sns.countplot()</span></code> is by creating a dataframe that contains only days fulfilling some criterion (eg, days with no rain) and then make a countplot, as follows:</p>
@@ -868,7 +881,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2b8917c237757025994461e81fe5a629c44b034f895e63bd650411721859de63.png" src="../_images/2b8917c237757025994461e81fe5a629c44b034f895e63bd650411721859de63.png" />
+<img alt="../_images/ce5e172ecde8386e15d2cfa5dc462b087d89fbb7be296bfd7142733fe9bb25fb.png" src="../_images/ce5e172ecde8386e15d2cfa5dc462b087d89fbb7be296bfd7142733fe9bb25fb.png" />
 </div>
 </div>
 <section id="id2">

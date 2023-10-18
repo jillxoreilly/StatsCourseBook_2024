@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -537,7 +538,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/d054b6ff84c11a14f6299112ada44cd7bd9bf4070bffc9f3660d491b653c6af4.png" src="../_images/d054b6ff84c11a14f6299112ada44cd7bd9bf4070bffc9f3660d491b653c6af4.png" />
+<img alt="../_images/1242ed1487977b6447d043d4aa3a94137f167d5f36a28dd44f542cdf3bf7f85e.png" src="../_images/1242ed1487977b6447d043d4aa3a94137f167d5f36a28dd44f542cdf3bf7f85e.png" />
 </div>
 </div>
 <p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span> that the most common value for k is 7, ie 7/10 hits.</p>
@@ -566,7 +567,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.0146
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.0252
 np = 7.0
 </pre></div>
 </div>
@@ -593,7 +594,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/49db07f92c693bc75c68252f89c78e3e05d592288f1add4d7ca9cb4e8b80aa63.png" src="../_images/49db07f92c693bc75c68252f89c78e3e05d592288f1add4d7ca9cb4e8b80aa63.png" />
+<img alt="../_images/bd9e62641c3d2686ebe6e191787bfb22f700f2a9249384e1e29434caf65bb187.png" src="../_images/bd9e62641c3d2686ebe6e191787bfb22f700f2a9249384e1e29434caf65bb187.png" />
 </div>
 </div>
 <p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
@@ -621,7 +622,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.025263372202495
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.012339293184371
 sqrt(npq) = 5.0
 </pre></div>
 </div>

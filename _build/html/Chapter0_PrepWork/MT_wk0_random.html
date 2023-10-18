@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -540,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -584,15 +585,15 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
-HEADS
 TAILS
 HEADS
 TAILS
 HEADS
-TAILS
-TAILS
-TAILS
 HEADS
+HEADS
+HEADS
+HEADS
+TAILS
 </pre></div>
 </div>
 </div>
@@ -642,7 +643,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [0. 0. 1. 0. 0. 0. 1. 1. 0. 1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [0. 0. 1. 0. 1. 0. 1. 1. 0. 0.]
 sum = 4.0
 </pre></div>
 </div>
@@ -685,7 +686,7 @@ sum = 4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1f38a5ebd58e3a3d701f9eed1f8b228d11d8a1ccf7ac67f476839ebd1ca0d00a.png" src="../_images/1f38a5ebd58e3a3d701f9eed1f8b228d11d8a1ccf7ac67f476839ebd1ca0d00a.png" />
+<img alt="../_images/9acddf1ce86131aa1e648ec7095f022daeeb3878951c1c6c1a51700941119161.png" src="../_images/9acddf1ce86131aa1e648ec7095f022daeeb3878951c1c6c1a51700941119161.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -771,7 +772,7 @@ sum = 4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/300ee2cd7315d6d3764c33010c55553d6d45d28871fba6f66717522b97086c07.png" src="../_images/300ee2cd7315d6d3764c33010c55553d6d45d28871fba6f66717522b97086c07.png" />
+<img alt="../_images/a32f49ee62a206e59606b9e9b6ea46ccb504799f8ff7662d0dd2d030a0a96d0d.png" src="../_images/a32f49ee62a206e59606b9e9b6ea46ccb504799f8ff7662d0dd2d030a0a96d0d.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -931,7 +932,7 @@ sum = 4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11915aa8517e3b8eba9ae7d6c72ec5147f20741cc6e9a7dbd27940779693a4ab.png" src="../_images/11915aa8517e3b8eba9ae7d6c72ec5147f20741cc6e9a7dbd27940779693a4ab.png" />
+<img alt="../_images/3a7a81ec2ca3cd8451bb2122819c9f780b39cc23ac1706953dad1ae1e635d298.png" src="../_images/3a7a81ec2ca3cd8451bb2122819c9f780b39cc23ac1706953dad1ae1e635d298.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -956,7 +957,7 @@ sum = 4.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bdc07608f554fa136ecb994b5965fe4933bcd4da6427227c9b56cf6900c2480c.png" src="../_images/bdc07608f554fa136ecb994b5965fe4933bcd4da6427227c9b56cf6900c2480c.png" />
+<img alt="../_images/ed01f84fdf54255837752e83bbc86fed48a56bf45159d3ce11e790e038a8ffe4.png" src="../_images/ed01f84fdf54255837752e83bbc86fed48a56bf45159d3ce11e790e038a8ffe4.png" />
 </div>
 </div>
 </section>

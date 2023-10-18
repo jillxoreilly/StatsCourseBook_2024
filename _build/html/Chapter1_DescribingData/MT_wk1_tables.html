@@ -518,7 +518,7 @@ document.write(`
 <p>You will need to download the file OxfordWeather.csv from Canvas to your computer, then import it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -543,8 +543,10 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
+      <th>DD365</th>
       <th>Tmax</th>
       <th>Tmin</th>
       <th>Tmean</th>
@@ -556,6 +558,8 @@ document.write(`
     <tr>
       <th>0</th>
       <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
       <td>1</td>
       <td>1</td>
       <td>8.3</td>
@@ -567,7 +571,9 @@ document.write(`
     <tr>
       <th>1</th>
       <td>1827</td>
+      <td>Jan</td>
       <td>1</td>
+      <td>2</td>
       <td>2</td>
       <td>2.2</td>
       <td>0.0</td>
@@ -578,7 +584,9 @@ document.write(`
     <tr>
       <th>2</th>
       <td>1827</td>
+      <td>Jan</td>
       <td>1</td>
+      <td>3</td>
       <td>3</td>
       <td>-2.2</td>
       <td>-8.3</td>
@@ -589,7 +597,9 @@ document.write(`
     <tr>
       <th>3</th>
       <td>1827</td>
+      <td>Jan</td>
       <td>1</td>
+      <td>4</td>
       <td>4</td>
       <td>-1.7</td>
       <td>-7.8</td>
@@ -600,7 +610,9 @@ document.write(`
     <tr>
       <th>4</th>
       <td>1827</td>
+      <td>Jan</td>
       <td>1</td>
+      <td>5</td>
       <td>5</td>
       <td>0.0</td>
       <td>-10.6</td>
@@ -618,12 +630,16 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>71338</th>
       <td>2022</td>
+      <td>Apr</td>
       <td>4</td>
       <td>26</td>
+      <td>116</td>
       <td>15.2</td>
       <td>4.1</td>
       <td>9.7</td>
@@ -633,8 +649,10 @@ document.write(`
     <tr>
       <th>71339</th>
       <td>2022</td>
+      <td>Apr</td>
       <td>4</td>
       <td>27</td>
+      <td>117</td>
       <td>10.7</td>
       <td>2.6</td>
       <td>6.7</td>
@@ -644,8 +662,10 @@ document.write(`
     <tr>
       <th>71340</th>
       <td>2022</td>
+      <td>Apr</td>
       <td>4</td>
       <td>28</td>
+      <td>118</td>
       <td>12.7</td>
       <td>3.9</td>
       <td>8.3</td>
@@ -655,8 +675,10 @@ document.write(`
     <tr>
       <th>71341</th>
       <td>2022</td>
+      <td>Apr</td>
       <td>4</td>
       <td>29</td>
+      <td>119</td>
       <td>11.7</td>
       <td>6.7</td>
       <td>9.2</td>
@@ -666,8 +688,10 @@ document.write(`
     <tr>
       <th>71342</th>
       <td>2022</td>
+      <td>Apr</td>
       <td>4</td>
       <td>30</td>
+      <td>120</td>
       <td>17.6</td>
       <td>1.0</td>
       <td>9.3</td>
@@ -676,7 +700,7 @@ document.write(`
     </tr>
   </tbody>
 </table>
-<p>71343 rows × 8 columns</p>
+<p>71343 rows × 10 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -714,6 +738,7 @@ document.write(`
       <th>YYYY</th>
       <th>MM</th>
       <th>DD</th>
+      <th>DD365</th>
       <th>Tmax</th>
       <th>Tmin</th>
       <th>Tmean</th>
@@ -724,6 +749,7 @@ document.write(`
   <tbody>
     <tr>
       <th>count</th>
+      <td>71343.000000</td>
       <td>71343.000000</td>
       <td>71343.000000</td>
       <td>71343.000000</td>
@@ -738,6 +764,7 @@ document.write(`
       <td>1924.165174</td>
       <td>6.516210</td>
       <td>15.729154</td>
+      <td>182.917077</td>
       <td>13.890153</td>
       <td>6.156018</td>
       <td>10.046208</td>
@@ -749,6 +776,7 @@ document.write(`
       <td>56.387642</td>
       <td>3.450063</td>
       <td>8.799927</td>
+      <td>105.478891</td>
       <td>6.490258</td>
       <td>5.235341</td>
       <td>5.632085</td>
@@ -758,6 +786,7 @@ document.write(`
     <tr>
       <th>min</th>
       <td>1827.000000</td>
+      <td>1.000000</td>
       <td>1.000000</td>
       <td>1.000000</td>
       <td>-9.600000</td>
@@ -771,6 +800,7 @@ document.write(`
       <td>1875.000000</td>
       <td>4.000000</td>
       <td>8.000000</td>
+      <td>91.500000</td>
       <td>9.200000</td>
       <td>2.200000</td>
       <td>5.900000</td>
@@ -782,6 +812,7 @@ document.write(`
       <td>1924.000000</td>
       <td>7.000000</td>
       <td>16.000000</td>
+      <td>183.000000</td>
       <td>13.700000</td>
       <td>6.400000</td>
       <td>10.100000</td>
@@ -793,6 +824,7 @@ document.write(`
       <td>1973.000000</td>
       <td>10.000000</td>
       <td>23.000000</td>
+      <td>274.000000</td>
       <td>18.900000</td>
       <td>10.200000</td>
       <td>14.500000</td>
@@ -804,6 +836,7 @@ document.write(`
       <td>2022.000000</td>
       <td>12.000000</td>
       <td>31.000000</td>
+      <td>366.000000</td>
       <td>36.500000</td>
       <td>21.200000</td>
       <td>27.400000</td>

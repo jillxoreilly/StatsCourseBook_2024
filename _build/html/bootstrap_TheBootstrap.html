@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -556,7 +557,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ae3ba2735c6966c0122467067a615c0e795eaf9cb914d7dc9602503e2426c1a1.png" src="_images/ae3ba2735c6966c0122467067a615c0e795eaf9cb914d7dc9602503e2426c1a1.png" />
+<img alt="_images/2f59a9691fa8882f3a8f543d1fe31e51a781912914e5c897af82732e7b8222a2.png" src="_images/2f59a9691fa8882f3a8f543d1fe31e51a781912914e5c897af82732e7b8222a2.png" />
 </div>
 </div>
 <p>The match is not too bad.</p>
@@ -578,7 +579,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;score&#39;, ylabel=&#39;Density&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/7b83d2a7229c13d25958fcd8ea4e02177540c92cb988c0e3095e47171bd09d29.png" src="_images/7b83d2a7229c13d25958fcd8ea4e02177540c92cb988c0e3095e47171bd09d29.png" />
+<img alt="_images/f95efd0df2f794a8541738662ef75164825fcff0c9f51f01771f4905ada9a280.png" src="_images/f95efd0df2f794a8541738662ef75164825fcff0c9f51f01771f4905ada9a280.png" />
 </div>
 </div>
 <p>The KDE plots for the samples of size <span class="math notranslate nohighlight">\(n=20\)</span> show that the small samples approximate the parent distribution quite well</p>
@@ -676,7 +677,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4bbb6354546fd560cc62b6259f42589c842564f6d1ca1d76ac5752b2ced09fd7.png" src="_images/4bbb6354546fd560cc62b6259f42589c842564f6d1ca1d76ac5752b2ced09fd7.png" />
+<img alt="_images/dc0e66614dbdca0f6d9c65ba5c6a777ce1dbf538834c98f2565393c31b362c72.png" src="_images/dc0e66614dbdca0f6d9c65ba5c6a777ce1dbf538834c98f2565393c31b362c72.png" />
 </div>
 </div>
 <p>Let’s work out the proportion of the time the simulated sample mean was less than 50:</p>
@@ -719,7 +720,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d107399d2d1d2c1ae5c19e6a85b873f4c24159018738730700e152136100b5ca.png" src="_images/d107399d2d1d2c1ae5c19e6a85b873f4c24159018738730700e152136100b5ca.png" />
+<img alt="_images/aa0c085fb6b22a5a721d3d54c42514a5b09caafa69d48698a2c19806ee48ba0d.png" src="_images/aa0c085fb6b22a5a721d3d54c42514a5b09caafa69d48698a2c19806ee48ba0d.png" />
 </div>
 </div>
 <p>The sampling distribution is centred on the population mean of the Brexdex (50) rather than on the mean of the 20-students dataset.</p>
@@ -732,7 +733,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1942
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1903
 </pre></div>
 </div>
 </div>
@@ -777,7 +778,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/432cb4a53d8ebbe01264a2134c82f9e73087340aa4e31ecd8394edb1b2f11928.png" src="_images/432cb4a53d8ebbe01264a2134c82f9e73087340aa4e31ecd8394edb1b2f11928.png" />
+<img alt="_images/d205149ce0ae6069d90b538797656da403f6d284b37786bd16ecd900f1a2c400.png" src="_images/d205149ce0ae6069d90b538797656da403f6d284b37786bd16ecd900f1a2c400.png" />
 </div>
 </div>
 <p>The two sampling distributions have the same spread, such that the probability of a sample mean exceeding the mean of the 20-students dataset <span class="math notranslate nohighlight">\((m=54.75)\)</span>, when sampling from the population (true mean <span class="math notranslate nohighlight">\(\mu=50\)</span>) is the same as the probability of a sample mean less than 50, when resampling from the 200-students dataset (sample mean = 54.75)</p>

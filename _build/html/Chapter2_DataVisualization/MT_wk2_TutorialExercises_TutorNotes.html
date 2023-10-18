@@ -198,8 +198,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -501,6 +502,7 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -786,7 +788,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f6d15174dcb47f4fc46b7a9d759730ff224c8fd0fcc884be720da273020e8cd.png" src="../_images/0f6d15174dcb47f4fc46b7a9d759730ff224c8fd0fcc884be720da273020e8cd.png" />
+<img alt="../_images/b28eee6606fe8160cf0de3928362abf5438b6412ff3abae5911974a82566fd44.png" src="../_images/b28eee6606fe8160cf0de3928362abf5438b6412ff3abae5911974a82566fd44.png" />
 </div>
 </div>
 <p><strong>b. What was the age distribution in each class?</strong></p>
@@ -804,8 +806,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/553d66ee3773765f2ba2dd7f3f25906c33d00314162e60712ab8ad6f99b9d551.png" src="../_images/553d66ee3773765f2ba2dd7f3f25906c33d00314162e60712ab8ad6f99b9d551.png" />
-<img alt="../_images/8c9d3c4c53bf686091c749f1ab32d37a09dfa5885eb43ecfeae5e663f977a7ee.png" src="../_images/8c9d3c4c53bf686091c749f1ab32d37a09dfa5885eb43ecfeae5e663f977a7ee.png" />
+<img alt="../_images/646074c35a2c4a97665b66211481bcf256532ba974796575c5363cbf2d64aba7.png" src="../_images/646074c35a2c4a97665b66211481bcf256532ba974796575c5363cbf2d64aba7.png" />
+<img alt="../_images/c90f8ac7542f099821359f5375ccaa07151ba4c050e21713bae9ca2a8cc787b9.png" src="../_images/c90f8ac7542f099821359f5375ccaa07151ba4c050e21713bae9ca2a8cc787b9.png" />
 </div>
 </div>
 <p><strong>Discuss with students:</strong></p>
@@ -821,7 +823,8 @@ document.write(`
 <p>Which is better and why?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;alive&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;alive&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="c1"># OR</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;survived&#39;</span><span class="p">)</span>
@@ -830,8 +833,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50b1678e2bb93940e1ed7779ca19a52b39a4a5c766fb8722e25c35bbcdb61c1c.png" src="../_images/50b1678e2bb93940e1ed7779ca19a52b39a4a5c766fb8722e25c35bbcdb61c1c.png" />
-<img alt="../_images/ea47af2adef053214a17a357e35ee5b494515332101b8a518b2b6ce39d3927b0.png" src="../_images/ea47af2adef053214a17a357e35ee5b494515332101b8a518b2b6ce39d3927b0.png" />
+<img alt="../_images/edad9ce3dbe1195d043905ed95c763d2da312f09f0060beea545a0514e32da82.png" src="../_images/edad9ce3dbe1195d043905ed95c763d2da312f09f0060beea545a0514e32da82.png" />
+<img alt="../_images/7e01b271c1221789cbcef6470ce5034f12918d7d091218e1972d177f8a3fa9b8.png" src="../_images/7e01b271c1221789cbcef6470ce5034f12918d7d091218e1972d177f8a3fa9b8.png" />
 </div>
 </div>
 <p><strong>Discuss with students:</strong></p>
@@ -857,8 +860,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd316782287eb8c297cc46514bff0eb5b30ec1263968fe373951c5eaeb67ffc7.png" src="../_images/bd316782287eb8c297cc46514bff0eb5b30ec1263968fe373951c5eaeb67ffc7.png" />
-<img alt="../_images/1c370c197587bd7a8b1c79249215d53db6d01d73e37e2b4c103110a702b64db2.png" src="../_images/1c370c197587bd7a8b1c79249215d53db6d01d73e37e2b4c103110a702b64db2.png" />
+<img alt="../_images/73d55892df3ef5ad26e69a10cb1fd8eb02a917aa3d3dae2909f4d1fa13d92a50.png" src="../_images/73d55892df3ef5ad26e69a10cb1fd8eb02a917aa3d3dae2909f4d1fa13d92a50.png" />
+<img alt="../_images/d1213dd36d61fc874bc8067aa5a9a17d9c6651b06ee258cf0029c3fde50fd841.png" src="../_images/d1213dd36d61fc874bc8067aa5a9a17d9c6651b06ee258cf0029c3fde50fd841.png" />
 </div>
 </div>
 <p><strong>Discuss with students</strong></p>
@@ -884,8 +887,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d834e038dab45a3340cf271be5f063c4017674ff9e1c54b11b91a6ed7793c024.png" src="../_images/d834e038dab45a3340cf271be5f063c4017674ff9e1c54b11b91a6ed7793c024.png" />
-<img alt="../_images/9822b8d7e62446776b5def00c0f4e3a3f6b7aa777d942740f3ecfd1568759a6b.png" src="../_images/9822b8d7e62446776b5def00c0f4e3a3f6b7aa777d942740f3ecfd1568759a6b.png" />
+<img alt="../_images/74467d963bf333137853aa9cb2f33983aa777fa508c01f0be9a47daa018df5bf.png" src="../_images/74467d963bf333137853aa9cb2f33983aa777fa508c01f0be9a47daa018df5bf.png" />
+<img alt="../_images/14ca8dce690c9662cd8d86e35eb818807c28685986249d6fa52059200a005416.png" src="../_images/14ca8dce690c9662cd8d86e35eb818807c28685986249d6fa52059200a005416.png" />
 </div>
 </div>
 <p><strong>Discuss with students</strong></p>
@@ -1065,8 +1068,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fcd49ae997d6ad6e6eab02a2515daaa46e45ca206defb7dbf4df7481de294b21.png" src="../_images/fcd49ae997d6ad6e6eab02a2515daaa46e45ca206defb7dbf4df7481de294b21.png" />
-<img alt="../_images/597e8411e6b9dc4c288bae16356c132133260f91c1e9dc906de6e4dfc30a7779.png" src="../_images/597e8411e6b9dc4c288bae16356c132133260f91c1e9dc906de6e4dfc30a7779.png" />
+<img alt="../_images/d25f5f8fccd0b265267f8177317d60df34cb63456a123aa67cbc87a96579ff73.png" src="../_images/d25f5f8fccd0b265267f8177317d60df34cb63456a123aa67cbc87a96579ff73.png" />
+<img alt="../_images/423884e61867252cd4dcbf39cf9f3fc5b73bc6c9dd82dce473ae07c0ae5ce5a8.png" src="../_images/423884e61867252cd4dcbf39cf9f3fc5b73bc6c9dd82dce473ae07c0ae5ce5a8.png" />
 </div>
 </div>
 <p>**Discuss with students **</p>
@@ -1085,7 +1088,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4fba0c3f546f8e49caabd61c72104e569309257cb93d80ab62a8de3bd4da969c.png" src="../_images/4fba0c3f546f8e49caabd61c72104e569309257cb93d80ab62a8de3bd4da969c.png" />
+<img alt="../_images/20bed6ac06515b667b4bdccfbfde3ef6ca028dbd16b4d75798f9b1a5297c3cc3.png" src="../_images/20bed6ac06515b667b4bdccfbfde3ef6ca028dbd16b4d75798f9b1a5297c3cc3.png" />
 </div>
 </div>
 <p>Looks like</p>
@@ -1103,7 +1106,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/65cf90ce0981940e142eae6252758115e9a4fc7db67e3d2d997795f48fed18b5.png" src="../_images/65cf90ce0981940e142eae6252758115e9a4fc7db67e3d2d997795f48fed18b5.png" />
+<img alt="../_images/219853dfa99ca15b97eb8bd4b7f9d438d14b6896ecf7ceafeff18ebef947f01c.png" src="../_images/219853dfa99ca15b97eb8bd4b7f9d438d14b6896ecf7ceafeff18ebef947f01c.png" />
 </div>
 </div>
 <p>Do you notice some clusters in the plot? How could they be explained?</p>
@@ -1117,7 +1120,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08519280dd80fea85c8fc674b8e565fdf2ae83682dc01811bdc2ecbc2024e1dc.png" src="../_images/08519280dd80fea85c8fc674b8e565fdf2ae83682dc01811bdc2ecbc2024e1dc.png" />
+<img alt="../_images/7792f97762b61c7f43094f349dad51f0b24a0f1f57d120e36e72bbc6618e731f.png" src="../_images/7792f97762b61c7f43094f349dad51f0b24a0f1f57d120e36e72bbc6618e731f.png" />
 </div>
 </div>
 <p>Discuss with students how we can summarize the results in plain English.</p>
@@ -1289,7 +1292,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83567fd13ce462e208961fcd9ec48f15fa0d023495fe7b461ab09c4aed86f04c.png" src="../_images/83567fd13ce462e208961fcd9ec48f15fa0d023495fe7b461ab09c4aed86f04c.png" />
+<img alt="../_images/406c25ed9de6fcce5d079faa79614b8f73be2d9b0c1da7b227d245dc3440eeaf.png" src="../_images/406c25ed9de6fcce5d079faa79614b8f73be2d9b0c1da7b227d245dc3440eeaf.png" />
 </div>
 </div>
 <p>Time zero is the onset of the moving dots. We can see that firing rate initially dips, then rises over the course of several hundred milliseconds.</p>
@@ -1318,7 +1321,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6dfb6642689f9e86b2e0e7b6617583cd0a502f82349859895263ef1cba85ad13.png" src="../_images/6dfb6642689f9e86b2e0e7b6617583cd0a502f82349859895263ef1cba85ad13.png" />
+<img alt="../_images/4ec89af321e295bec85342cc0aec1e5ea7977358a9bef71c32057e189d06fb7d.png" src="../_images/4ec89af321e295bec85342cc0aec1e5ea7977358a9bef71c32057e189d06fb7d.png" />
 </div>
 </div>
 <p>What do you see? Describe the graph in words.</p>
@@ -1346,7 +1349,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ff6276ecfdf8ff12f79f994c49004228f866f1ea3306425b0a201a63c398a11.png" src="../_images/1ff6276ecfdf8ff12f79f994c49004228f866f1ea3306425b0a201a63c398a11.png" />
+<img alt="../_images/7c5f1a6419b6fe4cd1c438b8a2b395b28c25791d9bed424f2ae47a81f8466233.png" src="../_images/7c5f1a6419b6fe4cd1c438b8a2b395b28c25791d9bed424f2ae47a81f8466233.png" />
 </div>
 </div>
 <p><strong>NOTE</strong> the error bars have gone because there is only one trace for each coherence level x choice combination</p>

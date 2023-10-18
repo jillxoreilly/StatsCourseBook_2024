@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter2_DataVisualization/MT_wk2_scatterplot';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.7. Tweaking plots" href="MT_wk2_tweaks.html" />
+    <link rel="next" title="2.7. Timeseries data" href="MT_wk2_lineplot.html" />
     <link rel="prev" title="2.5. Comparing Categories" href="MT_wk2_boxplot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -202,8 +202,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -745,12 +746,14 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;brother&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sister&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;brother&#39;s height (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sister&#39;s height (cm)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/14d21c545d23f89eed3e2114ef117163092113bd04311bfd9f45a55e4d7c1894.png" src="../_images/14d21c545d23f89eed3e2114ef117163092113bd04311bfd9f45a55e4d7c1894.png" />
+<img alt="../_images/0c9afff661226d5ff2030908073e964bcc7634cb024fbf7811829f4e5ae59364.png" src="../_images/0c9afff661226d5ff2030908073e964bcc7634cb024fbf7811829f4e5ae59364.png" />
 </div>
 </div>
 <section id="between-pairs-effect-correlation">
@@ -773,13 +776,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;brother&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sister&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;brother&#39;s height (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sister&#39;s height (cm)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">190</span><span class="p">],[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">190</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c6a2fd2b323b7f56c256d857cc15d01fe99ca2e44a4208913dd8b01ddea3109c.png" src="../_images/c6a2fd2b323b7f56c256d857cc15d01fe99ca2e44a4208913dd8b01ddea3109c.png" />
+<img alt="../_images/f3d4fdf07fc3b8829bb0435c706b896c684c881c0f12843b2bdfff14b643b522.png" src="../_images/f3d4fdf07fc3b8829bb0435c706b896c684c881c0f12843b2bdfff14b643b522.png" />
 </div>
 </div>
 <p>Look at the graph - most of the datapoints fall on one side of the line (below it)</p>
@@ -805,12 +810,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;brother&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sister&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span> <span class="mi">190</span><span class="p">],[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">190</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;brother&#39;s height (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sister&#39;s height (cm)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cf1a337d6aeaa2d62f7516c9436d52744b6b4bf3f3da15548196ad93e90df302.png" src="../_images/cf1a337d6aeaa2d62f7516c9436d52744b6b4bf3f3da15548196ad93e90df302.png" />
+<img alt="../_images/833668f3a55071a7129a00b710ba870e1c4c0ba6daa0fca4e2acc41caadba420.png" src="../_images/833668f3a55071a7129a00b710ba870e1c4c0ba6daa0fca4e2acc41caadba420.png" />
 </div>
 </div>
 <p>The blue line is the regression line (and the shading represents aconfidence interval for the regression line)</p>
@@ -828,6 +835,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;brother&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sister&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;brother&#39;s height (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;sister&#39;s height (cm)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -836,7 +845,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="../_images/f1b77d74ffa68d33e78733cde2e9a5ee03950a5fb5554b05846607a4a6bcf17e.png" src="../_images/f1b77d74ffa68d33e78733cde2e9a5ee03950a5fb5554b05846607a4a6bcf17e.png" />
+<img alt="../_images/61a8a145539c9447e055b385e9fb4d63ed03aabd424bf8389acf6841cf776b24.png" src="../_images/61a8a145539c9447e055b385e9fb4d63ed03aabd424bf8389acf6841cf776b24.png" />
 </div>
 </div>
 <p>Since this plot is now made up of three axes (the mmmain scatter plot and the two marginal histograms), if we want to adjust one of those axes, we use a set of arguments in a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>:</p>
@@ -1110,11 +1119,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="MT_wk2_tweaks.html"
+       href="MT_wk2_lineplot.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.7. </span>Tweaking plots</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Timeseries data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

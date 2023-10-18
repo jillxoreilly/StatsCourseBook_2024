@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -654,7 +655,7 @@ Requirement already satisfied: numpy&lt;1.27.0,&gt;=1.19.5 in /Users/joreilly/op
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40741/4276243473.py:7: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97385/4276243473.py:7: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
@@ -758,28 +759,28 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>1</th>
-      <td>17</td>
       <td>13</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>48</td>
       <td>20</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>25</td>
       <td>28</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>18</td>
       <td>23</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>14</td>
       <td>16</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>6</th>
@@ -793,8 +794,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>8</th>
-      <td>27</td>
       <td>22</td>
+      <td>27</td>
     </tr>
     <tr>
       <th>9</th>
@@ -860,8 +861,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>2</th>
-      <td>5</td>
       <td>6</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -897,29 +898,29 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40741/2368325034.py:12: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97385/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40741/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97385/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40741/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97385/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40741/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_97385/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
 </pre></div>
 </div>
-<img alt="../_images/65164354a971de3331b4da8f3c98af8176fecc090e0ac5d6e8d06c91b23d1127.png" src="../_images/65164354a971de3331b4da8f3c98af8176fecc090e0ac5d6e8d06c91b23d1127.png" />
+<img alt="../_images/0a2d4d233538ad97c73b700fbe49d7760990fcee40198e1637a1af453cc58341.png" src="../_images/0a2d4d233538ad97c73b700fbe49d7760990fcee40198e1637a1af453cc58341.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -939,7 +940,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 3.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = 1.6
 </pre></div>
 </div>
 </div>
@@ -971,8 +972,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d84d734486a29d4a24de4895a6aa0dbd8d4c7549c8d19136a9d5499b851d896.png" src="../_images/6d84d734486a29d4a24de4895a6aa0dbd8d4c7549c8d19136a9d5499b851d896.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.05%
+<img alt="../_images/ce165d79399fddd95dc5320a0382e7aac76c79e796e66de91f7f93f6c986601e.png" src="../_images/ce165d79399fddd95dc5320a0382e7aac76c79e796e66de91f7f93f6c986601e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.1%
 </pre></div>
 </div>
 </div>

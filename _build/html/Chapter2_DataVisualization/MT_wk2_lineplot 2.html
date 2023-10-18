@@ -200,8 +200,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.7. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -550,6 +551,7 @@ document.write(`
     <tr style="text-align: right;">
       <th></th>
       <th>YYYY</th>
+      <th>Month</th>
       <th>MM</th>
       <th>DD</th>
       <th>DD365</th>
@@ -563,10 +565,11 @@ document.write(`
   <tbody>
     <tr>
       <th>0</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
       <td>8.3</td>
       <td>5.6</td>
       <td>7.0</td>
@@ -575,10 +578,11 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
       <td>2.2</td>
       <td>0.0</td>
       <td>1.1</td>
@@ -587,10 +591,11 @@ document.write(`
     </tr>
     <tr>
       <th>2</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
       <td>-2.2</td>
       <td>-8.3</td>
       <td>-5.3</td>
@@ -599,10 +604,11 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
       <td>-1.7</td>
       <td>-7.8</td>
       <td>-4.8</td>
@@ -611,10 +617,11 @@ document.write(`
     </tr>
     <tr>
       <th>4</th>
-      <td>1827.0</td>
-      <td>1.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>1827</td>
+      <td>Jan</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
       <td>0.0</td>
       <td>-10.6</td>
       <td>-5.3</td>
@@ -632,70 +639,76 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>73775</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71338</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>26</td>
+      <td>116</td>
+      <td>15.2</td>
+      <td>4.1</td>
+      <td>9.7</td>
+      <td>11.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73776</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71339</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>27</td>
+      <td>117</td>
+      <td>10.7</td>
+      <td>2.6</td>
+      <td>6.7</td>
+      <td>8.1</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73777</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71340</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>28</td>
+      <td>118</td>
+      <td>12.7</td>
+      <td>3.9</td>
+      <td>8.3</td>
+      <td>8.8</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73778</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71341</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>29</td>
+      <td>119</td>
+      <td>11.7</td>
+      <td>6.7</td>
+      <td>9.2</td>
+      <td>5.0</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>73779</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <th>71342</th>
+      <td>2022</td>
+      <td>Apr</td>
+      <td>4</td>
+      <td>30</td>
+      <td>120</td>
+      <td>17.6</td>
+      <td>1.0</td>
+      <td>9.3</td>
+      <td>16.6</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
-<p>73780 rows × 9 columns</p>
+<p>71343 rows × 10 columns</p>
 </div></div></div>
 </div>
 <section id="is-the-temperature-increasing">
@@ -733,7 +746,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/32b96caba0c493988655f2ad6c56d8baa960f617940571a1acd35b8a3c0a9f4e.png" src="../_images/32b96caba0c493988655f2ad6c56d8baa960f617940571a1acd35b8a3c0a9f4e.png" />
+<img alt="../_images/aa178cb40b9b1f54edd9426c8618380a1a12034eeeafddc6a284d204bcff0298.png" src="../_images/aa178cb40b9b1f54edd9426c8618380a1a12034eeeafddc6a284d204bcff0298.png" />
 </div>
 </div>
 <p><strong>Note-</strong></p>
@@ -764,7 +777,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c291c1a46e37b7dcab08501dc2e163da41aec5a8111949597cd43f0c8a376dd2.png" src="../_images/c291c1a46e37b7dcab08501dc2e163da41aec5a8111949597cd43f0c8a376dd2.png" />
+<img alt="../_images/9378af80fbfecc0a8b5e5065991582254a96d95e7bd1009aa283b0473d0a467a.png" src="../_images/9378af80fbfecc0a8b5e5065991582254a96d95e7bd1009aa283b0473d0a467a.png" />
 </div>
 </div>
 <section id="exercises">
@@ -795,7 +808,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_40102/2237708067.py:1: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_96604/2237708067.py:1: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
