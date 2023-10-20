@@ -1524,52 +1524,155 @@ Name: Tmax, Length: 366, dtype: float64
 </section>
 <section id="all-by-all-correlation-matrix">
 <h3>All-by-all correlation matrix<a class="headerlink" href="#all-by-all-correlation-matrix" title="Permalink to this heading">#</a></h3>
-<p>We can also quickly output all the correlations between all possible pairs of columns in a dataframe by simply not giving any column index:</p>
+<p>We can also quickly output all the correlations between all possible pairs of columns in a dataframe by simply not giving any column index (but we do have to tell it to only use the numeric columns):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">weather</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:10054,</span> in <span class="ni">DataFrame.corr</span><span class="nt">(self, method, min_periods, numeric_only)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10052</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
-<span class="g g-Whitespace">  </span><span class="mi">10053</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="ne">&gt; </span><span class="mi">10054</span> <span class="n">mat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">  </span><span class="mi">10056</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;pearson&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">  </span><span class="mi">10057</span>     <span class="n">correl</span> <span class="o">=</span> <span class="n">libalgos</span><span class="o">.</span><span class="n">nancorr</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">minp</span><span class="o">=</span><span class="n">min_periods</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:1838,</span> in <span class="ni">DataFrame.to_numpy</span><span class="nt">(self, dtype, copy, na_value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1836</span> <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1837</span>     <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1838</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">as_array</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">na_value</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1839</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dtype</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1840</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1732,</span> in <span class="ni">BlockManager.as_array</span><span class="nt">(self, dtype, copy, na_value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span>         <span class="n">arr</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">writeable</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1731</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1732</span>     <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interleave</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">na_value</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="c1"># The underlying data was copied within _interleave, so no need</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span>     <span class="c1"># to further copy if copy=True or setting na_value</span>
-<span class="g g-Whitespace">   </span><span class="mi">1736</span> <span class="k">if</span> <span class="n">na_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">:</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:1794,</span> in <span class="ni">BlockManager._interleave</span><span class="nt">(self, dtype, na_value)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1792</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1793</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">blk</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1794</span>     <span class="n">result</span><span class="p">[</span><span class="n">rl</span><span class="o">.</span><span class="n">indexer</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
-<span class="g g-Whitespace">   </span><span class="mi">1795</span>     <span class="n">itemmask</span><span class="p">[</span><span class="n">rl</span><span class="o">.</span><span class="n">indexer</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">   </span><span class="mi">1797</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">itemmask</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
-
-<span class="ne">ValueError</span>: could not convert string to float: &#39;Jan&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YYYY</th>
+      <th>MM</th>
+      <th>DD</th>
+      <th>DD365</th>
+      <th>Tmax</th>
+      <th>Tmin</th>
+      <th>Tmean</th>
+      <th>Trange</th>
+      <th>Rainfall_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>YYYY</th>
+      <td>1.000000</td>
+      <td>-0.003411</td>
+      <td>-0.000059</td>
+      <td>-0.003372</td>
+      <td>0.071631</td>
+      <td>0.089683</td>
+      <td>0.083044</td>
+      <td>-0.001257</td>
+      <td>0.008117</td>
+    </tr>
+    <tr>
+      <th>MM</th>
+      <td>-0.003411</td>
+      <td>1.000000</td>
+      <td>0.010567</td>
+      <td>0.995580</td>
+      <td>0.179681</td>
+      <td>0.235401</td>
+      <td>0.213082</td>
+      <td>-0.018820</td>
+      <td>0.043672</td>
+    </tr>
+    <tr>
+      <th>DD</th>
+      <td>-0.000059</td>
+      <td>0.010567</td>
+      <td>1.000000</td>
+      <td>0.092771</td>
+      <td>0.001217</td>
+      <td>0.002876</td>
+      <td>0.002035</td>
+      <td>-0.002055</td>
+      <td>0.005315</td>
+    </tr>
+    <tr>
+      <th>DD365</th>
+      <td>-0.003372</td>
+      <td>0.995580</td>
+      <td>0.092771</td>
+      <td>1.000000</td>
+      <td>0.177016</td>
+      <td>0.233248</td>
+      <td>0.210545</td>
+      <td>-0.020536</td>
+      <td>0.043925</td>
+    </tr>
+    <tr>
+      <th>Tmax</th>
+      <td>0.071631</td>
+      <td>0.179681</td>
+      <td>0.001217</td>
+      <td>0.177016</td>
+      <td>1.000000</td>
+      <td>0.841480</td>
+      <td>0.967881</td>
+      <td>0.593339</td>
+      <td>-0.008807</td>
+    </tr>
+    <tr>
+      <th>Tmin</th>
+      <td>0.089683</td>
+      <td>0.235401</td>
+      <td>0.002876</td>
+      <td>0.233248</td>
+      <td>0.841480</td>
+      <td>1.000000</td>
+      <td>0.950248</td>
+      <td>0.064379</td>
+      <td>0.086181</td>
+    </tr>
+    <tr>
+      <th>Tmean</th>
+      <td>0.083044</td>
+      <td>0.213082</td>
+      <td>0.002035</td>
+      <td>0.210545</td>
+      <td>0.967881</td>
+      <td>0.950248</td>
+      <td>1.000000</td>
+      <td>0.371965</td>
+      <td>0.035037</td>
+    </tr>
+    <tr>
+      <th>Trange</th>
+      <td>-0.001257</td>
+      <td>-0.018820</td>
+      <td>-0.002055</td>
+      <td>-0.020536</td>
+      <td>0.593339</td>
+      <td>0.064379</td>
+      <td>0.371965</td>
+      <td>1.000000</td>
+      <td>-0.144654</td>
+    </tr>
+    <tr>
+      <th>Rainfall_mm</th>
+      <td>0.008117</td>
+      <td>0.043672</td>
+      <td>0.005315</td>
+      <td>0.043925</td>
+      <td>-0.008807</td>
+      <td>0.086181</td>
+      <td>0.035037</td>
+      <td>-0.144654</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>The problem with this is that the figure we want is often buried amongst a lot of irrelevant correlation coefficients.</p>
 </section>
