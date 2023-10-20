@@ -1382,13 +1382,13 @@ Name: Tmax, Length: 366, dtype: float64
 </ul>
 <p>so you could do either of these</p>
 <ul class="simple">
-<li><p>weather.query(‘MM == “October”’).Tmax.mean()</p></li>
-<li><p>weather.query(“MM == ‘October’”).Tmax.mean()</p></li>
+<li><p>weather.query(‘MM == “Oct”’).Tmax.mean()</p></li>
+<li><p>weather.query(“MM == ‘Oct’”).Tmax.mean()</p></li>
 </ul>
 <p>but not these</p>
 <ul class="simple">
-<li><p>weather.query(‘MM == ‘October’’).Tmax.mean()</p></li>
-<li><p>weather.query(“MM == ‘October’”).Tmax.mean()</p></li>
+<li><p>weather.query(‘MM == ‘Oct’’).Tmax.mean()</p></li>
+<li><p>weather.query(“MM == “Oct””).Tmax.mean()</p></li>
 </ul>
 <section id="id2">
 <h3>Exercises<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
