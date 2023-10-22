@@ -538,10 +538,10 @@ document.write(`
 </section>
 <section id="import-the-data">
 <h3>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
-<p>We’ll use the Titanic data again</p>
+<p>We’ll use the Titanic data (data on 890 people who were onbboard the Titanic when it sank). This includes some odd sounding variables such as <tt>SibSp</tt> but don’t worry about them for now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/titanic_2.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/titanic_2.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">titanic</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -750,7 +750,7 @@ document.write(`
 <img alt="../_images/ea6d49977fb2608035e916ec60131b11d50199b65da211a6acda92b338761559.png" src="../_images/ea6d49977fb2608035e916ec60131b11d50199b65da211a6acda92b338761559.png" />
 </div>
 </div>
-<p>We can see that there were a lot of young adults on the titanic - posisbly emigrating to start a new life in America.</p>
+<p>We can see that there were a lot of young adults on the Titanic - possibly emigrating to start a new life in America.</p>
 </section>
 </section>
 <section id="axis-labels-title">
@@ -784,7 +784,7 @@ document.write(`
 <ul class="simple">
 <li><p>plt.legend()</p></li>
 </ul>
-<p>Say we plot the age of people in the different classes on the Titanic separately for each class. I’ve used a KDE plot here rather than a histogram as it’s just less cluttered with the three distributions (you can try changing it to a histogram to see what I mean).</p>
+<p>Say we plot the age of people in the different classes on the Titanic separately for each class. I’ve used a KDE plot here rather than a histogram, as the histogram is just a bit too cluttered with the three distributions (you can try changing it to a histogram to see what I mean).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -819,7 +819,7 @@ document.write(`
 <p>Sometimes this is not the order we would prefer - consider the following example using the Oxford weather dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/OxfordWeather2.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/OxfordWeather2.csv&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -836,8 +836,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/OxfordWeather2.csv&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="s1">&#39;May&#39;</span><span class="p">,</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Aug&#39;</span><span class="p">,</span><span class="s1">&#39;Sep&#39;</span><span class="p">,</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="s1">&#39;Dec&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span><span class="s1">&#39;Feb&#39;</span><span class="p">,</span><span class="s1">&#39;Mar&#39;</span><span class="p">,</span><span class="s1">&#39;Apr&#39;</span><span class="p">,</span><span class="s1">&#39;May&#39;</span><span class="p">,</span><span class="s1">&#39;Jun&#39;</span><span class="p">,</span><span class="s1">&#39;Jul&#39;</span><span class="p">,</span><span class="s1">&#39;Aug&#39;</span><span class="p">,</span><span class="s1">&#39;Sep&#39;</span><span class="p">,</span><span class="s1">&#39;Oct&#39;</span><span class="p">,</span><span class="s1">&#39;Nov&#39;</span><span class="p">,</span><span class="s1">&#39;Dec&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -880,7 +879,7 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Sex == &quot;female&quot;&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># shift the plots sideways so they don&#39;t overlap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># shift the plots so they don&#39;t overlap</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -889,7 +888,7 @@ document.write(`
 <img alt="../_images/5c85c4a58d83451bd0f5b4c5bf25d686a9bdff2b62eb4c6b3e050116b70a95a4.png" src="../_images/5c85c4a58d83451bd0f5b4c5bf25d686a9bdff2b62eb4c6b3e050116b70a95a4.png" />
 </div>
 </div>
-<p>Ah, it’s actually a bit easier to compare the distributions when they are arranged vertically - for example we can see that the maximum age for men was higher, and the peak age for women was (slightly) lower. Good choice!</p>
+<p>Ah, it’s actually a bit easier to compare the distributions when they are arranged vertically - for example we can see that the maximum age for women was higher, and the peak age for women was (slightly) lower. Good choice!</p>
 <section id="plt-subplot-syntax">
 <h3>plt.subplot() syntax<a class="headerlink" href="#plt-subplot-syntax" title="Permalink to this heading">#</a></h3>
 <p>The function plt.subplot() has three arguments:</p>
@@ -939,7 +938,7 @@ document.write(`
 </div>
 <p>Ooh, suddenly we can see that there were a lot more men than women on the Titanic!</p>
 <ul class="simple">
-<li><p><strong>Note</strong> It is generally most relevant to match the <span class="math notranslate nohighlight">\(y\)</span>-axes when two subplots are side-by-side, and the <span class="math notranslate nohighlight">\(x\)</span>-axes when the subplot are arranged one above the other. However, it is often (but not always) best to match both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes.</p></li>
+<li><p><strong>Note</strong> It is generally most relevant to match the <span class="math notranslate nohighlight">\(y\)</span>-axes when two subplots are side-by-side, and the <span class="math notranslate nohighlight">\(x\)</span>-axes when the subplots are arranged one above the other. However, it is often (but not always) best to match both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes.</p></li>
 </ul>
 </section>
 <section id="figure-size">
@@ -974,7 +973,7 @@ document.write(`
 <img alt="../_images/21a1580f546f9762eca324cafae261424a1a4fd350aa019fb42d27c29ce0dd89.png" src="../_images/21a1580f546f9762eca324cafae261424a1a4fd350aa019fb42d27c29ce0dd89.png" />
 </div>
 </div>
-<p>Note that this applies tot he whole figure, which could be made up from several subplots - so this syntax can be useful to avoid your subplots getting very stretched - compare the default aspect ratio here:</p>
+<p>Note that this applies to the whole figure, which could be made up from several subplots - so this syntax can be useful to avoid your subplots getting very stretched - compare the default aspect ratio here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>

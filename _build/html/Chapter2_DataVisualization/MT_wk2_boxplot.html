@@ -543,7 +543,7 @@ document.write(`
 </section>
 <section id="load-and-inspect-the-data">
 <h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
-<p>Let’s load some historical data about the weather in Oxford, from the file “OxfordWeather.csv”</p>
+<p>Let’s load some historical data about the weather in Oxford, from the file “OxfordWeather.csv”. The code below will load this automatically from the internet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/OxfordWeather.csv&quot;</span><span class="p">)</span>
@@ -805,13 +805,9 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a violin plot showing the minimum temperature in each month</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmin&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Your code here!</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/8399b407a5aaf35d79ac065de134aefbf732e22dc8e77c01c051e0fe77e3a600.png" src="../_images/8399b407a5aaf35d79ac065de134aefbf732e22dc8e77c01c051e0fe77e3a600.png" />
 </div>
 </div>
 </section>
@@ -829,7 +825,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2cbf88e2677b459cbf27217c8d00f75f9556dfcbcadc49142581668fe0290e8c.png" src="../_images/2cbf88e2677b459cbf27217c8d00f75f9556dfcbcadc49142581668fe0290e8c.png" />
+<img alt="../_images/9915e6e5a22f190b0b9f4ac6df23bbe181d75d45aaa2c2453db45be35bca97a1.png" src="../_images/9915e6e5a22f190b0b9f4ac6df23bbe181d75d45aaa2c2453db45be35bca97a1.png" />
 </div>
 </div>
 <p>The height of each bar is the mean temperature in that month; the error bars show the 95% confidence interval (but could be altered to show the standard deviation or standard error if you liked - don’t worry if these terms are unfamiliar as confidence intervals and standard error will be covered later in the course)</p>
@@ -1014,28 +1010,28 @@ document.write(`
 <p>We can do this using a swarmplot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">])</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;interview score&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/434f2b1be0445b14ee4fdc1a058e72ce3a03531d897a71bd6ab091aede7872fb.png" src="../_images/434f2b1be0445b14ee4fdc1a058e72ce3a03531d897a71bd6ab091aede7872fb.png" />
+<img alt="../_images/50ad7b6754fa96997083d276941f1fcc29e4ee55ac682cd265454534bb535ec6.png" src="../_images/50ad7b6754fa96997083d276941f1fcc29e4ee55ac682cd265454534bb535ec6.png" />
 </div>
 </div>
 <p>Maybe it would be nice to add a violinplot for each distribution as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">])</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">InterviewScores</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span> <span class="c1"># we may as well make the colours meaningful ;-))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;interview score&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1343a77bcda19dcc7732523f25d4947200e0446923981c857810f6707808ccc9.png" src="../_images/1343a77bcda19dcc7732523f25d4947200e0446923981c857810f6707808ccc9.png" />
+<img alt="../_images/ee721507a4842db3c77bd910fd3920dc7ee43e7e825fc55c9b32daf54b9967d2.png" src="../_images/ee721507a4842db3c77bd910fd3920dc7ee43e7e825fc55c9b32daf54b9967d2.png" />
 </div>
 </div>
 <p><strong>Note-</strong></p>

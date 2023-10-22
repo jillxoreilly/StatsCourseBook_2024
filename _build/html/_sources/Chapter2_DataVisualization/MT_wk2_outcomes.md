@@ -35,7 +35,7 @@ Therefore all the plotting commands will be preceded by either
 dataframes. It also produces aesthetically pleasing plots.
 
 `Matplotlib` is another plotting library that contains, amongst
-other tings, many useful functions to customize plots (for example
+other things, many useful functions to customize plots (for example
 editing the axis ranges)
 
 

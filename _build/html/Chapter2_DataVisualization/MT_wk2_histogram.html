@@ -567,7 +567,7 @@ document.write(`
 </section>
 <section id="load-and-inspect-the-data">
 <h3>Load and inspect the data<a class="headerlink" href="#load-and-inspect-the-data" title="Permalink to this heading">#</a></h3>
-<p>Load the file BodyData.csv which contains body measurements for 50 (fictional) people</p>
+<p>Load the file BodyData.csv which contains body measurements for 50 (fictional) people. The code block below will load the data automatically from the internet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heightData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BodyData.csv&#39;</span><span class="p">)</span>
@@ -1095,9 +1095,9 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </section>
 <section id="bin-width">
 <h3>Bin width<a class="headerlink" href="#bin-width" title="Permalink to this heading">#</a></h3>
-<p>The code below creates histograms of the mens’ heights</p>
+<p>The code above creates histograms of the people’s heights. YOu can copy and paste it, then mmodify it, to complete the following exercise:</p>
 <ul class="simple">
-<li><p>try changing the bin width to 1cm - can you guess how to do this?</p>
+<li><p>create a histogram with bin widths of 1cm - can you guess how to do this?</p>
 <ul>
 <li><p>note how much spikier the histogram looks with 1cm bins - it is hard to see the overall shape of the distribution</p></li>
 </ul>
@@ -1172,7 +1172,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 <section id="probability-density">
 <h3>Probability density<a class="headerlink" href="#probability-density" title="Permalink to this heading">#</a></h3>
 <p>When we plot the KDE as a standalone (rather than over a histogram) the x-axis changes to ‘Density’ rather than ‘count’.</p>
-<p>The values of density are such that the area under the curve of the KDE plot is 1. Technically it is a <i>probability density</i>. It means that probabilities could be read off the graph - so the probability of a member of our sample (one of the brothers) having a height between 160 and 170cm is the same as the area under the curve between 160 and 170cm.</p>
+<p>The values of density are such that the area under the curve of the KDE plot is 1. Technically it is a <i>probability density</i>. It means that probabilities could be read off the graph - so the probability of a member of our sample (one of people in the dataframe) having a height between 160 and 170cm is the same as the area under the curve between 160 and 170cm.</p>
 <p>• this is calculated as 10cm (width of the shaded area) x 0.025 (average ‘density’ in this area) = 0.25 or 25%</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/densityFig.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/densityFig.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/densityFig.png" style="width: 50%;" /></a>
 <p>One consequence of this is that you cannot tell from the KDE plot how many data points were in the dataset (which we should care about, as laarger datasets are more likely to reliably represent the population!). To counter this you can add a <strong>rugplot</strong>, which shows the individual datapoints - this gives you ‘the best of both worlds’</p>
@@ -1226,7 +1226,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 <section id="considerations-when-comparing-distributions">
 <h2><span class="section-number">2.4.5. </span>Considerations when comparing distributions<a class="headerlink" href="#considerations-when-comparing-distributions" title="Permalink to this heading">#</a></h2>
 <p>Histograms and KDE plots are good for showing the shape of a data distribution, and hence they are also good for comparing the shape of multiple data distributions</p>
-<p>An easy way to commpare two groups is to overlay the histograms or KDE plots, using the <code class="docutils literal notranslate"><span class="pre">hue</span></code> property:</p>
+<p>An easy way to compare two groups is to overlay the histograms or KDE plots, using the <code class="docutils literal notranslate"><span class="pre">hue</span></code> property:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">heightData</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -1369,8 +1369,12 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 <ul class="simple">
 <li><p>the first number inside brackets is the number of <strong>rows</strong> of axes within your compound figure</p></li>
 <li><p>the second number inside brackets is the number of <strong>columns</strong> of axes within your compound figure</p></li>
-<li><p>the third number inside brackets is the location in which you want to place the next plot, numbered as if reading from top to bottom and left to right - some examples are shown in the following figure</p></li>
+<li><p>the third number inside brackets is the location in which you want to place the next plot, numbered as if reading from top to bottom and left to right - some examples are shown in the following figures</p></li>
 </ul>
+<p><strong>Three rows, two columns:</strong></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot32i.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot32i.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot32i.png" style="width: 50%;" /></a>
+<p><strong>Two rows, four columns:</strong></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot24i.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot24i.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_subplot24i.png" style="width: 99%;" /></a>
 </section>
 </section>
 <section id="customizing-the-appearance-of-your-plots">

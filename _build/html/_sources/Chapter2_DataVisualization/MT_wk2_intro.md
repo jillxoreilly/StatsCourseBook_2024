@@ -16,7 +16,7 @@ and `seaborn`
 
 We will also think about how to make good choices when plotting data -
 choosing an appropriate type of plot and appropriate scaling,
-labeblling and settings
+labelling and settings
 
 ## Tasks for this week
 
