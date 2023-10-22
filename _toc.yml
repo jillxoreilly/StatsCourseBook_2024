@@ -47,7 +47,6 @@ parts:
         - file: Chapter3_DataWrangling/MT_wk3_FindOutliers.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_NaNing.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_NanHandling.ipynb
-        - file: Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_disaggregation.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_CreateColumns.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_TutorialExercises.md

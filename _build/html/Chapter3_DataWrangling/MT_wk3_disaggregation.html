@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.7. Data Disaggregation &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.6. Data Disaggregation &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_disaggregation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.8. Creating new variables/columns" href="MT_wk3_CreateColumns.html" />
-    <link rel="prev" title="3.6. Standardizing data" href="MT_wk3_ZScoreQuantiles.html" />
+    <link rel="next" title="3.7. Creating new variables/columns" href="MT_wk3_CreateColumns.html" />
+    <link rel="prev" title="3.5. Handling NaNs" href="MT_wk3_NanHandling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,10 +210,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.7. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -469,18 +468,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.7.1. Equality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disaggregation-skills">3.7.2. Disaggregation skills</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.3. Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.4. Import a dataset to work with</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.6.1. Equality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disaggregation-skills">3.6.2. Disaggregation skills</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.6.3. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.6.4. Import a dataset to work with</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">Clean the data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#age-vs-sex">3.7.5. Age vs Sex</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#age-vs-sex">3.6.5. Age vs Sex</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-stay">Length of stay</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mortality-by-sex">3.7.6. Mortality by sex</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mortality-by-sex">3.6.6. Mortality by sex</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
@@ -496,7 +495,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="data-disaggregation">
-<h1><span class="section-number">3.7. </span>Data Disaggregation<a class="headerlink" href="#data-disaggregation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.6. </span>Data Disaggregation<a class="headerlink" href="#data-disaggregation" title="Permalink to this heading">#</a></h1>
 <p><strong>Disaggregation</strong> means describing or plotting data separately for different categories of individuals.</p>
 <p>As we saw in the first lecture of the series, data in a single dataset can arise from different causal processes, for example:</p>
 <ul class="simple">
@@ -512,19 +511,19 @@ document.write(`
 <li><p>If a patient presents with chest pain, is it more likely to be indigestion or a heart attack? The answer to this question partly depends on the age of the patient (heart attacks are much less likely in young patients), BUT that is different again for men and women.</p></li>
 </ul>
 <section id="equality">
-<h2><span class="section-number">3.7.1. </span>Equality<a class="headerlink" href="#equality" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.1. </span>Equality<a class="headerlink" href="#equality" title="Permalink to this heading">#</a></h2>
 <p>If a dataset includes a majority and minority group (for example, if the dataset consistes of more men than women, or more white people than black people), then failure to disaggregate data results in findings being biased towards the majority group</p>
 <ul class="simple">
 <li><p>For example, shockingly, <a href="https://www.theguardian.com/society/2021/nov/11/black-women-uk-maternal-mortality-rates">black women are four times more likely to die in childbirth</a> than white women in the UK, a statistic that was long un-remarked because data on maternal outcomes were not routinely disaggregated by race</p></li>
 </ul>
 </section>
 <section id="disaggregation-skills">
-<h2><span class="section-number">3.7.2. </span>Disaggregation skills<a class="headerlink" href="#disaggregation-skills" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.2. </span>Disaggregation skills<a class="headerlink" href="#disaggregation-skills" title="Permalink to this heading">#</a></h2>
 <p>Working out  which categories of data should be presented in disaggretgated form is a skill that you will learn through practice. Too little disaggregation obbscured important group differences or retains noise that could be removed; but too much disaggregation can result in an ocean of graphs and statistics that makes it hard to see the big picture.</p>
 <p>In this section we will look at disaggregation in the context of the heart attack dataset.</p>
 </section>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">3.7.3. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.3. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual you will need to run this code block to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +542,7 @@ document.write(`
 </div>
 </section>
 <section id="import-a-dataset-to-work-with">
-<h2><span class="section-number">3.7.4. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.4. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
 <p>Let’s continue with the NYC heart attack dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -793,7 +792,7 @@ document.write(`
 </section>
 </section>
 <section id="age-vs-sex">
-<h2><span class="section-number">3.7.5. </span>Age vs Sex<a class="headerlink" href="#age-vs-sex" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.5. </span>Age vs Sex<a class="headerlink" href="#age-vs-sex" title="Permalink to this heading">#</a></h2>
 <p>Is the age distribution of heart attack patients the same regardless of sex?</p>
 <p>Let’s find out by plotting the age distribution separately for men and women:</p>
 <div class="cell docutils container">
@@ -849,7 +848,7 @@ document.write(`
 </section>
 </section>
 <section id="mortality-by-sex">
-<h2><span class="section-number">3.7.6. </span>Mortality by sex<a class="headerlink" href="#mortality-by-sex" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.6.6. </span>Mortality by sex<a class="headerlink" href="#mortality-by-sex" title="Permalink to this heading">#</a></h2>
 <p>At first glance, female patients are much more likely to die than males:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -948,12 +947,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MT_wk3_ZScoreQuantiles.html"
+       href="MT_wk3_NanHandling.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>Standardizing data</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>Handling NaNs</p>
       </div>
     </a>
     <a class="right-next"
@@ -961,7 +960,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.8. </span>Creating new variables/columns</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Creating new variables/columns</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -980,18 +979,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.7.1. Equality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disaggregation-skills">3.7.2. Disaggregation skills</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.3. Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.4. Import a dataset to work with</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality">3.6.1. Equality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disaggregation-skills">3.6.2. Disaggregation skills</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.6.3. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.6.4. Import a dataset to work with</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-the-data">Clean the data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#age-vs-sex">3.7.5. Age vs Sex</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#age-vs-sex">3.6.5. Age vs Sex</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#length-of-stay">Length of stay</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mortality-by-sex">3.7.6. Mortality by sex</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mortality-by-sex">3.6.6. Mortality by sex</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>

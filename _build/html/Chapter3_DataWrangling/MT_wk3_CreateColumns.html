@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.8. Creating new variables/columns &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.7. Creating new variables/columns &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_CreateColumns';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.9. Tutorial Exercises" href="MT_wk3_TutorialExercises.html" />
-    <link rel="prev" title="3.7. Data Disaggregation" href="MT_wk3_disaggregation.html" />
+    <link rel="next" title="3.8. Tutorial Exercises" href="MT_wk3_TutorialExercises.html" />
+    <link rel="prev" title="3.6. Data Disaggregation" href="MT_wk3_disaggregation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -210,10 +210,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -469,9 +468,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.8.1. Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.8.2. Import a dataset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-a-continuous-variable">3.8.3. Categorize a continuous variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-a-continuous-variable">3.7.3. Categorize a continuous variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-df-loc">Use <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-df-cut">Use <code class="docutils literal notranslate"><span class="pre">df.cut()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-qcut"><code class="docutils literal notranslate"><span class="pre">df.qcut()</span></code></a></li>
@@ -489,11 +488,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="creating-new-variables-columns">
-<h1><span class="section-number">3.8. </span>Creating new variables/columns<a class="headerlink" href="#creating-new-variables-columns" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.7. </span>Creating new variables/columns<a class="headerlink" href="#creating-new-variables-columns" title="Permalink to this heading">#</a></h1>
 <p>Sometimes it is helpful to create new variables that recode data in meaningful ways, particularly, you may want to categorize continuous variables, or gather many different categories together</p>
 <p>Here we look at how to do that</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">3.8.1. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7.1. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual you will need to run this code block to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -512,7 +511,7 @@ document.write(`
 </div>
 </section>
 <section id="import-a-dataset-to-work-with">
-<h2><span class="section-number">3.8.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
 <p>Let’s use the OxfordWeather data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +678,7 @@ document.write(`
 </div>
 </section>
 <section id="categorize-a-continuous-variable">
-<h2><span class="section-number">3.8.3. </span>Categorize a continuous variable<a class="headerlink" href="#categorize-a-continuous-variable" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.7.3. </span>Categorize a continuous variable<a class="headerlink" href="#categorize-a-continuous-variable" title="Permalink to this heading">#</a></h2>
 <p>Perhaps we would like to plot the weather in the 19th, 20th and 21st centuries separately.</p>
 <p>First we create a new column and fill is with NaNs (because we don’t have any real numbers to put in it yet)</p>
 <div class="cell docutils container">
@@ -1264,7 +1263,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Data Disaggregation</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Data Disaggregation</p>
       </div>
     </a>
     <a class="right-next"
@@ -1272,7 +1271,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.9. </span>Tutorial Exercises</p>
+        <p class="prev-next-title"><span class="section-number">3.8. </span>Tutorial Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1291,9 +1290,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.8.1. Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.8.2. Import a dataset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-a-continuous-variable">3.8.3. Categorize a continuous variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#categorize-a-continuous-variable">3.7.3. Categorize a continuous variable</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-df-loc">Use <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-df-cut">Use <code class="docutils literal notranslate"><span class="pre">df.cut()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#df-qcut"><code class="docutils literal notranslate"><span class="pre">df.qcut()</span></code></a></li>
