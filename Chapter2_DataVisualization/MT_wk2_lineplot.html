@@ -501,7 +501,7 @@ document.write(`
 <p>Often the best way to visualize a timeseries is with <code class="docutils literal notranslate"><span class="pre">sns.lineplot()</span></code>, which can be used to plot:</p>
 <ul class="simple">
 <li><p>Timeseries of a single value (such as the temperature on Christmas Day over the years)</p></li>
-<li><p>Multiple timeseries in parallel (such as the temperaature in each month over the years)</p></li>
+<li><p>Multiple timeseries in parallel (such as the temperature in each month over the years)</p></li>
 <li><p>Timeseries of a summary statistic (such as mean temperature) with errorbars</p></li>
 </ul>
 <section id="set-up-python-libraries">
@@ -716,7 +716,7 @@ document.write(`
 <section id="is-the-temperature-increasing">
 <h3>Is the temperature increasing?<a class="headerlink" href="#is-the-temperature-increasing" title="Permalink to this heading">#</a></h3>
 <p>Let’s try plotting the temperature on a particular day over the years to see if temperature is increasing.</p>
-<p>How about plotting the temmperature on Halloween (31st October)?</p>
+<p>How about plotting the temperature on Halloween (31st October)?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;MM==10 and DD==31&#39;</span><span class="p">),</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;YYYY&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmax&#39;</span><span class="p">)</span>
@@ -728,6 +728,21 @@ document.write(`
 <img alt="../_images/395d0d553e38bbeb5f737f17422589106bb3eef2f1d75a3c24d023ff5cff516b.png" src="../_images/395d0d553e38bbeb5f737f17422589106bb3eef2f1d75a3c24d023ff5cff516b.png" />
 </div>
 </div>
+<p>NOTE - did you notice the use of <code class="docutils literal notranslate"><span class="pre">weather.query('MM==10</span> <span class="pre">and</span> <span class="pre">DD==31')</span></code> as the dataset in the plotting function above?</p>
+<p>Effectively what we did there was create a new dataframe from which to make the plot - we could have done this more explicitly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">halloween</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;MM==10 and DD==31&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">halloween</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;YYYY&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmax&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># this command asks Python to output the plot created above </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/395d0d553e38bbeb5f737f17422589106bb3eef2f1d75a3c24d023ff5cff516b.png" src="../_images/395d0d553e38bbeb5f737f17422589106bb3eef2f1d75a3c24d023ff5cff516b.png" />
+</div>
+</div>
+<p>The first version, which didn’t explicitly create and name a second dataframe, is just a bit tidier (once you start having multiple copies of your data it is easy to make a mistake where you do something to one and not another) but both solutions do work.</p>
 </section>
 </section>
 <section id="timeseries-of-a-summary-statistic">
@@ -748,7 +763,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1d1084e590958aefeaecf64fdec88ddf9b9482ecef382f62fd3a4b49ad158622.png" src="../_images/1d1084e590958aefeaecf64fdec88ddf9b9482ecef382f62fd3a4b49ad158622.png" />
+<img alt="../_images/ac85c8985f76bce9a2bd2abd0f830bb37f52a24ab75e7144d3f2030985c800c4.png" src="../_images/ac85c8985f76bce9a2bd2abd0f830bb37f52a24ab75e7144d3f2030985c800c4.png" />
 </div>
 </div>
 <p><strong>Note-</strong></p>
@@ -779,7 +794,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4b87ae6e1c75b3770c5acfc2ca31e31710409689a1f0271380ac49e9b7a4513f.png" src="../_images/4b87ae6e1c75b3770c5acfc2ca31e31710409689a1f0271380ac49e9b7a4513f.png" />
+<img alt="../_images/22544113e28b3e2a830b41543ee35295737ec71bfce23c3ed2cef5c754746915.png" src="../_images/22544113e28b3e2a830b41543ee35295737ec71bfce23c3ed2cef5c754746915.png" />
 </div>
 </div>
 <section id="exercises">
@@ -804,19 +819,12 @@ document.write(`
 <p>Let’s plot the mean temperature in each month, over the years:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;YYYY&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">weather</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;YYYY&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Tmean&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span> <span class="n">errorbar</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_96588/2237708067.py:1: FutureWarning: 
-
-The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
-
-  sns.lineplot(data=weather, x=&#39;YYYY&#39;, y=&#39;Tmean&#39;, hue=&#39;MM&#39;, ci=None)
-</pre></div>
-</div>
 <img alt="../_images/f9c5339c3192538668345a0afd84c3787f1ef34517f7b6e491c714d1fb797f27.png" src="../_images/f9c5339c3192538668345a0afd84c3787f1ef34517f7b6e491c714d1fb797f27.png" />
 </div>
 </div>

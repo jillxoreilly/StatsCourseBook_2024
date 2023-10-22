@@ -798,12 +798,12 @@ document.write(`
 </section>
 <section id="reference-line-is-not-a-regression-line">
 <h3>Reference line is not a regression line<a class="headerlink" href="#reference-line-is-not-a-regression-line" title="Permalink to this heading">#</a></h3>
-<p>More commonly, when yous ee a lie on a scatter plot, the line is a regression line (more detail below). It can be helpful to add other reference lines, such as the line <span class="math notranslate nohighlight">\(x=y\)</span>, but I suggest you use obvious colouring (eg a red dashed line) to distinguish them from a regression line, and <strong>clearly state in the figure description</strong> (ie the text under the figure) that the red dashed line is the line <span class="math notranslate nohighlight">\(x=y\)</span> for reference</p>
+<p>More commonly, when you see a line on a scatter plot, the line is a regression line (more detail below). It can be helpful to add other reference lines, such as the line <span class="math notranslate nohighlight">\(x=y\)</span>, but I suggest you use obvious colouring (eg a red dashed line) to distinguish them from a regression line, and <strong>clearly state in the figure description</strong> (ie the text under the figure) that the red dashed line is the line <span class="math notranslate nohighlight">\(x=y\)</span> for reference</p>
 </section>
 </section>
 <section id="scatterplot-with-regression-line">
 <h2><span class="section-number">2.6.3. </span>Scatterplot with regression line<a class="headerlink" href="#scatterplot-with-regression-line" title="Permalink to this heading">#</a></h2>
-<p>Sometimes we are interested in the between-pairs effect. For example we might be interested in the shared effect of genetic/environment, and would like to make a prediction along the lines ‘for each additional cm in height of the brother, we expect the height of his sister to increase by 0.8cm’</p>
+<p>Sometimes we are interested in the between-pairs effect. For example we might be interested in the shared effect of genetics/environment, and would like to make a prediction along the lines ‘for each additional cm in height of the brother, we expect the height of his sister to increase by 0.8cm’</p>
 <p>We will cover regression analysis later in the course</p>
 <p>Here I just want to introduce a version of the scatterplot which includes the best fitting regression line, <code class="docutils literal notranslate"><span class="pre">sns.regplot()</span></code></p>
 <div class="cell docutils container">
@@ -817,12 +817,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/833668f3a55071a7129a00b710ba870e1c4c0ba6daa0fca4e2acc41caadba420.png" src="../_images/833668f3a55071a7129a00b710ba870e1c4c0ba6daa0fca4e2acc41caadba420.png" />
+<img alt="../_images/d2dbbdb131cba5a44c821b1add1c46e59bb1c9224607ef54d92cf3b73f03d864.png" src="../_images/d2dbbdb131cba5a44c821b1add1c46e59bb1c9224607ef54d92cf3b73f03d864.png" />
 </div>
 </div>
-<p>The blue line is the regression line (and the shading represents aconfidence interval for the regression line)</p>
+<p>The blue line is the regression line (and the shading represents a confidence interval for the regression line - we will cover confidence intervals in detail later but basically, it reflects the fact that we are not totally sure this sample reflects all men and women in the popluation; we expect the ‘true’ regression line to fall somewhere in the shaded region)</p>
 <p>I’ve also included (red dashed line) the line <span class="math notranslate nohighlight">\(x=y\)</span> for reference - we can see that the regression line <em>is not the same</em> as the line <span class="math notranslate nohighlight">\(x=y\)</span> - it falls to one side of <span class="math notranslate nohighlight">\(x=y\)</span> and has a slightly different slope.</p>
-<p>If these ideas are unfammiliar please think no more about it - they will be covered later in the course, but I mention this plot here so you have all commonly used plots in one chapter for revisiobn.</p>
+<p>If these ideas (regression line and confidence interval) are unfamiliar please think no more about it - they will be covered later in the course, but I mention this plot here so you have all commonly used plots in one chapter for revisiobn.</p>
 </section>
 <section id="jointplot">
 <h2><span class="section-number">2.6.4. </span>Jointplot<a class="headerlink" href="#jointplot" title="Permalink to this heading">#</a></h2>
@@ -848,7 +848,7 @@ document.write(`
 <img alt="../_images/61a8a145539c9447e055b385e9fb4d63ed03aabd424bf8389acf6841cf776b24.png" src="../_images/61a8a145539c9447e055b385e9fb4d63ed03aabd424bf8389acf6841cf776b24.png" />
 </div>
 </div>
-<p>Since this plot is now made up of three axes (the mmmain scatter plot and the two marginal histograms), if we want to adjust one of those axes, we use a set of arguments in a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>:</p>
+<p>Since this plot is now made up of three axes (the main scatter plot and the two marginal histograms), if we want to adjust one of those axes, we use a set of arguments in a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">marginal_kws</span></code> are keyword argumments for the marginal histograms</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">joint_kws</span></code> are keyword arguments for the scatterplot itself</p></li>
@@ -906,7 +906,7 @@ document.write(`
 <img alt="../_images/27db4a21e01f82ba56a0199594df517d5b14a809192ba8b38fa252f765439b34.png" src="../_images/27db4a21e01f82ba56a0199594df517d5b14a809192ba8b38fa252f765439b34.png" />
 </div>
 </div>
-<p>… Note that areas (squares) with momre data points in them aare darker blue.</p>
+<p>… Note that areas (squares) with more data points in them are darker blue.</p>
 <section id="large-datasets">
 <h3>Large datasets<a class="headerlink" href="#large-datasets" title="Permalink to this heading">#</a></h3>
 <p>A 2D histogram or KDE plot is particularly useful when a dataset is too large to be successfully visualized using a scatterplot.</p>
