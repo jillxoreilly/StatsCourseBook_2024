@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_NanHandling';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.6. Standardizing data" href="MT_wk3_ZScoreQuantiles.html" />
+    <link rel="next" title="3.6. Data Disaggregation" href="MT_wk3_disaggregation.html" />
     <link rel="prev" title="3.4. Neutralizing bad datapoints" href="MT_wk3_NaNing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -212,10 +212,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -490,12 +489,12 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="handling-nans">
 <h1><span class="section-number">3.5. </span>Handling NaNs<a class="headerlink" href="#handling-nans" title="Permalink to this heading">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> (Not a Number) is a special value used to indicate missing data in many scientific programming languages.</p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">NaN</span></code> instead of a numerical dummy value like 9999 or 0 is helpful because Python functions either ignore NaNs by default, or can be set to ignore NaNs using an optional function argument.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">NaN</span></code> instead of a numerical dummy value like 9999 or 0 is helpful because Python functions either ignore <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s by default, or can be set to ignore <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s using an optional function argument. So for example, if you get the mean of a column that includes 9999 as a dummmy value, those 9999s will be included in the calculation of the mean; but if the dummy value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code>, the will not.</p>
 <p>In this section we will review:</p>
 <ul class="simple">
 <li><p>Why <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is better than a numerical dummy value</p></li>
-<li><p>How to check for NaNs in a dataframe</p></li>
-<li><p>Setting the NaN-handling in Python functions</p></li>
+<li><p>How to check for <code class="docutils literal notranslate"><span class="pre">NaN</span></code>s in a dataframe</p></li>
+<li><p>Setting the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>-handling in Python functions</p></li>
 </ul>
 <p>Set up Python Libraries</p>
 <p>As usual you will need to run this code block to import the relevant Python libraries</p>
@@ -660,7 +659,7 @@ document.write(`
 <section id="nan-is-not-a-number">
 <h2><span class="section-number">3.5.2. </span><code class="docutils literal notranslate"><span class="pre">NaN</span></code> is not a number!<a class="headerlink" href="#nan-is-not-a-number" title="Permalink to this heading">#</a></h2>
 <p>Humans may recognise dummy values like 9999 for what they are, but the computer will treat them as numbers.</p>
-<p>Say we want to find the mean and standard deviation of the age of patients in out hospital dataset (remembering that issing data were coded as 9999):</p>
+<p>Say we want to find the mean and standard deviation of the age of patients in out hospital dataset (remembering that missing data were coded as 9999):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hospital</span><span class="o">.</span><span class="n">AGE</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
@@ -746,7 +745,7 @@ Name: AGE, Length: 12844, dtype: bool
 </div>
 </div>
 </div>
-<p>Two people’s age was coded as <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+<p>Three people’s age was coded as <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
 </section>
 <section id="nan-handling-by-python-functions">
 <h2><span class="section-number">3.5.5. </span>NaN handling by Python functions<a class="headerlink" href="#nan-handling-by-python-functions" title="Permalink to this heading">#</a></h2>
@@ -838,11 +837,11 @@ Name: AGE, Length: 12844, dtype: bool
       </div>
     </a>
     <a class="right-next"
-       href="MT_wk3_ZScoreQuantiles.html"
+       href="MT_wk3_disaggregation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>Standardizing data</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Data Disaggregation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
