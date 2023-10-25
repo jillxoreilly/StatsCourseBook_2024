@@ -11,11 +11,12 @@
     * replace a individual variable values with NaN
     
 **Data normalization**    
-* Understand why Z-scored or normalized values are useful
+* Understand how we calculate Z-scored or normalized values, and why these are useful
+* Understand when it is useful to express a datapoint as a centile of a distribution
 
 **Data disaggregation**
 * Explore a dataset thoughtfully and make your own decisions about when to disaggregate data
-    * write text justfiying these decisions sto the reader
+    * write text justfiying these decisions to the reader
 
 * Understand the possible consequences of not disaggregating data
     * inability to draw conclusions
@@ -47,4 +48,4 @@ After this week you should be able to do the following:
 
 **Data disaggregation**
 * Plot data separately, and report data separately, for different cases of a categorical variable
-* Create a new categorical variable to caategorize a continuous variable
+* Create a new categorical variable to categorize a continuous variable

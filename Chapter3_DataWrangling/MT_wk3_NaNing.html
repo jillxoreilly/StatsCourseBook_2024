@@ -210,10 +210,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -1192,10 +1191,10 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">df.drop(row_index)</span></code></p></li>
 </ul>
 <p><strong>Generally not recommended</strong> - in general we replace missing data with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> so that it is transparent how many bad datapoints were collected.</p>
-<p>Imagine if we conducted a survey including a question “have you ever committed a crime”. Perhaps some people would not answer this question (mmaybe momre likely if the answer is ‘yes’).</p>
+<p>Imagine if we conducted a survey including a question “have you ever committed a crime”. Perhaps some people would not answer this question (and indeed this may be more likely if the answer is ‘yes’).</p>
 <p>If we deleted all the records for people who skipped the question, this could be misleading.</p>
-<p><strong>However</strong> sometimes we need to just remove rows. An example would be if a pile of forms were automatically scanned, and it turned out a lot of the were completely blank (spare forms). We would want to delete the records corresponding to those spare forms.</p>
-<p>Another example would be if a record was an exact duplicate of another.</p>
+<p><strong>However</strong> sometimes we need to just remove rows. An example would be if a pile of paper forms were automatically scanned, and it turned out a lot of the were completely blank (spare forms). We would want to delete the records corresponding to those spare forms.</p>
+<p>Another example would be if a record was an exact duplicate of another (if the same form was scanned twice, for example)</p>
 <p>To remove records (rows) we use <code class="docutils literal notranslate"><span class="pre">df.drop()</span></code>.</p>
 <p>For example, perhaps we want to remove row 0 (the first row), as we this it is a prank entry (<tt>SEX == ‘bananas’</tt>):</p>
 <div class="cell docutils container">

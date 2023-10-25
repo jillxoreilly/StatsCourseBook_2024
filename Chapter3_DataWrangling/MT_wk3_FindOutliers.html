@@ -210,10 +210,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.6. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.7. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.8. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +497,7 @@ document.write(`
 <li><p>Approaches for <strong>locating outliers</strong></p></li>
 <li><p>Replacing missing data with <strong>NaN</strong> (how to do it; what choices we need to make)</p></li>
 </ul>
-<p>As we have seen, if a dataset contains outliers this can distort the calculated values of statistics such as the mean and standard deviation</p>
+<p>Outliers, by definition, have extreme values (very large or very small values). Therefore if a dataset contains outliers this can distort the calculated values of statistics such as the mean and standard deviation</p>
 <p>In real datasets, outliers are common, often arising from one of the following causes:</p>
 <ul class="simple">
 <li><p>Real but unusual values</p>
@@ -544,7 +543,7 @@ document.write(`
 </section>
 <section id="import-a-dataset-to-work-with">
 <h2><span class="section-number">3.3.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
-<p>We  will work with the file heartAttack.csv, which contains data on several thousand patients admitted to hospital in New York City on a single day, diagnosed with a heart attack.</p>
+<p>We  will work with the file heartAttack.csv, which contains data on several thousand patients admitted to hospital in New York City, diagnosed with a heart attack.</p>
 <p>From this dataset we can explore how demographic and disease factors affect the duration of stay in hospital and the  dollar cost of treatment.</p>
 <p>The dataset are downloaaded with thanks (and with slight modifications for teaching purposes) from the website <a href="https://dasl.datadescription.com/">DASL</a> (Data and Story Library)</p>
 <div class="cell docutils container">
@@ -708,9 +707,10 @@ document.write(`
 <ul class="simple">
 <li><p>If the decimal point is misplaced we get a very large (or small value) - eg a person’s height could easily be misrecorded as 1765 cm (over 17 metres!) instead of 176.5 cm</p></li>
 <li><p>If the wrong units are used we could get a very large or small value - eg a person’s height is recorded as 1.756 (m) when it should have been recorded as 176.5 (cm)</p></li>
-<li><p>sometimes ‘dummy’ values are used as placeholders for missing data - often the duymmy value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> but sometimes an obviously-wrong numerical value (such as 99, 999 or 9999) is used, which will generally be aa large number compared to real numerical values.</p></li>
+<li><p>sometimes ‘dummy’ values are used as placeholders for missing data - often the dummy value is <code class="docutils literal notranslate"><span class="pre">NaN</span></code> but sometimes an obviously-wrong numerical value (such as 99, 999 or 9999) is used, which will generally be a large number compared to real numerical values.</p></li>
+<li><p>Occasionally 0 will be used as a placeholder value for missing data. This is generally a bad idea, as zero is often a plausible value for real data. If a variable has a large nummber of zero values, it is worth considering whether these could be missing data rather than real zeros.</p></li>
 </ul>
-<p>Therefore, running <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> and checking the min and max values for each datapoint is a good first step</p>
+<p>Because outliers are often the max or min value, running <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> and checking the min and max values for each datapoint is a good first step in checking for outliers</p>
 <p>Let’s try it with our hospital dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -839,10 +839,11 @@ document.write(`
 <img alt="../_images/98fd3484fb18c8e82eb1d1ea9d38083d6c79363d6a46464eec3ef81fc64c8c76.png" src="../_images/98fd3484fb18c8e82eb1d1ea9d38083d6c79363d6a46464eec3ef81fc64c8c76.png" />
 </div>
 </div>
-<p>Hm, the distribution of costs is skewed, but the maximum value of $49000 dollars appears to just be the ‘tip of the tail’ rather than an actual outlier.</p>
+<p>Hm, the distribution of costs is skewed, but the maximum value of 49000 dollars appears to just be the ‘tip of the tail’ rather than an actual outlier. The minimum value of 3 dollars is also not particularly unique. I wouldn’t exclude any outliers from <tt>CHARGES</tt>.</p>
 <section id="how-will-i-know-if-it-is-a-real-outlier">
 <h4>How will I know if it is a real outlier?<a class="headerlink" href="#how-will-i-know-if-it-is-a-real-outlier" title="Permalink to this heading">#</a></h4>
-<p>Sometimes it is obvious - look what happens when we plot the distribution of Length of Stay:</p>
+<p>One way is to plot the data. You can then tell ‘by inspection’ (by looking at the graph) whether any datapoints seem to be separated from the main body of the data distribution.</p>
+<p>Look what happens when we plot the distribution of Length of Stay:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># when I first plotted this it looked a bit squashed so I adjusted the figsize</span>
@@ -866,10 +867,10 @@ document.write(`
 <img alt="../_images/655555958e8a4caf0b5d1cfbc5b3a902cf9afeb91a7242ceb17f88e682dea6ee.png" src="../_images/655555958e8a4caf0b5d1cfbc5b3a902cf9afeb91a7242ceb17f88e682dea6ee.png" />
 </div>
 </div>
-<p><strong>Panel a</strong> (raw data) tells usthat the values of length of stay extend up to 10000</p>
+<p><strong>Panel a</strong> (raw data) tells us that the values of length of stay extend up to 10000</p>
 <ul class="simple">
 <li><p>we can’t see the bar at 9999 because only a few datapoints have this value compared to 12500 real datapoints,</p></li>
-<li><p>however, we can see that the axis has autoscaled to accommodate values up to 10000</p>
+<li><p>however, we can see that the axis has autoscaled to accommodate values up to 10000, suggesting tehre is at least one datapoint stranded up there near <tt>LOS=10000</tt></p>
 <ul>
 <li><p>the autoscaling is a hint to use as data scientists that there are outlier values.</p></li>
 <li><p>It’s not a good way to present this fact to a client unfamiliar with <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code>’s quirks!</p></li>
@@ -877,7 +878,10 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>In <strong>panel b</strong>, I excluded stays over one year - I chose the cut-off value of 1-year arbitrarily. However, I can see from panel b that no values even approach 1 year, so I am happy with my choice of cut-off retained all real values of length of stay and removed the outliers</p>
+<p>In <strong>panel b</strong>, I excluded stays over one year from the dataframe and replotted - I chose the cut-off value of 1-year arbitrarily. However, I can see from panel b that no values even approach 1 year, so I am happy with my choice of cut-off retained all real values of length of stay and removed the outliers</p>
+<ul class="simple">
+<li><p>Have a look at the code block above to see how I excluded the cases where <tt>LOS&gt;365</tt></p></li>
+</ul>
 </section>
 </section>
 <section id="use-a-standard-cut-off">
@@ -928,7 +932,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>The 3SD approach didn’t work so well in this case because the data distribution is very skewed, so high positive values are actually quite plausible, whilst the natural cut-off value for low <tt>CHARGES</tt> (zero dollars) is not so far from the mean.</p>
+<p>The 3SD approach didn’t work so well in this case because the data distribution is very skewed, so high positive values are actually quite plausible, whilst the natural cut-off value for low <tt>CHARGES</tt> (zero dollars) is not very far from the mean (in fact the minimum possible value, zero, is within the 3SD cutoff).</p>
 </section>
 </section>
 </section>
