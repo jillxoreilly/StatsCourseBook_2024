@@ -63,56 +63,56 @@ parts:
       chapters:
       - file: Chapter10_Regression1/regression1_intro.md
         sections:
-        - file: regression1_outcomes.md
-        - file: regression1_concepts.md
-        - file: regression1_interpretingSlope.md
-        - file: regression1_QandA.md
-        - file: regression1_prepwork.ipynb
-        - file: regression1_TutorialExercises.ipynb
+        - file: Chapter10_Regression1/regression1_outcomes.md
+        - file: Chapter10_Regression1/regression1_concepts.md
+        - file: Chapter10_Regression1/regression1_interpretingSlope.md
+        - file: Chapter10_Regression1/regression1_QandA.md
+        - file: Chapter10_Regression1/regression1_prepwork.ipynb
+        - file: Chapter10_Regression1/regression1_TutorialExercises.ipynb
       - file: Chapter11_Regression2/regression2_intro.md
         sections:
-        - file: regression2_outcomes.md
-        - file: regression2_concepts.md
-        - file: regression2_typesOfRelationship.md
-        - file: regression2_QandA.md
-        - file: regression2_TutorialExercises.ipynb
-        - file: regression3_intro.md
+        - file: Chapter11_Regression2/regression2_outcomes.md
+        - file: Chapter11_Regression2/regression2_concepts.md
+        - file: Chapter11_Regression2/regression2_typesOfRelationship.md
+        - file: Chapter11_Regression2/regression2_QandA.md
+        - file: Chapter11_Regression2/regression2_TutorialExercises.ipynb
+        - file: Chapter11_Regression2/regression3_intro.md
       - file: Chapter12_Regression3/regression3_intro.md
         sections:
-        - file: regression3_outcomes.md
-        - file: regression3_conceptsR2.md
-        - file: regression3_conceptsConditionals.md
-        - file: regression3_conceptsSignificance.md
-        - file: regression3_assumptions.md
-        - file: regression3_prepwork.ipynb
-        - file: regression3_TutorialExercises.ipynb
-        - file: regression4_intro.md
+        - file: Chapter12_Regression3/regression3_outcomes.md
+        - file: Chapter12_Regression3/regression3_conceptsR2.md
+        - file: Chapter12_Regression3/regression3_conceptsConditionals.md
+        - file: Chapter12_Regression3/regression3_conceptsSignificance.md
+        - file: Chapter12_Regression3/regression3_assumptions.md
+        - file: Chapter12_Regression3/regression3_prepwork.ipynb
+        - file: Chapter12_Regression3/regression3_TutorialExercises.ipynb
+        - file: Chapter12_Regression3/regression4_intro.md
       - file: Chapter13_Regression4/regression4_intro.md
         sections:
-        - file: regression4_outcomes.md
-        - file: regression4_concepts.md
-        - file: regression4_longhandExample.md
-        - file: regression4_equations.md
-        - file: regression4_KWtest.md
-        - file: regression4_ANOVAregression.md
-        - file: regression4_prepwork.ipynb
-        - file: regression4_TutorialExercises.ipynb
-        - file: regression5_intro.md
+        - file: Chapter13_Regression4/regression4_outcomes.md
+        - file: Chapter13_Regression4/regression4_concepts.md
+        - file: Chapter13_Regression4/regression4_longhandExample.md
+        - file: Chapter13_Regression4/regression4_equations.md
+        - file: Chapter13_Regression4/regression4_KWtest.md
+        - file: Chapter13_Regression4/regression4_ANOVAregression.md
+        - file: Chapter13_Regression4/regression4_prepwork.ipynb
+        - file: Chapter13_Regression4/regression4_TutorialExercises.ipynb
+        - file: Chapter13_Regression4/regression5_intro.md
       - file: Chapter14_Regression5/regression5_intro.md
         sections:
-        - file: regression5_outcomes.md
-        - file: regression5_concepts.md
-        - file: regression5_LogisticEquation.md
-        - file: regression5_workedExample.md
-        - file: regression5_prepwork.ipynb
-        - file: regression5_TutorialExercises.ipynb
-        - file: regression6_intro.md
+        - file: Chapter14_Regression5/regression5_outcomes.md
+        - file: Chapter14_Regression5/regression5_concepts.md
+        - file: Chapter14_Regression5/regression5_LogisticEquation.md
+        - file: Chapter14_Regression5/regression5_workedExample.md
+        - file: Chapter14_Regression5/regression5_prepwork.ipynb
+        - file: Chapter14_Regression5/regression5_TutorialExercises.ipynb
+        - file: Chapter14_Regression5/regression6_intro.md
       - file: Chapter15_Regression6/regression6_intro.md
         sections:
-        - file: regression6_outcomes.md
-        - file: regression6_concepts.md
-        - file: regression6_causality.md
-        - file: regression6_TutorialExercises.md
+        - file: Chapter15_Regression6/regression6_outcomes.md
+        - file: Chapter15_Regression6/regression6_concepts.md
+        - file: Chapter15_Regression6/regression6_causality.md
+        - file: Chapter15_Regression6/regression6_TutorialExercises.md
 
 
 
