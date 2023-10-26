@@ -38,11 +38,40 @@ All figures and statistics given are there to **support your message** or conclu
 :align: center
 ```
 
+## Examples of good practice
+
+The UK's Office for National Statistics is a public body that collects and analyses all sorts of data concerning the UK and life in the UK.
+
+They produce accessible reports which can be viewed on their website. These are a great example for how to present your data - note that the style points suggested above are all implemented in the ONS reports.
+
+You could have a look at <a href='https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/youngpeopleswellbeingintheuk/2020'>this one</a> on the wellbeing of young people in the UK as an example
+
 ## This week
 
 In this week's tutorial exercises, you will complete some guided tasks (and some open-ended ones) to explore a dataset for yourself.
 
 For the hand-in assignment, you will produce a report on the same dataset for a specified reader. This will be produces in the form of a Jupyter notebook but should be written as if to be read by a client (ie, format it nicely, and don't leave mess and junk in there!)
 
+## Example Report
+
 You may find it helpful to view an example 'report for a client' based on the Heart Attack dataset which we visited in the reading this week; the brief was to write a short report summarizing the factors that affect the dollar cost of hospital stays, for the CEO of Medicare. An example report is included as the next page in these course notes.
 
+**NOTE - hiding the code** 
+
+The nice thing about Jupyter Notebooks is that your code is in there, so anyone can check and reproduce your analysis process. However, in general you don't want your report cluttered up with code which may be confusing or distracting for a client. You can hide the code in JupyterLab by clicking View-->Collapse all code. In Colab, collapse individual cells by clicking the cell, then View—>Show/hide code
+
+I recommend you aim for a report which is readable and user friendly once the code has been collapsed; try collapsing the code in the example report on the next page to see what I mean here!
+
+A snippet with code collapsed:
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_collapseCode.png
+:width: 80%
+:align: center
+```
+
+The same thing with code not collapsed - all this code is *not* what you would like to show to the CEO of Medicare!
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_expandCode.png
+:width: 80%
+:align: center
+```

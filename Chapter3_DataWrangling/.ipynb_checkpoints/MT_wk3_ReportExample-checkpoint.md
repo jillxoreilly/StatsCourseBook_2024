@@ -38,6 +38,14 @@ All figures and statistics given are there to **support your message** or conclu
 :align: center
 ```
 
+## Examples of good practice
+
+The UK's Office for National Statistics is a public body that collects and analyses all sorts of data concerning the UK and life in the UK.
+
+They produce accessible reports which can be viewed on their website. These are a great example for how to present your data - note that the style points suggested above are all implemented in the ONS reports.
+
+You could have a look at <a href='https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/youngpeopleswellbeingintheuk/2020'>this one</a> on the wellbeing of young people in the UK as an example
+
 ## This week
 
 In this week's tutorial exercises, you will complete some guided tasks (and some open-ended ones) to explore a dataset for yourself.
@@ -50,7 +58,7 @@ You may find it helpful to view an example 'report for a client' based on the He
 
 **NOTE - hiding the code** 
 
-The nice thing about Jupyter Notebooks is that your code is in there, so anyone can check and reproduce your analysis process. However, in general you don't want your report cluttered up with code which may be confusing or distracting for a client. You can hide the code in JupyterLab by clicking View-->Collapse all code
+The nice thing about Jupyter Notebooks is that your code is in there, so anyone can check and reproduce your analysis process. However, in general you don't want your report cluttered up with code which may be confusing or distracting for a client. You can hide the code in JupyterLab by clicking View-->Collapse all code. In Colab, collapse individual cells by clicking the cell, then View—>Show/hide code
 
 I recommend you aim for a report which is readable and user friendly once the code has been collapsed; try collapsing the code in the example report on the next page to see what I mean here!
 
