@@ -49,7 +49,9 @@ parts:
         - file: Chapter3_DataWrangling/MT_wk3_NanHandling.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_disaggregation.ipynb
         - file: Chapter3_DataWrangling/MT_wk3_CreateColumns.ipynb
-        - file: Chapter3_DataWrangling/MT_wk3_TutorialExercises.md
+        - file: Chapter3_DataWrangling/MT_wk3_ReportExample.md
+        - file: Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.md
+        - file: Chapter3_DataWrangling/MT_wk3_TutorialExercises.ipynb
     - caption: Statistical Theory
       numbered: 3
       chapters:

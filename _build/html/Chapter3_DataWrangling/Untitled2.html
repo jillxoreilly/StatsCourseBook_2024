@@ -210,7 +210,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -534,6 +535,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CrimeSurvey</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/CrimeSurvey.csv&#39;</span><span class="p">)</span>
 <span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">9999</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Sex&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Female&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Education&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;GCSE&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;ALevel&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s1">&#39;University&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s1">&#39;Other&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">:{</span><span class="mi">1</span><span class="p">:</span><span class="s1">&#39;White&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Mixed&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s1">&#39;Asian or Asian British&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s1">&#39;Black or Black British&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s1">&#39;Chinese or other&#39;</span><span class="p">}},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;effectx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;confx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;fairx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;effectx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/CrimeData.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">CrimeSurvey</span>
 </pre></div>
 </div>
@@ -560,11 +573,12 @@ document.write(`
       <th>ID</th>
       <th>Sex</th>
       <th>Age</th>
+      <th>AgeGroup</th>
       <th>EthnicGroup</th>
       <th>Education</th>
       <th>SES</th>
       <th>DeprivationIndex</th>
-      <th>bcsvictim</th>
+      <th>Victim</th>
       <th>effectx</th>
       <th>fairx</th>
       <th>confx</th>
@@ -575,55 +589,59 @@ document.write(`
     <tr>
       <th>0</th>
       <td>135230170.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>45.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>4</td>
+      <td>White</td>
+      <td>University</td>
       <td>2.0</td>
       <td>3.0</td>
       <td>0.0</td>
+      <td>3.417889</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>2.29</td>
+      <td>2.290506</td>
       <td>3.42</td>
     </tr>
     <tr>
       <th>1</th>
       <td>135230210.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>28.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>2</td>
+      <td>White</td>
+      <td>University</td>
       <td>1.0</td>
       <td>4.0</td>
       <td>0.0</td>
-      <td>-0.75</td>
+      <td>-0.518677</td>
       <td>NaN</td>
-      <td>-0.31</td>
+      <td>-0.349198</td>
       <td>-0.52</td>
     </tr>
     <tr>
       <th>2</th>
       <td>135231010.0</td>
-      <td>2.0</td>
+      <td>Female</td>
       <td>58.0</td>
-      <td>4.0</td>
-      <td>1.0</td>
+      <td>5</td>
+      <td>Black or Black British</td>
+      <td>None</td>
       <td>5.0</td>
       <td>2.0</td>
       <td>0.0</td>
-      <td>-1.34</td>
-      <td>-0.53</td>
-      <td>0.41</td>
+      <td>2.268891</td>
+      <td>-0.544786</td>
+      <td>0.381797</td>
       <td>2.27</td>
     </tr>
     <tr>
       <th>3</th>
       <td>135231210.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>70.0</td>
-      <td>3.0</td>
-      <td>2.0</td>
+      <td>6</td>
+      <td>Asian or Asian British</td>
+      <td>GCSE</td>
       <td>3.0</td>
       <td>4.0</td>
       <td>0.0</td>
@@ -635,16 +653,17 @@ document.write(`
     <tr>
       <th>4</th>
       <td>135233210.0</td>
-      <td>2.0</td>
+      <td>Female</td>
       <td>64.0</td>
-      <td>1.0</td>
-      <td>5.0</td>
+      <td>5</td>
+      <td>White</td>
+      <td>Other</td>
       <td>5.0</td>
       <td>5.0</td>
       <td>0.0</td>
-      <td>0.16</td>
-      <td>0.91</td>
-      <td>-0.57</td>
+      <td>0.840137</td>
+      <td>0.914933</td>
+      <td>-0.613168</td>
       <td>0.84</td>
     </tr>
     <tr>
@@ -661,85 +680,91 @@ document.write(`
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>9295</th>
       <td>147638210.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>43.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>3</td>
+      <td>White</td>
+      <td>University</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>-0.43</td>
+      <td>0.310599</td>
       <td>NaN</td>
-      <td>-0.98</td>
+      <td>-1.029429</td>
       <td>0.31</td>
     </tr>
     <tr>
       <th>9296</th>
       <td>147639090.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>70.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>None</td>
       <td>5.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>0.14</td>
+      <td>-0.448738</td>
       <td>NaN</td>
-      <td>1.07</td>
+      <td>1.051876</td>
       <td>-0.45</td>
     </tr>
     <tr>
       <th>9297</th>
       <td>147639130.0</td>
-      <td>2.0</td>
+      <td>Female</td>
       <td>80.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>None</td>
       <td>5.0</td>
       <td>NaN</td>
       <td>0.0</td>
+      <td>0.270634</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>0.83</td>
+      <td>0.808211</td>
       <td>0.27</td>
     </tr>
     <tr>
       <th>9298</th>
       <td>147639250.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>86.0</td>
-      <td>1.0</td>
-      <td>4.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>University</td>
       <td>1.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>-0.44</td>
-      <td>0.41</td>
-      <td>1.72</td>
+      <td>-0.558642</td>
+      <td>0.408086</td>
+      <td>1.711802</td>
       <td>-0.56</td>
     </tr>
     <tr>
       <th>9299</th>
       <td>147639290.0</td>
-      <td>1.0</td>
+      <td>Male</td>
       <td>70.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>None</td>
       <td>2.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>1.59</td>
+      <td>-1.218067</td>
       <td>NaN</td>
-      <td>-0.08</td>
+      <td>-0.115685</td>
       <td>-1.22</td>
     </tr>
   </tbody>
 </table>
-<p>9300 rows × 12 columns</p>
+<p>9300 rows × 13 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -752,33 +777,288 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Age&#39;, ylabel=&#39;confx&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/368c373c4f2dfa70ed554c69c1a3113433174796175c38ea1f27aff71dc50f05.png" src="../_images/368c373c4f2dfa70ed554c69c1a3113433174796175c38ea1f27aff71dc50f05.png" />
+<img alt="../_images/fb469332e0d761b404348622dc388aa971587635cbe6fbd3f627a3778fb17275.png" src="../_images/fb469332e0d761b404348622dc388aa971587635cbe6fbd3f627a3778fb17275.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;EthnicGroup&#39;, ylabel=&#39;confx&#39;&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/seaborn/algorithms.py:98: RuntimeWarning: Mean of empty slice
+  boot_dist.append(f(*sample, **func_kwargs))
 </pre></div>
 </div>
-<img alt="../_images/3850642b93990901f6511e77445939a90d1874e2640d5909a6c50d6556d56dcc.png" src="../_images/3850642b93990901f6511e77445939a90d1874e2640d5909a6c50d6556d56dcc.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;AgeGroup&#39;, ylabel=&#39;confx&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/d34e234c4eb48c70209814e12382b3fc53b677e4c4100a3e71498e637e932b79.png" src="../_images/d34e234c4eb48c70209814e12382b3fc53b677e4c4100a3e71498e637e932b79.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;bcsvictim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+
+<span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">Victim</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;bcsvictim&#39;, ylabel=&#39;confx&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1560215053763441
 </pre></div>
 </div>
-<img alt="../_images/98527dae766dcbbf8b5fbecd5a342e11d14befc69f9976c57eac93d65dc33eef.png" src="../_images/98527dae766dcbbf8b5fbecd5a342e11d14befc69f9976c57eac93d65dc33eef.png" />
+<img alt="../_images/64376667132a7e61994eaddc28f553b14a21e1cc313a632a4d1e4609d160dbe6.png" src="../_images/64376667132a7e61994eaddc28f553b14a21e1cc313a632a4d1e4609d160dbe6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;bcsvictim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;bcsvictim&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py:1395,</span> in <span class="ni">histplot</span><span class="nt">(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span> <span class="k">def</span> <span class="nf">histplot</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>     <span class="c1"># Vector variables</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1392</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1393</span> <span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1395</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">_DistributionPlotter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1396</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1397</span>         <span class="n">variables</span><span class="o">=</span><span class="n">_DistributionPlotter</span><span class="o">.</span><span class="n">get_semantics</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">1398</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1400</span>     <span class="n">p</span><span class="o">.</span><span class="n">map_hue</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">hue_norm</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1402</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py:113,</span> in <span class="ni">_DistributionPlotter.__init__</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">variables</span><span class="o">=</span><span class="p">{},</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:640,</span> in <span class="ni">VectorPlotter.__init__</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="c1"># var_ordered is relevant only for categorical axis variables, and may</span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span> <span class="c1"># be better handled by an internal axis information object that tracks</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span> <span class="c1"># such information and is set up by the scale_* methods. The analogous</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span> <span class="c1"># information for numeric axes would be information about log scales.</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span> <span class="bp">self</span><span class="o">.</span><span class="n">_var_ordered</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>  <span class="c1"># alt., used DefaultDict</span>
+<span class="ne">--&gt; </span><span class="mi">640</span> <span class="bp">self</span><span class="o">.</span><span class="n">assign_variables</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">for</span> <span class="n">var</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_semantic_mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> 
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="c1"># Create the mapping function</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="n">map_func</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">map</span><span class="p">,</span> <span class="n">plotter</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:701,</span> in <span class="ni">VectorPlotter.assign_variables</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span>     <span class="bp">self</span><span class="o">.</span><span class="n">input_format</span> <span class="o">=</span> <span class="s2">&quot;long&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">701</span>     <span class="n">plot_data</span><span class="p">,</span> <span class="n">variables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assign_variables_longform</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span>         <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_data</span> <span class="o">=</span> <span class="n">plot_data</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span> <span class="o">=</span> <span class="n">variables</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:938,</span> in <span class="ni">VectorPlotter._assign_variables_longform</span><span class="nt">(self, data, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">933</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">934</span> 
+<span class="g g-Whitespace">    </span><span class="mi">935</span>     <span class="c1"># This looks like a column name but we don&#39;t know what it means!</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">err</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Could not interpret value `</span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s2">` for parameter `</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">`&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">938</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">940</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">941</span> 
+<span class="g g-Whitespace">    </span><span class="mi">942</span>     <span class="c1"># Otherwise, assume the value is itself data</span>
+<span class="g g-Whitespace">    </span><span class="mi">943</span> 
+<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="c1"># Raise when data object is present and a vector can&#39;t matched</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
+
+<span class="ne">ValueError</span>: Could not interpret value `bcsvictim` for parameter `hue`
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;bcsvictim&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;confx&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/27cbb023d63c0932f52db02ac9732745d59d586a38d251da82a716f0e0737a2e.png" src="../_images/27cbb023d63c0932f52db02ac9732745d59d586a38d251da82a716f0e0737a2e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;confx&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/7014e85267b369c24d372fa8360cd97aaf5d89092ff0b80a24eb4176614e29a1.png" src="../_images/7014e85267b369c24d372fa8360cd97aaf5d89092ff0b80a24eb4176614e29a1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID                  1.387841e+08
+Sex                 1.537097e+00
+Age                 5.137979e+01
+Education           2.840250e+00
+SES                 2.946559e+00
+DeprivationIndex    3.051918e+00
+bcsvictim           1.560215e-01
+effectx             7.283338e-03
+fairx               7.426611e-03
+confx               3.394540e-02
+antisocx           -8.702167e-04
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID                  4.422820e+06
+Sex                 4.986487e-01
+Age                 1.865658e+01
+Education           1.247993e+00
+SES                 1.852283e+00
+DeprivationIndex    1.394853e+00
+bcsvictim           3.628952e-01
+effectx             1.001765e+00
+fairx               9.864915e-01
+confx               9.849591e-01
+antisocx            1.000872e+00
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Education&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Age&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/d3503dd8e9387e18de5462731dfe0ec94be606558f12efd2fd7da5b9b20358c3.png" src="../_images/d3503dd8e9387e18de5462731dfe0ec94be606558f12efd2fd7da5b9b20358c3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;confx&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ea76d7b78e9eca3da1a53321d28226fba3d8f9fc039d0327d2d34bd98fceeffe.png" src="../_images/ea76d7b78e9eca3da1a53321d28226fba3d8f9fc039d0327d2d34bd98fceeffe.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;EthnicGroup&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/803ab76728079e626f6c0cbe853410f91f9e1d0d718baa93e5aeba13f257d093.png" src="../_images/803ab76728079e626f6c0cbe853410f91f9e1d0d718baa93e5aeba13f257d093.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;SES&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/6c7592fab7408859c28fb0af7aeb9fe02178df7291f5f449d5022f3f9aee5ded.png" src="../_images/6c7592fab7408859c28fb0af7aeb9fe02178df7291f5f449d5022f3f9aee5ded.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Sex&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/e2c4068867f6bbb9bb3482b972febcf4a47bc05aa608c00849f1b21d0ed79b60.png" src="../_images/e2c4068867f6bbb9bb3482b972febcf4a47bc05aa608c00849f1b21d0ed79b60.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;EthnicGroup&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/5c25fde2b2953ea990b468eee9796e58b0a6a8add069ba0ded6918c6fdc722f6.png" src="../_images/5c25fde2b2953ea990b468eee9796e58b0a6a8add069ba0ded6918c6fdc722f6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;DeprivationIndex&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/ca5bd4eb81b104996b2ca3cbc66de80617aa39aca2a285e0c12c2f6a7bab4846.png" src="../_images/ca5bd4eb81b104996b2ca3cbc66de80617aa39aca2a285e0c12c2f6a7bab4846.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CrimeSurvey</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;SES&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/4dd7cac58d6219db364b16a08d707385f8fb486b53c0682bde6ba290e0d36c68.png" src="../_images/4dd7cac58d6219db364b16a08d707385f8fb486b53c0682bde6ba290e0d36c68.png" />
 </div>
 </div>
 
