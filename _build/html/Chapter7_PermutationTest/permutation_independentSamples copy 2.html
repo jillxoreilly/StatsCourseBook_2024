@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -665,7 +666,7 @@ difference of means (cat-dog): 2.9000000000000004
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42170/2717881652.py:1: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58721/2717881652.py:1: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
@@ -675,7 +676,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Pet&#39;, ylabel=&#39;Yoghurt&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/1e3b5b1c42db99ad1372e29cdf394f131882167900346dc0d48c8927feec6169.png" src="../_images/1e3b5b1c42db99ad1372e29cdf394f131882167900346dc0d48c8927feec6169.png" />
+<img alt="../_images/aea18e68d6838807d4fad55d8abf15d9b47134c8a67ed9762c6896ac5e2b7bfb.png" src="../_images/aea18e68d6838807d4fad55d8abf15d9b47134c8a67ed9762c6896ac5e2b7bfb.png" />
 </div>
 </div>
 <p>We note that the mean number of yoghurts eaten is higher for cat owners, but this may be skewed by one cat-owning yogurt enthusiast.</p>
@@ -745,12 +746,12 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
   <tbody>
     <tr>
       <th>0</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>7</td>
     </tr>
     <tr>
@@ -765,12 +766,12 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>4</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>13</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>0</td>
     </tr>
     <tr>
@@ -780,12 +781,12 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>7</th>
-      <td>cat</td>
+      <td>dog</td>
       <td>6</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>dog</td>
+      <td>cat</td>
       <td>4</td>
     </tr>
   </tbody>
@@ -800,7 +801,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.7
 </pre></div>
 </div>
 </div>
@@ -823,29 +824,29 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42170/771150145.py:6: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58721/771150145.py:6: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42170/771150145.py:6: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58721/771150145.py:6: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42170/771150145.py:6: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58721/771150145.py:6: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42170/771150145.py:6: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58721/771150145.py:6: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=yog_shuffled, x=&#39;Pet&#39;, y=&#39;Yoghurt&#39;, color=[0.9,0.9,0.9], ci=None)
 </pre></div>
 </div>
-<img alt="../_images/5a742e9ec12e92d803d58f03d80dca8eecb8113755489c0119acd859cee06592.png" src="../_images/5a742e9ec12e92d803d58f03d80dca8eecb8113755489c0119acd859cee06592.png" />
+<img alt="../_images/3e56cce6aa12f6403a20144b0dbecd00b7381b0757a5be84206028866058d73a.png" src="../_images/3e56cce6aa12f6403a20144b0dbecd00b7381b0757a5be84206028866058d73a.png" />
 </div>
 </div>
 <p>You can see that the difference of means (difference in heights of the bars) depends on whether more of the high-yoghurt individuals are assigned as cat owners, and also depends quite a lot on which group the 14-yoghurt individual ends up in.</p>
@@ -861,7 +862,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -0.25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -1.15
 </pre></div>
 </div>
 </div>
@@ -889,8 +890,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/464230f33db0861c265f10ebdcacce5abe94652cdddc29afa89b27bdeb9ca17a.png" src="../_images/464230f33db0861c265f10ebdcacce5abe94652cdddc29afa89b27bdeb9ca17a.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.11%
+<img alt="../_images/c586abded824d2d82d609fe12e2226dea213cdc23cc6f13183062c34ca4fa4df.png" src="../_images/c586abded824d2d82d609fe12e2226dea213cdc23cc6f13183062c34ca4fa4df.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;2.9 = 18.52%
 </pre></div>
 </div>
 </div>

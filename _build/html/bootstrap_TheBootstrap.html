@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -595,7 +596,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2c51cd079b449ec14ad50e41f5f693c2fd272d64e9e6b914cf4a6169181c1774.png" src="_images/2c51cd079b449ec14ad50e41f5f693c2fd272d64e9e6b914cf4a6169181c1774.png" />
+<img alt="_images/ccb4bb2bc4b8c4b1210619a5a454b7f93a76eb9503d774310203fb6eafc9c681.png" src="_images/ccb4bb2bc4b8c4b1210619a5a454b7f93a76eb9503d774310203fb6eafc9c681.png" />
 </div>
 </div>
 <p>The match is not too bad.</p>
@@ -617,7 +618,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;score&#39;, ylabel=&#39;Density&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/69d07d85b84859bc8e4a47c2f5d7d31b628ffde1a7f04e927d5bf7e13b4badd9.png" src="_images/69d07d85b84859bc8e4a47c2f5d7d31b628ffde1a7f04e927d5bf7e13b4badd9.png" />
+<img alt="_images/d57c973bb0565dbd03cad7df64ec44e06ceda7b68d3ce80436719d75690ca82f.png" src="_images/d57c973bb0565dbd03cad7df64ec44e06ceda7b68d3ce80436719d75690ca82f.png" />
 </div>
 </div>
 <p>The KDE plots for the samples of size <span class="math notranslate nohighlight">\(n=20\)</span> show that the small samples approximate the parent distribution quite well</p>
@@ -715,7 +716,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/22340b0a878bd872df0d77c77fbee3cd4c1f3981d8d9cc500b3a96b24bd02614.png" src="_images/22340b0a878bd872df0d77c77fbee3cd4c1f3981d8d9cc500b3a96b24bd02614.png" />
+<img alt="_images/c4d07bff40fab342cb33954dcae014de07fa877db3f536257ac41af420104430.png" src="_images/c4d07bff40fab342cb33954dcae014de07fa877db3f536257ac41af420104430.png" />
 </div>
 </div>
 <p>Let’s work out the proportion of the time the simulated sample mean was less than 50:</p>
@@ -758,7 +759,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0c24ef242fb2eeb09c4aacf1dc0bb3cb6fdb873aaec9d8476d64fb8695377ca6.png" src="_images/0c24ef242fb2eeb09c4aacf1dc0bb3cb6fdb873aaec9d8476d64fb8695377ca6.png" />
+<img alt="_images/b4a76566b146f6b42165c3b048101f96934ddc273c5c1ed0e179b36bc977c202.png" src="_images/b4a76566b146f6b42165c3b048101f96934ddc273c5c1ed0e179b36bc977c202.png" />
 </div>
 </div>
 <p>The sampling distribution is centred on the population mean of the Brexdex (50) rather than on the mean of the 20-students dataset.</p>
@@ -771,7 +772,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1826
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1917
 </pre></div>
 </div>
 </div>
@@ -816,7 +817,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/111d9470d5dcfd350c98d7e091fd8a656c1451d982b942ea9334371a57f2af1b.png" src="_images/111d9470d5dcfd350c98d7e091fd8a656c1451d982b942ea9334371a57f2af1b.png" />
+<img alt="_images/8d848edd9f9315221d1ecc21ec8f72fdb0300c1d4fcef2f227d4136ad3567048.png" src="_images/8d848edd9f9315221d1ecc21ec8f72fdb0300c1d4fcef2f227d4136ad3567048.png" />
 </div>
 </div>
 <p>The two sampling distributions have the same spread, such that the probability of a sample mean exceeding the mean of the 20-students dataset <span class="math notranslate nohighlight">\((m=54.75)\)</span>, when sampling from the population (true mean <span class="math notranslate nohighlight">\(\mu=50\)</span>) is the same as the probability of a sample mean less than 50, when resampling from the 200-students dataset (sample mean = 54.75)</p>

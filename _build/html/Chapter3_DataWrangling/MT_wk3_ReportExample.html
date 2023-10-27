@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.8. Preparing a report &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.9. Preparing a report &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_ReportExample';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.9. Model Client Report" href="MT_wk3_Assignment1_ModelAnswer.html" />
-    <link rel="prev" title="3.7. Creating new variables/columns" href="MT_wk3_CreateColumns.html" />
+    <link rel="next" title="3.10. Model Client Report" href="MT_wk3_Assignment1_ModelAnswer.html" />
+    <link rel="prev" title="3.8. Standardizing data" href="MT_wk3_ZScoreQuantiles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -476,8 +477,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.8.1. This week</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">3.8.2. Example Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-good-practice">3.9.1. Examples of good practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.9.2. This week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">3.9.3. Example Report</a></li>
 </ul>
             </nav>
         </div>
@@ -490,9 +492,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="preparing-a-report">
-<h1><span class="section-number">3.8. </span>Preparing a report<a class="headerlink" href="#preparing-a-report" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.9. </span>Preparing a report<a class="headerlink" href="#preparing-a-report" title="Permalink to this heading">#</a></h1>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodreport.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodreport.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodreport.png" style="width: 80%;" /></a>
-<p>As a researcher or data scientist, your ultimate ‘product’ is often quite a compact report summarizzing the key findings from your survey or experiment. For example, a research scientist might produce a journal article with just 3-4 figures ot convey the results of a complex study. A statistician or data scientist would produce a report of a few hundred words for a client (such as a company CEO, civil servant or politician).</p>
+<p>As a researcher or data scientist, your ultimate ‘product’ is often quite a compact report summarizing the key findings from your survey or experiment. For example, a research scientist might produce a journal article with just 3-4 figures ot convey the results of a complex study. A statistician or data scientist would produce a report of a few hundred words for a client (such as a company CEO, civil servant or politician).</p>
 <p>However, the production of the report is preceded by an exploratory phase in which you need to get to know the data, in order to work out what to put in the report. In the case of scientific research, this phase typically lasts several months (!).</p>
 <p>Therefore there are two distinct phases to data analysis:</p>
 <ul class="simple">
@@ -522,20 +524,26 @@ document.write(`
 <p>All figures and statistics given are there to <strong>support your message</strong> or conclusions.</p>
 <ul class="simple">
 <li><p>figure titles should summarize the point being made by the figure</p></li>
-<li><p>figures should be accompanies by text explaining what the reader is supposed to learn from the figure</p></li>
+<li><p>figures should be accompanied by text explaining what the reader is supposed to learn from the figure</p></li>
 <li><p>figures should be well labelled and ‘tweaked’ (use of colours, range of axes, etc etc) to make your point as clearly as possible</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodfig.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodfig.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_goodfig.png" style="width: 80%;" /></a>
+<section id="examples-of-good-practice">
+<h2><span class="section-number">3.9.1. </span>Examples of good practice<a class="headerlink" href="#examples-of-good-practice" title="Permalink to this heading">#</a></h2>
+<p>The UK’s Office for National Statistics is a public body that collects and analyses all sorts of data concerning the UK and life in the UK.</p>
+<p>They produce accessible reports which can be viewed on their website. These are a great example for how to present your data - note that the style points suggested above are all implemented in the ONS reports.</p>
+<p>You could have a look at <a href='https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/bulletins/youngpeopleswellbeingintheuk/2020'>this one</a> on the wellbeing of young people in the UK as an example</p>
+</section>
 <section id="this-week">
-<h2><span class="section-number">3.8.1. </span>This week<a class="headerlink" href="#this-week" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.9.2. </span>This week<a class="headerlink" href="#this-week" title="Permalink to this heading">#</a></h2>
 <p>In this week’s tutorial exercises, you will complete some guided tasks (and some open-ended ones) to explore a dataset for yourself.</p>
 <p>For the hand-in assignment, you will produce a report on the same dataset for a specified reader. This will be produces in the form of a Jupyter notebook but should be written as if to be read by a client (ie, format it nicely, and don’t leave mess and junk in there!)</p>
 </section>
 <section id="example-report">
-<h2><span class="section-number">3.8.2. </span>Example Report<a class="headerlink" href="#example-report" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.9.3. </span>Example Report<a class="headerlink" href="#example-report" title="Permalink to this heading">#</a></h2>
 <p>You may find it helpful to view an example ‘report for a client’ based on the Heart Attack dataset which we visited in the reading this week; the brief was to write a short report summarizing the factors that affect the dollar cost of hospital stays, for the CEO of Medicare. An example report is included as the next page in these course notes.</p>
 <p><strong>NOTE - hiding the code</strong></p>
-<p>The nice thing about Jupyter Notebooks is that your code is in there, so anyone can check and reproduce your analysis process. However, in general you don’t want your report cluttered up with code which may be confusing or distracting for a client. You can hide the code in JupyterLab by clicking View–&gt;Collapse all code. In Colab, collapse individual cells by clicking the cell, then View—&gt;show/hide code</p>
+<p>The nice thing about Jupyter Notebooks is that your code is in there, so anyone can check and reproduce your analysis process. However, in general you don’t want your report cluttered up with code which may be confusing or distracting for a client. You can hide the code in JupyterLab by clicking View–&gt;Collapse all code. In Colab, collapse individual cells by clicking the cell, then View—&gt;Show/hide code</p>
 <p>I recommend you aim for a report which is readable and user friendly once the code has been collapsed; try collapsing the code in the example report on the next page to see what I mean here!</p>
 <p>A snippet with code collapsed:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_collapseCode.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_collapseCode.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_collapseCode.png" style="width: 80%;" /></a>
@@ -575,12 +583,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MT_wk3_CreateColumns.html"
+       href="MT_wk3_ZScoreQuantiles.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.7. </span>Creating new variables/columns</p>
+        <p class="prev-next-title"><span class="section-number">3.8. </span>Standardizing data</p>
       </div>
     </a>
     <a class="right-next"
@@ -588,7 +596,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.9. </span>Model Client Report</p>
+        <p class="prev-next-title"><span class="section-number">3.10. </span>Model Client Report</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -607,8 +615,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.8.1. This week</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">3.8.2. Example Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-good-practice">3.9.1. Examples of good practice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-week">3.9.2. This week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-report">3.9.3. Example Report</a></li>
 </ul>
   </nav></div>
 

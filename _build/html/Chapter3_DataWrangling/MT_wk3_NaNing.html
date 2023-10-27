@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -571,7 +572,7 @@ document.write(`
 </section>
 <section id="import-a-dataset-to-work-with">
 <h2><span class="section-number">3.4.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
-<p>You will need to download the file heartAttack.csv from Canvas to your computer, then import it</p>
+<p>The data will be automatically loaded fromt he internet when you run this code block:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hospital</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heartAttack.csv&#39;</span><span class="p">)</span>
@@ -1389,141 +1390,10 @@ It’s boring but if you master it now it will save some stress later on.</p>
 <span class="c1"># YOUR CODE HERE</span>
 
 <span class="c1"># uncomment the next line to check it worked</span>
-<span class="n">hospital</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">)</span>
+<span class="c1">#hospital.sort_values(by=&#39;AGE&#39;)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CHARGES</th>
-      <th>LOS</th>
-      <th>AGE</th>
-      <th>SEX</th>
-      <th>DRG</th>
-      <th>DIED</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>5410</th>
-      <td>6214.00</td>
-      <td>4</td>
-      <td>20.0</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>10852</th>
-      <td>6726.27</td>
-      <td>4</td>
-      <td>21.0</td>
-      <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>10737</th>
-      <td>NaN</td>
-      <td>8</td>
-      <td>23.0</td>
-      <td>M</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4125</th>
-      <td>10781.00</td>
-      <td>8</td>
-      <td>23.0</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8453</th>
-      <td>14950.00</td>
-      <td>10</td>
-      <td>24.0</td>
-      <td>M</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5066</th>
-      <td>5486.00</td>
-      <td>7</td>
-      <td>103.0</td>
-      <td>M</td>
-      <td>123.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>909</th>
-      <td>11648.00</td>
-      <td>9999</td>
-      <td>9999.0</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>940</th>
-      <td>23027.00</td>
-      <td>34</td>
-      <td>9999.0</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>639</th>
-      <td>5819.72</td>
-      <td>8</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>708</th>
-      <td>13405.00</td>
-      <td>13</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>12844 rows × 6 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1534,141 +1404,10 @@ It’s boring but if you master it now it will save some stress later on.</p>
 <span class="c1"># YOUR CODE HERE</span>
 
 <span class="c1"># uncomment the next line to check it worked</span>
-<span class="n">hospital</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;AGE&#39;</span><span class="p">)</span>
+<span class="c1">#hospital.sort_values(by=&#39;AGE&#39;)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CHARGES</th>
-      <th>LOS</th>
-      <th>AGE</th>
-      <th>SEX</th>
-      <th>DRG</th>
-      <th>DIED</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>5410</th>
-      <td>6214.00</td>
-      <td>4</td>
-      <td>20.0</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>10852</th>
-      <td>6726.27</td>
-      <td>4</td>
-      <td>21.0</td>
-      <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>10737</th>
-      <td>NaN</td>
-      <td>8</td>
-      <td>23.0</td>
-      <td>M</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4125</th>
-      <td>10781.00</td>
-      <td>8</td>
-      <td>23.0</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8453</th>
-      <td>14950.00</td>
-      <td>10</td>
-      <td>24.0</td>
-      <td>M</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>5066</th>
-      <td>5486.00</td>
-      <td>7</td>
-      <td>103.0</td>
-      <td>M</td>
-      <td>123.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>909</th>
-      <td>11648.00</td>
-      <td>9999</td>
-      <td>9999.0</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>940</th>
-      <td>23027.00</td>
-      <td>34</td>
-      <td>9999.0</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>639</th>
-      <td>5819.72</td>
-      <td>8</td>
-      <td>NaN</td>
-      <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>708</th>
-      <td>13405.00</td>
-      <td>13</td>
-      <td>NaN</td>
-      <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>12844 rows × 6 columns</p>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

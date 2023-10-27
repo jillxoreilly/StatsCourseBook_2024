@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -581,7 +582,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5ccb925311418caccffe4f7633e770a580a22e132efe55628b9feb034aaec8be.png" src="_images/5ccb925311418caccffe4f7633e770a580a22e132efe55628b9feb034aaec8be.png" />
+<img alt="_images/4af8c21177e7ee9ee54f11a785cff7db3eece1718c658ab42b40f1da2f3d9f6a.png" src="_images/4af8c21177e7ee9ee54f11a785cff7db3eece1718c658ab42b40f1da2f3d9f6a.png" />
 </div>
 </div>
 <p><b>Python Note - matching the PDF to the histogram</b></p>
@@ -632,7 +633,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b3f6d7cfe372b14b61a174ca008cfe8dbc457eaf861f67dd013d3eeb4b42d82c.png" src="_images/b3f6d7cfe372b14b61a174ca008cfe8dbc457eaf861f67dd013d3eeb4b42d82c.png" />
+<img alt="_images/b73165fbc48aacfffdab94d865e0a7251265dbece364c9b46a8fcfbc2e3f266b.png" src="_images/b73165fbc48aacfffdab94d865e0a7251265dbece364c9b46a8fcfbc2e3f266b.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -662,7 +663,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/91829d2c055974841ab1d435931829a36175694393bac1459ec8f54be10a5bbd.png" src="_images/91829d2c055974841ab1d435931829a36175694393bac1459ec8f54be10a5bbd.png" />
+<img alt="_images/1a027f195c9a2483713eb71ffb0a174b034851a2e4dc7136a7525332438a13ca.png" src="_images/1a027f195c9a2483713eb71ffb0a174b034851a2e4dc7136a7525332438a13ca.png" />
 </div>
 </div>
 <p>Note that the Central Limit Theorem does <b><i>not</i></b> tell us that <span class="math notranslate nohighlight">\(s\)</span> is normally distributed - only <span class="math notranslate nohighlight">\(m\)</span> has that honour.</p>
@@ -694,10 +695,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.955077835162712
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.956906793340683
 </pre></div>
 </div>
-<img alt="_images/7b3c2e2f66577e97333afdbb5b09e5887bb17571eb1beda9362ca3998031d6ce.png" src="_images/7b3c2e2f66577e97333afdbb5b09e5887bb17571eb1beda9362ca3998031d6ce.png" />
+<img alt="_images/9c15441dda8caa55101661108eec4579fc55df4c3ee3241343d78c87cddd18f9.png" src="_images/9c15441dda8caa55101661108eec4579fc55df4c3ee3241343d78c87cddd18f9.png" />
 </div>
 </div>
 </section>
@@ -777,11 +778,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.01900159588214
-mean simulated value of s is 6.95217321304776
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 161.99522787506967
+mean simulated value of s is 6.962431745658121
 </pre></div>
 </div>
-<img alt="_images/8303cdc857a8472435576b2ac78c91789c07c0e3c2930688e4cf6c0f8f385ae9.png" src="_images/8303cdc857a8472435576b2ac78c91789c07c0e3c2930688e4cf6c0f8f385ae9.png" />
+<img alt="_images/292670719d82b1abab9d8ac8c2052f0b3e20f5929b59003e5c0fe522aebe6185.png" src="_images/292670719d82b1abab9d8ac8c2052f0b3e20f5929b59003e5c0fe522aebe6185.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="_images/Minion_what.jpg"><img alt="What?!" src="_images/Minion_what.jpg" style="width: 10%;" /></a>
@@ -857,7 +858,7 @@ mean simulated value of s is 6.95217321304776
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d61fdc84c752495ad350bfb73c5b5f6fd9d49d0689da25f7bb5316989601c32c.png" src="_images/d61fdc84c752495ad350bfb73c5b5f6fd9d49d0689da25f7bb5316989601c32c.png" />
+<img alt="_images/f1663f04fd6dd545a28c0bdf95759bd70908be8c454faf1b920aab094859d289.png" src="_images/f1663f04fd6dd545a28c0bdf95759bd70908be8c454faf1b920aab094859d289.png" />
 </div>
 </div>
 <p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
@@ -869,7 +870,7 @@ mean simulated value of s is 6.95217321304776
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.95
 </pre></div>
 </div>
 </div>
@@ -913,8 +914,8 @@ mean simulated value of s is 6.95217321304776
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/86b4b639605409e2e13eea359c9dc9ef6e36a047b7193c78037d430d2b7fc1d5.png" src="_images/86b4b639605409e2e13eea359c9dc9ef6e36a047b7193c78037d430d2b7fc1d5.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1039
+<img alt="_images/c485cd110173afa1c8e2fc5b05db4c898ae30878424c36825714314969fee81d.png" src="_images/c485cd110173afa1c8e2fc5b05db4c898ae30878424c36825714314969fee81d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1065
 </pre></div>
 </div>
 </div>

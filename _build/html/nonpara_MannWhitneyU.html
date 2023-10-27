@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -737,13 +738,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42649/3712789007.py:8: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59164/3712789007.py:8: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
 
   sns.kdeplot(data=juggling_Std, x=&#39;SessionsToCriterion&#39;, color=&#39;b&#39;, shade=True, label=&#39;Standard Training&#39;)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42649/3712789007.py:9: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59164/3712789007.py:9: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -1354,8 +1355,8 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3,  4,  8, 19,  1, 11, 13, 10, 18, 14, 15,  6, 16,  9,  5, 20, 17,
-        2,  7, 12])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([11,  4, 20,  3, 18,  7, 10, 15,  6,  2, 17,  5,  9, 14, 16,  8, 12,
+       13, 19,  1])
 </pre></div>
 </div>
 </div>
@@ -1369,7 +1370,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>116
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>113
 </pre></div>
 </div>
 </div>
@@ -1384,7 +1385,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47.0
 </pre></div>
 </div>
 </div>
@@ -1398,7 +1399,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>94
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
 </pre></div>
 </div>
 </div>
@@ -1413,7 +1414,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.0
 </pre></div>
 </div>
 </div>
@@ -1427,7 +1428,7 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.0
 </pre></div>
 </div>
 </div>
@@ -1471,10 +1472,10 @@ Name: SessionsToCriterion, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0015
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0009
 </pre></div>
 </div>
-<img alt="_images/f2e180bb556229763d4b32f937cf9907557f13ba3b07d668c06fb92aad089fe4.png" src="_images/f2e180bb556229763d4b32f937cf9907557f13ba3b07d668c06fb92aad089fe4.png" />
+<img alt="_images/ad6106853b6af24283330dea6b1bb19189945259b7dc6a66f57a46b305a7fd60.png" src="_images/ad6106853b6af24283330dea6b1bb19189945259b7dc6a66f57a46b305a7fd60.png" />
 </div>
 </div>
 <p>We obtain a value of <span class="math notranslate nohighlight">\(U\)</span> as extreme as the one in our real dataset less than 1% of the time.</p>

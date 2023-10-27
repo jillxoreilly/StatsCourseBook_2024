@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -695,7 +696,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42437/4276243473.py:7: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58956/4276243473.py:7: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
@@ -799,8 +800,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>1</th>
-      <td>17</td>
       <td>13</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>2</th>
@@ -814,8 +815,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>4</th>
-      <td>18</td>
       <td>23</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>5</th>
@@ -824,8 +825,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>6</th>
-      <td>18</td>
       <td>13</td>
+      <td>18</td>
     </tr>
     <tr>
       <th>7</th>
@@ -839,8 +840,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>9</th>
-      <td>14</td>
       <td>22</td>
+      <td>14</td>
     </tr>
   </tbody>
 </table>
@@ -891,8 +892,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
   <tbody>
     <tr>
       <th>0</th>
-      <td>2</td>
       <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
@@ -901,8 +902,8 @@ To generate each new simulated dataset, we will randomly decide whether each cou
     </tr>
     <tr>
       <th>2</th>
-      <td>5</td>
       <td>6</td>
+      <td>5</td>
     </tr>
   </tbody>
 </table>
@@ -938,29 +939,29 @@ To generate each new simulated dataset, we will randomly decide whether each cou
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42437/2368325034.py:12: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58956/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42437/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58956/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42437/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58956/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42437/2368325034.py:12: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58956/2368325034.py:12: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
 </pre></div>
 </div>
-<img alt="../_images/d55d5ef3cfa798a22e58f245dbd0d9ae823f4df2d09cf2b5fa59cf44964dd362.png" src="../_images/d55d5ef3cfa798a22e58f245dbd0d9ae823f4df2d09cf2b5fa59cf44964dd362.png" />
+<img alt="../_images/f0d87538f2090f5371815c783b12403863ed4417b5cfe44c8a58013939f93635.png" src="../_images/f0d87538f2090f5371815c783b12403863ed4417b5cfe44c8a58013939f93635.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -1012,8 +1013,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8cb7d4b6eb2f1538241ca00aaf2fb8e97a2dd3fade661659c8c8b589201c86dd.png" src="../_images/8cb7d4b6eb2f1538241ca00aaf2fb8e97a2dd3fade661659c8c8b589201c86dd.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.16%
+<img alt="../_images/b93fa36700d206d4a75991d6f648866238f5a7bc3d8b876693b6caccd6938a9d.png" src="../_images/b93fa36700d206d4a75991d6f648866238f5a7bc3d8b876693b6caccd6938a9d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.08%
 </pre></div>
 </div>
 </div>

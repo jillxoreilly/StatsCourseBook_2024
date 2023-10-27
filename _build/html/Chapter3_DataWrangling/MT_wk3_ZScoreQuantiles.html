@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Standardizing data &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.8. Standardizing data &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.9. Preparing a report" href="MT_wk3_ReportExample.html" />
+    <link rel="prev" title="3.7. Creating new variables/columns" href="MT_wk3_CreateColumns.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
@@ -205,16 +207,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk3_intro.html">3. Data Wrangling</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -507,13 +510,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">Import a dataset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z score</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.8.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.8.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">3.8.3. Z score</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages-of-the-z-score">Disadvantages of the Z score</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">Quantiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">3.8.4. Quantiles</a></li>
 </ul>
             </nav>
         </div>
@@ -526,11 +529,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="standardizing-data">
-<h1>Standardizing data<a class="headerlink" href="#standardizing-data" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.8. </span>Standardizing data<a class="headerlink" href="#standardizing-data" title="Permalink to this heading">#</a></h1>
 <p>Some data are recorded in naturally meaningful units; examples are</p>
 <ul class="simple">
 <li><p>height of adults in cm</p></li>
-<li><p>temperature in <span class="math notranslate nohighlight">\(^\{circ}C\)</span></p></li>
+<li><p>temperature in <span class="math notranslate nohighlight">\(^{\circ}C\)</span></p></li>
 </ul>
 <p>In other cases, units may be hard to interpret because we don’t have a sense of what a typical score is, based on general knowledge</p>
 <ul class="simple">
@@ -549,7 +552,7 @@ document.write(`
 </ul>
 <p>In this section we will review both these approaches.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.8.1. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual you will need to run this code block to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,12 +571,12 @@ document.write(`
 </div>
 </section>
 <section id="import-a-dataset-to-work-with">
-<h2>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
-<p>Let’s look at a fictional dataset containing scores on English and Maths tests for 150 children.</p>
+<h2><span class="section-number">3.8.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>Let’s look at a fictional dataset containing some body measurements for 50 individuals</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hospital</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heartAttack.csv&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">hospital</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BodyData.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -596,185 +599,1519 @@ document.write(`
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>CHARGES</th>
-      <th>LOS</th>
-      <th>AGE</th>
-      <th>SEX</th>
-      <th>DRG</th>
-      <th>DIED</th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>4752.00</td>
-      <td>10</td>
-      <td>79.0</td>
-      <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3941.00</td>
-      <td>6</td>
-      <td>34.0</td>
+      <td>101946</td>
       <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3657.00</td>
-      <td>5</td>
-      <td>76.0</td>
+      <td>108449</td>
       <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1481.00</td>
-      <td>2</td>
-      <td>80.0</td>
-      <td>F</td>
-      <td>122.0</td>
-      <td>0.0</td>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1681.00</td>
-      <td>1</td>
-      <td>55.0</td>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
       <td>M</td>
-      <td>122.0</td>
-      <td>0.0</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>12839</th>
-      <td>22603.57</td>
-      <td>14</td>
-      <td>79.0</td>
+      <th>6</th>
+      <td>119187</td>
       <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
     </tr>
     <tr>
-      <th>12840</th>
-      <td>NaN</td>
-      <td>7</td>
-      <td>91.0</td>
+      <th>7</th>
+      <td>120679</td>
       <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
     </tr>
     <tr>
-      <th>12841</th>
-      <td>14359.14</td>
-      <td>9</td>
-      <td>79.0</td>
+      <th>8</th>
+      <td>120735</td>
       <td>F</td>
-      <td>121.0</td>
-      <td>0.0</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
     </tr>
     <tr>
-      <th>12842</th>
-      <td>12986.00</td>
-      <td>5</td>
-      <td>70.0</td>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
       <td>M</td>
-      <td>121.0</td>
-      <td>0.0</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
     </tr>
     <tr>
-      <th>12843</th>
-      <td>NaN</td>
-      <td>1</td>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
       <td>81.0</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
       <td>M</td>
-      <td>123.0</td>
-      <td>1.0</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
     </tr>
   </tbody>
 </table>
-<p>12844 rows × 6 columns</p>
 </div></div></div>
 </div>
 </section>
 <section id="z-score">
-<h2>Z score<a class="headerlink" href="#z-score" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.8.3. </span>Z score<a class="headerlink" href="#z-score" title="Permalink to this heading">#</a></h2>
 <p>The Z-score tells us how many standard deviations above or below the mean of the distribution a given value lies.</p>
-<p>For example, for women’s heights the standard deviation</p>
-<p>is 7 and the mean is 162cm, so a woman 169cm tall (one sd above the mean) has a Z-score of 1</p>
-<p>A woman whose height is</p>
-<p>below the mean (148cm) has a Z-score of -2.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>What is the Z-score of a woman whose height is 172.5cm?
-What about a woman whose height is 150cm? 
-</pre></div>
-</div>
-<p>Reporting the Z-score of a value is useful as we automatically know where the value sits on the normal curve without having to check the normal CDF on Python or in a table (because the probability of obtaining a given Z-score does not depend on the mean and sd of the given dataset)</p>
-<p>For example, a Z-score greater than 1.65 occurs only 5% of the time and a Z score greater than 2.6 occurs only 1% of the time.</p>
-<section id="disadvantages-of-the-z-score">
-<h3>Disadvantages of the Z score<a class="headerlink" href="#disadvantages-of-the-z-score" title="Permalink to this heading">#</a></h3>
-<p>Z score tells us how many standard deviations above or below the mean a datapoint lies.</p>
-<p>One mmajor advantage of the Z-score is that for Normally distributed variables it tells us exactly how unlikely a data value is
-* Don’t worry if you don’t know what the Normal distribution is yet - you will earna about this in the next block</p>
-<p>This has a couple of disadvantages:
-* it is only really meaningful for symmetrical data distributions (especially the Normal distribution) - for skewed distributions, there will be momre datapoints witha  Z-score of, say, +2, than -2
-* It is not easily understood by non statistically trained people</p>
-<p>It is sometimes more meaningful to standardize data by presenting them as <em>quantiles</em></p>
-</section>
-</section>
-<section id="quantiles">
-<h2>Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this heading">#</a></h2>
-<p>Quantiles (or centiles) tell us what proportion of data points are expected to exceed a certain value. This is easy to interpret.</p>
-<p>For example, my six year old daughter is 128cm tall, would you say she is tall for her age? You probably have no idea - in contrast to adult heights where people might have a sense of the distribution due to general knowledde (eg 150cm is smmall and 180cm is tall)</p>
-<p>We can use centiles in two ways:</p>
-<ul class="simple">
-<li><p>The 90th centile of height for a 6 year old is XX, so we expect 10% of six year olds to be taller than XXcm.</p></li>
-<li><p>Conversely, a 6 year old with height XXX cm lies on the 93rd centile, which means they are taller than 93% of children the same age.</p></li>
-</ul>
-<p>To calculate a given quantile of a dataset we use <code class="docutils literal notranslate"><span class="pre">df.quantile()</span></code>, eg</p>
+<p>Let’s convert our weights to Z-scores. We will need to know the mean and standard deviation of weight:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span> <span class="c1"># get 90th centile</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">heights</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73.73
+7.891438140058334
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then calculate a Z-score for each person’s weight.</p>
+<ul class="simple">
+<li><p>Someone whose weight is exactly on the mean (74kg) will have a Z-score of 0.</p></li>
+<li><p>Someone whose weight is one standard deviation below the mean (65kg) will have a Z-score of -1
+etc</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column and put the calcualted z-scores in it</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;WeightZ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;heights&#39; is not defined
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+      <th>WeightZ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+      <td>-1.131606</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+      <td>-0.713431</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+      <td>0.807204</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+      <td>-2.398802</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+      <td>-1.232982</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+      <td>1.858977</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+      <td>-1.030230</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+      <td>-0.181209</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+      <td>-1.334358</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+      <td>-0.396632</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+      <td>2.707998</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+      <td>-1.537109</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+      <td>-0.079833</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+      <td>-0.510680</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+      <td>-0.713431</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+      <td>0.465061</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+      <td>0.135590</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+      <td>0.249638</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+      <td>-0.928855</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+      <td>-1.334358</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+      <td>-0.827479</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+      <td>1.035299</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+      <td>1.973024</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+      <td>1.035299</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+      <td>0.579109</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+      <td>0.465061</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+      <td>1.263395</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+      <td>-0.181209</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+      <td>-1.828564</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+      <td>-1.131606</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+      <td>-0.827479</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
+<p>Look down the table for some heavy and light people. Do their z-scores look like you would expect?</p>
+<section id="disadvantages-of-the-z-score">
+<h3>Disadvantages of the Z score<a class="headerlink" href="#disadvantages-of-the-z-score" title="Permalink to this heading">#</a></h3>
+<p>Z score tells us how many standard deviations above or below the mean a datapoint lies.</p>
+<p>We can use some hand ‘rules of thumb’ to know how unusual a Z-score is, as long as the data distribution is approximately normal:
+* Don’t worry if you don’t know what the Normal distribution is yet - you will learn about this in detail later in the course</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png" style="width: 75%;" /></a>
+<p>The Z-score does have a couple of disadvantages:</p>
+<ul class="simple">
+<li><p>it is only really meaningful for symmetrical data distributions (especially the Normal distribution) - for skewed distributions, there will be momre datapoints with a Z-score of, say, +2, than -2</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png" style="width: 75%;" /></a>
+<p>Additionally, the Z-score is not easily understood by non statistically trained people</p>
+<p>It is therefore sometimes more meaningful to standardize data by presenting them as <em>quantiles</em></p>
+</section>
+</section>
+<section id="quantiles">
+<h2><span class="section-number">3.8.4. </span>Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this heading">#</a></h2>
+<p>Quantiles (or centiles) tell us what proportion of data points are expected to exceed a certain value. This is easy to interpret.</p>
+<p>For example, say my six year old daughter is 125cm tall, would you say she is tall for her age? You probably have no idea - this is in contrast to adult heights where people might have a sense of the distribution due to general knowledge (eg 150cm is small and 180cm is tall)</p>
+<p>In fact, a a 6 year old with height 125cm lies on the 95th centile, which means they are taller than 95% of children the same age (will definitley look tall in the playground).</p>
+<p>To calculate a given quantile of a dataset we use <code class="docutils literal notranslate"><span class="pre">df.quantile()</span></code>, eg</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>To find out on which quantile a given datapoint lies, we can use a couple of `pandas` functions as follows:
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the 90th centile for height in out dataframe</span>
+<span class="n">data</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span> <span class="c1"># get 90th centile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181.0
 </pre></div>
 </div>
 </div>
 </div>
+<p>The 90th centile is 181cm, ie 10% of people are taller than 181cm.</p>
+<p>Adding quantiles to the table can be done using <code class="docutils literal notranslate"><span class="pre">df.qcut()</span></code>, which categorizes the data into quantiles. For example, I can produe a table saying which decile each person’s weight falls into as follows:</p>
+<ul class="simple">
+<li><p>Deciles are 10ths, in the same way that centiles are 100ths</p>
+<ul>
+<li><p>if someone’s weight in the 0th decile, that means their weight is in the bottom 10% of the sample</p></li>
+<li><p>if someone’s weight is in the 9th decile, it mmeans they are in teh top 10% ot the sample (heavier than 90% of people)</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">heights</span><span class="o">.</span><span class="n">height</span> <span class="o">&gt;</span> <span class="mf">128.</span><span class="n">len</span><span class="p">()</span><span class="o">/</span><span class="n">heights</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weightQ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> 
+<span class="n">data</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+      <th>WeightZ</th>
+      <th>weightQ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+      <td>-1.131606</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+      <td>-0.713431</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+      <td>0.807204</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+      <td>-2.398802</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+      <td>-1.232982</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+      <td>1.858977</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+      <td>-1.030230</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+      <td>-0.181209</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+      <td>-1.334358</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+      <td>-0.396632</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+      <td>2.707998</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+      <td>-1.537109</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+      <td>-0.079833</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+      <td>-0.510680</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+      <td>-0.713431</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+      <td>0.465061</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+      <td>0.135590</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+      <td>0.249638</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+      <td>-0.928855</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+      <td>-1.334358</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+      <td>-0.827479</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+      <td>1.035299</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+      <td>1.973024</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+      <td>1.035299</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+      <td>0.579109</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+      <td>0.465061</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+      <td>1.263395</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+      <td>-0.181209</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+      <td>-1.828564</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+      <td>-1.131606</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+      <td>-0.827479</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
+<p><strong>NOTE</strong> this is a bit fiddly as <code class="docutils literal notranslate"><span class="pre">df.qcut</span></code> won’t create empty bins. Since this dataset is quite small, we can’t create one bin for each centile as naturally some will be empty (as there are less than 100 datapoints)</p>
 </section>
 </section>
 
@@ -808,6 +2145,24 @@ What about a woman whose height is 150cm?
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MT_wk3_CreateColumns.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Creating new variables/columns</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MT_wk3_ReportExample.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.9. </span>Preparing a report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -823,13 +2178,13 @@ What about a woman whose height is 150cm?
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python Libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">Import a dataset to work with</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z score</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.8.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.8.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">3.8.3. Z score</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages-of-the-z-score">Disadvantages of the Z score</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">Quantiles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">3.8.4. Quantiles</a></li>
 </ul>
   </nav></div>
 

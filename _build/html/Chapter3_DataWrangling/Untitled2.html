@@ -210,9 +210,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -543,7 +544,7 @@ document.write(`
 <span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;effectx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;confx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">confx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;fairx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">fairx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;effectx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">antisocx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">CrimeSurvey</span><span class="p">[</span><span class="s1">&#39;effectx&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">-</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 <span class="n">CrimeSurvey</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -598,7 +599,7 @@ document.write(`
       <td>2.0</td>
       <td>3.0</td>
       <td>0.0</td>
-      <td>3.417889</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>2.290506</td>
       <td>3.42</td>
@@ -614,7 +615,7 @@ document.write(`
       <td>1.0</td>
       <td>4.0</td>
       <td>0.0</td>
-      <td>-0.518677</td>
+      <td>-0.755949</td>
       <td>NaN</td>
       <td>-0.349198</td>
       <td>-0.52</td>
@@ -630,7 +631,7 @@ document.write(`
       <td>5.0</td>
       <td>2.0</td>
       <td>0.0</td>
-      <td>2.268891</td>
+      <td>-1.344910</td>
       <td>-0.544786</td>
       <td>0.381797</td>
       <td>2.27</td>
@@ -662,7 +663,7 @@ document.write(`
       <td>5.0</td>
       <td>5.0</td>
       <td>0.0</td>
-      <td>0.840137</td>
+      <td>0.152448</td>
       <td>0.914933</td>
       <td>-0.613168</td>
       <td>0.84</td>
@@ -694,7 +695,7 @@ document.write(`
       <td>1.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>0.310599</td>
+      <td>-0.436513</td>
       <td>NaN</td>
       <td>-1.029429</td>
       <td>0.31</td>
@@ -710,7 +711,7 @@ document.write(`
       <td>5.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>-0.448738</td>
+      <td>0.132483</td>
       <td>NaN</td>
       <td>1.051876</td>
       <td>-0.45</td>
@@ -726,7 +727,7 @@ document.write(`
       <td>5.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>0.270634</td>
+      <td>NaN</td>
       <td>NaN</td>
       <td>0.808211</td>
       <td>0.27</td>
@@ -742,7 +743,7 @@ document.write(`
       <td>1.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>-0.558642</td>
+      <td>-0.446495</td>
       <td>0.408086</td>
       <td>1.711802</td>
       <td>-0.56</td>
@@ -758,7 +759,7 @@ document.write(`
       <td>2.0</td>
       <td>NaN</td>
       <td>0.0</td>
-      <td>-1.218067</td>
+      <td>1.579928</td>
       <td>NaN</td>
       <td>-0.115685</td>
       <td>-1.22</td>
@@ -788,10 +789,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/seaborn/algorithms.py:98: RuntimeWarning: Mean of empty slice
+  boot_dist.append(f(*sample, **func_kwargs))
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;AgeGroup&#39;, ylabel=&#39;confx&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/a4c2b2f6edb303c51cd8edf4e21400528c578f170b73f0422591f866dfdd3d81.png" src="../_images/a4c2b2f6edb303c51cd8edf4e21400528c578f170b73f0422591f866dfdd3d81.png" />
+<img alt="../_images/8c631c34a3d7c19abaf8ba881d32c220f52bdee6f259d84f515998f866b1df8d.png" src="../_images/8c631c34a3d7c19abaf8ba881d32c220f52bdee6f259d84f515998f866b1df8d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -806,7 +811,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1560215053763441
 </pre></div>
 </div>
-<img alt="../_images/80d243fbe41462e68ede376b021449604097f19aeae72ed8151090cee5056474.png" src="../_images/80d243fbe41462e68ede376b021449604097f19aeae72ed8151090cee5056474.png" />
+<img alt="../_images/6659ffa8eea226a1812eb08b7961af5c7d6607600d3bbc795f8657761e5c59d7.png" src="../_images/6659ffa8eea226a1812eb08b7961af5c7d6607600d3bbc795f8657761e5c59d7.png" />
 </div>
 </div>
 <div class="cell docutils container">

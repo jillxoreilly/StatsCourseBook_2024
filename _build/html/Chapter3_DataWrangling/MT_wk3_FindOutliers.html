@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -584,7 +585,8 @@ document.write(`
 <h2><span class="section-number">3.3.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Permalink to this heading">#</a></h2>
 <p>We  will work with the file heartAttack.csv, which contains data on several thousand patients admitted to hospital in New York City, diagnosed with a heart attack.</p>
 <p>From this dataset we can explore how demographic and disease factors affect the duration of stay in hospital and the  dollar cost of treatment.</p>
-<p>The dataset are downloaaded with thanks (and with slight modifications for teaching purposes) from the website <a href="https://dasl.datadescription.com/">DASL</a> (Data and Story Library)</p>
+<p>The dataset are downloaded with thanks (and with slight modifications for teaching purposes) from the website <a href="https://dasl.datadescription.com/">DASL</a> (Data and Story Library)</p>
+<p>The data will be automatically loaded fromt he internet when you run this code block:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hospital</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heartAttack.csv&#39;</span><span class="p">)</span>

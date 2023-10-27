@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -568,7 +569,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42469/3607577844.py:1: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58997/3607577844.py:1: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -612,13 +613,13 @@ This will become an error in seaborn v0.14.0; please update your code.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42469/3986564570.py:11: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58997/3986564570.py:11: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
 
   sns.kdeplot(data=seeded, color=[1,0,0], shade=True)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42469/3986564570.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58997/3986564570.py:20: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -808,8 +809,8 @@ This will become an error in seaborn v0.14.0; please update your code.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0217, null_distribution=array([ 65.67307692, -21.35      ,  -0.63461538, ..., 130.86538462,
-        -6.47307692,  57.88846154]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0265, null_distribution=array([-167.49615385,  125.45      ,   -7.03461538, ...,   54.58076923,
+        -24.55769231,  -49.38846154]))
 </pre></div>
 </div>
 </div>
@@ -1019,7 +1020,7 @@ This will become an error in seaborn v0.14.0; please update your code.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd2361a1be0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe404408fa0&gt;]
 </pre></div>
 </div>
 <img alt="_images/d0a23447b12f8a2894c27213d03e76aeee814f6ff3dfa0ef6cf8168ab230bde4.png" src="_images/d0a23447b12f8a2894c27213d03e76aeee814f6ff3dfa0ef6cf8168ab230bde4.png" />

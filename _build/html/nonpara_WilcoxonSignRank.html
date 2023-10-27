@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -732,7 +733,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faed20a8cd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fae777a9d30&gt;]
 </pre></div>
 </div>
 <img alt="_images/21bbda131f05decf64c6cbf8a5ed93d0c2374e7cac818107d26968129828aa02.png" src="_images/21bbda131f05decf64c6cbf8a5ed93d0c2374e7cac818107d26968129828aa02.png" />
@@ -913,7 +914,7 @@ the differences between conditions (for each participant) are normally distribut
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42658/4070573100.py:1: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59173/4070573100.py:1: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -1549,8 +1550,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True, False,  True, False,  True,  True, False, False,
-       False,  True,  True, False, False, False, False,  True,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False,  True,  True,  True, False,  True,
+        True, False,  True,  True, False, False, False, False, False,
        False, False])
 </pre></div>
 </div>
@@ -1568,8 +1569,8 @@ R- = 46.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 77
-R- = 133
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R+ = 62
+R- = 148
 </pre></div>
 </div>
 </div>
@@ -1583,7 +1584,7 @@ R- = 133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 77
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T = 62
 </pre></div>
 </div>
 </div>
@@ -1622,8 +1623,8 @@ R- = 133
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f331f739131335916f5b4b22180253859493295d13ed001dfda56f5f3ad85c3.png" src="_images/4f331f739131335916f5b4b22180253859493295d13ed001dfda56f5f3ad85c3.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.0267
+<img alt="_images/fbd262a461c63c33dc9ce2870b8167853e543f8de5bb59f21d7cde36339acfcb.png" src="_images/fbd262a461c63c33dc9ce2870b8167853e543f8de5bb59f21d7cde36339acfcb.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which T&lt;=46 = 0.0249
 </pre></div>
 </div>
 </div>

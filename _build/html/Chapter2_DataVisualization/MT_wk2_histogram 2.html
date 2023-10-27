@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -612,435 +613,179 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">gaierror</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:1346,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1345</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1346</span>     <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>               <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1348</span> <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:1285,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1285</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ID</th>
-      <th>sex</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>age</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>101708</td>
-      <td>M</td>
-      <td>161</td>
-      <td>64.8</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>101946</td>
-      <td>F</td>
-      <td>165</td>
-      <td>68.1</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>108449</td>
-      <td>F</td>
-      <td>175</td>
-      <td>76.6</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>108796</td>
-      <td>M</td>
-      <td>180</td>
-      <td>81.0</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>113449</td>
-      <td>F</td>
-      <td>179</td>
-      <td>80.1</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>114688</td>
-      <td>M</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>119187</td>
-      <td>F</td>
-      <td>148</td>
-      <td>54.8</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>120679</td>
-      <td>F</td>
-      <td>160</td>
-      <td>64.0</td>
-      <td>44</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>120735</td>
-      <td>F</td>
-      <td>188</td>
-      <td>88.4</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>124269</td>
-      <td>F</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>124713</td>
-      <td>M</td>
-      <td>175</td>
-      <td>76.6</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>127076</td>
-      <td>M</td>
-      <td>180</td>
-      <td>81.0</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>131626</td>
-      <td>M</td>
-      <td>162</td>
-      <td>65.6</td>
-      <td>35</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>132218</td>
-      <td>M</td>
-      <td>170</td>
-      <td>72.3</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>132609</td>
-      <td>F</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>41</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>134660</td>
-      <td>F</td>
-      <td>159</td>
-      <td>63.2</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>135195</td>
-      <td>M</td>
-      <td>169</td>
-      <td>71.4</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>140073</td>
-      <td>F</td>
-      <td>168</td>
-      <td>70.6</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>140114</td>
-      <td>M</td>
-      <td>195</td>
-      <td>95.1</td>
-      <td>41</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>145185</td>
-      <td>F</td>
-      <td>157</td>
-      <td>61.6</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>146279</td>
-      <td>F</td>
-      <td>180</td>
-      <td>81.0</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>146519</td>
-      <td>F</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>151451</td>
-      <td>F</td>
-      <td>171</td>
-      <td>73.1</td>
-      <td>37</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>152597</td>
-      <td>M</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>154672</td>
-      <td>M</td>
-      <td>167</td>
-      <td>69.7</td>
-      <td>39</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>155594</td>
-      <td>F</td>
-      <td>165</td>
-      <td>68.1</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>158165</td>
-      <td>M</td>
-      <td>175</td>
-      <td>76.6</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>159457</td>
-      <td>F</td>
-      <td>176</td>
-      <td>77.4</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>162323</td>
-      <td>M</td>
-      <td>173</td>
-      <td>74.8</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>166948</td>
-      <td>M</td>
-      <td>174</td>
-      <td>75.7</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>168411</td>
-      <td>M</td>
-      <td>175</td>
-      <td>76.6</td>
-      <td>29</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>168574</td>
-      <td>F</td>
-      <td>163</td>
-      <td>66.4</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>169209</td>
-      <td>F</td>
-      <td>159</td>
-      <td>63.2</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>171236</td>
-      <td>F</td>
-      <td>164</td>
-      <td>67.2</td>
-      <td>34</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>172289</td>
-      <td>M</td>
-      <td>181</td>
-      <td>81.9</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>173925</td>
-      <td>M</td>
-      <td>189</td>
-      <td>89.3</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>176598</td>
-      <td>F</td>
-      <td>169</td>
-      <td>71.4</td>
-      <td>37</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>177002</td>
-      <td>F</td>
-      <td>180</td>
-      <td>81.0</td>
-      <td>36</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>178659</td>
-      <td>M</td>
-      <td>181</td>
-      <td>81.9</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>180992</td>
-      <td>F</td>
-      <td>177</td>
-      <td>78.3</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>183304</td>
-      <td>F</td>
-      <td>176</td>
-      <td>77.4</td>
-      <td>30</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>184706</td>
-      <td>M</td>
-      <td>183</td>
-      <td>83.7</td>
-      <td>40</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>185138</td>
-      <td>M</td>
-      <td>169</td>
-      <td>71.4</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>185223</td>
-      <td>F</td>
-      <td>170</td>
-      <td>72.3</td>
-      <td>41</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>186041</td>
-      <td>M</td>
-      <td>175</td>
-      <td>76.6</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>186887</td>
-      <td>M</td>
-      <td>154</td>
-      <td>59.3</td>
-      <td>26</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>187016</td>
-      <td>M</td>
-      <td>161</td>
-      <td>64.8</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>198157</td>
-      <td>M</td>
-      <td>180</td>
-      <td>81.0</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>199112</td>
-      <td>M</td>
-      <td>172</td>
-      <td>74.0</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>199614</td>
-      <td>F</td>
-      <td>164</td>
-      <td>67.2</td>
-      <td>31</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:1331,</span> in <span class="ni">HTTPConnection._send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1330</span>     <span class="n">body</span> <span class="o">=</span> <span class="n">_encode</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1331</span> <span class="bp">self</span><span class="o">.</span><span class="n">endheaders</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:1280,</span> in <span class="ni">HTTPConnection.endheaders</span><span class="nt">(self, message_body, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span>     <span class="k">raise</span> <span class="n">CannotSendHeader</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1280</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_output</span><span class="p">(</span><span class="n">message_body</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="o">=</span><span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:1040,</span> in <span class="ni">HTTPConnection._send_output</span><span class="nt">(self, message_body, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1039</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_buffer</span><span class="p">[:]</span>
+<span class="ne">-&gt; </span><span class="mi">1040</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1042</span> <span class="k">if</span> <span class="n">message_body</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1043</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1044</span>     <span class="c1"># create a consistent interface to message_body</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:980,</span> in <span class="ni">HTTPConnection.send</span><span class="nt">(self, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">979</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_open</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">980</span>     <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:1447,</span> in <span class="ni">HTTPSConnection.connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="s2">&quot;Connect to a host on a given (SSL) port.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1447</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tunnel_host</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/http/client.py:946,</span> in <span class="ni">HTTPConnection.connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Connect to the host and port specified in __init__.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">946</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_connection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_address</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="c1"># Might fail in OSs that don&#39;t implement TCP_NODELAY</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/socket.py:823,</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address)</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span> <span class="n">err</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">823</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span>     <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/socket.py:954,</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span> <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">954</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">955</span>     <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+
+<span class="ne">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">URLError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">heightData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BodyData.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">heightData</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py:912,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">908</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">912</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py:577,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">577</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">579</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1407,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1404</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1406</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1407</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1661,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1659</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1660</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1661</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1662</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1663</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1664</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1665</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1666</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1667</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1668</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1669</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1670</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1671</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1672</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/common.py:716,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">713</span>     <span class="n">codecs</span><span class="o">.</span><span class="n">lookup_error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span> <span class="c1"># open URLs</span>
+<span class="ne">--&gt; </span><span class="mi">716</span> <span class="n">ioargs</span> <span class="o">=</span> <span class="n">_get_filepath_or_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="n">path_or_buf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">718</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">filepath_or_buffer</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span> <span class="n">handles</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BaseBuffer</span><span class="p">]</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/common.py:368,</span> in <span class="ni">_get_filepath_or_buffer</span><span class="nt">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="c1"># assuming storage_options is to be interpreted as headers</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="n">req_info</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">368</span> <span class="k">with</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">req_info</span><span class="p">)</span> <span class="k">as</span> <span class="n">req</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="n">content_encoding</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Content-Encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="k">if</span> <span class="n">content_encoding</span> <span class="o">==</span> <span class="s2">&quot;gzip&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">371</span>         <span class="c1"># Override compression based on Content-Encoding header</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/common.py:270,</span> in <span class="ni">urlopen</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="sd"> Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="sd"> the stdlib.</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="ne">--&gt; </span><span class="mi">270</span> <span class="k">return</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:214,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:517,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>     <span class="n">req</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span> <span class="n">sys</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="s1">&#39;urllib.Request&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">517</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span> <span class="c1"># post-process response</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span> <span class="n">meth_name</span> <span class="o">=</span> <span class="n">protocol</span><span class="o">+</span><span class="s2">&quot;_response&quot;</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:534,</span> in <span class="ni">OpenerDirector._open</span><span class="nt">(self, req, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="n">protocol</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">type</span>
+<span class="ne">--&gt; </span><span class="mi">534</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_open</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">protocol</span> <span class="o">+</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>                           <span class="s1">&#39;_open&#39;</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:494,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">494</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:1389,</span> in <span class="ni">HTTPSHandler.https_open</span><span class="nt">(self, req)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="k">def</span> <span class="nf">https_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1390</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">,</span> <span class="n">check_hostname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_check_hostname</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/urllib/request.py:1349,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1346</span>         <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>                   <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1348</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
+<span class="ne">-&gt; </span><span class="mi">1349</span>         <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1350</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1351</span> <span class="k">except</span><span class="p">:</span>
+
+<span class="ne">URLError</span>: &lt;urlopen error [Errno 8] nodename nor servname provided, or not known&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -1057,7 +802,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/324f67535d97f461744d38b02f743226bc8305859823bce4cdf8bac47cefbdb7.png" src="../_images/324f67535d97f461744d38b02f743226bc8305859823bce4cdf8bac47cefbdb7.png" />
+<img alt="../_images/e8dffed200480b0d429205cfe529f1c1c474ce67b1aaf5523b46c48658f99312.png" src="../_images/e8dffed200480b0d429205cfe529f1c1c474ce67b1aaf5523b46c48658f99312.png" />
 </div>
 </div>
 <p>If we want to <em>disaggregate</em> (separate out) the data, for example by sex, this is super easy using the <code class="docutils literal notranslate"><span class="pre">hue</span></code> property in <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> functions:</p>
@@ -1070,7 +815,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cee72b355d3fa2a03c98f15dad74d16b9c82f946488ea28329d37231fecbef56.png" src="../_images/cee72b355d3fa2a03c98f15dad74d16b9c82f946488ea28329d37231fecbef56.png" />
+<img alt="../_images/13a3a05edac04492fe86ae970e38a56b490df45e3fffc909054d3d595e6e5023.png" src="../_images/13a3a05edac04492fe86ae970e38a56b490df45e3fffc909054d3d595e6e5023.png" />
 </div>
 </div>
 <section id="choosing-the-bin-boundaries-and-width">
@@ -1090,7 +835,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20917e27d08b0c32cf81b33561743fcda2b7ed952307ca60ad44550fac0d6db8.png" src="../_images/20917e27d08b0c32cf81b33561743fcda2b7ed952307ca60ad44550fac0d6db8.png" />
+<img alt="../_images/40078916dce7c413a912c26840ecf4d274517630dd9ae6c89f3389e16b793cc6.png" src="../_images/40078916dce7c413a912c26840ecf4d274517630dd9ae6c89f3389e16b793cc6.png" />
 </div>
 </div>
 </section>
@@ -1107,7 +852,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e41a4f9c0764034b149a581444b268cde70341864c5b208e178a1d19c34ff6d0.png" src="../_images/e41a4f9c0764034b149a581444b268cde70341864c5b208e178a1d19c34ff6d0.png" />
+<img alt="../_images/23d9fba50185f8ef138562522c685281b4195223c603ff4cac393ca66a6ee4f4.png" src="../_images/23d9fba50185f8ef138562522c685281b4195223c603ff4cac393ca66a6ee4f4.png" />
 </div>
 </div>
 <p>Compare the histogram to the one above with  bin boundaries at 150, 155 etc. The shape of the distribution looks quite different! In the top plot, we seem to have quite a broad distribution, whereas in the bottom one, there is a big spike of people with heights betweem 172 and 177 cm.</p>
@@ -1178,8 +923,8 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/db57a50ed26ea918a8a985f151ed2ca1165cecfd386532219f07636bd4fadd29.png" src="../_images/db57a50ed26ea918a8a985f151ed2ca1165cecfd386532219f07636bd4fadd29.png" />
-<img alt="../_images/2d631b9776e538396a534f1933f0807f0630de5e372abdff0e9287d292ec0b7e.png" src="../_images/2d631b9776e538396a534f1933f0807f0630de5e372abdff0e9287d292ec0b7e.png" />
+<img alt="../_images/71f8e3432caca4f427ceb558c4ed6fe9ff4749e0d091bd90e38f3a798b8104a7.png" src="../_images/71f8e3432caca4f427ceb558c4ed6fe9ff4749e0d091bd90e38f3a798b8104a7.png" />
+<img alt="../_images/a0482b30d46890979a161ca57da81622c65b73450045a026d2981c263fbb0418.png" src="../_images/a0482b30d46890979a161ca57da81622c65b73450045a026d2981c263fbb0418.png" />
 </div>
 </div>
 <section id="id1">
@@ -1202,7 +947,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/70f0a6271a04bc2b522357c82e247466ec380ed82319983f80e21844836808de.png" src="../_images/70f0a6271a04bc2b522357c82e247466ec380ed82319983f80e21844836808de.png" />
+<img alt="../_images/e831bf8be68fab26da47094cd139c7c325099bf624f3729ecac533c48e96e0ca.png" src="../_images/e831bf8be68fab26da47094cd139c7c325099bf624f3729ecac533c48e96e0ca.png" />
 </div>
 </div>
 <section id="probability-density">
@@ -1222,7 +967,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5bd6159c16031d47f0b49f52366c1fdf88f8d769dde04abec2ae6c82a5b240a2.png" src="../_images/5bd6159c16031d47f0b49f52366c1fdf88f8d769dde04abec2ae6c82a5b240a2.png" />
+<img alt="../_images/cadd4be3a9f6944e4b257ec5677508f9c69c45db8f39eaa725e07f7a7a9fa2d8.png" src="../_images/cadd4be3a9f6944e4b257ec5677508f9c69c45db8f39eaa725e07f7a7a9fa2d8.png" />
 </div>
 </div>
 </section>
@@ -1248,7 +993,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/639f6926c1c9557dedbbb7da88f7bcfcbda6cc97680d27916ca7e5613009acb0.png" src="../_images/639f6926c1c9557dedbbb7da88f7bcfcbda6cc97680d27916ca7e5613009acb0.png" />
+<img alt="../_images/1cff3f62542ead71d1f0ba1d4f3d683435df17137fbf52c686e803a6279596ff.png" src="../_images/1cff3f62542ead71d1f0ba1d4f3d683435df17137fbf52c686e803a6279596ff.png" />
 </div>
 </div>
 <p><strong>Note</strong> With its high bandwidth, the blue KDE plot looks very smooth with just one peak.</p>
@@ -1271,7 +1016,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/41077ee59006f8b91b94aecfa268ff8d5c349c9e9be6ccd71610c09e193e3e9c.png" src="../_images/41077ee59006f8b91b94aecfa268ff8d5c349c9e9be6ccd71610c09e193e3e9c.png" />
+<img alt="../_images/90062dfe4ad5067d3abe8891e86d1b25bbc2fb836d1d5b9a77e9f84824256f94.png" src="../_images/90062dfe4ad5067d3abe8891e86d1b25bbc2fb836d1d5b9a77e9f84824256f94.png" />
 </div>
 </div>
 <p>You might find that too crowded in which case you may want to separate out the plots onto two separate axes:</p>
@@ -1286,8 +1031,8 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a21fc82abb26a9811f43ee63d9134d9f0ba13c0eca3269c92b7ddccdac03ff1.png" src="../_images/2a21fc82abb26a9811f43ee63d9134d9f0ba13c0eca3269c92b7ddccdac03ff1.png" />
-<img alt="../_images/143f532dacfc98bc8ea412505010453277157b688670332c42c467652b7a16e5.png" src="../_images/143f532dacfc98bc8ea412505010453277157b688670332c42c467652b7a16e5.png" />
+<img alt="../_images/2b91e1257d2c28633fc4cb8ca5de886e023ece607938ef9d16a8656cb5a1f1e2.png" src="../_images/2b91e1257d2c28633fc4cb8ca5de886e023ece607938ef9d16a8656cb5a1f1e2.png" />
+<img alt="../_images/11efab5088014b09bc77219edc7e29609dbbde94bbf5991d54565099624f2e4f.png" src="../_images/11efab5088014b09bc77219edc7e29609dbbde94bbf5991d54565099624f2e4f.png" />
 </div>
 </div>
 <p>However, when we try to compare the two plots on separate axes, the matter is confused by non-matching axis ranges</p>
@@ -1312,8 +1057,8 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0db45bcd54a8897f55b43b007ff4a5822f994c952fd140f9691b3b30f5cc0c20.png" src="../_images/0db45bcd54a8897f55b43b007ff4a5822f994c952fd140f9691b3b30f5cc0c20.png" />
-<img alt="../_images/8ca2dbd82feb6ee740f547cc888a5ec617e24e15661a05c4568fbf2b821e9874.png" src="../_images/8ca2dbd82feb6ee740f547cc888a5ec617e24e15661a05c4568fbf2b821e9874.png" />
+<img alt="../_images/99cc8ee30c0f325ac697d08bfb7b8c82023fa7f1184c2079fbcaf8b3546da3a8.png" src="../_images/99cc8ee30c0f325ac697d08bfb7b8c82023fa7f1184c2079fbcaf8b3546da3a8.png" />
+<img alt="../_images/8c9a1b4c8dc141a493f96956cdf952d67008f28e04d14ecbed3f8ac19e1ba36f.png" src="../_images/8c9a1b4c8dc141a493f96956cdf952d67008f28e04d14ecbed3f8ac19e1ba36f.png" />
 </div>
 </div>
 </section>
@@ -1341,7 +1086,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/655a77b42ffaa1ff9eca4972ed7f76f27bca504fb5a57745218b1e9eb7f4583b.png" src="../_images/655a77b42ffaa1ff9eca4972ed7f76f27bca504fb5a57745218b1e9eb7f4583b.png" />
+<img alt="../_images/4acc5bcd18d7ddce859abd999cfb7908297f178a7be8a0cdf872d79d06f3d5bb.png" src="../_images/4acc5bcd18d7ddce859abd999cfb7908297f178a7be8a0cdf872d79d06f3d5bb.png" />
 </div>
 </div>
 <p>… or a 1x2 grid (one row, 2 columns)</p>
@@ -1363,7 +1108,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c4b790664e313d5f2913525b2d0bf29ce690ba0892247c9270196bdfb36e163b.png" src="../_images/c4b790664e313d5f2913525b2d0bf29ce690ba0892247c9270196bdfb36e163b.png" />
+<img alt="../_images/b222755f1c58f16bd68bcd7c6c13bd07fd24710c2d5a505019629c733d2149e7.png" src="../_images/b222755f1c58f16bd68bcd7c6c13bd07fd24710c2d5a505019629c733d2149e7.png" />
 </div>
 </div>
 <p>Perhaps you will agree that the vertical arrangement allows for an easier comparison between men and women in this case - in the vertical arrangement we can easily see that the men are generally taller</p>
@@ -1398,7 +1143,7 @@ that the shape of the histogram can depend a lot on where the bin boundaries hap
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/63a137c798ff82db85ea76c062165a97a45f4441f6cdbb6ecf1fcd9f350db720.png" src="../_images/63a137c798ff82db85ea76c062165a97a45f4441f6cdbb6ecf1fcd9f350db720.png" />
+<img alt="../_images/4f57d9980dd0fdabf4e2e12ba4c5d3bbb846a260e1548bc2d6cc436f1a8d7ae0.png" src="../_images/4f57d9980dd0fdabf4e2e12ba4c5d3bbb846a260e1548bc2d6cc436f1a8d7ae0.png" />
 </div>
 </div>
 <p>The syntax of <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code> is:</p>

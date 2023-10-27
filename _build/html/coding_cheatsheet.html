@@ -210,9 +210,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -1321,7 +1322,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14, 11,  8,  8,  6,  3,  8, 17, 12,  7,  7, 10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4,  8,  7,  3, 10, 13,  4, 13,  4, 10,  3,  3])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1356,7 +1357,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>14</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1364,7 +1365,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>11</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1372,7 +1373,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>8</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1380,7 +1381,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>8</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1388,7 +1389,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>6</td>
+      <td>10</td>
     </tr>
   </tbody>
 </table>
@@ -1447,12 +1448,12 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
-      <td>onion</td>
-      <td>veg</td>
-      <td>brown</td>
-      <td>3</td>
-      <td>8</td>
+      <th>9</th>
+      <td>lychee</td>
+      <td>fruit</td>
+      <td>white</td>
+      <td>4</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1460,15 +1461,15 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>8</td>
+      <td>7</td>
     </tr>
     <tr>
-      <th>11</th>
-      <td>apple</td>
+      <th>5</th>
+      <td>strawberry</td>
       <td>fruit</td>
-      <td>green</td>
-      <td>2</td>
-      <td>10</td>
+      <td>red</td>
+      <td>4</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1476,7 +1477,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>white</td>
       <td>1</td>
-      <td>12</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
@@ -1516,28 +1517,28 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>6</th>
-      <td>onion</td>
-      <td>veg</td>
-      <td>brown</td>
-      <td>3</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>kiwi</td>
-      <td>fruit</td>
-      <td>brown</td>
-      <td>2</td>
-      <td>6</td>
-    </tr>
-    <tr>
       <th>1</th>
       <td>cucumber</td>
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>11</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>lettuce</td>
+      <td>veg</td>
+      <td>green</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>strawberry</td>
+      <td>fruit</td>
+      <td>red</td>
+      <td>4</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1545,7 +1546,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>8</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -1579,7 +1580,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fc44872ca90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f831ff2e970&gt;
 </pre></div>
 </div>
 </div>
@@ -1626,7 +1627,7 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_42602/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59126/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>

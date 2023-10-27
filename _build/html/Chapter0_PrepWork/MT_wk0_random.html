@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -579,7 +580,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -624,14 +625,14 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
 HEADS
-HEADS
-HEADS
 TAILS
-HEADS
-HEADS
 TAILS
 HEADS
 TAILS
+HEADS
+HEADS
+HEADS
+HEADS
 </pre></div>
 </div>
 </div>
@@ -658,7 +659,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
 </pre></div>
 </div>
 </div>
@@ -681,8 +682,8 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 1. 1. 1. 1. 0. 1. 0. 0. 0.]
-sum = 6.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 1. 0. 1. 1. 0. 1. 1. 0. 1.]
+sum = 7.0
 </pre></div>
 </div>
 </div>
@@ -724,7 +725,7 @@ sum = 6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8535593ed8b1e82187f7170c7d8eb38b2bcb44bcfbd6debd3fd0446fc2f2837f.png" src="../_images/8535593ed8b1e82187f7170c7d8eb38b2bcb44bcfbd6debd3fd0446fc2f2837f.png" />
+<img alt="../_images/8ad553af46f482f0fa3bf7bf9a8c25be2fb3d5ce5d28e4b63e49094025c03fc9.png" src="../_images/8ad553af46f482f0fa3bf7bf9a8c25be2fb3d5ce5d28e4b63e49094025c03fc9.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -810,7 +811,7 @@ sum = 6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03c76749cf8ce0a12471893e8628bc5ec96868f914d29d5db581c0bf7eeb9130.png" src="../_images/03c76749cf8ce0a12471893e8628bc5ec96868f914d29d5db581c0bf7eeb9130.png" />
+<img alt="../_images/0ce4864105bbaf9fb757075e3bce7ee6e1f810e3cc1700c2b66759145b5d725e.png" src="../_images/0ce4864105bbaf9fb757075e3bce7ee6e1f810e3cc1700c2b66759145b5d725e.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -970,7 +971,7 @@ sum = 6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d63f34aa25450adbd85d656305706a1d25b63877fabdc377b0cfcf3cc3917ba.png" src="../_images/0d63f34aa25450adbd85d656305706a1d25b63877fabdc377b0cfcf3cc3917ba.png" />
+<img alt="../_images/fae28effc91ac55a38deb22b9f933fce56b1c05d97082cc6f40f594c72ce9bfc.png" src="../_images/fae28effc91ac55a38deb22b9f933fce56b1c05d97082cc6f40f594c72ce9bfc.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -995,7 +996,7 @@ sum = 6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a6bc3f75962be56948d91a28c718649c54aceb0a229a900b6aebd3a8c15af214.png" src="../_images/a6bc3f75962be56948d91a28c718649c54aceb0a229a900b6aebd3a8c15af214.png" />
+<img alt="../_images/caa73adc0e30ab855c8c26f07b6d585f5d5f8924eb2251a8d66613a3c81db7dc.png" src="../_images/caa73adc0e30ab855c8c26f07b6d585f5d5f8924eb2251a8d66613a3c81db7dc.png" />
 </div>
 </div>
 </section>

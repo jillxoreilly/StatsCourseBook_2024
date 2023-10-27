@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -576,7 +577,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/45d4797e941829a443cdbb7d0a6183c8d4eea3bff9fffea08e02769764d8786f.png" src="../_images/45d4797e941829a443cdbb7d0a6183c8d4eea3bff9fffea08e02769764d8786f.png" />
+<img alt="../_images/5512894b2404dc3f80d54b243282e6a95b34330865b66d1504f70aabf20f07f6.png" src="../_images/5512894b2404dc3f80d54b243282e6a95b34330865b66d1504f70aabf20f07f6.png" />
 </div>
 </div>
 <p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span> that the most common value for k is 7, ie 7/10 hits.</p>
@@ -605,7 +606,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.0046
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.0021
 np = 7.0
 </pre></div>
 </div>
@@ -632,7 +633,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/35bcb96e76e1d014dd05bb91d8628f661e9d691889cb527741a5bd8e4984b026.png" src="../_images/35bcb96e76e1d014dd05bb91d8628f661e9d691889cb527741a5bd8e4984b026.png" />
+<img alt="../_images/fa73e8818d10aa0373b1a36e4ea0100b20d2faef38b67e42a2af53aa5f0e7dc8.png" src="../_images/fa73e8818d10aa0373b1a36e4ea0100b20d2faef38b67e42a2af53aa5f0e7dc8.png" />
 </div>
 </div>
 <p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
@@ -660,7 +661,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.009736511035285
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.024554232964353
 sqrt(npq) = 5.0
 </pre></div>
 </div>

@@ -210,9 +210,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -560,7 +561,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -597,7 +598,7 @@ Try running the code block several times - you should get a different number on 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 1, 5, 5, 1, 5, 1, 1, 1, 6])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 6, 4, 2, 5, 3, 6, 4, 3, 6])
 </pre></div>
 </div>
 </div>
@@ -625,7 +626,7 @@ Try running the code block several times - you should get a different number on 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
@@ -657,10 +658,10 @@ Then we did the same thin again and saved the result to a variable called d2 (sh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scores on individual trials: [ 6.  9.  3.  9.  7.  5. 10. 10.  7.  3.  7. 12.  3. 11.  8.  6.  9.  4.
-  5.  5.]
-possible scores: [ 3.  4.  5.  6.  7.  8.  9. 10. 11. 12.]
-frequency: [3 1 3 2 3 1 3 2 1 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scores on individual trials: [ 4. 10.  6.  6.  8.  4.  5.  5.  6.  2.  7. 11. 10.  9.  8.  9.  7.  2.
+  9.  4.]
+possible scores: [ 2.  4.  5.  6.  7.  8.  9. 10. 11.]
+frequency: [2 3 2 3 2 2 3 2 1]
 </pre></div>
 </div>
 </div>
@@ -688,7 +689,7 @@ frequency: [3 1 3 2 3 1 3 2 1 1]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/739339ca0fa86566d0d6182fe483d712c4625fbe3e6143dc4258b3477f48de54.png" src="_images/739339ca0fa86566d0d6182fe483d712c4625fbe3e6143dc4258b3477f48de54.png" />
+<img alt="_images/5d50e7468d164a7283d279e3014ac146c221206e3330090a36f64a8060312a69.png" src="_images/5d50e7468d164a7283d279e3014ac146c221206e3330090a36f64a8060312a69.png" />
 </div>
 </div>
 </section>

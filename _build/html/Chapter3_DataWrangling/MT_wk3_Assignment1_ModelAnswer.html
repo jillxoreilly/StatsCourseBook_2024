@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.9. Model Client Report &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.10. Model Client Report &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.10. Tutorial Exercises" href="MT_wk3_TutorialExercises.html" />
-    <link rel="prev" title="3.8. Preparing a report" href="MT_wk3_ReportExample.html" />
+    <link rel="next" title="3.11. Tutorial Exercises" href="MT_wk3_TutorialExercises.html" />
+    <link rel="prev" title="3.9. Preparing a report" href="MT_wk3_ReportExample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -212,9 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.8. Preparing a report</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.9. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -507,12 +508,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case">3.9.1. Heart attack hospital admissions:<br/> Case characteristics and their relationship to dollar cost per case</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case">3.10.1. Heart attack hospital admissions:<br/> Case characteristics and their relationship to dollar cost per case</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">3.9.2. Data Source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.9.3. Data cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">3.10.2. Data Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.10.3. Data cleaning</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-overview">Sample Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#here-are-some-summary-statistics-for-the-patient-cohort-calculations-displayed-in-the-cell-below">Here are some summary statistics for the patient cohort (calculations displayed in the cell below)</a></li>
 </ul>
@@ -537,9 +538,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="model-client-report">
-<h1><span class="section-number">3.9. </span>Model Client Report<a class="headerlink" href="#model-client-report" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.10. </span>Model Client Report<a class="headerlink" href="#model-client-report" title="Permalink to this heading">#</a></h1>
 <section id="heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case">
-<h2><span class="section-number">3.9.1. </span>Heart attack hospital admissions:<br> Case characteristics and their relationship to dollar cost per case<a class="headerlink" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.10.1. </span>Heart attack hospital admissions:<br> Case characteristics and their relationship to dollar cost per case<a class="headerlink" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case" title="Permalink to this heading">#</a></h2>
 <section id="set-up-python-libraries">
 <h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
 <p>Necessary for the code below to run - run but do not modify this cell</p>
@@ -560,7 +561,7 @@ document.write(`
 </section>
 </section>
 <section id="data-source">
-<h2><span class="section-number">3.9.2. </span>Data Source<a class="headerlink" href="#data-source" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.10.2. </span>Data Source<a class="headerlink" href="#data-source" title="Permalink to this heading">#</a></h2>
 <p>The report examines a sample of 12,843 patients admitted to hospital in New York City with a heart attack.</p>
 <p>The data were collected via the Medicare system were downloaded from <a href="https://dasl.datadescription.com/">DASL</a>.</p>
 <p>The variables recorded were:</p>
@@ -573,7 +574,7 @@ document.write(`
 <li>DIED -coded as 1 if the patient died and 0 if they survived
 </ul></section>
 <section id="data-cleaning">
-<h2><span class="section-number">3.9.3. </span>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.10.3. </span>Data cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h2>
 <p>Data values exceding plausible ranges (age&gt;110: 2 cases, length of stay&gt;100 days: 1 case) were exculded from the analysis (the remaining data for affected patients were retained in the database). No other outliers or bad data points were identifed, but we note that the cost of stay (CHARGES) was not recorded in 699 out of 12 843 cases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -881,7 +882,7 @@ proportion of those who survived, who stayed longer than 1 day in hospital:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.8. </span>Preparing a report</p>
+        <p class="prev-next-title"><span class="section-number">3.9. </span>Preparing a report</p>
       </div>
     </a>
     <a class="right-next"
@@ -889,7 +890,7 @@ proportion of those who survived, who stayed longer than 1 day in hospital:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.10. </span>Tutorial Exercises</p>
+        <p class="prev-next-title"><span class="section-number">3.11. </span>Tutorial Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -908,12 +909,12 @@ proportion of those who survived, who stayed longer than 1 day in hospital:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case">3.9.1. Heart attack hospital admissions:<br/> Case characteristics and their relationship to dollar cost per case</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heart-attack-hospital-admissions-br-case-characteristics-and-their-relationship-to-dollar-cost-per-case">3.10.1. Heart attack hospital admissions:<br/> Case characteristics and their relationship to dollar cost per case</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">3.9.2. Data Source</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.9.3. Data cleaning</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-source">3.10.2. Data Source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">3.10.3. Data cleaning</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-overview">Sample Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#here-are-some-summary-statistics-for-the-patient-cohort-calculations-displayed-in-the-cell-below">Here are some summary statistics for the patient cohort (calculations displayed in the cell below)</a></li>
 </ul>
