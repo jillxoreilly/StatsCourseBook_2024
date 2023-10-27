@@ -212,7 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -1071,12 +1074,12 @@ document.write(`
 <h2><span class="section-number">2.9.3. </span>3. Parietal neurons dataset<a class="headerlink" href="#parietal-neurons-dataset" title="Permalink to this heading">#</a></h2>
 <p>I mentioned that Seaborn was built by a neuroscientist, Michael Waskom, and a couple of the example datasets are from neuroscience.</p>
 <p>Here we explore the <tt>dots</tt> dataset, from a study by <a href="https://pubmed.ncbi.nlm.nih.gov/12417672/">Roitman and Shadlen (2002)</a>. This study contains firing rates over time from neurons in the parietal cortex of a monkey performing a perceptual decision-making task.</p>
-<p>In the task, the monkey observes a <em>random dot kinematogram</em> - a stimulus containing dots that mainly move about at random. A small proportion of dots move <strong>coherently</strong> towards the left or right (or in this case, upwards!).</p>
+<p>In the task, the monkey observes a <em>random dot kinematogram</em> - a stimulus containing dots that mainly move about at random. A small proportion of dots move <strong>coherently</strong> upwards of downwards.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_RDKUP.gif"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_RDKUP.gif" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_RDKUP.gif" style="width: 25%;" /></a>
 <p>The monkey’s task is to indicate the direction in which the dots are moving - instead of pressing a button, the monkey moves its gaze to one of two targets on the screen:</p>
 <ul class="simple">
-<li><p>left = move eyes to target T1</p></li>
-<li><p>right = move gaze to target T2</p></li>
+<li><p>up = move eyes to target T1</p></li>
+<li><p>down = move gaze to target T2</p></li>
 </ul>
 <p>The explanation for this dataset is somewhat involved (although PPL and BMS students will in fact cover this study in lectures after Christmas) but it may be helpful to see the following figure, which is what we are eventually aiming for:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_cells.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_cells.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk2_cells.png" style="width: 75%;" /></a>
@@ -1212,7 +1215,7 @@ document.write(`
 <p>The dataset contains timeseries alligned to two timepoints:</p>
 <ul class="simple">
 <li><p>stimulus onset (<tt>align == ‘dots’</tt>)</p></li>
-<li><p>response onset (<tt>align == ‘sacc’</tt>)</p></li>
+<li><p>response (saccade) onset (<tt>align == ‘sacc’</tt>)</p></li>
 </ul>
 <p>We are going to split the dataframe and deal with these separately:</p>
 <div class="cell docutils container">

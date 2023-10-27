@@ -1,0 +1,86 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+sns.histplot(data=CrimeSurvey, x='Age', bins=range(15,100,5), hue='bcsvictim')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[6], line 1[0m
+[0;32m----> 1[0m [43msns[49m[38;5;241;43m.[39;49m[43mhistplot[49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mCrimeSurvey[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mAge[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mbins[49m[38;5;241;43m=[39;49m[38;5;28;43mrange[39;49m[43m([49m[38;5;241;43m15[39;49m[43m,[49m[38;5;241;43m100[39;49m[43m,[49m[38;5;241;43m5[39;49m[43m)[49m[43m,[49m[43m [49m[43mhue[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mbcsvictim[39;49m[38;5;124;43m'[39;49m[43m)[49m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py:1395[0m, in [0;36mhistplot[0;34m(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)[0m
+[1;32m   1374[0m [38;5;28;01mdef[39;00m [38;5;21mhistplot[39m(
+[1;32m   1375[0m     data[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m,
+[1;32m   1376[0m     [38;5;66;03m# Vector variables[39;00m
+[0;32m   (...)[0m
+[1;32m   1392[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m   1393[0m ):
+[0;32m-> 1395[0m     p [38;5;241m=[39m [43m_DistributionPlotter[49m[43m([49m
+[1;32m   1396[0m [43m        [49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m
+[1;32m   1397[0m [43m        [49m[43mvariables[49m[38;5;241;43m=[39;49m[43m_DistributionPlotter[49m[38;5;241;43m.[39;49m[43mget_semantics[49m[43m([49m[38;5;28;43mlocals[39;49m[43m([49m[43m)[49m[43m)[49m
+[1;32m   1398[0m [43m    [49m[43m)[49m
+[1;32m   1400[0m     p[38;5;241m.[39mmap_hue(palette[38;5;241m=[39mpalette, order[38;5;241m=[39mhue_order, norm[38;5;241m=[39mhue_norm)
+[1;32m   1402[0m     [38;5;28;01mif[39;00m ax [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/distributions.py:113[0m, in [0;36m_DistributionPlotter.__init__[0;34m(self, data, variables)[0m
+[1;32m    107[0m [38;5;28;01mdef[39;00m [38;5;21m__init__[39m(
+[1;32m    108[0m     [38;5;28mself[39m,
+[1;32m    109[0m     data[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[1;32m    110[0m     variables[38;5;241m=[39m{},
+[1;32m    111[0m ):
+[0;32m--> 113[0m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mdata[49m[43m,[49m[43m [49m[43mvariables[49m[38;5;241;43m=[39;49m[43mvariables[49m[43m)[49m
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:640[0m, in [0;36mVectorPlotter.__init__[0;34m(self, data, variables)[0m
+[1;32m    635[0m [38;5;66;03m# var_ordered is relevant only for categorical axis variables, and may[39;00m
+[1;32m    636[0m [38;5;66;03m# be better handled by an internal axis information object that tracks[39;00m
+[1;32m    637[0m [38;5;66;03m# such information and is set up by the scale_* methods. The analogous[39;00m
+[1;32m    638[0m [38;5;66;03m# information for numeric axes would be information about log scales.[39;00m
+[1;32m    639[0m [38;5;28mself[39m[38;5;241m.[39m_var_ordered [38;5;241m=[39m {[38;5;124m"[39m[38;5;124mx[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m, [38;5;124m"[39m[38;5;124my[39m[38;5;124m"[39m: [38;5;28;01mFalse[39;00m}  [38;5;66;03m# alt., used DefaultDict[39;00m
+[0;32m--> 640[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43massign_variables[49m[43m([49m[43mdata[49m[43m,[49m[43m [49m[43mvariables[49m[43m)[49m
+[1;32m    642[0m [38;5;28;01mfor[39;00m var, [38;5;28mcls[39m [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39m_semantic_mappings[38;5;241m.[39mitems():
+[1;32m    643[0m 
+[1;32m    644[0m     [38;5;66;03m# Create the mapping function[39;00m
+[1;32m    645[0m     map_func [38;5;241m=[39m partial([38;5;28mcls[39m[38;5;241m.[39mmap, plotter[38;5;241m=[39m[38;5;28mself[39m)
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:701[0m, in [0;36mVectorPlotter.assign_variables[0;34m(self, data, variables)[0m
+[1;32m    699[0m [38;5;28;01melse[39;00m:
+[1;32m    700[0m     [38;5;28mself[39m[38;5;241m.[39minput_format [38;5;241m=[39m [38;5;124m"[39m[38;5;124mlong[39m[38;5;124m"[39m
+[0;32m--> 701[0m     plot_data, variables [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_assign_variables_longform[49m[43m([49m
+[1;32m    702[0m [43m        [49m[43mdata[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mvariables[49m[43m,[49m
+[1;32m    703[0m [43m    [49m[43m)[49m
+[1;32m    705[0m [38;5;28mself[39m[38;5;241m.[39mplot_data [38;5;241m=[39m plot_data
+[1;32m    706[0m [38;5;28mself[39m[38;5;241m.[39mvariables [38;5;241m=[39m variables
+
+File [0;32m~/opt/anaconda3/lib/python3.9/site-packages/seaborn/_oldcore.py:938[0m, in [0;36mVectorPlotter._assign_variables_longform[0;34m(self, data, **kwargs)[0m
+[1;32m    933[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(val, ([38;5;28mstr[39m, [38;5;28mbytes[39m)):
+[1;32m    934[0m 
+[1;32m    935[0m     [38;5;66;03m# This looks like a column name but we don't know what it means![39;00m
+[1;32m    937[0m     err [38;5;241m=[39m [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCould not interpret value `[39m[38;5;132;01m{[39;00mval[38;5;132;01m}[39;00m[38;5;124m` for parameter `[39m[38;5;132;01m{[39;00mkey[38;5;132;01m}[39;00m[38;5;124m`[39m[38;5;124m"[39m
+[0;32m--> 938[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(err)
+[1;32m    940[0m [38;5;28;01melse[39;00m:
+[1;32m    941[0m 
+[1;32m    942[0m     [38;5;66;03m# Otherwise, assume the value is itself data[39;00m
+[1;32m    943[0m 
+[1;32m    944[0m     [38;5;66;03m# Raise when data object is present and a vector can't matched[39;00m
+[1;32m    945[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(data, pd[38;5;241m.[39mDataFrame) [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m [38;5;28misinstance[39m(val, pd[38;5;241m.[39mSeries):
+
+[0;31mValueError[0m: Could not interpret value `bcsvictim` for parameter `hue`
+ValueError: Could not interpret value `bcsvictim` for parameter `hue`
+

@@ -212,7 +212,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -727,7 +730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/629423090.py:9: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/629423090.py:9: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
@@ -867,14 +870,14 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
   <tbody>
     <tr>
       <th>0</th>
-      <td>10</td>
       <td>12</td>
+      <td>10</td>
       <td>-2</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>17</td>
       <td>13</td>
+      <td>17</td>
       <td>4</td>
     </tr>
     <tr>
@@ -903,8 +906,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>6</th>
-      <td>18</td>
       <td>13</td>
+      <td>18</td>
       <td>5</td>
     </tr>
     <tr>
@@ -921,8 +924,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>9</th>
-      <td>14</td>
       <td>22</td>
+      <td>14</td>
       <td>8</td>
     </tr>
   </tbody>
@@ -975,8 +978,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
   <tbody>
     <tr>
       <th>0</th>
-      <td>11</td>
       <td>1</td>
+      <td>11</td>
     </tr>
     <tr>
       <th>1</th>
@@ -985,8 +988,8 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
       <td>13</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -1030,34 +1033,34 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/2198263489.py:3: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/2198263489.py:3: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_32317/2198263489.py:20: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_59474/2198263489.py:20: FutureWarning: 
 
 The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 
   sns.barplot(data=socks_shuffled, ci=None, color=[0.9,0.9,0.9]) # ci=None switches off errorbars
 </pre></div>
 </div>
-<img alt="../_images/30d38b4cdc71c3210102ea0f1a88524c56aacd97e71353226c81772849e9d440.png" src="../_images/30d38b4cdc71c3210102ea0f1a88524c56aacd97e71353226c81772849e9d440.png" />
+<img alt="../_images/14115f57b2015da9406d059719f4ba5bd9818810fd6af05ba3e363c994962b73.png" src="../_images/14115f57b2015da9406d059719f4ba5bd9818810fd6af05ba3e363c994962b73.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -1077,7 +1080,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean difference for the last shuffle = -0.6
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1112,7 @@ The `ci` parameter is deprecated. Use `errorbar=None` for the same effect.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d3a42b14886844f5202b37d401c64e73681f4933ec916abe8a7cb07418661aba.png" src="../_images/d3a42b14886844f5202b37d401c64e73681f4933ec916abe8a7cb07418661aba.png" />
+<img alt="../_images/8161347c9bbdba828643262d5f0bb2bb2f84c53fafc939d2c61ea3c454d1a150.png" src="../_images/8161347c9bbdba828643262d5f0bb2bb2f84c53fafc939d2c61ea3c454d1a150.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;6.6 = 0.13999999999999999%
 </pre></div>
 </div>
