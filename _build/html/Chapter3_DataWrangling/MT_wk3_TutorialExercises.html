@@ -330,6 +330,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter3_DataWrangling/MT_wk3_TutorialExercises.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -385,7 +416,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter3_DataWrangling/MT_wk3_TutorialExercises.md" target="_blank"
+      <li><a href="../_sources/Chapter3_DataWrangling/MT_wk3_TutorialExercises.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +426,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -454,7 +485,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -470,6 +503,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crime-survey-data">3.11.1. Crime Survey Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-the-dataset">Variables in the dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-variables">3.11.2. Getting to know the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-most-likely-to-be-a-victim-of-crime">3.11.3. Who is most likely to be a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-demographics">3.11.4. Do attitudes differ depending on demographics?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">3.11.5. Do attitudes differ depending on whether the respondant has been a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">3.11.6. Conclusions</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,7 +533,466 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
 <h1><span class="section-number">3.11. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
-<p>These will prepare students for the Hand in Assignment - to be posted soon</p>
+<p>These tutorial exercises are designed to help you prepare for the first assignment.</p>
+<p>As a researcher, there are two distinct phases to data analysis:</p>
+<ul class="simple">
+<li><p>Understanding the dataset yourself - this involves making lots of quick plots and descriptive statistics to</p>
+<ul>
+<li><p>check for outliers</p></li>
+<li><p>find out the data distributions</p></li>
+<li><p>look for differences between categories</p></li>
+<li><p>look for associations between variables
+<br></p></li>
+</ul>
+</li>
+<li><p>Preparing a report for a reader - this involves a focus on readability and the reader</p>
+<ul>
+<li><p>explain any key features of the dataset</p></li>
+<li><p>highlighting key results with descriptive statistics and figures</p></li>
+<li><p>figures should be well labelled and tweaked to make your point as clearly as possible</p></li>
+<li><p>there should be clear, readable explanatory text</p></li>
+<li><p>for most readers/clients, non technical language should be used</p></li>
+<li><p>in all cases, jargon should be avoided</p></li>
+</ul>
+</li>
+</ul>
+<p>In these tutorial exercises, you will complete some guided tasks (and some open-ended ones) to explore the dataset for yourself.</p>
+<p>For the hand-in assignment, you will produce a report on the same dataset for a specified reader.</p>
+<section id="crime-survey-data">
+<h2><span class="section-number">3.11.1. </span>Crime Survey Data<a class="headerlink" href="#crime-survey-data" title="Permalink to this heading">#</a></h2>
+<p>We will work with a dataset extracted from the Crime Survey England and Wales 2013.</p>
+<p>I obtained the data from the UK Data Service, a data repository run by the UK Research Councils. This text is from their introduction to the dataset:</p>
+<p><em>The Crime Survey for England and Wales (CSEW) is a face-to-face victimisation survey in which
+people resident in households in England and Wales are asked about their experiences of a range of
+crimes in the 12 months prior to the interview. Respondents to the survey are also asked about their
+perceptions of crime and attitudes towards crime related issues such as the police and criminal justice
+system.</em></p>
+<p>The dataset I have given you contains only some of the questions that respondants were asked, containing information about the respondants’ individual demographic features, neighbourhood, perceptions of crime and attitudes towards the police and criminal justice system.</p>
+<p>The brief for the  hand-in report will be to write a short report for the Home Secretary addressing two topics:</p>
+<ol class="arabic simple">
+<li><p>Which groups are the momst likely to be victims of crime? and</p></li>
+<li><p>What factors affect confidence in policing and crimial justice?’,</p></li>
+</ol>
+<p>Note that the idea is to write for a generic Home Secretary  - they have responsibility for Law and Order and as a politician are interested in how different sections of the public perceive these issues. You can assume they have no statistical training. However there is no need to accommodate the political attitudes or personal characteristics of any particular Home Secretary.</p>
+<p>In these preparatory exercises you will play around with the data to try and work out which factors are important predictors of that confidence.</p>
+<p>I have put my own conclusions at the bottom of this page - this is just to give an idea of the kinds of things you might look at.</p>
+<section id="note">
+<h3>Note<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h3>
+<p>The survey was conducted in 2013 in the UK. Events of recent years may have affected the confidence of certain groups in the police; this would not be reflected in the data used here.</p>
+</section>
+<section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-the-data">
+<h3>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h3>
+<p>Download the dataset from Canvas and import them as a dataframe called <code class="docutils literal notranslate"><span class="pre">crime</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/CrimeData.csv&#39;</span><span class="p">)</span>
+<span class="n">crime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>AgeGroup</th>
+      <th>EthnicGroup</th>
+      <th>Education</th>
+      <th>SES</th>
+      <th>DeprivationIndex</th>
+      <th>Victim</th>
+      <th>effectx</th>
+      <th>fairx</th>
+      <th>confx</th>
+      <th>antisocx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>135230170.0</td>
+      <td>Male</td>
+      <td>45.0</td>
+      <td>4</td>
+      <td>White</td>
+      <td>University</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.290506</td>
+      <td>3.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>135230210.0</td>
+      <td>Male</td>
+      <td>28.0</td>
+      <td>2</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>-0.755949</td>
+      <td>NaN</td>
+      <td>-0.349198</td>
+      <td>-0.52</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>135231010.0</td>
+      <td>Female</td>
+      <td>58.0</td>
+      <td>5</td>
+      <td>Black or Black British</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>-1.344910</td>
+      <td>-0.544786</td>
+      <td>0.381797</td>
+      <td>2.27</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>135231210.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>Asian or Asian British</td>
+      <td>GCSE</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>135233210.0</td>
+      <td>Female</td>
+      <td>64.0</td>
+      <td>5</td>
+      <td>White</td>
+      <td>Other</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>0.152448</td>
+      <td>0.914933</td>
+      <td>-0.613168</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9295</th>
+      <td>147638210.0</td>
+      <td>Male</td>
+      <td>43.0</td>
+      <td>3</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>-0.436513</td>
+      <td>NaN</td>
+      <td>-1.029429</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>9296</th>
+      <td>147639090.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.132483</td>
+      <td>NaN</td>
+      <td>1.051876</td>
+      <td>-0.45</td>
+    </tr>
+    <tr>
+      <th>9297</th>
+      <td>147639130.0</td>
+      <td>Female</td>
+      <td>80.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.808211</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>9298</th>
+      <td>147639250.0</td>
+      <td>Male</td>
+      <td>86.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>-0.446495</td>
+      <td>0.408086</td>
+      <td>1.711802</td>
+      <td>-0.56</td>
+    </tr>
+    <tr>
+      <th>9299</th>
+      <td>147639290.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>1.579928</td>
+      <td>NaN</td>
+      <td>-0.115685</td>
+      <td>-1.22</td>
+    </tr>
+  </tbody>
+</table>
+<p>9300 rows × 13 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="variables-in-the-dataset">
+<h3>Variables in the dataset<a class="headerlink" href="#variables-in-the-dataset" title="Permalink to this heading">#</a></h3>
+<p>Information about the respondant and their neighbourhood:</p>
+<ul class="simple">
+<li><p><strong>ID</strong> a unique number for each participant</p></li>
+<li><p><strong>Sex</strong></p></li>
+<li><p><strong>Age</strong> in years</p></li>
+<li><p><strong>Age Group</strong> ages in 10-year groups</p></li>
+<li><p><strong>Ethnic Group</strong> the categories given are the ones recorded in the original survey</p></li>
+<li><p><strong>Education</strong> highest level of education completed; modern British qualifications are used as a short hand for any equivalent, for example ‘A-Levels’ includes any equivalent of completing high school to age 18.</p></li>
+<li><p><strong>SES</strong> socio-economic status</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>Managerial and professional occs</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Intermediate occs</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Small employers and own account workers</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Lower supervisory and technical occupations</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Semi-routine and routine occupations</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>Never worked and long term unemployed</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Full-time students</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="8">
+<li><p>Not classified</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>Deprivation Index</strong> this is a neighbourhood-level measure of poverty, in qunitiles</p>
+<ul>
+<li><p>1 is the most deprived (poorest) 20% of neighbourhoods</p></li>
+<li><p>5 is the least deprived (wealthiest) 20%</p></li>
+</ul>
+</li>
+<li><p><strong>Victim</strong> has the respondant been a victim of crime in the last 12 months?</p></li>
+</ul>
+<p>Information about the respondant’s attitudes on the following questions (each variable actually reflects a combination of the respondant’s answers to several questions; for example <strong>antisocx</strong> is based on several questions asking about different antisocial behaviours- ‘is there vandalism in your neighbourhood’, ‘are there gangs present in your neighbourhood’ etc):</p>
+<ul class="simple">
+<li><p><strong>effectx</strong> how effective is the criminal justice system?</p></li>
+<li><p><strong>fairx</strong> how fair is the criminal justice system?</p></li>
+<li><p><strong>confx</strong> how confident are you in the policing of your neighbourhood?</p></li>
+<li><p><strong>antisocx</strong> how much antisocial behaviour is there in your neighbourhood?</p></li>
+</ul>
+</section>
+</section>
+<section id="getting-to-know-the-variables">
+<h2><span class="section-number">3.11.2. </span>Getting to know the variables<a class="headerlink" href="#getting-to-know-the-variables" title="Permalink to this heading">#</a></h2>
+<p>In this first section you will explore each variable individually by making suitable graphs. Complete each code block to produce a suitable plot or descriptive statistic. There are no right answers but in each case you should look at what you produced and evaluate whether your learned something from it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Are there more men or women in the sample?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What ages were included in the survey and what is the distribution of respondants&#39; ages?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What are the bins used for the variable AgeGroup?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many respondants came from each ethnic group?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What proportion of respondants have been a victim of crime in the last 12 months?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of the attitude variables (effectx, fairx, confx and antisocx) plot the distribution</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the attitude variables (effectx, fairx, confx and antisocx) what is the mean and standard deviation?</span>
+<span class="c1"># Can you guess how these attitude variables ended up with that mean and standard deviation (think back to the section on standardizing data)?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which variables have a lot of missing data?</span>
+<span class="c1"># HINT use df.isna() and sum()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="who-is-most-likely-to-be-a-victim-of-crime">
+<h2><span class="section-number">3.11.3. </span>Who is most likely to be a victim of crime?<a class="headerlink" href="#who-is-most-likely-to-be-a-victim-of-crime" title="Permalink to this heading">#</a></h2>
+<p>Explore which demographic variables make a different to the chance of being a victim of crime. Are more men than women victims of crime? etc</p>
+<p><strong>HINT</strong> as <tt>Victim</tt> is coded as 1 (if they have been a victim of crime in the past 12 months) and 0 (otherwise), you can obtain the proportion of people who have been a victim by taking the mean value of the column <tt>Victim</tt>.</p>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">sns.barplot()</span></code> with the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">hue</span></code> arguments to plot the proportion who are victims of crime within each category (each age group, etc).</p>
+<p>You can also try disaggregating by a second variable, eg does whether men or women are more likely to be victims of crime differ by ethnic group?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You will add several code blocks here to explore the data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="do-attitudes-differ-depending-on-demographics">
+<h2><span class="section-number">3.11.4. </span>Do attitudes differ depending on demographics?<a class="headerlink" href="#do-attitudes-differ-depending-on-demographics" title="Permalink to this heading">#</a></h2>
+<p>Looking at the attitude variables (effectx, fairx, confx and antisocx), which demographic factors seem to influence these?</p>
+<p>I found it most helpful to make KDE plots for the distribution of each attitude variable in each demographic group; because there are often many groups to compare, the simplicity of the KDE plot (without shading) is helpful.</p>
+<p>Because there are different numbers of people in each group, you may want to normalize all the KDE plots to have the same area using the argument <code class="docutils literal notranslate"><span class="pre">commmon_normm=False</span></code> as below - this makes it easier to compare groups</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Under 25&#39;</span><span class="p">,</span><span class="s1">&#39;25-34&#39;</span><span class="p">,</span><span class="s1">&#39;35-44&#39;</span><span class="p">,</span><span class="s1">&#39;45-54&#39;</span><span class="p">,</span><span class="s1">&#39;55-64&#39;</span><span class="p">,</span><span class="s1">&#39;65-74&#39;</span><span class="p">,</span><span class="s1">&#39;75+&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" src="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" />
+</div>
+</div>
+</section>
+<section id="do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">
+<h2><span class="section-number">3.11.5. </span>Do attitudes differ depending on whether the respondant has been a victim of crime?<a class="headerlink" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime" title="Permalink to this heading">#</a></h2>
+<p>You can use a similar approach to that used for demographic factors above.</p>
+<p>You imght think about disaggregating by some demographic factors - does being a victimm of crime make some groups more confident in the police (etc) and other groups, less confident? What might this say about different groups/ interactions with the police?</p>
+</section>
+<section id="conclusions">
+<h2><span class="section-number">3.11.6. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this heading">#</a></h2>
+<p>Young people, students and those living in areas of high deprivation are more likely to be victims of crime and are more likely to experience antisocial behaviour in their neighbourhood.</p>
+<p>Perhaps surprisingly, there is little diference in attitudes to the police and criminal justice system between these groups, and those groups who experience much less crime and antisocial behaviour; there is a slight effect that people of low SES or in areas of deprivation have momre positive, rather than neutral, attitudes to the police. There is quite a strong effect that young people have more positive attitudes to the criminal justice system than older people, despite experiencing mmore crime and antisocial behaviour.</p>
+<p>Those who have been a victim of crime have slightly higher average confidence in the police than those who have not; mainly, a large proportion of people who have not been victims of crime expressed neutral attitudes to the police.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -538,6 +1049,31 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crime-survey-data">3.11.1. Crime Survey Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-the-dataset">Variables in the dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-variables">3.11.2. Getting to know the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-most-likely-to-be-a-victim-of-crime">3.11.3. Who is most likely to be a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-demographics">3.11.4. Do attitudes differ depending on demographics?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">3.11.5. Do attitudes differ depending on whether the respondant has been a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">3.11.6. Conclusions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
