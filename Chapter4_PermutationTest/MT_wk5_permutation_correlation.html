@@ -853,8 +853,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.8011532312132079, pvalue=9.999000099990002e-05, null_distribution=array([ 0.19375336, -0.2490186 ,  0.27089318, ...,  0.00711079,
-        0.02751222,  0.08566711]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.8011532312132079, pvalue=9.999000099990002e-05, null_distribution=array([-0.52960217,  0.07775836, -0.32879468, ..., -0.31813163,
+        0.33500914,  0.11354447]))
 </pre></div>
 </div>
 </div>
@@ -877,7 +877,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73028a00280cccf2fbdf963afdc4399c17fa2b275d64af85cafe86ef5c18384d.png" src="../_images/73028a00280cccf2fbdf963afdc4399c17fa2b275d64af85cafe86ef5c18384d.png" />
+<img alt="../_images/4674cb372c1566a2628acfbe5e466141e3ac6a7ae62613de8ad1b9b0e9f8baf6.png" src="../_images/4674cb372c1566a2628acfbe5e466141e3ac6a7ae62613de8ad1b9b0e9f8baf6.png" />
 </div>
 </div>
 <p>We can see that the null distribution is nice and symmetrical (the average correlation in shuffled data is zero, whilst positive and negative correlations are equally likely)</p>
@@ -896,35 +896,10 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># (number of shuffles)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span> <span class="c1"># array to store mean difference for each shuffle</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">broccoli_shuffled</span> <span class="o">=</span> <span class="n">broccoli</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># work on a copy of the original dataframe</span>
-    <span class="n">broccoli_shuffled</span><span class="p">[</span><span class="s1">&#39;broccoli_g&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="n">broccoli</span><span class="p">[</span><span class="s1">&#39;broccoli_g&#39;</span><span class="p">])</span> <span class="c1"># replace the column &#39;Pet&#39; with a random permutation of itself</span>
-    <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">broccoli_shuffled</span><span class="o">.</span><span class="n">broccoli_g</span><span class="p">,</span> <span class="n">broccoli</span><span class="o">.</span><span class="n">IQ</span><span class="p">)</span>
-    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-    
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion &gt;0.80 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">c</span><span class="o">&gt;</span><span class="mf">0.80</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/2afeefedfc57a6b87555d0ee114ce3bc61e0d2ec998ae17f9b93ccfd32e9bbd9.png" src="../_images/2afeefedfc57a6b87555d0ee114ce3bc61e0d2ec998ae17f9b93ccfd32e9bbd9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion &gt;0.80 = 0.0%
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="the-p-value">
 <h3>The <span class="math notranslate nohighlight">\(𝑝\)</span>-value¶<a class="headerlink" href="#the-p-value" title="Permalink to this heading">#</a></h3>
-<p>The probability that the test statistic (in this case, the correlation bbetween broccoli consumption and IQ) would be observed if the null hypothesis were true, is sometimes called the <span class="math notranslate nohighlight">\(𝑝\)</span>-value.</p>
+<p>The probability that the test statistic (in this case, the correlation between broccoli consumption and IQ) would be observed if the null hypothesis were true, is sometimes called the <span class="math notranslate nohighlight">\(𝑝\)</span>-value.</p>
 <p>Our permutation test shows that the <span class="math notranslate nohighlight">\(𝑝\)</span>-value associated with the observed difference of means is basically zero- we never get a correlation of 0.80 in our 10,000 random shuffles.</p>
 <p>The result is considered statistically significant if <span class="math notranslate nohighlight">\(𝑝\)</span> is smaller than some predetermined level, known as <span class="math notranslate nohighlight">\(\alpha\)</span>. Usually <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> or <span class="math notranslate nohighlight">\(\alpha=0.01\)</span> is used, so the result is significant if <span class="math notranslate nohighlight">\(p=0.05\)</span> or <span class="math notranslate nohighlight">\(p=0.01\)</span>. Our result would be considered highly statistically significant.</p>
 </section>
