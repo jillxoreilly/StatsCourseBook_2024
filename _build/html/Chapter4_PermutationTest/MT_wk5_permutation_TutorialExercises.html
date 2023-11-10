@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. The t-test" href="../Chapter5_ClassicTests/ttest_intro.html" />
+    <link rel="next" title="2. Classic tests" href="../Chapter5_ClassicTests/classictests_intro.html" />
     <link rel="prev" title="1.10. Permutation testing - more practice" href="MT_wk5_permutation_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -236,12 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/nonpara_intro.html">2.1. Non-parametric equivalents of the t-test</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter6_Power/power_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
 </ul>
@@ -535,6 +535,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.11.3. Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-following-hypotheses">Test the following hypotheses:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slightly-harder-one">Slightly harder one:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-instructions">Detailed Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -574,27 +575,152 @@ document.write(`
 <h2><span class="section-number">1.11.2. </span>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
 <span class="n">wb</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">wb</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pandas&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_code</th>
+      <th>College</th>
+      <th>Subject</th>
+      <th>Score_preVac</th>
+      <th>Score_postVac</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>247610</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>60</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>448590</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>43</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>491100</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>79</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>316150</td>
+      <td>Lonsdale</td>
+      <td>PPE</td>
+      <td>55</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>251870</td>
+      <td>Lonsdale</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>296</th>
+      <td>440570</td>
+      <td>Beaufort</td>
+      <td>history</td>
+      <td>75</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>826030</td>
+      <td>Beaufort</td>
+      <td>maths</td>
+      <td>52</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <th>298</th>
+      <td>856260</td>
+      <td>Beaufort</td>
+      <td>Biology</td>
+      <td>83</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>947060</td>
+      <td>Beaufort</td>
+      <td>engineering</td>
+      <td>62</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>165780</td>
+      <td>Beaufort</td>
+      <td>PPE</td>
+      <td>48</td>
+      <td>56</td>
+    </tr>
+  </tbody>
+</table>
+<p>301 rows × 5 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="questions">
 <h2><span class="section-number">1.11.3. </span>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
-<p>In each case, you will need to decide:</p>
+<section id="test-the-following-hypotheses">
+<h3>Test the following hypotheses:<a class="headerlink" href="#test-the-following-hypotheses" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Wellbeing scores pre- and post-vac are correlated in engineering students</p></li>
+<li><p>There is a difference in the wellbeing scores of PPE students between Beaufort or Lonsdale (before the vacation)?</p></li>
+<li><p>Wellbeing over all students increases across the vacation</p></li>
+</ol>
+</section>
+<section id="slightly-harder-one">
+<h3>Slightly harder one:<a class="headerlink" href="#slightly-harder-one" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple" start="4">
+<li><p>Wellbeing increases more across the vacation for Beaufort students than Lonsdale students</p></li>
+</ol>
+</section>
+<section id="detailed-instructions">
+<h3>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this heading">#</a></h3>
+<p>In each case 1-4, you will need to decide what to do, carry it out and and write it up:</p>
+<p><strong>a. Hypotheses</strong></p>
 <ul class="simple">
 <li><p>what is our null hypothesis</p></li>
 <li><p>what is our alternative hypothesis?</p></li>
@@ -612,19 +738,15 @@ document.write(`
 <li><p>what value must <span class="math notranslate nohighlight">\(p\)</span> be smaller than, to reject the null hypothesis?</p></li>
 <li><p>this is the experimenter’s choice but usually 0.05 is used (sometimes 0.001 or 0.001)</p></li>
 </ul>
-<section id="test-the-following-hypotheses">
-<h3>Test the following hypotheses:<a class="headerlink" href="#test-the-following-hypotheses" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Wellbeing scores pre- and post-vac are correlated in engineering students</p></li>
-<li><p>There is a difference in the wellbeing scores of PPE students between Beaufort or Lonsdale (before the vacation)?</p></li>
-<li><p>Wellbeing over all students increases across the vacation</p></li>
-</ol>
-</section>
-<section id="slightly-harder-one">
-<h3>Slightly harder one:<a class="headerlink" href="#slightly-harder-one" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple" start="4">
-<li><p>Wellbeing increases more across the vacation for Beaufort students than Lonsdale students</p></li>
-</ol>
+<p><strong>b. Test statistic and descriptive statistics</strong></p>
+<p>What is your test statistic?</p>
+<p>Report appropriate descriptive statstics and plot the data (you should choose an appropriate plot type)</p>
+<p><strong>c. Carry out the permutation test</strong></p>
+<p>Carry out the test. Plot the null distribution. Report the <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
+<p><strong>d. Report your conclusion</strong></p>
+<p>Will you reject the null hypothesis, or fail to reject it? What is your cnclusion in plain English?</p>
+<p><strong>e. Finally, write it up</strong></p>
+<p>In each case, include a final cell in which you write the test up as if for a journal article</p>
 </section>
 </section>
 </section>
@@ -669,11 +791,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter5_ClassicTests/ttest_intro.html"
+       href="../Chapter5_ClassicTests/classictests_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>The t-test</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Classic tests</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -697,6 +819,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.11.3. Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-following-hypotheses">Test the following hypotheses:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slightly-harder-one">Slightly harder one:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-instructions">Detailed Instructions</a></li>
 </ul>
 </li>
 </ul>

@@ -236,12 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/nonpara_intro.html">2.1. Non-parametric equivalents of the t-test</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter6_Power/power_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
 </ul>
@@ -614,7 +614,7 @@ document.write(`
 <p>We obtain sock-counts for the following informal sample of 14 couples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">socks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;socks.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">socks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/socks.csv&#39;</span><span class="p">)</span>
 <span class="n">socks</span>
 </pre></div>
 </div>
@@ -778,7 +778,7 @@ document.write(`
 <h3>Is the result statistically significant?<a class="headerlink" href="#is-the-result-statistically-significant" title="Permalink to this heading">#</a></h3>
 <p>In our particular sample, husbands have (on average) more socks than their wives - our test statistic (<tt>mean(Husband-Wife)</tt>) is 6.6.</p>
 <p>However, even if there were no true sex differences in sock ownership, if we picked 10 random couples we wouldn’t expect the average difference in number of socks owned to be <em>exactly zero</em> - just by chance the wives would sometimes have more socks than the husbands, or vice versa.</p>
-<p>Is it plausible that the sex difference we observed (husbands have 6.6 more pairs of socks than their wives) arose due to chance from a situation in which there is no true sex difference in sock ownership (ie, the <em>null hypothesis is true</em>?</p>
+<p>Is it plausible that the sex difference we observed (husbands have 6.6 more pairs of socks than their wives) arose due to chance from a situation in which there is no true sex difference in sock ownership (ie, the <em>null hypothesis is true</em>?)</p>
 <p>In that case, it would be just chance whether the person with more socks in each couple was the man or the woman.</p>
 </section>
 <section id="permutation">
@@ -807,7 +807,7 @@ document.write(`
 <li><p>in most couples the husband has more socks</p></li>
 <li><p>the outlier individuals with loads of socks tend to be male</p></li>
 </ul>
-<p>To achieve shuffles that <strong>preserve the non-sex-related information</strong> whilst <strong>ignoring the sex of the sock owner</strong>, we only move people within pairs (exchange the labels ‘husband’ and ‘wife’). We <em>never</em> move people bbetween pairs (swap someone from one couple into another).</p>
+<p>To achieve shuffles that <strong>preserve the non-sex-related information</strong> whilst <strong>ignoring the sex of the sock owner</strong>, we only move people within pairs (exchange the labels ‘husband’ and ‘wife’). We <em>never</em> move people between pairs (swap someone from one couple into another).</p>
 </section>
 <section id="run-the-simulation">
 <h3>Run the simulation<a class="headerlink" href="#run-the-simulation" title="Permalink to this heading">#</a></h3>
@@ -823,11 +823,11 @@ document.write(`
 <section id="visualizing-random-shuffles-in-the-paired-data">
 <h3>Visualizing random shuffles in the paired data<a class="headerlink" href="#visualizing-random-shuffles-in-the-paired-data" title="Permalink to this heading">#</a></h3>
 <p>Here are the original data and four random permutations:</p>
-<a class="reference internal image-reference" href="../_images/MT_wk5_4Permutations.png"><img alt="../_images/MT_wk5_4Permutations.png" src="../_images/MT_wk5_4Permutations.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4Permutations.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4Permutations.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4Permutations.png" style="width: 100%;" /></a>
 <p>Look closely. Each coloured line represents one couple. Note that some of the lines are left-right flipped, but the lines never move up or down overall (because we are only flipping people within couples).</p>
 <p>The grey bars show the group means in each permutation. The values of the mean difference (Husband-Wife) for each permutation are shown in red text.</p>
 <ul class="simple">
-<li><p>Sometimes the mean number of socks is higher for the husbands (positive differences), sometimes for the wive (negative differences).</p>
+<li><p>Sometimes the mean number of socks is higher for the husbands (positive differences), sometimes for the wives (negative differences).</p>
 <ul>
 <li><p>These two situations should happen equally often in the permuted data as the ‘high sock’ partner in each couple is assigned equally often the labels ‘husband’ and wife’.</p></li>
 </ul>
@@ -852,8 +852,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0066993300669933005, null_distribution=array([-4.42857143, -3.14285714, -1.28571429, ...,  3.57142857,
-        3.14285714,  2.57142857]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0064993500649935, null_distribution=array([-3.85714286, -1.42857143,  0.85714286, ..., -1.57142857,
+        2.14285714,  2.57142857]))
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d707ecbd40d25ca24633142b6f20c6b92c26ecbc5b786596171b8bfb3419a4c1.png" src="../_images/d707ecbd40d25ca24633142b6f20c6b92c26ecbc5b786596171b8bfb3419a4c1.png" />
+<img alt="../_images/496dac9e91bddcdee88c8626b2a8db42710e97134e81af133fc1590eeae5dc71.png" src="../_images/496dac9e91bddcdee88c8626b2a8db42710e97134e81af133fc1590eeae5dc71.png" />
 </div>
 </div>
 <p>We can see that indeed, only in a few cases did the mean difference exceed 4.6.</p>

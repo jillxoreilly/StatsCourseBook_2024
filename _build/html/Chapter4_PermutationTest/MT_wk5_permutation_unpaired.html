@@ -236,12 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/nonpara_intro.html">2.1. Non-parametric equivalents of the t-test</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter6_Power/power_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
 </ul>
@@ -612,8 +612,7 @@ document.write(`
 <p>We survey five cat owners and four dog owners and ask how many times in the last week they ate yogurt. We obtain the following data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span>
-                         <span class="p">[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pet&#39;</span><span class="p">,</span><span class="s1">&#39;Yoghurt&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/yoghurt.csv&#39;</span><span class="p">)</span>
 <span class="n">yog</span>
 </pre></div>
 </div>
@@ -748,7 +747,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/45f42b730071d677607450647dd779f30d9a41deddd25b51eb641dbe44e2daaf.png" src="../_images/45f42b730071d677607450647dd779f30d9a41deddd25b51eb641dbe44e2daaf.png" />
+<img alt="../_images/656e60f851ef2440ab0316d63e84685f0dfce37f21df78b3db2b39c4737d941d.png" src="../_images/656e60f851ef2440ab0316d63e84685f0dfce37f21df78b3db2b39c4737d941d.png" />
 </div>
 </div>
 <p>We note that the mean number of yoghurts eaten is higher for cat owners, but this may be skewed by one cat-owning yogurt enthusiast.</p>
@@ -814,7 +813,7 @@ document.write(`
 <h3>Visualizing randoms shuffles in the unpaired data<a class="headerlink" href="#visualizing-randoms-shuffles-in-the-unpaired-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s see how the difference of means changes over a few random shuffles.</p>
 <p>Below I generate 4 random shuffles of our yoghurt data (in which individuals are randomly relabelled as cat- or dog-owners, maintaining the correct number of cat- and dog-owners), and plot the outcomes:</p>
-<a class="reference internal image-reference" href="../_images/MT_wk5_4PermutationsInd.png"><img alt="../_images/MT_wk5_4PermutationsInd.png" src="../_images/MT_wk5_4PermutationsInd.png" style="width: 99%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4PermutationsInd.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4PermutationsInd.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_4PermutationsInd.png" style="width: 99%;" /></a>
 <p>Note that <strong>each individual can move between the ‘cat’ and ‘dog’ group at random</strong>, but there are always 10 people in the ‘cat’ group and 8 people in the ‘dog’ group.</p>
 <p>You can see that the difference of means (difference in heights of the bars) depends on whether more of the high-yoghurt individuals are assigned as cat owners, and also depends quite a lot on which group the 13-yoghurt individual ends up in.</p>
 </section>
@@ -836,7 +835,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.5, pvalue=0.0663933606639336, null_distribution=array([1.375, 0.475, 3.4  , ..., 0.25 , 0.475, 1.375]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.5, pvalue=0.06529347065293471, null_distribution=array([-1.325,  2.725, -1.55 , ...,  1.6  ,  1.375,  1.375]))
 </pre></div>
 </div>
 </div>
@@ -859,7 +858,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27c77ea4ff2b250306ef1792891aeac5252a8a921759c0fb87ef8033653cead8.png" src="../_images/27c77ea4ff2b250306ef1792891aeac5252a8a921759c0fb87ef8033653cead8.png" />
+<img alt="../_images/3d67f04b414c356169bb7013f3245af1421c4a1acd831894c07b7e321436e6c7.png" src="../_images/3d67f04b414c356169bb7013f3245af1421c4a1acd831894c07b7e321436e6c7.png" />
 </div>
 </div>
 <p>The histogram looks a bit spikey because for this dataset (which is small and has several repeated values) there are a limited number of possible values for the means of a groups of 8 and a group of 10.</p>
@@ -877,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0491
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0466
 </pre></div>
 </div>
 </div>

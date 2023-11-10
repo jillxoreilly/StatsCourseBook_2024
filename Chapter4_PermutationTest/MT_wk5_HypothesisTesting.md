@@ -99,3 +99,10 @@ The result is usually considered statistically significant if is smaller than so
 
 Usually $\alpha = 0.05$ or $\alpha = 0.01$ is used, so the result is statistically significant if $p < 0.05$ or $p < 0.01$.
 
+
+## Reject or fail to reject the null
+
+The logic of null hypothesis testing is that if the result is statistically significant, it was unlikely to have occurred if the null was true. Therefore if the result is statistically significant we can reject the null hypothesis.
+
+If the results is *not* statistically signiciant, all we can say is that we *fail to reject* the null hypothesis. Why can't we say we “accept the null”? The reason is that we are assuming the null hypothesis is true and trying to see if there is evidence against it. Therefore, the conclusion should be in terms of rejecting the null.
+

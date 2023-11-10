@@ -236,12 +236,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/nonpara_intro.html">2.1. Non-parametric equivalents of the t-test</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter6_Power/power_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
 </ul>
@@ -520,7 +520,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-testing-overview">
 <h1><span class="section-number">1.5. </span>Permutation testing overview<a class="headerlink" href="#permutation-testing-overview" title="Permalink to this heading">#</a></h1>
 <p>To evaluate the statistical significance of our test statistic, we need to know the <em>null distribution</em> of that test statistic, ie its distribution if the null hypothesis were true.</p>
-<p>One way to do this is through ** <em>permutation</em> ** of the sample. This means shuffling around data in a way which shouldn’t matter (under the null hypothesis) but would matter if the alternative hypothesis were true.</p>
+<p>One way to do this is through <strong>permutation</strong> of the sample. This means shuffling around data in a way which shouldn’t matter (under the null hypothesis) but would matter if the alternative hypothesis were true.</p>
 <p>Exactly which data we can shuffle depends on the type of test.</p>
 <section id="independent-samples-difference-of-means">
 <h2><span class="section-number">1.5.1. </span>Independent samples, difference of means<a class="headerlink" href="#independent-samples-difference-of-means" title="Permalink to this heading">#</a></h2>
@@ -553,7 +553,7 @@ document.write(`
 </ul>
 <p>Under the null hypothesis, each brother is equally likely to be taller or shorter than <em>his own sister</em>. Our test statistic is now the <em>mean difference</em> in height between each brother and his sister; this is not the same as the difference of means, because the difference between a brother and his own sister is more consistent than the difference between a man and a randomly chosen unrelated woman:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_DiffMeans.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_DiffMeans.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_DiffMeans.png" style="width: 80%;" /></a>
-<p>If the null hypothesis were true, the mean difference between each brother and his sister would have to have arisen by chance because the taller person in each family just ahppened to be the brother. In that case the difference could just as well have arisen from assigning the labels ‘brother’ and ‘sister’ randomly without each family regardless of each person’s actual sex.</p>
+<p>If the null hypothesis were true, the mean difference between each brother and his sister would have to have arisen by chance because the taller person in each family just happened to be the brother. In that case the difference could just as well have arisen from assigning the labels ‘brother’ and ‘sister’ randomly without each family regardless of each person’s actual sex.</p>
 <p>Using the computer, we can actually do this repeatedly to find the null distribution - randomly flipping the labels ‘brother’ and ‘sister’ (or not flipping them) in each family.</p>
 <p>In shuffled data we <strong>retain features of the dataset that are independent of sex</strong>:</p>
 <ul class="simple">
@@ -566,7 +566,7 @@ document.write(`
 <li><p>randomly allocate the labels ‘Male’ and ‘Female’ <strong>within each family</strong></p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_PermPaired.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_PermPaired.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_PermPaired.png" style="width: 80%;" /></a>
-<p>Note in the shuffled datasets that the correlation (effect of family) is retained but the data now lie around the line <span class="math notranslate nohighlight">\(x=y\)</span> (shown in red), whereas previously most of the data lay on one side of the line <span class="math notranslate nohighlight">\(x=y\)</span> indicating that brothers were consistently taller than their sisters,</p>
+<p>Note in the shuffled datasets that the correlation (effect of family) is retained but the data now lie around the line <span class="math notranslate nohighlight">\(x=y\)</span> (shown in red), whereas previously most of the data lay on one side of the line <span class="math notranslate nohighlight">\(x=y\)</span> indicating that brothers were consistently taller than their sisters. The final permutation (highlighted in red) breaks the family structure (<strong>not</strong> correct in this case - hopefuly you can see why from the figure).</p>
 </section>
 <section id="paired-samples-correlation">
 <h2><span class="section-number">1.5.3. </span>Paired samples, correlation<a class="headerlink" href="#paired-samples-correlation" title="Permalink to this heading">#</a></h2>
@@ -586,13 +586,12 @@ document.write(`
 <li><p>Height is normally distributed within each sex</p></li>
 <li><p>Men are taller than women</p></li>
 </ul>
-<p>It also tells us about some potential effects to do with family:</p>
 <p><strong>But we shuffle out the shared effects of family (the correlation):</strong></p>
 <ul class="simple">
 <li><p>tall brothers have tall sisters</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_correlation.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_correlation.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_correlation.png" style="width: 80%;" /></a>
-<p>Note in the shuffled datasets that the correlation is lost, meaning the shuffled datasets are not ‘stretched out’ along the line <span class="math notranslate nohighlight">\(x=y\)</span>(shown in red). However, as in the original dataset, the shuffled datapoints mostly lie on one side of the line <span class="math notranslate nohighlight">\(x=y\)</span> indicating that brothers are (still) consistently taller than their sisters, because we didn’t ‘flip’ anyone’s sex in the shuffling process.</p>
+<p>Note in the shuffled datasets that the correlation is lost, meaning the shuffled datasets are not ‘stretched out’ along the line <span class="math notranslate nohighlight">\(x=y\)</span> (shown in red). However, as in the original dataset, the shuffled datapoints mostly lie on one side of the line <span class="math notranslate nohighlight">\(x=y\)</span> indicating that brothers are (still) consistently taller than their sisters, because we didn’t ‘flip’ anyone’s sex in the shuffling process.</p>
 </section>
 </section>
 <section id="summary">

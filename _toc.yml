@@ -68,12 +68,12 @@ parts:
         - file: Chapter4_PermutationTest/MT_wk5_permutation_correlation.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_practice.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.md
-      - file: Chapter5_ClassicTests/ttest_intro.md
+      - file: Chapter5_ClassicTests/classictests_intro.md
         sections:
-        - file: Chapter5_ClassicTests/nonpara_intro.md
+        - file: UnderConstruction1.md
       - file: Chapter6_Power/power_intro.md
         sections:
-        - file: Chapter6_Power/power_outcomes.md
+        - file: UnderConstruction3.md
     - caption: Statistical Theory
       numbered: 3
       chapters:
