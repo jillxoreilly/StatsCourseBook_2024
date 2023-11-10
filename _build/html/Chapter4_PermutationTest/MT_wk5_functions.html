@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Python Functions &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.6. Python Functions &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter4_PermutationTest/MT_wk5_functions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.4. Permutation test for paired data" href="MT_wk5_permutation_paired.html" />
-    <link rel="prev" title="1.2. Learning Objectives" href="MT_wk5_permutation_outcomes.html" />
+    <link rel="next" title="1.7. Permutation test for paired data" href="MT_wk5_permutation_paired.html" />
+    <link rel="prev" title="1.5. Permutation testing overview" href="MT_wk5_PermutationTypes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -223,12 +223,15 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk5_permutation_intro.html">1. Permutation Testing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Python Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_paired.html">1.4. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.5. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.6. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.7. Permutation testing - more practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.8. Tutorial exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -525,13 +528,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.3.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">1.3.2. Import the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function">1.3.3. What is a function?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">1.6.2. Import the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function">1.6.3. What is a function?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-of-means">1.3.4. Difference of means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-of-means">1.6.4. Difference of means</a></li>
 </ul>
             </nav>
         </div>
@@ -544,12 +547,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-functions">
-<h1><span class="section-number">1.3. </span>Python Functions<a class="headerlink" href="#python-functions" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.6. </span>Python Functions<a class="headerlink" href="#python-functions" title="Permalink to this heading">#</a></h1>
 <p>This week, we will need to create our own Python functions as part of running a permutation test.</p>
 <p>Here we will review what function are and how we can create our own using Python code.</p>
 <p>This is a kind of Python tangent to our main stats objective for the week.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.3.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but not to change it</span>
@@ -567,7 +570,7 @@ document.write(`
 </div>
 </section>
 <section id="import-the-data">
-<h2><span class="section-number">1.3.2. </span>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.2. </span>Import the data<a class="headerlink" href="#import-the-data" title="Permalink to this heading">#</a></h2>
 <p>We need some data to work with. Let’s use the good old Oxford Weather dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,7 +761,7 @@ document.write(`
 </div>
 </section>
 <section id="what-is-a-function">
-<h2><span class="section-number">1.3.3. </span>What is a function?<a class="headerlink" href="#what-is-a-function" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.3. </span>What is a function?<a class="headerlink" href="#what-is-a-function" title="Permalink to this heading">#</a></h2>
 <p>A function is a computer programme that takes in some information (an <em>input</em>), does something with it, and returns an <em>output</em>.</p>
 <ul class="simple">
 <li><p><em>Functions were introduced in DataCamp and you could review this if helpful after reading this section.</em></p></li>
@@ -780,7 +783,7 @@ document.write(`
 <li><p>Inside the function, we calculate <code class="docutils literal notranslate"><span class="pre">m</span></code> from <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
 </ul>
 <p>You will notice if you ran the code block above that nothing seemed to happen. That’s because we just created the function (computer programme) but didn’t run it.</p>
-<p>Now, having created the function, we can run it as follows:</p>
+<p>Now, having created the function, we can run or <em>call</em> it as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myMean</span><span class="p">(</span><span class="n">weather</span><span class="o">.</span><span class="n">Rainfall_mm</span><span class="p">)</span>
@@ -816,11 +819,11 @@ document.write(`
 <p>Yep, same answer.</p>
 <section id="note">
 <h3>Note<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h3>
-<p>You have to run the block defining the function before you can call it.</p>
+<p>You have to run the code block defining the function before you can call it, otherwise it won’t have been created and won’t exist!</p>
 </section>
 </section>
 <section id="difference-of-means">
-<h2><span class="section-number">1.3.4. </span>Difference of means<a class="headerlink" href="#difference-of-means" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.6.4. </span>Difference of means<a class="headerlink" href="#difference-of-means" title="Permalink to this heading">#</a></h2>
 <p>As another example, let’s define a function that takes in two inputs and finds the difference of their means:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,11 +864,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Apparently it rains more in November than May, which is unsuprising.</p>
+<p>Apparently it rains more in November than May, which is unsuprising; the mean daily rainfall is 0.51 mm greater in November.</p>
 <p>Note that which input (nov or may) gets called x and y within the function is determined by the order that we write them within the function’s parentheses</p>
 <p>In the function call we have:</p>
 <p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">dMeans(x,y):</span></code></p>
-<p>meaning taht when we call the function, whatever is first in the brackets becomes <code class="docutils literal notranslate"><span class="pre">x</span></code> and whatever is second becomes <code class="docutils literal notranslate"><span class="pre">y</span></code>. So when we call</p>
+<p>meaning that when we call the function, whatever is first in the brackets becomes <code class="docutils literal notranslate"><span class="pre">x</span></code> and whatever is second becomes <code class="docutils literal notranslate"><span class="pre">y</span></code>. So when we call</p>
 <p><code class="docutils literal notranslate"><span class="pre">dMeans(nov,may)</span></code></p>
 <ul class="simple">
 <li><p>nov becomes x and</p></li>
@@ -907,12 +910,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MT_wk5_permutation_outcomes.html"
+       href="MT_wk5_PermutationTypes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Learning Objectives</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Permutation testing overview</p>
       </div>
     </a>
     <a class="right-next"
@@ -920,7 +923,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Permutation test for paired data</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Permutation test for paired data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -939,13 +942,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.3.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">1.3.2. Import the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function">1.3.3. What is a function?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">1.6.2. Import the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function">1.6.3. What is a function?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-of-means">1.3.4. Difference of means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-of-means">1.6.4. Difference of means</a></li>
 </ul>
   </nav></div>
 

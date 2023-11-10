@@ -221,12 +221,15 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_functions.html">1.3. Python Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_paired.html">1.4. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_unpaired.html">1.5. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_correlation.html">1.6. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_practice.html">1.7. Permutation testing - more practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.8. Tutorial exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -595,7 +598,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.8590321118282106
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.8397575303159688
 </pre></div>
 </div>
 </div>
@@ -648,25 +651,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.4232034059084311
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.516468933072033
 is it a hit?:            0
-value of random number:  0.8157982209513513
-is it a hit?:            1
-value of random number:  0.7611262936684063
-is it a hit?:            1
-value of random number:  0.18989604629307244
+value of random number:  0.597330131304571
 is it a hit?:            0
-value of random number:  0.9640757817388059
+value of random number:  0.8754128145381245
 is it a hit?:            1
-value of random number:  0.05178287345118315
+value of random number:  0.221787693520897
 is it a hit?:            0
-value of random number:  0.3215733568135707
+value of random number:  0.6450195802347478
 is it a hit?:            0
-value of random number:  0.705506752448898
+value of random number:  0.9088823145328838
 is it a hit?:            1
-value of random number:  0.7063931106807569
-is it a hit?:            1
-value of random number:  0.24789455949468886
+value of random number:  0.16306625271484865
+is it a hit?:            0
+value of random number:  0.06117455556700202
+is it a hit?:            0
+value of random number:  0.37701815516057346
+is it a hit?:            0
+value of random number:  0.009714190780400034
 is it a hit?:            0
 </pre></div>
 </div>
@@ -700,14 +703,14 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 0
-0
+1
 1
 0
 0
 0
-0
-0
 1
+0
+0
 </pre></div>
 </div>
 </div>
@@ -736,7 +739,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 1. 0. 0. 0. 0. 0. 1. 0. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 1. 1. 1. 1. 0. 1.]
 </pre></div>
 </div>
 </div>
@@ -750,7 +753,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 2.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 5.0
 </pre></div>
 </div>
 </div>

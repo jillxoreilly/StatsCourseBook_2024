@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.8. Tutorial exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.11. Tutorial exercises &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. The t-test" href="../Chapter5_ClassicTests/ttest_intro.html" />
-    <link rel="prev" title="1.7. Permutation testing - more practice" href="MT_wk5_permutation_practice.html" />
+    <link rel="prev" title="1.10. Permutation testing - more practice" href="MT_wk5_permutation_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -225,12 +225,15 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk5_permutation_intro.html">1. Permutation Testing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_functions.html">1.3. Python Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_paired.html">1.4. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.5. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.6. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.7. Permutation testing - more practice</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Tutorial exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -527,9 +530,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.8.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">1.8.2. Import and view the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.8.3. Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.11.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">1.11.2. Import and view the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.11.3. Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-following-hypotheses">Test the following hypotheses:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slightly-harder-one">Slightly harder one:</a></li>
 </ul>
@@ -546,10 +549,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1><span class="section-number">1.8. </span>Tutorial exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.11. </span>Tutorial exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
 <p>We again use the wellbeing dataset, to practice running permutation tests.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.11.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,7 +571,7 @@ document.write(`
 </div>
 </section>
 <section id="import-and-view-the-data">
-<h2><span class="section-number">1.8.2. </span>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.11.2. </span>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wb</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/WellbeingSample.csv&#39;</span><span class="p">)</span>
@@ -590,7 +593,7 @@ document.write(`
 </div>
 </section>
 <section id="questions">
-<h2><span class="section-number">1.8.3. </span>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.11.3. </span>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
 <p>In each case, you will need to decide:</p>
 <ul class="simple">
 <li><p>what is our null hypothesis</p></li>
@@ -662,7 +665,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>Permutation testing - more practice</p>
+        <p class="prev-next-title"><span class="section-number">1.10. </span>Permutation testing - more practice</p>
       </div>
     </a>
     <a class="right-next"
@@ -689,9 +692,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.8.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">1.8.2. Import and view the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.8.3. Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.11.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-and-view-the-data">1.11.2. Import and view the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">1.11.3. Questions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-following-hypotheses">Test the following hypotheses:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slightly-harder-one">Slightly harder one:</a></li>
 </ul>

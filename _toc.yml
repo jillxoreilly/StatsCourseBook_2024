@@ -60,6 +60,8 @@ parts:
         sections:
         - file: Chapter4_PermutationTest/MT_wk5_permutation_outcomes.md
         - file: Chapter4_PermutationTest/MT_wk5_HypothesisTesting.md
+        - file: Chapter4_PermutationTest/MT_wk5_OneTwoTail.md
+        - file: Chapter4_PermutationTest/MT_wk5_PermutationTypes.md
         - file: Chapter4_PermutationTest/MT_wk5_functions.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_paired.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_unpaired.md

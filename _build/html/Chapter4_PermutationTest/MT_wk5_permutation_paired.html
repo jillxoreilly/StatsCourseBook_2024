@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.4. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.7. Permutation test for paired data &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter4_PermutationTest/MT_wk5_permutation_paired';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.5. Permutation test for unpaired or independent samples data" href="MT_wk5_permutation_unpaired.html" />
-    <link rel="prev" title="1.3. Python Functions" href="MT_wk5_functions.html" />
+    <link rel="next" title="1.8. Permutation test for unpaired or independent samples data" href="MT_wk5_permutation_unpaired.html" />
+    <link rel="prev" title="1.6. Python Functions" href="MT_wk5_functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -225,12 +225,15 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk5_permutation_intro.html">1. Permutation Testing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_functions.html">1.3. Python Functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.5. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.6. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.7. Permutation testing - more practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.8. Tutorial exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/ttest_intro.html">2. The t-test</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -527,8 +530,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">1.4.2. Toy example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">1.7.2. Toy example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-design">Question &amp; design</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -539,7 +542,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-random-shuffles-in-the-paired-data">Visualizing random shuffles in the paired data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-10-000-shuffles">1.4.3. Run 10,000 shuffles</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-10-000-shuffles">1.7.3. Run 10,000 shuffles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-distribution">The Null Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">The <span class="math notranslate nohighlight">\(p\)</span> value</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
@@ -547,11 +550,11 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-stats-permutation-test">1.4.4. Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-stats-permutation-test">1.7.4. Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">1.4.5. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">1.7.5. Recap</a></li>
 </ul>
             </nav>
         </div>
@@ -564,11 +567,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="permutation-test-for-paired-data">
-<h1><span class="section-number">1.4. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
-<p>We first look at the case of paired data - data in which we wish to compare two groups and each datapoint in one group has a counterpart in the other</p>
+<h1><span class="section-number">1.7. </span>Permutation test for paired data<a class="headerlink" href="#permutation-test-for-paired-data" title="Permalink to this heading">#</a></h1>
+<p>Turning to the permutation test itself, we first look at the case of paired data - data in which we wish to compare two groups and each datapoint in one group has a counterpart in the other</p>
 <p>Experimental designs using paired data include matched pairs (eg brothers and sisters) and repeated measures (measurements of the same individual before- and after- an intervention, or on- and off-drug).</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">1.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,7 +590,7 @@ document.write(`
 </div>
 </section>
 <section id="toy-example">
-<h2><span class="section-number">1.4.2. </span>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.2. </span>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this heading">#</a></h2>
 <p>[A toy example is an example with a very small dataset, just to show how it works]</p>
 <section id="question-design">
 <h3>Question &amp; design<a class="headerlink" href="#question-design" title="Permalink to this heading">#</a></h3>
@@ -611,7 +614,7 @@ document.write(`
 <p>We obtain sock-counts for the following informal sample of 14 couples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">socks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[[</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">],[</span><span class="mi">17</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="mi">48</span><span class="p">,</span><span class="mi">20</span><span class="p">],[</span><span class="mi">28</span><span class="p">,</span><span class="mi">25</span><span class="p">],[</span><span class="mi">23</span><span class="p">,</span><span class="mi">18</span><span class="p">],[</span><span class="mi">16</span><span class="p">,</span><span class="mi">14</span><span class="p">],[</span><span class="mi">18</span><span class="p">,</span><span class="mi">13</span><span class="p">],[</span><span class="mi">34</span><span class="p">,</span><span class="mi">26</span><span class="p">],[</span><span class="mi">27</span><span class="p">,</span><span class="mi">22</span><span class="p">],[</span><span class="mi">22</span><span class="p">,</span><span class="mi">14</span><span class="p">],[</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">],[</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">],[</span><span class="mi">22</span><span class="p">,</span><span class="mi">21</span><span class="p">],[</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Husband&#39;</span><span class="p">,</span><span class="s1">&#39;Wife&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">socks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;socks.csv&#39;</span><span class="p">)</span>
 <span class="n">socks</span>
 </pre></div>
 </div>
@@ -780,7 +783,7 @@ document.write(`
 </section>
 <section id="permutation">
 <h3>Permutation<a class="headerlink" href="#permutation" title="Permalink to this heading">#</a></h3>
-<p>To work out how likely it would be to get a test statistic (mean difference in socks) as large as 4.6, we are going to do is shuffle the data around to create many new (re)samples in which, <strong>wthin each couple</strong>, we we randomly decide who gets which label, <em>husband</em> or <em>wife</em>.</p>
+<p>To work out how likely it would be to get a test statistic (mean difference in socks) as large as 4.6, we are going to do is shuffle the data around to create many new (re)samples in which, <strong>within each couple</strong>, we we randomly decide who gets which label, <em>husband</em> or <em>wife</em>.</p>
 <p>Within each resample, some couples will retain their true labels and some will be relabelled; which couples are which will differ between resamples.</p>
 <p>For each resample, we then calculate the mean difference, <tt>mean(Husband-Wife)</tt>.</p>
 <p>After repeating the process thousands of times, we can ask on what proportion of random resamples we get a values of <tt>mean(Husband-Wife)</tt> at least as large as our observed difference, 4.6.</p>
@@ -834,7 +837,7 @@ document.write(`
 </section>
 </section>
 <section id="run-10-000-shuffles">
-<h2><span class="section-number">1.4.3. </span>Run 10,000 shuffles<a class="headerlink" href="#run-10-000-shuffles" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.3. </span>Run 10,000 shuffles<a class="headerlink" href="#run-10-000-shuffles" title="Permalink to this heading">#</a></h2>
 <p>To get a fine-grained estimate of how likely it is to get a test statistic of 4.6 due to change, we run a <em>lot</em> of shuffles - say 10,000.</p>
 <p>We can do this using a function from the library <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, called <code class="docutils literal notranslate"><span class="pre">scipy.stats.permutation_test()</span></code></p>
 <p>First of all we will run this (using the code block below) and learn about the output. Afterwards we will have a closer look at the Python syntax including defining a function.</p>
@@ -849,8 +852,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.006099390060993901, null_distribution=array([-2.14285714,  2.        ,  1.        , ...,  0.        ,
-        1.14285714,  2.42857143]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0066993300669933005, null_distribution=array([-4.42857143, -3.14285714, -1.28571429, ...,  3.57142857,
+        3.14285714,  2.57142857]))
 </pre></div>
 </div>
 </div>
@@ -863,7 +866,7 @@ document.write(`
 </ul>
 <section id="the-null-distribution">
 <h3>The Null Distribution<a class="headerlink" href="#the-null-distribution" title="Permalink to this heading">#</a></h3>
-<p>The <strong>null distribution</strong> is the set of 10,000 values we get for mmean difference (Husband-Wife), from our 10,000 shuffles (the equivalent of the red numbers on the 4-permutation example above)</p>
+<p>The <strong>null distribution</strong> is the set of 10,000 values we get for mean difference (Husband-Wife), from our 10,000 shuffles (the equivalent of the red numbers on the 4-permutation example above)</p>
 <p>Let’s plot the null distribution in a histogram:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50778fcb1f1dfa123a0ec83aefb1d501c0db20ecb803c783187cf8a17704622f.png" src="../_images/50778fcb1f1dfa123a0ec83aefb1d501c0db20ecb803c783187cf8a17704622f.png" />
+<img alt="../_images/d707ecbd40d25ca24633142b6f20c6b92c26ecbc5b786596171b8bfb3419a4c1.png" src="../_images/d707ecbd40d25ca24633142b6f20c6b92c26ecbc5b786596171b8bfb3419a4c1.png" />
 </div>
 </div>
 <p>We can see that indeed, only in a few cases did the mean difference exceed 4.6.</p>
@@ -891,7 +894,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0036
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0043
 </pre></div>
 </div>
 </div>
@@ -904,7 +907,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43
 </pre></div>
 </div>
 </div>
@@ -931,7 +934,7 @@ document.write(`
 </section>
 </section>
 <section id="syntax-of-stats-permutation-test">
-<h2><span class="section-number">1.4.4. </span>Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code><a class="headerlink" href="#syntax-of-stats-permutation-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.4. </span>Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code><a class="headerlink" href="#syntax-of-stats-permutation-test" title="Permalink to this heading">#</a></h2>
 <p>Let’s have a look at the Python code to run the permutation test.</p>
 <p>Firstly, we had to give the function <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code> our two samples <tt>(socks.Husband, socks.Wife)</tt> as a pair of <b>series</b> (individual columns from the dataframe), rather than giving it the whole pandas dataframe as we do for many other stats functions.</p>
 <p>Secondly, to tell <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code> the test statistic we want to get the null distribution of, we had to pass it a <em>function</em> that calculates that test statistic. We created that function, <code class="docutils literal notranslate"><span class="pre">mDiff()</span></code>, using a function definition, before running the permutation test</p>
@@ -947,7 +950,7 @@ document.write(`
 </section>
 </section>
 <section id="recap">
-<h2><span class="section-number">1.4.5. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.5. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
 <p>To run a permutation test on paired data, we randomly flipped some of the pairs so that the husband’s sock count was assigned to the wife and vice versa. We did NOT move people between couples, as we want to retain the characteristic of the original dataset that high-sock husbands tend to have high-sock wives</p>
 <p>For each shuffle we calculated the mean (pairwise) difference in the number of socks - husband-wife.</p>
 <p>Permutation testing in this way gives us a null distribution for the mean difference. Values of mean difference that occur rarely in the null distribution are considered statistically significant.</p>
@@ -991,7 +994,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Python Functions</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>Python Functions</p>
       </div>
     </a>
     <a class="right-next"
@@ -999,7 +1002,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.5. </span>Permutation test for unpaired or independent samples data</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Permutation test for unpaired or independent samples data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1018,8 +1021,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">1.4.2. Toy example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">1.7.2. Toy example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-design">Question &amp; design</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
@@ -1030,7 +1033,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-random-shuffles-in-the-paired-data">Visualizing random shuffles in the paired data</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-10-000-shuffles">1.4.3. Run 10,000 shuffles</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-10-000-shuffles">1.7.3. Run 10,000 shuffles</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-null-distribution">The Null Distribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-p-value">The <span class="math notranslate nohighlight">\(p\)</span> value</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
@@ -1038,11 +1041,11 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-stats-permutation-test">1.4.4. Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syntax-of-stats-permutation-test">1.7.4. Syntax of <code class="docutils literal notranslate"><span class="pre">stats.permutation_test()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">1.4.5. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">1.7.5. Recap</a></li>
 </ul>
   </nav></div>
 
