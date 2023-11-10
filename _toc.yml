@@ -53,11 +53,26 @@ parts:
         - file: Chapter3_DataWrangling/MT_wk3_ReportExample.md
         - file: Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.md
         - file: Chapter3_DataWrangling/MT_wk3_TutorialExercises.ipynb
-    - caption: Statistical Theory
+    - caption: Hypothesis Testing
       numbered: 3
       chapters:
-      - file: UnderConstruction1.md
-    - caption: Hypothesis Testing
+      - file: Chapter4_PermutationTest/MT_wk5_permutation_intro.md
+        sections:
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_outcomes.md
+        - file: Chapter4_PermutationTest/MT_wk5_HypothesisTesting.md
+        - file: Chapter4_PermutationTest/MT_wk5_functions.md
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_paired.md
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_unpaired.md
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_correlation.md
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_practice.md
+        - file: Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.md
+      - file: Chapter5_ClassicTests/ttest_intro.md
+        sections:
+        - file: Chapter5_ClassicTests/nonpara_intro.md
+      - file: Chapter6_Power/power_intro.md
+        sections:
+        - file: Chapter6_Power/power_outcomes.md
+    - caption: Statistical Theory
       numbered: 3
       chapters:
       - file: UnderConstruction2.md
