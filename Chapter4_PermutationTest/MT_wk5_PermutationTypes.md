@@ -39,7 +39,7 @@ Our hypotheses remain the same:
 
 Under the null hypothesis, each brother is equally likely to be taller or shorter than *his own sister*. Our test statistic is now the *mean difference* in height between each brother and his sister; this is not the same as the difference of means, because the difference between a brother and his own sister is more consistent than the difference between a man and a randomly chosen unrelated woman:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_DiffMeans.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_diffMeans.png
 :width: 80%
 :align: center
 ```
