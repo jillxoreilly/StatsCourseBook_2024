@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+
+
+plt.figure(figsize=(3,4))
+sns.violinplot(data=h, palette=[[0.9,0.9,1],[1,0.9,0.9]], inner=None)
+sns.swarmplot(data=h, palette=[[0.5,0.5,1],[1,0.5,0.5]])
+plt.plot([-0.5,0.5],[h.brother.mean(), h.brother.mean()],color=[0.5,0.5,1])
+plt.plot([0.5,1.5],[h.sister.mean(), h.sister.mean()],color=[1,0.5,0.5])
+plt.ylim(140,200)
+plt.xlim(-1,2)
+plt.ylabel('height')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_19929/1485815765.py[0m in [0;36m?[0;34m()[0m
+[0;32m----> 4[0;31m [0mplt[0m[0;34m.[0m[0mfigure[0m[0;34m([0m[0mfigsize[0m[0;34m=[0m[0;34m([0m[0;36m3[0m[0;34m,[0m[0;36m4[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0msns[0m[0;34m.[0m[0mviolinplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mh[0m[0;34m,[0m [0mpalette[0m[0;34m=[0m[0;34m[[0m[0;34m[[0m[0;36m0.9[0m[0;34m,[0m[0;36m0.9[0m[0;34m,[0m[0;36m1[0m[0;34m][0m[0;34m,[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m0.9[0m[0;34m,[0m[0;36m0.9[0m[0;34m][0m[0;34m][0m[0;34m,[0m [0minner[0m[0;34m=[0m[0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0msns[0m[0;34m.[0m[0mswarmplot[0m[0;34m([0m[0mdata[0m[0;34m=[0m[0mh[0m[0;34m,[0m [0mpalette[0m[0;34m=[0m[0;34m[[0m[0;34m[[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m,[0m[0;36m1[0m[0;34m][0m[0;34m,[0m[0;34m[[0m[0;36m1[0m[0;34m,[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m [0mplt[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0;34m[[0m[0;34m-[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m][0m[0;34m,[0m[0;34m[[0m[0mh[0m[0;34m.[0m[0mbrother[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0;34m)[0m[0;34m,[0m [0mh[0m[0;34m.[0m[0mbrother[0m[0;34m.[0m[0mmean[0m[0;34m([0m[0;34m)[0m[0;34m][0m[0;34m,[0m[0mcolor[0m[0;34m=[0m[0;34m[[0m[0;36m0.5[0m[0;34m,[0m[0;36m0.5[0m[0;34m,[0m[0;36m1[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py[0m in [0;36m?[0;34m(self, name)[0m
+[1;32m   5985[0m             [0;32mand[0m [0mname[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0m_accessors[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   5986[0m             [0;32mand[0m [0mself[0m[0;34m.[0m[0m_info_axis[0m[0;34m.[0m[0m_can_hold_identifiers_and_holds_name[0m[0;34m([0m[0mname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   5987[0m         ):
+[1;32m   5988[0m             [0;32mreturn[0m [0mself[0m[0;34m[[0m[0mname[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 5989[0;31m         [0;32mreturn[0m [0mobject[0m[0;34m.[0m[0m__getattribute__[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mname[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mAttributeError[0m: 'DataFrame' object has no attribute 'brother'
+AttributeError: 'DataFrame' object has no attribute 'brother'
+
