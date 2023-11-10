@@ -7,7 +7,12 @@ In our height example, our researcher hypothesised that men are taller than wome
 
 The above is a **one-tailed test** because the alternative hypothesis specifies the direction of the effect of interest. In this case we have a strong expectation that men are taller than women. 
 
-In terms of the null distribution, this means we will consider our observed difference of means significant if it falls **in one of the tails** of the null distribution (the tail containing cases where the mean height of men is much **greater** than the mean height of women):
+In terms of the null distribution, this means we will consider our observed difference of means significant if it falls **in one of the tails** of the null distribution (the tail containing cases where the mean height of men is much **greater** than the mean height of women; specifically if $\alpha=0.05$ then the 'tail' contains the top 5% of values for the difference of means in shuffled data):
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_righttail.png
+:width: 80%
+:align: center
+```
 
 We could have stated an alternative hypothesis proposing the opposite direction of effect:
 
@@ -33,7 +38,7 @@ In some cases, we may wish to remain neutral about the direction of the expected
 
 In the case of men's vs. women's heights this may seem odd (since we know from experience that men are taller than women). However there are many scenarios in which we wouldn't have a strong expectation about the direction of the effect - for example, if we compared the heights of Psychology and Biomedical Sciences students.
 
-When we run a two-tailed test, we would consider our result (difference of means) significant if it fell in ** *either tail* ** of the null distribution. This means that we need to set the cut-off value for significance such that the area *in both tails* adds up to the $\alpha$ value; so if we are testing at the 5% level, $\alpha = 0.5$, the cutoff value in each tail needs to be such that each of the tails contains 2.5% of cases:
+When we run a two-tailed test, we would consider our result (difference of means) significant if it fell in *either tail* of the null distribution. This means that we need to set the cut-off value for significance such that the area *in both tails* adds up to the $\alpha$ value; so if we are testing at the 5% level, $\alpha = 0.5$, the cutoff value in each tail needs to be such that each of the tails contains 2.5% of cases:
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_OneTwoTailedSchematic.png
 :width: 80%

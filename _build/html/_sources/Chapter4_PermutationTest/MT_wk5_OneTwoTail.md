@@ -5,17 +5,27 @@ In our height example, our researcher hypothesised that men are taller than wome
 * $\mathcal{H_o}$: Mean height of men = mean height of women
 * $\mathcal{H_a}$: Mean height of men > mean height of women
 
-The above is a ** *one-tailed* test** because the alternative hypothesis specifies the direction of the effect of interest. In this case we have a strong expectation that men are taller than women. 
+The above is a **one-tailed test** because the alternative hypothesis specifies the direction of the effect of interest. In this case we have a strong expectation that men are taller than women. 
 
-In terms of the null distribution, this means we will consider our observed difference of means significant if it falls **in one of the tails** of the null distribution (the tail containing cases where the mean height of men is much **greater** than the mean height of women):
+In terms of the null distribution, this means we will consider our observed difference of means significant if it falls **in one of the tails** of the null distribution (the tail containing cases where the mean height of men is much **greater** than the mean height of women; specifically if $\alpha=0.05$ then the 'tail' contains the top 5% of values for the difference of means in shuffled data):
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_righttail.png
+:width: 80%
+:align: center
+```
 
 We could have stated an alternative hypothesis proposing the opposite direction of effect:
 
 * $\mathcal{H_o}$: Mean height of men = mean height of women
 * $\mathcal{H_a}$: Mean height of men < mean height of women
 
-... in which case we would have considered the result significant only if it fell in the **other tail** (the tail containing cases where the mean height of men is much **less** than the mean height of women:
+... in which case we would have considered the result significant only if it fell in the **other tail** (the tail containing cases where the mean height of men is much **less** than the mean height of women):
 
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_wrongtail.png
+:width: 80%
+:align: center
+```
 
 ## Two tailed test
 

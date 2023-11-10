@@ -519,14 +519,16 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: Mean height of men = mean height of women</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: Mean height of men &gt; mean height of women</p></li>
 </ul>
-<p>The above is a ** <em>one-tailed</em> test** because the alternative hypothesis specifies the direction of the effect of interest. In this case we have a strong expectation that men are taller than women.</p>
-<p>In terms of the null distribution, this means we will consider our observed difference of means significant if it falls <strong>in one of the tails</strong> of the null distribution (the tail containing cases where the mean height of men is much <strong>greater</strong> than the mean height of women):</p>
+<p>The above is a <strong>one-tailed test</strong> because the alternative hypothesis specifies the direction of the effect of interest. In this case we have a strong expectation that men are taller than women.</p>
+<p>In terms of the null distribution, this means we will consider our observed difference of means significant if it falls <strong>in one of the tails</strong> of the null distribution (the tail containing cases where the mean height of men is much <strong>greater</strong> than the mean height of women; specifically if <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> then the ‘tail’ contains the top 5% of values for the difference of means in shuffled data):</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_righttail.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_righttail.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_righttail.png" style="width: 80%;" /></a>
 <p>We could have stated an alternative hypothesis proposing the opposite direction of effect:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: Mean height of men = mean height of women</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: Mean height of men &lt; mean height of women</p></li>
 </ul>
-<p>… in which case we would have considered the result significant only if it fell in the <strong>other tail</strong> (the tail containing cases where the mean height of men is much <strong>less</strong> than the mean height of women:</p>
+<p>… in which case we would have considered the result significant only if it fell in the <strong>other tail</strong> (the tail containing cases where the mean height of men is much <strong>less</strong> than the mean height of women):</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_wrongtail.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_wrongtail.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_wrongtail.png" style="width: 80%;" /></a>
 <section id="two-tailed-test">
 <h2><span class="section-number">1.4.1. </span>Two tailed test<a class="headerlink" href="#two-tailed-test" title="Permalink to this heading">#</a></h2>
 <p>In some cases, we may wish to remain neutral about the direction of the expected effect; in this case we specify a two-tailed alternative hypothesis:</p>

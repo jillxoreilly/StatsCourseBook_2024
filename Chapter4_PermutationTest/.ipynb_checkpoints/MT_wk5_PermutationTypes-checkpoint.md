@@ -2,7 +2,7 @@
 
 To evaluate the statistical significance of our test statistic, we need to know the *null distribution* of that test statistic, ie its distribution if the null hypothesis were true.
 
-One way to do this is through ** *permutation* ** of the sample. This means shuffling around data in a way which shouldn't matter (under the null hypothesis) but would matter if the alternative hypothesis were true.
+One way to do this is through **permutation** of the sample. This means shuffling around data in a way which shouldn't matter (under the null hypothesis) but would matter if the alternative hypothesis were true.
 
 Exactly which data we can shuffle depends on the type of test.
 
@@ -44,7 +44,7 @@ Under the null hypothesis, each brother is equally likely to be taller or shorte
 :align: center
 ```
 
-If the null hypothesis were true, the mean difference between each brother and his sister would have to have arisen by chance because the taller person in each family just ahppened to be the brother. In that case the difference could just as well have arisen from assigning the labels 'brother' and 'sister' randomly without each family regardless of each person's actual sex.
+If the null hypothesis were true, the mean difference between each brother and his sister would have to have arisen by chance because the taller person in each family just happened to be the brother. In that case the difference could just as well have arisen from assigning the labels 'brother' and 'sister' randomly without each family regardless of each person's actual sex.
 
 Using the computer, we can actually do this repeatedly to find the null distribution - randomly flipping the labels 'brother' and 'sister' (or not flipping them) in each family.
 
@@ -61,7 +61,8 @@ but we **shuffle out the sex-based information**:
 :align: center
 ```
 
-Note in the shuffled datasets that the correlation (effect of family) is retained but the data now lie around the line $x=y$ (shown in red), whereas previously most of the data lay on one side of the line $x=y$ indicating that brothers were consistently taller than their sisters,
+
+Note in the shuffled datasets that the correlation (effect of family) is retained but the data now lie around the line $x=y$ (shown in red), whereas previously most of the data lay on one side of the line $x=y$ indicating that brothers were consistently taller than their sisters. The final permutation (highlighted in red) breaks the family structure (**not** correct in this case - hopefuly you can see why from the figure).
 
 ## Paired samples, correlation
 
@@ -86,7 +87,6 @@ The sample tells us several interesting things about the heights of men and wome
 * Height is normally distributed within each sex
 * Men are taller than women
 
-It also tells us about some potential effects to do with family:
 
 **But we shuffle out the shared effects of family (the correlation):**
 * tall brothers have tall sisters
