@@ -776,9 +776,9 @@ document.write(`
 </section>
 <section id="is-the-result-statistically-significant">
 <h3>Is the result statistically significant?<a class="headerlink" href="#is-the-result-statistically-significant" title="Permalink to this heading">#</a></h3>
-<p>In our particular sample, husbands have (on average) more socks than their wives - our test statistic (<tt>mean(Husband-Wife)</tt>) is 6.6.</p>
+<p>In our particular sample, husbands have (on average) more socks than their wives - our test statistic (<tt>mean(Husband-Wife)</tt>) is 4.6.</p>
 <p>However, even if there were no true sex differences in sock ownership, if we picked 10 random couples we wouldn’t expect the average difference in number of socks owned to be <em>exactly zero</em> - just by chance the wives would sometimes have more socks than the husbands, or vice versa.</p>
-<p>Is it plausible that the sex difference we observed (husbands have 6.6 more pairs of socks than their wives) arose due to chance from a situation in which there is no true sex difference in sock ownership (ie, the <em>null hypothesis is true</em>?)</p>
+<p>Is it plausible that the sex difference we observed (husbands have 4.6 more pairs of socks than their wives) arose due to chance from a situation in which there is no true sex difference in sock ownership (ie, the <em>null hypothesis is true</em>?)</p>
 <p>In that case, it would be just chance whether the person with more socks in each couple was the man or the woman.</p>
 </section>
 <section id="permutation">
@@ -852,8 +852,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.006399360063993601, null_distribution=array([ 1.42857143,  4.57142857,  2.71428571, ...,  0.28571429,
-       -1.71428571,  1.42857143]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.006199380061993801, null_distribution=array([-2.71428571, -0.14285714, -0.14285714, ..., -2.57142857,
+        1.85714286,  0.57142857]))
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/682b632a02191eafbc562b23e9366100d68e9002a449b86aaa2485913c4773af.png" src="../_images/682b632a02191eafbc562b23e9366100d68e9002a449b86aaa2485913c4773af.png" />
+<img alt="../_images/17c8e7c7c50ccbd8703597d43533f7f6b9fa85f36996adf18e58f1dbf7032e3d.png" src="../_images/17c8e7c7c50ccbd8703597d43533f7f6b9fa85f36996adf18e58f1dbf7032e3d.png" />
 </div>
 </div>
 <p>We can see that indeed, only in a few cases did the mean difference exceed 4.6.</p>
@@ -894,7 +894,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0047
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0035
 </pre></div>
 </div>
 </div>
@@ -907,7 +907,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
 </pre></div>
 </div>
 </div>
