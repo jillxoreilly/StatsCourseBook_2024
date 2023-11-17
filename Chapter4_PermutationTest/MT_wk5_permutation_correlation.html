@@ -853,8 +853,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.8011532312132079, pvalue=9.999000099990002e-05, null_distribution=array([-0.19155229, -0.21986246,  0.29391119, ..., -0.15240201,
-       -0.05897252, -0.14677538]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.8011532312132079, pvalue=9.999000099990002e-05, null_distribution=array([ 0.21082996, -0.26145226, -0.08893527, ..., -0.20467452,
+        0.04159845,  0.0231447 ]))
 </pre></div>
 </div>
 </div>
@@ -877,7 +877,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51de952dc30d580cb00255e6e8c5ca9e847463014ad79a81890cbd26006def68.png" src="../_images/51de952dc30d580cb00255e6e8c5ca9e847463014ad79a81890cbd26006def68.png" />
+<img alt="../_images/43dcf05545cd3152e6a87239672dedcfdd91230163783277bc932a0124355e09.png" src="../_images/43dcf05545cd3152e6a87239672dedcfdd91230163783277bc932a0124355e09.png" />
 </div>
 </div>
 <p>We can see that the null distribution is nice and symmetrical (the average correlation in shuffled data is zero, whilst positive and negative correlations are equally likely)</p>
@@ -886,7 +886,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check which values is the null distribution are greater than 4.6 and code as 1/0</span>
 <span class="c1"># then use the numpy function np.mean() to get the avergae of those ones and zeros (ie he proportion of 1s)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;=</span> <span class="mf">0.801</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

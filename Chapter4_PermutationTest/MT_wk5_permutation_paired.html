@@ -852,8 +852,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.006199380061993801, null_distribution=array([-2.71428571, -0.14285714, -0.14285714, ..., -2.57142857,
-        1.85714286,  0.57142857]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.006099390060993901, null_distribution=array([-4.28571429, -0.57142857, -1.57142857, ..., -2.42857143,
+       -2.        ,  1.        ]))
 </pre></div>
 </div>
 </div>
@@ -876,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17c8e7c7c50ccbd8703597d43533f7f6b9fa85f36996adf18e58f1dbf7032e3d.png" src="../_images/17c8e7c7c50ccbd8703597d43533f7f6b9fa85f36996adf18e58f1dbf7032e3d.png" />
+<img alt="../_images/8561d940caa0184e526a37e93eb6e9186470873597c5f253d1a84b37734580fa.png" src="../_images/8561d940caa0184e526a37e93eb6e9186470873597c5f253d1a84b37734580fa.png" />
 </div>
 </div>
 <p>We can see that indeed, only in a few cases did the mean difference exceed 4.6.</p>
@@ -889,12 +889,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check which values is the null distribution are greater than 4.6 and code as 1/0</span>
 <span class="c1"># then use the numpy function np.mean() to get the avergae of those ones and zeros (ie he proportion of 1s)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;</span> <span class="mf">4.6</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;=</span> <span class="mf">4.57</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0035
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.006
 </pre></div>
 </div>
 </div>
@@ -902,12 +902,12 @@ document.write(`
 <p>The proportion of shuffles in which the mean difference is greater than 4.6 is 0.004, 0.4%, or 40 of the 10,000 shuffles; we can check the last one a different way (just as a sanity check!)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;</span> <span class="mf">4.6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;=</span> <span class="mf">4.57</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60
 </pre></div>
 </div>
 </div>
