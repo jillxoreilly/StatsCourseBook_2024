@@ -747,7 +747,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b04e9420495c935ad4bec3450457624969fc5193f818b6b3a36430eaba893dbc.png" src="../_images/b04e9420495c935ad4bec3450457624969fc5193f818b6b3a36430eaba893dbc.png" />
+<img alt="../_images/6025885583bb019ade8aaf9bed418b70615ff9c8d8e8b4e39f4d23fe9cd356b5.png" src="../_images/6025885583bb019ade8aaf9bed418b70615ff9c8d8e8b4e39f4d23fe9cd356b5.png" />
 </div>
 </div>
 <p>We note that the mean number of yoghurts eaten is higher for cat owners, but this may be skewed by one cat-owning yogurt enthusiast.</p>
@@ -835,7 +835,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.5, pvalue=0.060693930606939304, null_distribution=array([-2.225,  1.6  ,  3.175, ...,  0.475, -2.225,  1.6  ]))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=2.5, pvalue=0.0678932106789321, null_distribution=array([-0.875, -0.425,  4.3  , ...,  0.475,  0.925, -2.   ]))
 </pre></div>
 </div>
 </div>
@@ -858,7 +858,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2aff471353d7cf4aaf5b88546e521a0851ca494d95f708ea914590c06320be12.png" src="../_images/2aff471353d7cf4aaf5b88546e521a0851ca494d95f708ea914590c06320be12.png" />
+<img alt="../_images/1ed33106e78b7e73b6996bc6b79a549471f094fa1d7661a02c809f03fde71dfa.png" src="../_images/1ed33106e78b7e73b6996bc6b79a549471f094fa1d7661a02c809f03fde71dfa.png" />
 </div>
 </div>
 <p>The histogram looks a bit spikey because for this dataset (which is small and has several repeated values) there are a limited number of possible values for the means of a groups of 8 and a group of 10.</p>
@@ -871,21 +871,21 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check which values is the null distribution are greater than 4.6 and code as 1/0</span>
 <span class="c1"># then use the numpy function np.mean() to get the avergae of those ones and zeros (ie he proportion of 1s)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;</span> <span class="mf">2.5</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span> <span class="o">&gt;=</span> <span class="mf">2.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0427
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0678
 </pre></div>
 </div>
 </div>
 </div>
-<p>This proportion is 0.047 or 4.7%.</p>
+<p>This proportion is 0.064 or 6.4%.</p>
 <p>This tells us that if we simulate a situation in which pet ownership does not determine the number of times yoghurt is eaten (but preserving some other important features of the dataset like the high skew), there is still almost a 5% chance that we would get an apparent pet-based difference as large as the one we observed in our ‘real’ data.</p>
 <p>The probability that the test statistic (in this case, the difference in mean times yoghurt is eaten) would be observed if the null hypothesis were true, is sometimes called the <span class="math notranslate nohighlight">\(𝑝\)</span>-value.</p>
 <p>Our permutation test shows that the <span class="math notranslate nohighlight">\(𝑝\)</span>-value associated with the observed difference of means is 0.047 or 4.7%.</p>
-<p>The result is considered statistically significant if <span class="math notranslate nohighlight">\(𝑝\)</span> is smaller than some predetermined level, known as <span class="math notranslate nohighlight">\(\alpha\)</span>. Usually <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> or <span class="math notranslate nohighlight">\(\alpha=0.01\)</span> is used; this result is (just!) significant if <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> but not significant if <span class="math notranslate nohighlight">\(\alpha=0.01\)</span>.</p>
+<p>The result is considered statistically significant if <span class="math notranslate nohighlight">\(𝑝\)</span> is smaller than some predetermined level, known as <span class="math notranslate nohighlight">\(\alpha\)</span>. Usually <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> or <span class="math notranslate nohighlight">\(\alpha=0.01\)</span> is used; this result is not quite significant if <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> but not significant if <span class="math notranslate nohighlight">\(\alpha=0.01\)</span>.</p>
 </section>
 </section>
 <section id="syntax-of-stats-permutation-test">
