@@ -74,6 +74,7 @@ parts:
         - file: Chapter5_ClassicTests/MT_wk6_nonpara_intro.md
         - file: Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.ipynb
         - file: Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.ipynb
+        - file: Chapter5_ClassicTests/MT_wk6_spearman.ipynb
         - file: Chapter5_ClassicTests/MT_wk6_furtherExercises.ipynb
       - file: Chapter6_ttest/ttest_intro.md
         sections:

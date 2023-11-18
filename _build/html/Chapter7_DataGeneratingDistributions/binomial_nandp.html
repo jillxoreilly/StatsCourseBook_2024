@@ -234,11 +234,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -597,7 +602,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;count&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/da29c294d6b055b1c26f418b6fa3376d8477d3e2c175092b9b68c4d3d10b6bd0.png" src="../_images/da29c294d6b055b1c26f418b6fa3376d8477d3e2c175092b9b68c4d3d10b6bd0.png" />
+<img alt="../_images/c913b86cf31ff7c9c942937816f406f72d2ae2895bbcb3d3e7190aa8166ee377.png" src="../_images/c913b86cf31ff7c9c942937816f406f72d2ae2895bbcb3d3e7190aa8166ee377.png" />
 </div>
 </div>
 <p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span> that the most common value for k is 7, ie 7/10 hits.</p>
@@ -626,7 +631,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.9887
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.9972
 np = 7.0
 </pre></div>
 </div>
@@ -653,7 +658,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1983a194907fc217bfdefcbb6fe1fcb63f20cae8fbd1834377df9bf607d8e6f.png" src="../_images/a1983a194907fc217bfdefcbb6fe1fcb63f20cae8fbd1834377df9bf607d8e6f.png" />
+<img alt="../_images/3cde97da19e4c98106bbf95f609387d1dd212a0ee5c01dfd9ce42e1cd6e91113.png" src="../_images/3cde97da19e4c98106bbf95f609387d1dd212a0ee5c01dfd9ce42e1cd6e91113.png" />
 </div>
 </div>
 <p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
@@ -681,7 +686,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 4.977297233439048
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.003954411263156
 sqrt(npq) = 5.0
 </pre></div>
 </div>

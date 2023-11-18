@@ -1,4 +1,4 @@
-# Classic tests
+# Rank-Based Tests
 
 Last week we introduced the concept of null hypothesis testing and the
 null distribution of a test statistic. We saw how the null
@@ -18,12 +18,18 @@ used. It is therefore important that you are familiar with the
 classic statistical tests, that have traditionally been used and are
 still the most commonly used tests in published papers.
 
+## Parametric and non-parametric tests
+
 Classic statistical tests fall into two groups:
 * parametric tests rely upon assumptions about the population data distribution
 (mainly, the $t$-test and some other tests rely upon assumptions of normality)
 * non-parametric tests do not rely on assumptions about the population
   data distribution, and usually work by replacing data with their
   ranks
+  
+**This week, we will cover some non-parametric tests based on ranks**
+
+Next week, we will cover the most commonly used parametric test, the $t$-test
 
 Generally, parametric tests are more *powerful* (more likely to
 detect a small effect, such as a small difference of means, if one is

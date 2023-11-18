@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.7. Tutorial Exercises: non-parametric tests" href="MT_wk6_furtherExercises.html" />
+    <link rel="next" title="2.7. Spearman’s Rank Correlation" href="MT_wk6_spearman.html" />
     <link rel="prev" title="2.5. Rank Sum Test" href="MT_wk6_nonpara_MannWhitneyU.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,10 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. The Wilcoxon Sign-Rank Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.7. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -563,7 +564,7 @@ document.write(`
 <h1><span class="section-number">2.6. </span>The Wilcoxon Sign-Rank Test<a class="headerlink" href="#the-wilcoxon-sign-rank-test" title="Permalink to this heading">#</a></h1>
 <p>The Wilcoxon Sign-Rank Test is a rank-based test for the mean difference in paired samples. It tests whether the median difference between the members of each pair is greater than zero. As such it is often considered to be a non-parametric equivalent for the <strong>paired samples</strong> t-test (which we will meet next week).</p>
 <p>The Wilcoxon Sign-rank test is <strong>not</strong> the same as the Wilcoxon Rank Sum test (Mann Whitney U test) which is for independent samples</p>
-<p>We will us a Python function called <code class="docutils literal notranslate"><span class="pre">stats.wilcoxon&lt;()</span></code> from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> library to run the test</p>
+<p>We will us a Python function called <code class="docutils literal notranslate"><span class="pre">stats.wilcoxon()</span></code> from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> library to run the test</p>
 <section id="set-up-python-libraries">
 <h2><span class="section-number">2.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -746,7 +747,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f908d7dcac0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fabdf7f2370&gt;]
 </pre></div>
 </div>
 <img alt="../_images/580a93a41c843aacc3066c00a29ab227cf140d525d4524853939588c87347db8.png" src="../_images/580a93a41c843aacc3066c00a29ab227cf140d525d4524853939588c87347db8.png" />
@@ -760,8 +761,8 @@ document.write(`
 </ul></section>
 <section id="check-the-data-distribution">
 <h3>Check the data distribution<a class="headerlink" href="#check-the-data-distribution" title="Permalink to this heading">#</a></h3>
-<p>In the case of paired data, we are interested in the distribution of <em>differenecs</em> within pairs.</p>
-<p>Let’s add a column to our fataframe to contain the differences</p>
+<p>In the case of paired data, we are interested in the distribution of <em>differences</em> within pairs.</p>
+<p>Let’s add a column to our dataframe to contain the differences</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthOrder</span><span class="p">[</span><span class="s1">&#39;Diff&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">birthOrder</span><span class="o">.</span><span class="n">FirstBorn</span> <span class="o">-</span> <span class="n">birthOrder</span><span class="o">.</span><span class="n">SecondBorn</span>
@@ -1034,13 +1035,13 @@ document.write(`
 <p>We carry out the test using the function <tt>wilcoxon</tt> from <tt>scipy.stats</tt>, here loaded as <tt>stats</tt></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">birthOrder</span><span class="o">.</span><span class="n">FirstBorn</span><span class="p">,</span><span class="n">birthOrder</span><span class="o">.</span><span class="n">SecondBorn</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">birthOrder</span><span class="o">.</span><span class="n">FirstBorn</span><span class="p">,</span><span class="n">birthOrder</span><span class="o">.</span><span class="n">SecondBorn</span><span class="p">,</span><span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
 <span class="c1">#help(stats.wilcoxon)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=46.0, pvalue=0.026641845703125)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=164.0, pvalue=0.0133209228515625)
 </pre></div>
 </div>
 </div>
@@ -1105,11 +1106,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="MT_wk6_furtherExercises.html"
+       href="MT_wk6_spearman.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.7. </span>Tutorial Exercises: non-parametric tests</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Spearman’s Rank Correlation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

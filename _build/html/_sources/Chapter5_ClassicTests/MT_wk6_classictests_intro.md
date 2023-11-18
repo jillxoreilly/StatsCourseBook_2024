@@ -1,4 +1,4 @@
-# Classic tests
+# Rank-Based Tests
 
 Last week we introduced the concept of null hypothesis testing and the
 null distribution of a test statistic. We saw how the null

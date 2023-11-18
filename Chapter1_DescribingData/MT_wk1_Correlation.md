@@ -30,10 +30,10 @@ Correlation and covariance are high when:
 :width: 80%
 :align: center
 ```
+**The correlation coefficient $r$ is always a number between 1 (perfect positive correlation; all points on a line) and -1 (perfect negative correlation)**
+
 
 Correlation and covariance are closely related. As a descriptive statistic, correlation is most often used, as it gives us a 'pure' measure of the strength of the relationship between $x$ and $y$ (corrected for the spread within $x$ and $y$ independently).
-
-
 
 ## Covariance
 

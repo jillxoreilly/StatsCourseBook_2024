@@ -241,10 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.7. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -1286,7 +1287,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0005999400059994001, null_distribution=array([53.5, 52. , 70. , ..., 51.5, 61. , 66.5]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0006999300069993001, null_distribution=array([49.5, 57. , 53.5, ..., 65. , 54.5, 58.5]))
 </pre></div>
 </div>
 </div>
@@ -1301,7 +1302,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bd06f375627e54422b26639fa9342256947370328f8bfa26b293eaefe598cf23.png" src="../_images/bd06f375627e54422b26639fa9342256947370328f8bfa26b293eaefe598cf23.png" />
+<img alt="../_images/1ed1782d0fcfa283c22277f6358f5e0f7e38368a88e65f434ee94be20c8ce89c.png" src="../_images/1ed1782d0fcfa283c22277f6358f5e0f7e38368a88e65f434ee94be20c8ce89c.png" />
 </div>
 </div>
 <p>The distribution is cut off at a minimum of 49.5, because <span class="math notranslate nohighlight">\(u\)</span> is always the <em>larger</em> of the two rank sums (for the two groups). The minimum possible value of the larger ranksum (which would happen if the high and low ranks were evenly shared between groups) is 49.5</p>
@@ -1313,29 +1314,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0005
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0006
 </pre></div>
 </div>
 </div>
 </div>
 <p>Ta-daa!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Standard&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">,</span> 
-                                  <span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Visualisation&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">),</span>
-                                  <span class="n">mwU</span><span class="p">,</span>
-                                  <span class="n">alternative</span> <span class="o">=</span> <span class="s1">&#39;greater&#39;</span><span class="p">,</span>
-                                  <span class="n">n_resamples</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="n">results</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0007999200079992001, null_distribution=array([58.5, 60. , 69. , ..., 55.5, 57.5, 57. ]))
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 </section>

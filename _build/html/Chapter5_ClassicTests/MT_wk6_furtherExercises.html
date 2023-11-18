@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.7. Tutorial Exercises: non-parametric tests &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.8. Tutorial Exercises: non-parametric tests &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/MT_wk6_furtherExercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Power analysis" href="../Chapter6_Power/power_intro.html" />
-    <link rel="prev" title="2.6. The Wilcoxon Sign-Rank Test" href="MT_wk6_nonpara_WilcoxonSignRank.html" />
+    <link rel="next" title="3. t-Test" href="../Chapter6_ttest/ttest_intro.html" />
+    <link rel="prev" title="2.7. Spearman’s Rank Correlation" href="MT_wk6_spearman.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -239,10 +239,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -532,10 +533,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.7.2. 1. Whose peaches are heavier?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.7.3. 2. IQ and vitamins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.7.4. 3. Who has the tallest students?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.8.2. 1. Whose peaches are heavier?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.8.3. 2. IQ and vitamins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.8.4. 3. Who has the tallest students?</a></li>
 </ul>
             </nav>
         </div>
@@ -548,10 +549,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-non-parametric-tests">
-<h1><span class="section-number">2.7. </span>Tutorial Exercises: non-parametric tests<a class="headerlink" href="#tutorial-exercises-non-parametric-tests" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.8. </span>Tutorial Exercises: non-parametric tests<a class="headerlink" href="#tutorial-exercises-non-parametric-tests" title="Permalink to this heading">#</a></h1>
 <p>Here are some exercises on comparing means using non-parametric tests</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">2.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,7 +571,7 @@ document.write(`
 </div>
 </section>
 <section id="whose-peaches-are-heavier">
-<h2><span class="section-number">2.7.2. </span>1. Whose peaches are heavier?<a class="headerlink" href="#whose-peaches-are-heavier" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.2. </span>1. Whose peaches are heavier?<a class="headerlink" href="#whose-peaches-are-heavier" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png"><img alt="There should be a picture of some peaches here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png" style="width: 30%;" /></a>
 <p>Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor.</p>
 <p>Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches.</p>
@@ -669,7 +670,7 @@ document.write(`
 </ul>
 </section>
 <section id="iq-and-vitamins">
-<h2><span class="section-number">2.7.3. </span>2. IQ and vitamins<a class="headerlink" href="#iq-and-vitamins" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.3. </span>2. IQ and vitamins<a class="headerlink" href="#iq-and-vitamins" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg"><img alt="There should be a picture of some vitamin pills here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg" style="width: 50%;" /></a>
 <p>The VitalVit company claim that after taking their VitalVit supplement, IQ is increased.</p>
 <p>They run a trial in which 22 participants complete a baseline IQ test, then take VitalVit for six weeks, then complete another IQ test.</p>
@@ -867,7 +868,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <p>&lt; Your answer here. You will probably need to add more cells. &gt;</p>
 </section>
 <section id="who-has-the-tallest-students">
-<h2><span class="section-number">2.7.4. </span>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.4. </span>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
 <p>A student from Lonsdale college claims that Lonsdale students are taller than students from Beaufort college.</p>
 <p>Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv, loaded below</p>
 <p>Test the student’s hypothesis using a t-test (this is justified as heights are generally normally distributed) and write up your report as if for a scientific publication. Your report should include the following elements:</p>
@@ -1097,20 +1098,20 @@ You could add the line of equality (line x=y) to the graph so we can see whether
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="MT_wk6_nonpara_WilcoxonSignRank.html"
+       href="MT_wk6_spearman.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>The Wilcoxon Sign-Rank Test</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Spearman’s Rank Correlation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter6_Power/power_intro.html"
+       href="../Chapter6_ttest/ttest_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Power analysis</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>t-Test</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1129,10 +1130,10 @@ You could add the line of equality (line x=y) to the graph so we can see whether
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.7.2. 1. Whose peaches are heavier?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.7.3. 2. IQ and vitamins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.7.4. 3. Who has the tallest students?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.8.2. 1. Whose peaches are heavier?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.8.3. 2. IQ and vitamins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.8.4. 3. Who has the tallest students?</a></li>
 </ul>
   </nav></div>
 
