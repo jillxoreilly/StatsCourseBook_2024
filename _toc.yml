@@ -68,9 +68,13 @@ parts:
         - file: Chapter4_PermutationTest/MT_wk5_permutation_correlation.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_practice.md
         - file: Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.md
-      - file: Chapter5_ClassicTests/classictests_intro.md
+      - file: Chapter5_ClassicTests/MT_wk6_classictests_intro.md
         sections:
-        - file: UnderConstruction1.md
+        - file: Chapter5_ClassicTests/MT_wk6_outcomes.md
+        - file: Chapter5_ClassicTests/MT_wk6_nonpara_intro.md
+        - file: Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.ipynb
+        - file: Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.ipynb
+        - file: Chapter5_ClassicTests/MT_wk6_furtherExercises.ipynb
       - file: Chapter6_Power/power_intro.md
         sections:
         - file: UnderConstruction3.md

@@ -236,8 +236,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Non-parametric tests for difference of medians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. The Mann Whitney U, or Wilcoxon Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -520,10 +525,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hypothesis-testing-concepts">
 <h1><span class="section-number">1.3. </span>Hypothesis testing concepts<a class="headerlink" href="#hypothesis-testing-concepts" title="Permalink to this heading">#</a></h1>
-<p>This week we introduce <em>Null hypothesis testing</em>, the framework in whihc momst statistical tests are carried out.</p>
+<p>This week we introduce <em>Null hypothesis testing</em>, the framework in which most statistical tests are carried out.</p>
 <section id="defining-null-and-alternative-hypotheses">
 <h2><span class="section-number">1.3.1. </span>Defining null and alternative hypotheses<a class="headerlink" href="#defining-null-and-alternative-hypotheses" title="Permalink to this heading">#</a></h2>
-<p>When testing for a statistical effect in data (such as a difference in means between groups), we specify a null hypothesis and an aletrnative hypothesis</p>
+<p>When testing for a statistical effect in data (such as a difference in means between groups), we specify a null hypothesis and an alternative hypothesis</p>
 <ul class="simple">
 <li><p>The null hypothesis <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> describes a situation where the statistical effect of interest is absent</p></li>
 <li><p>The alternative hypothesis <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> describes a situation where the statistical effect of interest is present</p></li>
@@ -587,14 +592,16 @@ document.write(`
 </section>
 <section id="null-distribution">
 <h2><span class="section-number">1.3.5. </span>Null distribution<a class="headerlink" href="#null-distribution" title="Permalink to this heading">#</a></h2>
-<p>We therefore calculate the null distribution of the test statistic (the distribution of values of that test statistic, if indeed we had many many samples of data of the same size as our real/measured sample)</p>
+<p>We therefore calculate the null distribution of the test statistic (the distribution of values of that test statistic we would get, if indeed we had many many samples of data of the same size as our real/measured sample)</p>
 <p>This week will will calculate the null by permutation, but we will meet other methods next week.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_nulldist.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_nulldist.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_nulldist.png" style="width: 80%;" /></a>
 </section>
 <section id="p-value">
 <h2><span class="section-number">1.3.6. </span><span class="math notranslate nohighlight">\(p\)</span>-value<a class="headerlink" href="#p-value" title="Permalink to this heading">#</a></h2>
-<p>The probability that the test statistic would be observed if the null hypothesis were true is sometimes called the <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
+<p>The probability that the observed value of the test statistic could have occurred if the null hypothesis were true is sometimes called the <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
 <p>In the example above, the <span class="math notranslate nohighlight">\(p\)</span>-value associated with the observed difference of means is 0.038 or 3.8%</p>
+<p>It means that, even if there was no underlying difference in height between men and women, if we repeated the experiment (pick 25 random men and 25 random women and measure their height) many times, we would expect to get a difference in mean heights as large as the one observed (4.64cm), 3.8% of the time.</p>
+<p>Of course, the idea of repeating the experiment (pick 25 random men and 25 random women and measure their height) lots of times is exacly what the permutation process is designed to simulate.</p>
 </section>
 <section id="alpha-value">
 <h2><span class="section-number">1.3.7. </span><span class="math notranslate nohighlight">\(\alpha\)</span>-value<a class="headerlink" href="#alpha-value" title="Permalink to this heading">#</a></h2>

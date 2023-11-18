@@ -40,7 +40,7 @@ In the case of men's vs. women's heights this may seem odd (since we know from e
 
 When we run a two-tailed test, we would consider our result (difference of means) significant if it fell in *either tail* of the null distribution. This means that we need to set the cut-off value for significance such that the area *in both tails* adds up to the $\alpha$ value; so if we are testing at the 5% level, $\alpha = 0.5$, the cutoff value in each tail needs to be such that each of the tails contains 2.5% of cases:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_OneTwoTailedSchematic.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk5_OneTwoTailSchematic.png
 :width: 80%
 :align: center
 ```

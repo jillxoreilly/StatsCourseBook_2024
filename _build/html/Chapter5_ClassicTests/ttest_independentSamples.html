@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Independent samples t-test &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.2. Independent samples t-test &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/ttest_independentSamples';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.3. Paired Samples t-test" href="ttest_pairedSamples.html" />
+    <link rel="prev" title="2.1. The t-test" href="ttest_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -220,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
@@ -234,8 +236,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ttest_intro.html">2.1. The t-test</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">2.3. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">2.4. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonpara_intro.html">2.5. Non-parametric equivalents of the t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonpara_MannWhitneyU.html">2.6. The Mann Whitney U, or Wilcoxon Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nonpara_WilcoxonSignRank.html">2.7. The Wilcoxon Sign-Rank Test</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="ttest_furtherExercises.html">2.9. Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -528,8 +538,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.2.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">2.2.2. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive statistics</a></li>
@@ -539,8 +549,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">Write-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">2.2.3. Write-up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.2.4. Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -553,9 +563,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="independent-samples-t-test">
-<h1>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.2. </span>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h1>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +581,7 @@ document.write(`
 </div>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2.2. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/appletree.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/appletree.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/appletree.jpg" style="width: 30%;" /></a>
 <p>Below we have data on the average weight, in grams, of apples from each of 20 apple trees.</p>
 <p>10 of the trees received MiracleGro fertilizer and the other 10 received Brand X.</p>
@@ -749,13 +759,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_9536/480830582.py:7: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1734/480830582.py:7: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
 
   sns.kdeplot(apples_BrandX[&quot;meanAppleWeight&quot;], color=&#39;b&#39;, shade=True, label=&#39;BrandX&#39;)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_9536/480830582.py:8: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1734/480830582.py:8: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -1124,7 +1134,7 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 </section>
 </section>
 <section id="write-up">
-<h2>Write-up<a class="headerlink" href="#write-up" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Write-up<a class="headerlink" href="#write-up" title="Permalink to this heading">#</a></h2>
 <br>
 <div style = "    padding-top: 10px;
     padding-bottom: 10px;
@@ -1241,13 +1251,13 @@ that mean of the first input <tt>apples.MiracleGro</tt> is greater than the seco
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_9536/3519011089.py:5: FutureWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1734/3519011089.py:5: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
 
   sns.kdeplot(apples_BrandX[&quot;meanAppleWeight&quot;], color=&#39;b&#39;, shade=True, label=&#39;BrandX&#39;)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_9536/3519011089.py:6: FutureWarning: 
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1734/3519011089.py:6: FutureWarning: 
 
 `shade` is now deprecated in favor of `fill`; setting `fill=True`.
 This will become an error in seaborn v0.14.0; please update your code.
@@ -1274,7 +1284,7 @@ This will become an error in seaborn v0.14.0; please update your code.
 <p>The weight of apples from the trees fertilized with MiracleGro was indeed found to be significantly higher: t(18) = 2.35, p=0.0146.</p>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.2.4. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <ol>
 <li> Can you work out how to run a two-tailed test on the data?
     <ul>
@@ -1315,6 +1325,24 @@ This will become an error in seaborn v0.14.0; please update your code.
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ttest_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>The t-test</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ttest_pairedSamples.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Paired Samples t-test</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1330,8 +1358,8 @@ This will become an error in seaborn v0.14.0; please update your code.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.2.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">2.2.2. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">Hypotheses</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">Descriptive statistics</a></li>
@@ -1341,8 +1369,8 @@ This will become an error in seaborn v0.14.0; please update your code.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">Write-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">2.2.3. Write-up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">2.2.4. Exercises</a></li>
 </ul>
   </nav></div>
 

@@ -34,7 +34,7 @@ the computer-based tutorial session.
 To complete the guided exercises you will need to either:
 
 * open the pages in Google Colab (simply click the Colab button on each page), or
-* download them as Jupyter Notbooks to your own computer and work
+* download them as Jupyter Notebooks to your own computer and work
 with them locally (eg in JupyterLab)
 
 If you find something difficult or have questions, you can discuss

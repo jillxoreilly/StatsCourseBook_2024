@@ -1,10 +1,10 @@
 # Hypothesis testing concepts
 
-This week we introduce *Null hypothesis testing*, the framework in whihc momst statistical tests are carried out.
+This week we introduce *Null hypothesis testing*, the framework in which most statistical tests are carried out.
 
 ## Defining null and alternative hypotheses
 
-When testing for a statistical effect in data (such as a difference in means between groups), we specify a null hypothesis and an aletrnative hypothesis
+When testing for a statistical effect in data (such as a difference in means between groups), we specify a null hypothesis and an alternative hypothesis
 
 * The null hypothesis $\mathcal{H_o}$ describes a situation where the statistical effect of interest is absent
 * The alternative hypothesis $\mathcal{H_a}$ describes a situation where the statistical effect of interest is present
@@ -78,7 +78,7 @@ To do this we procede to assume the null hypothesis is true, and ask:
 
 ## Null distribution
 
-We therefore calculate the null distribution of the test statistic (the distribution of values of that test statistic, if indeed we had many many samples of data of the same size as our real/measured sample)
+We therefore calculate the null distribution of the test statistic (the distribution of values of that test statistic we would get, if indeed we had many many samples of data of the same size as our real/measured sample)
 
 This week will will calculate the null by permutation, but we will meet other methods next week.
 
@@ -89,9 +89,13 @@ This week will will calculate the null by permutation, but we will meet other me
 
 ## $p$-value
 
-The probability that the test statistic would be observed if the null hypothesis were true is sometimes called the $p$-value.
+The probability that the observed value of the test statistic could have occurred if the null hypothesis were true is sometimes called the $p$-value.
 
 In the example above, the $p$-value associated with the observed difference of means is 0.038 or 3.8%
+
+It means that, even if there was no underlying difference in height between men and women, if we repeated the experiment (pick 25 random men and 25 random women and measure their height) many times, we would expect to get a difference in mean heights as large as the one observed (4.64cm), 3.8% of the time.
+
+Of course, the idea of repeating the experiment (pick 25 random men and 25 random women and measure their height) lots of times is exacly what the permutation process is designed to simulate.
 
 ## $\alpha$-value
 

@@ -232,8 +232,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Non-parametric tests for difference of medians</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. The Mann Whitney U, or Wilcoxon Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -598,7 +603,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.45985930981580836
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.6967742850191269
 </pre></div>
 </div>
 </div>
@@ -621,7 +626,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            1
 </pre></div>
 </div>
 </div>
@@ -651,25 +656,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.15481330621293588
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.614804804986056
 is it a hit?:            0
-value of random number:  0.2475618283535902
+value of random number:  0.4848650831343505
 is it a hit?:            0
-value of random number:  0.55778600290806
-is it a hit?:            0
-value of random number:  0.8672133730952198
+value of random number:  0.7800420779222712
 is it a hit?:            1
-value of random number:  0.060387304200656744
+value of random number:  0.346432584255686
 is it a hit?:            0
-value of random number:  0.055369531644214875
+value of random number:  0.020414108238778428
 is it a hit?:            0
-value of random number:  0.6243296253260365
+value of random number:  0.9571673539358565
+is it a hit?:            1
+value of random number:  0.6780744846234421
 is it a hit?:            0
-value of random number:  0.11854409759795326
+value of random number:  0.13025654951608312
 is it a hit?:            0
-value of random number:  0.005916090541916663
+value of random number:  0.18505546697721476
 is it a hit?:            0
-value of random number:  0.10292149136999917
+value of random number:  0.1662857568533771
 is it a hit?:            0
 </pre></div>
 </div>
@@ -704,13 +709,13 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 0
 1
-0
-0
 1
 0
 1
-0
 1
+0
+0
+0
 </pre></div>
 </div>
 </div>
@@ -739,7 +744,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 1. 1. 0. 0. 0. 0. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 1. 0. 0. 0. 0. 0. 1. 0. 1.]
 </pre></div>
 </div>
 </div>
@@ -753,7 +758,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 2.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3.0
 </pre></div>
 </div>
 </div>
@@ -775,7 +780,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 5
 </pre></div>
 </div>
 </div>
