@@ -75,7 +75,7 @@ parts:
         - file: Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.ipynb
         - file: Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.ipynb
         - file: Chapter5_ClassicTests/MT_wk6_furtherExercises.ipynb
-      - file: Chapter6_Power/power_intro.md
+      - file: Chapter6_ttest/ttest_intro.md
         sections:
         - file: UnderConstruction3.md
     - caption: Statistical Theory

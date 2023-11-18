@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.5. The Mann Whitney U, or Wilcoxon Rank Sum Test &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.5. Rank Sum Test &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2.6. The Wilcoxon Sign-Rank Test" href="MT_wk6_nonpara_WilcoxonSignRank.html" />
-    <link rel="prev" title="2.4. Non-parametric tests for difference of medians" href="MT_wk6_nonpara_intro.html" />
+    <link rel="prev" title="2.4. Rank-based tests" href="MT_wk6_nonpara_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -238,11 +238,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Non-parametric tests for difference of medians</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. The Mann Whitney U, or Wilcoxon Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.7. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -525,7 +524,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Mann Whitney U, or Wilcoxon Rank Sum Test</h1>
+    <h1>Rank Sum Test</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -549,9 +548,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-the-data-to-ranks">Step 1: Convert the data to ranks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-test-statistic">Calculate the test statistic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-the-null-distriubtion">Establish the null distriubtion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-mean-by-if-the-null-were-true">What do we mean by “If the null were true”?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estalbishing-the-null-by-complete-enumeration">Estalbishing the null by complete enumeration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-the-null-by-simulation">Establishing the null by simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -565,8 +561,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-mann-whitney-u-or-wilcoxon-rank-sum-test">
-<h1><span class="section-number">2.5. </span>The Mann Whitney U, or Wilcoxon Rank Sum Test<a class="headerlink" href="#the-mann-whitney-u-or-wilcoxon-rank-sum-test" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="rank-sum-test">
+<h1><span class="section-number">2.5. </span>Rank Sum Test<a class="headerlink" href="#rank-sum-test" title="Permalink to this heading">#</a></h1>
 <p>The t-test is valid only when the data within each group (for independent samples t-test) or the pairwise differences (for paired samples t-test) are Normally distributed</p>
 <p>As we have seen in the lecture, many real life data distributions are normal, but many others are not.</p>
 <p>For non-Normal data we can use non-parametric tests, which do not assume that the data are drawn from a Normal distribution.</p>
@@ -585,8 +581,11 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
@@ -605,7 +604,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the data and have a look</span>
-<span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
+<span class="n">juggling</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/juggling.csv&#39;</span><span class="p">)</span>
+<span class="n">juggling</span>
 </pre></div>
 </div>
 </div>
@@ -737,24 +737,13 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>Let’s plot the data and see if they look Normally distributed.</p>
+<p>Let’s plot the data to get an idea of the distribution and check four outliers.</p>
 <p>As we saw in the session on plotting, a good choice here will be a KDE plot (to get an estimate of the shape of the distribution) and a rug plot (individual data values as the KDE plot is based on only a small sample)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/juggling.csv&#39;</span><span class="p">)</span>
-
-<span class="c1"># make new dataframes for the Standard and Visualisation groups</span>
-<span class="n">juggling_Std</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">]</span>
-<span class="n">juggling_Vis</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">]</span>
-
-<span class="c1"># Plot the KDE (distribution)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Std</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Standard Training&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Vis</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Visualisation Training&#39;</span><span class="p">)</span>
-
-
-<span class="c1"># Plot individual data points</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Std</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling_Vis</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the KDE (distribution)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">juggling</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Group&#39;</span><span class="p">)</span>
 
 <span class="c1"># axis labels</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;sessions to criterion&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
@@ -765,26 +754,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_8183/3712789007.py:8: FutureWarning: 
-
-`shade` is now deprecated in favor of `fill`; setting `fill=True`.
-This will become an error in seaborn v0.14.0; please update your code.
-
-  sns.kdeplot(data=juggling_Std, x=&#39;SessionsToCriterion&#39;, color=&#39;b&#39;, shade=True, label=&#39;Standard Training&#39;)
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_8183/3712789007.py:9: FutureWarning: 
-
-`shade` is now deprecated in favor of `fill`; setting `fill=True`.
-This will become an error in seaborn v0.14.0; please update your code.
-
-  sns.kdeplot(data=juggling_Vis, x=&#39;SessionsToCriterion&#39;, color=&#39;r&#39;, shade=True, label=&#39;Visualisation Training&#39;)
-</pre></div>
-</div>
-<img alt="../_images/5652d3f20d6536f54be22e4e9ce336edec94b47306f7d6c6c0473e5a6e56ae01.png" src="../_images/5652d3f20d6536f54be22e4e9ce336edec94b47306f7d6c6c0473e5a6e56ae01.png" />
+<img alt="../_images/57ea65796699497d9f0188ec9d68c1742f015aa0a1c1cdda66ddd1b8ae7a6731.png" src="../_images/57ea65796699497d9f0188ec9d68c1742f015aa0a1c1cdda66ddd1b8ae7a6731.png" />
 </div>
 </div>
-<p>The data do not look normal, as some people (especially in the standard group) took much longer to reach criterion (the distribution has positive skew).</p>
-<p>Even if the data were not grossly non-Normal, it would be hard to be confident of a normal distribution with such a small sample, unless there waas some theoretical reason (for example, relating to the Central Limit Theorem) why the data should be normal. In this case, we might even have expected a positive skew as it is possible for an individual to take many many more than the median number of sessions to reach criterion, but impossible to take many many fewer sessions (as we cannot take fewer than zero sessions; data values are <i>bounded below</i>).</p>
-<p>We therefore turn to the Mann Whitney non-parametric test.</p>
+<p>Some people (especially in the standard group) took much longer to reach criterion (the distribution has positive skew), perhaps because is possible for an individual to take many many more than the median number of sessions to reach criterion, but impossible to take many many fewer sessions (as we cannot take fewer than zero sessions; data values are <i>bounded below</i>).</p>
+<p>We therefore turn to the Rank Sum non-parametric test.</p>
 </section>
 <section id="hypotheses">
 <h3>Hypotheses<a class="headerlink" href="#hypotheses" title="Permalink to this heading">#</a></h3>
@@ -792,12 +766,14 @@ This will become an error in seaborn v0.14.0; please update your code.
 <p>Ha: the <b>median</b> number of sessions is lower for participants in the Visualisation Group</p>
 <p>This is a one tailed test as the hypothesis is directional (we expect visualisation to help not hinder)</p>
 <p>We will test at the <span class="math notranslate nohighlight">\(\alpha = 0.05\)</span> significance level</p>
-<ul>
-    <li> note we are testing for a difference of medians here, not a difference of means as in the t-test
-</ul></section>
+<ul class="simple">
+<li><p>note we are testing for a difference of medians here, not a difference of means!</p></li>
+</ul>
+</section>
 <section id="descriptive-statistics">
 <h3>Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h3>
-<p>We obtain the relevant descriptive statistics. For the t-test we reported the summary statistics (mean, s.d. and n) that went into the formula for t. The same approach won’t quite work here as the test is not based on summary statistics. However, common sense suggests that reporting the median for each group, a measure of spread, and the sample size woudl give the reader an idea of the data.</p>
+<p>We obtain some relevant descriptive statistics.</p>
+<p>Since we are testing for a difference of medians, we will want the median for each group; it would also be useful to have a measure of spread, and the sample size.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Group&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -883,11 +859,11 @@ This will become an error in seaborn v0.14.0; please update your code.
 </section>
 <section id="carry-out-the-test">
 <h3>Carry out the test<a class="headerlink" href="#carry-out-the-test" title="Permalink to this heading">#</a></h3>
-<p>We carry out the test using the function <tt>mannwhitneyu</tt> from <tt>scipy.stats</tt>, here loaded as <tt>stats</tt></p>
+<p>We carry out the test using the function <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">],</span> 
-                   <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Standard&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">SessionsToCriterion</span><span class="p">,</span> 
+                   <span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Visualisation&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">SessionsToCriterion</span><span class="p">,</span>
                    <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -898,11 +874,10 @@ This will become an error in seaborn v0.14.0; please update your code.
 </div>
 </div>
 </div>
-<p>The inputs to stats.mannwhitneyu are:</p>
-<ul>
-    <li >the two samples to be compared (the values of <tt>SessionsToCriterion</tt> from our Pandas data frame <tt>juggling</tt>), grouped by the value in the column <tt>Group</tt>)
-<li>the argument <tt>alternative='greater'</tt>, which tells the computer to run a one tailed test 
-that mean of the first input (Standard Group) is greater than the second (Visualisation Group).
+<p>The inputs to <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code> are:</p>
+<ul class="simple">
+<li><p>the two samples to be compared (the values of <tt>SessionsToCriterion</tt> from our Pandas data frame <tt>juggling</tt>), grouped by the value in the column <tt>Group</tt>)</p></li>
+<li><p>the argument <code class="docutils literal notranslate"><span class="pre">alternative='greater'</span></code>, which tells the computer to run a one tailed test that mean of the first input (Standard Group) is greater than the second (Visualisation Group).</p></li>
 </ul>
 <p>The outputs are a value of the test statistic (<span class="math notranslate nohighlight">\(U=91\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.00089\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 <p>More explanation of how U is calculated below.</p>
@@ -915,7 +890,7 @@ that mean of the first input (Standard Group) is greater than the second (Visual
 </section>
 <section id="how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works">
 <h2><span class="section-number">2.5.4. </span>How the Mann Whiney U or Wilcoxon Rank Sum test works<a class="headerlink" href="#how-the-mann-whiney-u-or-wilcoxon-rank-sum-test-works" title="Permalink to this heading">#</a></h2>
-<p>You have seen how to carry out the Mann Whitney test using <tt>scipy.stats</tt> but you may be none the wiser about how the computer arrived at the test statistic and p value.</p>
+<p>You have seen how to carry out the Mann Whitney test using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> but you may be none the wiser about how the computer arrived at the test statistic and p value.</p>
 <p>In this section we will build our own version of the test step by step to understand how it worked.</p>
 <section id="step-1-convert-the-data-to-ranks">
 <h3>Step 1: Convert the data to ranks<a class="headerlink" href="#step-1-convert-the-data-to-ranks" title="Permalink to this heading">#</a></h3>
@@ -923,43 +898,10 @@ that mean of the first input (Standard Group) is greater than the second (Visual
 <p>We will then obtain a summary statistics U (closely related to R in the rank sum test) which roughly tells us what proportion of the high ranks fall into one experimental group.</p>
 <p>The null distribution of U (or R) is the same for any samples of given size (in this case our samples are <span class="math notranslate nohighlight">\(n_1=11\)</span> and <span class="math notranslate nohighlight">\(n_2=9\)</span> - the null distribubtion of U would be the same for <i>any data</i> with these sample sizes</p>
 <p>Note also that data ranks are less affected by outliers than the data values themselves: whether the lowest data value is a million units lower than the second-lowest data value, or only one unit lower, they will still take ranks 1 and 2.</p>
-<p>We can rank the data using the <tt>rank</tt> method in <tt>pandas</tt></p>
+<p>We can rank the data using the <code class="docutils literal notranslate"><span class="pre">rank()</span></code> method in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, ad add them as an extra column to our dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     14.5
-1     12.5
-2     14.5
-3      7.0
-4      6.0
-5     19.0
-6     20.0
-7     18.0
-8     12.5
-9     17.0
-10    16.0
-11     9.0
-12     1.5
-13     9.0
-14    11.0
-15     4.5
-16     4.5
-17     1.5
-18     3.0
-19     9.0
-Name: SessionsToCriterion, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<p>Let’s make that more user friendly by saving it as an additional column in out dataframe</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;SessionsToCriterion&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">SessionsToCriterion</span><span class="o">.</span><span class="n">rank</span><span class="p">()</span>
 <span class="n">juggling</span>
 </pre></div>
 </div>
@@ -1113,7 +1055,7 @@ Name: SessionsToCriterion, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>It might be even clearer if we display the dataframe sorted by rank</p>
+<p>It might be even clearer if we display the dataframe sorted by rank:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">juggling</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Rank&#39;</span><span class="p">)</span>
@@ -1287,226 +1229,113 @@ Name: SessionsToCriterion, dtype: float64
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[ U_2 = R_2 - \frac{n_2(n_2+1)}{2}\]</div>
-<p>We can work it out in Python:</p>
+<p>We can define a function to work it out in Python:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum of ranks for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and sum() the values </span>
-<span class="n">R1</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="c1"># Get n for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and count() the values </span>
-<span class="n">n1</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Standard&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function takes in two sets of ranks (for conditions x and y) and returns U</span>
+<span class="k">def</span> <span class="nf">mwU</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">Rx</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">nx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">Ux</span> <span class="o">=</span> <span class="n">Rx</span> <span class="o">-</span> <span class="p">(</span><span class="n">nx</span><span class="o">*</span><span class="p">(</span><span class="n">nx</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+    
+    <span class="n">Ry</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">ny</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">Uy</span> <span class="o">=</span> <span class="n">Ry</span> <span class="o">-</span> <span class="p">(</span><span class="n">ny</span><span class="o">*</span><span class="p">(</span><span class="n">ny</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
 
-<span class="c1"># calculate U from the formula</span>
-<span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">U1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">Ux</span><span class="p">,</span><span class="n">Uy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check it works on our juggling data. Our function <code class="docutils literal notranslate"><span class="pre">mwU</span></code> wants two sets of <strong>ranks</strong> as input:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mwU</span><span class="p">(</span><span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Standard&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">,</span> 
+    <span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Visualisation&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U1 = 91.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>91.0
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sum of ranks for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and sum() the values </span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="c1"># Get n for group 1 - find the rows where group is &#39;Standard&#39;, select column &#39;Rank&#39;, and count() the values </span>
-<span class="n">n2</span> <span class="o">=</span> <span class="n">juggling</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">juggling</span><span class="p">[</span><span class="s1">&#39;Group&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Visualisation&#39;</span><span class="p">),</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-
-<span class="c1"># calculate U from the formula</span>
-<span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">U2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>U2 = 8.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>The larger of <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span> becomes the test statistic, so <span class="math notranslate nohighlight">\(U=91\)</span></p>
-<ul>
-    <li> Go back and check if this matches what we got from <tt>scipy.stats.mannwhitneyu</tt> - it should!
+<p>Yay, it matches the output of <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code>!</p>
+<ul class="simple">
+<li><p>Are you confused what happened there? Look back to last week at how we defined functions to get the difference of means or mean difference before running a permutation test.</p></li>
 </ul>
-<p>(some stats packages define <span class="math notranslate nohighlight">\(U\)</span> as the smaller of <span class="math notranslate nohighlight">\(U_1\)</span> and <span class="math notranslate nohighlight">\(U_2\)</span>, confusingly - either could be used but the null distribtion for the larger and smaller U will obviously be different)</p>
 </section>
 <section id="establish-the-null-distriubtion">
 <h3>Establish the null distriubtion<a class="headerlink" href="#establish-the-null-distriubtion" title="Permalink to this heading">#</a></h3>
-<p>To convert our <span class="math notranslate nohighlight">\(U\)</span> to a <span class="math notranslate nohighlight">\(p\)</span>-value, we need to know how the probability of obtaining that value of <span class="math notranslate nohighlight">\(U\)</span> due to chance if the null hypothesis were true.</p>
-<p>More precisely:</p>
+<p>As in the permutation test on data (rather than ranks), we can work out the null approximately by doing a lot of random ‘deals’ of the ranks to the Standard and Visualisation groups, calculating <span class="math notranslate nohighlight">\(U\)</span> for each case, and work out in what proportion of cases this <em>simulated</em> <span class="math notranslate nohighlight">\(U\)</span> was as large as, or larger than, the value of <span class="math notranslate nohighlight">\(U\)</span> from our experiment.</p>
 <ul class="simple">
-<li><p>If the value we have chosen as <span class="math notranslate nohighlight">\(U\)</span> is associated with the sample we expect to have higher ranks, we need to know the probability of getting a <span class="math notranslate nohighlight">\(U\)</span> value this large or larger, if the null were true</p></li>
-<li><p>Conversely if the value we have chosen as <span class="math notranslate nohighlight">\(U\)</span> is associated with the sample we expect to have lower ranks, we need to know the probabbility of getting a <span class="math notranslate nohighlight">\(U\)</span> value this small or smaller, if the null were true</p></li>
+<li><p>note that it is also possible to work out the distribution precisely, but this approach is pretty good and makes a clear analogy to permutation testing on data rather than ranks</p></li>
 </ul>
-<p>In the current example, <span class="math notranslate nohighlight">\(U\)</span> ended up being the <span class="math notranslate nohighlight">\(U\)</span> value for the Standard training regime, which we expected to have more of the higher ranks (more of the people who needed longer to reach the criterion for fluent juggling).</p>
-<p>So we are looking for the probability of obtaining <span class="math notranslate nohighlight">\(U&gt;=91\)</span> if the null were true.</p>
-</section>
-<section id="what-do-we-mean-by-if-the-null-were-true">
-<h3>What do we mean by “If the null were true”?<a class="headerlink" href="#what-do-we-mean-by-if-the-null-were-true" title="Permalink to this heading">#</a></h3>
-<p>If the null were true, participants should on average need the same number of sessions to reach the criterion of 2 min juggling, regardless of whether they were in the Visualisation condition or the Standard Condition. It could still happen that the Standard Group got a lot of high ranks (and hence a high value of <span class="math notranslate nohighlight">\(U\)</span>) by chance, but as we get to higher values of <span class="math notranslate nohighlight">\(U\)</span>, that becomes less and less likely.</p>
-<p>So if the null were true, high and low ranks would occur randomly in the Standard and Visualisation groups. So the possible ranks (in this case, the numbers 1-20 as <span class="math notranslate nohighlight">\(n_1 + N_2 = 20\)</span>) could be deal out randomly into the two groups.</p>
-</section>
-<section id="estalbishing-the-null-by-complete-enumeration">
-<h3>Estalbishing the null by complete enumeration<a class="headerlink" href="#estalbishing-the-null-by-complete-enumeration" title="Permalink to this heading">#</a></h3>
-<p>For a much smaller sample size, we could work out all the possible ways the ranks could be randomly dealt into the Standard and Visualisation groups, calculate <span class="math notranslate nohighlight">\(U\)</span> for each case, and work out in what proportion of cases this <i>simulated</i> <span class="math notranslate nohighlight">\(U\)</span> was as large as, or larger than, the value of <span class="math notranslate nohighlight">\(U\)</span> from our experiment.</p>
-<p>This is not practical for larger samples as there are too many possible ways to deal the ranks (too many <i>combbinations</i>). In the example above where <span class="math notranslate nohighlight">\(n_1 = 9\)</span> and <span class="math notranslate nohighlight">\(n_2 = 11\)</span>, the number of possible deals or combinations is 167960 - for larger <span class="math notranslate nohighlight">\(n\)</span> the number of combinations becomes astronomical.</p>
-</section>
-<section id="establishing-the-null-by-simulation">
-<h3>Establishing the null by simulation<a class="headerlink" href="#establishing-the-null-by-simulation" title="Permalink to this heading">#</a></h3>
-<p>We can work out the null approximately by doing a lot of random ‘deals’ of the ranks to the Standard and Visualisation groups, calculating <span class="math notranslate nohighlight">\(U\)</span> for each case, and work out in what proportion of cases this <i>simulated</i> <span class="math notranslate nohighlight">\(U\)</span> was as large as, or larger than, the value of <span class="math notranslate nohighlight">\(U\)</span> from our experiment.</p>
-<p>“A lot” might be 10,000 or more (this is still much lower than the number of possible deals under complete enumeration)</p>
-<p>Let’s try it!</p>
+<p>We run the permutation test exactly as we did on the actual data data in the previous chapter</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Possible ranks are the numbers 1 to 20 (remember Python uses the counterintuitive syntax [1,21))</span>
-<span class="n">ranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">)</span>
-<span class="n">ranks</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
-       18, 19, 20])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shuffle them!</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
-<span class="n">ranks</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2,  5, 20, 12, 10, 18,  1, 19,  3, 14, 17,  9,  6, 13, 15, 11,  8,
-        7, 16,  4])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R1 is the sum of the first 11 ranks</span>
-<span class="n">R1</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">R1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>121
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate U1</span>
-<span class="n">n1</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">U1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># R2 is the sum of the rest of the ranks</span>
-<span class="n">R2</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">11</span><span class="p">:]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">R2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>89
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate U2</span>
-<span class="n">n2</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">U2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># U is the larger of U1 and U2</span>
-<span class="n">U</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="p">)</span>
-<span class="n">U</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>Phew! That was on random ‘deal’ or shuffle, resulting in a <span class="math notranslate nohighlight">\(U\)</span> value of 52.</p>
-<p>Now we need to make a loop to do that 10,000 times!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">11</span>
-<span class="n">n2</span> <span class="o">=</span> <span class="mi">9</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">n1</span><span class="o">+</span><span class="n">n2</span>
-<span class="n">ranks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">maxR</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">):]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">maxU</span> <span class="o">=</span> <span class="n">maxR</span> <span class="o">-</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">maxU</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">maxU</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Standard&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">,</span> 
+                                  <span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Visualisation&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">),</span>
+                                  <span class="n">mwU</span><span class="p">,</span>
+                                  <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">,</span>
+                                  <span class="n">n_resamples</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 
-<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">simulated_U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ranks</span><span class="p">)</span>
-    
-    <span class="n">R1</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="n">U1</span> <span class="o">=</span> <span class="n">R1</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-   
-    <span class="n">R2</span> <span class="o">=</span> <span class="n">ranks</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n2</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="n">U2</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">-</span> <span class="p">(</span><span class="n">n2</span><span class="o">*</span><span class="p">(</span><span class="n">n2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
-    
-    <span class="n">U</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">U1</span><span class="p">,</span> <span class="n">U2</span><span class="p">)</span>
-    <span class="n">simulated_U</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">U</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Finally we plot a histogram of our U values, and count the proportion of times U exceeds the value from our actual dataset, <span class="math notranslate nohighlight">\(U=91\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">simulated_U</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion of simulated datasets in which U&gt;=91 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">simulated_U</span><span class="o">&gt;=</span><span class="mi">91</span><span class="p">)))</span>
+<span class="n">results</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of simulated datasets in which U&gt;=91 = 0.0009
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0005999400059994001, null_distribution=array([53.5, 52. , 70. , ..., 51.5, 61. , 66.5]))
 </pre></div>
 </div>
-<img alt="../_images/a9a19a825db71eb407c72dcdbf2a54811c42b227f34e947d5ed199827da29afb.png" src="../_images/a9a19a825db71eb407c72dcdbf2a54811c42b227f34e947d5ed199827da29afb.png" />
 </div>
 </div>
-<p>We obtain a value of <span class="math notranslate nohighlight">\(U\)</span> as extreme as the one in our real dataset less than 1% of the time.</p>
-<p>The p value of the test, which is the same as the proportion of simulated datasets in which U&gt;=91, is aout 0.001, or 0.01%  (it will vary slightly each time you run the code as the null distribubtion is built from random samples). This is not a bad match for the value we got from the built-in function, which was 0.00089 or 0.009%</p>
+<p>We get the same value of <span class="math notranslate nohighlight">\(U\)</span> as from the function <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code>. The <span class="math notranslate nohighlight">\(p\)</span>-value is close too. Let’s plot the null distribution of <span class="math notranslate nohighlight">\(U\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bd06f375627e54422b26639fa9342256947370328f8bfa26b293eaefe598cf23.png" src="../_images/bd06f375627e54422b26639fa9342256947370328f8bfa26b293eaefe598cf23.png" />
+</div>
+</div>
+<p>The distribution is cut off at a minimum of 49.5, because <span class="math notranslate nohighlight">\(u\)</span> is always the <em>larger</em> of the two rank sums (for the two groups). The minimum possible value of the larger ranksum (which would happen if the high and low ranks were evenly shared between groups) is 49.5</p>
+<p>We can also verify that out <span class="math notranslate nohighlight">\(p\)</span>-value is the proportion of shuffles in which <span class="math notranslate nohighlight">\(U&gt;=91\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">null_distribution</span><span class="o">&gt;=</span><span class="mi">91</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0005
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ta-daa!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Standard&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">,</span> 
+                                  <span class="n">juggling</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Group==&quot;Visualisation&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">Rank</span><span class="p">),</span>
+                                  <span class="n">mwU</span><span class="p">,</span>
+                                  <span class="n">alternative</span> <span class="o">=</span> <span class="s1">&#39;greater&#39;</span><span class="p">,</span>
+                                  <span class="n">n_resamples</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0007999200079992001, null_distribution=array([58.5, 60. , 69. , ..., 55.5, 57.5, 57. ]))
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -1547,7 +1376,7 @@ Name: SessionsToCriterion, dtype: float64
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Non-parametric tests for difference of medians</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Rank-based tests</p>
       </div>
     </a>
     <a class="right-next"
@@ -1588,9 +1417,6 @@ Name: SessionsToCriterion, dtype: float64
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-convert-the-data-to-ranks">Step 1: Convert the data to ranks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-the-test-statistic">Calculate the test statistic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establish-the-null-distriubtion">Establish the null distriubtion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-we-mean-by-if-the-null-were-true">What do we mean by “If the null were true”?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estalbishing-the-null-by-complete-enumeration">Estalbishing the null by complete enumeration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-the-null-by-simulation">Establishing the null by simulation</a></li>
 </ul>
 </li>
 </ul>

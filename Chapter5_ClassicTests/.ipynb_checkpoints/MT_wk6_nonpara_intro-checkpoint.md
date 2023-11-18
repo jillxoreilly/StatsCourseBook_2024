@@ -1,4 +1,4 @@
-# Non-parametric tests for difference of medians
+# Rank-based tests
 
 Here we review a class of statistical tests based on **replacing data with their ranks.**
 
@@ -11,11 +11,11 @@ In general, if we draw a small sample of data from a larger population, the dist
 :align: center
 ```
 
-The figure above shows four random samples of 100 individuals from the bimodal distribution above. These are made-up data, but I like to this of them as something like scores out of 100 representing people's opinions about a polarizing issue; people tend to have either high scores or low scores, but not many people have a neutral opinion.
+The figure above shows four random samples of 100 individuals from the bimodal distribution above. These are made-up data, but I like to this of them as something like scores out of 100 representing people's opinions about a polarizing issue, such as how migrants should be treated or whether inheritance tax is fair; people tend to have either high scores or low scores, but not many people have a neutral opinion.
 
 You will see that the data distribution within each sample resembles the original population (having two peaks).
 
-Permutation testing makes use of this fact - we shuffle up the sample (disregarding which group people belonged to because we are assuming the null hypothesis is true, and group doesn't matter). This shuffling process gives us lots of 'new' random datasets, we are able to estimate how much the sample mean can move around due to chance. The exact distribution of the sample mean in the shuffled data (the **null distribution**) will naturally depend on the data distribution itself - in this case the sample data distribution, but we are implicitly assuming this is representative of the population data distribution.
+Permutation testing makes use of the fact taht **the distribution of data in a small sample can generally be seen as representative of the population as a whole** - we shuffle up the sample (disregarding which group people belonged to because we are assuming the null hypothesis is true, and group doesn't matter). This shuffling process gives us lots of 'new' random datasets, we are able to estimate how much the sample mean can move around due to chance. The exact distribution of the sample mean in the shuffled data (the **null distribution**) will naturally depend on the data distribution itself - in this case we are implicitly assuming that the distribution of the data we are shuffling (the sample) is representative of the population data distribution as a whole.
 
 
 ## But small samples may not be representative
@@ -29,11 +29,12 @@ For example, consider these salary data for men and women. There happens to be a
 :align: center
 ```
 
+<br>
 Because there are only 20 people in our sample, if we generalize from this sample to the population (which we implicitly do when running a permutation test), we are accepting that 1/20 people or 5% earn £200k (actually it's more like 1%).
 
 ## Outliers can have a big effect on our statistical tests
 
-In permutation testing case, we shuffle up everyone's salaries and ask how often we get a difference of means as large as the observed value (in this case £28k) just due to chance, by assigning the labels 'man' and 'woman' randomly.
+In permutation testing case, we shuffle up everyone's salaries and assigning the labels 'man' and 'woman' randomly. Then we ask how often we get a difference of means as large as the observed value (in this case £28k) in shuffled data - because such difference in shuffled data must be due to chance, this allows us to quantify how likely our observed value would be to arise due to chance.
 
 If we do that we can see that the shuffled difference of means fall into two completely separate groups - cases where the £200k person was labelled as a man, and cases where they were labelled as a woman. Arguably, this means our conclusions depend pretty heavily on the single observation that one man had a very high salary.
 
@@ -41,6 +42,7 @@ If we do that we can see that the shuffled difference of means fall into two com
 :width: 80%
 :align: center
 ```
+<br>
 
 Note that such extreme outliers can arise by 'luck' (we happen to sample someone atypical), but can also arise from measurement error (for example a noisy measurement from a brain imaging machine) or user error (incorrect data input) as previously discussed (in 'data wrangling').
 
@@ -69,7 +71,7 @@ We summarize how many of the high ranks ended up in the 'men' group by the **Ran
 Under the null hypothesis, we would expect high- and low ranks to fall equally into the 'men' and 'women' categories.
 
 We can now generate the null distribution of the rank sum by effectively doing permutations of *ranks* rather than data 
-    * actually the null distribution for ranks can be worked out exactly with an equation which effectively checks all possible permutations of ranks - but we don't need to delve into that.
+   * actually the null distribution for ranks can be worked out exactly with an equation which effectively checks all possible permutations of ranks - but we don't need to delve into that.
     
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_nullRanksum.png
 :width: 80%
@@ -78,7 +80,15 @@ We can now generate the null distribution of the rank sum by effectively doing p
 
 ## Null distribution based on ranks is not so sensitive to the outlier
 
-Compare the shape of the null distribution of the rank sum to that of the null distribution of the mean differece. We can see that the effect of the extreme outlier is much reduced, because we no longer find two peaks in the null distribution, which as you will recall indicated that whether the difference of means favoured men or women depended strongly on whether the extreme outlier, £200k person, was labelled as a man or a woman.
+Compare the shape of the null distribution of the rank sum to that of the null distribution of the mean differece. 
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_comparedist.png
+:width: 80%
+:align: center
+```
+
+
+We can see that the effect of the extreme outlier is much reduced, because we no longer find two peaks in the null distribution, which as you will recall indicated that whether the difference of means favoured men or women depended strongly on whether the extreme outlier, £200k person, was labelled as a man or a woman.
 
 ## Conclusions
 

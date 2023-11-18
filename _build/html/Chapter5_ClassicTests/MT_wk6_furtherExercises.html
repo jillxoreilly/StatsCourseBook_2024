@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.8. Tutorial Exercises: \(t\)-test and non-parametric equivalents &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.7. Tutorial Exercises: non-parametric tests &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,8 +62,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/MT_wk6_furtherExercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -238,11 +236,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Non-parametric tests for difference of medians</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. The Mann Whitney U, or Wilcoxon Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -525,7 +522,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tutorial Exercises: t-test and non-parametric equivalents</h1>
+    <h1>Tutorial Exercises: non-parametric tests</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -535,10 +532,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.8.2. 1. Whose peaches are heavier?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.8.3. 2. IQ and vitamins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.8.4. 3. Who has the tallest students?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.7.2. 1. Whose peaches are heavier?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.7.3. 2. IQ and vitamins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.7.4. 3. Who has the tallest students?</a></li>
 </ul>
             </nav>
         </div>
@@ -550,12 +547,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-t-test-and-non-parametric-equivalents">
-<h1><span class="section-number">2.8. </span>Tutorial Exercises: <span class="math notranslate nohighlight">\(t\)</span>-test and non-parametric equivalents<a class="headerlink" href="#tutorial-exercises-t-test-and-non-parametric-equivalents" title="Permalink to this heading">#</a></h1>
-<p>Here are some more exercises on comparing means using the t-test and non-parametric equivalents</p>
-<p>These exercises are very similar to what you did in the t-test and Mann-Whitney/Wilcoxon examples so in most cases you will be able to copy and adapt code and text from the examples.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-non-parametric-tests">
+<h1><span class="section-number">2.7. </span>Tutorial Exercises: non-parametric tests<a class="headerlink" href="#tutorial-exercises-non-parametric-tests" title="Permalink to this heading">#</a></h1>
+<p>Here are some exercises on comparing means using non-parametric tests</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">2.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -563,33 +559,100 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="whose-peaches-are-heavier">
-<h2><span class="section-number">2.8.2. </span>1. Whose peaches are heavier?<a class="headerlink" href="#whose-peaches-are-heavier" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.2. </span>1. Whose peaches are heavier?<a class="headerlink" href="#whose-peaches-are-heavier" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png"><img alt="There should be a picture of some peaches here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png" style="width: 30%;" /></a>
 <p>Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor.</p>
-<p>Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches.
-The weights, in kilograms are given in the file peaches.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/peaches.csv</p>
-<ul class="simple">
-<li><p>Throughout the coures you have been loading files directly from my Github repository using <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> using ready made code - below you will need to copy and modify an example to read the file peaches.csv from that same repository</p></li>
-</ul>
+<p>Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches.</p>
 <p>Investigate whether McDonald’s claim is justified by testing for a difference in weight between McDonald and McGregor’s peaches. Use both a parametric and non-parametric test.</p>
 <p>a) Load the data into a Pandas dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">peaches</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/peaches.csv&#39;</span><span class="p">)</span>
+<span class="n">peaches</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>McGregor</th>
+      <th>MacDonald</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.867</td>
+      <td>8.289</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.637</td>
+      <td>7.972</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.652</td>
+      <td>8.237</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.772</td>
+      <td>7.789</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.510</td>
+      <td>7.345</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7.743</td>
+      <td>7.861</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7.356</td>
+      <td>7.779</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7.944</td>
+      <td>7.974</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>b) Plot the data and comment.</p>
-<p>A Kernel desity estimate plot (to show the distribution) and rug plot (to show individual data points) would be a good choice here. You should comment on whether the data appear to be Normally distriubted and hence the suitability of the t-test.</p>
+<p>A Kernel desity estimate plot (to show the distribution) and rug plot (to show individual data points) would be a good choice here. You should comment on the data distribution</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your text here to plot the data</span>
@@ -597,17 +660,7 @@ The weights, in kilograms are given in the file peaches.csv found at https://raw
 </div>
 </div>
 </div>
-<p>d) We can assume (based on the Central Limit Theorem) that these data points are normally distributed. Explain why.</p>
-<p>&lt; Your text here explaining why the data should be Normal according to the CLT &gt;</p>
-<p>e) Conduct a t-test to test Farmer McDonald’s claim</p>
-<ul class="simple">
-<li><p>State your hypotheses</p></li>
-<li><p>State relevant descriptive statistics</p></li>
-<li><p>Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices</p></li>
-<li><p>State your conclusions</p></li>
-</ul>
-<p>&lt; Your answer here! You will need to add additional cells &gt;</p>
-<p>f) Conduct an appropriate non-parametric test of Farmer McDonald’s claim</p>
+<p>c) Conduct an appropriate non-parametric test of Farmer McDonald’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
 <li><p>State relevant descriptive statistics</p></li>
@@ -616,24 +669,184 @@ The weights, in kilograms are given in the file peaches.csv found at https://raw
 </ul>
 </section>
 <section id="iq-and-vitamins">
-<h2><span class="section-number">2.8.3. </span>2. IQ and vitamins<a class="headerlink" href="#iq-and-vitamins" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.3. </span>2. IQ and vitamins<a class="headerlink" href="#iq-and-vitamins" title="Permalink to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg"><img alt="There should be a picture of some vitamin pills here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/vitamins.jpg" style="width: 50%;" /></a>
 <p>The VitalVit company claim that after taking their VitalVit supplement, IQ is increased.</p>
 <p>They run a trial in which 22 participants complete a baseline IQ test, then take VitalVit for six weeks, then complete another IQ test.</p>
-<p>The participants’ scores can be found in the data file VitalVit.csv at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/vitalVit.csv</p>
-<p>a. What kind of design is this.</p>
+<p>a) What kind of design is this.</p>
 <p>&lt; your answer here &gt;</p>
-<p>b. What are the advantages and possible disadvantages of this type of design? Should the company have done something different or additional to rule out confounding factors?</p>
+<p>b) What are the advantages and possible disadvantages of this type of design? Should the company have done something different or additional to rule out confounding factors?</p>
 <p>&lt; your answer here &gt;</p>
-<p>c. Load the data into a Pandas dataframe</p>
+<p>c) Load the data into a Pandas dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vitamin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/vitalVit.csv&#39;</span><span class="p">)</span>
+<span class="n">vitamin</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID_code</th>
+      <th>before</th>
+      <th>after</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>688870</td>
+      <td>82.596</td>
+      <td>83.437</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>723650</td>
+      <td>117.200</td>
+      <td>119.810</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>445960</td>
+      <td>85.861</td>
+      <td>83.976</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>708780</td>
+      <td>125.640</td>
+      <td>127.680</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>109960</td>
+      <td>96.751</td>
+      <td>99.103</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>968530</td>
+      <td>105.680</td>
+      <td>106.890</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>164930</td>
+      <td>142.410</td>
+      <td>145.550</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>744410</td>
+      <td>109.650</td>
+      <td>109.320</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>499380</td>
+      <td>128.210</td>
+      <td>125.110</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>290560</td>
+      <td>84.773</td>
+      <td>87.249</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>780690</td>
+      <td>110.470</td>
+      <td>112.650</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>660820</td>
+      <td>100.870</td>
+      <td>99.074</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>758780</td>
+      <td>94.117</td>
+      <td>95.951</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>363320</td>
+      <td>96.952</td>
+      <td>96.801</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>638840</td>
+      <td>86.280</td>
+      <td>87.669</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>483930</td>
+      <td>89.413</td>
+      <td>94.379</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>102800</td>
+      <td>85.283</td>
+      <td>88.316</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>581620</td>
+      <td>94.477</td>
+      <td>96.300</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>754980</td>
+      <td>90.649</td>
+      <td>94.158</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>268960</td>
+      <td>103.190</td>
+      <td>104.300</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>314040</td>
+      <td>92.880</td>
+      <td>94.556</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>324960</td>
+      <td>97.843</td>
+      <td>97.969</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-<p>d. Plot the data and comment.
+<p>d) Plot the data and comment.
 A scatterplot would be a good choice as these are paired data.
 You could add the line of equality (line x=y) to the graph so we can see whether most people score higer on the IQ test before or after taking VitalVit</p>
 <div class="cell docutils container">
@@ -644,16 +857,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 </div>
-<p>IQ scores are normally distributed by design (the tests are designed to yeild a normal distribution of scores). Therefore we should be able to use a t-test to compare the scores from before and after taking VitalVit. We will carry out both the (parametric) t-test and a suitable non-parametric test</p>
-<p>e) Conduct a t-test to test VitalVit’s claim</p>
-<ul class="simple">
-<li><p>State your hypotheses</p></li>
-<li><p>State relevant descriptive statistics</p></li>
-<li><p>Carry out the test using the ubilt in function from <tt>scipy.stats</tt> with appropriate option choices</p></li>
-<li><p>State your conclusions</p></li>
-</ul>
-<p>&lt; Your answer here! You will need to add additional cells &gt;</p>
-<p>f) Conduct a suitable non-parametric test to test VitalVit’s claim</p>
+<p>e) Conduct a suitable non-parametric test to test VitalVit’s claim</p>
 <ul class="simple">
 <li><p>State your hypotheses</p></li>
 <li><p>State relevant descriptive statistics</p></li>
@@ -663,23 +867,201 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <p>&lt; Your answer here. You will probably need to add more cells. &gt;</p>
 </section>
 <section id="who-has-the-tallest-students">
-<h2><span class="section-number">2.8.4. </span>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.4. </span>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
 <p>A student from Lonsdale college claims that Lonsdale students are taller than students from Beaufort college.</p>
-<p>Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv found at https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/heightsCollege.csv</p>
+<p>Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv, loaded below</p>
 <p>Test the student’s hypothesis using a t-test (this is justified as heights are generally normally distributed) and write up your report as if for a scientific publication. Your report should include the following elements:</p>
-<ul>
-    <li> A plot of the data to show the data distribution
-    <li> The relevant descriptive statistics
-    <li> The results of the t-test
-    <li> A conclusion
+<ul class="simple">
+<li><p>A plot of the data to show the data distribution</p></li>
+<li><p>The relevant descriptive statistics</p></li>
+<li><p>The results of the t-test</p></li>
+<li><p>A conclusion</p></li>
 </ul>
 <p>You can use the write-up sections of the t-test example notebooks as a model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here to load the data - check previous examples if unsure how to do this</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vitamin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heightsCollege.csv&#39;</span><span class="p">)</span>
+<span class="n">vitamin</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lonsdale</th>
+      <th>beaufort</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>183.76</td>
+      <td>182.64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>192.84</td>
+      <td>178.86</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>164.19</td>
+      <td>178.76</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>186.04</td>
+      <td>173.41</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>182.23</td>
+      <td>186.13</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>170.85</td>
+      <td>178.07</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>176.96</td>
+      <td>174.00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>182.40</td>
+      <td>188.46</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>205.05</td>
+      <td>177.43</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>199.39</td>
+      <td>174.88</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>170.55</td>
+      <td>176.94</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>201.24</td>
+      <td>173.06</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>185.08</td>
+      <td>171.16</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>179.56</td>
+      <td>196.68</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>185.00</td>
+      <td>190.59</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>178.57</td>
+      <td>181.15</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>179.13</td>
+      <td>170.20</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>190.43</td>
+      <td>172.94</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>189.86</td>
+      <td>177.76</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>189.92</td>
+      <td>184.54</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>184.70</td>
+      <td>169.68</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>171.55</td>
+      <td>162.69</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>185.02</td>
+      <td>168.86</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>191.41</td>
+      <td>181.33</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>183.42</td>
+      <td>181.74</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>187.24</td>
+      <td>182.16</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>185.09</td>
+      <td>178.09</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>177.88</td>
+      <td>180.29</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>182.06</td>
+      <td>175.67</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>174.49</td>
+      <td>185.03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -747,10 +1129,10 @@ You could add the line of equality (line x=y) to the graph so we can see whether
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.8.2. 1. Whose peaches are heavier?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.8.3. 2. IQ and vitamins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.8.4. 3. Who has the tallest students?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whose-peaches-are-heavier">2.7.2. 1. Whose peaches are heavier?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iq-and-vitamins">2.7.3. 2. IQ and vitamins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-has-the-tallest-students">2.7.4. 3. Who has the tallest students?</a></li>
 </ul>
   </nav></div>
 
