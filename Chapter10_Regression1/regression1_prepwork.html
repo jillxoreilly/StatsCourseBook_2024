@@ -236,11 +236,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -588,11 +593,11 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (0.14.0)
+Requirement already satisfied: numpy&gt;=1.18 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.24.3)
+Requirement already satisfied: scipy!=1.9.2,&gt;=1.4 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.18 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.24.3)
-Requirement already satisfied: scipy!=1.9.2,&gt;=1.4 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
-Requirement already satisfied: pandas&gt;=1.0 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (2.0.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=1.0 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (2.0.3)
 Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.3)
 Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (23.1)
 </pre></div>
@@ -750,10 +755,10 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.738</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 14 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
+  <th>Date:</th>             <td>Sat, 18 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:53:42</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
+  <th>Time:</th>                 <td>20:51:23</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    10</td>      <th>  AIC:               </th> <td>   22.22</td>
@@ -1156,10 +1161,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.266</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 14 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
+  <th>Date:</th>             <td>Sat, 18 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:53:42</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
+  <th>Time:</th>                 <td>20:51:23</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     8</td>      <th>  AIC:               </th> <td>   11.99</td>
@@ -1387,10 +1392,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2200.</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 14 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
+  <th>Date:</th>             <td>Sat, 18 Nov 2023</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:53:43</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
+  <th>Time:</th>                 <td>20:51:24</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  3000</td>      <th>  AIC:               </th> <td>  -2323.</td>

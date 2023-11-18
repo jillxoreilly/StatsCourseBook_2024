@@ -234,11 +234,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction1.html">2.1. Under Construction!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Classic tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_Power/power_intro.html">3. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
 </ul>
 </li>
@@ -988,17 +993,17 @@ system.</em></p>
 <h2><span class="section-number">3.11.4. </span>Do attitudes differ depending on demographics?<a class="headerlink" href="#do-attitudes-differ-depending-on-demographics" title="Permalink to this heading">#</a></h2>
 <p>Looking at the attitude variables (effectx, fairx, confx and antisocx), which demographic factors seem to influence these?</p>
 <p>I found it most helpful to make KDE plots for the distribution of each attitude variable in each demographic group; because there are often many groups to compare, the simplicity of the KDE plot (without shading) is helpful.</p>
-<p>Because there are different numbers of people in each group, you may want to normalize all the KDE plots to have the same area using the argument <code class="docutils literal notranslate"><span class="pre">commmon_normm=False</span></code> as below - this makes it easier to compare groups</p>
+<p>Because there are different numbers of people in each group, you may want to normalize all the KDE plots to have the same area using the argument <code class="docutils literal notranslate"><span class="pre">common_norm=False</span></code> as below - this makes it easier to compare groups</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Under 25&#39;</span><span class="p">,</span><span class="s1">&#39;25-34&#39;</span><span class="p">,</span><span class="s1">&#39;35-44&#39;</span><span class="p">,</span><span class="s1">&#39;45-54&#39;</span><span class="p">,</span><span class="s1">&#39;55-64&#39;</span><span class="p">,</span><span class="s1">&#39;65-74&#39;</span><span class="p">,</span><span class="s1">&#39;75+&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;75+&#39;</span><span class="p">,</span><span class="s1">&#39;65-74&#39;</span><span class="p">,</span><span class="s1">&#39;55-64&#39;</span><span class="p">,</span><span class="s1">&#39;45-54&#39;</span><span class="p">,</span><span class="s1">&#39;35-44&#39;</span><span class="p">,</span><span class="s1">&#39;25-34&#39;</span><span class="p">,</span><span class="s1">&#39;Under 25&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" src="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" />
+<img alt="../_images/d40d61bf5ffd53654eefc0c32ecc00c4b11c4736b84496c88ae95c000206f7bd.png" src="../_images/d40d61bf5ffd53654eefc0c32ecc00c4b11c4736b84496c88ae95c000206f7bd.png" />
 </div>
 </div>
 </section>
@@ -1010,7 +1015,7 @@ system.</em></p>
 <section id="conclusions">
 <h2><span class="section-number">3.11.6. </span>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this heading">#</a></h2>
 <p>Young people, students and those living in areas of high deprivation are more likely to be victims of crime and are more likely to experience antisocial behaviour in their neighbourhood.</p>
-<p>Perhaps surprisingly, there is little diference in attitudes to the police and criminal justice system between these groups, and those groups who experience much less crime and antisocial behaviour; there is a slight effect that people of low SES or in areas of deprivation have momre positive, rather than neutral, attitudes to the police. There is quite a strong effect that young people have more positive attitudes to the criminal justice system than older people, despite experiencing mmore crime and antisocial behaviour.</p>
+<p>Perhaps surprisingly, there is little diference in attitudes to the police and criminal justice system between these groups, and those groups who experience much less crime and antisocial behaviour; there is a slight effect that people of low SES or in areas of deprivation have momre positive, rather than neutral, attitudes to the police. There is quite a strong effect that young people have more negative attitudes to the criminal justice system than older people.</p>
 <p>Those who have been a victim of crime have slightly higher average confidence in the police than those who have not; mainly, a large proportion of people who have not been victims of crime expressed neutral attitudes to the police.</p>
 </section>
 </section>
