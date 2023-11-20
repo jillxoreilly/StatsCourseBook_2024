@@ -234,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
@@ -575,7 +575,7 @@ document.write(`
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png"><img alt="There should be a picture of some peaches here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/peaches.png" style="width: 30%;" /></a>
 <p>Mr Robinson’s juice factory buys peaches from farmers by the tray. Each tray contains 50 peaches. Farmer McDonald claims that this is unfair as his peaches are juicier and therefore weigh more than the peaches of his rival, Mr McGregor.</p>
 <p>Mr Robinson weighs eight trays of Farmer McDonald’s peaches and 8 trays of Mr McGregor’s peaches.</p>
-<p>Investigate whether McDonald’s claim is justified by testing for a difference in weight between McDonald and McGregor’s peaches. Use both a parametric and non-parametric test.</p>
+<p>Investigate whether McDonald’s claim is justified by testing for a difference in weight between McDonald and McGregor’s peaches using a non-parametric (rank-based) test.</p>
 <p>a) Load the data into a Pandas dataframe</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,8 +852,7 @@ A scatterplot would be a good choice as these are paired data.
 You could add the line of equality (line x=y) to the graph so we can see whether most people score higer on the IQ test before or after taking VitalVit</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for a scatter plot. </span>
-<span class="c1"># You can find an example in the workbook on paired sample t-test</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for a scatter plot.</span>
 </pre></div>
 </div>
 </div>
@@ -871,14 +870,13 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <h2><span class="section-number">2.8.4. </span>3. Who has the tallest students?<a class="headerlink" href="#who-has-the-tallest-students" title="Permalink to this heading">#</a></h2>
 <p>A student from Lonsdale college claims that Lonsdale students are taller than students from Beaufort college.</p>
 <p>Heights of 30 randomly selected male undergraduates from each college are found in the file heightsCollege.csv, loaded below</p>
-<p>Test the student’s hypothesis using a t-test (this is justified as heights are generally normally distributed) and write up your report as if for a scientific publication. Your report should include the following elements:</p>
+<p>Test the student’s hypothesis using an appropriate rank-based non-parametric test, and write up your report as if for a scientific publication. Your report should include the following elements:</p>
 <ul class="simple">
 <li><p>A plot of the data to show the data distribution</p></li>
 <li><p>The relevant descriptive statistics</p></li>
-<li><p>The results of the t-test</p></li>
+<li><p>The results of the test</p></li>
 <li><p>A conclusion</p></li>
 </ul>
-<p>You can use the write-up sections of the t-test example notebooks as a model</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vitamin</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heightsCollege.csv&#39;</span><span class="p">)</span>

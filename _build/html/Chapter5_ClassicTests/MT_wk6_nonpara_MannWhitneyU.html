@@ -236,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Rank Sum Test</a></li>
@@ -878,7 +878,7 @@ document.write(`
 <p>The inputs to <code class="docutils literal notranslate"><span class="pre">stats.mannwhitneyu()</span></code> are:</p>
 <ul class="simple">
 <li><p>the two samples to be compared (the values of <tt>SessionsToCriterion</tt> from our Pandas data frame <tt>juggling</tt>), grouped by the value in the column <tt>Group</tt>)</p></li>
-<li><p>the argument <code class="docutils literal notranslate"><span class="pre">alternative='greater'</span></code>, which tells the computer to run a one tailed test that mean of the first input (Standard Group) is greater than the second (Visualisation Group).</p></li>
+<li><p>the argument <code class="docutils literal notranslate"><span class="pre">alternative='greater'</span></code>, which tells the computer to run a one tailed test that median of the first input (Standard Group) is greater than the second (Visualisation Group).</p></li>
 </ul>
 <p>The outputs are a value of the test statistic (<span class="math notranslate nohighlight">\(U=91\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.00089\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 <p>More explanation of how U is calculated below.</p>
@@ -1287,7 +1287,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0006999300069993001, null_distribution=array([49.5, 57. , 53.5, ..., 65. , 54.5, 58.5]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0005999400059994001, null_distribution=array([81.5, 66. , 64. , ..., 55.5, 56. , 50. ]))
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1302,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ed1782d0fcfa283c22277f6358f5e0f7e38368a88e65f434ee94be20c8ce89c.png" src="../_images/1ed1782d0fcfa283c22277f6358f5e0f7e38368a88e65f434ee94be20c8ce89c.png" />
+<img alt="../_images/59ebf465f394b16318f2024d835548e09d27eb0f7fd9136400f99b424f209d1f.png" src="../_images/59ebf465f394b16318f2024d835548e09d27eb0f7fd9136400f99b424f209d1f.png" />
 </div>
 </div>
 <p>The distribution is cut off at a minimum of 49.5, because <span class="math notranslate nohighlight">\(u\)</span> is always the <em>larger</em> of the two rank sums (for the two groups). The minimum possible value of the larger ranksum (which would happen if the high and low ranks were evenly shared between groups) is 49.5</p>
@@ -1314,7 +1314,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0006
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0005
 </pre></div>
 </div>
 </div>
