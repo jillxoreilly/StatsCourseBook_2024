@@ -236,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
@@ -536,7 +536,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.7.1. Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.2. Calculating correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">2.7.2. Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a></li>
 </ul>
             </nav>
         </div>
@@ -688,8 +689,23 @@ document.write(`
 </div></div></div>
 </div>
 </section>
+<section id="plot-the-data">
+<h2><span class="section-number">2.7.2. </span>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h2>
+<p>From a scatter plot, we can see that the data are unsuitable for Pearson’s correlation (please check the notes for Correlation in the section <strong>Describing Data</strong> if unsure why)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">carbon</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/910639bd872e15b85b4b82ae996a0ffcde41bbd6bc4aa976a53a895aee56998b.png" src="../_images/910639bd872e15b85b4b82ae996a0ffcde41bbd6bc4aa976a53a895aee56998b.png" />
+</div>
+</div>
+</section>
 <section id="calculating-correlation">
-<h2><span class="section-number">2.7.2. </span>Calculating correlation<a class="headerlink" href="#calculating-correlation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.3. </span>Calculating correlation<a class="headerlink" href="#calculating-correlation" title="Permalink to this heading">#</a></h2>
 <p>We have seen that we can get the correlation (<span class="math notranslate nohighlight">\(r\)</span>-value) between all pairs of columns using a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">df.corr()</span></code> as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,12 +776,12 @@ document.write(`
 <p>However, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">df.corr()</span></code> doesn’t calculate the significance of the correlation. We could calculate it using a permutation test (as last week) but we can also use a built in function from <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, called <code class="docutils literal notranslate"><span class="pre">stats.spearmanr</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">carbon</span><span class="o">.</span><span class="n">GDP</span><span class="p">,</span> <span class="n">carbon</span><span class="o">.</span><span class="n">CO2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">spearmanr</span><span class="p">(</span><span class="n">carbon</span><span class="o">.</span><span class="n">GDP</span><span class="p">,</span> <span class="n">carbon</span><span class="o">.</span><span class="n">CO2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.7952137550860006, pvalue=4.934862845707976e-37)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SignificanceResult(statistic=0.9143688871356085, pvalue=1.6676605949335523e-65)
 </pre></div>
 </div>
 </div>
@@ -838,7 +854,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.7.1. Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.2. Calculating correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">2.7.2. Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a></li>
 </ul>
   </nav></div>
 

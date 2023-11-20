@@ -236,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Classic tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
@@ -547,6 +547,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-the-test">Carry out the test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-wilcoxon-sign-rank-test-works">How the Wilcoxon Sign-Rank test works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-do-the-test-if-you-were-doing-it-with-pencil-and-paper">How to do the test (if you were doing it with pencil and paper)</a></li>
 </ul>
 </li>
 </ul>
@@ -562,7 +563,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-wilcoxon-sign-rank-test">
 <h1><span class="section-number">2.6. </span>The Wilcoxon Sign-Rank Test<a class="headerlink" href="#the-wilcoxon-sign-rank-test" title="Permalink to this heading">#</a></h1>
-<p>The Wilcoxon Sign-Rank Test is a rank-based test for the mean difference in paired samples. It tests whether the median difference between the members of each pair is greater than zero. As such it is often considered to be a non-parametric equivalent for the <strong>paired samples</strong> t-test (which we will meet next week).</p>
+<p>The Wilcoxon Sign-Rank Test is a rank-based test for the median <strong>difference</strong> in paired samples. It tests whether the median difference between the members of each pair is greater than zero. As such it is often considered to be a non-parametric equivalent for the <strong>paired samples</strong> t-test (which we will meet next week).</p>
 <p>The Wilcoxon Sign-rank test is <strong>not</strong> the same as the Wilcoxon Rank Sum test (Mann Whitney U test) which is for independent samples</p>
 <p>We will us a Python function called <code class="docutils literal notranslate"><span class="pre">stats.wilcoxon()</span></code> from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> library to run the test</p>
 <section id="set-up-python-libraries">
@@ -747,7 +748,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fabdf7f2370&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdac6ff11f0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/580a93a41c843aacc3066c00a29ab227cf140d525d4524853939588c87347db8.png" src="../_images/580a93a41c843aacc3066c00a29ab227cf140d525d4524853939588c87347db8.png" />
@@ -1049,7 +1050,7 @@ document.write(`
 <p>The inputs to <code class="docutils literal notranslate"><span class="pre">stats.wilcoxon()</span></code> are:</p>
 <ul class="simple">
 <li><p>the two samples to be compared (the values of <tt>FirstBorn</tt> and <tt>SecondBorn</tt> from our Pandas data frame <tt>birthOrder</tt>)</p></li>
-<li><p>the argument <code class="docutils literal notranslate"><span class="pre">alternative='greater'</span></code>, which tells the computer to run a one tailed test  that mean of the first input (FirstBorn) is greater than the second (SecondBorn).</p></li>
+<li><p>the argument <code class="docutils literal notranslate"><span class="pre">alternative='greater'</span></code>, which tells the computer to run a one tailed test  that median of the first input (FirstBorn) is greater than the second (SecondBorn).</p></li>
 </ul>
 <p>The outputs are a value of the test statistic (<span class="math notranslate nohighlight">\(T=164\)</span>) and <tt>pvalue</tt> (<span class="math notranslate nohighlight">\(p=0.0133\)</span>) - if this is less than our <span class="math notranslate nohighlight">\(\alpha\)</span> value 0.5, there is a significant difference.</p>
 <p>More explanation of how T is calculated below.</p>
@@ -1061,7 +1062,25 @@ document.write(`
 </section>
 <section id="how-the-wilcoxon-sign-rank-test-works">
 <h3>How the Wilcoxon Sign-Rank test works<a class="headerlink" href="#how-the-wilcoxon-sign-rank-test-works" title="Permalink to this heading">#</a></h3>
-<p>We will not delve into the exact mechanism of the test but it is similar in principle to the ranksum test, except that here we work with ranked <em>differences</em>.</p>
+<p>The mechanism of the test but is similar in principle to the ranksum test, except that here we work with ranked <em>differences</em>.</p>
+</section>
+<section id="how-to-do-the-test-if-you-were-doing-it-with-pencil-and-paper">
+<h3>How to do the test (if you were doing it with pencil and paper)<a class="headerlink" href="#how-to-do-the-test-if-you-were-doing-it-with-pencil-and-paper" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Obtain the difference (in independence score) for each pair</p></li>
+<li><p>Rank the differences regardless of sign (e.g. a difference of +4 is greater than a difference of -3, which is greater than a difference of +2). Remove pairs with zero difference</p></li>
+<li><p>Calculate the sum of ranks assigned to pairs with a positive difference (first-born more independent than second-born) - this is <span class="math notranslate nohighlight">\(R+\)</span></p></li>
+<li><p>Calculate the sum of ranks assigned to pairs with a negative difference (first-born more independent than second-born) - this is <span class="math notranslate nohighlight">\(R-\)</span></p></li>
+<li><p>The test statistic <span class="math notranslate nohighlight">\(T\)</span> is either:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R+\)</span> if we expect positive differences to have the larger ranks (in this case, that equates to expecting first-borns to have higher scores)</p></li>
+<li><p><span class="math notranslate nohighlight">\(R-\)</span>  if we expect negative differences to have the larger ranks (in this case, that equates to expecting second-borns to have higher scores)</p></li>
+<li><p>The smaller of <span class="math notranslate nohighlight">\(R+\)</span> and <span class="math notranslate nohighlight">\(R-\)</span> for a two tailed test (as in the example, we have no a-prior hypothesis about direction of effect)</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> is compared with a null distribution (the expected distribubtion of <span class="math notranslate nohighlight">\(T\)</span> obtained in samples drawn from a population in which there is no true difference between groups)</p></li>
+</ol>
+<p>We will not build code to do this here, although if you are feeling brave you are welcome to have a try yourself, using the between groups rank sum test as a model.</p>
 </section>
 </section>
 </section>
@@ -1141,6 +1160,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-the-test">Carry out the test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-conclusions">Draw conclusions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-wilcoxon-sign-rank-test-works">How the Wilcoxon Sign-Rank test works</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-do-the-test-if-you-were-doing-it-with-pencil-and-paper">How to do the test (if you were doing it with pencil and paper)</a></li>
 </ul>
 </li>
 </ul>
