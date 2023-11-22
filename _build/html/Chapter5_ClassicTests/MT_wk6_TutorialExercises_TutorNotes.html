@@ -707,8 +707,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.22062500000000007, pvalue=0.0496, null_distribution=array([ 0.177625,  0.158875,  0.189375, ...,  0.082625,  0.061125,
-       -0.013125]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.22062500000000007, pvalue=0.0488, null_distribution=array([-0.014625,  0.042375,  0.057875, ..., -0.097625,  0.101625,
+        0.036625]))
 </pre></div>
 </div>
 </div>
@@ -908,7 +908,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/84a71ed8faca296241640afa8735bd7fa6daafa837a3545dcdc7f31bdfb1a1eb.png" src="../_images/84a71ed8faca296241640afa8735bd7fa6daafa837a3545dcdc7f31bdfb1a1eb.png" />
+<img alt="../_images/2af92098043da85fc2a0b8fa4cfea373af62464e1e4e272344d0001f153c036a.png" src="../_images/2af92098043da85fc2a0b8fa4cfea373af62464e1e4e272344d0001f153c036a.png" />
 </div>
 </div>
 <p>e) Conduct a suitable rank-based non-parametric test of VitalVit’s claim</p>
@@ -947,8 +947,8 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.320590909090907, pvalue=0.0029, null_distribution=array([ 0.46568182, -0.0095    , -0.4135    , ..., -0.07631818,
-        0.41886364,  0.36804545]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.320590909090907, pvalue=0.0022, null_distribution=array([0.28422727, 0.27568182, 0.50886364, ..., 0.46513636, 0.02204545,
+       0.02995455]))
 </pre></div>
 </div>
 </div>
@@ -1084,15 +1084,12 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <p><strong>c. Carry out a suitable rank-based non-parametric test of the hypothesis that men own more socks than women</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="n">Wife</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
-                                        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WilcoxonResult(statistic=92.0, pvalue=0.00537109375)
 </pre></div>
 </div>
 </div>
@@ -1100,19 +1097,19 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 <p><strong>d. Carry out a suitable permutation test test of the hypothesis that men own more socks than women</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="n">Wife</span><span class="p">),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">socks</span><span class="o">.</span><span class="n">Husband</span><span class="p">,</span> <span class="n">socks</span><span class="o">.</span><span class="n">Wife</span><span class="p">),</span> <span class="n">mDiff</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0748, null_distribution=array([ 0.28571429,  5.28571429,  0.71428571, ...,  1.57142857,
-       -2.57142857,  2.85714286]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0066, null_distribution=array([ 3.42857143,  3.14285714,  1.28571429, ...,  0.42857143,
+        3.14285714, -1.28571429]))
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>e. Compare the two tests.</strong></p>
-<p>In this case the rank-based test has a smaller <span class="math notranslate nohighlight">\(p\)</span>-value than the permutation test.</p>
+<p>In this case the rank-based test has a (slightly) smaller <span class="math notranslate nohighlight">\(p\)</span>-value than the permutation test.</p>
 <p>The permutation test preserves thhe following features of the data:</p>
 <ol class="arabic simple">
 <li><p>In each couple one partner usually has more socks (what we shuffle is <em>which</em> partner this is)</p></li>
