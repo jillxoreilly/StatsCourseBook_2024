@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/MT_wk6_spearman';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.8. Tutorial Exercises: non-parametric tests" href="MT_wk6_furtherExercises.html" />
+    <link rel="next" title="2.8. Tutorial Exercises: non-parametric tests" href="MT_wk6_TutorialExercises.html" />
     <link rel="prev" title="2.6. The Wilcoxon Sign-Rank Test" href="MT_wk6_nonpara_WilcoxonSignRank.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -242,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -537,7 +537,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.7.1. Load the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">2.7.2. Plot the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-hypotheses">Note on Hypotheses</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -700,7 +703,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/910639bd872e15b85b4b82ae996a0ffcde41bbd6bc4aa976a53a895aee56998b.png" src="../_images/910639bd872e15b85b4b82ae996a0ffcde41bbd6bc4aa976a53a895aee56998b.png" />
+<img alt="../_images/8c4eb92c4c4c5c001e18e4f6e41b44846200325fb3610b21294107098d5b3b53.png" src="../_images/8c4eb92c4c4c5c001e18e4f6e41b44846200325fb3610b21294107098d5b3b53.png" />
 </div>
 </div>
 </section>
@@ -787,6 +790,22 @@ document.write(`
 </div>
 </div>
 <p>This gives us the correlation coefficient <span class="math notranslate nohighlight">\(r=0.79\)</span> (which is a very strong correlation) and the <span class="math notranslate nohighlight">\(p\)</span>-value <span class="math notranslate nohighlight">\(4.9 \times 10^{-37}\)</span> (it is highliy significant)</p>
+<section id="note-on-hypotheses">
+<h3>Note on Hypotheses<a class="headerlink" href="#note-on-hypotheses" title="Permalink to this heading">#</a></h3>
+<p>For Pearson’s correlation (the ‘standard’ correlation coefficient, calculated on actual data values rather than ranks) we might express our null and alternative hypotheses as follows:</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> There is no linear relationship between GDP and CO2 emissions per capita</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> There is a positive linear relationship between GDP and CO2 emissions per capita</p>
+<ul class="simple">
+<li><p>in plain English, CO2 emissions are proportional to GDP</p></li>
+</ul>
+<p>(remember from the section on correlation in <strong>Describing Data</strong> that Pearson’s correlation assumes that the relationship, if there is one, is a straight line)</p>
+<p>For Spearman’s rank correlation coefficient, our null and alternative hypotheses are slightly different:</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> There is no relationship between GDP and CO2 emissions per capita</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> There is a relationship between CO2 and GDP rank</p>
+<ul class="simple">
+<li><p>in plain English, richer a country is, the higher its carbon emissions</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -830,7 +849,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="MT_wk6_furtherExercises.html"
+       href="MT_wk6_TutorialExercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -855,7 +874,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.7.1. Load the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">2.7.2. Plot the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">2.7.3. Calculating correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-hypotheses">Note on Hypotheses</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
