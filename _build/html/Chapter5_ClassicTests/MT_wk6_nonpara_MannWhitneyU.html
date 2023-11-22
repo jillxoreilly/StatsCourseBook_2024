@@ -242,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -738,7 +738,7 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>Let’s plot the data to get an idea of the distribution and check four outliers.</p>
+<p>Let’s plot the data to get an idea of the distribution and check for outliers.</p>
 <p>As we saw in the session on plotting, a good choice here will be a KDE plot (to get an estimate of the shape of the distribution) and a rug plot (individual data values as the KDE plot is based on only a small sample)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1287,7 +1287,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0005999400059994001, null_distribution=array([81.5, 66. , 64. , ..., 55.5, 56. , 50. ]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=91.0, pvalue=0.0010998900109989002, null_distribution=array([66.5, 61. , 68. , ..., 53. , 58.5, 60. ]))
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1302,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/59ebf465f394b16318f2024d835548e09d27eb0f7fd9136400f99b424f209d1f.png" src="../_images/59ebf465f394b16318f2024d835548e09d27eb0f7fd9136400f99b424f209d1f.png" />
+<img alt="../_images/d1770021279a6af65064dacbc377354c4b92a9a49fed633d6302cde147430f34.png" src="../_images/d1770021279a6af65064dacbc377354c4b92a9a49fed633d6302cde147430f34.png" />
 </div>
 </div>
 <p>The distribution is cut off at a minimum of 49.5, because <span class="math notranslate nohighlight">\(u\)</span> is always the <em>larger</em> of the two rank sums (for the two groups). The minimum possible value of the larger ranksum (which would happen if the high and low ranks were evenly shared between groups) is 49.5</p>
@@ -1314,7 +1314,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0005
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.001
 </pre></div>
 </div>
 </div>
