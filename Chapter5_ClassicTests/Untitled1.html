@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Spearman’s Rank Correlation &#8212; Introduction to Statistics and Data Science</title>
+    <title>&lt;no title&gt; &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,9 +62,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/Untitled1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter5_ClassicTests/untitled1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -240,11 +238,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -355,37 +360,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter5_ClassicTests/Untitled1.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -411,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter5_ClassicTests/Untitled1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter5_ClassicTests/untitled1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter5_ClassicTests/Untitled1.ipynb" target="_blank"
+      <li><a href="../_sources/Chapter5_ClassicTests/untitled1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -451,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -523,7 +497,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Spearman’s Rank Correlation</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -532,10 +506,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">Calculating correlation</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -546,231 +519,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="spearman-s-rank-correlation">
-<h1>Spearman’s Rank Correlation<a class="headerlink" href="#spearman-s-rank-correlation" title="Permalink to this heading">#</a></h1>
-<p>In Chapter 1: Describing Data we looked at Spearman’s Rank correlation coefficient, which is a robust correlation based on ranks.</p>
-<p>In this section on rank-based tests, we revisit Spearman’s <span class="math notranslate nohighlight">\(r\)</span> and see how to get a <span class="math notranslate nohighlight">\(p\)</span>-value for it using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code></p>
-<p>The reasons for using Spearman’srank correlation rather than Pearson’s correlation are recapped there.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="load-the-data">
-<h2>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h2>
-<p>Let’s use the CO2 data discussed in the section on correlation in Chapter 1: Describing Data. The dataset contains GDP (weath) and carbon emissions per person for 164 countries.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">carbon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/CO2vGDP.csv&#39;</span><span class="p">)</span>
-<span class="n">carbon</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Country</th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>0.2245</td>
-      <td>1934.555054</td>
-      <td>36686788</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>1.6422</td>
-      <td>11104.166020</td>
-      <td>2877019</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>3.8241</td>
-      <td>14228.025390</td>
-      <td>41927008</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>0.7912</td>
-      <td>7771.441895</td>
-      <td>31273538</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Argentina</td>
-      <td>4.0824</td>
-      <td>18556.382810</td>
-      <td>44413592</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>Venezuela</td>
-      <td>4.1602</td>
-      <td>10709.950200</td>
-      <td>29825652</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>Vietnam</td>
-      <td>2.3415</td>
-      <td>6814.142090</td>
-      <td>94914328</td>
-    </tr>
-    <tr>
-      <th>161</th>
-      <td>Yemen</td>
-      <td>0.3503</td>
-      <td>2284.889893</td>
-      <td>30790514</td>
-    </tr>
-    <tr>
-      <th>162</th>
-      <td>Zambia</td>
-      <td>0.4215</td>
-      <td>3534.033691</td>
-      <td>17835898</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Zimbabwe</td>
-      <td>0.8210</td>
-      <td>1611.405151</td>
-      <td>15052191</td>
-    </tr>
-  </tbody>
-</table>
-<p>164 rows × 4 columns</p>
-</div></div></div>
-</div>
-</section>
-<section id="calculating-correlation">
-<h2>Calculating correlation<a class="headerlink" href="#calculating-correlation" title="Permalink to this heading">#</a></h2>
-<p>We have seen that we can get the correlation (<span class="math notranslate nohighlight">\(r\)</span>-value) between all pairs of columns using a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">df.corr()</span></code> as follows:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">carbon</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CO2</th>
-      <th>GDP</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>CO2</th>
-      <td>1.000000</td>
-      <td>0.914369</td>
-      <td>-0.098554</td>
-    </tr>
-    <tr>
-      <th>GDP</th>
-      <td>0.914369</td>
-      <td>1.000000</td>
-      <td>-0.122920</td>
-    </tr>
-    <tr>
-      <th>population</th>
-      <td>-0.098554</td>
-      <td>-0.122920</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Or between two particular columns like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">carbon</span><span class="o">.</span><span class="n">GDP</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">carbon</span><span class="o">.</span><span class="n">CO2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9143688871356085
-</pre></div>
-</div>
-</div>
-</div>
-<p>However, the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> function <code class="docutils literal notranslate"><span class="pre">df.corr()</span></code> doesn’t calculate the significance of the correlation. We could calculate it using a permutation test (as last week) but we can also use a built in function from <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, called <code class="docutils literal notranslate"><span class="pre">stats.spearmanr</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">carbon</span><span class="o">.</span><span class="n">GDP</span><span class="p">,</span> <span class="n">carbon</span><span class="o">.</span><span class="n">CO2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.7952137550860006, pvalue=4.934862845707976e-37)
-</pre></div>
-</div>
-</div>
-</div>
-<p>This gives us the correlation coefficient <span class="math notranslate nohighlight">\(r=0.79\)</span> (which is a very strong correlation) and the <span class="math notranslate nohighlight">\(p\)</span>-value <span class="math notranslate nohighlight">\(4.9 \times 10^{-37}\)</span> (it is highliy significant)</p>
-</section>
-</section>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -815,10 +564,9 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-correlation">Calculating correlation</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>

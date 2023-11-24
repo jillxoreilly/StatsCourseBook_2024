@@ -240,11 +240,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -605,7 +612,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
 </div>
@@ -648,11 +655,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TAILS
-HEADS
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
 TAILS
-HEADS
-HEADS
+TAILS
+TAILS
+TAILS
 HEADS
 TAILS
 TAILS
@@ -684,7 +691,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
 </pre></div>
 </div>
 </div>
@@ -707,8 +714,8 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 1. 0. 0. 0. 0. 1. 0. 0. 0.]
-sum = 3.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 1. 1. 1. 1. 1. 0. 0. 0. 1.]
+sum = 7.0
 </pre></div>
 </div>
 </div>
@@ -750,7 +757,7 @@ sum = 3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4dfedf71e6d1fcfd6422adcc074e0a7946dea615d3802646d6859129733f05f8.png" src="../_images/4dfedf71e6d1fcfd6422adcc074e0a7946dea615d3802646d6859129733f05f8.png" />
+<img alt="../_images/a981512b46446b59c77a329a5c9a8f99e86fce450b707f56d1a0ba8bf8fc349f.png" src="../_images/a981512b46446b59c77a329a5c9a8f99e86fce450b707f56d1a0ba8bf8fc349f.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -836,7 +843,7 @@ sum = 3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/38a19b3814dd58766b9060d55bac34c30654dcd4aa0c4ab8b836e9f9e9e00cda.png" src="../_images/38a19b3814dd58766b9060d55bac34c30654dcd4aa0c4ab8b836e9f9e9e00cda.png" />
+<img alt="../_images/417caa285e7cb8069e8e5666dc25935786d6735cb7e1ff31fd4ab078d19ff968.png" src="../_images/417caa285e7cb8069e8e5666dc25935786d6735cb7e1ff31fd4ab078d19ff968.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -996,7 +1003,7 @@ sum = 3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0d65e1735ffc68ada222aaa84b9c60b30fec449ac4ac0cb0d6961b209f34d42f.png" src="../_images/0d65e1735ffc68ada222aaa84b9c60b30fec449ac4ac0cb0d6961b209f34d42f.png" />
+<img alt="../_images/8668c28daf6d1af2930e3b70b67926afda558b2977ed274602d640a18627b035.png" src="../_images/8668c28daf6d1af2930e3b70b67926afda558b2977ed274602d640a18627b035.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -1021,7 +1028,7 @@ sum = 3.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/27032c44dde4beb74971b46b1d7aca74c111eec05bf30c6a5048c9d126ce7be0.png" src="../_images/27032c44dde4beb74971b46b1d7aca74c111eec05bf30c6a5048c9d126ce7be0.png" />
+<img alt="../_images/7c51ec1d5194d9692594e2373b1c8372090f48250ec08dc901597b9ac52386d1.png" src="../_images/7c51ec1d5194d9692594e2373b1c8372090f48250ec08dc901597b9ac52386d1.png" />
 </div>
 </div>
 </section>
