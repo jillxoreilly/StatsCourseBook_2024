@@ -78,7 +78,13 @@ parts:
         - file: Chapter5_ClassicTests/MT_wk6_TutorialExercises.ipynb
       - file: Chapter6_ttest/ttest_intro.md
         sections:
-        - file: UnderConstruction3.md
+        - file: Chapter6_ttest/NormalDistribution.md
+        - file: Chapter6_ttest/BestFittingNormal.md
+        - file: Chapter6_ttest/tDistribution.md
+        - file: Chapter6_ttest/ttest_oneSample.ipynb
+        - file: Chapter6_ttest/ttest_pairedSamples.ipynb
+        - file: Chapter6_ttest/ttest_independentSamples.ipynb
+        - file: Chapter6_ttest/TutorialExercises.md
     - caption: Statistical Theory
       numbered: 3
       chapters:

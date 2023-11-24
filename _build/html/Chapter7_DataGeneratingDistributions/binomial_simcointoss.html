@@ -242,7 +242,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.2. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.3. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.4. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.5. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/TutorialExercises.html">3.8. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -603,7 +609,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.7604565321386104
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.20728899082106333
 </pre></div>
 </div>
 </div>
@@ -626,7 +632,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
 </pre></div>
 </div>
 </div>
@@ -656,25 +662,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.41179066620498483
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.6274668538496653
 is it a hit?:            0
-value of random number:  0.7858823594086044
+value of random number:  0.8518293432577776
 is it a hit?:            1
-value of random number:  0.9800627634259463
+value of random number:  0.24662332280120036
+is it a hit?:            0
+value of random number:  0.1428302444022963
+is it a hit?:            0
+value of random number:  0.40823011721986713
+is it a hit?:            0
+value of random number:  0.1386168670832032
+is it a hit?:            0
+value of random number:  0.986508608573654
 is it a hit?:            1
-value of random number:  0.5060138975454781
+value of random number:  0.47915483765001543
 is it a hit?:            0
-value of random number:  0.36899471211476187
-is it a hit?:            0
-value of random number:  0.08192677489366229
-is it a hit?:            0
-value of random number:  0.1755778237958645
-is it a hit?:            0
-value of random number:  0.06331539373702821
-is it a hit?:            0
-value of random number:  0.7840627951243997
+value of random number:  0.7688414462554759
 is it a hit?:            1
-value of random number:  0.29757420883133745
+value of random number:  0.13251323890350042
 is it a hit?:            0
 </pre></div>
 </div>
@@ -707,15 +713,15 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-1
-0
-0
-0
-0
-0
 0
 1
+0
+1
+0
+0
+0
+0
+0
 </pre></div>
 </div>
 </div>
@@ -744,7 +750,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [1. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 1. 1. 0. 0. 0. 0.]
 </pre></div>
 </div>
 </div>
