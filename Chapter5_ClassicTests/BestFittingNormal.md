@@ -6,9 +6,9 @@ For example, given the heights of 10 fictional ballerinas, we can calculate the 
 
 From these two numbers, we can reconstruct an estimate of the height distribution for all the ballerinas in the world (!) as the normal distribution with the matching mmean and standard deviation, AKA the **best fitting normal**
 
-$$ height ~ \mathcal{N}(mean = 157.3, sd = 6.3) $$
+$$ height \tilde \mathcal{N}(m = 157.3, sd = 6.3) $$
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png
 :width: 80%
 :align: center
 ```
@@ -17,7 +17,7 @@ $$ height ~ \mathcal{N}(mean = 157.3, sd = 6.3) $$
 
 If it is correct that heights are normally distributed, we should have a quite precise model of the heights of ballerinas worldwide by fitting the best-fitting normal to our data. Importantly this should be more 'correct' than assuming that heights in the population have the same distribution as in the sample (which is not perfectly normal)
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png
 :width: 80%
 :align: center
 ```
@@ -26,7 +26,7 @@ If it is correct that heights are normally distributed, we should have a quite p
 
 If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution - usually non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png
 :width: 80%
 :align: center
 ```
@@ -42,6 +42,7 @@ Below I drew 10,000 samples of size $n=10$ from a large population of normally d
 * sample standard deviations have a skewed distribution
 
 Most importantly:
+
 * **the sample mean and standard deviation aer just estimates of the population mean and standard deviation and vary randomly from sample to sample**
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_samplingdists.png
