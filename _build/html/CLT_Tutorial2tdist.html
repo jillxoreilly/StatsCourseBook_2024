@@ -240,11 +240,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -607,7 +614,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7ae7d9c0d423c93df9d1e00ce61910d1743b80c1b38fd698f83ce312ce01867c.png" src="_images/7ae7d9c0d423c93df9d1e00ce61910d1743b80c1b38fd698f83ce312ce01867c.png" />
+<img alt="_images/259dd81077701fb02331be38b430cc995372e850c415dd75012b672ff62bc131.png" src="_images/259dd81077701fb02331be38b430cc995372e850c415dd75012b672ff62bc131.png" />
 </div>
 </div>
 <p><b>Python Note - matching the PDF to the histogram</b></p>
@@ -658,7 +665,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fffb04d0ea411e786cf7f17b351b04347cdabc9bba41f0c35b410fa086f57ad7.png" src="_images/fffb04d0ea411e786cf7f17b351b04347cdabc9bba41f0c35b410fa086f57ad7.png" />
+<img alt="_images/186b9de90de1cf8afcf909465303f2be10f22aeb2a03c3629687ceeff7f42df8.png" src="_images/186b9de90de1cf8afcf909465303f2be10f22aeb2a03c3629687ceeff7f42df8.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -688,7 +695,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/630856f2adf56a63eee50ac77c1ee1664c9ed25d9d72e54f43db3498882c1876.png" src="_images/630856f2adf56a63eee50ac77c1ee1664c9ed25d9d72e54f43db3498882c1876.png" />
+<img alt="_images/187b34d33fbe28fd8db9d817007ee34fe9ceaa84e3fbfb73a632d0dfd2868868.png" src="_images/187b34d33fbe28fd8db9d817007ee34fe9ceaa84e3fbfb73a632d0dfd2868868.png" />
 </div>
 </div>
 <p>Note that the Central Limit Theorem does <b><i>not</i></b> tell us that <span class="math notranslate nohighlight">\(s\)</span> is normally distributed - only <span class="math notranslate nohighlight">\(m\)</span> has that honour.</p>
@@ -720,10 +727,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.992598689106607
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.8749767360748955
 </pre></div>
 </div>
-<img alt="_images/96a6e8991b6bbcd165c1d3eb2cfd948f067d80d203d6c9ce01a64b1a676097c9.png" src="_images/96a6e8991b6bbcd165c1d3eb2cfd948f067d80d203d6c9ce01a64b1a676097c9.png" />
+<img alt="_images/2aa4e8954d282b6256ba25f2f35c62a369a0aa218393a96966f17fdeaec35db5.png" src="_images/2aa4e8954d282b6256ba25f2f35c62a369a0aa218393a96966f17fdeaec35db5.png" />
 </div>
 </div>
 </section>
@@ -803,11 +810,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 161.99561562009845
-mean simulated value of s is 6.998797499611904
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.12132113590022
+mean simulated value of s is 6.87990684708708
 </pre></div>
 </div>
-<img alt="_images/93ff1f0d528cd3718288ac83ee59e0c3deffd40e9baee95fce3338b653aa7011.png" src="_images/93ff1f0d528cd3718288ac83ee59e0c3deffd40e9baee95fce3338b653aa7011.png" />
+<img alt="_images/9aa45c35beb0bafc3171031ba9ce0b8024df0bae1cdf7e78fe3c9b4461362d19.png" src="_images/9aa45c35beb0bafc3171031ba9ce0b8024df0bae1cdf7e78fe3c9b4461362d19.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="_images/Minion_what.jpg"><img alt="What?!" src="_images/Minion_what.jpg" style="width: 10%;" /></a>
@@ -883,7 +890,7 @@ mean simulated value of s is 6.998797499611904
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe8b053240d209ab99eebe0475a9703d8adc753b9003623264ed72cc8e5951bf.png" src="_images/fe8b053240d209ab99eebe0475a9703d8adc753b9003623264ed72cc8e5951bf.png" />
+<img alt="_images/5e3f59c1e4833d73ade4a4b6acb3c0bce6ae62be365e6f35282a8b09ddde8f7f.png" src="_images/5e3f59c1e4833d73ade4a4b6acb3c0bce6ae62be365e6f35282a8b09ddde8f7f.png" />
 </div>
 </div>
 <p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
@@ -895,7 +902,7 @@ mean simulated value of s is 6.998797499611904
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.37
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.82
 </pre></div>
 </div>
 </div>
@@ -939,8 +946,8 @@ mean simulated value of s is 6.998797499611904
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/db9fb8004df9724ebc18d38b252be95669f3ba8266264d5e55e7feee57e5e065.png" src="_images/db9fb8004df9724ebc18d38b252be95669f3ba8266264d5e55e7feee57e5e065.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1119
+<img alt="_images/9f3e247e13bfef7506f9e342d3501d5d37c170e854072fe000b2e0881cbefbbd.png" src="_images/9f3e247e13bfef7506f9e342d3501d5d37c170e854072fe000b2e0881cbefbbd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1155
 </pre></div>
 </div>
 </div>

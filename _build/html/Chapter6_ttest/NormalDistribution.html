@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.2. Normal Distribution &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.3. Normal Distribution &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter6_ttest/NormalDistribution';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.3. Best fitting Normal" href="BestFittingNormal.html" />
-    <link rel="prev" title="3. t-Test" href="ttest_intro.html" />
+    <link rel="next" title="3.4. Best fitting Normal" href="BestFittingNormal.html" />
+    <link rel="prev" title="3.2. Hypothesis testing roundup" href="HypothesisTestingRecap.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -246,13 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ttest_intro.html">3. t-Test</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BestFittingNormal.html">3.3. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tDistribution.html">3.4. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.5. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -510,13 +511,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-the-normal-distritbution">3.2.1. Characteristics of the normal distritbution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation">Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-the-normal-distritbution">3.3.1. Characteristics of the normal distritbution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution-has-two-parameters">Normal distribution has two parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-z-score">The Z-score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation">Equation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-if-data-are-normally-distributed">3.2.2. How do we know if data are normally distributed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-if-data-are-normally-distributed">3.3.2. How do we know if data are normally distributed?</a></li>
 </ul>
             </nav>
         </div>
@@ -529,40 +531,39 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="normal-distribution">
-<h1><span class="section-number">3.2. </span>Normal Distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.3. </span>Normal Distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h1>
 <p>The t-test is a test for difference of means that can be used if the data to be tested are drawn from a normal distribution.</p>
 <p>Here we take a look at the normal distribution itself</p>
 <section id="characteristics-of-the-normal-distritbution">
-<h2><span class="section-number">3.2.1. </span>Characteristics of the normal distritbution<a class="headerlink" href="#characteristics-of-the-normal-distritbution" title="Permalink to this heading">#</a></h2>
-<p>The normal distribution is a data distribution with a very particular ‘bell curve’ shape. It is not just any old symmetrical, unimodal distribution - it is described by an exact equation and as we will later see that even the t distribution, which looks pretty similar, can be distinguished from the normal distribution, and this distinction is important in statistical testing.</p>
-<section id="equation">
-<h3>Equation<a class="headerlink" href="#equation" title="Permalink to this heading">#</a></h3>
-<p>The equation of the bell curve is below (you can skip this bit if you don’t fancy it)</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" style="width: 80%;" /></a>
-<p>Consequences of the equation:</p>
-<ul class="simple">
-<li><p>The probability of observing a data value falls off for data values further from the mean</p></li>
-<li><p>Values less than one SD from the mean are quite likely but values more than 1 SD from the mean are increasingly unlikely; this is because the curve is a function of <span class="math notranslate nohighlight">\(e^{-Z^2}\)</span> rater than <span class="math notranslate nohighlight">\(e^{-Z}\)</span></p></li>
-</ul>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" style="width: 80%;" /></a>
-</section>
+<h2><span class="section-number">3.3.1. </span>Characteristics of the normal distritbution<a class="headerlink" href="#characteristics-of-the-normal-distritbution" title="Permalink to this heading">#</a></h2>
+<p>The normal distribution is a data distribution with a very particular ‘bell curve’ shape. It is not just any old <strong>symmetrical, unimodal</strong> distribution - it is described by an <strong>exact equation</strong>.</p>
+<p>As we will later see that even the <span class="math notranslate nohighlight">\(t\)</span> distribution, which looks pretty similar, can be distinguished from the normal distribution, and this distinction is important in statistical testing.</p>
 <section id="normal-distribution-has-two-parameters">
 <h3>Normal distribution has two parameters<a class="headerlink" href="#normal-distribution-has-two-parameters" title="Permalink to this heading">#</a></h3>
 <p>If some data (eg the heights of toddlers, or of adults) are normally distributed, that normal distribution can be summarized by two numbers or <strong>parameters</strong>:</p>
 <ul class="simple">
-<li><p>the mean of the distribution</p>
+<li><p>the mean of the distribution, <span class="math notranslate nohighlight">\(\mu\)</span></p>
 <ul>
 <li><p>in the example below, the mean height of 18-year-olds is unsurprisingly higher than the mean height for 2-year-olds)</p></li>
 </ul>
 </li>
-<li><p>the standard deviation</p>
+<li><p>the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span></p>
 <ul>
 <li><p>in the example below, the spread of heights is larger for 18 year olds</p></li>
 </ul>
 </li>
 </ul>
-<p>Because we have the equation, once we know these two numbers we can estimate the full data distribution for heights (for example, I could tell you exactly how likely it is to be 95cm tall (to the nearest cm) as a toddler, or over 180cm as an adult woman).</p>
+<p>Because we have the equation, once we know these two numbers we can estimate the full data distribution for heights (for example, I could tell you exactly how likely it is to be 95cm tall (to the nearest cm) as a toddler, or over 180cm as an adult woman)</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalx2.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalx2.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalx2.png" style="width: 80%;" /></a>
+</section>
+<section id="notation">
+<h3>Notation<a class="headerlink" href="#notation" title="Permalink to this heading">#</a></h3>
+<p>When describing normally distribbuted data we sometimes use this notation:</p>
+<div class="math notranslate nohighlight">
+\[ x \sim \mathcal{N}(164, 6.0^2) \]</div>
+<p>To read this out loud we say:</p>
+<p>“The heighht of adult women, <span class="math notranslate nohighlight">\(x\)</span>, follows a Nomral with mean 164cm and standard deviation 6.0cm”</p>
+<p>Note that there is some inconsistency in how different authors use this notation; some people specify the <em>standard deviation</em> and others the <em>variance</em>. To mminimie ambguity, I like to specify the standard deviation squared (ie the variance) as written above; it shhould be clear that <span class="math notranslate nohighlight">\(6.0\)</span> is the standard deviation and <span class="math notranslate nohighlight">\(6.0^2\)</span> is the variance</p>
 </section>
 <section id="the-z-score">
 <h3>The Z-score<a class="headerlink" href="#the-z-score" title="Permalink to this heading">#</a></h3>
@@ -575,9 +576,32 @@ document.write(`
 <p>The result for normally distributed data is that the Z-scores translate directly into probabilities:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_RuleOfThumb.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_RuleOfThumb.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_RuleOfThumb.png" style="width: 80%;" /></a>
 </section>
+<section id="equation">
+<h3>Equation<a class="headerlink" href="#equation" title="Permalink to this heading">#</a></h3>
+<p><em>You can skip this subsection if you don’t fancy it</em></p>
+<p>The equation of the bell curve is below. It has two <em>parameters</em> (numbers that vary between different normally distributed datasets): the mean <span class="math notranslate nohighlight">\(\mu\)</span> and the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_normalParams.png" style="width: 80%;" /></a>
+<p>If we convert the data to Z-scores, we are standardizing the mean (to Zero) and sd (to 1), so the distribution of Z has no parameters that vary between datasets.</p>
+<p>Looking closely at the simplifed form of the equation, we can see thhat the probability of a data value (or rather the corresponding Z-scores) is a function of the square of the Z-score, specifically <span class="math notranslate nohighlight">\(e^{-Z^2}\)</span>.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_bellcurvemaths.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_bellcurvemaths.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_bellcurvemaths.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>The probability of observing a data value falls off for data values further from the mean under the Normal distribution</p></li>
+</ul>
+<p>Comparing to the more familiar exponential decay curve <span class="math notranslate nohighlight">\(e^{-Z}\)</span> we see:</p>
+<ul class="simple">
+<li><p>Values less than one SD from the mean are quite likely (more likely under <span class="math notranslate nohighlight">\(e^{-Z^2}\)</span> than <span class="math notranslate nohighlight">\(e^{-Z}\)</span>, because when <span class="math notranslate nohighlight">\(Z&lt;1\)</span>, then <span class="math notranslate nohighlight">\(Z^2&lt;Z\)</span>)</p></li>
+<li><p>Values more than 1 SD from the mean are increasingly unlikely (less likely under <span class="math notranslate nohighlight">\(e^{-Z^2}\)</span> than <span class="math notranslate nohighlight">\(e^{-Z}\)</span>, because when <span class="math notranslate nohighlight">\(Z&gt;1\)</span>, then <span class="math notranslate nohighlight">\(Z^2&gt;Z\)</span>)</p></li>
+<li><p>As Z increases, the probability of observing a data value with that Z-score falls off rapidly, as <span class="math notranslate nohighlight">\(Z^2 &gt;&gt; Z\)</span> and <span class="math notranslate nohighlight">\(e^{-Z^2}\)</span> rapidly becomes tiny</p>
+<ul>
+<li><p>This is what gives the normal distributions its thin tails</p></li>
+<li><p>it means that if we try to fit a normal distribution to a dataset with an outlier, we end up estimating a very large standard deviation - because we can’t fit a normal that says one of our (say) 10 datapoints should occur only one in a million times (equivalent Z score of 4.75)</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 <section id="how-do-we-know-if-data-are-normally-distributed">
-<h2><span class="section-number">3.2.2. </span>How do we know if data are normally distributed<a class="headerlink" href="#how-do-we-know-if-data-are-normally-distributed" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>How do we know if data are normally distributed?<a class="headerlink" href="#how-do-we-know-if-data-are-normally-distributed" title="Permalink to this heading">#</a></h2>
 <p>If we want to use a t-test we need to be confident that our data are approximately normally distributed</p>
 <p>How can we know if this is the case?</p>
 <p>For large samples we can plot a histogram and compare to the best-fitting normal. There are also statistical tests to determine whether data are normally distributed (but these are not covered here).</p>
@@ -624,12 +648,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ttest_intro.html"
+       href="HypothesisTestingRecap.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>t-Test</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Hypothesis testing roundup</p>
       </div>
     </a>
     <a class="right-next"
@@ -637,7 +661,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Best fitting Normal</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Best fitting Normal</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -656,13 +680,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-the-normal-distritbution">3.2.1. Characteristics of the normal distritbution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation">Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-the-normal-distritbution">3.3.1. Characteristics of the normal distritbution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normal-distribution-has-two-parameters">Normal distribution has two parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation">Notation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-z-score">The Z-score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equation">Equation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-if-data-are-normally-distributed">3.2.2. How do we know if data are normally distributed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-know-if-data-are-normally-distributed">3.3.2. How do we know if data are normally distributed?</a></li>
 </ul>
   </nav></div>
 

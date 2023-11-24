@@ -240,11 +240,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -609,16 +616,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample 0 = [3 2 2 1]
-sample 1 = [2 2 1 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample 0 = [2 3 1 2]
+sample 1 = [3 2 2 1]
 sample 2 = [2 3 1 2]
-sample 3 = [1 3 2 2]
-sample 4 = [1 2 3 2]
-sample 5 = [2 3 2 1]
-sample 6 = [2 3 2 1]
-sample 7 = [2 3 1 2]
-sample 8 = [2 2 1 3]
-sample 9 = [2 2 1 3]
+sample 3 = [2 3 2 1]
+sample 4 = [2 1 3 2]
+sample 5 = [3 1 2 2]
+sample 6 = [2 3 1 2]
+sample 7 = [2 1 2 3]
+sample 8 = [2 1 2 3]
+sample 9 = [3 1 2 2]
 </pre></div>
 </div>
 </div>
@@ -773,19 +780,19 @@ sample 9 = [1 2 2 3]
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>Betty</td>
-      <td>cat</td>
-    </tr>
-    <tr>
       <th>6</th>
       <td>Georgia</td>
       <td>dog</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>David</td>
-      <td>dog</td>
+      <th>2</th>
+      <td>Charley</td>
+      <td>cat</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Henrietta</td>
+      <td>cat</td>
     </tr>
   </tbody>
 </table>
@@ -828,28 +835,18 @@ sample 9 = [1 2 2 3]
       <td>cat</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Egbert</td>
+      <th>6</th>
+      <td>Georgia</td>
+      <td>dog</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Henrietta</td>
       <td>cat</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Egbert</td>
-      <td>cat</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Egbert</td>
-      <td>cat</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Charley</td>
-      <td>cat</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Charley</td>
+      <th>7</th>
+      <td>Henrietta</td>
       <td>cat</td>
     </tr>
     <tr>
@@ -858,9 +855,19 @@ sample 9 = [1 2 2 3]
       <td>dog</td>
     </tr>
     <tr>
+      <th>1</th>
+      <td>Betty</td>
+      <td>cat</td>
+    </tr>
+    <tr>
       <th>5</th>
       <td>Freddie</td>
       <td>rabbit</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Henrietta</td>
+      <td>cat</td>
     </tr>
   </tbody>
 </table>
@@ -874,14 +881,14 @@ sample 9 = [1 2 2 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5    rabbit
-5    rabbit
-0       cat
-1       cat
-6       dog
-2       cat
-6       dog
-2       cat
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    cat
+0    cat
+7    cat
+7    cat
+2    cat
+0    cat
+7    cat
+7    cat
 Name: Pet, dtype: object
 </pre></div>
 </div>

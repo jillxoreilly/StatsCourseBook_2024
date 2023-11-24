@@ -244,7 +244,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -707,8 +714,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.22062500000000007, pvalue=0.0488, null_distribution=array([-0.014625,  0.042375,  0.057875, ..., -0.097625,  0.101625,
-        0.036625]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=0.22062500000000007, pvalue=0.0478, null_distribution=array([0.045375, 0.062625, 0.001625, ..., 0.054125, 0.012625, 0.235625]))
 </pre></div>
 </div>
 </div>
@@ -908,7 +914,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2af92098043da85fc2a0b8fa4cfea373af62464e1e4e272344d0001f153c036a.png" src="../_images/2af92098043da85fc2a0b8fa4cfea373af62464e1e4e272344d0001f153c036a.png" />
+<img alt="../_images/6cafee147a47b194bfb50bdbf6cc41a90b9c60051198a441e47bb5be6610c3e5.png" src="../_images/6cafee147a47b194bfb50bdbf6cc41a90b9c60051198a441e47bb5be6610c3e5.png" />
 </div>
 </div>
 <p>e) Conduct a suitable rank-based non-parametric test of VitalVit’s claim</p>
@@ -947,8 +953,8 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.320590909090907, pvalue=0.0022, null_distribution=array([0.28422727, 0.27568182, 0.50886364, ..., 0.46513636, 0.02204545,
-       0.02995455]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=1.320590909090907, pvalue=0.0024, null_distribution=array([-0.12895455, -0.32859091, -0.1055    , ..., -0.66795455,
+        0.79259091,  0.54231818]))
 </pre></div>
 </div>
 </div>
@@ -1078,7 +1084,7 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c9a6c9738cbe0cd15f0925f68ebebb92cdef500460bd247472dced963d86d5a8.png" src="../_images/c9a6c9738cbe0cd15f0925f68ebebb92cdef500460bd247472dced963d86d5a8.png" />
+<img alt="../_images/c30d9f6cdf748688294e34a94d80cd6ff620edfcf0770b5716f8deb8aaa5f23e.png" src="../_images/c30d9f6cdf748688294e34a94d80cd6ff620edfcf0770b5716f8deb8aaa5f23e.png" />
 </div>
 </div>
 <p><strong>c. Carry out a suitable rank-based non-parametric test of the hypothesis that men own more socks than women</strong></p>
@@ -1102,8 +1108,8 @@ You could add the line of equality (line x=y) to the graph so we can see whether
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0066, null_distribution=array([ 3.42857143,  3.14285714,  1.28571429, ...,  0.42857143,
-        3.14285714, -1.28571429]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.571428571428571, pvalue=0.0062, null_distribution=array([-1.14285714, -3.57142857,  3.14285714, ...,  0.42857143,
+        1.71428571, -1.        ]))
 </pre></div>
 </div>
 </div>

@@ -240,11 +240,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -710,11 +717,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[78 78 29 32 20 70 23 12 77 39 78 59 77  9 84 37 18 29 57 73 28 27 26 19
- 46 24 80 22 75 87 42 13 45 52 82 47 26 83 11 17 82 89 64 28 78 88 28 39
- 82 15 86 84 29 91 73 21 18 23 79 35 28 37 68  8 82 31 46 25 27 45 49 74
- 77 73 16 72 84 34 26 17 32 78 58 28 78 81 82 15 27 40 86 28 34 34 24 81
- 47 98 84 80]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[88 78 28 71 75 14 18 78  7 86 82 41 56 79 31 15 17 56 51 12 48 44 19 46
+ 29 32 38 34 77 86 88 40 26 36 35 17 78 83 36 23 53 32 51 65 79 15 29 23
+ 47 79 11 34 22 81 63 54 37 87 72 38 81 56 20 14 78 40 43 32 33 21 82 86
+ 27 25 33 31 83 14 84 60 83 42 84 49 82 15 28 18 89 47 24 34 37 68 70 59
+ 22 42 23 18]
 </pre></div>
 </div>
 </div>
@@ -732,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4403e3593ff5afbcbfe684869efc957fc63b89de7dd0f5a0da75d438da5a6ebd.png" src="_images/4403e3593ff5afbcbfe684869efc957fc63b89de7dd0f5a0da75d438da5a6ebd.png" />
+<img alt="_images/4530f2111df57ff6c14c488fa346ab837b2e6ce65fbf515c11d5b25d46eec0d4.png" src="_images/4530f2111df57ff6c14c488fa346ab837b2e6ce65fbf515c11d5b25d46eec0d4.png" />
 </div>
 </div>
 <p>Hopefully we can see that the distribution within the sample resembles the shape of the distribution in the national sample, with two peaks, although somewhat noisier</p>
@@ -748,47 +755,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
+  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
+/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13152/3173269395.py:5: UserWarning: The figure layout has changed to tight
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
   plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
 </pre></div>
 </div>
-<img alt="_images/44fa09a064ab26716d1dd82caae9fbe20bd55ab86d9858d476ac7b1373718037.png" src="_images/44fa09a064ab26716d1dd82caae9fbe20bd55ab86d9858d476ac7b1373718037.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_70364/3173269395.py:5: UserWarning: The figure layout has changed to tight
+  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
+</pre></div>
+</div>
+<img alt="_images/8971af614dbef0ab767f20a4fe76cad379df60252d2aac984e1341ce59bc352b.png" src="_images/8971af614dbef0ab767f20a4fe76cad379df60252d2aac984e1341ce59bc352b.png" />
 </div>
 </div>
 <p>Notice that we always manage to reproduce the bimodal shape, albeit with random variability.</p>
@@ -839,7 +846,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;sample mean&#39;)
 </pre></div>
 </div>
-<img alt="_images/40881ebb9524d9ce0278850413ba27c5852f0af09fa27a53921b67907235c0f8.png" src="_images/40881ebb9524d9ce0278850413ba27c5852f0af09fa27a53921b67907235c0f8.png" />
+<img alt="_images/e52f8201f21489499489a74d5890a7902fb8b9717c3cfe4868dacaefb88470ff.png" src="_images/e52f8201f21489499489a74d5890a7902fb8b9717c3cfe4868dacaefb88470ff.png" />
 </div>
 </div>
 <p>The distribution of sample means is approximately normal.</p>
@@ -853,7 +860,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.87701499999999
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.87168
 </pre></div>
 </div>
 </div>
@@ -870,7 +877,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4458130018002193
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.45420096520232
 </pre></div>
 </div>
 </div>
@@ -902,7 +909,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distriution (from simulation) = 2.4458130018002193
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distriution (from simulation) = 2.45420096520232
 SEM from the formula = 2.479272056187636
 </pre></div>
 </div>
@@ -943,7 +950,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/269fb0ccc59fb64d7c1476e96595555ac0180c2a5bc5757f209c99bef73dad8d.png" src="_images/269fb0ccc59fb64d7c1476e96595555ac0180c2a5bc5757f209c99bef73dad8d.png" />
+<img alt="_images/5ee133409c71bcacc8e05caa102c5f67b4dce024e6db546b37e4da2e0c8cec7f.png" src="_images/5ee133409c71bcacc8e05caa102c5f67b4dce024e6db546b37e4da2e0c8cec7f.png" />
 </div>
 </div>
 </section>
@@ -970,7 +977,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4a44a59c24985913955f981f45ed1f461a6ed89cc29709900a52293798122644.png" src="_images/4a44a59c24985913955f981f45ed1f461a6ed89cc29709900a52293798122644.png" />
+<img alt="_images/70dadde3e15e3fa41a1e49949c846b9a657757be81d6e7b343e71a9244757b6d.png" src="_images/70dadde3e15e3fa41a1e49949c846b9a657757be81d6e7b343e71a9244757b6d.png" />
 </div>
 </div>
 <p>Now we make our predicted normal sampling distribution of the mean.</p>
@@ -1023,7 +1030,7 @@ SEM from the formula = 2.479272056187636
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="_images/4b65b34ce897c1ce45ecb5c51d56c6d4eb74f0e88e4bc9589faa3dec24fd102e.png" src="_images/4b65b34ce897c1ce45ecb5c51d56c6d4eb74f0e88e4bc9589faa3dec24fd102e.png" />
+<img alt="_images/1bbd57933698fd62ac4c48b03edad0376265d02894f07b26fe900d7a29e406bc.png" src="_images/1bbd57933698fd62ac4c48b03edad0376265d02894f07b26fe900d7a29e406bc.png" />
 </div>
 </div>
 <p>This is not a bad match!</p>
@@ -1052,7 +1059,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.0175 or 1.7500000000000002%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.0174 or 1.7399999999999998%
 </pre></div>
 </div>
 </div>

@@ -240,11 +240,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_furtherExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="UnderConstruction3.html">3.2. Under Construction!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -674,7 +681,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/47d8358d2328d377547ac53b90905d3628c285e8dc5d628e341204bd29044ddc.png" src="_images/47d8358d2328d377547ac53b90905d3628c285e8dc5d628e341204bd29044ddc.png" />
+<img alt="_images/5898ca153a95be06c2c6de6af9f60ff4ceacad8571b087392093807793d94b27.png" src="_images/5898ca153a95be06c2c6de6af9f60ff4ceacad8571b087392093807793d94b27.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -714,11 +721,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.003071</td>
+      <td>-0.014768</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.003071</td>
+      <td>-0.014768</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -747,7 +754,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.2804129776322264, pvalue=0.048559551527767544)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.05986810147444897, pvalue=0.6796103197422354)
 </pre></div>
 </div>
 </div>
@@ -760,7 +767,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.048559551527767544
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6796103197422354
 </pre></div>
 </div>
 </div>
@@ -784,7 +791,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0461
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0556
 </pre></div>
 </div>
 </div>
@@ -830,7 +837,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cb73a8ad98c2026454ce71cb30b12b0cc96fa65f14b49eefd0b38b065f224e0d.png" src="_images/cb73a8ad98c2026454ce71cb30b12b0cc96fa65f14b49eefd0b38b065f224e0d.png" />
+<img alt="_images/a3f7992108a05385ea7c465b28b62bafba8d4525ed9e6cc433a074267cfe0dd2.png" src="_images/a3f7992108a05385ea7c465b28b62bafba8d4525ed9e6cc433a074267cfe0dd2.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -868,11 +875,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.247041</td>
+      <td>0.251526</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.247041</td>
+      <td>0.251526</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -897,7 +904,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.425
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.428
 </pre></div>
 </div>
 </div>
@@ -923,7 +930,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.418
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.423
 </pre></div>
 </div>
 </div>
@@ -958,7 +965,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 41.099999999999994%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 44.0%
 </pre></div>
 </div>
 </div>
@@ -990,7 +997,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/01c96a7abd60a09bf9a2d1ac0de066919e58d2a77fb178230a1fd050bc3cc3cd.png" src="_images/01c96a7abd60a09bf9a2d1ac0de066919e58d2a77fb178230a1fd050bc3cc3cd.png" />
+<img alt="_images/626f146e8e451062b7751ea3f8d4cade016ce5e2017fb8fd41adc0fee3eaf820.png" src="_images/626f146e8e451062b7751ea3f8d4cade016ce5e2017fb8fd41adc0fee3eaf820.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation ould take a long time to run).</p>

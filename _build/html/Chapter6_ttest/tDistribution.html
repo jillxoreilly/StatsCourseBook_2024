@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.4. The t distribution &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.5. The t distribution &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter6_ttest/tDistribution';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.5. One sample t-test" href="ttest_oneSample.html" />
-    <link rel="prev" title="3.3. Best fitting Normal" href="BestFittingNormal.html" />
+    <link rel="next" title="3.6. One sample t-test" href="ttest_oneSample.html" />
+    <link rel="prev" title="3.4. Best fitting Normal" href="BestFittingNormal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -246,13 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ttest_intro.html">3. t-Test</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="NormalDistribution.html">3.2. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="BestFittingNormal.html">3.3. Best fitting Normal</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.5. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -510,10 +511,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointy-top-heavy-tails">3.4.1. Pointy top, heavy tails</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-by-sample-size">3.4.2. Scaling by sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-t-and-z">3.4.3. Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-heavy-tails">3.4.4. Why heavy tails?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-the-mean">3.5.1. Sampling distribution of the mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-by-sample-size">3.5.2. Scaling by sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointy-top-heavy-tails">3.5.3. Pointy top, heavy tails</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-heavy-tails">Why heavy tails?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-t-and-z">3.5.4. Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-t-test">3.5.5. Link to t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-sample-t-test">Single sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-samples-t-test">Paired samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples t-test</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -526,40 +536,87 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-t-distribution">
-<h1><span class="section-number">3.4. </span>The t distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this heading">#</a></h1>
-<p>The t distribution describes the shape of the best-estimate sampling distribution of the mean, when data are drawn from a normal distribution and the best-fitting normal distribution (ie, it mean and standard deviation) have been estimated from a small sample.</p>
-<section id="pointy-top-heavy-tails">
-<h2><span class="section-number">3.4.1. </span>Pointy top, heavy tails<a class="headerlink" href="#pointy-top-heavy-tails" title="Permalink to this heading">#</a></h2>
-<p>The t distribution looks a lot like the normal distribution, but it has a pointy top and heavy tails. The t distribution actually changes shape depending on the sample size used to fit the best-fitting normal:</p>
+<h1><span class="section-number">3.5. </span>The t distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this heading">#</a></h1>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution describes the shape of the best-estimate <strong>sampling distribution of the mean</strong> when data are drawn from a normal distribution and the best-fitting normal distribution (ie, it mean and standard deviation) have been estimated from a small sample.</p>
+<section id="sampling-distribution-of-the-mean">
+<h2><span class="section-number">3.5.1. </span>Sampling distribution of the mean<a class="headerlink" href="#sampling-distribution-of-the-mean" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>when the sample is tiny (<span class="math notranslate nohighlight">\(n=2\)</span>) we get an extreme pointy top and heavy tails</p></li>
-<li><p>as the sample size gets large (about 30) the t distribution is almost identical to the normal distribution</p></li>
+<li><p>The <strong>sampling distribution of the mean</strong> is the distribution you wuld get if you took many different samples of sie <span class="math notranslate nohighlight">\(n\)</span> from the population and calculated each of our means</p></li>
+<li><p>The <strong>null distribution</strong> is the sampling distribution of the mean (or another test statistic) that we would expect to get if the null hypothesis were true</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tDist.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tDist.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tDist.png" style="width: 80%;" /></a>
-<p>This distinction may appear subtle but remember that when a value is statistically significant, it lies in the tails of the null distribution. So if the t-distribution is the sampling distribution of the mean under the null hypothesis, <strong>we will be looking closely at its tails</strong> to determine the probability that our result (difference of means) could have arisen due to chance.</p>
 </section>
 <section id="scaling-by-sample-size">
-<h2><span class="section-number">3.4.2. </span>Scaling by sample size<a class="headerlink" href="#scaling-by-sample-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5.2. </span>Scaling by sample size<a class="headerlink" href="#scaling-by-sample-size" title="Permalink to this heading">#</a></h2>
 <p>Recall from the previous lecture that the spread of the sampling distribution of the mean depends on the sample size. More precisely:</p>
 <ul class="simple">
 <li><p>The standard deviation of the sampling distribution of the mean is the standard error, <span class="math notranslate nohighlight">\(s/\sqrt{n}\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the sample standard deviation and <span class="math notranslate nohighlight">\(n\)</span> is the sample size</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tvsn.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tvsn.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_tvsn.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tvsn.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tvsn.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tvsn.png" style="width: 80%;" /></a>
+</section>
+<section id="pointy-top-heavy-tails">
+<h2><span class="section-number">3.5.3. </span>Pointy top, heavy tails<a class="headerlink" href="#pointy-top-heavy-tails" title="Permalink to this heading">#</a></h2>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution looks a lot like the normal distribution, but it has a pointy top and heavy tails.</p>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution actually changes shape depending on the sample size used to fit the best-fitting normal:</p>
+<ul class="simple">
+<li><p>when the sample is tiny (<span class="math notranslate nohighlight">\(n=2\)</span>) we get an extreme pointy top and heavy tails</p></li>
+<li><p>as the sample size gets large (about 30) the t distribution is almost identical to the normal distribution</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tDist.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tDist.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_tDist.png" style="width: 80%;" /></a>
+<p>This distinction may appear subtle but remember that when a value is statistically significant, it lies in the tails of the null distribution. So if the <span class="math notranslate nohighlight">\(t\)</span>-distribution is the sampling distribution of the mean under the null hypothesis, <strong>we will be looking closely at its tails</strong> to determine the probability that our result (difference of means) could have arisen due to chance.</p>
+<section id="why-heavy-tails">
+<h3>Why heavy tails?<a class="headerlink" href="#why-heavy-tails" title="Permalink to this heading">#</a></h3>
+<p><em>You can skip this bit if you don’t fancy it; it is sufficient to understand that the <span class="math notranslate nohighlight">\(t\)</span>-distribution has heavy tails because of ‘something to do with estimating the standard deviation’!</em></p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_whytails.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_whytails.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_whytails.png" style="width: 80%;" /></a>
+</section>
 </section>
 <section id="analogy-t-and-z">
-<h2><span class="section-number">3.4.3. </span>Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span><a class="headerlink" href="#analogy-t-and-z" title="Permalink to this heading">#</a></h2>
-<p>We saw that if data are normally distributed, that when we <em>standardize</em> data by converting the data to Z-scores, we can directly know the probability of a given data value (eg the probability ot a Z-score greater than 1 is 15%), if the population mean was <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
+<h2><span class="section-number">3.5.4. </span>Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span><a class="headerlink" href="#analogy-t-and-z" title="Permalink to this heading">#</a></h2>
+<p>We saw that if data are normally distributed, that when we <em>standardize</em> data by converting the data to Z-scores, we create a distribution (of Z) with a fixed mean (zero) and standard deviation (1). If the data mean is <span class="math notranslate nohighlight">\(\bar{x}\)</span> and standard deviation <span class="math notranslate nohighlight">\(s\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[ Z - \frac{x-\mu}{\frac{\sigma}{\sqrt{n}}} \]</div>
+\[ Z - \frac{x-\bar{x}}{\frac{s}{\sqrt{n}}} \]</div>
+<p>From this standardied distribution, we can directly read off the probability of a given data value (eg the probability ot a Z-score greater than 1 is 15%)</p>
 <p>Similarly for sample means, if we standardize by converting to <span class="math notranslate nohighlight">\(t\)</span>-scores:</p>
 <div class="math notranslate nohighlight">
-\[ t = \frac{\bar{x}-\mu}{\frac{s}{sqrt{n}}} \]</div>
-<p>… we can directly know the probability of obtaining such a large sample mean if the true population data mean was <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
-<p>This is the basis of the t-test.</p>
+\[ t = \frac{\bar{x}}{\frac{s}{sqrt{n}}} \]</div>
+<p>This standardized distribution tells us the probability of a sample mean as large as our observed one <span class="math notranslate nohighlight">\(\bar{x}\)</span> (or larger) if the population mean was really zero</p>
+<ul class="simple">
+<li><p>This is the probability of the sample mean arising due to chance under the null hypothesis, if the null hypothesis is that the population mean is zero.</p></li>
+</ul>
 </section>
-<section id="why-heavy-tails">
-<h2><span class="section-number">3.4.4. </span>Why heavy tails?<a class="headerlink" href="#why-heavy-tails" title="Permalink to this heading">#</a></h2>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_whytails.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_whytails.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_whytails.png" style="width: 80%;" /></a>
+<section id="link-to-t-test">
+<h2><span class="section-number">3.5.5. </span>Link to t-test<a class="headerlink" href="#link-to-t-test" title="Permalink to this heading">#</a></h2>
+<p>Of course, we don’t always expect our population mean to be zero under the null hypothesis. In the following sections, we see three examples</p>
+<section id="single-sample-t-test">
+<h3>Single sample t-test<a class="headerlink" href="#single-sample-t-test" title="Permalink to this heading">#</a></h3>
+<p>Under the null, <span class="math notranslate nohighlight">\((\bar{x}-\mu) = 0\)</span>, where <span class="math notranslate nohighlight">\(\mu\)</span> is a reference value and <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the sample mean.</p>
+<p>For example we hypothesise that Oxford students’ IQs are higher than the average (by definition the average IQ is 100)</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: Oxford students’ mean IQ is 100
+<span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: Oxford students’ mean IQ is greater than 100</p>
+<p>Then our equation to get the standardied <span class="math notranslate nohighlight">\(t\)</span> becomes:</p>
+<div class="math notranslate nohighlight">
+\[ t = \frac{\bar{x}-100}{\frac{s}{sqrt{n}}} \]</div>
+</section>
+<section id="paired-samples-t-test">
+<h3>Paired samples t-test<a class="headerlink" href="#paired-samples-t-test" title="Permalink to this heading">#</a></h3>
+<p>Under the null, <span class="math notranslate nohighlight">\((\bar{x-y}) = 0\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are paired values such as brothers’ and sisters’ heights, and <span class="math notranslate nohighlight">\((\bar{x-y})\)</span> is the mean difference in height between a brother and his own sister.</p>
+<p>For example we hypothesise that men are taller than women:</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: The mean brother-sister difference is 0
+<span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: The mean brother-sister difference is greater than 0</p>
+<p>Then our equation to get the standardied <span class="math notranslate nohighlight">\(t\)</span> becomes:</p>
+<div class="math notranslate nohighlight">
+\[ t = \frac{\bar{x-y}}{\frac{s}{sqrt{n}}} \]</div>
+</section>
+<section id="independent-samples-t-test">
+<h3>Independent samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h3>
+<p>Under the null, <span class="math notranslate nohighlight">\((\bar{x}-\bar{y}) = 0\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are independent samples, and <span class="math notranslate nohighlight">\(\bar{x}\)</span> and <span class="math notranslate nohighlight">\(\bar{y}\)</span> are the means of those independent samples.</p>
+<p>For example we hypothesise that Oxford students’ IQs (<span class="math notranslate nohighlight">\(x\)</span>) are higher than Cambridge students IQs (<span class="math notranslate nohighlight">\(y\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: Difference of means is zero
+<span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: Difference of means (Oxford-Cambridge) is greater than zero</p>
+<p>Then our equation to get the standardized <span class="math notranslate nohighlight">\(t\)</span> becomes:</p>
+<div class="math notranslate nohighlight">
+\[ t = \frac{\bar{x}-\bar{y}}{\frac{s}{sqrt{n}}} \]</div>
+<p>… noting that <span class="math notranslate nohighlight">\(s\)</span> is now a combined standard deviation measure based on both samples, sommetimes called the ‘pooled variance estimate’; you don’t need t worry about how to calculate this as it is done automatically when you run the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>.</p>
+</section>
 </section>
 </section>
 
@@ -599,7 +656,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.3. </span>Best fitting Normal</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Best fitting Normal</p>
       </div>
     </a>
     <a class="right-next"
@@ -607,7 +664,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.5. </span>One sample t-test</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>One sample t-test</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -626,10 +683,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointy-top-heavy-tails">3.4.1. Pointy top, heavy tails</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-by-sample-size">3.4.2. Scaling by sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-t-and-z">3.4.3. Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-heavy-tails">3.4.4. Why heavy tails?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-distribution-of-the-mean">3.5.1. Sampling distribution of the mean</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-by-sample-size">3.5.2. Scaling by sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pointy-top-heavy-tails">3.5.3. Pointy top, heavy tails</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-heavy-tails">Why heavy tails?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogy-t-and-z">3.5.4. Analogy: <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(Z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-to-t-test">3.5.5. Link to t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-sample-t-test">Single sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-samples-t-test">Paired samples t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples t-test</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

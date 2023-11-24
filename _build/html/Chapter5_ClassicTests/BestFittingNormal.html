@@ -243,7 +243,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -521,17 +529,17 @@ document.write(`
 <p>For example, given the heights of 10 fictional ballerinas, we can calculate the sample mean (157.3cm) and sd (6.3cm).</p>
 <p>From these two numbers, we can reconstruct an estimate of the height distribution for all the ballerinas in the world (!) as the normal distribution with the matching mmean and standard deviation, AKA the <strong>best fitting normal</strong></p>
 <div class="math notranslate nohighlight">
-\[ height ~ \mathcal{N}(mean = 157.3, sd = 6.3) \]</div>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png" style="width: 80%;" /></a>
+\[ height \tilde \mathcal{N}(m = 157.3, sd = 6.3) \]</div>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png" style="width: 80%;" /></a>
 <section id="by-fitting-the-normal-we-gain-some-information">
 <h2>By fitting the Normal we gain some information<a class="headerlink" href="#by-fitting-the-normal-we-gain-some-information" title="Permalink to this heading">#</a></h2>
 <p>If it is correct that heights are normally distributed, we should have a quite precise model of the heights of ballerinas worldwide by fitting the best-fitting normal to our data. Importantly this should be more ‘correct’ than assuming that heights in the population have the same distribution as in the sample (which is not perfectly normal)</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png" style="width: 80%;" /></a>
 </section>
 <section id="incorrect-assumption-of-normality">
 <h2>Incorrect assumption of normality<a class="headerlink" href="#incorrect-assumption-of-normality" title="Permalink to this heading">#</a></h2>
 <p>If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution - usually non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png" style="width: 80%;" /></a>
 </section>
 <section id="parameters-are-estimates">
 <h2>Parameters are <em>estimates</em><a class="headerlink" href="#parameters-are-estimates" title="Permalink to this heading">#</a></h2>

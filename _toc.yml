@@ -78,6 +78,7 @@ parts:
         - file: Chapter5_ClassicTests/MT_wk6_TutorialExercises.ipynb
       - file: Chapter6_ttest/ttest_intro.md
         sections:
+        - file: Chapter6_ttest/HypothesisTestingRecap.md
         - file: Chapter6_ttest/NormalDistribution.md
         - file: Chapter6_ttest/BestFittingNormal.md
         - file: Chapter6_ttest/tDistribution.md

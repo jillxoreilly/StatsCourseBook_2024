@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3.3. Best fitting Normal &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.4. Best fitting Normal &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter6_ttest/BestFittingNormal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.4. The t distribution" href="tDistribution.html" />
-    <link rel="prev" title="3.2. Normal Distribution" href="NormalDistribution.html" />
+    <link rel="next" title="3.5. The t distribution" href="tDistribution.html" />
+    <link rel="prev" title="3.3. Normal Distribution" href="NormalDistribution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -246,13 +246,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="ttest_intro.html">3. t-Test</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="NormalDistribution.html">3.2. Normal Distribution</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tDistribution.html">3.4. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.5. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.8. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -510,9 +511,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-fitting-the-normal-we-gain-some-information">3.3.1. By fitting the Normal we gain some information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorrect-assumption-of-normality">3.3.2. Incorrect assumption of normality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-are-estimates">3.3.3. Parameters are <em>estimates</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-fitting-the-normal-we-gain-some-information">3.4.1. By fitting the Normal we gain some information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorrect-assumption-of-normality">3.4.2. Incorrect assumption of normality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-are-estimates">3.4.3. Parameters are <em>estimates</em></a></li>
 </ul>
             </nav>
         </div>
@@ -525,37 +526,41 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="best-fitting-normal">
-<h1><span class="section-number">3.3. </span>Best fitting Normal<a class="headerlink" href="#best-fitting-normal" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.4. </span>Best fitting Normal<a class="headerlink" href="#best-fitting-normal" title="Permalink to this heading">#</a></h1>
 <p>If we have some data <span class="math notranslate nohighlight">\(x\)</span>, and we believe they come from a normal distribution, we can describe the normal distribution thhey most likely came from as <span class="math notranslate nohighlight">\(x~\mathcal{N}(mean, sd)\)</span> where the mean and sd are those we calculated from the data.</p>
 <p>For example, given the heights of 10 fictional ballerinas, we can calculate the sample mean (157.3cm) and sd (6.3cm).</p>
 <p>From these two numbers, we can reconstruct an estimate of the height distribution for all the ballerinas in the world (!) as the normal distribution with the matching mmean and standard deviation, AKA the <strong>best fitting normal</strong></p>
 <div class="math notranslate nohighlight">
-\[ height ~ \mathcal{N}(mean = 157.3, sd = 6.3) \]</div>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_BestFit.png" style="width: 80%;" /></a>
+\[ height \sim \mathcal{N}(157.3, 6.3^2) \]</div>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_BestFit.png" style="width: 80%;" /></a>
 <section id="by-fitting-the-normal-we-gain-some-information">
-<h2><span class="section-number">3.3.1. </span>By fitting the Normal we gain some information<a class="headerlink" href="#by-fitting-the-normal-we-gain-some-information" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4.1. </span>By fitting the Normal we gain some information<a class="headerlink" href="#by-fitting-the-normal-we-gain-some-information" title="Permalink to this heading">#</a></h2>
 <p>If it is correct that heights are normally distributed, we should have a quite precise model of the heights of ballerinas worldwide by fitting the best-fitting normal to our data. Importantly this should be more ‘correct’ than assuming that heights in the population have the same distribution as in the sample (which is not perfectly normal)</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_NormalVsKDE.png" style="width: 80%;" /></a>
+<p>Compare the best fitting normals to the data KDE for ballerinas:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_NormalVsKDE.png" style="width: 80%;" /></a>
+<p>If it is true that heights in the population of ballerinas are normally distributed, the best fitting normal should be a more accurate estiamte of the population height distribution; the doule mode in the KDE is a quirlk of the small sample (10 ballerinas) that we measured.</p>
 </section>
 <section id="incorrect-assumption-of-normality">
-<h2><span class="section-number">3.3.2. </span>Incorrect assumption of normality<a class="headerlink" href="#incorrect-assumption-of-normality" title="Permalink to this heading">#</a></h2>
-<p>If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution - usually non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_wideNormal.png" style="width: 80%;" /></a>
+<h2><span class="section-number">3.4.2. </span>Incorrect assumption of normality<a class="headerlink" href="#incorrect-assumption-of-normality" title="Permalink to this heading">#</a></h2>
+<p>If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution.</p>
+<p>Often non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png" style="width: 80%;" /></a>
+<p>in the salary example above, the best fitting normal suggests that the most commmon salary is about £80k and that many people earn negative amounts of money - clearly not a good match to the sample data, or a plausible estimate of the salaries in the population as a whole!</p>
 </section>
 <section id="parameters-are-estimates">
-<h2><span class="section-number">3.3.3. </span>Parameters are <em>estimates</em><a class="headerlink" href="#parameters-are-estimates" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4.3. </span>Parameters are <em>estimates</em><a class="headerlink" href="#parameters-are-estimates" title="Permalink to this heading">#</a></h2>
 <p>The best fitting normal is a normal distribution whose mean and sd match the data mean and data sd.</p>
-<p>Of course, even if the data are drawn from a normal population, it is likely that the data mean and standard deviation in a small sample are not exactly the same as the mean and standard deviation of the population as a whole (because samples are random and we may happen to sample, for exammple, more tall or short people than we ‘should’).</p>
+<p>Of course, even if the data are drawn from a normal population, it is likely that the data mean and standard deviation in a small sample are not exactly the same as the mean and standard deviation of the population as a whole (because samples are random and we may happen to sample, for example, more tall or short ballerinas than we ‘should’).</p>
 <p>Below I drew 10,000 samples of size <span class="math notranslate nohighlight">\(n=10\)</span> from a large population of normally distributed values, and calcluated the mean and standard deviation of each sample</p>
 <ul class="simple">
 <li><p>sample means are normally distributed and centred on the true population mean</p></li>
-<li><p>sample standard deviations have a skewed distribution</p></li>
+<li><p>sample standard deviations have a skewed distribution and tend to underestinate the population standard deviation</p></li>
 </ul>
 <p>Most importantly:</p>
 <ul class="simple">
-<li><p><strong>the sample mean and standard deviation aer just estimates of the population mean and standard deviation and vary randomly from sample to sample</strong></p></li>
+<li><p><strong>the sample mean and standard deviation are just estimates of the population mean and standard deviation and vary randomly from sample to sample</strong></p></li>
 </ul>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_samplingdists.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_samplingdists.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk6_samplingdists.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_samplingdists.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_samplingdists.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_samplingdists.png" style="width: 80%;" /></a>
 </section>
 </section>
 
@@ -595,7 +600,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.2. </span>Normal Distribution</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Normal Distribution</p>
       </div>
     </a>
     <a class="right-next"
@@ -603,7 +608,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.4. </span>The t distribution</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>The t distribution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -622,9 +627,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-fitting-the-normal-we-gain-some-information">3.3.1. By fitting the Normal we gain some information</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorrect-assumption-of-normality">3.3.2. Incorrect assumption of normality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-are-estimates">3.3.3. Parameters are <em>estimates</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#by-fitting-the-normal-we-gain-some-information">3.4.1. By fitting the Normal we gain some information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorrect-assumption-of-normality">3.4.2. Incorrect assumption of normality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-are-estimates">3.4.3. Parameters are <em>estimates</em></a></li>
 </ul>
   </nav></div>
 
