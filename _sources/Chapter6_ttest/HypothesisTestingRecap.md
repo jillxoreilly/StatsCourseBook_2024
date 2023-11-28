@@ -2,7 +2,9 @@
 
 At this point it may be helpful to review some key ideas about hypothesis testing, and the relationship between sample and population. 
 
-The following videos are from last year's version of the course so there may be a couple of unfamiliar terms, or mentions of 'the exercise you did last week' (which you haven't heard of!) but I think overall these could be a useful resource for revising somem ideas in hypothesis testing
+The following videos are from last year's version of the course so there may be a couple of unfamiliar terms, or mentions of 'the exercise you did last week' (which you haven't heard of!) but I think overall these could be a useful resource for revising some ideas in hypothesis testing
+
+**Note** in some of these videos I talk about confidence intervals; these are a useful concept but haven't been covered on the course so far so feel free to let the idea wash over you if it isn't making sense
 
 ### Sample vs population
 
