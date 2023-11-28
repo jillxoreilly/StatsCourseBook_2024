@@ -85,7 +85,7 @@ parts:
         - file: Chapter6_ttest/ttest_oneSample.ipynb
         - file: Chapter6_ttest/ttest_pairedSamples.ipynb
         - file: Chapter6_ttest/ttest_independentSamples.ipynb
-        - file: Chapter6_ttest/TutorialExercises.md
+        - file: Chapter6_ttest/HandInAssignment.ipynb
     - caption: Statistical Theory
       numbered: 3
       chapters:
