@@ -39,7 +39,7 @@ Often non-normal data distributions have outliers that would be really implausib
 
 in the salary example above, the best fitting normal suggests that the most commmon salary is about £80k and that many people earn negative amounts of money - clearly not a good match to the sample data, or a plausible estimate of the salaries in the population as a whole! 
 
-## Parameters are *estimates*
+## The best fitting normmal is just an *estimate*
 
 The best fitting normal is a normal distribution whose mean and sd match the data mean and data sd. 
 
