@@ -28,25 +28,29 @@ If it is true that heights in the population of ballerinas are normally distribu
 
 ## Incorrect assumption of normality
 
-If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution - usually non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.
+If the data are not really drawn from a normal distribution, the best fitting normal will be a poor estimate of the population data distribution.
+
+Often non-normal data distributions have outliers that would be really implausible under the normal distribution, and if we try to fit a normal to such data it ends up needing to be very wide to accommodate the outliers.
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_wideNormal.png
 :width: 80%
 :align: center
 ```
 
-## Parameters are *estimates*
+in the salary example above, the best fitting normal suggests that the most commmon salary is about £80k and that many people earn negative amounts of money - clearly not a good match to the sample data, or a plausible estimate of the salaries in the population as a whole! 
+
+## The best fitting normmal is just an *estimate*
 
 The best fitting normal is a normal distribution whose mean and sd match the data mean and data sd. 
 
-Of course, even if the data are drawn from a normal population, it is likely that the data mean and standard deviation in a small sample are not exactly the same as the mean and standard deviation of the population as a whole (because samples are random and we may happen to sample, for exammple, more tall or short people than we 'should').
+Of course, even if the data are drawn from a normal population, it is likely that the data mean and standard deviation in a small sample are not exactly the same as the mean and standard deviation of the population as a whole (because samples are random and we may happen to sample, for example, more tall or short ballerinas than we 'should').
 
 Below I drew 10,000 samples of size $n=10$ from a large population of normally distributed values, and calcluated the mean and standard deviation of each sample
 * sample means are normally distributed and centred on the true population mean
-* sample standard deviations have a skewed distribution
+* sample standard deviations have a skewed distribution and tend to underestinate the population standard deviation
 
 Most importantly:
-* **the sample mean and standard deviation aer just estimates of the population mean and standard deviation and vary randomly from sample to sample**
+* **the sample mean and standard deviation are just estimates of the population mean and standard deviation and vary randomly from sample to sample**
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp6_samplingdists.png
 :width: 80%
