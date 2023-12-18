@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Repeat the simulation &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.4. Repeat the simulation &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_DataGeneratingDistributions/binomial_10000reps';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.5. Changing \(n\) and \(p\)" href="binomial_nandp.html" />
+    <link rel="prev" title="1.3. Simulated coin toss" href="binomial_singlecoin.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -257,12 +259,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="binomial_overallIntro.html">1. Data generating distributions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Tutorial Exercises II</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -272,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -290,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -301,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -310,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
@@ -541,8 +554,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#times-10-coin-tosses">10,000 times 10 coin tosses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#times-10-coin-tosses">1.4.2. 10,000 times 10 coin tosses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-each-value-of-k">Frequency of each value of <span class="math notranslate nohighlight">\(k\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-exactly-8-heads">Probability of exactly 8 heads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-at-least-8-heads">Probability of at least 8 heads</a></li>
 </ul>
 </li>
 </ul>
@@ -557,18 +573,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="repeat-the-simulation">
-<h1>Repeat the simulation<a class="headerlink" href="#repeat-the-simulation" title="Permalink to this heading">#</a></h1>
-<p>In the last section you simulated 10 coin tosses and you may or may not have obtained 5 heads.</p>
+<h1><span class="section-number">1.4. </span>Repeat the simulation<a class="headerlink" href="#repeat-the-simulation" title="Permalink to this heading">#</a></h1>
+<p>In the last section you simulated 10 coin tosses and you may or may not have obtained 5 heads (you may have obtained slightly more or fewer than 5).</p>
 <p>So far so good.</p>
-<p>But the question we actually needed to answer was:</p>
-<p>“What proportion of the time we would obtain exacly 5 heads if we repeated the process of tossing the coin 10 times again and again?”</p>
+<p>What if we would like to quantify how often we get a particular number of heads fromm 10 coin tosses, ie <span class="math notranslate nohighlight">\(k=0,1,2....5.....9,10\)</span>?</p>
 <p>To answer this we need to get 10 coin tosses and count the heads not once, but lots of times.</p>
 <p>The computer can easily do this in a few milliseconds, even though it would take us ages with a real coin.</p>
-<section id="times-10-coin-tosses">
-<h2>10,000 times 10 coin tosses<a class="headerlink" href="#times-10-coin-tosses" title="Permalink to this heading">#</a></h2>
-<p>We are going to simulate tossing the coin 10 times and counting how many head we get, 10,000 times over. This will give us a sense of the frequency of each different outcome (0 heads, 1 head, 2 heads…. 10 heads)</p>
 <section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">1.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,15 +590,21 @@ document.write(`
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="times-10-coin-tosses">
+<h2><span class="section-number">1.4.2. </span>10,000 times 10 coin tosses<a class="headerlink" href="#times-10-coin-tosses" title="Permalink to this heading">#</a></h2>
+<p>We are going to simulate tossing the coin 10 times and counting how many head we get, 10,000 times over. This will give us a sense of the frequency of each different outcome (0 heads, 1 head, 2 heads…. 10 heads)</p>
 <p>Let’s repeat our 10-coin-toss ‘experiment’ 10,000 times and each time record the value of <span class="math notranslate nohighlight">\(k\)</span>, the number of heads</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="c1"># make an empty np array to store the outcomes</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
@@ -595,11 +613,23 @@ document.write(`
 </div>
 </div>
 </div>
+<p>In fact, we can use the <code class="docutils literal notranslate"><span class="pre">size</span></code> argument to generate 10,000 values of <span class="math notranslate nohighlight">\(k\)</span> for <span class="math notranslate nohighlight">\(n=10\)</span> and <span class="math notranslate nohighlight">\(p=0.5\)</span>, in a single step:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reason for showing how we would do this in a loop is that if you wanted to later generate data from some other distribution, you moght not have a handy built-in function to help you - so it is good to understand how we could do this.</p>
+<section id="frequency-of-each-value-of-k">
+<h3>Frequency of each value of <span class="math notranslate nohighlight">\(k\)</span><a class="headerlink" href="#frequency-of-each-value-of-k" title="Permalink to this heading">#</a></h3>
 <p>OK, now we have an array with 10,000 entries showing how many heads we got out of 10 coin tosses, in each of 10,000 repeats.</p>
-<p>We will need to summarize that, perhaps in a histogram</p>
+<p>We will need to summarize that, perhaps using <code class="docutils literal notranslate"><span class="pre">sns.countplot</span></code> to plot the frequencies of each value of <span class="math notranslate nohighlight">\(k\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># n.b. argument &#39;order&#39; sets the x-axis values for which to plot counts - </span>
 <span class="c1"># here this was the numbers 0,1,2....10, given by range(11)</span>
@@ -607,13 +637,37 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: ylabel=&#39;count&#39;&gt;
+<img alt="../_images/10138aa91915ac2bbb58a7d2ace7a93967d57ba57d122dd31237da03bea6408d.png" src="../_images/10138aa91915ac2bbb58a7d2ace7a93967d57ba57d122dd31237da03bea6408d.png" />
+</div>
+</div>
+<p>We can see that</p>
+<ul class="simple">
+<li><p>unsurprisingly, 5 is the most likely number of heads given <span class="math notranslate nohighlight">\(n=10\)</span> and <span class="math notranslate nohighlight">\(p=0.5\)</span></p></li>
+<li><p>values of <span class="math notranslate nohighlight">\(k\)</span> close to 5 are also quite likely</p></li>
+<li><p>It is unlikely that we get 0 or 10 heads</p></li>
+</ul>
+</section>
+<section id="probability-of-exactly-8-heads">
+<h3>Probability of exactly 8 heads<a class="headerlink" href="#probability-of-exactly-8-heads" title="Permalink to this heading">#</a></h3>
+<p>All the values of <span class="math notranslate nohighlight">\(k\)</span> for the 10000 repeats of the experiemnt are stored in the np array <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
+<p>We can work out the probability of obtaining exactly 8 heads, as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/6a930a3a6afd83c655cb4dc0052c70fbdb293c202b3811034762fdeaff43699b.png" src="../_images/6a930a3a6afd83c655cb4dc0052c70fbdb293c202b3811034762fdeaff43699b.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0433
+</pre></div>
 </div>
 </div>
-<p>Or perhaps we would like to know what proportion of times we get 8 or more heads out of 10 coin tosses?</p>
+</div>
+<p>… about 4%.</p>
+</section>
+<section id="probability-of-at-least-8-heads">
+<h3>Probability of at least 8 heads<a class="headerlink" href="#probability-of-at-least-8-heads" title="Permalink to this heading">#</a></h3>
+<p>We might be interested in the probability of obtaining some value <em>or higher</em> of <span class="math notranslate nohighlight">\(k\)</span> - for example, what is the chance of getting 8 or more heads from a fair coin?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">k</span><span class="o">&gt;=</span><span class="mi">8</span><span class="p">)</span><span class="o">/</span><span class="n">nReps</span>
@@ -621,24 +675,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0556
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0538
 </pre></div>
 </div>
 </div>
 </div>
-<p>… or what proportion of times we get exactly 8/10 heads?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="mi">8</span><span class="p">)</span><span class="o">/</span><span class="n">nReps</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0438
-</pre></div>
-</div>
-</div>
-</div>
+<p>… 5.5%</p>
 </section>
 </section>
 </section>
@@ -673,6 +715,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="binomial_singlecoin.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Simulated coin toss</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="binomial_nandp.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -688,8 +748,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#times-10-coin-tosses">10,000 times 10 coin tosses</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#times-10-coin-tosses">1.4.2. 10,000 times 10 coin tosses</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-each-value-of-k">Frequency of each value of <span class="math notranslate nohighlight">\(k\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-exactly-8-heads">Probability of exactly 8 heads</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-at-least-8-heads">Probability of at least 8 heads</a></li>
 </ul>
 </li>
 </ul>

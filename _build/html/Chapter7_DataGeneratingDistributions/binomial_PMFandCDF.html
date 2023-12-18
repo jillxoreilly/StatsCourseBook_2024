@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Binomial PMF and CDF &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.6. Binomial PMF and CDF &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_DataGeneratingDistributions/binomial_PMFandCDF';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.7. Analytical vs numerical approaches" href="AnalyticVsNumerical.html" />
+    <link rel="prev" title="1.5. Changing \(n\) and \(p\)" href="binomial_nandp.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -257,12 +259,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="binomial_overallIntro.html">1. Data generating distributions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Tutorial Exercises II</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -272,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -290,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -301,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -310,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
@@ -541,16 +554,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf">PMF</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-equation">Implement the equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function">Built-in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-vs-numerical-solutions">1.6.1. Analytical vs numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.2. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-pmf">1.6.3. Binomial PMF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf-home-baked">PMF (home-baked)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf-built-in-function">PMF (built-in function)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cdf">CDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-nreps">Change nReps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-it">Plot it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Change nReps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-cdf">1.6.4. Binomial CDF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-pmf-sums-to-1">Area under the PMF sums to 1</a></li>
 </ul>
 </li>
 </ul>
@@ -565,20 +577,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="binomial-pmf-and-cdf">
-<h1>Binomial PMF and CDF<a class="headerlink" href="#binomial-pmf-and-cdf" title="Permalink to this heading">#</a></h1>
-<p>The probability mass function (PMF) tells us the probability of obtaining <span class="math notranslate nohighlight">\(k\)</span> hits out of <span class="math notranslate nohighlight">\(n\)</span> trials.</p>
-<p>The equation for the binomial PMF is as follows:</p>
-<div class="math notranslate nohighlight">
-\[ p(k=K) = C^{n}_{k} p^k q^{n-k} \]</div>
-<p>where <span class="math notranslate nohighlight">\(p(k=K)\)</span> is the probability of <span class="math notranslate nohighlight">\(K\)</span> hits out of <span class="math notranslate nohighlight">\(n\)</span> trials, <span class="math notranslate nohighlight">\(p\)</span> is the probability of a hit on any given trial, and <span class="math notranslate nohighlight">\(q=(1-p)\)</span>, and</p>
-<div class="math notranslate nohighlight">
-\[ C^{n}_{k} = \frac{n!}{k! (n-k)!}\]</div>
-<p>… is an expression that accounts for the fact that a even balance of hits and misses is more likely (as discussed in the lecture)</p>
-<section id="pmf">
-<h2>PMF<a class="headerlink" href="#pmf" title="Permalink to this heading">#</a></h2>
-<p>Let’s implement the equation for the PDF and compare to the results of our simulation from the previous worksheet</p>
+<h1><span class="section-number">1.6. </span>Binomial PMF and CDF<a class="headerlink" href="#binomial-pmf-and-cdf" title="Permalink to this heading">#</a></h1>
+<p>In this chapter we explored how we would simulate a binomial variable (<span class="math notranslate nohighlight">\(k\)</span> hits) to work out how often we expect <span class="math notranslate nohighlight">\(k\)</span> hits on <span class="math notranslate nohighlight">\(n\)</span> trials. This is called a <strong>numerical solution</strong> or <strong>simulation</strong>.</p>
+<p>There is also an <strong>analytical solution</strong> to calculating the expected number of hits if <span class="math notranslate nohighlight">\(k \sim \mathcal{B}(n,p)\)</span>. This means, there is an equation we can use to work it out. This equation is called the <em>probability mass function (PMF)</em>. In this section we introduce the PMF and a related function, the <em>sumulative density function (CDF)</em>, for the binomial distribution.</p>
+<p>In practice, you don’t need to use the actual equations yourself, as there are built in functions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> that do it for you. However it is desirable to understand conceptually where the equations ‘come from’ (how they are derived), as covered in the lecture.</p>
+<p>However you may wish to use the PMF (in Python) to get the probability of a certain value of <span class="math notranslate nohighlight">\(k\)</span>, rather than simulating it.</p>
+<section id="analytical-vs-numerical-solutions">
+<h2><span class="section-number">1.6.1. </span>Analytical vs numerical solutions<a class="headerlink" href="#analytical-vs-numerical-solutions" title="Permalink to this heading">#</a></h2>
+<p>In this section we see The PMF and CDF are worked out from an equation rather than by random sampling</p>
+<ul class="simple">
+<li><p>Therefore the probability values (eg <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span>) given by <code class="docutils literal notranslate"><span class="pre">stats.binom.pmf()</span></code> and <code class="docutils literal notranslate"><span class="pre">stats.binom.cdf()</span></code> never change (for given values of <span class="math notranslate nohighlight">\(n,p,k\)</span>)</p></li>
+<li><p>In contrast the values given by our simluations (how many random samples <span class="math notranslate nohighlight">\(k&lt;=7\)</span>) did vary slightly each time we ran our simulation</p></li>
+</ul>
+</section>
 <section id="set-up-python-libraries">
-<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">1.6.2. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -588,14 +601,29 @@ document.write(`
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="implement-the-equation">
-<h3>Implement the equation<a class="headerlink" href="#implement-the-equation" title="Permalink to this heading">#</a></h3>
+<section id="binomial-pmf">
+<h2><span class="section-number">1.6.3. </span>Binomial PMF<a class="headerlink" href="#binomial-pmf" title="Permalink to this heading">#</a></h2>
+<p>The probability mass function (PMF) tells us the probability of obtaining <span class="math notranslate nohighlight">\(k\)</span> hits out of <span class="math notranslate nohighlight">\(n\)</span> trials.</p>
+<p>The equation for the binomial PMF is as follows:</p>
+<div class="math notranslate nohighlight">
+\[ p(k=K) = C^{n}_{k} p^k q^{n-k} \]</div>
+<p>where <span class="math notranslate nohighlight">\(p(k=K)\)</span> is the probability of <span class="math notranslate nohighlight">\(K\)</span> hits out of <span class="math notranslate nohighlight">\(n\)</span> trials, <span class="math notranslate nohighlight">\(p\)</span> is the probability of a hit on any given trial, and <span class="math notranslate nohighlight">\(q=(1-p)\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[ C^{n}_{k} = \frac{n!}{k! (n-k)!}\]</div>
+<p>… is an expression that accounts for the fact that a even balance of hits and misses is more likely (as discussed in the lecture)</p>
+<ul class="simple">
+<li><p><em>Note</em> unsurprisingly, many people find the notation <span class="math notranslate nohighlight">\(p(k=K)\)</span> (which is standard in statistical theory) confusing. In this case <span class="math notranslate nohighlight">\(k\)</span> is a <em>variable</em> (the number of hits) and <span class="math notranslate nohighlight">\(K\)</span> is a specific value of it - so in a coin-tossing example, where we are interested in the chance of getting 8 heads out of 10 tosses, <span class="math notranslate nohighlight">\(k\)</span>=number of heads and <span class="math notranslate nohighlight">\(K\)</span>=8; we read <span class="math notranslate nohighlight">\(p(k=7)\)</span> as <em>“the probability the number of heads is 8”</em></p></li>
+</ul>
+<section id="pmf-home-baked">
+<h3>PMF (home-baked)<a class="headerlink" href="#pmf-home-baked" title="Permalink to this heading">#</a></h3>
+<p>Let’s implement the equation for the PDF and compare to the results of our simulation from the previous worksheet</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span> <span class="c1"># values of n, p, k as in previous exercise</span>
@@ -614,10 +642,24 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Hopefully this should be roughly the same as the proportion of our 10,000 coin tosses in which k=8 (it wont exactly match, as the simulation was subject to random noise)</p>
+<p>Hopefully this should be roughly the same as the proportion of our 10,000 coin tosses in which k=8 (it wont exactly match, as the simulation was subject to random noise) - let’s check!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0429
+</pre></div>
+</div>
+</div>
+</div>
+<p>yep!</p>
 </section>
-<section id="built-in-function">
-<h3>Built-in function<a class="headerlink" href="#built-in-function" title="Permalink to this heading">#</a></h3>
+<section id="pmf-built-in-function">
+<h3>PMF (built-in function)<a class="headerlink" href="#pmf-built-in-function" title="Permalink to this heading">#</a></h3>
 <p>We can also use a built-in function to give the PDF:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -631,85 +673,178 @@ document.write(`
 </div>
 </div>
 </div>
-<ul><li>Can you work out how to change this to get the probability of 7 heads out of 12 coin tosses? 
-    <li>What if the probability of heads is 0.75?</ul></section>
+<p><strong>Comprehension questions</strong></p>
+<ul class="simple">
+<li><p>Can you work out how to change this to get the probability of 7 heads out of 12 coin tosses?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Can you change the code so that the probability of heads is 0.75?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="cdf">
-<h2>CDF<a class="headerlink" href="#cdf" title="Permalink to this heading">#</a></h2>
-<p>The CDF or cumulative distribution function tells us the probability of obtaining <i>less than or equal to </i> <span class="math notranslate nohighlight">\(k\)</span> hits in <span class="math notranslate nohighlight">\(n\)</span> trials</p>
-<p>In the simulation we worked out the proportion of trials in which k&gt;=8 (equivalent <span class="math notranslate nohighlight">\(1-p(k&lt;=7)\)</span>)</p>
-<p>Let’s check against the output of the built-in function</p>
+</section>
+<section id="binomial-cdf">
+<h2><span class="section-number">1.6.4. </span>Binomial CDF<a class="headerlink" href="#binomial-cdf" title="Permalink to this heading">#</a></h2>
+<p>The CDF or cumulative distribution function tells us the probability of obtaining <em>less than or equal to</em> <span class="math notranslate nohighlight">\(k\)</span> hits in <span class="math notranslate nohighlight">\(n\)</span> trials</p>
+<p>As we have seen, we often want to know this <em>cumulative</em> value - for example if we want to know if a coin is fair, and have observed 8 heads out of 10 coin tosses, we would ask how likely, with a fair coin, we would  get a value as extreme as <span class="math notranslate nohighlight">\(k=8\)</span> <em>or more so</em> (because we would still conclude the coin was unfair if we got 9 or 10 heads).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">-</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0546875
-</pre></div>
-</div>
-</div>
-</div>
-<p>The proportion of trials on which <span class="math notranslate nohighlight">\(k&gt;=8\)</span> should be roughly the same as the proportion of our 10,000 coin tosses in which k&gt;=8 (it wont exactly match, as the simulation was subject to random noise)</p>
-<ul>
-    <li>Can you work out how to change this to get the probability of at least 9 heads out of 12 coin tosses? 
-    <li>What if the probability of heads is 0.75?
-</ul></section>
-<section id="change-nreps">
-<h2>Change nReps<a class="headerlink" href="#change-nreps" title="Permalink to this heading">#</a></h2>
-<p>How many reps do we need in our simulation to get a nice close match to the theoretical PMF?</p>
-<p>To investigate we start by plotted the expected and obtained frequencies</p>
-<section id="plot-it">
-<h3>Plot it<a class="headerlink" href="#plot-it" title="Permalink to this heading">#</a></h3>
-<p>Lets re-run our simulation of 10,000 times 10 coin tosses and plot the frequency of obtaining each value of <span class="math notranslate nohighlight">\(k\)</span> hits.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pmf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">cdf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)):</span> <span class="c1"># we are going to simlulte 10,000 repeats of 10 coin tosses</span>
-    <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we can work out the predicted frequencies of each value of k given the PMF</p>
-<ul>
-    <li> Calculate the probability of each value of k using the built in function <tt>stats.binom.pmf()</tt>
-    <li> Multiply by the number of repeats (10,000) to obtain expected frequency
-</ul><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_k</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">p_k</span> <span class="o">*</span> <span class="n">nReps</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now let’s plot them on the same graph:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span><span class="n">freq</span><span class="p">,</span> <span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="n">pmf</span><span class="p">,</span> <span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;probability of $k$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">),</span> <span class="n">cdf</span><span class="p">,</span> <span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;cumulative probability&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb4ac4c7a90&gt;]
+<img alt="../_images/1384103672348bb76450e8a3a7caffae1d794e222a939cdd06f191e211f6a4d2.png" src="../_images/1384103672348bb76450e8a3a7caffae1d794e222a939cdd06f191e211f6a4d2.png" />
+</div>
+</div>
+<p>So we have:</p>
+<ul class="simple">
+<li><p>PMF(7) is the probability of obtaining exactly 7 heads ie <span class="math notranslate nohighlight">\(p(k=7)\)</span></p></li>
+<li><p>CDF(7) is the probability of obbtaining 7 or fewer heads, ie <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span></p></li>
+</ul>
+<section id="area-under-the-pmf-sums-to-1">
+<h3>Area under the PMF sums to 1<a class="headerlink" href="#area-under-the-pmf-sums-to-1" title="Permalink to this heading">#</a></h3>
+<p>Noting that the probabilities of all the possible outcomes must sum to 1, we can also say:</p>
+<ul class="simple">
+<li><p>CDF(10) = 1 because we always get 10 or fewer heads in 10 coin tosses</p></li>
+</ul>
+<p>The function CDF always gives us the area under the curve to the <em>left</em> of a given value, for example CDF(7) gives us <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span>.</p>
+<p>If we want to know the probability of getting <em>more</em> than (say) 7 heads, we use the fact that the area under the curve sums to 1, so</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;7)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;=6)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = 1-<code class="docutils literal notranslate"><span class="pre">cdf(6)</span></code></p></li>
+</ul>
+<p>Careful here about <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> vs <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> etc. Since <span class="math notranslate nohighlight">\(k\)</span> only takes integer values:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(k&lt;7)\)</span> = <span class="math notranslate nohighlight">\(p(k&lt;=6)\)</span>
+and</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = <span class="math notranslate nohighlight">\(p(k&gt;8)\)</span></p></li>
+</ul>
+<p>the function <code class="docutils literal notranslate"><span class="pre">stats.binom.cdf(x)</span></code> gives us the probability <span class="math notranslate nohighlight">\(p(k&lt;=x)\)</span></p>
+<p><strong>Comprehension questions</strong></p>
+<ul class="simple">
+<li><p>You will need to choose the correct function (<code class="docutils literal notranslate"><span class="pre">stats.binom.pmf()</span></code> or <code class="docutils literal notranslate"><span class="pre">stats.binom.cdf()</span></code> and the right values of n,p,k to match the numerical answer given in the comments of each cell</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of exactly 9 heads out of 12 coin tosses, </span>
+<span class="c1"># when the probability of heads is 0.75</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="c1"># answer = 0.2581</span>
 </pre></div>
 </div>
-<img alt="../_images/9cfdb19612a5806602ae2d4195c12eeb3e37bd4cc56c5e4a20e4e33ed4e9130e.png" src="../_images/9cfdb19612a5806602ae2d4195c12eeb3e37bd4cc56c5e4a20e4e33ed4e9130e.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2581036090850829
+</pre></div>
 </div>
 </div>
-<p>The fit is not bad!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of exactly 5 tails out of 6 coin tosses, </span>
+<span class="c1"># when the probability of heads is 0.6</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="c1"># answer = 0.0386</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03686400000000002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of at least 7 heads out of 20 coin tosses, </span>
+<span class="c1"># when the probability of heads is 0.55</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.45</span><span class="p">)</span>
+<span class="c1">#or</span>
+<span class="c1">#1-stats.binom.cdf(6,20,0.55)</span>
+<span class="c1"># answer = 0.9785</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.978585644356979
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of fewer than 10 heads out of 20 coin tosses, </span>
+<span class="c1"># when the probability of heads is 0.4</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="c1"># answer = 0.7553</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7553372033163932
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of more than 10 tails out of 15 coin tosses, </span>
+<span class="c1"># when the probability of heads is 0.3</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="c1"># answer = 0.2784</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2783785597956361
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9453125
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="id1">
-<h3>Change nReps<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>What happens if we reduce nReps?</p>
-<ul>
-<li>Modify the code above to reduce nReps to, say, 1000, 100 or 50 and see if the fit is still good
-<li> At some point the frequencies from the simulation start to diverge quite a bit from the predicted frequencies just due to chance
-</ul></section>
 </section>
 </section>
 
@@ -743,6 +878,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="binomial_nandp.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.5. </span>Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AnalyticVsNumerical.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Analytical vs numerical approaches</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -758,16 +911,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf">PMF</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-equation">Implement the equation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function">Built-in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytical-vs-numerical-solutions">1.6.1. Analytical vs numerical solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.6.2. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-pmf">1.6.3. Binomial PMF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf-home-baked">PMF (home-baked)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pmf-built-in-function">PMF (built-in function)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cdf">CDF</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-nreps">Change nReps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-it">Plot it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Change nReps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binomial-cdf">1.6.4. Binomial CDF</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-under-the-pmf-sums-to-1">Area under the PMF sums to 1</a></li>
 </ul>
 </li>
 </ul>

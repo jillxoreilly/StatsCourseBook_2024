@@ -89,7 +89,22 @@ parts:
     - caption: Statistical Theory
       numbered: 3
       chapters:
-      - file: UnderConstruction2.md
+      - file: Chapter7_DataGeneratingDistributions/binomial_overallIntro.md
+        sections:
+        - file: Chapter7_DataGeneratingDistributions/binomial_intro.md
+        - file: Chapter7_DataGeneratingDistributions/binomial_objectives.md
+        - file: Chapter7_DataGeneratingDistributions/binomial_singlecoin.ipynb
+        - file: Chapter7_DataGeneratingDistributions/binomial_10000reps.ipynb
+        - file: Chapter7_DataGeneratingDistributions/binomial_nandp.ipynb
+        - file: Chapter7_DataGeneratingDistributions/binomial_PMFandCDF.ipynb
+        - file: Chapter7_DataGeneratingDistributions/AnalyticVsNumerical.ipynb
+        - file: Chapter7_DataGeneratingDistributions/binomial_normal.ipynb
+        - file: Chapter7_DataGeneratingDistributions/binomial_TutorialExercises2.ipynb
+      - file: Chapter8_Power/power_intro.md
+        sections:
+        - file: Chapter8_Power/power_outcomes.md
+        - file: Chapter8_Power/power_conceptCheck.md
+        - file: Chapter8_Power/power_analysis.ipynb
     - caption: Regression Models
       numbered: 3
       chapters:
