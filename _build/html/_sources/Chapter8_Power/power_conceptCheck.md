@@ -99,14 +99,14 @@ size required to achieve 80% power depend on the effect size?
 ```{admonition} Click to reveal answer
 :class: dropdown
 
-For a larger effect size you need a smaller sample size to obtain 80%
+For a smaller effect size you need a larger sample size to obtain 80%
 power.
 
 For example, if the effect size is huge - say r=0.9 for a correlation
-or d=3 for a t-test, you may get 80% power with even a small sample
+or d=3 for a t-test, you will get 80% power with even a small sample (fewer than 10 individuals)
 
 In contrast if the effect size is tiny - say r=0.1 or d=0.1, you would
-need a very large sample to achieve 80% power.
+need a very large sample (hundreds or thousands of individuals) to achieve 80% power.
 
 
 ```

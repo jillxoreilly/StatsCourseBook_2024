@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/power_conceptCheck';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Regression" href="../Chapter10_Regression1/regression1_intro.html" />
+    <link rel="next" title="2.4. Effect size (Cohen’s d)" href="EffectSize.html" />
     <link rel="prev" title="2.2. Learning Objectives" href="power_outcomes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -273,6 +273,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
+
+
+
+
 </ul>
 </li>
 </ul>
@@ -590,12 +597,12 @@ significance depends on both effect size and sample size</p>
 size required to achieve 80% power depend on the effect size?
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
-<p>For a larger effect size you need a smaller sample size to obtain 80%
+<p>For a smaller effect size you need a larger sample size to obtain 80%
 power.</p>
 <p>For example, if the effect size is huge - say r=0.9 for a correlation
-or d=3 for a t-test, you may get 80% power with even a small sample</p>
+or d=3 for a t-test, you will get 80% power with even a small sample (fewer than 10 individuals)</p>
 <p>In contrast if the effect size is tiny - say r=0.1 or d=0.1, you would
-need a very large sample to achieve 80% power.</p>
+need a very large sample (hundreds or thousands of individuals) to achieve 80% power.</p>
 </div>
 </section>
 
@@ -639,11 +646,11 @@ need a very large sample to achieve 80% power.</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter10_Regression1/regression1_intro.html"
+       href="EffectSize.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Regression</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Effect size (Cohen’s d)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

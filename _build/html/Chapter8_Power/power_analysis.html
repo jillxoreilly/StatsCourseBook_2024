@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.6. Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Regression" href="../Chapter10_Regression1/regression1_intro.html" />
-    <link rel="prev" title="2.3. Concepts Review" href="power_conceptCheck.html" />
+    <link rel="prev" title="2.5. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -275,7 +275,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">2.3. Concepts Review</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Sensitivity, power, reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. Sensitivity, power, reproducibility</a></li>
 
 
 
@@ -564,13 +566,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.4. Sensitivity, power, reproducibility</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.6. Sensitivity, power, reproducibility</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.6.1. Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.5. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.5.1. Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity">2.5.2. Specificity</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.7. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.7.1. Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity">2.7.2. Specificity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#our-example">Our example:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity-or-probability-of-a-type-1-error">Specificity or probability of a Type 1 error</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-we-get-the-p-value-for-a-correlation">How to we get the p-value for a correlation?</a></li>
@@ -579,37 +581,37 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">2.5.3. Power</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">2.7.3. Power</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-by-simulation">Power by simulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">2.5.4. Sample size</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">2.7.4. Sample size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">The probability of a Type 1 error does not depend on sample size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-2-error-does-depend-on-sample-size">The probability of a Type 2 error <em>does</em> depend on sample size</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculations-in-practice">2.6. Power calculations in practice</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinically-significant-effect-size">2.6.1. Clinically significant effect size</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculations-in-practice">2.8. Power calculations in practice</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinically-significant-effect-size">2.8.1. Clinically significant effect size</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-t-test">2.7. Power of a t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size">2.7.1. Effect size</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-t-test">2.9. Power of a t-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size">2.9.1. Effect size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-standardized">Effect size is standardized</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">Draw 10000 random samples and see how often we get a significant effect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.7.2. Built in function for power</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.9.2. Built in function for power</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it">Running it</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-effect-size">Note on effect size</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">2.8. Paired sample t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">2.8.1. another example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">2.10. Paired sample t-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">2.10.1. another example</a></li>
 </ul>
 </li>
 </ul>
@@ -625,7 +627,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-power-reproducibility">
-<h1><span class="section-number">2.4. </span>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.6. </span>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
 <p>As we saw in the lecture, the concepts of specificity and sensitivity/power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/t1t2_error.png" style="width: 80%;" /></a>
 <p>Think about it this way:</p>
@@ -634,7 +636,7 @@ document.write(`
 <li><p>When we are talking about power (controlling type II errors) we are proposing that the true populaiton effect is non-zero (say correlation and we are interested in how frequently we fail to reject the null hypothesis.</p></li>
 </ul>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">2.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,21 +653,21 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-correlation">
-<h1><span class="section-number">2.5. </span>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.7. </span>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
 <p>I collect data on end-ofyear exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s r, between Maths and French scores across my sample of 50 participants.</p>
 <ul class="simple">
 <li><p>I observe a correlation of r=0.25</p></li>
 </ul>
 <p>Can I trust this result?</p>
 <section id="eyeballing-the-data">
-<h2><span class="section-number">2.5.1. </span>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.1. </span>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
 <p>What does a correlation of 0.25 look like for 50 data points?
 Here are some examples of datasets that actually have r=0.25:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" style="width: 100%;" /></a>
 <p>Would you trust those correlations?</p>
 </section>
 <section id="specificity">
-<h2><span class="section-number">2.5.2. </span>Specificity<a class="headerlink" href="#specificity" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.2. </span>Specificity<a class="headerlink" href="#specificity" title="Permalink to this heading">#</a></h2>
 <p>A Type 1 error occurs when the null hypothesis is true (as it is for our simulated population with zero correlation), but is nonetheless rejected.</p>
 <p>The specificity of a test is the probability of avoiding a Type 1 Error, if the null is true. So say the null hypothesis is true and we test at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level. The probability of a Type 1 error is (by definition) 5% and the specificity of the test is 95%.</p>
 <p>In this section we check that we do indeed get a false positive (ie a Type 1 error) 5% of the time when testing at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level in a population here the null is true.</p>
@@ -705,7 +707,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/47f5266e1a6298cda4b40a490e442ab159a0ef50091c0f152a96d14e55465fc5.png" src="../_images/47f5266e1a6298cda4b40a490e442ab159a0ef50091c0f152a96d14e55465fc5.png" />
+<img alt="../_images/559f68e151d7e9eebc7f318569ba2638c604775d12386356781726835631d54a.png" src="../_images/559f68e151d7e9eebc7f318569ba2638c604775d12386356781726835631d54a.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -745,11 +747,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.004505</td>
+      <td>0.004316</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.004505</td>
+      <td>0.004316</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -778,7 +780,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.027256905329874126, pvalue=0.8509586285440696)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.02028972281617461, pvalue=0.8887741160770228)
 </pre></div>
 </div>
 </div>
@@ -791,7 +793,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8509586285440696
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8887741160770228
 </pre></div>
 </div>
 </div>
@@ -815,7 +817,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0495
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0488
 </pre></div>
 </div>
 </div>
@@ -825,7 +827,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="power">
-<h2><span class="section-number">2.5.3. </span>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.3. </span>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h2>
 <p>A Type 2 error occurs hen the alternative hypothesis is true, but we fail to reject the null.</p>
 <p>The probability of correctly rejecting the null when <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true is the sensitivity or power of a test. So if the probability of a Type 2 error for a given test is 20%, the sensitivity or power of the test is 80%.</p>
 <section id="power-by-simulation">
@@ -861,7 +863,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66d166cdaa68de9c71b6a528cc357340e3453c83a1a96995bd4a346009328d12.png" src="../_images/66d166cdaa68de9c71b6a528cc357340e3453c83a1a96995bd4a346009328d12.png" />
+<img alt="../_images/81315ec122c0b06bf01736beb5df57661fc7ac64abf89b4c5ce6d83330146b55.png" src="../_images/81315ec122c0b06bf01736beb5df57661fc7ac64abf89b4c5ce6d83330146b55.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -899,11 +901,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.249282</td>
+      <td>0.254836</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.249282</td>
+      <td>0.254836</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -928,7 +930,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.415
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.445
 </pre></div>
 </div>
 </div>
@@ -954,7 +956,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.421
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.448
 </pre></div>
 </div>
 </div>
@@ -962,7 +964,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="sample-size">
-<h2><span class="section-number">2.5.4. </span>Sample size<a class="headerlink" href="#sample-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.4. </span>Sample size<a class="headerlink" href="#sample-size" title="Permalink to this heading">#</a></h2>
 <p>We have just seen that a large sample size is needed to get good power for a weak correlation. In general, the power of a test (1 - chance of a Type 2 error) increases with <span class="math notranslate nohighlight">\(n\)</span> whilst the specificity (1 - chance of a type 1 error) does not. Why?</p>
 <section id="the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
 <h3>The probability of a Type 1 error does not depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
@@ -989,7 +991,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 45.1%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 43.2%
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1023,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8d64f33191fbf354793064eeee2e4a862adc843cdc20ba3dcc01d3f9c4f2784e.png" src="../_images/8d64f33191fbf354793064eeee2e4a862adc843cdc20ba3dcc01d3f9c4f2784e.png" />
+<img alt="../_images/4d3df45e918ded24cbb2034582e3dde91ab5dc00430d05227b62aad0f8076f7b.png" src="../_images/4d3df45e918ded24cbb2034582e3dde91ab5dc00430d05227b62aad0f8076f7b.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation ould take a long time to run).</p>
@@ -1084,19 +1086,19 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-calculations-in-practice">
-<h1><span class="section-number">2.6. </span>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.8. </span>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Permalink to this heading">#</a></h1>
 <p>Power is defined as the proportion of the time we would expect to get a statistically significant effect in samples of size <span class="math notranslate nohighlight">\(n\)</span>, given that there is a true effect of a certain size (for example <span class="math notranslate nohighlight">\(r\)</span>=0.25) in the population.</p>
 <p>An obvious problem with this is that in a real experiment you wouldn’t know the true effect sizze in the underlying population - that is what you are trying to measure! So how can you calculate the power for a given planned sample size, or the sample size needed to achieve 80% power, in advance?</p>
 <p>Unfortunately, it is often impossible to have an accurate estimate of the expected effect size in advance. Sometimes we can estimate the effect size (such as the correlation in the underlying population) from looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment. An alternative is to conduct a pilot experiment to determine effect size - this is more likely to be practical in the context of a large study (such as a drug trial) than a small-scale experiment (such as an undergraduate psychology project).</p>
 <section id="clinically-significant-effect-size">
-<h2><span class="section-number">2.6.1. </span>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h2>
 <p>One context in which power can definitely be meaningfully defined, is when we know what size of effect we would <em>care about</em>, even if we don’t know what the underlying effect size in the population is.</p>
 <p>Say for example we are testing a new analgesic drug. We may not know how much the drug will reduce pain scores (the true effect size) but we can certainly define a minimum effect size that would be clinically meaningful. You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
 <p>If we conduct a power analysis assuming that the effect size in the population is the minimum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect would have more than 80% power, as larger effects are easier to detect.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-t-test">
-<h1><span class="section-number">2.7. </span>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.9. </span>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
 <p>Let us now look at power analysis for a t-test for difference of means.</p>
 <p>A researcher hypothesises that geography students are taller than psychology students.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
@@ -1270,7 +1272,9 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </table>
 </div></div></div>
 </div>
-<p>Let’s calculate the sample mean for each subject group:</p>
+<p>heights=pandas.read_csv(‘https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/PsyGeogHeights.csv’)
+heightsheights=pandas.read_csv(‘https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/PsyGeogHeights.csv’)
+heightsLet’s calculate the sample mean for each subject group:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1304,7 +1308,7 @@ Name: height, dtype: float64
 </div>
 <p>The difference is <em>just</em> significant at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 - our <span class="math notranslate nohighlight">\(p\)</span>-value is 0.0456</p>
 <section id="effect-size">
-<h2><span class="section-number">2.7.1. </span>Effect size<a class="headerlink" href="#effect-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.9.1. </span>Effect size<a class="headerlink" href="#effect-size" title="Permalink to this heading">#</a></h2>
 <p>The mean height of the geography students is 5.14 cm greater than the mean height of the psychology students</p>
 <p>Is this a large difference? Would it be obvious in a psychology-geography student party who is a psychology student and who is a geography student, just from their heights?</p>
 <p>We can visualise how much the populations overlap by plotting them:</p>
@@ -1505,7 +1509,7 @@ Name: height, dtype: float64
 </section>
 </section>
 <section id="built-in-function-for-power">
-<h2><span class="section-number">2.7.2. </span>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.9.2. </span>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
 <p>There is a built in function in a package called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for doing power analysis.</p>
 <p>You can use it to find the power for a given sample size:</p>
 <div class="cell docutils container">
@@ -1609,7 +1613,7 @@ required alpha = 0.20952367203411126
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="paired-sample-t-test">
-<h1><span class="section-number">2.8. </span>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.10. </span>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
 <p>There is a version of the power analysis for paired samples t-test (indeed, there are versions for various analyses, although not for correlation annoyingly).</p>
 <p>The version for paired samples t-test is called <code class="docutils literal notranslate"><span class="pre">TTestPower()</span></code> as opposed to <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code></p>
 <p>See if you can work out how to use this to find the sample size required for 80% power for an effect size of <span class="math notranslate nohighlight">\(d=0.5\)</span>, testing at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05.</p>
@@ -1636,7 +1640,7 @@ required alpha = 0.20952367203411126
 </div>
 </div>
 <section id="another-example">
-<h2><span class="section-number">2.8.1. </span>another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.10.1. </span>another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
 <p>… think back to how we calculated d, see if you can run one from the raw data.</p>
 <p>Let’s look at the brother-sister heights data.</p>
 <div class="cell docutils container">
@@ -1912,12 +1916,12 @@ required alpha = 0.20952367203411126
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="power_conceptCheck.html"
+       href="EffectSizeCorrelation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.3. </span>Concepts Review</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Effect size (Pearson’s r)</p>
       </div>
     </a>
     <a class="right-next"
@@ -1944,13 +1948,13 @@ required alpha = 0.20952367203411126
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.4. Sensitivity, power, reproducibility</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.6. Sensitivity, power, reproducibility</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.6.1. Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.5. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.5.1. Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity">2.5.2. Specificity</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.7. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.7.1. Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity">2.7.2. Specificity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#our-example">Our example:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specificity-or-probability-of-a-type-1-error">Specificity or probability of a Type 1 error</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-we-get-the-p-value-for-a-correlation">How to we get the p-value for a correlation?</a></li>
@@ -1959,37 +1963,37 @@ required alpha = 0.20952367203411126
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">2.5.3. Power</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">2.7.3. Power</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-by-simulation">Power by simulation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">2.5.4. Sample size</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">2.7.4. Sample size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">The probability of a Type 1 error does not depend on sample size</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-2-error-does-depend-on-sample-size">The probability of a Type 2 error <em>does</em> depend on sample size</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculations-in-practice">2.6. Power calculations in practice</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinically-significant-effect-size">2.6.1. Clinically significant effect size</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-calculations-in-practice">2.8. Power calculations in practice</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinically-significant-effect-size">2.8.1. Clinically significant effect size</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-t-test">2.7. Power of a t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size">2.7.1. Effect size</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-t-test">2.9. Power of a t-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size">2.9.1. Effect size</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-standardized">Effect size is standardized</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-simulate-a-dataset-with-d-0-760">Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">Draw 10000 random samples and see how often we get a significant effect</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.7.2. Built in function for power</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.9.2. Built in function for power</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it">Running it</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-effect-size">Note on effect size</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">2.8. Paired sample t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">2.8.1. another example</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">2.10. Paired sample t-test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">2.10.1. another example</a></li>
 </ul>
 </li>
 </ul>

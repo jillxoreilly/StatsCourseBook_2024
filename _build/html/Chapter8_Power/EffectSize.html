@@ -1,0 +1,1259 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2.4. Effect size (Cohen’s d) &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/EffectSize';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.5. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
+    <link rel="prev" title="2.3. Concepts Review" href="power_conceptCheck.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter6_ttest/HandInAssignment.html">3.9. Vacation Assignment</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">2.3. Concepts Review</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter8_Power/EffectSize.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter8_Power/EffectSize.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter8_Power/EffectSize.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Effect size (Cohen’s d)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.4.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.4.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="effect-size-cohen-s-d">
+<h1><span class="section-number">2.4. </span>Effect size (Cohen’s d)<a class="headerlink" href="#effect-size-cohen-s-d" title="Permalink to this heading">#</a></h1>
+<p>The first ingredient in a power analysis is <strong>effect size</strong>.</p>
+<p>Power analysis determines the sample size needed to detect an effect of a certain size.</p>
+<p>What is <strong>effect size</strong>? It is a measure of whether the effect (difference of means, correlation) of interest is big or small, <em>relative to the random noise or variability in the data</em>.</p>
+<p>In this notebook we look at the effect size for the t-test and for Pearson’s correlation. We will see that:</p>
+<ul class="simple">
+<li><p>The effect size for the t-test is Cohen’s <span class="math notranslate nohighlight">\(d\)</span>, where</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{x_1}-\bar{x_2}}{s} \]</div>
+<ul class="simple">
+<li><p>The effect size for Pearson’s correlation is simply the correlation coefficient, <span class="math notranslate nohighlight">\(r\)</span></p></li>
+</ul>
+<section id="set-up-python-libraries">
+<h2><span class="section-number">2.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="effect-size-for-the-t-test">
+<h2><span class="section-number">2.4.2. </span>Effect size for the t-test<a class="headerlink" href="#effect-size-for-the-t-test" title="Permalink to this heading">#</a></h2>
+<p><strong>Example:</strong></p>
+<p>A researcher hypothesises that geography students are taller than psychology students.</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}:\)</span> The mean heights of geography students is greater than the mean height of psychology students; <span class="math notranslate nohighlight">\(\mu_g &gt; \mu_p\)</span></p>
+<p>He measures the heights of 12 geography students an 10 psychology students, which are given in the dataframe below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/PsyGeogHeights.csv&#39;</span><span class="p">)</span>
+<span class="n">heights</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>studentID</th>
+      <th>subject</th>
+      <th>height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>186640</td>
+      <td>psychology</td>
+      <td>154.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>588140</td>
+      <td>psychology</td>
+      <td>156.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>977390</td>
+      <td>psychology</td>
+      <td>165.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>948470</td>
+      <td>psychology</td>
+      <td>162.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>564360</td>
+      <td>psychology</td>
+      <td>162.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>604180</td>
+      <td>psychology</td>
+      <td>159.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>770760</td>
+      <td>psychology</td>
+      <td>166.1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>559170</td>
+      <td>psychology</td>
+      <td>165.9</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>213240</td>
+      <td>psychology</td>
+      <td>163.7</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>660220</td>
+      <td>psychology</td>
+      <td>165.6</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>311550</td>
+      <td>psychology</td>
+      <td>163.1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>249170</td>
+      <td>psychology</td>
+      <td>176.6</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>139690</td>
+      <td>geography</td>
+      <td>171.6</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>636160</td>
+      <td>geography</td>
+      <td>171.5</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>649650</td>
+      <td>geography</td>
+      <td>154.6</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>595280</td>
+      <td>geography</td>
+      <td>162.6</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>772880</td>
+      <td>geography</td>
+      <td>164.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>174880</td>
+      <td>geography</td>
+      <td>168.6</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>767580</td>
+      <td>geography</td>
+      <td>175.3</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>688870</td>
+      <td>geography</td>
+      <td>168.4</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>723650</td>
+      <td>geography</td>
+      <td>183.5</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>445960</td>
+      <td>geography</td>
+      <td>164.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s calculate the sample mean for each subject group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>subject</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>geography</th>
+      <td>10.0</td>
+      <td>168.460</td>
+      <td>7.846046</td>
+      <td>154.6</td>
+      <td>164.175</td>
+      <td>168.5</td>
+      <td>171.575</td>
+      <td>183.5</td>
+    </tr>
+    <tr>
+      <th>psychology</th>
+      <td>12.0</td>
+      <td>163.325</td>
+      <td>5.717775</td>
+      <td>154.0</td>
+      <td>161.250</td>
+      <td>163.4</td>
+      <td>165.675</td>
+      <td>176.6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So the Geography students are about 5cm taller than the Psychology students.</p>
+<p>Is this a large difference? Would it be obvious in a psychology-geography student party who is a psychology student and who is a geography student, just from their heights?</p>
+<p>We can visualise how much the populations overlap by plotting them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot KDEs</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6827e30b17f0805f980787ae81e85cea5222ae1c3326c1e0a03d12e9cbf74466.png" src="../_images/6827e30b17f0805f980787ae81e85cea5222ae1c3326c1e0a03d12e9cbf74466.png" />
+</div>
+</div>
+<p>Hm, no, we probably could not tell who is a psychology student and who is a geography student, just from their heights, but it looks like there is a difference between the groups overall.</p>
+<section id="effect-size-neq-statistical-significance">
+<h3>Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance<a class="headerlink" href="#effect-size-neq-statistical-significance" title="Permalink to this heading">#</a></h3>
+<p>We could ask if there is a statistically signifiant difference between the groups by running a t-test:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> 
+                <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=1.7743564827449236, pvalue=0.04561467878556142)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The difference is <em>just</em> significant at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 - our <span class="math notranslate nohighlight">\(p\)</span>-value is 0.0456</p>
+<p><strong>However</strong>, this doesn’t really tell us whether the effect is big (whether we could easily spot a tall geography student at a Psychosoc party), because the value of <span class="math notranslate nohighlight">\(t\)</span> also depends on the sample size, <span class="math notranslate nohighlight">\(n\)</span>. To illustrate this, consider the following sample <code class="docutils literal notranslate"><span class="pre">heights2</span></code>, which is ten times larger (120 psychology students and 100 geography students), but with the same mean and sd in each group as the small (<span class="math notranslate nohighlight">\(n\)</span> = 12,10) sample:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/heightsLargerSample.csv&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1"># plot KDEs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7135fc59b1be0a71d221f4946afc2e7c834ac16ee71c02f72eb918375db8b006.png" src="../_images/7135fc59b1be0a71d221f4946afc2e7c834ac16ee71c02f72eb918375db8b006.png" />
+</div>
+</div>
+<p>Although the mean and sd for each group are about the same, if we conduct a t-test on the larger dataset, we find the difference is <em>much</em> more significant</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># small sample size</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> 
+                <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=1.7743564827449236, pvalue=0.04561467878556142)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># large sample size</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">heights2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+                <span class="n">heights2</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> 
+                <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=4.770032273659233, pvalue=1.6851503676180654e-06)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Conclusion</strong> the t-test cannot tell us whether the effect of subjbect studied on height is large or small - for this we need a ‘pure’ measure of the size of the difference relative to variability, regardless of <span class="math notranslate nohighlight">\(n\)</span></p>
+</section>
+</section>
+<section id="variance-matters-for-effect-size">
+<h2><span class="section-number">2.4.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
+<p>Is a 5cm difference in height between psychology and geography students a big effect? How easily could we spot a tall geographer gatecrashing the Psychosoc party?</p>
+<p>This will depend on both the difference in mean heights, and the standard deviation (variablity) within each group.</p>
+<p>Consider the following dataset which has the same difference in mmeans, but now much less variability within each group:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/heightsSmallerSD.csv&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1"># plot KDEs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span><span class="mi">175</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span><span class="mi">175</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/83f142088996901c38a3f852dd93e59cb66635dacf3b1049bade4efcc6650a34.png" src="../_images/83f142088996901c38a3f852dd93e59cb66635dacf3b1049bade4efcc6650a34.png" />
+</div>
+</div>
+<p>For the dataset on the right (lower sd within each group) we can see a much clearer separation between the psychology and geograpahy students - in practical terms, it would be easier to guess a person’s subject based on their height.</p>
+<p>The plot on the right has a <strong>larger effect size</strong></p>
+</section>
+<section id="cohen-s-d">
+<h2><span class="section-number">2.4.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
+<p>We quantify the effect size for the difference of means as Cohen’s <span class="math notranslate nohighlight">\(d\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{x_g}-\bar{x_p}}{s} \]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\bar{x_g}\)</span> is the mean height of our sample of geography students</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{x_p}\)</span> is the mean height of our sample of psychology students</p></li>
+<li><p><span class="math notranslate nohighlight">\(s\)</span> is the <em>shared standard deviation estimate</em> basaed on the standard deviations of the samples, <span class="math notranslate nohighlight">\(s_p\)</span> and <span class="math notranslate nohighlight">\(s_g\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ s = \sqrt{\frac{(n_p-1)s_p^2 + (n_g-1)s_g^2)}{n_p + n_g - 2}} \]</div>
+<p>oof!</p>
+<p>Let’s implement that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate shared standard deviation s</span>
+
+<span class="n">xP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">xG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">sP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">sG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">nP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">nG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">=</span><span class="p">(((</span><span class="n">nP</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sP</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">nG</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sG</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">nP</span><span class="o">+</span><span class="n">nG</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># **0.5 means &#39;to the power of a half&#39; ie square root</span>
+<span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># calculate shared standard deviation s</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">xP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">xG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;psy&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(s\)</span> is an estimate of the standard deviation of heights, based on both groups, so it should be similar to the standard deviation of each of the individual groups.</p>
+<p>Now we can calculate our effect size:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cohen&#39;s d</span>
+<span class="n">d</span><span class="o">=</span><span class="p">(</span><span class="n">xG</span><span class="o">-</span><span class="n">xP</span><span class="p">)</span><span class="o">/</span><span class="n">s</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7597340566106963
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the difference in mean heights between psychology and geography students is 0.76 standard deviations.</p>
+<section id="effect-size-is-a-standardized-measure">
+<h3>Effect size is a <em>standardized</em> measure<a class="headerlink" href="#effect-size-is-a-standardized-measure" title="Permalink to this heading">#</a></h3>
+<p>Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions <strong>independent of the data values themselves.</strong></p>
+<p>Therefore it is possilbe to have quite different datasets with the same effect size - for exammple if the difference of means and the standard deviations bobth increase, effect size may stay the same.</p>
+<p>For example, here I have created another dataset with the same effect size <span class="math notranslate nohighlight">\(d=0.760\)</span>, comparing the weights of black and grey sheep:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sheep</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/SheepWeights.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot KDEs for psy/geog heights</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;student height (cm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.04</span><span class="p">])</span>
+
+<span class="c1"># plot KDEs for black/grey sheep weights</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sheep</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;woolColor&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sheep weight (lb)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.04</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1cf4ced4ecc0e559686b4044137ad8634b84e4693691edc6aec8cd2c4c8a62fb.png" src="../_images/1cf4ced4ecc0e559686b4044137ad8634b84e4693691edc6aec8cd2c4c8a62fb.png" />
+</div>
+</div>
+<p>These two different datasets have the same effect size, which quantifies the <em>overlap</em> between groups (psychology and geography students, or black and grey sheep)</p>
+</section>
+<section id="small-medium-and-large-effects">
+<h3>Small, medium and large effects<a class="headerlink" href="#small-medium-and-large-effects" title="Permalink to this heading">#</a></h3>
+<p>Cohen himself defined small medium and large effects as follows:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(d=0.2\)</span>: small effect</p></li>
+<li><p><span class="math notranslate nohighlight">\(d=0.5\)</span>: medium effect</p></li>
+<li><p><span class="math notranslate nohighlight">\(d=0.8\)</span>: large effect</p></li>
+</ul>
+<p>stating that <em>“a medium effect of 0.5 is visible to the naked eye of a careful observer”</em></p>
+<p>This is what the effect sizes look like for normally distributed data:</p>
+<p><a class="reference internal" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png" style="width: 95%;" /></a></p>
+<p>Of course, even tiny differences are “visible to the naked eye” for these smooth curves; for real data, there will of course be uncertainty about how well some fitted curve (KDE plot) really represents the underlying population - hence to ascertain our confidence in the difference (statistical significance), we must consider the sample size <span class="math notranslate nohighlight">\(n\)</span> as well as effect size.</p>
+</section>
+</section>
+<section id="recovering-d-from-t">
+<h2><span class="section-number">2.4.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
+<p>Most published papers do not report effect sizes or Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for <span class="math notranslate nohighlight">\(t\)</span>-tests</p>
+<p>However, they do report <span class="math notranslate nohighlight">\(t\)</span> values.</p>
+<p>If you need to work out the effect size from <span class="math notranslate nohighlight">\(t\)</span>, you can do this by considering that:</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{\bar{x_1}-\bar{x_2}}{s} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ t = \frac{\bar{x_1}-\bar{x_2}}{\frac{s}{\sqrt{n}}} \]</div>
+<p>Therefore by rearranging we see</p>
+<div class="math notranslate nohighlight">
+\[ d = \frac{t}{\sqrt{n}} \]</div>
+<p>This is important as we often need to use the effect size from a published study to <em>estimate</em> the effect size in a study we are planning, and thus select the correct sample size via power analysis. This process will be explored later in this chapter.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter8_Power"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="power_conceptCheck.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Concepts Review</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EffectSizeCorrelation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Effect size (Pearson’s r)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.4.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.4.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
