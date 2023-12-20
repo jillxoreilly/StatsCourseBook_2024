@@ -36,8 +36,8 @@ When calculating the $p$-value for a test, we *assume $\mathcal{H_o}$ is true* a
 :width: 80%
 :align: center
 ```
-
-
+<br>
+<br>
 In contrast, in power analysis, we consider the **alternative reality in which $\mathcal{H_a}$ is true**. Power is then theh probaility that we correctly reject the null.
 
 **Assuming $\mathcal{H_a}$ is true**:
@@ -48,7 +48,8 @@ In contrast, in power analysis, we consider the **alternative reality in which $
 :width: 80%
 :align: center
 ```
-
+<br>
+<br>
 **Terminology**
 
 Because the terms *sensitivity* and *specificity* are easy to mix up, I prefer to talk about:
@@ -88,7 +89,7 @@ This is because tests of statistical significance, and tests of statistical powe
 In general, 
 
 * The smaller the effect size, the larger the sample size neeed to detect it.
-* The more stringent the $\alpha value$, the larger the sample needed to detect an effect of a given size
+* The more stringent the $\alpha$ value, the larger the sample needed to detect an effect of a given size
     * $\alpha=0.001$ is more stringent than $\alpha=0.01$ etc
 
 The next pages will cover the definition of effect size.

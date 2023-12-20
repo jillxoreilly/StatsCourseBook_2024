@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
@@ -538,7 +538,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-mathcal-h-o-vs-assuming-mathcal-h-o">2.4.1. Assuming <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> vs assuming <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criminal-analogy">2.4.2. Criminal analogy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insufficient-evidence">2.4.3. Insufficient evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-primarily-affects-power">2.4.4. Sample size primarily affects power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-primarily-affects-power-not-p-value">2.4.4. Sample size primarily affects power, not <span class="math notranslate nohighlight">\(p\)</span>-value</a></li>
 </ul>
             </nav>
         </div>
@@ -575,14 +575,18 @@ document.write(`
 <li><p>Specificity is <span class="math notranslate nohighlight">\((1-p)\)</span></p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_spec.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_spec.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_spec.png" style="width: 80%;" /></a>
-<p>In contrast, in power analysis, we consider the <strong>alternative reality in which <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true</strong>. Power is then theh probaility that we correctly reject the null.</p>
+<br>
+<br>
+In contrast, in power analysis, we consider the **alternative reality in which $\mathcal{H_a}$ is true**. Power is then theh probaility that we correctly reject the null.
 <p><strong>Assuming <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true</strong>:</p>
 <ul class="simple">
 <li><p><strong>Power</strong> is (1-proportion of false negatives)</p></li>
 <li><p><strong>Sensitivity</strong> = power</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_power.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_power.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_power.png" style="width: 80%;" /></a>
-<p><strong>Terminology</strong></p>
+<br>
+<br>
+**Terminology**
 <p>Because the terms <em>sensitivity</em> and <em>specificity</em> are easy to mix up, I prefer to talk about:</p>
 <ul class="simple">
 <li><p>the <strong><span class="math notranslate nohighlight">\(p\)</span>-value</strong> of a test (which is 1-specificity) and</p></li>
@@ -616,7 +620,7 @@ document.write(`
 <p>In general,</p>
 <ul class="simple">
 <li><p>The smaller the effect size, the larger the sample size neeed to detect it.</p></li>
-<li><p>The more stringent the <span class="math notranslate nohighlight">\(\alpha value\)</span>, the larger the sample needed to detect an effect of a given size</p>
+<li><p>The more stringent the <span class="math notranslate nohighlight">\(\alpha\)</span> value, the larger the sample needed to detect an effect of a given size</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(\alpha=0.001\)</span> is more stringent than <span class="math notranslate nohighlight">\(\alpha=0.01\)</span> etc</p></li>
 </ul>
@@ -624,8 +628,8 @@ document.write(`
 </ul>
 <p>The next pages will cover the definition of effect size.</p>
 </section>
-<section id="sample-size-primarily-affects-power">
-<h2><span class="section-number">2.4.4. </span>Sample size primarily affects power<a class="headerlink" href="#sample-size-primarily-affects-power" title="Permalink to this heading">#</a></h2>
+<section id="sample-size-primarily-affects-power-not-p-value">
+<h2><span class="section-number">2.4.4. </span>Sample size primarily affects power, not <span class="math notranslate nohighlight">\(p\)</span>-value<a class="headerlink" href="#sample-size-primarily-affects-power-not-p-value" title="Permalink to this heading">#</a></h2>
 <p>Most people will accept the intuition that increasing the sample size should make an experiment ‘better’, more reliable or more believable. However it is worth understanding that increasing the sample size primarily affects the proportion of false negatives <em>NOT</em> false positives. Hence sample size is relevant for the power of a test more than its <span class="math notranslate nohighlight">\(p\)</span>-value. The reasons for this will be unpacked in the page <strong>Sample Size and Power</strong> in this chapter.</p>
 </section>
 </section>
@@ -696,7 +700,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assuming-mathcal-h-o-vs-assuming-mathcal-h-o">2.4.1. Assuming <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> vs assuming <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criminal-analogy">2.4.2. Criminal analogy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insufficient-evidence">2.4.3. Insufficient evidence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-primarily-affects-power">2.4.4. Sample size primarily affects power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-primarily-affects-power-not-p-value">2.4.4. Sample size primarily affects power, not <span class="math notranslate nohighlight">\(p\)</span>-value</a></li>
 </ul>
   </nav></div>
 

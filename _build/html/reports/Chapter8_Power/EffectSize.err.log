@@ -17,29 +17,33 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# calculate shared standard deviation s
+sheep=pandas.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/SheepWeights.csv')
 
-xP = psy.mean()
-xG = geog.mean()
+# plot KDEs for psy/geog heights
+plt.subplot(2,1,1)
+sns.kdeplot(data=heights, x='height', hue='subject', fill=True)
+plt.xlabel('student height (cm)')
+plt.xlim([50,300])
+plt.ylim([0,0.04])
 
-sP = psy.std()
-sG = geog.std()
+# plot KDEs for black/grey sheep weights
+plt.subplot(2,1,2)
+sns.kdeplot(data=sheep, x='weight', hue='woolColor', fill=True)
+plt.xlabel('sheep weight (lb)')
+plt.xlim([50,300])
+plt.ylim([0,0.04])
 
-nP = psy.count()
-nG = geog.count()
-
-s=(((nP-1)*(sP**2) + (nG-1)*(sG**2))/(nP+nG-2))**0.5 # **0.5 means 'to the power of a half' ie square root
-s
+plt.tight_layout()
+plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[10], line 3[0m
-[1;32m      1[0m [38;5;66;03m# calculate shared standard deviation s[39;00m
-[0;32m----> 3[0m xP [38;5;241m=[39m [43mpsy[49m[38;5;241m.[39mmean()
-[1;32m      4[0m xG [38;5;241m=[39m geog[38;5;241m.[39mmean()
-[1;32m      6[0m sP [38;5;241m=[39m psy[38;5;241m.[39mstd()
+Cell [0;32mIn[12], line 1[0m
+[0;32m----> 1[0m sheep[38;5;241m=[39m[43mpandas[49m[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mhttps://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/SheepWeights.csv[39m[38;5;124m'[39m)
+[1;32m      3[0m [38;5;66;03m# plot KDEs for psy/geog heights[39;00m
+[1;32m      4[0m plt[38;5;241m.[39msubplot([38;5;241m2[39m,[38;5;241m1[39m,[38;5;241m1[39m)
 
-[0;31mNameError[0m: name 'psy' is not defined
-NameError: name 'psy' is not defined
+[0;31mNameError[0m: name 'pandas' is not defined
+NameError: name 'pandas' is not defined
 

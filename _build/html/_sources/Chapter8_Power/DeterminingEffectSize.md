@@ -27,7 +27,7 @@ When I ran the power analysis after the fact, it told me I should have had a sam
 
 **This isn't quite the intended purpose of power analysis**, although it is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.
 
-Ideally, we are supposed to do a power analysis when **planning** the experiment, do decide in advance what sample size to collect.
+Ideally, we are supposed to do a power analysis when **planning** the experiment, to decide in advance what sample size to collect.
 
 * **Power calculations *in advance of the study* are now required by almost all funders, ethical review boards and pre-registration repositories, as well as many scientific journals**
 
@@ -41,23 +41,35 @@ To get an idea of the effect size we expect in a planned study, we can look at o
 
 ## Recovering $d$ from $t$ and $n$
 
-Although it is not common practice to report effect sizes in journal artical, they can be recovered from the $t$ score and sample size $n$ as follows.
+Although it is not common practice to report effect sizes in journal article, they can be recovered from the $t$ score and sample size $n$ as follows.
 
-### Paired sample t-test
+### Paired sample $t$-test
 
-Remember that $$t = \frac{\bar{diff}}{\frac{s_diff}{\sqrt{n}}}$$, where $\bar{diff}$ is the mean pairwise difference (eg the mean difference in height between a brother and his own sister) and $\s_d$ is the standard deviation of those differences. $n$ is the number of pairs.
+Remember that 
 
-Now Cohen's $d$ is given by a similar formula: $$d = \frac{\bar{diff}}{\frac{s_diff}}}$$
+$$t = \frac{\bar{x}}{\frac{s_{x}}{\sqrt{n}}}$$ 
 
-Rearrangeing, we see that $$d = \frac{t}{/sqrt{n}}$$
+where $\bar{x}$ is the mean *pairwise difference* (eg the mean difference in height between a brother and his own sister) and $s_x$ is the standard deviation of those differences. $n$ is the number of pairs.
 
-### One sample t-test
+Now Cohen's $d$ is given by a similar formula: 
+
+$$d = \frac{\bar{d}}{s_d}$$
+
+Rearranging, we see that $$d = \frac{t}{\sqrt{n}}$$
+
+### One sample $t$-test
 
 This is very similar to the paired sample t-test.
 
-We have $$t = \frac{\bar{x-\mu}}{\frac{s_{x-\mu}}{\sqrt{n}}}$$, where $\bar{x}-\mu$ is the mean deviation of each data point from the reference value $\mu$ (where the reference value might be zero, or some fixed number like the population mean height of men). $s_{x-\mu}$ is the standard deviation of these deviations.  $n$ is the number of datapoints.
+We have 
 
-Again we have $$d = \frac{t}{/sqrt{n}}$$
+$$t = \frac{\bar{x}-\mu}{\frac{s_{x-\mu}}{\sqrt{n}}}$$
+
+where $\bar{x}-\mu$ is the mean deviation of each data point from the reference value $\mu$ (where the reference value might be zero, or some fixed number like the population mean height of men). $s_{x-\mu}$ is the standard deviation of these deviations.  $n$ is the number of datapoints.
+
+Again we have 
+
+$$d = \frac{t}{\sqrt{n}}$$
 
 ### Correlation
 
@@ -65,9 +77,11 @@ Power analysis could be run on the effect size $r$ directly, but to use `statsmo
 
 $$ t=\frac{r\sqrt{n-2}}{\sqrt{(1-r^2)}} $$
 
-Again we have $$d = \frac{t}{/sqrt{n}}$$
+Again we have 
 
-### Independent samples $t$-test$
+$$d = \frac{t}{\sqrt{n}}$$
+
+### Independent samples $t$-test
 
 For the independent samples $t$-test, we use a similar approach to the paired- and one-sample $t$-tests, but need to take into account that there are now two groups sizes $n_1$ and $n_2$, and the value of $s$ in the formula for $t$ is a combination of the two sample standard deviations $s_1$ and $s_2$ into a *pooled varaince estimate* as follows:
 
@@ -77,7 +91,7 @@ Yikes!
 
 The formula for $t$ for the independent samples $t$-test is:
 
-$$t = \frac{\bar{x_1}-\(bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+$$t = \frac{\bar{x_1}-(\bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
 
 where $\bar{x_1}$,$\bar{x_2}$ are the group means and $n_1, n_2$ are the group standard deviations. 
 

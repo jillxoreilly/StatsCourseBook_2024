@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.10. Knowing the effect size</a></li>
@@ -538,10 +538,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">2.10.1. Post hoc power analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">2.10.2. Estimating the effect size from the literature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">2.10.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample t-test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test$</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">2.10.4. Practical effect size</a></li>
@@ -577,7 +577,7 @@ document.write(`
 <p>This is sometimes called a post-hoc power analysis.</p>
 <p>When I ran the power analysis after the fact, it told me I should have had a sample 128 people rather than 50 to detect that correlation with 80% power.</p>
 <p><strong>This isn’t quite the intended purpose of power analysis</strong>, although it is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.</p>
-<p>Ideally, we are supposed to do a power analysis when <strong>planning</strong> the experiment, do decide in advance what sample size to collect.</p>
+<p>Ideally, we are supposed to do a power analysis when <strong>planning</strong> the experiment, to decide in advance what sample size to collect.</p>
 <ul class="simple">
 <li><p><strong>Power calculations <em>in advance of the study</em> are now required by almost all funders, ethical review boards and pre-registration repositories, as well as many scientific journals</strong></p></li>
 </ul>
@@ -590,35 +590,47 @@ document.write(`
 </section>
 <section id="recovering-d-from-t-and-n">
 <h2><span class="section-number">2.10.3. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#recovering-d-from-t-and-n" title="Permalink to this heading">#</a></h2>
-<p>Although it is not common practice to report effect sizes in journal artical, they can be recovered from the <span class="math notranslate nohighlight">\(t\)</span> score and sample size <span class="math notranslate nohighlight">\(n\)</span> as follows.</p>
+<p>Although it is not common practice to report effect sizes in journal article, they can be recovered from the <span class="math notranslate nohighlight">\(t\)</span> score and sample size <span class="math notranslate nohighlight">\(n\)</span> as follows.</p>
 <section id="paired-sample-t-test">
-<h3>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h3>
-<p>Remember that $<span class="math notranslate nohighlight">\(t = \frac{\bar{diff}}{\frac{s_diff}{\sqrt{n}}}\)</span><span class="math notranslate nohighlight">\(, where \)</span>\bar{diff}<span class="math notranslate nohighlight">\( is the mean pairwise difference (eg the mean difference in height between a brother and his own sister) and \)</span>\s_d<span class="math notranslate nohighlight">\( is the standard deviation of those differences. \)</span>n$ is the number of pairs.</p>
-<p>Now Cohen’s <span class="math notranslate nohighlight">\(d\)</span> is given by a similar formula: $<span class="math notranslate nohighlight">\(d = \frac{\bar{diff}}{\frac{s_diff}}}\)</span>$</p>
-<p>Rearrangeing, we see that $<span class="math notranslate nohighlight">\(d = \frac{t}{/sqrt{n}}\)</span>$</p>
+<h3>Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h3>
+<p>Remember that</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{x}}{\frac{s_{x}}{\sqrt{n}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean <em>pairwise difference</em> (eg the mean difference in height between a brother and his own sister) and <span class="math notranslate nohighlight">\(s_x\)</span> is the standard deviation of those differences. <span class="math notranslate nohighlight">\(n\)</span> is the number of pairs.</p>
+<p>Now Cohen’s <span class="math notranslate nohighlight">\(d\)</span> is given by a similar formula:</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{\bar{d}}{s_d}\]</div>
+<p>Rearranging, we see that $<span class="math notranslate nohighlight">\(d = \frac{t}{\sqrt{n}}\)</span>$</p>
 </section>
 <section id="one-sample-t-test">
-<h3>One sample t-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h3>
+<h3>One sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h3>
 <p>This is very similar to the paired sample t-test.</p>
-<p>We have $<span class="math notranslate nohighlight">\(t = \frac{\bar{x-\mu}}{\frac{s_{x-\mu}}{\sqrt{n}}}\)</span><span class="math notranslate nohighlight">\(, where \)</span>\bar{x}-\mu<span class="math notranslate nohighlight">\( is the mean deviation of each data point from the reference value \)</span>\mu<span class="math notranslate nohighlight">\( (where the reference value might be zero, or some fixed number like the population mean height of men). \)</span>s_{x-\mu}<span class="math notranslate nohighlight">\( is the standard deviation of these deviations.  \)</span>n$ is the number of datapoints.</p>
-<p>Again we have $<span class="math notranslate nohighlight">\(d = \frac{t}{/sqrt{n}}\)</span>$</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{x}-\mu}{\frac{s_{x-\mu}}{\sqrt{n}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{x}-\mu\)</span> is the mean deviation of each data point from the reference value <span class="math notranslate nohighlight">\(\mu\)</span> (where the reference value might be zero, or some fixed number like the population mean height of men). <span class="math notranslate nohighlight">\(s_{x-\mu}\)</span> is the standard deviation of these deviations.  <span class="math notranslate nohighlight">\(n\)</span> is the number of datapoints.</p>
+<p>Again we have</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{t}{\sqrt{n}}\]</div>
 </section>
 <section id="correlation">
 <h3>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h3>
 <p>Power analysis could be run on the effect size <span class="math notranslate nohighlight">\(r\)</span> directly, but to use <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> we convert <span class="math notranslate nohighlight">\(r\)</span> to <span class="math notranslate nohighlight">\(t\)</span> using the formula</p>
 <div class="math notranslate nohighlight">
 \[ t=\frac{r\sqrt{n-2}}{\sqrt{(1-r^2)}} \]</div>
-<p>Again we have $<span class="math notranslate nohighlight">\(d = \frac{t}{/sqrt{n}}\)</span>$</p>
+<p>Again we have</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{t}{\sqrt{n}}\]</div>
 </section>
 <section id="independent-samples-t-test">
-<h3>Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test$<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h3>
+<h3>Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h3>
 <p>For the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test, we use a similar approach to the paired- and one-sample <span class="math notranslate nohighlight">\(t\)</span>-tests, but need to take into account that there are now two groups sizes <span class="math notranslate nohighlight">\(n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span>, and the value of <span class="math notranslate nohighlight">\(s\)</span> in the formula for <span class="math notranslate nohighlight">\(t\)</span> is a combination of the two sample standard deviations <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> into a <em>pooled varaince estimate</em> as follows:</p>
 <div class="math notranslate nohighlight">
 \[s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}\]</div>
 <p>Yikes!</p>
 <p>The formula for <span class="math notranslate nohighlight">\(t\)</span> for the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test is:</p>
 <div class="math notranslate nohighlight">
-\[t = \frac{\bar{x_1}-\(bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</div>
+\[t = \frac{\bar{x_1}-(\bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{x_1}\)</span>,<span class="math notranslate nohighlight">\(\bar{x_2}\)</span> are the group means and <span class="math notranslate nohighlight">\(n_1, n_2\)</span> are the group standard deviations.</p>
 <p>This all means that to recover Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test we need</p>
 <div class="math notranslate nohighlight">
@@ -700,10 +712,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">2.10.1. Post hoc power analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">2.10.2. Estimating the effect size from the literature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">2.10.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample t-test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample t-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test$</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">2.10.4. Practical effect size</a></li>

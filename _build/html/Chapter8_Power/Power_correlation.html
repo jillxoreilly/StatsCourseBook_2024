@@ -276,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
@@ -704,7 +704,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3a04f003d1ed291ba3ad99ec1213c8a8952acd5dfe01fdfafa8df6477dd354da.png" src="../_images/3a04f003d1ed291ba3ad99ec1213c8a8952acd5dfe01fdfafa8df6477dd354da.png" />
+<img alt="../_images/163af756f209b9e29bd8d2b5d618eaa68d3f8ed2bbdcf9c20dd1d6d0d1c21582.png" src="../_images/163af756f209b9e29bd8d2b5d618eaa68d3f8ed2bbdcf9c20dd1d6d0d1c21582.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -744,11 +744,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.018176</td>
+      <td>0.002497</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.018176</td>
+      <td>0.002497</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -777,7 +777,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.03665683534738315, pvalue=0.40023770461657926)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.1916181461639201, pvalue=0.09125514338183098)
 </pre></div>
 </div>
 </div>
@@ -790,7 +790,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.40023770461657926
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.09125514338183098
 </pre></div>
 </div>
 </div>
@@ -815,7 +815,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0998
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0972
 </pre></div>
 </div>
 </div>
@@ -861,7 +861,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6e49ac9b9fb3757b72d7400eb0f00df3ce80a72e85e1c659d6f0a4dd1d5c4156.png" src="../_images/6e49ac9b9fb3757b72d7400eb0f00df3ce80a72e85e1c659d6f0a4dd1d5c4156.png" />
+<img alt="../_images/643220a0ab61fe80f047d419fa47a50e484ccdcef71a8adb678883c903202c5e.png" src="../_images/643220a0ab61fe80f047d419fa47a50e484ccdcef71a8adb678883c903202c5e.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -899,11 +899,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.245381</td>
+      <td>0.246301</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.245381</td>
+      <td>0.246301</td>
       <td>1.000000</td>
     </tr>
   </tbody>

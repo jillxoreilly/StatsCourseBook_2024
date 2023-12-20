@@ -32,7 +32,7 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['n=range(115,125)', 'power = np.empty(len(n))', '', 'for s in range(len(n)):', '    nReps=10000']
+['n=range(120,130,2)', 'power = np.empty(len(n))', '', 'for s in range(len(n)):', '    nReps=20000']
 ...
 ["plt.plot([min(n),max(n)],[0.8,0.8],'r--') # reference line for 80% power", "plt.xlabel('sample size')", "plt.ylabel('power')", 'plt.xticks(range(min(n),max(n),5))', 'plt.show()']
 -------------------

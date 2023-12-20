@@ -44,6 +44,18 @@ and then the $p$-value is obtained from the $t_{n-2}$ distribution.
 
 However you can get straight to the $p$-value by using `scipy.stats` - note that we are using `scipy.stats` as the other correlation functions we met in `numpy` and `pandas` do not return a $p$-value.
 
-Here is the syntax to test the correlation ebtween maths and english scores, assuming these are columns in a dataframe `scores`:
+Here is the syntax to test the correlation between Maths and English scores, assuming these are columns in a dataframe `scores`:
 
 `stats.pearson(scores.maths, scores.english).pvalue`
+
+### What counts as a large effect
+
+Wikipedia tells me that $r$ values of 0.1, 0.3 and 0.5 are considered small, medium and large respectively
+
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize_r.png
+:width: 80%
+:align: center
+```
+
+
+... but bear in mind this is just a rule of thumb.

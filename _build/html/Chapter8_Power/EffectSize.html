@@ -278,9 +278,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power analysis by simulation</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
 </ul>
 </li>
 </ul>
@@ -800,76 +801,17 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">heights</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;subject&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-      <th>mean</th>
-      <th>std</th>
-      <th>min</th>
-      <th>25%</th>
-      <th>50%</th>
-      <th>75%</th>
-      <th>max</th>
-    </tr>
-    <tr>
-      <th>subject</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>geography</th>
-      <td>10.0</td>
-      <td>168.460</td>
-      <td>7.846046</td>
-      <td>154.6</td>
-      <td>164.175</td>
-      <td>168.5</td>
-      <td>171.575</td>
-      <td>183.5</td>
-    </tr>
-    <tr>
-      <th>psychology</th>
-      <td>12.0</td>
-      <td>163.325</td>
-      <td>5.717775</td>
-      <td>154.0</td>
-      <td>161.250</td>
-      <td>163.4</td>
-      <td>165.675</td>
-      <td>176.6</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>subject
+geography     168.460
+psychology    163.325
+Name: height, dtype: float64
+</pre></div>
+</div>
+</div>
 </div>
 <p>So the Geography students are about 5cm taller than the Psychology students.</p>
 <p>Is this a large difference? Would it be obvious in a psychology-geography student party who is a psychology student and who is a geography student, just from their heights?</p>
@@ -891,7 +833,7 @@ document.write(`
 <p>Hm, no, we probably could not tell who is a psychology student and who is a geography student, just from their heights, but it looks like there is a difference between the groups overall.</p>
 <section id="effect-size-neq-statistical-significance">
 <h3>Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance<a class="headerlink" href="#effect-size-neq-statistical-significance" title="Permalink to this heading">#</a></h3>
-<p>We could ask if there is a statistically signifiant difference between the groups by running a t-test:</p>
+<p>We could ask if there is a statistically signifiant difference between the groups by running a <span class="math notranslate nohighlight">\(t\)</span>-test:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
@@ -910,15 +852,16 @@ document.write(`
 <p><strong>However</strong>, this doesn’t really tell us whether the effect is big (whether we could easily spot a tall geography student at a Psychosoc party), because the value of <span class="math notranslate nohighlight">\(t\)</span> also depends on the sample size, <span class="math notranslate nohighlight">\(n\)</span>. To illustrate this, consider the following sample <code class="docutils literal notranslate"><span class="pre">heights2</span></code>, which is ten times larger (120 psychology students and 100 geography students), but with the same mean and sd in each group as the small (<span class="math notranslate nohighlight">\(n\)</span> = 12,10) sample:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/heightsLargerSample.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heightsLargerSample.csv&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="c1"># plot KDEs</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$n$=10,12&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$n$=100,120&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 
@@ -928,10 +871,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7135fc59b1be0a71d221f4946afc2e7c834ac16ee71c02f72eb918375db8b006.png" src="../_images/7135fc59b1be0a71d221f4946afc2e7c834ac16ee71c02f72eb918375db8b006.png" />
+<img alt="../_images/c6a93576363aaa7d1e6b69e32e6acfceecf3ad290c0f3e78e58cdae8fdcc7829.png" src="../_images/c6a93576363aaa7d1e6b69e32e6acfceecf3ad290c0f3e78e58cdae8fdcc7829.png" />
 </div>
 </div>
-<p>Although the mean and sd for each group are about the same, if we conduct a t-test on the larger dataset, we find the difference is <em>much</em> more significant</p>
+<p>Although the mean and sd for each group are about the same, if we conduct a <span class="math notranslate nohighlight">\(t\)</span>-test on the larger dataset, we find the difference is <em>much</em> more significant</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># small sample size</span>
@@ -962,26 +905,28 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Conclusion</strong> the t-test cannot tell us whether the effect of subjbect studied on height is large or small - for this we need a ‘pure’ measure of the size of the difference relative to variability, regardless of <span class="math notranslate nohighlight">\(n\)</span></p>
+<p><strong>Conclusion</strong> the <span class="math notranslate nohighlight">\(t\)</span>-test cannot tell us whether the effect of subject studied on height is large or small - for this we need a ‘pure’ measure of the size of the difference relative to variability, regardless of <span class="math notranslate nohighlight">\(n\)</span></p>
 </section>
 </section>
 <section id="variance-matters-for-effect-size">
 <h2><span class="section-number">2.5.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
 <p>Is a 5cm difference in height between psychology and geography students a big effect? How easily could we spot a tall geographer gatecrashing the Psychosoc party?</p>
 <p>This will depend on both the difference in mean heights, and the standard deviation (variablity) within each group.</p>
-<p>Consider the following dataset which has the same difference in mmeans, but now much less variability within each group:</p>
+<p>Consider the following dataset which has the same difference in means, but now much less variability within each group:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/heightsSmallerSD.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/heightsSmallerSD.csv&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="c1"># plot KDEs</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;larger sd&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span><span class="mi">175</span><span class="p">])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;smaller sd&#39;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">150</span><span class="p">,</span><span class="mi">175</span><span class="p">])</span>
@@ -992,11 +937,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83f142088996901c38a3f852dd93e59cb66635dacf3b1049bade4efcc6650a34.png" src="../_images/83f142088996901c38a3f852dd93e59cb66635dacf3b1049bade4efcc6650a34.png" />
+<img alt="../_images/6966cd8f44437f709258a8cd1dddab7c2c6470c98a87c51d86fd22b9618ba5a3.png" src="../_images/6966cd8f44437f709258a8cd1dddab7c2c6470c98a87c51d86fd22b9618ba5a3.png" />
 </div>
 </div>
 <p>For the dataset on the right (lower sd within each group) we can see a much clearer separation between the psychology and geograpahy students - in practical terms, it would be easier to guess a person’s subject based on their height.</p>
-<p>The plot on the right has a <strong>larger effect size</strong></p>
+<p>The plot on the right has a <strong>larger effect size</strong>, as we shall see in the next section</p>
 </section>
 <section id="cohen-s-d">
 <h2><span class="section-number">2.5.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
@@ -1011,20 +956,22 @@ document.write(`
 </ul>
 <div class="math notranslate nohighlight">
 \[ s = \sqrt{\frac{(n_p-1)s_p^2 + (n_g-1)s_g^2)}{n_p + n_g - 2}} \]</div>
-<p>oof!</p>
+<p>oof! The <em>shared variance (or sd) estimate</em>, <span class="math notranslate nohighlight">\(s\)</span>, is just a way of getting a single ‘average’ standard deviation measure when we have two sample standard deviations for our two groups, and is actually part of the equation from the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
+<div class="math notranslate nohighlight">
+\[t = \frac{\bar{x_1}-\(bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</div>
 <p>Let’s implement that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate shared standard deviation s</span>
 
-<span class="n">xP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">xG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">xP</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">xG</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
-<span class="n">sP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">sG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">sP</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">sG</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
-<span class="n">nP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">nG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">nP</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">nG</span> <span class="o">=</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;geography&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 
 <span class="n">s</span><span class="o">=</span><span class="p">(((</span><span class="n">nP</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sP</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">nG</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">sG</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">nP</span><span class="o">+</span><span class="n">nG</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># **0.5 means &#39;to the power of a half&#39; ie square root</span>
 <span class="n">s</span>
@@ -1032,15 +979,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># calculate shared standard deviation s</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">xP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">xG</span> <span class="o">=</span> <span class="n">geog</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sP</span> <span class="o">=</span> <span class="n">psy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;psy&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.758944074335872
 </pre></div>
 </div>
 </div>
@@ -1056,17 +995,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7597340566106963
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.759734056610692
 </pre></div>
 </div>
 </div>
 </div>
-<p>So the difference in mean heights between psychology and geography students is 0.76 standard deviations.</p>
+<p>So <span class="math notranslate nohighlight">\(d=0.76\)</span>, ie the difference in mean heights between psychology and geography students is 0.76 standard deviations.</p>
 <section id="effect-size-is-a-standardized-measure">
 <h3>Effect size is a <em>standardized</em> measure<a class="headerlink" href="#effect-size-is-a-standardized-measure" title="Permalink to this heading">#</a></h3>
 <p>Note that in dividing the difference by the standard deviations, we are quantifying the overlap between the two distributions <strong>independent of the data values themselves.</strong></p>
-<p>Therefore it is possilbe to have quite different datasets with the same effect size - for exammple if the difference of means and the standard deviations bobth increase, effect size may stay the same.</p>
-<p>For example, here I have created another dataset with the same effect size <span class="math notranslate nohighlight">\(d=0.760\)</span>, comparing the weights of black and grey sheep:</p>
+<p>Therefore it is possible to have quite different datasets with the same effect size - for example if the difference of means and the standard deviations both increase, effect size may stay the same.</p>
+<p>For example, here I have created another dataset with the same effect size <span class="math notranslate nohighlight">\(d=0.760\)</span>, comparing the weights of (fictional) black and grey sheep:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sheep</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/SheepWeights.csv&#39;</span><span class="p">)</span>
@@ -1091,10 +1030,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1cf4ced4ecc0e559686b4044137ad8634b84e4693691edc6aec8cd2c4c8a62fb.png" src="../_images/1cf4ced4ecc0e559686b4044137ad8634b84e4693691edc6aec8cd2c4c8a62fb.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sheep</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/SheepWeights.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># plot KDEs for psy/geog heights</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;pandas&#39; is not defined
+</pre></div>
 </div>
 </div>
-<p>These two different datasets have the same effect size, which quantifies the <em>overlap</em> between groups (psychology and geography students, or black and grey sheep)</p>
+</div>
+<p>Although the ‘sheep’ data are much more spread out, the difference of means between groups is also larger.</p>
+<p>These two different datasets therefore have the same effect size, which quantifies the <em>overlap</em> between groups (psychology and geography students, or black and grey sheep)</p>
 </section>
 <section id="small-medium-and-large-effects">
 <h3>Small, medium and large effects<a class="headerlink" href="#small-medium-and-large-effects" title="Permalink to this heading">#</a></h3>
@@ -1113,16 +1062,8 @@ document.write(`
 <section id="recovering-d-from-t">
 <h2><span class="section-number">2.5.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
 <p>Most published papers do not report effect sizes or Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for <span class="math notranslate nohighlight">\(t\)</span>-tests</p>
-<p>However, they do report <span class="math notranslate nohighlight">\(t\)</span> values.</p>
-<p>If you need to work out the effect size from <span class="math notranslate nohighlight">\(t\)</span>, you can do this by considering that:</p>
-<div class="math notranslate nohighlight">
-\[ d = \frac{\bar{x_1}-\bar{x_2}}{s} \]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[ t = \frac{\bar{x_1}-\bar{x_2}}{\frac{s}{\sqrt{n}}} \]</div>
-<p>Therefore by rearranging we see</p>
-<div class="math notranslate nohighlight">
-\[ d = \frac{t}{\sqrt{n}} \]</div>
+<p>However, they do report <span class="math notranslate nohighlight">\(t\)</span> values and sample sizes.</p>
+<p><span class="math notranslate nohighlight">\(d\)</span> can be recovered relatively simply from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span> - the formulae for this (for the paired and unpaired t-test) are given in the page <strong>Determining effect size</strong></p>
 <p>This is important as we often need to use the effect size from a published study to <em>estimate</em> the effect size in a study we are planning, and thus select the correct sample size via power analysis. This process will be explored later in this chapter.</p>
 </section>
 </section>

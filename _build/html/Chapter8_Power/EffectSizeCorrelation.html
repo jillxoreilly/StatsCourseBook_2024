@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/EffectSizeCorrelation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.7. Power" href="PowerCorrelation.html" />
+    <link rel="next" title="2.7. Power analysis by simulation" href="PowerCorrelation.html" />
     <link rel="prev" title="2.5. Effect size (Cohen’s d)" href="EffectSize.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -278,9 +278,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power analysis by simulation</a></li>
 
-
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
 </ul>
 </li>
 </ul>
@@ -536,6 +537,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.6.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-of-r">Statistical significance of <span class="math notranslate nohighlight">\(r\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-counts-as-a-large-effect">What counts as a large effect</a></li>
 </ul>
 </li>
 </ul>
@@ -577,8 +579,14 @@ document.write(`
 \[ t=\frac{r\sqrt{n-2}}{\sqrt{(1-r^2)}} \]</div>
 <p>and then the <span class="math notranslate nohighlight">\(p\)</span>-value is obtained from the <span class="math notranslate nohighlight">\(t_{n-2}\)</span> distribution.</p>
 <p>However you can get straight to the <span class="math notranslate nohighlight">\(p\)</span>-value by using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> - note that we are using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> as the other correlation functions we met in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> do not return a <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
-<p>Here is the syntax to test the correlation ebtween maths and english scores, assuming these are columns in a dataframe <code class="docutils literal notranslate"><span class="pre">scores</span></code>:</p>
+<p>Here is the syntax to test the correlation between Maths and English scores, assuming these are columns in a dataframe <code class="docutils literal notranslate"><span class="pre">scores</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">stats.pearson(scores.maths,</span> <span class="pre">scores.english).pvalue</span></code></p>
+</section>
+<section id="what-counts-as-a-large-effect">
+<h3>What counts as a large effect<a class="headerlink" href="#what-counts-as-a-large-effect" title="Permalink to this heading">#</a></h3>
+<p>Wikipedia tells me that <span class="math notranslate nohighlight">\(r\)</span> values of 0.1, 0.3 and 0.5 are considered small, medium and large respectively</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize_r.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize_r.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize_r.png" style="width: 80%;" /></a>
+<p>… but bear in mind this is just a rule of thumb.</p>
 </section>
 </section>
 </section>
@@ -627,7 +635,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.7. </span>Power</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Power analysis by simulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -648,6 +656,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.6.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-of-r">Statistical significance of <span class="math notranslate nohighlight">\(r\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-counts-as-a-large-effect">What counts as a large effect</a></li>
 </ul>
 </li>
 </ul>
