@@ -271,13 +271,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter8_Power/power_intro.html">2. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/power_conceptCheck.html">2.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/EffectSize.html">2.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/Type1and2Errors.html">2.4. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/PowerCorrelation.html">2.7. Power</a></li>
 
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_Power/DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
 </ul>
 </li>
 </ul>
@@ -634,7 +634,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.420223535388501
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.4370176694089931
 </pre></div>
 </div>
 </div>
@@ -687,25 +687,25 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.05800990988294841
-is it a hit?:            0
-value of random number:  0.9485097073610709
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.7145298963860439
 is it a hit?:            1
-value of random number:  0.9380931675285588
+value of random number:  0.37690055477700657
+is it a hit?:            0
+value of random number:  0.33778486993464085
+is it a hit?:            0
+value of random number:  0.15594344986832287
+is it a hit?:            0
+value of random number:  0.6757619871612592
+is it a hit?:            0
+value of random number:  0.16257403978494833
+is it a hit?:            0
+value of random number:  0.10062232457693443
+is it a hit?:            0
+value of random number:  0.07767153613836641
+is it a hit?:            0
+value of random number:  0.80502217416033
 is it a hit?:            1
-value of random number:  0.4101846081236581
-is it a hit?:            0
-value of random number:  0.5151975140613787
-is it a hit?:            0
-value of random number:  0.18170447657217847
-is it a hit?:            0
-value of random number:  0.16280523060430396
-is it a hit?:            0
-value of random number:  0.4631073775430322
-is it a hit?:            0
-value of random number:  0.3959516052718629
-is it a hit?:            0
-value of random number:  0.6290644769746226
+value of random number:  0.36666744462209544
 is it a hit?:            0
 </pre></div>
 </div>
@@ -744,7 +744,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 0
 0
 1
-0
+1
 0
 0
 </pre></div>
@@ -775,7 +775,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [1. 1. 0. 1. 0. 1. 1. 1. 1. 0.]
 </pre></div>
 </div>
 </div>
@@ -789,7 +789,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 7.0
 </pre></div>
 </div>
 </div>
@@ -811,7 +811,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3
 </pre></div>
 </div>
 </div>

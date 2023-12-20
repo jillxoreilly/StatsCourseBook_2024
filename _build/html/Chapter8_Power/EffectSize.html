@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Effect size (Cohen’s d) &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.5. Effect size (Cohen’s d) &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/EffectSize';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.5. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
-    <link rel="prev" title="2.3. Concepts Review" href="power_conceptCheck.html" />
+    <link rel="next" title="2.6. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
+    <link rel="prev" title="2.4. False positives and False negatives" href="Type1and2Errors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -275,11 +275,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">2.3. Concepts Review</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
 
 
 </ul>
@@ -566,18 +565,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.4.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.5.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.5.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.4.3. Variance matters for effect size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.5.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.5.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.5.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -590,7 +589,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="effect-size-cohen-s-d">
-<h1><span class="section-number">2.4. </span>Effect size (Cohen’s d)<a class="headerlink" href="#effect-size-cohen-s-d" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.5. </span>Effect size (Cohen’s d)<a class="headerlink" href="#effect-size-cohen-s-d" title="Permalink to this heading">#</a></h1>
 <p>The first ingredient in a power analysis is <strong>effect size</strong>.</p>
 <p>Power analysis determines the sample size needed to detect an effect of a certain size.</p>
 <p>What is <strong>effect size</strong>? It is a measure of whether the effect (difference of means, correlation) of interest is big or small, <em>relative to the random noise or variability in the data</em>.</p>
@@ -604,7 +603,7 @@ document.write(`
 <li><p>The effect size for Pearson’s correlation is simply the correlation coefficient, <span class="math notranslate nohighlight">\(r\)</span></p></li>
 </ul>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">2.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -623,7 +622,7 @@ document.write(`
 </div>
 </section>
 <section id="effect-size-for-the-t-test">
-<h2><span class="section-number">2.4.2. </span>Effect size for the t-test<a class="headerlink" href="#effect-size-for-the-t-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5.2. </span>Effect size for the t-test<a class="headerlink" href="#effect-size-for-the-t-test" title="Permalink to this heading">#</a></h2>
 <p><strong>Example:</strong></p>
 <p>A researcher hypothesises that geography students are taller than psychology students.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
@@ -967,7 +966,7 @@ document.write(`
 </section>
 </section>
 <section id="variance-matters-for-effect-size">
-<h2><span class="section-number">2.4.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
 <p>Is a 5cm difference in height between psychology and geography students a big effect? How easily could we spot a tall geographer gatecrashing the Psychosoc party?</p>
 <p>This will depend on both the difference in mean heights, and the standard deviation (variablity) within each group.</p>
 <p>Consider the following dataset which has the same difference in mmeans, but now much less variability within each group:</p>
@@ -1000,7 +999,7 @@ document.write(`
 <p>The plot on the right has a <strong>larger effect size</strong></p>
 </section>
 <section id="cohen-s-d">
-<h2><span class="section-number">2.4.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
 <p>We quantify the effect size for the difference of means as Cohen’s <span class="math notranslate nohighlight">\(d\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ d = \frac{\bar{x_g}-\bar{x_p}}{s} \]</div>
@@ -1112,7 +1111,7 @@ document.write(`
 </section>
 </section>
 <section id="recovering-d-from-t">
-<h2><span class="section-number">2.4.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.5.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
 <p>Most published papers do not report effect sizes or Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for <span class="math notranslate nohighlight">\(t\)</span>-tests</p>
 <p>However, they do report <span class="math notranslate nohighlight">\(t\)</span> values.</p>
 <p>If you need to work out the effect size from <span class="math notranslate nohighlight">\(t\)</span>, you can do this by considering that:</p>
@@ -1159,12 +1158,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="power_conceptCheck.html"
+       href="Type1and2Errors.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.3. </span>Concepts Review</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>False positives and False negatives</p>
       </div>
     </a>
     <a class="right-next"
@@ -1172,7 +1171,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Effect size (Pearson’s r)</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Effect size (Pearson’s r)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1191,18 +1190,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.4.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.4.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.5.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">2.5.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.4.3. Variance matters for effect size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">2.5.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">2.5.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">2.5.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
 </ul>
   </nav></div>
 

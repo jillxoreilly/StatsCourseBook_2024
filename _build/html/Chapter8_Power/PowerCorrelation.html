@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Power &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.7. Power &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/PowerCorrelation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.9. Power analysis with statsmodels" href="BuiltInPowerCalc.html" />
+    <link rel="prev" title="2.6. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -257,7 +259,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
@@ -270,16 +272,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">2.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">2.6. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Power</a></li>
 
-
-
-
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -564,35 +565,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Power</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.7. Power</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">Power of a Correlation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">Simulating the population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">Null population</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-by-simulation"><span class="math notranslate nohighlight">\(p\)</span> by simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.8. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.8.1. Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">2.8.2. Simulating the population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">2.8.3. Null population</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-positives">Simulating false positives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">Correlated population</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-by-simulation">Power by simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">2.8.4. Correlated population</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-negatives">Simulating false negatives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-required-sample-size">Finding the required sample size</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">The probability of a Type 1 error does not depend on sample size</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-2-error-does-depend-on-sample-size">The probability of a Type 2 error <em>does</em> depend on sample size</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">Built in function for power</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it">Running it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-effect-size">Note on effect size</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">another example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">2.8.5. Determining the required sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.8.6. Built in function for power</a></li>
 </ul>
 </li>
 </ul>
@@ -608,18 +597,17 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="power">
-<h1>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.7. </span>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h1>
 <p>As we saw in the lecture, the concepts of specificity and sensitivity/power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png" style="width: 80%;" /></a>
 <p>Think about it this way:</p>
-<ul class="simple">
-<li><p>When we are talking about specificity (controlling type I errors) we are proposing that the true population effect is zero (say, correlation and we are interested in the probability of obtaining a certain value of a test statstistic (say, correlation r=0.25) due to chance.</p></li>
-<li><p>When we are talking about power (controlling type II errors) we are proposing that the true populaiton effect is non-zero (say correlation and we are interested in how frequently we fail to reject the null hypothesis.</p></li>
-</ul>
-<p>In this notebook we see how we can work out the power (or probability of detecting a true effect if there is one) for a given effect size.</p>
+<p>We can think about theh Hypothesis Testing framework as a 2x2 grid - two possible states of reality and two (matching or non-matching) conclusions.</p>
+<p>In general null hypothesis testing concerns one state of reality - that is we <strong>assume the null is true</strong></p>
+<p>In contrast, power analysis concerns the other possible state of reality - we <strong>assume <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true</strong></p>
+<p>In this notebook, focussing on an example of a correlation, we illustrate these hypothetical states of the world by generate two populations of ‘data’ from alternative realities in which either the null is true, or <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true.</p>
 <p>We will work with correlation (Pearson’s <span class="math notranslate nohighlight">\(r\)</span>), although later we will see that the same approach can be used for difference of means/ the <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,23 +627,24 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-correlation">
-<h1>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
-<p>I collect data on end-ofyear exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s r, between Maths and French scores across my sample of 50 participants.</p>
+<h1><span class="section-number">2.8. </span>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
+<p>I collect data on end-of year exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s r, between Maths and French scores across my sample of 50 participants.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span> Under the null hypothesis there is no correlation between maths scores and French scores</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> Under the alternative hypothesis, there is a correlation</p></li>
 </ul>
+<p>I am going to remain open-minded on the direction of the correlation and use a two-tailed test, at the <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> level</p>
 <p>I observe a correlation of r=0.25 (this is my <em>effect size</em>)</p>
 <p>Can I trust this result?</p>
 <section id="eyeballing-the-data">
-<h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
 <p>What does a correlation of 0.25 look like for 50 data points?
 Here are some examples of datasets that actually have r=0.25:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" style="width: 100%;" /></a>
 <p><strong>Would you trust those correlations?</strong></p>
 </section>
 <section id="simulating-the-population">
-<h2>Simulating the population<a class="headerlink" href="#simulating-the-population" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.2. </span>Simulating the population<a class="headerlink" href="#simulating-the-population" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A type I error (false positive) occurs when we get a significant correlation in a sample, even though there is no true correlation in the population</p></li>
 <li><p>A type II error (false negative) occurs when we <em>fail to get</em> a significant correlation in a sample, even though there is a true correlation in the population</p></li>
@@ -665,6 +654,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <li><p>A ‘null population’ where the true correlation <span class="math notranslate nohighlight">\(\rho=0\)</span></p></li>
 <li><p>A ‘correlated population’ where the true correlation <span class="math notranslate nohighlight">\(\rho=0.25\)</span></p></li>
 </ul>
+<p><em>NOTE</em> the symbol rho (<span class="math notranslate nohighlight">\(\rho\)</span>) denotes the true correlation in the population; it is the population equvalent of <span class="math notranslate nohighlight">\(r\)</span> in each sample. If <span class="math notranslate nohighlight">\(\rho=0.25\)</span>, each sample will have <span class="math notranslate nohighlight">\(r~=0.25\)</span> but <span class="math notranslate nohighlight">\(r\)</span> will be slightly different in each sample.</p>
 <p>Each dataset will have 25000 pairs in it (so 2 columns, 25000 rows), with a correlation between columns of zero (null population) or 0.25 (correlated population).</p>
 <p>By drawing random samples of size 50 from each, we can ask:</p>
 <ul class="simple">
@@ -674,7 +664,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p><strong>You will not be asked to replicate this code so don’t worry about the details</strong></p>
 </section>
 <section id="null-population">
-<h2>Null population<a class="headerlink" href="#null-population" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.3. </span>Null population<a class="headerlink" href="#null-population" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to generate the population with zero correlation - don&#39;t worry about understanding this bit</span>
@@ -704,7 +694,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d7ab728e9c34419036ce381da027f0aa969ec6dbee71963507e88c9fb063404.png" src="../_images/9d7ab728e9c34419036ce381da027f0aa969ec6dbee71963507e88c9fb063404.png" />
+<img alt="../_images/ad61deda7190c47892a4358d0869c00411bdf7ec955ce229e901d887456d1501.png" src="../_images/ad61deda7190c47892a4358d0869c00411bdf7ec955ce229e901d887456d1501.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -744,19 +734,19 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.006455</td>
+      <td>-0.002129</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.006455</td>
+      <td>-0.002129</td>
       <td>1.000000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<section id="p-by-simulation">
-<h3><span class="math notranslate nohighlight">\(p\)</span> by simulation<a class="headerlink" href="#p-by-simulation" title="Permalink to this heading">#</a></h3>
+<section id="simulating-false-positives">
+<h3>Simulating false positives<a class="headerlink" href="#simulating-false-positives" title="Permalink to this heading">#</a></h3>
 <p>We can now work out how often we get a significant correlation (<span class="math notranslate nohighlight">\(p&lt;0.05\)</span>) in samples (<span class="math notranslate nohighlight">\(n=50\)</span>) drawn from the null population, by drawing 10000 samples and getting the p value for each one using <code class="docutils literal notranslate"><span class="pre">stats.pearsonr().pvalue</span></code>.</p>
 <p>The number of false positives will simply be the proportion of those obtained <span class="math notranslate nohighlight">\(p\)</span>-values that are below 5%.</p>
 <div class="cell docutils container">
@@ -766,15 +756,15 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span> <span class="c1"># grab 50 random rows from our null population</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span> <span class="c1"># correlate and get p-value</span>
 <span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.046
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0478
 </pre></div>
 </div>
 </div>
@@ -783,7 +773,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="correlated-population">
-<h2>Correlated population<a class="headerlink" href="#correlated-population" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.4. </span>Correlated population<a class="headerlink" href="#correlated-population" title="Permalink to this heading">#</a></h2>
 <p>Now we generate a population with a true correlation of <span class="math notranslate nohighlight">\(r=0.25\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -814,7 +804,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fab778f00f26b4fccad35e4140080784016b96d47b980634efbd314e8c3d77df.png" src="../_images/fab778f00f26b4fccad35e4140080784016b96d47b980634efbd314e8c3d77df.png" />
+<img alt="../_images/05086d60c28c4c2862077ba389b19e518260edaf20a7fd2bfc56c2b6d2911f61.png" src="../_images/05086d60c28c4c2862077ba389b19e518260edaf20a7fd2bfc56c2b6d2911f61.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -851,22 +841,23 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.249746</td>
+      <td>0.241344</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.249746</td>
+      <td>0.241344</td>
       <td>1.000000</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<section id="power-by-simulation">
-<h3>Power by simulation<a class="headerlink" href="#power-by-simulation" title="Permalink to this heading">#</a></h3>
-<p>We can investigate power in our correlation example using the same simulation approach as above, but now we need to <em>assume the true population correlation <span class="math notranslate nohighlight">\(\rho\)</span> is 0.25</em></p>
+<section id="simulating-false-negatives">
+<h3>Simulating false negatives<a class="headerlink" href="#simulating-false-negatives" title="Permalink to this heading">#</a></h3>
+<p>Power is the proportion of the time we fail to find a significant effect, given than an effect is present.</p>
+<p>We can investigate power (false negatives) in our correlation example using the same simulation approach we used above for false positives, but using the correlated population.</p>
 <p>The question for our <em>power analysis</em> is, for samples of size n=50, what proportion of the time will I obtain a significant correlation (reject the null)?</p>
-<p>To answer that question I am going to draw samples of size 50 from the population <em>which actually has <span class="math notranslate nohighlight">\(r\)</span>=0.25</em> and obtain the sample correlation for each of those samples and its p value using <code class="docutils literal notranslate"><span class="pre">stats.pearsonr().pvalue</span></code>.</p>
+<p>To answer that question I am going to draw samples of size 50 from the population <em>which actually has <span class="math notranslate nohighlight">\(\rho\)</span>=0.25</em> and obtain the sample correlation for each of those samples and its p value using <code class="docutils literal notranslate"><span class="pre">stats.pearsonr().pvalue</span></code>.</p>
 <p>I can then ask in what proportion of simulated samples <span class="math notranslate nohighlight">\(p&lt;0.05\)</span>, ie in what proportion of the simulated samples we manage to reject the null.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -875,8 +866,8 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span> <span class="c1"># grab 50 random rows from my correlated population</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span> <span class="c1"># correlate and get p-value</span>
     
 <span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
 <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
@@ -884,7 +875,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.418
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.366
 </pre></div>
 </div>
 </div>
@@ -894,6 +885,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p>Yes, that’s right. In a population where the <em>true</em> correlation between two variables (scores on Maths and French tests) is 0.25, for samples of size 50, I will fail to detect a significant correlation (ie, I will make a Type 2 error) over half the time.</p>
 <p>This would be true for any data with a true correlation of 0.25 and sample size of 50 - <span class="math notranslate nohighlight">\(n\)</span>=50 is really not enough to detect a weakish correlation.</p>
 <p>Try changing <span class="math notranslate nohighlight">\(n\)</span> in the code block below to be smaller (eg <span class="math notranslate nohighlight">\(n\)</span>=25) or larger (<span class="math notranslate nohighlight">\(n\)</span>=150) and see what happens to the power.</p>
+<p><strong>Warning</strong> this takes a few seconds to run on a fastish computer; if you are working on a slow computer or Colab you may wish to skip it</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">1000</span>
@@ -910,46 +902,16 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.417
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.378
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="finding-the-required-sample-size">
-<h2>Finding the required sample size<a class="headerlink" href="#finding-the-required-sample-size" title="Permalink to this heading">#</a></h2>
-<p>We have just seen that a large sample size is needed to get good power for a weak correlation. In general, the power of a test (1 - chance of a Type 2 error) increases with <span class="math notranslate nohighlight">\(n\)</span> whilst the specificity (1 - chance of a type 1 error) does not. Why?</p>
-<section id="the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
-<h3>The probability of a Type 1 error does not depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
-<p>Statistical tests are designed to control the probability of a type 1 error. When calculating the critical value of the test statistic (in the case of correlation, the test statistic is <span class="math notranslate nohighlight">\(r\)</span> and the critical value is minimum <span class="math notranslate nohighlight">\(r\)</span> value that would be considered significant for a given sample size <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is directly taken into account. Therefore, the probably of a type 1 error is fixed regardless of sample size.</p>
-</section>
-<section id="the-probability-of-a-type-2-error-does-depend-on-sample-size">
-<h3>The probability of a Type 2 error <em>does</em> depend on sample size<a class="headerlink" href="#the-probability-of-a-type-2-error-does-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
-<p>The above is <em>not</em> true for type 2 error. The probability of Type 2 error (and hence the power of the test) varies with sample size.</p>
-<p>If we increase the sample size, the power of the test increases.</p>
-<p>Let’s try it! Change the sample size in the code block below to 10,100 and 1000. How does the power change</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">sampleSize</span><span class="o">=</span><span class="mi">50</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
-    
-<span class="c1"># How many of our 10000 samples had p&lt;0.05?</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)))</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 38.9%
-</pre></div>
-</div>
-</div>
-</div>
+<section id="determining-the-required-sample-size">
+<h2><span class="section-number">2.8.5. </span>Determining the required sample size<a class="headerlink" href="#determining-the-required-sample-size" title="Permalink to this heading">#</a></h2>
+<p>We have just seen that a large sample size is needed to get good power for a weak correlation. How large, exactly?</p>
 <p>We can loop over different sample sizes and plot how power increases as sample size increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -977,7 +939,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a2e715a13c2f569bab1393a4a31fa7d432347b87ae0f5ad6b2fd5683be12c0d.png" src="../_images/0a2e715a13c2f569bab1393a4a31fa7d432347b87ae0f5ad6b2fd5683be12c0d.png" />
+<img alt="../_images/ccb525469b2a7d7cd2c085b121dc0c14b02549b35c965729009a7caf2212c8b9.png" src="../_images/ccb525469b2a7d7cd2c085b121dc0c14b02549b35c965729009a7caf2212c8b9.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation ould take a long time to run).</p>
@@ -1010,26 +972,25 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_13064/2136608921.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">nReps</span><span class="o">=</span><span class="mi">10000</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:5858,</span> in <span class="ni">NDFrame.sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5855</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">5856</span>     <span class="n">weights</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">preprocess_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">5858</span> <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5859</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5861</span> <span class="k">if</span> <span class="n">ignore_index</span><span class="p">:</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/sample.py:151,</span> in <span class="ni">sample</span><span class="nt">(obj_len, size, replace, weights, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid weights: weights sum to zero&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">151</span> <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">replace</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="p">)</span>
+<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py</span> in <span class="ni">?</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3717</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3718</span>         <span class="k">if</span> <span class="n">is_hashable</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_iterator</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3719</span>             <span class="c1"># is_iterator to exclude generator e.g. test_getitem_listlike</span>
+<span class="g g-Whitespace">   </span><span class="mi">3720</span>             <span class="c1"># shortcut if the key is in columns</span>
+<span class="ne">-&gt; </span><span class="mi">3721</span>             <span class="n">is_mi</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">MultiIndex</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3722</span>             <span class="c1"># GH#45316 Return view if key is not duplicated</span>
+<span class="g g-Whitespace">   </span><span class="mi">3723</span>             <span class="c1"># Only use drop_duplicates with duplicates for performance</span>
+<span class="g g-Whitespace">   </span><span class="mi">3724</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_mi</span> <span class="ow">and</span> <span class="p">(</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1037,381 +998,10 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 </section>
-</section>
 <section id="built-in-function-for-power">
-<h2>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.6. </span>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
 <p>There is a built in function in a package called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for doing power analysis.</p>
-<p>You can use it to find the power for a given sample size:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestIndPower</span>
-    
-<span class="c1"># perform power analysis to find sample size </span>
-<span class="c1"># run the power analysis relating alpha, d, n1, n2 </span>
-<span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
-
-<span class="c1"># solve for sample size</span>
-<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 48.29582456481827%
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is hopefully not a bad match to our homemade code above (it won’t be a perfect match as our homemade one is based on random sampling)</p>
-<p>Instead of calculating the power for a given sample size, we can calculate the sample size required to achieve a given power (say 80%). As our samples are independent and have different sizes, we assumme the ratio is fixed (12 psychology students to 8 geography, or 120 psychology to 80 geography):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve for sample size</span>
-<span class="n">n1</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-  
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required sample size: n1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;; n2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>required sample size: n1 = 18.405740901828487; n2 = 27.60861135274273
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/joreilly/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_continuous_distns.py:6832: RuntimeWarning: divide by zero encountered in _nct_sf
-  return np.clip(_boost._nct_sf(x, df, nc), 0, 1)
-</pre></div>
-</div>
-</div>
-</div>
-<p>The syntax for the power analysis is a bit fiddly so let’s recap it:</p>
-<p>There is a four way relationship between:</p>
-<ul class="simple">
-<li><p>sample size(s) (<code class="docutils literal notranslate"><span class="pre">nobs</span></code>)</p></li>
-<li><p>alpha values (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>)</p></li>
-<li><p>effect size (<code class="docutils literal notranslate"><span class="pre">effect</span> <span class="pre">size</span></code>)</p></li>
-<li><p>power</p></li>
-</ul>
-<p>If we know three of them, we can work out the fourth.</p>
-<p>… note that we specify the samples size thus:</p>
-<ul class="simple">
-<li><p>size of group 1 is <code class="docutils literal notranslate"><span class="pre">nobs</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ratio</span></code> tells us the ratio n2/n1</p></li>
-</ul>
-<section id="running-it">
-<h3>Running it<a class="headerlink" href="#running-it" title="Permalink to this heading">#</a></h3>
-<p>When we run power analysis using <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code> we first run an analysis that models the relationship between the four factors for the test in question (independent samples t-test in this case, but it could have been a paired t-test, or something else that we haven’e met yet like an ANOVA or Chi Square test):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Then we solve the equations, giving the computer three out of the four values and setting the fourth to <code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># solve for power</span>
-<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
-
-<span class="c1"># solve for sample size</span>
-<span class="n">n1</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required sample size: n1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;; n2 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="o">*</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">))</span>
-
-<span class="c1"># what alpha value would you need to use to have a power of 80% with the sammple sizes 8,12?</span>
-<span class="c1"># solve for sample size</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.760</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">12</span><span class="o">/</span><span class="mi">8</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required alpha = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 48.29582456481827%
-required sample size: n1 = 18.405740901828487; n2 = 27.60861135274273
-required alpha = 0.20952367203411126
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="note-on-effect-size">
-<h3>Note on effect size<a class="headerlink" href="#note-on-effect-size" title="Permalink to this heading">#</a></h3>
-<p>In this case we worked out the effect size in our actual sample of 12 psychologists and 8 geographers, as 0.760, and conducted a power analysis using that effect size. This is sometimes called a post-hoc power analysis. It told us that we should have tested 19 and 28 people rather than 12 and 8. This isn’t quite the intended purpose of poewr analysis (to work out the required sample size in advance) but is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.</p>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="paired-sample-t-test">
-<h1>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
-<p>There is a version of the power analysis for paired samples t-test (indeed, there are versions for various analyses, although not for correlation annoyingly).</p>
-<p>The version for paired samples t-test is called <code class="docutils literal notranslate"><span class="pre">TTestPower()</span></code> as opposed to <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code></p>
-<p>See if you can work out how to use this to find the sample size required for 80% power for an effect size of <span class="math notranslate nohighlight">\(d=0.5\)</span>, testing at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestPower</span>
-
-<span class="c1"># run an analysis that models the relationship between the four factors </span>
-<span class="n">analysis</span> <span class="o">=</span> <span class="c1"># your code here</span>
-
-<span class="c1"># solve for n</span>
-<span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_58871/1682179668.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
-    <span class="n">analysis</span> <span class="o">=</span> <span class="c1"># your code here</span>
-               <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<section id="another-example">
-<h2>another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
-<p>… think back to how we calculated d, see if you can run one from the raw data.</p>
-<p>Let’s look at the brother-sister heights data.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/BrotherSisterData.csv&#39;</span><span class="p">)</span>
-<span class="n">heights</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>brother</th>
-      <th>sister</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>174</td>
-      <td>172</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>183</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>154</td>
-      <td>148</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>172</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>172</td>
-      <td>165</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>161</td>
-      <td>159</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>167</td>
-      <td>159</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>172</td>
-      <td>164</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>195</td>
-      <td>188</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>189</td>
-      <td>175</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>161</td>
-      <td>160</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>181</td>
-      <td>177</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>175</td>
-      <td>168</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>170</td>
-      <td>169</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>175</td>
-      <td>165</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>169</td>
-      <td>164</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>169</td>
-      <td>163</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>180</td>
-      <td>176</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>180</td>
-      <td>176</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>180</td>
-      <td>172</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>175</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>162</td>
-      <td>157</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>175</td>
-      <td>172</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>181</td>
-      <td>179</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>173</td>
-      <td>171</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>conduct a paired t-test to see if brothers are taller than sisters - it’s highly significant</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;brother&#39;</span><span class="p">],</span><span class="n">heights</span><span class="p">[</span><span class="s1">&#39;sister&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TtestResult(statistic=5.742269354639271, pvalue=6.442462549436049e-06, df=24)
-</pre></div>
-</div>
-</div>
-</div>
-<p>We need to calculate <span class="math notranslate nohighlight">\(d\)</span> as:</p>
-<div class="math notranslate nohighlight">
-\[ d = \frac{\overline{x_b-x_s}}{s} \]</div>
-<p>where:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\overline{x_b-x_s}\)</span> is the mean height difference for (brother-sister)</p></li>
-<li><p><span class="math notranslate nohighlight">\(s\)</span> is the standard deviation of the differences</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The we can run the power model for the paired test, and solve for power:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestPower</span>
-
-<span class="c1"># run an analysis that models the relationship between the four factors </span>
-<span class="n">analysis</span> <span class="o">=</span> <span class="c1"># your code here</span>
-
-
-<span class="c1"># solve for power</span>
-<span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
-<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestPower</span>
-
-<span class="c1"># run an analysis that models the relationship between the four factors </span>
-<span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestPower</span><span class="p">()</span>
-
-<span class="c1"># solve for sample size</span>
-<span class="n">n1</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;required sample size: n1 = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n1</span><span class="p">))</span>
-
-<span class="c1"># solve for power</span>
-<span class="c1"># your code here</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>required sample size: n1 = 0.6012625837815468
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">/</span><span class="mi">8</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.625
-</pre></div>
-</div>
-</div>
-</div>
+<p>We will shortly see how to use this for t-tests and correlations.</p>
 </section>
 </section>
 
@@ -1445,6 +1035,24 @@ required alpha = 0.20952367203411126
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="EffectSizeCorrelation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Effect size (Pearson’s r)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BuiltInPowerCalc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1460,35 +1068,23 @@ required alpha = 0.20952367203411126
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Power</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2.7. Power</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">Power of a Correlation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">Simulating the population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">Null population</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p-by-simulation"><span class="math notranslate nohighlight">\(p\)</span> by simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#power-of-a-correlation">2.8. Power of a Correlation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">2.8.1. Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">2.8.2. Simulating the population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">2.8.3. Null population</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-positives">Simulating false positives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">Correlated population</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-by-simulation">Power by simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">2.8.4. Correlated population</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-negatives">Simulating false negatives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-required-sample-size">Finding the required sample size</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size">The probability of a Type 1 error does not depend on sample size</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-probability-of-a-type-2-error-does-depend-on-sample-size">The probability of a Type 2 error <em>does</em> depend on sample size</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">Built in function for power</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it">Running it</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-effect-size">Note on effect size</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample t-test</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example">another example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">2.8.5. Determining the required sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">2.8.6. Built in function for power</a></li>
 </ul>
 </li>
 </ul>

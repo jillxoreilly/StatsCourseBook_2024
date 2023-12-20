@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.5. Effect size (Pearson’s r) &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.6. Effect size (Pearson’s r) &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_Power/EffectSizeCorrelation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.6. Sensitivity, power, reproducibility" href="power_analysis.html" />
-    <link rel="prev" title="2.4. Effect size (Cohen’s d)" href="EffectSize.html" />
+    <link rel="next" title="2.7. Power" href="PowerCorrelation.html" />
+    <link rel="prev" title="2.5. Effect size (Cohen’s d)" href="EffectSize.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -275,11 +275,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">2. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">2.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">2.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_analysis.html">2.6. Sensitivity, power, reproducibility</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">2.4. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">2.5. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">2.7. Power</a></li>
 
 
 </ul>
@@ -535,7 +534,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.5.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.6.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-of-r">Statistical significance of <span class="math notranslate nohighlight">\(r\)</span></a></li>
 </ul>
 </li>
@@ -551,7 +550,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="effect-size-pearson-s-r">
-<h1><span class="section-number">2.5. </span>Effect size (Pearson’s r)<a class="headerlink" href="#effect-size-pearson-s-r" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.6. </span>Effect size (Pearson’s r)<a class="headerlink" href="#effect-size-pearson-s-r" title="Permalink to this heading">#</a></h1>
 <p>The effect size for a correlation is quantified simply by the correlation coefficient Pearson’s <span class="math notranslate nohighlight">\(r\)</span>.</p>
 <p>Remember an effect size tells us how large the effect of interest is, in comparison to random variation.</p>
 <p>In the case of a correlation, the effect of interest is the relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> along the best-fit line <span class="math notranslate nohighlight">\(y=mx+c\)</span>, whilst the random variation is the spread of data about this line</p>
@@ -560,7 +559,7 @@ document.write(`
 <p><strong>The correlation coefficient <span class="math notranslate nohighlight">\(r\)</span> is always a number between 1 (perfect positive correlation; all points on a line) and -1 (perfect negative correlation)</strong></p>
 <p>Correlation gives us a ‘pure’ measure of the strength of the relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (corrected for the spread within <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> independently).</p>
 <section id="effect-size-neq-statistical-significance">
-<h2><span class="section-number">2.5.1. </span>Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance<a class="headerlink" href="#effect-size-neq-statistical-significance" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.6.1. </span>Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance<a class="headerlink" href="#effect-size-neq-statistical-significance" title="Permalink to this heading">#</a></h2>
 <p>Note that for any given correlation, whether it is <em>believable</em> or statistically significant also depends on the sample size <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Consider the following examples:</p>
 <ul class="simple">
@@ -620,15 +619,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Effect size (Cohen’s d)</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Effect size (Cohen’s d)</p>
       </div>
     </a>
     <a class="right-next"
-       href="power_analysis.html"
+       href="PowerCorrelation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.6. </span>Sensitivity, power, reproducibility</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Power</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -647,7 +646,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.5.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">2.6.1. Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-significance-of-r">Statistical significance of <span class="math notranslate nohighlight">\(r\)</span></a></li>
 </ul>
 </li>
