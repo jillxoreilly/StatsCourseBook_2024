@@ -86,6 +86,17 @@ parts:
         - file: Chapter6_ttest/ttest_pairedSamples.ipynb
         - file: Chapter6_ttest/ttest_independentSamples.ipynb
         - file: Chapter6_ttest/HandInAssignment.ipynb
+      - file: Chapter8_Power/power_intro.md
+        sections:
+        - file: Chapter8_Power/power_outcomes.md
+        - file: Chapter8_Power/power_conceptCheck.md
+        - file: Chapter8_Power/Type1and2Errors.md
+        - file: Chapter8_Power/EffectSize.ipynb
+        - file: Chapter8_Power/EffectSizeCorrelation.ipynb
+        - file: Chapter8_Power/PowerCorrelation.ipynb
+        - file: Chapter8_Power/BuiltInPowerCalc.ipynb
+        - file: Chapter8_Power/DeterminingEffectSize.md
+        - file: Chapter8_Power/SampleSizeAndPower.md
     - caption: Statistical Theory
       numbered: 3
       chapters:
@@ -100,16 +111,6 @@ parts:
         - file: Chapter7_DataGeneratingDistributions/AnalyticVsNumerical.ipynb
         - file: Chapter7_DataGeneratingDistributions/binomial_normal.ipynb
         - file: Chapter7_DataGeneratingDistributions/binomial_TutorialExercises2.ipynb
-      - file: Chapter8_Power/power_intro.md
-        sections:
-        - file: Chapter8_Power/power_outcomes.md
-        - file: Chapter8_Power/power_conceptCheck.md
-        - file: Chapter8_Power/Type1and2Errors.md
-        - file: Chapter8_Power/EffectSize.ipynb
-        - file: Chapter8_Power/EffectSizeCorrelation.ipynb
-        - file: Chapter8_Power/PowerCorrelation.ipynb
-        - file: Chapter8_Power/BuiltInPowerCalc.ipynb
-        - file: Chapter8_Power/DeterminingEffectSize.md
     - caption: Regression Models
       numbered: 3
       chapters:

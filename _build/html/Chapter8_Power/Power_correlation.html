@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -139,9 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -151,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Introduction to Statistics and Data Science - Home"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Introduction to Statistics and Data Science - Home"/>`);</script>
   
   
 </a></div>
@@ -280,6 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">2.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">2.10. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">2.11. Sample size and power</a></li>
 </ul>
 </li>
 </ul>
@@ -524,6 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -533,6 +537,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -704,7 +709,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/163af756f209b9e29bd8d2b5d618eaa68d3f8ed2bbdcf9c20dd1d6d0d1c21582.png" src="../_images/163af756f209b9e29bd8d2b5d618eaa68d3f8ed2bbdcf9c20dd1d6d0d1c21582.png" />
+<img alt="../_images/71fc470b5be3ab912be7facac909ac9d202af29b2e060428e4bd1fb85c0794b2.png" src="../_images/71fc470b5be3ab912be7facac909ac9d202af29b2e060428e4bd1fb85c0794b2.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -743,13 +748,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
   <tbody>
     <tr>
       <th>Maths</th>
-      <td>1.000000</td>
-      <td>0.002497</td>
+      <td>1.00000</td>
+      <td>0.00689</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.002497</td>
-      <td>1.000000</td>
+      <td>0.00689</td>
+      <td>1.00000</td>
     </tr>
   </tbody>
 </table>
@@ -777,7 +782,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.1916181461639201, pvalue=0.09125514338183098)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.04797064120341507, pvalue=0.629607795380444)
 </pre></div>
 </div>
 </div>
@@ -790,7 +795,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.09125514338183098
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.629607795380444
 </pre></div>
 </div>
 </div>
@@ -815,7 +820,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0972
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0594
 </pre></div>
 </div>
 </div>
@@ -861,7 +866,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/643220a0ab61fe80f047d419fa47a50e484ccdcef71a8adb678883c903202c5e.png" src="../_images/643220a0ab61fe80f047d419fa47a50e484ccdcef71a8adb678883c903202c5e.png" />
+<img alt="../_images/32592b42478ef2d20eb60e46bd61d45f242ee71cb497905ac9ccc18d07205552.png" src="../_images/32592b42478ef2d20eb60e46bd61d45f242ee71cb497905ac9ccc18d07205552.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -899,11 +904,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.246301</td>
+      <td>0.256041</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.246301</td>
+      <td>0.256041</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -1829,7 +1834,7 @@ required alpha = 0.20952367203411126
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -1915,6 +1920,7 @@ By Jill O'Reilly & Lindsay Richards
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1941,8 +1947,8 @@ By Jill O'Reilly & Lindsay Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
