@@ -86,31 +86,40 @@ parts:
         - file: Chapter6_ttest/ttest_pairedSamples.ipynb
         - file: Chapter6_ttest/ttest_independentSamples.ipynb
         - file: Chapter6_ttest/HandInAssignment.ipynb
-      - file: Chapter8_Power/power_intro.md
+      - file: Chapter7_Power/power_intro.md
         sections:
-        - file: Chapter8_Power/power_outcomes.md
-        - file: Chapter8_Power/power_conceptCheck.md
-        - file: Chapter8_Power/Type1and2Errors.md
-        - file: Chapter8_Power/EffectSize.ipynb
-        - file: Chapter8_Power/EffectSizeCorrelation.ipynb
-        - file: Chapter8_Power/PowerCorrelation.ipynb
-        - file: Chapter8_Power/BuiltInPowerCalc.ipynb
-        - file: Chapter8_Power/DeterminingEffectSize.md
-        - file: Chapter8_Power/SampleSizeAndPower.md
+        - file: Chapter7_Power/power_outcomes.md
+        - file: Chapter7_Power/power_conceptCheck.md
+        - file: Chapter7_Power/Type1and2Errors.md
+        - file: Chapter7_Power/EffectSize.ipynb
+        - file: Chapter7_Power/EffectSizeCorrelation.ipynb
+        - file: Chapter7_Power/PowerCorrelation.ipynb
+        - file: Chapter7_Power/BuiltInPowerCalc.ipynb
+        - file: Chapter7_Power/DeterminingEffectSize.md
+        - file: Chapter7_Power/SampleSizeAndPower.md
     - caption: Statistical Theory
       numbered: 3
       chapters:
-      - file: Chapter7_DataGeneratingDistributions/binomial_overallIntro.md
+      - file: Chapter8_DataGeneratingDistributions/binomial_overallIntro.md
         sections:
-        - file: Chapter7_DataGeneratingDistributions/binomial_intro.md
-        - file: Chapter7_DataGeneratingDistributions/binomial_objectives.md
-        - file: Chapter7_DataGeneratingDistributions/binomial_singlecoin.ipynb
-        - file: Chapter7_DataGeneratingDistributions/binomial_10000reps.ipynb
-        - file: Chapter7_DataGeneratingDistributions/binomial_nandp.ipynb
-        - file: Chapter7_DataGeneratingDistributions/binomial_PMFandCDF.ipynb
-        - file: Chapter7_DataGeneratingDistributions/AnalyticVsNumerical.ipynb
-        - file: Chapter7_DataGeneratingDistributions/binomial_normal.ipynb
-        - file: Chapter7_DataGeneratingDistributions/binomial_TutorialExercises2.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_intro.md
+        - file: Chapter8_DataGeneratingDistributions/binomial_objectives.md
+        - file: Chapter8_DataGeneratingDistributions/binomial_singlecoin.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_10000reps.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_nandp.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.ipynb
+        - file: Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_normal.ipynb
+        - file: Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.ipynb
+      - file: Chapter9_Probability/Probability_intro.md
+        sections:
+        - file: Chapter9_Probability/KolmogorovAxioms.md
+        - file: Chapter9_Probability/Diagrams.md
+        - file: Chapter9_Probability/Independence.md
+        - file: Chapter9_Probability/EventCombinations.md
+        - file: Chapter9_Probability/JointProbability.md
+        - file: Chapter9_Probability/Bayes.md
+        - file: Chapter9_Probability/ProblemSet.md
     - caption: Regression Models
       numbered: 3
       chapters:
