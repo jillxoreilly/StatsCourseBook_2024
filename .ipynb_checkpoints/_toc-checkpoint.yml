@@ -120,7 +120,7 @@ parts:
         - file: Chapter9_Probability/Independence.md
         - file: Chapter9_Probability/EventCombinations.md
         - file: Chapter9_Probability/JointProbability.md
-        - file: Chapter9_Probability/Bayes.md
+        - file: Chapter9_Probability/BayesTheorem.md
         - file: Chapter9_Probability/ProblemSet.md
     - caption: Regression Models
       numbered: 3
