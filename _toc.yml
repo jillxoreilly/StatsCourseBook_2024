@@ -121,7 +121,7 @@ parts:
         - file: Chapter9_Probability/EventCombinations.md
         - file: Chapter9_Probability/JointProbability.md
         - file: Chapter9_Probability/BayesTheorem.md
-        - file: Chapter9_Probability/ProblemSet.md
+        - file: Chapter9_Probability/PaperAndPencilExercises.md
     - caption: Regression Models
       numbered: 3
       chapters:

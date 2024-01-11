@@ -292,6 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
 </ul>
 </li>
 </ul>
@@ -763,46 +764,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00806117
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00806609
 </pre></div>
 </div>
 </div>
 </div>
 <p>Hopefully the result you got was close to the ground truth result of 0.00806, but it was probably not a match to two significant figures (or maybe even to one).</p>
 <p>This may be surprising when you see how well the simulation appears to match the predicted distribution overall:</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit" style="width: 85%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png" style="width: 85%;" /></a>
 <p>The problem is that we are interested in the very tail of the distribution and we don’t expect many repetitions to result in values of k that fall in this tail. For example, we expect 54 out of 10000 reps to result in k==22. In fact, we got about 40 cases of k==22, which is an error of only 12 reps (out of 10,000), but it is also an error of over 20% (in the hheight of this particular bar):</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail" style="width: 85%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png" style="width: 85%;" /></a>
 <p>So when we are interested in the tail of the distribution, as we often are (for example in permutation testing, when we are checking whether a result is in a tail of 5% or 1% of the null distribution) - we need a lot of repetitions to get an accurate result.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="n">p</span><span class="o">=</span> <span class="mf">0.5</span>
-
-<span class="c1"># Your code here to generate 10000 values of k</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">xvals</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">xvals</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
-
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">21.5</span><span class="p">,</span><span class="mf">25.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/7824a9ab4747180a7b913849974c961c384418bcaa8bb99e1bc1b5b390c04b35.png" src="../_images/7824a9ab4747180a7b913849974c961c384418bcaa8bb99e1bc1b5b390c04b35.png" />
-</div>
-</div>
 <p>Adjust <code class="docutils literal notranslate"><span class="pre">nReps</span></code> in the code above until the simulated value of p(k&gt;=22) reliably matches the ground truth value to 2 sinificant figures (ie if you run the code block several times does it match most of the time)?</p>
 <ul class="simple">
 <li><p>I think you need over a million reps to achieve this so if your computer is slow or you are working on colab you may need to give up!</p></li>

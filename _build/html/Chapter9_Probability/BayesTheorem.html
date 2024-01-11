@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Logistic Regression &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.5. Bayes Theorem &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter14_Regression5/regression5_intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter9_Probability/BayesTheorem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.2. Learning Objectives" href="regression5_outcomes.html" />
-    <link rel="prev" title="4.9. Tutorial exercises" href="../Chapter13_Regression4/regression4_TutorialExercises.html" />
+    <link rel="next" title="1. Regression" href="../Chapter10_Regression1/regression1_intro.html" />
+    <link rel="prev" title="2.4. Event combinations" href="EventCombinations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
@@ -286,17 +288,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Probability_intro.html">2. Probability</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diagrams.html">2.2. Probability Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Independence.html">2.3. Statsitical Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Bayes Theorem</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
@@ -336,13 +338,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Logistic Regression</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="regression5_outcomes.html">5.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -423,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter14_Regression5/regression5_intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter9_Probability/BayesTheorem.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +455,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter14_Regression5/regression5_intro.md" target="_blank"
+      <li><a href="../_sources/Chapter9_Probability/BayesTheorem.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -537,7 +539,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Logistic Regression</h1>
+    <h1>Bayes Theorem</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -547,7 +549,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">5.1. Tasks for this week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-cause-from-data">2.5.1. Inferring cause from data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-p-cause-data">Bayes theorem: p(cause|data)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-cutoff">Setting the cutoff</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -559,19 +565,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
-<h1><span class="section-number">5. </span>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h1>
-<p>Until now, we have been looking at <em>linear</em> regression. We now move onto <em>logistic</em> regression, which is a form of regression for modelling binary outcome measures. One major difference between linear and logistic regression is in the interpretation of the coefficients, which in logistic regression take the form of <em>log odds</em> or <em>odds ratios</em>.</p>
-<section id="tasks-for-this-week">
-<h2><span class="section-number">5.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
-<p>Conceptual material is covered in the lecture. In addition to the live
-lecture, you can find the lecture recording and additional materials
-on Canvas.</p>
-<p>Conceptual material is covered in the lecture. In addition to the live lecture, you can find the lecture recording and additional materials on Canvas.</p>
-<p>Please work through the guided exercises in this section (everything except the page labelled “Tutorial Exercises”) in advance of the computer-based tutorial session.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="bayes-theorem">
+<h1><span class="section-number">2.5. </span>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h1>
+<p>Bayes theorem is stated as follows:</p>
+<div class="math notranslate nohighlight">
+\[p(A|B) = \frac{p(B|A)p(A)}{p(B)}\]</div>
+<p>If we know the conditional probability <span class="math notranslate nohighlight">\(p(B|A)\)</span> and the two marginals <span class="math notranslate nohighlight">\(p(A)\)</span> and <span class="math notranslate nohighlight">\(p(B)\)</span>, we can work out the final element <span class="math notranslate nohighlight">\(p(A|B)\)</span>.</p>
+<p>In other words, Bayes theorem allows us to reverse the structure of our probability tree - say we know the probabilities associated with each of the branches on the left - Bayes lets us work out the probabilities associated with each of the branches on the right:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png" style="width: 95%;" /></a>
+<p>Here’s a recap of what all the different probabilities on the tree are in terms of probability notation:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png" style="width: 95%;" /></a>
+<p>And here we can see that the roles of H and E are reversed when we reverse the order of the tree:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png" style="width: 95%;" /></a>
+<section id="inferring-cause-from-data">
+<h2><span class="section-number">2.5.1. </span>Inferring cause from data<a class="headerlink" href="#inferring-cause-from-data" title="Permalink to this heading">#</a></h2>
+<p>You may well be thinking, why is this so important?</p>
+<p>Bayes was interested in probability trees where not all the probabilities could be observed simply by counting (you could solve the problem above by just counting how many people had each combination of hair and eye colour and putting them into a contingency table).</p>
+<p>A key example of a probability tree where we can’t observe everying directly is in medical screening. We are able to observe the outcome of a screening test (such as a mammogram or ultrasound) and from this we must infer whether the patient has a disease.</p>
+<p>Because screens can be a true positive, correct reject, false positive, or false alarm, a positive screen doesn’t necessarily mean that the person has the disease.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png" style="width: 95%;" /></a>
+<p>For example, say 100,000 women in their 40’s get routine screening for breast cancer:</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(C\)</span> be the event that a woman has breast cancer</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(P\)</span> be the event that a woman has a positive screening test result</p></li>
+</ul>
+<p>Of course, we are interested in <span class="math notranslate nohighlight">\(C\)</span>, but we can only observe <span class="math notranslate nohighlight">\(P\)</span></p>
+<p>Here is a probability tree (numbers based on true probabilities for this age group):</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesCancerTree.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesCancerTree.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesCancerTree.png" style="width: 95%;" /></a>
+<p>We could say a few things about the screening test itself, based on the conditional probabilities (the second branching point of the tree):</p>
+<ul class="simple">
+<li><p>The sensitivity (power) of the test is 85%, because if a woman has breast cancer, there is an 85% chance of getting a positive screen</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(p(P|C)=0.85\)</span></p></li>
+</ul>
+</li>
+<li><p>The specificity of the test is 96.5%, because if a woman does not have breast cancer, there is only a 3.5% chance of getting a positive screen</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(p(P|C^c)=0.035\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>However, neither of these on their own tells the poatient and their doctor what they need to know, which is not <span class="math notranslate nohighlight">\(p(P|C)\)</span> but rather, <span class="math notranslate nohighlight">\(p(C|P)\)</span>.</p>
+<section id="bayes-theorem-p-cause-data">
+<h3>Bayes theorem: p(cause|data)<a class="headerlink" href="#bayes-theorem-p-cause-data" title="Permalink to this heading">#</a></h3>
+<p>Out of the 100000 women, 3835 have a positive screen (alert for possible breast cancer). As one of those women, the patient needs to know what the probability is that she actually has breast cancer.</p>
+<p>We can obtain this probability using Bayes theorem:</p>
+<div class="math notranslate nohighlight">
+\[p(C|P) = \frac{p(P|C)p(C)}{p(P)}\]</div>
+<p>The marginal probabilty p(C) is found at the first branch point on the tree (0.4% of women in their 40s develop brest cancer, <span class="math notranslate nohighlight">\(p(C)=0.004\)</span>). This is sometimes called the <strong>prior probability</strong> of cancer (the probability we would say any woman had, before we had the information from the screening test).</p>
+<p>The marginal probability <span class="math notranslate nohighlight">\(p(P)\)</span> is found by counting how many positive tests we have altogether from the 100000 women (349+3486 = 3835, so <span class="math notranslate nohighlight">\(p(P) = 3835/100000 = 0.03835\)</span>)</p>
+<p>Putting it all together we find that the probability a woman in her 40s has cancer, given the positive mammogram, is 0.088 (less than 10%).</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg" style="width: 15%;" /></a>
+<p>That was surprising, wasn’t it?</p>
+<p>Taking into account the prior probability was really important for interpreting the screening data. In fact breast cancer is rare in women in their 40s (sadly much more common in older age groups).</p>
+<p>Because of the very high rate of false alarms (and related invasive medical procedures), routine screening is not offered to women below 50 on the NHS.</p>
+<p>A similar principle applies to many medical screening problems. For example,</p>
+<ul class="simple">
+<li><p>In antenatal screening for chromasomal disorders, evidence from ultrasound measurements and hormone levels is combined with a prior probability (which depends heavily on maternal age) to calculate a probability that the foetus has a chromasomal disorder.</p></li>
+<li><p>During the coronavirus pandemic, the correct interpretation of a positive covid test (does the subject have covid?) varied enormously as the infection rate in the population rose and fell.</p></li>
+</ul>
+<p>More informally, the most likely interpretation of symptoms (such as chest pain - heart attack or indigestion?) will depend on the <strong>prior probability</strong> of each cause in the patient’s demographic group.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<section id="setting-the-cutoff">
+<h3>Setting the cutoff<a class="headerlink" href="#setting-the-cutoff" title="Permalink to this heading">#</a></h3>
+<p>We have previously seen that when setting a cutoff (the alpha value for a statistical test, or the clinically significant level of some measurement in a diagnostic test) we need to balance the probability of false positives and false negatives, and their implications.</p>
+<p>We see now that the prior probability of each ground trust state of realiyy (the healthy and disease state, for example) is a further ingredient in this decision, as it also affects the probability of false positives and negatives.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png" style="width: 85%;" /></a>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -587,7 +648,7 @@ on Canvas.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Chapter14_Regression5"
+            path: "./Chapter9_Probability"
         },
         predefinedOutput: true
     }
@@ -605,20 +666,20 @@ on Canvas.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Chapter13_Regression4/regression4_TutorialExercises.html"
+       href="EventCombinations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.9. </span>Tutorial exercises</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Event combinations</p>
       </div>
     </a>
     <a class="right-next"
-       href="regression5_outcomes.html"
+       href="../Chapter10_Regression1/regression1_intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.2. </span>Learning Objectives</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Regression</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -637,7 +698,11 @@ on Canvas.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-this-week">5.1. Tasks for this week</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-cause-from-data">2.5.1. Inferring cause from data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-p-cause-data">Bayes theorem: p(cause|data)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-cutoff">Setting the cutoff</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
