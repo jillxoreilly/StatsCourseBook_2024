@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4.11. Sample size and power &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.10. Sample size and power &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_Power/SampleSizeAndPower';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Data generating distributions" href="../Chapter8_DataGeneratingDistributions/binomial_overallIntro.html" />
-    <link rel="prev" title="4.10. Knowing the effect size" href="DeterminingEffectSize.html" />
+    <link rel="next" title="4.11. Concepts Review" href="power_conceptCheck.html" />
+    <link rel="prev" title="4.9. Knowing the effect size" href="DeterminingEffectSize.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -547,13 +551,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proportion-of-false-positives-is-fixed-by-design">4.11.1. The proportion of false positives is fixed <em>by design</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proportion-of-false-positives-is-fixed-by-design">4.10.1. The proportion of false positives is fixed <em>by design</em></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proportion-of-false-negatives-is-not-fixed">4.11.2. Proportion of false negatives is <em>not</em> fixed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.11.3. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">4.11.4. Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proportion-of-false-negatives-is-not-fixed">4.10.2. Proportion of false negatives is <em>not</em> fixed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.10.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">4.10.4. Implications</a></li>
 </ul>
             </nav>
         </div>
@@ -566,11 +570,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sample-size-and-power">
-<h1><span class="section-number">4.11. </span>Sample size and power<a class="headerlink" href="#sample-size-and-power" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.10. </span>Sample size and power<a class="headerlink" href="#sample-size-and-power" title="Permalink to this heading">#</a></h1>
 <p>We have seen that the power of a test depends on the sample size, and a sample of a certain size is required for an effect to be detected with, say, 80% power.</p>
 <p>Most people will accept the intuition that increasing the sample size should make an experiment ‘better’, more reliable or more believable. However it is worth understanding that increasing the sample size primarily affects the proportion of false negatives NOT false positives. Hence sample size is relevant for the power of a test more than its <span class="math notranslate nohighlight">\(p\)</span>-value. This page explains why.</p>
 <section id="the-proportion-of-false-positives-is-fixed-by-design">
-<h2><span class="section-number">4.11.1. </span>The proportion of false positives is fixed <em>by design</em><a class="headerlink" href="#the-proportion-of-false-positives-is-fixed-by-design" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.10.1. </span>The proportion of false positives is fixed <em>by design</em><a class="headerlink" href="#the-proportion-of-false-positives-is-fixed-by-design" title="Permalink to this heading">#</a></h2>
 <p>In null hypothesis testing, the whole procedure is based on <strong>assuming <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> is true</strong>:</p>
 <ul class="simple">
 <li><p>Choose an <span class="math notranslate nohighlight">\(\alpha\)</span> value</p></li>
@@ -606,18 +610,26 @@ document.write(`
 </section>
 </section>
 <section id="proportion-of-false-negatives-is-not-fixed">
-<h2><span class="section-number">4.11.2. </span>Proportion of false negatives is <em>not</em> fixed<a class="headerlink" href="#proportion-of-false-negatives-is-not-fixed" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.10.2. </span>Proportion of false negatives is <em>not</em> fixed<a class="headerlink" href="#proportion-of-false-negatives-is-not-fixed" title="Permalink to this heading">#</a></h2>
 <p>In power analysis, the whole procedure is based on <strong>assuming <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true</strong></p>
 <p>Assuming <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true, we work out how often we would get false negative, based on the effect size, <span class="math notranslate nohighlight">\(\alpha\)</span>-value and <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>One way to do this is simulating a <em>correlated population</em> and sampling from it, as we did in a previous notebook.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_rCrit_power.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_rCrit_power.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_rCrit_power.png" style="width: 80%;" /></a>
+<p>Note that <span class="math notranslate nohighlight">\(r_{crit}\)</span> is still the same <span class="math notranslate nohighlight">\(r_{crit}\)</span> determined based on the assumption that the null hypohthesis is true - it won’t move around based on what <span class="math notranslate nohighlight">\(\rho\)</span>is for this population (ie <span class="math notranslate nohighlight">\(r_{crit}\)</span> would be the same for versions of <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> where <span class="math notranslate nohighlight">\(\rho=0.1\)</span> and <span class="math notranslate nohighlight">\(\rho=0.9\)</span>, because <span class="math notranslate nohighlight">\(r_{crit}\)</span> is based on the assumption that <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> is true and <span class="math notranslate nohighlight">\(\rho=0\)</span>)</p>
 <p>Looking at some samples drawn from a population with a fixed effect size (<span class="math notranslate nohighlight">\(\rho=0.25\)</span>), we can see that the distribution of sample correlation coefficients overlaps differently with <span class="math notranslate nohighlight">\(r_{crit}\)</span> depending on the sample size <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_pVsPower.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_pVsPower.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_pVsPower.png" style="width: 80%;" /></a>
-<p>This is because:</p>
+<p>This is because of a “double whammy”:</p>
 <ul class="simple">
-<li><p>as <span class="math notranslate nohighlight">\(n\)</span> increases, the null distribution (<span class="math notranslate nohighlight">\(r\)</span> values from the null population) gets tighter around <span class="math notranslate nohighlight">\(r=0\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(r_{crit}\)</span> retreats towards zero to maintain a tail of 5% of false positives</p></li>
-<li><p>but the distribution of <span class="math notranslate nohighlight">\(r\)</span> from the <em>correlated population</em> stays centred on <span class="math notranslate nohighlight">\(r=\rho=0.25\)</span> and gets tighter around that value</p></li>
+<li><p>The distribution of <span class="math notranslate nohighlight">\(r\)</span> from the <em>correlated population</em> stays centred on <span class="math notranslate nohighlight">\(r=\rho=0.25\)</span> and gets tighter around that value</p>
+<ul>
+<li><p>therefore the tail of the <em>correlated</em> distribution or <span class="math notranslate nohighlight">\(r\)</span> is pulled in towards <span class="math notranslate nohighlight">\(\rho=0.25\)</span> and away from zero</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(r_{crit}\)</span> retreats towards zero as the sample size increases</p>
+<ul>
+<li><p>this is because as <span class="math notranslate nohighlight">\(n\)</span> increases, the null distribution (<span class="math notranslate nohighlight">\(r\)</span> values from the null population) gets tighter around <span class="math notranslate nohighlight">\(r=0\)</span>, so r_{crit}$ moves towards zero therefore to maintain a tail of 5% of false positives</p></li>
+</ul>
+</li>
 </ul>
 <p>This interaction means that as <span class="math notranslate nohighlight">\(n\)</span> increases, fewer and fewer samples from the correlated population fall below <span class="math notranslate nohighlight">\(r_{crit}\)</span></p>
 <ul class="simple">
@@ -625,7 +637,7 @@ document.write(`
 </ul>
 </section>
 <section id="summary">
-<h2><span class="section-number">4.11.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.10.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The proportion of false positives (if the null were true) is fixed regardless of <span class="math notranslate nohighlight">\(n\)</span></p></li>
 <li><p>The proportion of false negatives increases as <span class="math notranslate nohighlight">\(n\)</span> gets smaller</p></li>
@@ -633,7 +645,7 @@ document.write(`
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_nPower.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_nPower.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_nPower.png" style="width: 80%;" /></a>
 </section>
 <section id="implications">
-<h2><span class="section-number">4.11.4. </span>Implications<a class="headerlink" href="#implications" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.10.4. </span>Implications<a class="headerlink" href="#implications" title="Permalink to this heading">#</a></h2>
 <p>Studies with insufficient power (because the sample size is too small) are unlikely to detect an effect even if there is one present in the underlying population. It is a waste of time and resources to carry our such a study.</p>
 <p>Correlations, in particular, tend to need large sample sizes to achieve adequate power.</p>
 </section>
@@ -675,15 +687,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.10. </span>Knowing the effect size</p>
+        <p class="prev-next-title"><span class="section-number">4.9. </span>Knowing the effect size</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter8_DataGeneratingDistributions/binomial_overallIntro.html"
+       href="power_conceptCheck.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Data generating distributions</p>
+        <p class="prev-next-title"><span class="section-number">4.11. </span>Concepts Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -702,13 +714,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proportion-of-false-positives-is-fixed-by-design">4.11.1. The proportion of false positives is fixed <em>by design</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proportion-of-false-positives-is-fixed-by-design">4.10.1. The proportion of false positives is fixed <em>by design</em></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proportion-of-false-negatives-is-not-fixed">4.11.2. Proportion of false negatives is <em>not</em> fixed</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.11.3. Summary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">4.11.4. Implications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proportion-of-false-negatives-is-not-fixed">4.10.2. Proportion of false negatives is <em>not</em> fixed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">4.10.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implications">4.10.4. Implications</a></li>
 </ul>
   </nav></div>
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4.10. Knowing the effect size &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.9. Knowing the effect size &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_Power/DeterminingEffectSize';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.11. Sample size and power" href="SampleSizeAndPower.html" />
-    <link rel="prev" title="4.9. Power analysis with statsmodels" href="BuiltInPowerCalc.html" />
+    <link rel="next" title="4.10. Sample size and power" href="SampleSizeAndPower.html" />
+    <link rel="prev" title="4.8. Power analysis with statsmodels" href="BuiltInPowerCalc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -547,16 +551,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">4.10.1. Post hoc power analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">4.10.2. Estimating the effect size from the literature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">4.10.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">4.9.1. Post hoc power analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">4.9.2. Estimating the effect size from the literature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">4.9.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">4.10.4. Practical effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">4.9.4. Practical effect size</a></li>
 </ul>
             </nav>
         </div>
@@ -569,7 +573,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="knowing-the-effect-size">
-<h1><span class="section-number">4.10. </span>Knowing the effect size<a class="headerlink" href="#knowing-the-effect-size" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.9. </span>Knowing the effect size<a class="headerlink" href="#knowing-the-effect-size" title="Permalink to this heading">#</a></h1>
 <p>Some sleight of hand has been at play in this chapter.</p>
 <p>I said that to do power analysis we assume <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true, then I simulated data with a certain effect size.</p>
 <p>So I went from this:</p>
@@ -584,7 +588,7 @@ document.write(`
 </ul>
 <p>How did I actually decide what effect size (value of <span class="math notranslate nohighlight">\(\rho=0.25\)</span>) to use in my simulated ‘correlated population’ and hence in my power calculation?</p>
 <section id="post-hoc-power-analysis">
-<h2><span class="section-number">4.10.1. </span>Post hoc power analysis<a class="headerlink" href="#post-hoc-power-analysis" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.9.1. </span>Post hoc power analysis<a class="headerlink" href="#post-hoc-power-analysis" title="Permalink to this heading">#</a></h2>
 <p>In the example given, I took the value of <span class="math notranslate nohighlight">\(r\)</span> measured in my sample - <span class="math notranslate nohighlight">\(r=0.25\)</span> - and ran the power analysis based on this effect size.</p>
 <p>This is sometimes called a post-hoc power analysis.</p>
 <p>When I ran the power analysis after the fact, it told me I should have had a sample 128 people rather than 50 to detect that correlation with 80% power.</p>
@@ -597,11 +601,11 @@ document.write(`
 <p>But if we want to do the power calculation <em>before</em> the study, how can we know the effect size?</p>
 </section>
 <section id="estimating-the-effect-size-from-the-literature">
-<h2><span class="section-number">4.10.2. </span>Estimating the effect size from the literature<a class="headerlink" href="#estimating-the-effect-size-from-the-literature" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.9.2. </span>Estimating the effect size from the literature<a class="headerlink" href="#estimating-the-effect-size-from-the-literature" title="Permalink to this heading">#</a></h2>
 <p>To get an idea of the effect size we expect in a planned study, we can look at other similar studies in the literature. For example, if I want to know whether a new literacy intervention improves reading scores in primary school children, I can look at the effect sizes in previous studies of reading interventions.</p>
 </section>
 <section id="recovering-d-from-t-and-n">
-<h2><span class="section-number">4.10.3. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#recovering-d-from-t-and-n" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.9.3. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#recovering-d-from-t-and-n" title="Permalink to this heading">#</a></h2>
 <p>Although it is not common practice to report effect sizes in journal article, they can be recovered from the <span class="math notranslate nohighlight">\(t\)</span> score and sample size <span class="math notranslate nohighlight">\(n\)</span> as follows.</p>
 <section id="paired-sample-t-test">
 <h3>Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h3>
@@ -611,8 +615,10 @@ document.write(`
 <p>where <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean <em>pairwise difference</em> (eg the mean difference in height between a brother and his own sister) and <span class="math notranslate nohighlight">\(s_x\)</span> is the standard deviation of those differences. <span class="math notranslate nohighlight">\(n\)</span> is the number of pairs.</p>
 <p>Now Cohen’s <span class="math notranslate nohighlight">\(d\)</span> is given by a similar formula:</p>
 <div class="math notranslate nohighlight">
-\[d = \frac{\bar{d}}{s_d}\]</div>
-<p>Rearranging, we see that $<span class="math notranslate nohighlight">\(d = \frac{t}{\sqrt{n}}\)</span>$</p>
+\[d = \frac{\bar{x}}{s_d}\]</div>
+<p>Rearranging, we see that</p>
+<div class="math notranslate nohighlight">
+\[d = \frac{t}{\sqrt{n}}\]</div>
 </section>
 <section id="one-sample-t-test">
 <h3>One sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h3>
@@ -651,7 +657,7 @@ document.write(`
 </section>
 </section>
 <section id="practical-effect-size">
-<h2><span class="section-number">4.10.4. </span>Practical effect size<a class="headerlink" href="#practical-effect-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.9.4. </span>Practical effect size<a class="headerlink" href="#practical-effect-size" title="Permalink to this heading">#</a></h2>
 <p>One context in which power can definitely be meaningfully defined, is when we <strong>know how big an effect would be useful</strong>, even if we don’t know what the underlying effect size in the population is.</p>
 <p>Say for example we are testing a new analgesic drug. We may not know how much the drug will reduce pain scores (the true effect size) but we can certainly define a minimum effect size that would be clinically meaningful. You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
 <p>If we conduct a power analysis assuming that the effect size in the population is the minimum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect would have more than 80% power, as larger effects are easier to detect.</p>
@@ -694,7 +700,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.9. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
+        <p class="prev-next-title"><span class="section-number">4.8. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
       </div>
     </a>
     <a class="right-next"
@@ -702,7 +708,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.11. </span>Sample size and power</p>
+        <p class="prev-next-title"><span class="section-number">4.10. </span>Sample size and power</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -721,16 +727,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">4.10.1. Post hoc power analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">4.10.2. Estimating the effect size from the literature</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">4.10.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-hoc-power-analysis">4.9.1. Post hoc power analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-effect-size-from-the-literature">4.9.2. Estimating the effect size from the literature</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t-and-n">4.9.3. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paired-sample-t-test">Paired sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">Correlation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">4.10.4. Practical effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-effect-size">4.9.4. Practical effect size</a></li>
 </ul>
   </nav></div>
 

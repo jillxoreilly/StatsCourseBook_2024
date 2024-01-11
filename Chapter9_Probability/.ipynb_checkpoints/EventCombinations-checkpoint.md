@@ -13,7 +13,7 @@ In this section we look at some statistical ideas concerning sequences or combin
 
 These examples use hair and eye colour, based on probabilities in the UK.
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_prob_nb.png
 :width: 80%
 :align: center
 ```

@@ -61,6 +61,8 @@ One way to do this is simulating a *correlated population* and sampling from it,
 :align: center
 ```
 
+Note that $r_{crit}$ is still the same $r_{crit}$ determined based on the assumption that the null hypohthesis is true - it won't move around based on what $\rho$is for this population (ie $r_{crit}$ would be the same for versions of $\mathcal{H_a}$ where $\rho=0.1$ and $\rho=0.9$, because $r_{crit}$ is based on the assumption that $\mathcal{H_o}$ is true and $\rho=0$)
+
 Looking at some samples drawn from a population with a fixed effect size ($\rho=0.25$), we can see that the distribution of sample correlation coefficients overlaps differently with $r_{crit}$ depending on the sample size $n$:
 
 
@@ -69,10 +71,12 @@ Looking at some samples drawn from a population with a fixed effect size ($\rho=
 :align: center
 ```
 
-This is because:
-* as $n$ increases, the null distribution ($r$ values from the null population) gets tighter around $r=0$
-* $r_{crit}$ retreats towards zero to maintain a tail of 5% of false positives
-* but the distribution of $r$ from the *correlated population* stays centred on $r=\rho=0.25$ and gets tighter around that value
+This is because of a "double whammy":
+* The distribution of $r$ from the *correlated population* stays centred on $r=\rho=0.25$ and gets tighter around that value
+    * therefore the tail of the *correlated* distribution or $r$ is pulled in towards $\rho=0.25$ and away from zero
+* $r_{crit}$ retreats towards zero as the sample size increases
+    * this is because as $n$ increases, the null distribution ($r$ values from the null population) gets tighter around $r=0$, so r_{crit}$ moves towards zero therefore to maintain a tail of 5% of false positives
+
 
 This interaction means that as $n$ increases, fewer and fewer samples from the correlated population fall below $r_{crit}$
 * ie there are fewer false negatives as $n$ increases

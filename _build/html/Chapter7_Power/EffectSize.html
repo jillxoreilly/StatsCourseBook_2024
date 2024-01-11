@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4.5. Effect size (Cohen’s d) &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.4. Effect size (Cohen’s d) &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_Power/EffectSize';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.6. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
-    <link rel="prev" title="4.4. False positives and False negatives" href="Type1and2Errors.html" />
+    <link rel="next" title="4.5. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
+    <link rel="prev" title="4.3. False positives and False negatives" href="Type1and2Errors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -578,18 +582,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">4.5.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">4.4.2. Effect size for the <span class="math notranslate nohighlight">\(t\)</span>-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">4.5.3. Variance matters for effect size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">4.5.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">4.4.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">4.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">4.5.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">4.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
 </ul>
             </nav>
         </div>
@@ -602,13 +606,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="effect-size-cohen-s-d">
-<h1><span class="section-number">4.5. </span>Effect size (Cohen’s d)<a class="headerlink" href="#effect-size-cohen-s-d" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.4. </span>Effect size (Cohen’s d)<a class="headerlink" href="#effect-size-cohen-s-d" title="Permalink to this heading">#</a></h1>
 <p>The first ingredient in a power analysis is <strong>effect size</strong>.</p>
 <p>Power analysis determines the sample size needed to detect an effect of a certain size.</p>
 <p>What is <strong>effect size</strong>? It is a measure of whether the effect (difference of means, correlation) of interest is big or small, <em>relative to the random noise or variability in the data</em>.</p>
-<p>In this notebook we look at the effect size for the t-test and for Pearson’s correlation. We will see that:</p>
+<p>In this notebook we look at the effect size for the <span class="math notranslate nohighlight">\(t\)</span>-test and for Pearson’s correlation. We will see that:</p>
 <ul class="simple">
-<li><p>The effect size for the t-test is Cohen’s <span class="math notranslate nohighlight">\(d\)</span>, where</p></li>
+<li><p>The effect size for the <span class="math notranslate nohighlight">\(t\)</span>-test is Cohen’s <span class="math notranslate nohighlight">\(d\)</span>, where</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[ d = \frac{\bar{x_1}-\bar{x_2}}{s} \]</div>
@@ -616,7 +620,7 @@ document.write(`
 <li><p>The effect size for Pearson’s correlation is simply the correlation coefficient, <span class="math notranslate nohighlight">\(r\)</span></p></li>
 </ul>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">4.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +639,7 @@ document.write(`
 </div>
 </section>
 <section id="effect-size-for-the-t-test">
-<h2><span class="section-number">4.5.2. </span>Effect size for the t-test<a class="headerlink" href="#effect-size-for-the-t-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.2. </span>Effect size for the <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#effect-size-for-the-t-test" title="Permalink to this heading">#</a></h2>
 <p><strong>Example:</strong></p>
 <p>A researcher hypothesises that geography students are taller than psychology students.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
@@ -921,7 +925,7 @@ Name: height, dtype: float64
 </section>
 </section>
 <section id="variance-matters-for-effect-size">
-<h2><span class="section-number">4.5.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.3. </span>Variance matters for effect size<a class="headerlink" href="#variance-matters-for-effect-size" title="Permalink to this heading">#</a></h2>
 <p>Is a 5cm difference in height between psychology and geography students a big effect? How easily could we spot a tall geographer gatecrashing the Psychosoc party?</p>
 <p>This will depend on both the difference in mean heights, and the standard deviation (variablity) within each group.</p>
 <p>Consider the following dataset which has the same difference in means, but now much less variability within each group:</p>
@@ -952,11 +956,11 @@ Name: height, dtype: float64
 <img alt="../_images/6966cd8f44437f709258a8cd1dddab7c2c6470c98a87c51d86fd22b9618ba5a3.png" src="../_images/6966cd8f44437f709258a8cd1dddab7c2c6470c98a87c51d86fd22b9618ba5a3.png" />
 </div>
 </div>
-<p>For the dataset on the right (lower sd within each group) we can see a much clearer separation between the psychology and geograpahy students - in practical terms, it would be easier to guess a person’s subject based on their height.</p>
+<p>For the dataset on the right (lower sd within each group) we can see a much clearer separation between the psychology and geography students - in practical terms, it would be easier to guess a person’s subject based on their height.</p>
 <p>The plot on the right has a <strong>larger effect size</strong>, as we shall see in the next section</p>
 </section>
 <section id="cohen-s-d">
-<h2><span class="section-number">4.5.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.4. </span>Cohen’s <span class="math notranslate nohighlight">\(d\)</span><a class="headerlink" href="#cohen-s-d" title="Permalink to this heading">#</a></h2>
 <p>We quantify the effect size for the difference of means as Cohen’s <span class="math notranslate nohighlight">\(d\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ d = \frac{\bar{x_g}-\bar{x_p}}{s} \]</div>
@@ -970,7 +974,7 @@ Name: height, dtype: float64
 \[ s = \sqrt{\frac{(n_p-1)s_p^2 + (n_g-1)s_g^2)}{n_p + n_g - 2}} \]</div>
 <p>oof! The <em>shared variance (or sd) estimate</em>, <span class="math notranslate nohighlight">\(s\)</span>, is just a way of getting a single ‘average’ standard deviation measure when we have two sample standard deviations for our two groups, and is actually part of the equation from the independent samples <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
 <div class="math notranslate nohighlight">
-\[t = \frac{\bar{x_1}-\(bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</div>
+\[t = \frac{\bar{x_1}-\bar{x_2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</div>
 <p>Let’s implement that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1068,11 +1072,55 @@ Name: height, dtype: float64
 <p>stating that <em>“a medium effect of 0.5 is visible to the naked eye of a careful observer”</em></p>
 <p>This is what the effect sizes look like for normally distributed data:</p>
 <p><a class="reference internal" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize.png" style="width: 95%;" /></a></p>
-<p>Of course, even tiny differences are “visible to the naked eye” for these smooth curves; for real data, there will of course be uncertainty about how well some fitted curve (KDE plot) really represents the underlying population - hence to ascertain our confidence in the difference (statistical significance), we must consider the sample size <span class="math notranslate nohighlight">\(n\)</span> as well as effect size.</p>
+<p>Of course, even tiny differences are “visible to the naked eye” for these smooth curves; in contrast, for real data, there will be uncertainty about how well some fitted curve (KDE plot) really represents the underlying population - hence to ascertain our confidence in the difference (statistical significance), we must consider the sample size <span class="math notranslate nohighlight">\(n\)</span> as well as effect size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    
+<span class="n">data1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">data2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.25</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.25</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+
+<span class="n">data2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.25</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.25</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e0653eb8b5906f2ce3e3778186bae6bdc32efd6137fe5ad6f9eaaabd4f08d6b4.png" src="../_images/e0653eb8b5906f2ce3e3778186bae6bdc32efd6137fe5ad6f9eaaabd4f08d6b4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.20041173378066626
+0.27755519610833657
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="recovering-d-from-t">
-<h2><span class="section-number">4.5.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4.5. </span>Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#recovering-d-from-t" title="Permalink to this heading">#</a></h2>
 <p>Most published papers do not report effect sizes or Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for <span class="math notranslate nohighlight">\(t\)</span>-tests</p>
 <p>However, they do report <span class="math notranslate nohighlight">\(t\)</span> values and sample sizes.</p>
 <p><span class="math notranslate nohighlight">\(d\)</span> can be recovered relatively simply from <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(n\)</span> - the formulae for this (for the paired and unpaired t-test) are given in the page <strong>Determining effect size</strong></p>
@@ -1116,7 +1164,7 @@ Name: height, dtype: float64
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.4. </span>False positives and False negatives</p>
+        <p class="prev-next-title"><span class="section-number">4.3. </span>False positives and False negatives</p>
       </div>
     </a>
     <a class="right-next"
@@ -1124,7 +1172,7 @@ Name: height, dtype: float64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.6. </span>Effect size (Pearson’s r)</p>
+        <p class="prev-next-title"><span class="section-number">4.5. </span>Effect size (Pearson’s r)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1143,18 +1191,18 @@ Name: height, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">4.5.2. Effect size for the t-test</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.4.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-for-the-t-test">4.4.2. Effect size for the <span class="math notranslate nohighlight">\(t\)</span>-test</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-neq-statistical-significance">Effect size <span class="math notranslate nohighlight">\(\neq\)</span> statistical significance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">4.5.3. Variance matters for effect size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">4.5.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-matters-for-effect-size">4.4.3. Variance matters for effect size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cohen-s-d">4.4.4. Cohen’s <span class="math notranslate nohighlight">\(d\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-size-is-a-standardized-measure">Effect size is a <em>standardized</em> measure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-medium-and-large-effects">Small, medium and large effects</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">4.5.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recovering-d-from-t">4.4.5. Recovering <span class="math notranslate nohighlight">\(d\)</span> from <span class="math notranslate nohighlight">\(t\)</span></a></li>
 </ul>
   </nav></div>
 

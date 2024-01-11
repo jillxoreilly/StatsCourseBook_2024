@@ -53,9 +53,11 @@ where $\bar{x}$ is the mean *pairwise difference* (eg the mean difference in hei
 
 Now Cohen's $d$ is given by a similar formula: 
 
-$$d = \frac{\bar{d}}{s_d}$$
+$$d = \frac{\bar{x}}{s_d}$$
 
-Rearranging, we see that $$d = \frac{t}{\sqrt{n}}$$
+Rearranging, we see that 
+
+$$d = \frac{t}{\sqrt{n}}$$
 
 ### One sample $t$-test
 

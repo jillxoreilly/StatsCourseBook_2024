@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -640,14 +644,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7766176643372155
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7291615487106345
 is it a hit?:            1
 </pre></div>
 </div>
 </div>
 </div>
-<p>If we change the value of <span class="math notranslate nohighlight">\(p\)</span>, this changes the proportion of our random <span class="math notranslate nohighlight">\(x\)</span>’s for which <span class="math notranslate nohighlight">\(x&lt;p\)</span> is TRUE:</p>
-<a class="reference internal image-reference" href="../_images/Chp7_pvsx.png"><img alt="../_images/Chp7_pvsx.png" src="../_images/Chp7_pvsx.png" style="width: 95%;" /></a>
+<p>If we change the value of <span class="math notranslate nohighlight">\(p\)</span>, this changes the proportion of our random <span class="math notranslate nohighlight">\(x\)</span>’s for which <span class="math notranslate nohighlight">\(x&lt;p\)</span> is true. Thhe histograms below show the values of 10,000 outputs from <code class="docutils literal notranslate"><span class="pre">np.random.uniform()</span></code>, with those that match the criterion <code class="docutils literal notranslate"><span class="pre">x&lt;p</span></code> highlighted in red</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_pvsx.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_pvsx.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_pvsx.png" style="width: 95%;" /></a>
 <ul class="simple">
 <li><p>can you see why we used <span class="math notranslate nohighlight">\(x&lt;p\)</span> as a ‘hit’, rather than <span class="math notranslate nohighlight">\(x&gt;p\)</span>?</p></li>
 </ul>
@@ -655,9 +659,6 @@ is it a hit?:            1
 <h3>Distribution of <span class="math notranslate nohighlight">\(k\)</span> depends on <span class="math notranslate nohighlight">\(p\)</span><a class="headerlink" href="#distribution-of-k-depends-on-p" title="Permalink to this heading">#</a></h3>
 <p>But how does changing <span class="math notranslate nohighlight">\(p\)</span> affect the values of <span class="math notranslate nohighlight">\(k\)</span> we see, when <span class="math notranslate nohighlight">\(k\)</span> is the <em>number of hits</em> out of <span class="math notranslate nohighlight">\(n\)</span> trials (<span class="math notranslate nohighlight">\(n\)</span> coin tosses etc)?</p>
 <p>Here is the code for the simulation again, now with <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span> coded as variables rather than <em>hard coded</em> as 10 and 0.5</p>
-<ul class="simple">
-<li><p>Can you modify it so that p=0.7?</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
@@ -666,13 +667,34 @@ is it a hit?:            1
 
 <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nReps</span><span class="p">)</span>
     
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bf48232e6b2567996017f6e4560feec7350e6160cf89cfd6990d13fd610ac50a.png" src="../_images/bf48232e6b2567996017f6e4560feec7350e6160cf89cfd6990d13fd610ac50a.png" />
+<img alt="../_images/523993f61f5179705368a4d48e2cc5b974d2a19366a6ccb83e10e63f160f239c.png" src="../_images/523993f61f5179705368a4d48e2cc5b974d2a19366a6ccb83e10e63f160f239c.png" />
+</div>
+</div>
+<p>What if we change <span class="math notranslate nohighlight">\(p\)</span> to be 0.7 instead?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
+<span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nReps</span><span class="p">)</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
+<span class="c1"># the argument &#39;order&#39; is doing a similar job to &#39;bins&#39; in a histogram</span>
+<span class="c1"># here I am forcing sns to plot all the possible values of k from 0 to 10, </span>
+<span class="c1"># even though some of them didn&#39;t occur in the simulation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0e8e7c150e4ec0881d8e14c9420b6d3106a00d3c8fb382fc43d9d77e9331944c.png" src="../_images/0e8e7c150e4ec0881d8e14c9420b6d3106a00d3c8fb382fc43d9d77e9331944c.png" />
 </div>
 </div>
 <p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span>:</p>
@@ -688,7 +710,8 @@ is it a hit?:            1
 <p>The <em>expected value</em> of <span class="math notranslate nohighlight">\(k\)</span>, ie the mean of <span class="math notranslate nohighlight">\(k\)</span> over many repetitions, is given by</p>
 <div class="math notranslate nohighlight">
 \[ E(k) = np \]</div>
-<p>This can be seen by playing around with the values of <span class="math notranslate nohighlight">\(p\)</span> (and indeed <span class="math notranslate nohighlight">\(n\)</span>) in the following code:</p>
+<p>In the following code block, we generate 10000 random samples from the binomial distribution <span class="math notranslate nohighlight">\(k \sim \mathcal{B}(n,p)\)</span> and find their mean; we compare it to the value of the mean from the equation, <span class="math notranslate nohighlight">\(np\)</span>.</p>
+<p>Hopefully it should match!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span>
@@ -703,7 +726,7 @@ is it a hit?:            1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.9909
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.9994
 np = 7.0
 </pre></div>
 </div>
@@ -723,12 +746,16 @@ np = 7.0
 <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nReps</span><span class="p">)</span>
     
 <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> 
+<span class="c1"># the argument &#39;order&#39; is doing a similar job to &#39;bins&#39; in a histogram</span>
+<span class="c1"># here I am forcing sns to plot all the possible values of k from 0 to 100, </span>
+<span class="c1"># even though some of them didn&#39;t occur in the simulation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab59acff2ce7e512523d13f97a0b7275870b346b04b0b79a81f34f3f2af10a0e.png" src="../_images/ab59acff2ce7e512523d13f97a0b7275870b346b04b0b79a81f34f3f2af10a0e.png" />
+<img alt="../_images/a5b162a9fa986bd4cc11a172900b7d539dfbaeda8a84663bf14079e443816840.png" src="../_images/a5b162a9fa986bd4cc11a172900b7d539dfbaeda8a84663bf14079e443816840.png" />
 </div>
 </div>
 <p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
@@ -739,7 +766,8 @@ np = 7.0
 <div class="math notranslate nohighlight">
 \[ std(k) = \sqrt{npq} \]</div>
 <p>… where <span class="math notranslate nohighlight">\(q = (1-p)\)</span></p>
-<p>This can be seen by playing around with <span class="math notranslate nohighlight">\(n\)</span> (and indeed <span class="math notranslate nohighlight">\(p\)</span>) in the following code block:</p>
+<p>In the following code block, we generate 10000 random samples from the binomial distribution <span class="math notranslate nohighlight">\(k \sim \mathcal{B}(n,p)\)</span> and find their standard deviation; we compare it to the expected value of the standard deviation, <span class="math notranslate nohighlight">\(\sqrt{npq}\)</span>.</p>
+<p>Hopefully it should match!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">100</span>
@@ -754,7 +782,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 4.940908576365282
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.011768194958742
 sqrt(npq) = 5.0
 </pre></div>
 </div>
@@ -768,7 +796,7 @@ sqrt(npq) = 5.0
 <div class="math notranslate nohighlight">
 \[ \frac{\sqrt{pq}}{\sqrt{n}} \]</div>
 <p>where <span class="math notranslate nohighlight">\( q = (1-p) \)</span></p>
-<p>This has the interesting consequence that <b>for a given value of p, the standard deviation fo the proportion of hits is proprtional to <span class="math notranslate nohighlight">\(\frac{1}{\sqrt(n)}\)</span> </b></p>
+<p>This has the interesting consequence that <b>for a given value of p, the standard deviation of the proportion of hits is proprtional to <span class="math notranslate nohighlight">\(\frac{1}{\sqrt(n)}\)</span> </b></p>
 <p>In other words, as <span class="math notranslate nohighlight">\(n\)</span> increases, the proportion of hits I get in a single ‘repetition’ of the experiment (a single set of 10 coin tosses in our example) conforms more closely to the true value of <span class="math notranslate nohighlight">\(p\)</span>, the probability of a hit -</p>
 <p>in other words, my estimate of <span class="math notranslate nohighlight">\(p\)</span> gets better</p>
 <p>but only in proportion to <span class="math notranslate nohighlight">\(\sqrt{n}\)</span></p>

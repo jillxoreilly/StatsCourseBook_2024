@@ -52,7 +52,7 @@ Here is the syntax to test the correlation between Maths and English scores, ass
 
 Wikipedia tells me that $r$ values of 0.1, 0.3 and 0.5 are considered small, medium and large respectively
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_EffectSize_r.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_effectsize_r.png
 :width: 80%
 :align: center
 ```

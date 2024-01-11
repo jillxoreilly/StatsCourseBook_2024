@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -600,8 +604,8 @@ document.write(`
 <h1><span class="section-number">1.4. </span>Repeat the simulation<a class="headerlink" href="#repeat-the-simulation" title="Permalink to this heading">#</a></h1>
 <p>In the last section you simulated 10 coin tosses and you may or may not have obtained 5 heads (you may have obtained slightly more or fewer than 5).</p>
 <p>So far so good.</p>
-<p>What if we would like to quantify how often we get a particular number of heads fromm 10 coin tosses, ie <span class="math notranslate nohighlight">\(k=0,1,2....5.....9,10\)</span>?</p>
-<p>To answer this we need to get 10 coin tosses and count the heads not once, but lots of times.</p>
+<p>What if we would like to quantify how often we get a particular number of heads from 10 coin tosses, ie <span class="math notranslate nohighlight">\(k=0,1,2....5.....9,10\)</span>?</p>
+<p>To answer this we need to run our ‘ experiment’ (get 10 coin tosses and count the heads) not once, but lots of times.</p>
 <p>The computer can easily do this in a few milliseconds, even though it would take us ages with a real coin.</p>
 <section id="set-up-python-libraries">
 <h2><span class="section-number">1.4.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
@@ -624,7 +628,7 @@ document.write(`
 <section id="times-10-coin-tosses">
 <h2><span class="section-number">1.4.2. </span>10,000 times 10 coin tosses<a class="headerlink" href="#times-10-coin-tosses" title="Permalink to this heading">#</a></h2>
 <p>We are going to simulate tossing the coin 10 times and counting how many head we get, 10,000 times over. This will give us a sense of the frequency of each different outcome (0 heads, 1 head, 2 heads…. 10 heads)</p>
-<p>Let’s repeat our 10-coin-toss ‘experiment’ 10,000 times and each time record the value of <span class="math notranslate nohighlight">\(k\)</span>, the number of heads</p>
+<p>We could use a loop to repeat our 10-coin-toss ‘experiment’ 10,000 times and each time record the value of <span class="math notranslate nohighlight">\(k\)</span>, the number of heads</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nReps</span> <span class="o">=</span> <span class="mi">10000</span>
@@ -645,23 +649,23 @@ document.write(`
 </div>
 </div>
 </div>
-<p>The reason for showing how we would do this in a loop is that if you wanted to later generate data from some other distribution, you moght not have a handy built-in function to help you - so it is good to understand how we could do this.</p>
+<p>The reason for showing how we would do this in a loop is that if you wanted to later generate data from some other distribution, you might not have a handy built-in function to help you so would need to use a loop.</p>
 <section id="frequency-of-each-value-of-k">
 <h3>Frequency of each value of <span class="math notranslate nohighlight">\(k\)</span><a class="headerlink" href="#frequency-of-each-value-of-k" title="Permalink to this heading">#</a></h3>
 <p>OK, now we have an array with 10,000 entries showing how many heads we got out of 10 coin tosses, in each of 10,000 repeats.</p>
-<p>We will need to summarize that, perhaps using <code class="docutils literal notranslate"><span class="pre">sns.countplot</span></code> to plot the frequencies of each value of <span class="math notranslate nohighlight">\(k\)</span></p>
+<ul class="simple">
+<li><p><strong>Remember:</strong> one repeat or <em>rep</em> is one round of 10 coin tosses; the outcome for each <em>rep</em> is a value <em>k</em> (between 0 and 10), which is the number of ‘heads’.</p></li>
+</ul>
+<p>To summarize the outcomes of these 10,000 reps, we can use <code class="docutils literal notranslate"><span class="pre">sns.countplot</span></code> to plot the frequencies of each value of <span class="math notranslate nohighlight">\(k\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">k</span><span class="p">)</span> 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># n.b. argument &#39;order&#39; sets the x-axis values for which to plot counts - </span>
-<span class="c1"># here this was the numbers 0,1,2....10, given by range(11)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c9c6006c782898b352988fded1dcdd1fe531fbb738dbad689af3eb7ca200e0d0.png" src="../_images/c9c6006c782898b352988fded1dcdd1fe531fbb738dbad689af3eb7ca200e0d0.png" />
+<img alt="../_images/588167598dd08b2d4013a2489bef274223c5f74b1606a8ad642de8ae91a26fbf.png" src="../_images/588167598dd08b2d4013a2489bef274223c5f74b1606a8ad642de8ae91a26fbf.png" />
 </div>
 </div>
 <p>We can see that</p>
@@ -678,11 +682,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="mi">8</span><span class="p">)</span>
+<span class="c1"># remember, k is a list of 10,000 values of k from our 10,000 reps</span>
+<span class="c1"># the code (k==8) turns this list into 1 (for reps where k==8) and 0 (elsewhere)</span>
+<span class="c1"># sum(k==8) would therefore count the number of times k==8</span>
+<span class="c1"># np.mean(k==8) is the same as sum(k==8)/len(k)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0476
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0445
 </pre></div>
 </div>
 </div>
@@ -699,7 +707,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0585
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0554
 </pre></div>
 </div>
 </div>

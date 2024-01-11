@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -603,7 +607,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="binomial-pmf-and-cdf">
 <h1><span class="section-number">1.6. </span>Binomial PMF and CDF<a class="headerlink" href="#binomial-pmf-and-cdf" title="Permalink to this heading">#</a></h1>
 <p>In this chapter we explored how we would simulate a binomial variable (<span class="math notranslate nohighlight">\(k\)</span> hits) to work out how often we expect <span class="math notranslate nohighlight">\(k\)</span> hits on <span class="math notranslate nohighlight">\(n\)</span> trials. This is called a <strong>numerical solution</strong> or <strong>simulation</strong>.</p>
-<p>There is also an <strong>analytical solution</strong> to calculating the expected number of hits if <span class="math notranslate nohighlight">\(k \sim \mathcal{B}(n,p)\)</span>. This means, there is an equation we can use to work it out. This equation is called the <em>probability mass function (PMF)</em>. In this section we introduce the PMF and a related function, the <em>sumulative density function (CDF)</em>, for the binomial distribution.</p>
+<p>There is also an <strong>analytical solution</strong> to calculating the expected number of hits if <span class="math notranslate nohighlight">\(k \sim \mathcal{B}(n,p)\)</span>. This means, there is an equation we can use to work it out. This equation is called the <em>probability mass function (PMF)</em>. In this section we introduce the PMF and a related function, the <em>cumulative density function (CDF)</em>, for the binomial distribution.</p>
 <p>In practice, you don’t need to use the actual equations yourself, as there are built in functions in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> that do it for you. However it is desirable to understand conceptually where the equations ‘come from’ (how they are derived), as covered in the lecture.</p>
 <p>However you may wish to use the PMF (in Python) to get the probability of a certain value of <span class="math notranslate nohighlight">\(k\)</span>, rather than simulating it.</p>
 <section id="analytical-vs-numerical-solutions">
@@ -643,11 +647,11 @@ document.write(`
 \[ C^{n}_{k} = \frac{n!}{k! (n-k)!}\]</div>
 <p>… is an expression that accounts for the fact that a even balance of hits and misses is more likely (as discussed in the lecture)</p>
 <ul class="simple">
-<li><p><em>Note</em> unsurprisingly, many people find the notation <span class="math notranslate nohighlight">\(p(k=K)\)</span> (which is standard in statistical theory) confusing. In this case <span class="math notranslate nohighlight">\(k\)</span> is a <em>variable</em> (the number of hits) and <span class="math notranslate nohighlight">\(K\)</span> is a specific value of it - so in a coin-tossing example, where we are interested in the chance of getting 8 heads out of 10 tosses, <span class="math notranslate nohighlight">\(k\)</span>=number of heads and <span class="math notranslate nohighlight">\(K\)</span>=8; we read <span class="math notranslate nohighlight">\(p(k=7)\)</span> as <em>“the probability the number of heads is 8”</em></p></li>
+<li><p><em>Note</em> unsurprisingly, many people find the notation <span class="math notranslate nohighlight">\(p(k=K)\)</span> (which is standard in statistical theory) confusing. In this case <span class="math notranslate nohighlight">\(k\)</span> is a <em>variable</em> (the number of hits) and <span class="math notranslate nohighlight">\(K\)</span> is a specific value of it - so in a coin-tossing example, where we are interested in the chance of getting 8 heads out of 10 tosses, <span class="math notranslate nohighlight">\(k\)</span>=number of heads and <span class="math notranslate nohighlight">\(K\)</span>=8; we read <span class="math notranslate nohighlight">\(p(k=8)\)</span> as <em>“the probability the number of heads is 8”</em></p></li>
 </ul>
 <section id="pmf-home-baked">
 <h3>PMF (home-baked)<a class="headerlink" href="#pmf-home-baked" title="Permalink to this heading">#</a></h3>
-<p>Let’s implement the equation for the PDF and compare to the results of our simulation from the previous worksheet</p>
+<p>Let’s implement the equation for the PDF to get the exact probability that k==8, and compare to the results to the proportion of 10,000 reps in which k==8 (as on the previous worksheet)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">10</span> <span class="c1"># values of n, p, k as in previous exercise</span>
@@ -675,12 +679,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0462
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0444
 </pre></div>
 </div>
 </div>
 </div>
-<p>yep!</p>
+<p>yep, not a bad match!</p>
 </section>
 <section id="pmf-built-in-function">
 <h3>PMF (built-in function)<a class="headerlink" href="#pmf-built-in-function" title="Permalink to this heading">#</a></h3>
@@ -753,8 +757,8 @@ document.write(`
 </div>
 <p>So we have:</p>
 <ul class="simple">
-<li><p>PMF(7) is the probability of obtaining exactly 7 heads ie <span class="math notranslate nohighlight">\(p(k=7)\)</span></p></li>
-<li><p>CDF(7) is the probability of obbtaining 7 or fewer heads, ie <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span></p></li>
+<li><p>PMF(8) is the probability of obtaining exactly 7 heads ie <span class="math notranslate nohighlight">\(p(k==8)\)</span></p></li>
+<li><p>CDF(8) is the probability of obbtaining 8 or fewer heads, ie <span class="math notranslate nohighlight">\(p(k&lt;=8)\)</span></p></li>
 </ul>
 <section id="area-under-the-pmf-sums-to-1">
 <h3>Area under the PMF sums to 1<a class="headerlink" href="#area-under-the-pmf-sums-to-1" title="Permalink to this heading">#</a></h3>
@@ -765,14 +769,14 @@ document.write(`
 <p>The function CDF always gives us the area under the curve to the <em>left</em> of a given value, for example CDF(7) gives us <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span>.</p>
 <p>If we want to know the probability of getting <em>more</em> than (say) 7 heads, we use the fact that the area under the curve sums to 1, so</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;7)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;=6)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = 1-<code class="docutils literal notranslate"><span class="pre">cdf(6)</span></code></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=8)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;8)\)</span> = <span class="math notranslate nohighlight">\(1-p(k&lt;=7)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=8)\)</span> = 1-<code class="docutils literal notranslate"><span class="pre">cdf(7)</span></code></p></li>
 </ul>
 <p>Careful here about <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> vs <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> etc. Since <span class="math notranslate nohighlight">\(k\)</span> only takes integer values:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p(k&lt;7)\)</span> = <span class="math notranslate nohighlight">\(p(k&lt;=6)\)</span>
+<li><p><span class="math notranslate nohighlight">\(p(k&lt;8)\)</span> = <span class="math notranslate nohighlight">\(p(k&lt;=7)\)</span>
 and</p></li>
-<li><p><span class="math notranslate nohighlight">\(p(k&gt;=7)\)</span> = <span class="math notranslate nohighlight">\(p(k&gt;8)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(k&gt;=8)\)</span> = <span class="math notranslate nohighlight">\(p(k&gt;7)\)</span></p></li>
 </ul>
 <p>the function <code class="docutils literal notranslate"><span class="pre">stats.binom.cdf(x)</span></code> gives us the probability <span class="math notranslate nohighlight">\(p(k&lt;=x)\)</span></p>
 <p><strong>Comprehension questions</strong></p>

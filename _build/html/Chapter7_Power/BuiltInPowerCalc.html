@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4.9. Power analysis with statsmodels &#8212; Introduction to Statistics and Data Science</title>
+    <title>4.8. Power analysis with statsmodels &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_Power/BuiltInPowerCalc';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.10. Knowing the effect size" href="DeterminingEffectSize.html" />
-    <link rel="prev" title="4.7. Power analysis by simulation" href="PowerCorrelation.html" />
+    <link rel="next" title="4.9. Knowing the effect size" href="DeterminingEffectSize.html" />
+    <link rel="prev" title="4.6. Power analysis by simulation" href="PowerCorrelation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -578,12 +582,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.9.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-ingredients-of-power-analysis">4.9.2. The three ingredients of power analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it-paired-samples-t-test">4.9.3. Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">4.9.4. One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">4.9.5. Correlation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.9.6. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-ingredients-of-power-analysis">4.8.2. The three ingredients of power analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it-paired-samples-t-test">4.8.3. Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">4.8.4. Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">4.8.5. One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">4.8.6. Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.8.7. Recap</a></li>
 </ul>
             </nav>
         </div>
@@ -596,12 +601,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="power-analysis-with-statsmodels">
-<h1><span class="section-number">4.9. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#power-analysis-with-statsmodels" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.8. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#power-analysis-with-statsmodels" title="Permalink to this heading">#</a></h1>
 <p>We have seen how to build our own power analysis by simulating a population with a certain effect size (in our example, a correlation of <span class="math notranslate nohighlight">\(\rho=0.25\)</span>) and sampling from it.</p>
 <p>In Python, there is also a built in function for doing power analysis, in a library called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
 <p>In this notebook we look at how to run power analysis for t-tests and corelation using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">4.9.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,7 +625,7 @@ document.write(`
 </div>
 </section>
 <section id="the-three-ingredients-of-power-analysis">
-<h2><span class="section-number">4.9.2. </span>The three ingredients of power analysis<a class="headerlink" href="#the-three-ingredients-of-power-analysis" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.2. </span>The three ingredients of power analysis<a class="headerlink" href="#the-three-ingredients-of-power-analysis" title="Permalink to this heading">#</a></h2>
 <p>For a given statistical test, the power depends on three factors:</p>
 <ul class="simple">
 <li><p>The effect size (Pearson’s <span class="math notranslate nohighlight">\(r\)</span> for correlation, or Cohen’s <span class="math notranslate nohighlight">\(d\)</span> for the <span class="math notranslate nohighlight">\(t\)</span>-test)</p></li>
@@ -656,7 +661,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
 </ul>
 </section>
 <section id="running-it-paired-samples-t-test">
-<h2><span class="section-number">4.9.3. </span>Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#running-it-paired-samples-t-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.3. </span>Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#running-it-paired-samples-t-test" title="Permalink to this heading">#</a></h2>
 <p>The package used for power analysis is <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> - you will use <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> extensively in the section on regression analysis.</p>
 <p>The syntax of <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> may be slightly unfamiliar.</p>
 <ul class="simple">
@@ -719,10 +724,45 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
 </div>
 <p>If we so wished, we could solve for any of the other parameters instead.</p>
 </section>
+<section id="independent-samples-t-test">
+<h2><span class="section-number">4.8.4. </span>Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">#</a></h2>
+<p>For an independet samples <span class="math notranslate nohighlight">\(t\)</span>-test, we need to use a different <em>model</em> in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>: <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code> instead or <code class="docutils literal notranslate"><span class="pre">TTestPower</span></code>.</p>
+<p>Additionally, the <span class="math notranslate nohighlight">\(n\)</span> for the two groups may be different. We specify the samples sizes as follows:</p>
+<ul class="simple">
+<li><p>size of group 1 is <code class="docutils literal notranslate"><span class="pre">nobs1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ratio</span></code> tells us the ratio n2/n1</p></li>
+</ul>
+<p>Here it is in action for the question</p>
+<ul class="simple">
+<li><p>“What is the power to detect an effect of size <span class="math notranslate nohighlight">\(d=0.5\)</span>, at the <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> (two-tailed) level?, with samples of 20 and 25 in my two groups?”</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import required modules</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">TTestIndPower</span>
+
+<span class="c1"># create an analysis of the correct form</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestIndPower</span><span class="p">()</span>
+
+<span class="c1"># solve for power</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">25</span><span class="o">/</span><span class="mi">20</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 0.3706770336488767
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the power is 37%</p>
+<p>As for the one sample test, you can sole for <code class="docutils literal notranslate"><span class="pre">nobs1</span></code>, <code class="docutils literal notranslate"><span class="pre">effect_size</span></code>, or <code class="docutils literal notranslate"><span class="pre">alpha</span></code> instead as required.</p>
+</section>
 <section id="one-sample-t-test">
-<h2><span class="section-number">4.9.4. </span>One sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.5. </span>One sample <span class="math notranslate nohighlight">\(t\)</span>-test<a class="headerlink" href="#one-sample-t-test" title="Permalink to this heading">#</a></h2>
 <p>The one sample <span class="math notranslate nohighlight">\(t\)</span>-test is just like a paired sample <span class="math notranslate nohighlight">\(t\)</span>-test in which one of the samples is your actual data (say, the heights of 8 rowers) and the other sample is the reference value (such as the mean height of adult men in the general population, 175cm), 8 times over</p>
-<p>So whilst a paired samples t-test might ask: “is each brother taller than his own sister”, a one sample test asks “is each rower taller than the reference value”</p>
+<p>So whilst a paired samples t-test might ask: “is each brother taller than his own sister”, a one sample test asks “is each rower taller than 175cm”</p>
 <p>The effect size is then given by</p>
 <div class="math notranslate nohighlight">
 \[d = \frac{\bar{x}-175}{s}\]</div>
@@ -774,7 +814,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <p>Apparently with a sample size of <span class="math notranslate nohighlight">\(n=8\)</span>, we had 45% power, ie 45% chance to detect a significant difference in height between the rowers and the reference value</p>
 </section>
 <section id="correlation">
-<h2><span class="section-number">4.9.5. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.6. </span>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h2>
 <p>It would be handy if <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> had a built in power analysis function for correlations (Pearson’s <span class="math notranslate nohighlight">\(r\)</span>) but it does not.</p>
 <p>However, by the power of maths, we can actually convert our <span class="math notranslate nohighlight">\(r\)</span> value to a <span class="math notranslate nohighlight">\(t\)</span> value using the equation:</p>
 <div class="math notranslate nohighlight">
@@ -837,7 +877,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <p>Looking back at our home-made code (in a previous notebook), we can see a good match to the power given by the built in function.</p>
 </section>
 <section id="recap">
-<h2><span class="section-number">4.9.6. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.8.7. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
 <p>The syntax for the power analysis is a bit fiddly so let’s recap it:</p>
 <p>There is a four way relationship between:</p>
 <ul class="simple">
@@ -849,7 +889,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
 <p>If we know three of them, we can work out the fourth.</p>
 <p>… note that for the two-sample test we specify the samples size thus:</p>
 <ul class="simple">
-<li><p>size of group 1 is <code class="docutils literal notranslate"><span class="pre">nobs</span></code></p></li>
+<li><p>size of group 1 is <code class="docutils literal notranslate"><span class="pre">nobs1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ratio</span></code> tells us the ratio n2/n1</p></li>
 </ul>
 </section>
@@ -891,7 +931,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.7. </span>Power analysis by simulation</p>
+        <p class="prev-next-title"><span class="section-number">4.6. </span>Power analysis by simulation</p>
       </div>
     </a>
     <a class="right-next"
@@ -899,7 +939,7 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.10. </span>Knowing the effect size</p>
+        <p class="prev-next-title"><span class="section-number">4.9. </span>Knowing the effect size</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -918,12 +958,13 @@ We might ask about <span class="math notranslate nohighlight">\(n\)</span>:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.9.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-ingredients-of-power-analysis">4.9.2. The three ingredients of power analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it-paired-samples-t-test">4.9.3. Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">4.9.4. One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">4.9.5. Correlation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.9.6. Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-ingredients-of-power-analysis">4.8.2. The three ingredients of power analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-it-paired-samples-t-test">4.8.3. Running it: Paired samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independent-samples-t-test">4.8.4. Independent samples <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-sample-t-test">4.8.5. One sample <span class="math notranslate nohighlight">\(t\)</span>-test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation">4.8.6. Correlation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.8.7. Recap</a></li>
 </ul>
   </nav></div>
 

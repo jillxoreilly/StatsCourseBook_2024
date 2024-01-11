@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_DataGeneratingDistributions/binomial_normal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.9. Normal approximation to the binomial" href="binomial_TutorialExercises2.html" />
+    <link rel="next" title="1.9. Tutorial Exercises" href="binomial_normalApprox.html" />
     <link rel="prev" title="1.7. Analytical vs numerical approaches" href="AnalyticVsNumerical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -640,7 +644,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/be534be8e28da9017b9cea0019cc6c0534e2346e589266a89d059feedcb65936.png" src="../_images/be534be8e28da9017b9cea0019cc6c0534e2346e589266a89d059feedcb65936.png" />
+<img alt="../_images/4211432e54133881921cbf650ab3d236de96a01f02465dad739f874e67bbf2f8.png" src="../_images/4211432e54133881921cbf650ab3d236de96a01f02465dad739f874e67bbf2f8.png" />
 </div>
 </div>
 <ul>
@@ -665,7 +669,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/413b3fa1a8b5ec839afdc87b54a066beb64bf4b61d0a57d9fc6aee3979b3e719.png" src="../_images/413b3fa1a8b5ec839afdc87b54a066beb64bf4b61d0a57d9fc6aee3979b3e719.png" />
+<img alt="../_images/f1a2b6a3cd923d01dd1881b47f881c43f573ad0f1571814ca2de93f40defba53.png" src="../_images/f1a2b6a3cd923d01dd1881b47f881c43f573ad0f1571814ca2de93f40defba53.png" />
 </div>
 </div>
 <p>If we want to know what proportion of women are over 180cm (6’) tall, we can work it out using the CDF - the proportion <i>greater than</i> 1800cm tall is 1-CDF(180)</p>
@@ -689,9 +693,9 @@ document.write(`
 <section id="parameters-of-the-normal-distrubition">
 <h3>Parameters of the normal distrubition<a class="headerlink" href="#parameters-of-the-normal-distrubition" title="Permalink to this heading">#</a></h3>
 <p>All normally distributed variables have the same <i>shape</i> of distribution (the bell curve), but two parameters determine the location and spread of the distribution -</p>
-<ul>
-    <li> the mean $\mu$ determines the location of the curve along the x axis
-    <li> the standard deviation $\sigma$ determines the spread or width of the curve
+<ul class="simple">
+<li><p>the mean <span class="math notranslate nohighlight">\(\mu\)</span> determines the location of the curve along the x axis</p></li>
+<li><p>the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> determines the spread or width of the curve</p></li>
 </ul>
 <p>We sometimes describe a normal distribution using the following notation:</p>
 <div class="math notranslate nohighlight">
@@ -730,7 +734,7 @@ document.write(`
 </section>
 <section id="z-score">
 <h2><span class="section-number">1.8.2. </span>Z-score<a class="headerlink" href="#z-score" title="Permalink to this heading">#</a></h2>
-<p>For normally distributed variables, we sometimes refer to the Z_score of a value.</p>
+<p>For normally distributed variables, we sometimes refer to the Z-score of a value.</p>
 <p>The Z-score tells us how many standard deviations above or below the mean of the distribution a given value lies.</p>
 <p>For example, for women’s heights the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> is 7 and the mean is 162cm, so a woman 169cm tall (one sd above the mean) has a Z-score of 1</p>
 <p>A woman whose height is <span class="math notranslate nohighlight">\(2\sigma\)</span> below the mean (148cm) has a Z-score of -2.</p>
@@ -783,11 +787,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="binomial_TutorialExercises2.html"
+       href="binomial_normalApprox.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.9. </span>Normal approximation to the binomial</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>Tutorial Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -613,7 +617,7 @@ document.write(`
 </ul>
 <p>Why would we ever run a simulation, when there is an equation (and a built in function in <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>) that can tell us the exact answer?</p>
 <p>Well, we probably wouldn’t, <em>if</em> an easy analytical solution is available. But for many statistical problems, no such solution is available. You already saw one important case: <strong>permutation testing</strong>. To work out how often we would get a certain difference of means for a certain dataset due to chance, we needed to actually run a lot of random shuffles (numerical solution). Although we <em>could</em> in theory have solved this with an equation, it would have been a very messy equation and much more hassle than it is worth.</p>
-<p>This page explores the relationship between analytical and numerical solutions, using the binomial distribution (where both are available) as an example - but the general ideas apply mmore broadly to any numerical solution to a statistical problem.</p>
+<p>This page explores the relationship between analytical and numerical solutions, using the binomial distribution (where both are available) as an example - but the general ideas apply more broadly to any numerical solution to a statistical problem.</p>
 <section id="set-up-python-libraries">
 <h2><span class="section-number">1.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
@@ -683,7 +687,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5ceed9646a5216ad8ebb97598a50df79acc41ec61223d8d3f488b46da901647f.png" src="../_images/5ceed9646a5216ad8ebb97598a50df79acc41ec61223d8d3f488b46da901647f.png" />
+<img alt="../_images/6da5250268aad27d9ee643499c0136e1270f7cadb196cbb72e828f81d73359bd.png" src="../_images/6da5250268aad27d9ee643499c0136e1270f7cadb196cbb72e828f81d73359bd.png" />
 </div>
 </div>
 <p>Eagle-eyed readers may notice that the <span class="math notranslate nohighlight">\(y\)</span>-axis for the simulations (with 10000 shuffles) is <strong>10,000 times larger</strong> than the <span class="math notranslate nohighlight">\(y\)</span> axis for the probability distributions.</p>
@@ -718,7 +722,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c78c5d97c12ae3d50d95ae2dd6f5322841fbefcd4294c41ba1458e957e45c8e3.png" src="../_images/c78c5d97c12ae3d50d95ae2dd6f5322841fbefcd4294c41ba1458e957e45c8e3.png" />
+<img alt="../_images/0d073bfb234338137596032d2e310b86a55d5911199fc113be4053d03dfcec37.png" src="../_images/0d073bfb234338137596032d2e310b86a55d5911199fc113be4053d03dfcec37.png" />
 </div>
 </div>
 </section>
@@ -757,7 +761,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b3a075203459f94f55d081db9c3fe4814a0912ba6e58eaa96b28889208f219e9.png" src="../_images/b3a075203459f94f55d081db9c3fe4814a0912ba6e58eaa96b28889208f219e9.png" />
+<img alt="../_images/b8eb2f09d59464346120dd7d6daa93e8b37f25131204ecfab653d86e47530e0c.png" src="../_images/b8eb2f09d59464346120dd7d6daa93e8b37f25131204ecfab653d86e47530e0c.png" />
 </div>
 </div>
 <p><em>Note-</em></p>

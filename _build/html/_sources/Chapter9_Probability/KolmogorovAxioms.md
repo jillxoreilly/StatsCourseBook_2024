@@ -54,7 +54,7 @@ It is worth also considering the case in which there are no discrete elementary 
 
 **The probability of some set of elementary elements is the sum of the individual probabilities**
 
-* For example, if we take the two sequences of two dicerolls that yeild a total score of 11 (ie, (5,6) and (6,5)), the total probability is $\frac{1}{36} + \frac{1}{36} = \frac{2}{36}$
+* For example, if we take the two sequences of two dicerolls that yield a total score of 11 (ie, (5,6) and (6,5)), the total probability is $\frac{1}{36} + \frac{1}{36} = \frac{2}{36}$
 
 
 
@@ -67,7 +67,7 @@ An example might be height; say heights for 2.5-year-old girls are normally dist
 * That a child picked at random has a certain height
 * the height must be defined as a *range*; probability is then the *area* within that range.
 
-For example, what is the probability that a child's hheight is 95cm, tot he nearest cm (ie, height is in the range [94.5, 95.5)).
+For example, what is the probability that a child's height is 95cm, to the nearest cm (ie, height is in the range [94.5, 95.5)).
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_PDF3.png
 :width: 80%

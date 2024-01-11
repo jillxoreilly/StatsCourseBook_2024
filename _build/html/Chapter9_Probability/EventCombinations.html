@@ -261,15 +261,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -284,7 +285,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Probability_intro.html">2. Probability</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -548,10 +552,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complement-e-c">2.4.1. Complement: <span class="math notranslate nohighlight">\(E^c\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability-p-a-cap-b">2.4.2. Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marginal-probability-p-a">2.4.3. Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-p-a-b">2.4.4. Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-probability-p-a-cup-b">Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marginal-probability-p-a">2.4.2. Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-p-a-b">2.4.3. Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability-p-a-cap-b">2.4.4. Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-law">Multiplication law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-probability-p-a-cup-b">2.4.5. Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-law">Addition Law</a></li>
 </ul>
 </li>
@@ -579,44 +586,78 @@ document.write(`
 </ul>
 <p><strong>NOTE -</strong></p>
 <p>These examples use hair and eye colour, based on probabilities in the UK.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_prob_nb.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_prob_nb.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_prob_nb.png" style="width: 80%;" /></a>
 <section id="complement-e-c">
 <h2><span class="section-number">2.4.1. </span>Complement: <span class="math notranslate nohighlight">\(E^c\)</span><a class="headerlink" href="#complement-e-c" title="Permalink to this heading">#</a></h2>
-<p>The complement of an event is that event not happening.</p>
-<p>For example:</p>
+<p>The complement of an event is simply that event not happening.</p>
+<p>For example, say I randomly select a person on the street:</p>
 <ul class="simple">
 <li><p>let <span class="math notranslate nohighlight">\(H\)</span> be the event that a randomly selected person has blond hair</p></li>
 <li><p><span class="math notranslate nohighlight">\(H^c\)</span> is the event that a randomly selected person <em>does not have</em> blond hair</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_complement.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_complement.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_complement.png" style="width: 80%;" /></a>
-<p>The probability of an event and its complement must add up to 1 (since any time the event doesn’t happen, the complement does, and vice versa)
-* this is an example of Kolmogorov’s second axiom!</p>
-</section>
-<section id="joint-probability-p-a-cap-b">
-<h2><span class="section-number">2.4.2. </span>Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span><a class="headerlink" href="#joint-probability-p-a-cap-b" title="Permalink to this heading">#</a></h2>
-<p>The join probability of events A and B is the probability that they both happen.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png" style="width: 80%;" /></a>
-<p>The joint probability is sometimes called the <em>intersection</em> of A and B - which makes sense looking at the Venn diagram above.</p>
-<p>In this example, the joint probability is the probability of reaching the end of a single branch in the probability tree or a single cell in the contingency table</p>
+<p>The probability of an event and its complement must add up to 1 (since any time the event doesn’t happen, the complement does, and vice versa)</p>
+<ul class="simple">
+<li><p>hence <span class="math notranslate nohighlight">\(H^c\)</span> is defined as ‘not blond hair’ rather than, for example, ‘brown hair’, as there will be some people who do not have blond or brown hair</p></li>
+</ul>
+<p><strong>NOTE-</strong> this is an example of Kolmogorov’s second axiom!</p>
 </section>
 <section id="marginal-probability-p-a">
-<h2><span class="section-number">2.4.3. </span>Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span><a class="headerlink" href="#marginal-probability-p-a" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.2. </span>Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span><a class="headerlink" href="#marginal-probability-p-a" title="Permalink to this heading">#</a></h2>
 <p>The <strong>marginal probability</strong> of an event A is the total probability of A occurring, regardless of which other events (e.g. B, C) may occur.</p>
 <p>The marginal probability of A is simply written <span class="math notranslate nohighlight">\(p(A)\)</span></p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_marginal.png" style="width: 80%;" /></a>
 <p>Marginal probability is perhaps most clearly illustrated in the contingency table - the marginal probability of blue eyes is the sum of all the cells in the blue eyes column. The marginal probability is therefore written in the ‘column total’ cell at the bottom of the blue-eyes column.</p>
+<p>In the probability tree, the mariginal is the sum of multiple brances (all the branches that include a blue eye)</p>
 </section>
 <section id="conditional-probability-p-a-b">
-<h2><span class="section-number">2.4.4. </span>Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span><a class="headerlink" href="#conditional-probability-p-a-b" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.4.3. </span>Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span><a class="headerlink" href="#conditional-probability-p-a-b" title="Permalink to this heading">#</a></h2>
 <p>The <strong>conditional probability</strong> is the probability of one event, conditional on another event having happened/ being the case.</p>
-<p>For example, the conditional probability of a person having blue eyes given taht we know they have blond hair, <span class="math notranslate nohighlight">\(p(E|H) = 73%\)</span>, which is quite different to the overall or marginal probability of hahving blue eyes <span class="math notranslate nohighlight">\(p(E) = 32%\)</span>.</p>
+<p>For example, the conditional probability of a person having blue eyes given that we know they have blond hair, <span class="math notranslate nohighlight">\(p(E|H)\)</span> = 0.73%, which is quite different to the overall or marginal probability of having blue eyes <span class="math notranslate nohighlight">\(p(E)\)</span> = 32%.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_conditional.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_conditional.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_conditional.png" style="width: 80%;" /></a>
-<p>To work out the conditional probability based on the contingency table, we need to divide the probability in the cell <span class="math notranslate nohighlight">\(p(E \cap H)\)</span> by the row total for <span class="math notranslate nohighlight">\(p(H)\)</span>.</p>
-<p>Conditional probability is much more clearly visualized from the probabilities on the second set of branches in the probability tree (where we see that <span class="math notranslate nohighlight">\(p(E|H)=73%\)</span> is quite different from <span class="math notranslate nohighlight">\(p(E|H^c)=20%\)</span>.</p>
-<p>The difference in conditional probabilities is proof that <strong><span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(H\)</span></strong> are not independent:</p>
-<p><strong>If two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are independent, <span class="math notranslate nohighlight">\(p(A|B) = p(A|B^c)\)</span> and <span class="math notranslate nohighlight">\(p(B|A) = p(B|A^c)\)</span></strong></p>
+<p>To work out the conditional probability based on the contingency table, we need to divide the probability in the cell for <span class="math notranslate nohighlight">\(E\)</span> <em>and</em> <span class="math notranslate nohighlight">\(H\)</span> (<span class="math notranslate nohighlight">\(p(E \cap H)\)</span> - see ‘joint probability’ below) by the row total for <span class="math notranslate nohighlight">\(p(H)\)</span>.</p>
+<p>Conditional probability is much more clearly visualized from the probabilities on the second set of branches in the probability tree (where we see that <span class="math notranslate nohighlight">\(p(E|H)\)</span> = 73% is quite different from <span class="math notranslate nohighlight">\(p(E|H^c)\)</span> = 20%.</p>
+<p>The difference in conditional probabilities is <strong>proof that <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(H\)</span></strong> are not independent**:</p>
+<ul class="simple">
+<li><p><strong>If two events <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are independent, <span class="math notranslate nohighlight">\(p(A|B) = p(A|B^c)\)</span> and <span class="math notranslate nohighlight">\(p(B|A) = p(B|A^c)\)</span></strong></p></li>
+</ul>
+</section>
+<section id="joint-probability-p-a-cap-b">
+<h2><span class="section-number">2.4.4. </span>Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span><a class="headerlink" href="#joint-probability-p-a-cap-b" title="Permalink to this heading">#</a></h2>
+<p>The joint probability of events A and B is the probability that they both happen.</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_joint.png" style="width: 80%;" /></a>
+<p>The joint probability is sometimes called the <em>intersection</em> of A and B - which makes sense looking at the Venn diagram above.</p>
+<p>In this example, the joint probability is the probability of reaching the end of a single branch in the probability tree or a single cell in the contingency table</p>
+<section id="multiplication-law">
+<h3>Multiplication law<a class="headerlink" href="#multiplication-law" title="Permalink to this heading">#</a></h3>
+<p>You may be familiar with the idea that the probability of two <em>independent</em> events (for example, getting a six on two consecutive dice rolls) is the product of the individual probabilities:</p>
+<div class="math notranslate nohighlight">
+\[p(6,6) = p(6) \times p(6) = \frac{1}{6} \times \frac{1}{6}\]</div>
+<p>of more generally,</p>
+<div class="math notranslate nohighlight">
+\[p(A \cap B) = p(A) \times p(B)\]</div>
+<p>However, if events are not independent, the probability of the second event depends on the outcome of the first, and the equation above does not hold.</p>
+<p>For example, what is the probability that a randomly chosen person has blond hair and blue eyes? We work our way along the relevant branches of the probability tree</p>
+<p>First we check the hair:</p>
+<ul class="simple">
+<li><p>Let <em>H</em> be the event that a person has blond hair. 22% of people have blond hair, so p(H)=0.22.</p></li>
+</ul>
+<p>Then we check the eyes.</p>
+<ul class="simple">
+<li><p>Let <em>E</em> be the event that a person has blue eyes. p(E)=0.32</p></li>
+</ul>
+<p><strong>However</strong>, we already know that this person has blond hair (we are already in the ‘blond’ branch of the probability tree. So we need something slightly different</p>
+<ul class="simple">
+<li><p>(E|H) is the event that a person <em>with blond hair</em> has blue eyes p(E|H)=0.72</p></li>
+</ul>
+<p>To obtain the joint probability we need to use <strong>the multplication law</strong>:</p>
+<div class="math notranslate nohighlight">
+\[p(E \cap H) = p(E|H) \times p(H)\]</div>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_MultiplicationLaw.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_MultiplicationLaw.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_MultiplicationLaw.png" style="width: 80%;" /></a>
+</section>
+</section>
 <section id="combined-probability-p-a-cup-b">
-<h3>Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span><a class="headerlink" href="#combined-probability-p-a-cup-b" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">2.4.5. </span>Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span><a class="headerlink" href="#combined-probability-p-a-cup-b" title="Permalink to this heading">#</a></h2>
 <p>The situation where eiter A or B occurs is sometimes called the <em>Union</em> of A and B and is written <span class="math notranslate nohighlight">\(A \cup B\)</span>.</p>
 <p>The idea of a union of events is most obviously useful when thinking of combining different cases of the same variable - for example</p>
 <ul class="simple">
@@ -628,7 +669,6 @@ document.write(`
 <p>For example, since an individual could obtain only one grade on a given exam, <span class="math notranslate nohighlight">\(A^*\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are mututally exclusive and <span class="math notranslate nohighlight">\(p(A^* \cup A) = p(A^*) + p(A)\)</span></p>
 <p>We may sometimes want to know the combined probability of non-mutually-exclusive events; for example, what is the probability that someone obtained a grade combination of (A*/A) or higher, over two exams?</p>
 <p>To solve this we invoke the <strong>Addition Law</strong></p>
-</section>
 <section id="addition-law">
 <h3>Addition Law<a class="headerlink" href="#addition-law" title="Permalink to this heading">#</a></h3>
 <p>The addition law is:</p>
@@ -712,10 +752,13 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complement-e-c">2.4.1. Complement: <span class="math notranslate nohighlight">\(E^c\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability-p-a-cap-b">2.4.2. Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marginal-probability-p-a">2.4.3. Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-p-a-b">2.4.4. Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-probability-p-a-cup-b">Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marginal-probability-p-a">2.4.2. Marginal probability <span class="math notranslate nohighlight">\(p(A)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-probability-p-a-b">2.4.3. Conditional probability <span class="math notranslate nohighlight">\(p(A|B)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-probability-p-a-cap-b">2.4.4. Joint probability <span class="math notranslate nohighlight">\(p(A \cap B)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication-law">Multiplication law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-probability-p-a-cup-b">2.4.5. Combined probability <span class="math notranslate nohighlight">\(p(A \cup B)\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-law">Addition Law</a></li>
 </ul>
 </li>
