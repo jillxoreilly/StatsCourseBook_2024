@@ -720,7 +720,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e9fe6fae0d246d75e3f8b05f311addd75706d0224e2b771de24bdabf52afa6ea.png" src="../_images/e9fe6fae0d246d75e3f8b05f311addd75706d0224e2b771de24bdabf52afa6ea.png" />
+<img alt="../_images/a279ee12aeb77eb4862647677ccdfb5e2763588006cf1b0ae502f3a40dc75d02.png" src="../_images/a279ee12aeb77eb4862647677ccdfb5e2763588006cf1b0ae502f3a40dc75d02.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -760,11 +760,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.006696</td>
+      <td>-0.005419</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.006696</td>
+      <td>-0.005419</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -790,7 +790,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0567
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0493
 </pre></div>
 </div>
 </div>
@@ -830,7 +830,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a217315c2f1fc803f208ca35317320c4afbd0990502d8f0057ee3bc452d151ad.png" src="../_images/a217315c2f1fc803f208ca35317320c4afbd0990502d8f0057ee3bc452d151ad.png" />
+<img alt="../_images/32e042c223ef31b2b11cbb63586de2f716ed5feffb474226244f052d6506a8c0.png" src="../_images/32e042c223ef31b2b11cbb63586de2f716ed5feffb474226244f052d6506a8c0.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -867,11 +867,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.252527</td>
+      <td>0.240274</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.252527</td>
+      <td>0.240274</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -901,7 +901,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.542
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.522
 </pre></div>
 </div>
 </div>
@@ -928,7 +928,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.597
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.547
 </pre></div>
 </div>
 </div>
@@ -966,104 +966,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/15099f655e0324a33ad92888f09e87fd2c37d13d14550630db055f5cb77083a4.png" src="../_images/15099f655e0324a33ad92888f09e87fd2c37d13d14550630db055f5cb77083a4.png" />
+<img alt="../_images/c8b5587219250a449b01f82f937e662731d389e9e98b41969a5dd22eab6c8221.png" src="../_images/c8b5587219250a449b01f82f937e662731d389e9e98b41969a5dd22eab6c8221.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
 <p>Conventionally a power of 80% (indicated by the red dashed line on the graph) is considered desirable (80% is a completely arbitrary value by the way).</p>
-<p>What sample size do we need to get power of 80%? It looks from the graph like you would need around n=120. Let’s re-run a finer grained simulation in that range:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
-    <span class="n">nReps</span><span class="o">=</span><span class="mi">20000</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nReps</span><span class="p">)</span>
-    <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-        <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
-    
-    <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
-    
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)],[</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span> <span class="c1"># reference line for 80% power</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;sample size&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;power&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:4858,</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4855</span> <span class="c1"># As explained in the docstring, the distribution of `r` under the null</span>
-<span class="g g-Whitespace">   </span><span class="mi">4856</span> <span class="c1"># hypothesis is the beta distribution on (-1, 1) with a = b = n/2 - 1.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4857</span> <span class="n">ab</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="ne">-&gt; </span><span class="mi">4858</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span> <span class="n">ab</span><span class="p">,</span> <span class="n">loc</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4859</span> <span class="k">if</span> <span class="n">alternative</span> <span class="o">==</span> <span class="s1">&#39;two-sided&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4860</span>     <span class="n">prob</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">dist</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:849,</span> in <span class="ni">rv_generic.__call__</span><span class="nt">(self, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">849</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:844,</span> in <span class="ni">rv_generic.freeze</span><span class="nt">(self, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Freeze the distribution for the given arguments.</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">841</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">842</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">843</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rv_continuous</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">844</span>     <span class="k">return</span> <span class="n">rv_continuous_frozen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span>     <span class="k">return</span> <span class="n">rv_discrete_frozen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:463,</span> in <span class="ni">rv_frozen.__init__</span><span class="nt">(self, dist, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span> <span class="o">=</span> <span class="n">kwds</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="c1"># create a new instance</span>
-<span class="ne">--&gt; </span><span class="mi">463</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">dist</span><span class="o">.</span><span class="n">_updated_ctor_param</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="n">shapes</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">_parse_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">_get_support</span><span class="p">(</span><span class="o">*</span><span class="n">shapes</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:1845,</span> in <span class="ni">rv_continuous.__init__</span><span class="nt">(self, momtype, a, b, xtol, badvalue, name, longname, shapes, seed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1843</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1844</span>     <span class="n">dct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">distcont</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1845</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_construct_doc</span><span class="p">(</span><span class="n">docdict</span><span class="p">,</span> <span class="n">dct</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:809,</span> in <span class="ni">rv_generic._construct_doc</span><span class="nt">(self, docdict, shapes_vals)</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(shapes)s</span><span class="s2">, &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">809</span>     <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doccer</span><span class="o">.</span><span class="n">docformat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span> <span class="n">tempdict</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">811</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to construct docstring for &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span>                     <span class="s2">&quot;distribution </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">    </span><span class="mi">813</span>                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span> <span class="kn">from</span> <span class="nn">e</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/_lib/doccer.py:65,</span> in <span class="ni">docformat</span><span class="nt">(docstring, docdict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>     <span class="n">newlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-<span class="ne">---&gt; </span><span class="mi">65</span>         <span class="n">newlines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">indent</span><span class="o">+</span><span class="n">line</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">indented</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newlines</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</div>
+<p>What sample size do we need to get power of 80%? It looks from the graph like you would need around n=120. Here are the results if we run a finer grained simulation in that range:</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" style="width: 15%;" /></a>
 </section>
 <section id="recap">
 <h2><span class="section-number">4.7.6. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
