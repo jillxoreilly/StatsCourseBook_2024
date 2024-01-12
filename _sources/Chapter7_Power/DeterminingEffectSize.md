@@ -1,0 +1,112 @@
+# Knowing the effect size
+
+Some sleight of hand has been at play in this chapter.
+
+I said that to do power analysis we assume $\mathcal{H_a}$ is true, then I simulated data with a certain effect size. 
+
+So I went from this:
+
+*I collect data on end-of year exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson's r, between Maths and French scores across my sample of 50 participants.*
+
+* $\mathcal{H_0}$ *Under the null hypothesis there is no correlation between maths scores and French scores*
+* $\mathcal{H_a}$ *Under the alternative hypothesis, there is a correlation*
+
+to this:
+
+* If $\mathcal{H_a}$ is true, the population correlation is $\rho=0.25$
+
+How did I actually decide what effect size (value of $\rho=0.25$) to use in my simulated 'correlated population' and hence in my power calculation?
+
+## Post hoc power analysis
+
+In the example given, I took the value of $r$ measured in my sample - $r=0.25$ - and ran the power analysis based on this effect size.
+
+This is sometimes called a post-hoc power analysis. 
+
+When I ran the power analysis after the fact, it told me I should have had a sample 128 people rather than 50 to detect that correlation with 80% power.
+
+**This isn't quite the intended purpose of power analysis**, although it is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.
+
+Ideally, we are supposed to do a power analysis when **planning** the experiment, to decide in advance what sample size to collect.
+
+* **Power calculations *in advance of the study* are now required by almost all funders, ethical review boards and pre-registration repositories, as well as many scientific journals**
+
+This is important because underpowered studies are a waste of money (for funders) and less likley to produce reproducible results.
+
+But if we want to do the power calculation *before* the study, how can we know the effect size?
+
+## Estimating the effect size from the literature
+
+To get an idea of the effect size we expect in a planned study, we can look at other similar studies in the literature. For example, if I want to know whether a new literacy intervention improves reading scores in primary school children, I can look at the effect sizes in previous studies of reading interventions.
+
+## Recovering $d$ from $t$ and $n$
+
+Although it is not common practice to report effect sizes in journal article, they can be recovered from the $t$ score and sample size $n$ as follows.
+
+### Paired sample $t$-test
+
+Remember that 
+
+$$t = \frac{\bar{x}}{\frac{s_{x}}{\sqrt{n}}}$$ 
+
+where $\bar{x}$ is the mean *pairwise difference* (eg the mean difference in height between a brother and his own sister) and $s_x$ is the standard deviation of those differences. $n$ is the number of pairs.
+
+Now Cohen's $d$ is given by a similar formula: 
+
+$$d = \frac{\bar{x}}{s_d}$$
+
+Rearranging, we see that 
+
+$$d = \frac{t}{\sqrt{n}}$$
+
+### One sample $t$-test
+
+This is very similar to the paired sample t-test.
+
+We have 
+
+$$t = \frac{\bar{x}-\mu}{\frac{s_{x-\mu}}{\sqrt{n}}}$$
+
+where $\bar{x}-\mu$ is the mean deviation of each data point from the reference value $\mu$ (where the reference value might be zero, or some fixed number like the population mean height of men). $s_{x-\mu}$ is the standard deviation of these deviations.  $n$ is the number of datapoints.
+
+Again we have 
+
+$$d = \frac{t}{\sqrt{n}}$$
+
+### Correlation
+
+Power analysis could be run on the effect size $r$ directly, but to use `statsmodels` we convert $r$ to $t$ using the formula
+
+$$ t=\frac{r\sqrt{n-2}}{\sqrt{(1-r^2)}} $$
+
+Again we have 
+
+$$d = \frac{t}{\sqrt{n}}$$
+
+### Independent samples $t$-test
+
+For the independent samples $t$-test, we use a similar approach to the paired- and one-sample $t$-tests, but need to take into account that there are now two groups sizes $n_1$ and $n_2$, and the value of $s$ in the formula for $t$ is a combination of the two sample standard deviations $s_1$ and $s_2$ into a *pooled varaince estimate* as follows:
+
+$$s = \sqrt{\frac{(n_1 - 1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}$$
+
+Yikes!
+
+The formula for $t$ for the independent samples $t$-test is:
+
+$$t = \frac{\bar{x_1}-(\bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+
+where $\bar{x_1}$,$\bar{x_2}$ are the group means and $n_1, n_2$ are the group standard deviations. 
+
+This all means that to recover Cohen's $d$ for the independent samples $t$-test we need
+
+$$d = t \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$$
+
+Phew!
+
+## Practical effect size
+
+One context in which power can definitely be meaningfully defined, is when we **know how big an effect would be useful**, even if we don’t know what the underlying effect size in the population is.
+
+Say for example we are testing a new analgesic drug. We may not know how much the drug will reduce pain scores (the true effect size) but we can certainly define a minimum effect size that would be clinically meaningful. You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.
+
+If we conduct a power analysis assuming that the effect size in the population is the minimum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect would have more than 80% power, as larger effects are easier to detect.

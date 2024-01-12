@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulated coin toss &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.3. Simulated coin toss &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_DataGeneratingDistributions/binomial_singlecoin';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.4. Repeat the simulation" href="binomial_10000reps.html" />
+    <link rel="prev" title="1.2. Learning Objectives" href="binomial_objectives.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -257,12 +259,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="binomial_overallIntro.html">1. Data generating distributions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Tutorial Exercises II</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -272,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -290,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -301,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -310,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
@@ -541,11 +554,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">Simulate a single coin toss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">Simulate 10 coin tosses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">Use an array to store the outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.3.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">1.3.2. Simulate a single coin toss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">1.3.3. Simulate 10 coin tosses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">1.3.4. Use a built in function</a></li>
 </ul>
             </nav>
         </div>
@@ -558,23 +570,23 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulated-coin-toss">
-<h1>Simulated coin toss<a class="headerlink" href="#simulated-coin-toss" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.3. </span>Simulated coin toss<a class="headerlink" href="#simulated-coin-toss" title="Permalink to this heading">#</a></h1>
 <p>To get a feel for how likely different outcomes are, we are going to <i>simulate the data generating process</i></p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_what.jpg" style="width: 15%;" /></a>
 <p>Here is an example of how we could <i>simulate the data generating process</i> in real life:</p>
 <p>To work out how likely we are to get 5 heads out of 10 coin tosses, we could…</p>
-<ul>    
-    <li>get a real coin (but who has cash on them these days?)
-    <li>assume it is fair (<i>p = 0.5</i>)
-    <li>toss it 10 times (because <i>n = 10</i>)
-    <li>count the number of heads (<i>k</i>)
+<ul class="simple">
+<li><p>get a real coin (but who has cash on them these days?)</p></li>
+<li><p>assume it is fair (<span class="math notranslate nohighlight">\(p = 0.5\)</span>)</p></li>
+<li><p>toss it 10 times (because <span class="math notranslate nohighlight">\(n = 10\)</span>)</p></li>
+<li><p>count the number of heads (<span class="math notranslate nohighlight">\(k\)</span>)</p></li>
 </ul>
-... 
+<p>…</p>
 <p>Then we could repeat that whole process many times (say, 100 times) and count how often we get exactly 5 heads.</p>
 <p>Or…. we could get the computer to do that.</p>
 <p>Yes, let’s get the computer to do it. That will be less hassle.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -584,18 +596,20 @@ document.write(`
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="simulate-a-single-coin-toss">
-<h2>Simulate a single coin toss<a class="headerlink" href="#simulate-a-single-coin-toss" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3.2. </span>Simulate a single coin toss<a class="headerlink" href="#simulate-a-single-coin-toss" title="Permalink to this heading">#</a></h2>
 <p>The computer doesn’t really toss a coin.</p>
-<p>It does someting mathematically equivalent, namely generates a random number called <tt>x</tt> and applies a test to it that will give a “hit” a certain proportion of the time, defined by <i>p</i>.</p>
+<p>It does something mathematically equivalent, namely generates a random number called <code class="docutils literal notranslate"><span class="pre">x</span></code> and applies a test to it that will give a “hit” a certain proportion of the time, defined by <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>If the outcome is a hit,
-the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is set to zero</p>
+the value of the variable <code class="docutils literal notranslate"><span class="pre">hit</span></code> is set to 1, otherwise <code class="docutils literal notranslate"><span class="pre">hit</span></code> is set to zero</p>
+<p><strong>Generate a random number</strong></p>
 <p>Try running the code block below several times and see if you understand what it does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,172 +620,105 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.42632020321555786
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.37255077415944815
 </pre></div>
 </div>
 </div>
 </div>
 <p>What happened?</p>
 <p>We used numpy’s random number generator (np.random) to get a number (with decimal places) between 0 and 1. The numbers are drawn from a uniform distribution, which means that any number between 0 and 1 is equally likely.</p>
-<p>Re run the code block above a few times - you should get a different random number every time.</p>
+<p>Re-run the code block above a few times - you should get a different random number every time.</p>
+<p>The next code block uses the argument <code class="docutils literal notranslate"><span class="pre">size=10000</span></code> to generate 10000 of these random numbers; we then plot their distribution in a histogram (hopefully you can see how all values between 0 and 1 and equally likely):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a8cdeec460f96a6c821a14fc52b7ed043accc6c56120fed5c5dfcbbe5734ab36.png" src="../_images/a8cdeec460f96a6c821a14fc52b7ed043accc6c56120fed5c5dfcbbe5734ab36.png" />
+</div>
+</div>
+<p><strong>Threshold the random number</strong></p>
 <p>How do we convert this to a virtual ‘coin toss’? We need to randomly generate “hits” and “misses” rather than decimal numbers.</p>
-<p>To do this we simply add a piece of code that checks whether our random number is greater or less than some number - in this case 0.5, as we should get equal frequencies of random numbers greater than 0.5 and less than 0.5, thus simulating a fair coin.</p>
+<p>To do this we simply add a piece of code that checks whether our random number is less than some cut-off value - in this case 0.5, as we should get equal frequencies of random numbers greater than 0.5 and less than 0.5, thus simulating a fair coin.</p>
+<ul class="simple">
+<li><p>You will see whhy we use a cutoff of <em>less than</em> <span class="math notranslate nohighlight">\(p\)</span> when we set <span class="math notranslate nohighlight">\(p\)</span> to a value other than 0.5!</p></li>
+</ul>
+<p>Try running the code below a few times - hopefully you can see how the numerical value of <code class="docutils literal notranslate"><span class="pre">x</span></code> converts into a binary hit/miss</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">p</span><span class="p">:</span>
     <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6261170771223313
+is it a hit?:            0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="simulate-10-coin-tosses">
-<h2>Simulate 10 coin tosses<a class="headerlink" href="#simulate-10-coin-tosses" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3.3. </span>Simulate 10 coin tosses<a class="headerlink" href="#simulate-10-coin-tosses" title="Permalink to this heading">#</a></h2>
 <p>In our coin tossing example, we need to toss the coin 10 times (<i>n</i> = 10)
 and count how many hits we get (<i>k</i> = ?)</p>
-<p>To do this we will create a loop to repeat the coin toss 10 times</p>
+<p>We have already seen that we can generate however many random nubers we like using the argument <code class="docutils literal notranslate"><span class="pre">size</span></code> - <code class="docutils literal notranslate"><span class="pre">x</span></code> becomes a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array with 10 entries:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value of random number:  &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.6627423855687841
-is it a hit?:            0
-value of random number:  0.14004247486630161
-is it a hit?:            0
-value of random number:  0.3752204745679073
-is it a hit?:            0
-value of random number:  0.15742414618383282
-is it a hit?:            0
-value of random number:  0.5989541890069191
-is it a hit?:            0
-value of random number:  0.11485022261780153
-is it a hit?:            0
-value of random number:  0.6292437308307636
-is it a hit?:            0
-value of random number:  0.11153928969985216
-is it a hit?:            0
-value of random number:  0.5932302176262945
-is it a hit?:            0
-value of random number:  0.6642866599830154
-is it a hit?:            0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.59591423 0.5052537  0.6413854  0.50819877 0.18253578 0.48706997
+ 0.93701535 0.54845102 0.46681813 0.51510019]
 </pre></div>
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_ooph.jpeg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_ooph.jpeg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_ooph.jpeg" style="width: 15%;" /></a>
-<p>OK, well the output of that code block was not really user friendly.</p>
-</section>
-<section id="use-an-array-to-store-the-outcomes">
-<h2>Use an array to store the outcomes<a class="headerlink" href="#use-an-array-to-store-the-outcomes" title="Permalink to this heading">#</a></h2>
-<p>Now that we know how the virtual coin toss works,
-we can dispense with printing out the actual value of the random number <tt>x</tt>
-and just give the 10 binary outcomes (1/0 for hit/miss)</p>
+<p>Now we convert our numbers into hits and misses (or <code class="docutils literal notranslate"><span class="pre">True/False</span></code> or <code class="docutils literal notranslate"><span class="pre">1/0</span></code> values)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-0
-0
-1
-0
-0
-0
-0
-0
-0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False False  True  True False False  True False]
 </pre></div>
 </div>
 </div>
 </div>
-<p>… but we also want to count the number of hits, so we need to store the outcomes (0/1) in an array</p>
+<p>Now we need to check what proportion of values in <code class="docutils literal notranslate"><span class="pre">x</span></code> exceeded <span class="math notranslate nohighlight">\(p\)</span> (remembering that a value of <code class="docutils literal notranslate"><span class="pre">True</span></code> above is equivalent to a numerical value of 1, and <code class="docutils literal notranslate"><span class="pre">False</span></code> is equal to zero, so the proportion of <code class="docutils literal notranslate"><span class="pre">True</span></code> elements is just the mean of the array)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># create an empty array to store the outcomes</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">hit</span> <span class="c1"># store the valuee of &#39;hit&#39; on this trial in place &#39;i&#39; in the array &#39;outcomes&#39;</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outcomes = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">outcomes</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [1. 0. 0. 0. 0. 1. 1. 0. 0. 1.]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
 </pre></div>
 </div>
 </div>
 </div>
-<p>… and then we need to count the hits:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 4.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>Try running the code above a few times and check you understand what is happening.</p>
-<p>Note that the outcome values 0. and 1. have dots after them just because they are floating point numbers (numbers that could potentially have something after the decimal place rather than being rounded to the neareest whole number)</p>
-<p>This looks a little awkward but it is just the Python way of writing 0.0 and 1.0 rather than 0 and 1</p>
 </section>
 <section id="use-a-built-in-function">
-<h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.3.4. </span>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
 <p>Simulating outcomes is actually something coders do a lot so there is a package for it in <tt>numpy</tt>, called <tt>numpy.random</tt></p>
 <p><tt>numpy.random</tt> draws a random sample from a probability distriution (you have to tell it which distribution to use though - binomial, normal or many more). In this case, the number <span class="math notranslate nohighlight">\(k\)</span> of heads in <span class="math notranslate nohighlight">\(n\)</span> coin tosses follows the <b>binomial distribution</b> as introduced in the lecture:</p>
 <div class="math notranslate nohighlight">
@@ -789,13 +736,12 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3
 </pre></div>
 </div>
 </div>
 </div>
-<p>The single line of code above does everything that our previous code block did
-(it doesn’t return the outcomes themselves, but we don’t actually need them, do we?)</p>
+<p>The single line of code above does everything that our previous code block did</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_tadaaa.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_tadaaa.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/Minion_tadaaa.jpg" style="width: 15%;" /></a>
 </section>
 </section>
@@ -830,6 +776,24 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="binomial_objectives.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Learning Objectives</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="binomial_10000reps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Repeat the simulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -845,11 +809,10 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">Simulate a single coin toss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">Simulate 10 coin tosses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">Use an array to store the outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.3.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">1.3.2. Simulate a single coin toss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">1.3.3. Simulate 10 coin tosses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">1.3.4. Use a built in function</a></li>
 </ul>
   </nav></div>
 

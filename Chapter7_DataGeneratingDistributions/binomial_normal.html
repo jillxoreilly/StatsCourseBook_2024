@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Normal distribution &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.8. Normal distribution &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_DataGeneratingDistributions/binomial_normal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.9. Tutorial Exercises II" href="binomial_TutorialExercises2.html" />
+    <link rel="prev" title="1.7. Analytical vs numerical approaches" href="AnalyticVsNumerical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -257,12 +259,23 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../UnderConstruction2.html">1. Under Construction!</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="binomial_overallIntro.html">1. Data generating distributions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binomial_TutorialExercises2.html">1.9. Tutorial Exercises II</a></li>
+</ul>
+</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -272,14 +285,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -290,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -301,7 +314,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -310,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
@@ -541,14 +554,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heights-example">Heights example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heights-example">1.8.1. Heights example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-simulated-dataset">Create the simulated dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pdf-and-cmf">The PDF and CMF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-of-the-normal-distrubition">Parameters of the normal distrubition</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z-score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">1.8.2. Z-score</a></li>
 </ul>
             </nav>
         </div>
@@ -561,10 +574,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="normal-distribution">
-<h1>Normal distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">1.8. </span>Normal distribution<a class="headerlink" href="#normal-distribution" title="Permalink to this heading">#</a></h1>
 <p>In this section we simulate some data from a normal distribution</p>
 <section id="heights-example">
-<h2>Heights example<a class="headerlink" href="#heights-example" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.8.1. </span>Heights example<a class="headerlink" href="#heights-example" title="Permalink to this heading">#</a></h2>
 <p>Let’s simulate a dataset with the heights of 10,000 men and 10,000 women, based on our knowledge that</p>
 <ul>
     <li> height is normally distributed
@@ -603,7 +616,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/59422d1992ab4bf56673fdf31d8cdf6753a9f7348c1c3bbe8c9f0c29d6376cec.png" src="../_images/59422d1992ab4bf56673fdf31d8cdf6753a9f7348c1c3bbe8c9f0c29d6376cec.png" />
+<img alt="../_images/9485e85c36497d5ca23470ab9ad7ca6f6c88c2115d044222b84cc15a3a3de376.png" src="../_images/9485e85c36497d5ca23470ab9ad7ca6f6c88c2115d044222b84cc15a3a3de376.png" />
 </div>
 </div>
 <ul>
@@ -628,7 +641,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/84cdd2034523aeb09f84b0867afbad1136c04ac1d53a194aa0d5b7ec25e17494.png" src="../_images/84cdd2034523aeb09f84b0867afbad1136c04ac1d53a194aa0d5b7ec25e17494.png" />
+<img alt="../_images/2da7badcfe67115af37a9e77baa71f7a0463f6795a48c5412b5b0c5c3ae208e4.png" src="../_images/2da7badcfe67115af37a9e77baa71f7a0463f6795a48c5412b5b0c5c3ae208e4.png" />
 </div>
 </div>
 <p>If we want to know what proportion of women are over 180cm (6’) tall, we can work it out using the CDF - the proportion <i>greater than</i> 1800cm tall is 1-CDF(180)</p>
@@ -692,7 +705,7 @@ document.write(`
 </section>
 </section>
 <section id="z-score">
-<h2>Z-score<a class="headerlink" href="#z-score" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.8.2. </span>Z-score<a class="headerlink" href="#z-score" title="Permalink to this heading">#</a></h2>
 <p>For normally distributed variables, we sometimes refer to the Z_score of a value.</p>
 <p>The Z-score tells us how many standard deviations above or below the mean of the distribution a given value lies.</p>
 <p>For example, for women’s heights the standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> is 7 and the mean is 162cm, so a woman 169cm tall (one sd above the mean) has a Z-score of 1</p>
@@ -736,6 +749,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="AnalyticVsNumerical.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.7. </span>Analytical vs numerical approaches</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="binomial_TutorialExercises2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>Tutorial Exercises II</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -751,14 +782,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heights-example">Heights example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heights-example">1.8.1. Heights example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-simulated-dataset">Create the simulated dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-pdf-and-cmf">The PDF and CMF</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters-of-the-normal-distrubition">Parameters of the normal distrubition</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">Z-score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">1.8.2. Z-score</a></li>
 </ul>
   </nav></div>
 
