@@ -678,7 +678,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0423
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.042
 </pre></div>
 </div>
 </div>
@@ -786,13 +786,8 @@ and</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of exactly 9 heads out of 12 coin tosses, </span>
 <span class="c1"># when the probability of heads is 0.75</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mf">0.75</span><span class="p">)</span>
+
 <span class="c1"># answer = 0.2581</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2581036090850829
 </pre></div>
 </div>
 </div>
@@ -801,13 +796,8 @@ and</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of exactly 5 tails out of 6 coin tosses, </span>
 <span class="c1"># when the probability of heads is 0.6</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+
 <span class="c1"># answer = 0.0386</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03686400000000002
 </pre></div>
 </div>
 </div>
@@ -816,15 +806,8 @@ and</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of at least 7 heads out of 20 coin tosses, </span>
 <span class="c1"># when the probability of heads is 0.55</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.45</span><span class="p">)</span>
-<span class="c1">#or</span>
-<span class="c1">#1-stats.binom.cdf(6,20,0.55)</span>
+
 <span class="c1"># answer = 0.9785</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.978585644356979
 </pre></div>
 </div>
 </div>
@@ -833,13 +816,8 @@ and</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of fewer than 10 heads out of 20 coin tosses, </span>
 <span class="c1"># when the probability of heads is 0.4</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mf">0.4</span><span class="p">)</span>
+
 <span class="c1"># answer = 0.7553</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7553372033163932
 </pre></div>
 </div>
 </div>
@@ -848,25 +826,8 @@ and</p></li>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the probability of more than 10 tails out of 15 coin tosses, </span>
 <span class="c1"># when the probability of heads is 0.3</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.7</span><span class="p">)</span>
+
 <span class="c1"># answer = 0.2784</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2783785597956361
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9453125
 </pre></div>
 </div>
 </div>
