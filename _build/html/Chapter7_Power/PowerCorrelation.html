@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4.6. Power analysis by simulation &#8212; Introduction to Statistics and Data Science</title>
+    <title>Power analysis by simulation &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,8 +67,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter7_Power/PowerCorrelation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.8. Power analysis with statsmodels" href="BuiltInPowerCalc.html" />
-    <link rel="prev" title="4.5. Effect size (Pearson’s r)" href="EffectSizeCorrelation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -224,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
@@ -259,12 +257,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="power_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.6. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
@@ -294,6 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -580,24 +579,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.6. Power analysis by simulation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.6.1. Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Power analysis by simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">4.7. Example</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">4.7.1. Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">4.7.2. Simulating the population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">4.7.3. Null population</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">Simulating the population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">Null population</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-positives">Simulating false positives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">4.7.4. Correlated population</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">Correlated population</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-negatives">Simulating false negatives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">4.7.5. Determining the required sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.7.6. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">4.7.7. Built in function for power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">Determining the required sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">Built in function for power</a></li>
 </ul>
 </li>
 </ul>
@@ -613,7 +612,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="power-analysis-by-simulation">
-<h1><span class="section-number">4.6. </span>Power analysis by simulation<a class="headerlink" href="#power-analysis-by-simulation" title="Permalink to this heading">#</a></h1>
+<h1>Power analysis by simulation<a class="headerlink" href="#power-analysis-by-simulation" title="Permalink to this heading">#</a></h1>
 <p>We can think about theh Hypothesis Testing framework as a 2x2 grid - two possible states of reality and two (matching or non-matching) conclusions.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/t1t2_error.png" style="width: 80%;" /></a>
 <p>In general, null hypothesis testing concerns one state of reality - that is we <strong>assume the null is true</strong></p>
@@ -632,7 +631,7 @@ document.write(`
 <p>The latter gives us the <strong>power</strong> of the analysis.</p>
 <p>Although we we later see that power analysis can be run using a built-in function in Python library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, it is useful to understand conceptually the simulation approach, as this gives an idea of what power analysis actually <em>is</em></p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">4.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,7 +651,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="example">
-<h1><span class="section-number">4.7. </span>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h1>
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h1>
 <p>I collect data on end-of year exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s <span class="math notranslate nohighlight">\(r\)</span>, between Maths and French scores across my sample of <span class="math notranslate nohighlight">\(n=50\)</span> participants.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span> Under the null hypothesis there is no correlation between maths scores and French scores</p></li>
@@ -662,14 +661,14 @@ document.write(`
 <p>I observe a correlation of <span class="math notranslate nohighlight">\(r=0.25\)</span> (this is my <em>effect size</em>)</p>
 <p>Can I trust this result?</p>
 <section id="eyeballing-the-data">
-<h2><span class="section-number">4.7.1. </span>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
 <p>What does a correlation of 0.25 look like for 50 data points?
 Here are some examples of datasets that actually have r=0.25:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/r25_examples.png" style="width: 100%;" /></a>
 <p><strong>Would you trust those correlations?</strong></p>
 </section>
 <section id="simulating-the-population">
-<h2><span class="section-number">4.7.2. </span>Simulating the population<a class="headerlink" href="#simulating-the-population" title="Permalink to this heading">#</a></h2>
+<h2>Simulating the population<a class="headerlink" href="#simulating-the-population" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A false positive (type I error) occurs when we get a significant correlation in a sample, even though there is no true correlation in the population</p></li>
 <li><p>A false negative (type II error) occurs when we <em>fail to get</em> a significant correlation in a sample, even though there is a true correlation in the population</p></li>
@@ -689,7 +688,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p><strong>You will not be asked to replicate this code so don’t worry about the Python details</strong></p>
 </section>
 <section id="null-population">
-<h2><span class="section-number">4.7.3. </span>Null population<a class="headerlink" href="#null-population" title="Permalink to this heading">#</a></h2>
+<h2>Null population<a class="headerlink" href="#null-population" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to generate the population with zero correlation - don&#39;t worry about understanding this bit</span>
@@ -719,7 +718,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9e61765a3674727ee4909b9ccc9a3ab8a8cdd509c0adeaf19a7bcfbc181564da.png" src="../_images/9e61765a3674727ee4909b9ccc9a3ab8a8cdd509c0adeaf19a7bcfbc181564da.png" />
+<img alt="../_images/e45a43ed93be3a0de41e34bc941d1c85f5cda11cbf9971edd0dd834e54befc21.png" src="../_images/e45a43ed93be3a0de41e34bc941d1c85f5cda11cbf9971edd0dd834e54befc21.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -759,11 +758,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.001676</td>
+      <td>-0.005569</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.001676</td>
+      <td>-0.005569</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -789,20 +788,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0457
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
-<span class="n">scipy</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.11.4&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0458
 </pre></div>
 </div>
 </div>
@@ -811,7 +797,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="correlated-population">
-<h2><span class="section-number">4.7.4. </span>Correlated population<a class="headerlink" href="#correlated-population" title="Permalink to this heading">#</a></h2>
+<h2>Correlated population<a class="headerlink" href="#correlated-population" title="Permalink to this heading">#</a></h2>
 <p>Now we generate a population with a true correlation of <span class="math notranslate nohighlight">\(r=0.25\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,7 +828,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/14ef4b3462f33ee789b9476b9c5ff5fb52eedffe37da05b01cdc5870bf4c6775.png" src="../_images/14ef4b3462f33ee789b9476b9c5ff5fb52eedffe37da05b01cdc5870bf4c6775.png" />
+<img alt="../_images/8e0d646b21568af3811ee2b614607198b3a12a00035de4cfc10dba27cd5b3e5b.png" src="../_images/8e0d646b21568af3811ee2b614607198b3a12a00035de4cfc10dba27cd5b3e5b.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -879,11 +865,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.254091</td>
+      <td>0.250882</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.254091</td>
+      <td>0.250882</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -913,7 +899,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.569
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.534
 </pre></div>
 </div>
 </div>
@@ -940,7 +926,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.558
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.582
 </pre></div>
 </div>
 </div>
@@ -948,7 +934,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="determining-the-required-sample-size">
-<h2><span class="section-number">4.7.5. </span>Determining the required sample size<a class="headerlink" href="#determining-the-required-sample-size" title="Permalink to this heading">#</a></h2>
+<h2>Determining the required sample size<a class="headerlink" href="#determining-the-required-sample-size" title="Permalink to this heading">#</a></h2>
 <p>We have just seen that a large sample size is needed to get good power for a weak correlation. How large, exactly?</p>
 <p>We can loop over different sample sizes and plot how power increases as sample size increases:</p>
 <p><strong>Warning - if you run this code block it may take a couple of minutes, or longer if your computer is a bit slow. You don’t actually need to run it.</strong></p>
@@ -978,7 +964,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/35aabda089de4e2fcc1d0bb70148c8fb1812a300925556edd8c2efbcd64ebd5a.png" src="../_images/35aabda089de4e2fcc1d0bb70148c8fb1812a300925556edd8c2efbcd64ebd5a.png" />
+<img alt="../_images/367421ea0587a4ed8cdc8698f37f9c52d2559abf196ffd3cf6748e07e7923729.png" src="../_images/367421ea0587a4ed8cdc8698f37f9c52d2559abf196ffd3cf6748e07e7923729.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
@@ -1012,64 +998,26 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">sampleSize</span><span class="o">=</span><span class="n">n</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:4858,</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative, method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4855</span> <span class="c1"># As explained in the docstring, the distribution of `r` under the null</span>
-<span class="g g-Whitespace">   </span><span class="mi">4856</span> <span class="c1"># hypothesis is the beta distribution on (-1, 1) with a = b = n/2 - 1.</span>
-<span class="g g-Whitespace">   </span><span class="mi">4857</span> <span class="n">ab</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="ne">-&gt; </span><span class="mi">4858</span> <span class="n">dist</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">ab</span><span class="p">,</span> <span class="n">ab</span><span class="p">,</span> <span class="n">loc</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">4859</span> <span class="k">if</span> <span class="n">alternative</span> <span class="o">==</span> <span class="s1">&#39;two-sided&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">4860</span>     <span class="n">prob</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">dist</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:5858,</span> in <span class="ni">NDFrame.sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5855</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5856</span>     <span class="n">weights</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">preprocess_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">5858</span> <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5859</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5861</span> <span class="k">if</span> <span class="n">ignore_index</span><span class="p">:</span>
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:849,</span> in <span class="ni">rv_generic.__call__</span><span class="nt">(self, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span> <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">849</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:844,</span> in <span class="ni">rv_generic.freeze</span><span class="nt">(self, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">829</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Freeze the distribution for the given arguments.</span>
-<span class="g g-Whitespace">    </span><span class="mi">830</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">831</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">841</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">842</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">843</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rv_continuous</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">844</span>     <span class="k">return</span> <span class="n">rv_continuous_frozen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span>     <span class="k">return</span> <span class="n">rv_discrete_frozen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:463,</span> in <span class="ni">rv_frozen.__init__</span><span class="nt">(self, dist, *args, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span> <span class="o">=</span> <span class="n">kwds</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="c1"># create a new instance</span>
-<span class="ne">--&gt; </span><span class="mi">463</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="o">**</span><span class="n">dist</span><span class="o">.</span><span class="n">_updated_ctor_param</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="n">shapes</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">_parse_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">_get_support</span><span class="p">(</span><span class="o">*</span><span class="n">shapes</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:1845,</span> in <span class="ni">rv_continuous.__init__</span><span class="nt">(self, momtype, a, b, xtol, badvalue, name, longname, shapes, seed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1843</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1844</span>     <span class="n">dct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">distcont</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1845</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_construct_doc</span><span class="p">(</span><span class="n">docdict</span><span class="p">,</span> <span class="n">dct</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_distn_infrastructure.py:809,</span> in <span class="ni">rv_generic._construct_doc</span><span class="nt">(self, docdict, shapes_vals)</span>
-<span class="g g-Whitespace">    </span><span class="mi">807</span>     <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(shapes)s</span><span class="s2">, &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">808</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">809</span>     <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doccer</span><span class="o">.</span><span class="n">docformat</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">,</span> <span class="n">tempdict</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">811</span>     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unable to construct docstring for &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span>                     <span class="s2">&quot;distribution </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">    </span><span class="mi">813</span>                     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">e</span><span class="p">)))</span> <span class="kn">from</span> <span class="nn">e</span>
-
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/_lib/doccer.py:61,</span> in <span class="ni">docformat</span><span class="nt">(docstring, docdict)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="n">indented</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dstr</span> <span class="ow">in</span> <span class="n">docdict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="n">lines</span> <span class="o">=</span> <span class="n">dstr</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>     <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>         <span class="n">newlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/sample.py:151,</span> in <span class="ni">sample</span><span class="nt">(obj_len, size, replace, weights, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid weights: weights sum to zero&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">151</span> <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">replace</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1078,7 +1026,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </section>
 <section id="recap">
-<h2><span class="section-number">4.7.6. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Power is defined as the propotion of the time a significant effect is detected, given that there is an effect (of a certain size in the data)</p></li>
 <li><p>Power depends on sample size; a larger sample gives a better chance to detect the effect (if there is one)</p></li>
@@ -1099,8 +1047,8 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <p>The process of determining the required sample size to detect a certain effect with a certain power is called <strong>power analysis</strong></p>
 </section>
 <section id="built-in-function-for-power">
-<h2><span class="section-number">4.7.7. </span>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
-<p>Now you understand conceptually what power analysis is about, we can move on to running it using a built-on function.</p>
+<h2>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
+<p>Now you understand conceptually what power analysis is about, we can move on to running it using a built-in function.</p>
 <p>There is a built in function in a package called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for doing power analysis.</p>
 <p>In the next notebook we will see this for <span class="math notranslate nohighlight">\(t\)</span>-tests and correlations.</p>
 </section>
@@ -1136,24 +1084,6 @@ Here are some examples of datasets that actually have r=0.25:</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="EffectSizeCorrelation.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.5. </span>Effect size (Pearson’s r)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="BuiltInPowerCalc.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.8. </span>Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1169,24 +1099,24 @@ Here are some examples of datasets that actually have r=0.25:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4.6. Power analysis by simulation</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">4.6.1. Set up Python libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Power analysis by simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">4.7. Example</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">4.7.1. Eyeballing the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">4.7.2. Simulating the population</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">4.7.3. Null population</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eyeballing-the-data">Eyeballing the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-population">Simulating the population</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#null-population">Null population</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-positives">Simulating false positives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">4.7.4. Correlated population</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlated-population">Correlated population</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-false-negatives">Simulating false negatives</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">4.7.5. Determining the required sample size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">4.7.6. Recap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">4.7.7. Built in function for power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-the-required-sample-size">Determining the required sample size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap">Recap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-function-for-power">Built in function for power</a></li>
 </ul>
 </li>
 </ul>

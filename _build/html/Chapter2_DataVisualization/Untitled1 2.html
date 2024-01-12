@@ -259,15 +259,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -282,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -290,6 +291,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -836,7 +839,7 @@ In some of the exercises we will also use data from the Cambridge weather statio
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;MM&#39;, ylabel=&#39;rainfree&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/b7edbbc4c899c42498853fb5c7a9bca7ab848645294308fbe42a4a1c9f8ba396.png" src="../_images/b7edbbc4c899c42498853fb5c7a9bca7ab848645294308fbe42a4a1c9f8ba396.png" />
+<img alt="../_images/7606a0813f3fcc20326f702f89bacc99bd5ded15045ecdddb13dd314f9faaf67.png" src="../_images/7606a0813f3fcc20326f702f89bacc99bd5ded15045ecdddb13dd314f9faaf67.png" />
 </div>
 </div>
 <p>Please add some comments here!</p>
@@ -857,7 +860,7 @@ In some of the exercises we will also use data from the Cambridge weather statio
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;YYYY&#39;, ylabel=&#39;Tmax&#39;&gt;
 </pre></div>
 </div>
-<img alt="../_images/0ebd913b6ea3e0d69f218cffdae1f8ea5f733cf09c6f97605f3f831408854a4b.png" src="../_images/0ebd913b6ea3e0d69f218cffdae1f8ea5f733cf09c6f97605f3f831408854a4b.png" />
+<img alt="../_images/ec4b93494211b5acb3734575e722ad1bb18266a8555c7a14dbd700678fd8ae63.png" src="../_images/ec4b93494211b5acb3734575e722ad1bb18266a8555c7a14dbd700678fd8ae63.png" />
 </div>
 </div>
 <section id="question-3">
@@ -880,7 +883,7 @@ In some of the exercises we will also use data from the Cambridge weather statio
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4831e0352c8ec3660c72fe8361067589449b501be98d40699ad68ffcf2f953e3.png" src="../_images/4831e0352c8ec3660c72fe8361067589449b501be98d40699ad68ffcf2f953e3.png" />
+<img alt="../_images/4b3d75ce9922bb8a54d66b9a2df6e94628518372ecb848317e15db6de4a2ce42.png" src="../_images/4b3d75ce9922bb8a54d66b9a2df6e94628518372ecb848317e15db6de4a2ce42.png" />
 </div>
 </div>
 <p>Please add some comments here!</p>
@@ -1092,7 +1095,7 @@ In some of the exercises we will also use data from the Cambridge weather statio
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0905e579dc1885e4f0281db4db16e3e0cfbe77032fd98b91a4aa2442ed03ec4f.png" src="../_images/0905e579dc1885e4f0281db4db16e3e0cfbe77032fd98b91a4aa2442ed03ec4f.png" />
+<img alt="../_images/a3725b9861d557a219fdeb529a7efc6aac29e8ec6e9340b6d0da4408e104fe40.png" src="../_images/a3725b9861d557a219fdeb529a7efc6aac29e8ec6e9340b6d0da4408e104fe40.png" />
 </div>
 </div>
 <div class="cell docutils container">

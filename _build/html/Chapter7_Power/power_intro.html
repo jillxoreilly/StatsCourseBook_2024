@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
@@ -294,6 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -586,10 +587,8 @@ size, we conduct a power analysis</p>
 <li><p>power of a t-test (independent and paired samples)</p></li>
 </ul>
 <p>We will see how power analyses can be constructed using ‘home made’
-code, and also learn to run them for <span class="math notranslate nohighlight">\(t\)</span>-test using a built in function
-in the Python library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>. The same built-in function can run power
-analysis for many statistical tests we will meet later in the course, including regression, ANOVA and
-Chi Square (although not correlation, annoyingly).</p>
+code, and also learn to run them for <span class="math notranslate nohighlight">\(t\)</span>-test and correlation using a built in function
+in the Python library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p>
 <section id="tasks-for-this-week">
 <h2><span class="section-number">4.1. </span>Tasks for this week<a class="headerlink" href="#tasks-for-this-week" title="Permalink to this heading">#</a></h2>
 <p><strong>Conceptual material</strong> is covered in the lecture. In addition to the

@@ -25,33 +25,30 @@ To assess the sample size needed to detect an effect of a certain
 size, we conduct a power analysis
 
 We will cover two examples:
-<ul>
-<li> power of a correlation (Pearson's r) analysis
-<li> power of a t-test (independent and paired samples
-</ul>
+
+* power of a correlation (Pearson's r) analysis
+* power of a t-test (independent and paired samples)
+
 
 We will see how power analyses can be constructed using 'home made'
-code, and also learn to run them for t-test using a built in function
-in <tt>statsmodels</tt>. The same built-in function can run power
-analysis for many statistical tests we will meet later in the course, including regression, ANOVA and
-Chi Square (although not correlation, annoyingly).
+code, and also learn to run them for $t$-test and correlation using a built in function
+in the Python library `statsmodels`. 
 
 
 ## Tasks for this week
 
-<b>Conceptual material</b> is covered in the lecture. In addition to the
+**Conceptual material** is covered in the lecture. In addition to the
 live lecture, you can find lecture videos on Canvas.
 
 Please work through the guided exercises in this section (everything
-<i>except</i> the page labelled "Tutorial Exercises") in advance of
+*except* the page labelled "Tutorial Exercises") in advance of
 the computer-based tutorial session.
 
 To complete the guided exercises you will need to either:
-<ul>
-<li>open the pages in Google Colab (simply click the Colab button on each page), or
-<li>download them as Jupyter Notbooks to your own computer and work
-with them locally (eg in Spyder)
-</ul>
+
+* open the pages in Google Colab (simply click the Colab button on each page), or
+* download them as Jupyter Notbooks to your own computer and work
+with them locally (eg in JupyterLab)
 
 If you find something difficult or have questions, you can discuss
 with your tutor in the computer-based tutoral session.

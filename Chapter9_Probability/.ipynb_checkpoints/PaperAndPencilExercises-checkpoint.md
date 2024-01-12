@@ -31,7 +31,7 @@ a) statistically independent events
 
 Two events A and B are statistically independent if the probability of A does not depend on whether B occurred, or vice versa. 
 
-Put formally, $p(A|B) = p(A) and p(B|A) = p(B)$
+Put formally, $p(A|B) = p(A)$ and $p(B|A) = p(B)$
 
 For example, if I stop a random person on the street
 
@@ -119,9 +119,7 @@ a) Construct a contingency table for these data
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
 :width: 80%
 :align: center
-```
 
-```
 
 * Let $E$ be the event that the respondent is a member of an environmental group
 * Let $P$ be the event that the respondent is willing to pay higher prices to protect the environment

@@ -31,10 +31,8 @@ We will cover two examples:
 
 
 We will see how power analyses can be constructed using 'home made'
-code, and also learn to run them for $t$-test using a built in function
-in the Python library `statsmodels`. The same built-in function can run power
-analysis for many statistical tests we will meet later in the course, including regression, ANOVA and
-Chi Square (although not correlation, annoyingly).
+code, and also learn to run them for $t$-test and correlation using a built in function
+in the Python library `statsmodels`. 
 
 
 ## Tasks for this week

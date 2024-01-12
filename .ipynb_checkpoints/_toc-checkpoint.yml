@@ -92,7 +92,7 @@ parts:
         - file: Chapter7_Power/Type1and2Errors.md
         - file: Chapter7_Power/EffectSize.ipynb
         - file: Chapter7_Power/EffectSizeCorrelation.ipynb
-        - file: Chapter7_Power/PowerCorrelation.ipynb
+        - file: Chapter7_Power/PowerCorrelationSim.ipynb
         - file: Chapter7_Power/BuiltInPowerCalc.ipynb
         - file: Chapter7_Power/DeterminingEffectSize.md
         - file: Chapter7_Power/SampleSizeAndPower.md

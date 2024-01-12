@@ -259,15 +259,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -282,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -290,6 +291,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -968,8 +971,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0239, null_distribution=array([  54.21923077,    4.98076923, -261.43461538, ...,  236.35      ,
-        249.31923077,  178.51923077]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0238, null_distribution=array([ 285.51153846,  127.85      ,   46.49615385, ..., -235.61923077,
+          8.44230769,  122.12692308]))
 </pre></div>
 </div>
 </div>
@@ -1181,7 +1184,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc510c7f7c1553cfaf2114a42a0082657b6279602e85352fcfb2dd797902b89a.png" src="../_images/bc510c7f7c1553cfaf2114a42a0082657b6279602e85352fcfb2dd797902b89a.png" />
+<img alt="../_images/084ed714c29b2dcf73e89b12a4a3e8cfc80e9fb45141a3259502c05da06d3300.png" src="../_images/084ed714c29b2dcf73e89b12a4a3e8cfc80e9fb45141a3259502c05da06d3300.png" />
 </div>
 </div>
 <p><font color='red'> Your comments here!</p>
@@ -1720,8 +1723,8 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-15.985702127659636, pvalue=0.0984, null_distribution=array([ 2.2386383 , -1.8292766 , -0.35965957, ..., -6.77097872,
-       -5.8506383 , -8.69846809]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-15.985702127659636, pvalue=0.0982, null_distribution=array([-11.9372766 ,   7.19259574,   3.87787234, ...,   5.34297872,
+        13.58076596,   8.51838298]))
 </pre></div>
 </div>
 </div>
@@ -1737,8 +1740,8 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-29.423307496075324, pvalue=0.0002, null_distribution=array([-7.51693069,  6.90638559,  4.71469941, ..., -7.44678024,
-       -2.67966935, -1.18403432]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-29.423307496075324, pvalue=0.0002, null_distribution=array([-3.33653465, -3.48560951,  7.09198969, ..., -4.62763754,
+        8.79818899, -4.62417083]))
 </pre></div>
 </div>
 </div>
@@ -2132,7 +2135,7 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b58c1fc953575d5069b371a29018eacdcb6ca91d85c643124bbbe282bdb1e629.png" src="../_images/b58c1fc953575d5069b371a29018eacdcb6ca91d85c643124bbbe282bdb1e629.png" />
+<img alt="../_images/9885e912dd180cefa2ad1c8816166a204da84c5023dec606156249eeb9f6485e.png" src="../_images/9885e912dd180cefa2ad1c8816166a204da84c5023dec606156249eeb9f6485e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2149,7 +2152,7 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c200b5ea307cbb9aa0cad409d806bc5f86604aac20a7641d19aa77c9798a8b7.png" src="../_images/3c200b5ea307cbb9aa0cad409d806bc5f86604aac20a7641d19aa77c9798a8b7.png" />
+<img alt="../_images/2809fa325de8c2bf949aef5f3461cd46059f59f515866fa03ba64fd888bb7c32.png" src="../_images/2809fa325de8c2bf949aef5f3461cd46059f59f515866fa03ba64fd888bb7c32.png" />
 </div>
 </div>
 <p><strong>c. Get the mean height for brothers and sisters separately</strong></p>
@@ -2236,7 +2239,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0778, null_distribution=array([ 1.12, -3.2 ,  3.44, ..., -5.2 , -2.4 , -0.32]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0798, null_distribution=array([ 2.48,  1.04,  0.88, ..., -1.76, -1.28, -0.96]))
 </pre></div>
 </div>
 </div>
@@ -2254,7 +2257,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0002, null_distribution=array([ 2.72, -0.32, -2.4 , ...,  2.  , -2.32, -1.36]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0002, null_distribution=array([-2.48, -1.2 ,  0.72, ..., -2.  , -1.92, -2.96]))
 </pre></div>
 </div>
 </div>
@@ -2290,7 +2293,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4785e2e4940c1958d15f182c5f57092ca666118a8edbee852e78bd5c10ad7bff.png" src="../_images/4785e2e4940c1958d15f182c5f57092ca666118a8edbee852e78bd5c10ad7bff.png" />
+<img alt="../_images/8fdc7ce38bdf0607eb08a557f055114e1088d4994969e3570579fc3e5e8383e4.png" src="../_images/8fdc7ce38bdf0607eb08a557f055114e1088d4994969e3570579fc3e5e8383e4.png" />
 </div>
 </div>
 <p><font color='red'>Your answer here</p>

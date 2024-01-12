@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_DataGeneratingDistributions/binomial_normal';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.9. Tutorial Exercises" href="binomial_normalApprox.html" />
+    <link rel="next" title="1.9. Tutorial Exercises" href="TutorialExercises.html" />
     <link rel="prev" title="1.7. Analytical vs numerical approaches" href="AnalyticVsNumerical.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
@@ -285,10 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_normalApprox.html">1.9. Tutorial Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.10. Binomial: blindsight example</a></li>
-
-
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -296,6 +293,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -644,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4211432e54133881921cbf650ab3d236de96a01f02465dad739f874e67bbf2f8.png" src="../_images/4211432e54133881921cbf650ab3d236de96a01f02465dad739f874e67bbf2f8.png" />
+<img alt="../_images/c34bf1cc874cbc68ac62569bf24d827706f57cca718d506be9262d7ed243e342.png" src="../_images/c34bf1cc874cbc68ac62569bf24d827706f57cca718d506be9262d7ed243e342.png" />
 </div>
 </div>
 <ul>
@@ -669,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f1a2b6a3cd923d01dd1881b47f881c43f573ad0f1571814ca2de93f40defba53.png" src="../_images/f1a2b6a3cd923d01dd1881b47f881c43f573ad0f1571814ca2de93f40defba53.png" />
+<img alt="../_images/8715498a35fb935a191ec8526036c2342ba58876fcf41fa1b1bf72fae324d935.png" src="../_images/8715498a35fb935a191ec8526036c2342ba58876fcf41fa1b1bf72fae324d935.png" />
 </div>
 </div>
 <p>If we want to know what proportion of women are over 180cm (6’) tall, we can work it out using the CDF - the proportion <i>greater than</i> 1800cm tall is 1-CDF(180)</p>
@@ -787,7 +786,7 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="binomial_normalApprox.html"
+       href="TutorialExercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>

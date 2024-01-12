@@ -257,15 +257,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -280,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -288,6 +289,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -941,7 +944,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/edad9ce3dbe1195d043905ed95c763d2da312f09f0060beea545a0514e32da82.png" src="../_images/edad9ce3dbe1195d043905ed95c763d2da312f09f0060beea545a0514e32da82.png" />
-<img alt="../_images/c84fa5032dfae47ca6804bdac1cd06c71c89fb84ec13d854dbfa0041c59ef7b9.png" src="../_images/c84fa5032dfae47ca6804bdac1cd06c71c89fb84ec13d854dbfa0041c59ef7b9.png" />
+<img alt="../_images/7707a5be0ac9eeac9b0971f4a6857aba14732fce1c283447a61b3d7550bdc2a2.png" src="../_images/7707a5be0ac9eeac9b0971f4a6857aba14732fce1c283447a61b3d7550bdc2a2.png" />
 </div>
 </div>
 <p><strong>Discuss with students:</strong></p>
@@ -968,7 +971,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/73d55892df3ef5ad26e69a10cb1fd8eb02a917aa3d3dae2909f4d1fa13d92a50.png" src="../_images/73d55892df3ef5ad26e69a10cb1fd8eb02a917aa3d3dae2909f4d1fa13d92a50.png" />
-<img alt="../_images/e63e8977f6ec42c60f22acaebc24b98497a64a7c4ef4e4ae0eb0cf669a2c1df7.png" src="../_images/e63e8977f6ec42c60f22acaebc24b98497a64a7c4ef4e4ae0eb0cf669a2c1df7.png" />
+<img alt="../_images/b11ef05475cbeabe1e1bdd6dc8e53a3b8915b7f6b713daad7f3abdae434c1cb1.png" src="../_images/b11ef05475cbeabe1e1bdd6dc8e53a3b8915b7f6b713daad7f3abdae434c1cb1.png" />
 </div>
 </div>
 <p><strong>Discuss with students</strong></p>
@@ -994,8 +997,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5df74bc13f0e67ece333a9f01d0d0653484a838bb98903d757023cd3b15131cd.png" src="../_images/5df74bc13f0e67ece333a9f01d0d0653484a838bb98903d757023cd3b15131cd.png" />
-<img alt="../_images/f59372fc8daea7ede39f211839a225d56027e996084bec8e03033c0081e63be1.png" src="../_images/f59372fc8daea7ede39f211839a225d56027e996084bec8e03033c0081e63be1.png" />
+<img alt="../_images/bddcbe0235c38d2c49faa927074f64d5a532e606e82ddb52cfc409ef590cf3eb.png" src="../_images/bddcbe0235c38d2c49faa927074f64d5a532e606e82ddb52cfc409ef590cf3eb.png" />
+<img alt="../_images/53cf51da06c94f20caecd311375983d00f93640b10d6995c375616705b918175.png" src="../_images/53cf51da06c94f20caecd311375983d00f93640b10d6995c375616705b918175.png" />
 </div>
 </div>
 <p><strong>Discuss with students</strong></p>
@@ -1402,7 +1405,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88249db10c12ff9a0bf997d8f0f9b8445b520120b3b6a6f0ae4d49ff947c48de.png" src="../_images/88249db10c12ff9a0bf997d8f0f9b8445b520120b3b6a6f0ae4d49ff947c48de.png" />
+<img alt="../_images/c6c5e1128538faba743473a134f6992998b76663f59b9bbf58075bef607159e9.png" src="../_images/c6c5e1128538faba743473a134f6992998b76663f59b9bbf58075bef607159e9.png" />
 </div>
 </div>
 <p>Time zero is the onset of the moving dots. We can see that firing rate initially dips, then rises over the course of several hundred milliseconds.</p>
@@ -1431,7 +1434,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ed8a204c17a57618c265ebebcaf4b82cb373078e3977e3aa3f7010476e3d1af.png" src="../_images/7ed8a204c17a57618c265ebebcaf4b82cb373078e3977e3aa3f7010476e3d1af.png" />
+<img alt="../_images/02eb8eb9547ef2ff53e6f443651429e95ee7209146cf8987cf77cff210f56d85.png" src="../_images/02eb8eb9547ef2ff53e6f443651429e95ee7209146cf8987cf77cff210f56d85.png" />
 </div>
 </div>
 <p>What do you see? Describe the graph in words.</p>

@@ -257,15 +257,16 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_conceptCheck.html">4.3. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/Type1and2Errors.html">4.4. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSize.html">4.5. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSizeCorrelation.html">4.6. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/PowerCorrelation.html">4.7. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/BuiltInPowerCalc.html">4.9. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/DeterminingEffectSize.html">4.10. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/SampleSizeAndPower.html">4.11. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
 </ul>
 </li>
 </ul>
@@ -280,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_TutorialExercises2.html">1.9. Normal approximation to the binomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -288,6 +289,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -1390,7 +1393,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([13,  7, 17, 10,  3,  4,  6, 14,  4,  9, 13,  2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6,  8,  4,  5, 12, 14, 18,  3,  5,  1,  9, 12])
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -1425,7 +1428,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>1</td>
-      <td>13</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1433,7 +1436,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>green</td>
       <td>4</td>
-      <td>7</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1441,7 +1444,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>17</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1449,7 +1452,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>yellow</td>
       <td>6</td>
-      <td>10</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1457,7 +1460,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>3</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -1516,12 +1519,20 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>lettuce</td>
-      <td>veg</td>
+      <th>10</th>
+      <td>plum</td>
+      <td>fruit</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
       <td>green</td>
-      <td>1</td>
-      <td>13</td>
+      <td>2</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1529,15 +1540,7 @@ Name: Colour, dtype: object
       <td>veg</td>
       <td>orange</td>
       <td>0</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>banana</td>
-      <td>fruit</td>
-      <td>yellow</td>
-      <td>6</td>
-      <td>10</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1545,7 +1548,7 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>brown</td>
       <td>2</td>
-      <td>3</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -1585,20 +1588,12 @@ Name: Colour, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>8</th>
-      <td>potato</td>
-      <td>veg</td>
-      <td>white</td>
-      <td>1</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>banana</td>
+      <th>10</th>
+      <td>plum</td>
       <td>fruit</td>
-      <td>yellow</td>
-      <td>6</td>
-      <td>10</td>
+      <td>purple</td>
+      <td>3</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1606,15 +1601,23 @@ Name: Colour, dtype: object
       <td>fruit</td>
       <td>orange</td>
       <td>5</td>
-      <td>17</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>onion</td>
-      <td>veg</td>
-      <td>brown</td>
-      <td>3</td>
-      <td>6</td>
+      <th>11</th>
+      <td>apple</td>
+      <td>fruit</td>
+      <td>green</td>
+      <td>2</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>lychee</td>
+      <td>fruit</td>
+      <td>white</td>
+      <td>4</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1648,7 +1651,7 @@ Name: Colour, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ff31c46ad90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fc174922040&gt;
 </pre></div>
 </div>
 </div>
@@ -1695,7 +1698,7 @@ dtype: int64
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_46181/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
+<span class="nn">/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_1978/2378309076.py</span> in <span class="ni">?</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Colour&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">columns</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># as you can see, this spits out an error because &#39;Type&#39; and &#39;Colour&#39; are indices not columns</span>

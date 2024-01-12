@@ -262,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Type1and2Errors.html">4.3. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
@@ -292,6 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -718,7 +719,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2dd0a9d299a8252e2954561d76e1a0d10527fcc5367db57c5c4d18460fafa622.png" src="../_images/2dd0a9d299a8252e2954561d76e1a0d10527fcc5367db57c5c4d18460fafa622.png" />
+<img alt="../_images/610902ac7e2d0640f6b66ac524b5dfc51683aa2eeb7c1c3e781a269d79238672.png" src="../_images/610902ac7e2d0640f6b66ac524b5dfc51683aa2eeb7c1c3e781a269d79238672.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -758,11 +759,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.001217</td>
+      <td>-0.006292</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.001217</td>
+      <td>-0.006292</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -791,7 +792,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.13406569940088578, pvalue=0.82335065097026)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.0065502896042900355, pvalue=0.48199527237328305)
 </pre></div>
 </div>
 </div>
@@ -804,7 +805,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.82335065097026
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.48199527237328305
 </pre></div>
 </div>
 </div>
@@ -829,7 +830,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0511
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0483
 </pre></div>
 </div>
 </div>
@@ -875,7 +876,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/797f2f55aab9eb413e7d8c974d3182125ac14a3d6a1db122748e5492378a87b2.png" src="../_images/797f2f55aab9eb413e7d8c974d3182125ac14a3d6a1db122748e5492378a87b2.png" />
+<img alt="../_images/02278dfe463335878baa6b491a048b0367820850ea956744dd73944085510faa.png" src="../_images/02278dfe463335878baa6b491a048b0367820850ea956744dd73944085510faa.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -913,11 +914,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.266328</td>
+      <td>0.241402</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.266328</td>
+      <td>0.241402</td>
       <td>1.000000</td>
     </tr>
   </tbody>

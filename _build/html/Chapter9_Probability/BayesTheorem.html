@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter9_Probability/BayesTheorem';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Regression" href="../Chapter10_Regression1/regression1_intro.html" />
+    <link rel="next" title="2.6. Exercises: paper and pencil" href="PaperAndPencilExercises.html" />
     <link rel="prev" title="2.4. Event combinations" href="EventCombinations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -264,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelation.html">4.6. Power analysis by simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
@@ -294,6 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Independence.html">2.3. Statsitical Independence</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 </ul>
 </li>
 </ul>
@@ -550,6 +551,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-cause-from-data">2.5.1. Inferring cause from data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cancer-screening-example">Cancer screening example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-p-cause-data">Bayes theorem: p(cause|data)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-cutoff">Setting the cutoff</a></li>
 </ul>
@@ -571,19 +573,22 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[p(A|B) = \frac{p(B|A)p(A)}{p(B)}\]</div>
 <p>If we know the conditional probability <span class="math notranslate nohighlight">\(p(B|A)\)</span> and the two marginals <span class="math notranslate nohighlight">\(p(A)\)</span> and <span class="math notranslate nohighlight">\(p(B)\)</span>, we can work out the final element <span class="math notranslate nohighlight">\(p(A|B)\)</span>.</p>
-<p>In other words, Bayes theorem allows us to reverse the structure of our probability tree - say we know the probabilities associated with each of the branches on the left - Bayes lets us work out the probabilities associated with each of the branches on the right:</p>
+<p>In other words, Bayes theorem allows us to reverse the structure of our probability tree - say we know the probabilities associated with the branching structure on the left - Bayes lets us work out the probabilities associated withthe branching structure the right (note these are not the same as each other!):</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree1.png" style="width: 95%;" /></a>
 <p>Here’s a recap of what all the different probabilities on the tree are in terms of probability notation:</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTerminologyRecap.png" style="width: 95%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_TerminologyRecap.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_TerminologyRecap.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_TerminologyRecap.png" style="width: 95%;" /></a>
 <p>And here we can see that the roles of H and E are reversed when we reverse the order of the tree:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesTree2.png" style="width: 95%;" /></a>
 <section id="inferring-cause-from-data">
 <h2><span class="section-number">2.5.1. </span>Inferring cause from data<a class="headerlink" href="#inferring-cause-from-data" title="Permalink to this heading">#</a></h2>
 <p>You may well be thinking, why is this so important?</p>
-<p>Bayes was interested in probability trees where not all the probabilities could be observed simply by counting (you could solve the problem above by just counting how many people had each combination of hair and eye colour and putting them into a contingency table).</p>
-<p>A key example of a probability tree where we can’t observe everying directly is in medical screening. We are able to observe the outcome of a screening test (such as a mammogram or ultrasound) and from this we must infer whether the patient has a disease.</p>
+<p>Well, Bayes was interested in probability trees where not all the probabilities could be observed simply by counting (you could solve the problem above by just counting how many people had each combination of hair and eye colour and putting them into a contingency table).</p>
+<p>A key example of a probability tree where we can’t observe everying directly is in medical screening. We are able to observe the outcome of a screening test (such as a mammogram or ultrasound) and from this we must infer whether the patient has a disease (there is a true state of reality - disease or no disease - but this cannot be directly observed).</p>
 <p>Because screens can be a true positive, correct reject, false positive, or false alarm, a positive screen doesn’t necessarily mean that the person has the disease.</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_BayesGrid.png" style="width: 95%;" /></a>
+<p>Bayes Theorem allows us to interpret the results of a screening test correctly</p>
+<section id="cancer-screening-example">
+<h3>Cancer screening example<a class="headerlink" href="#cancer-screening-example" title="Permalink to this heading">#</a></h3>
 <p>For example, say 100,000 women in their 40’s get routine screening for breast cancer:</p>
 <ul class="simple">
 <li><p>Let <span class="math notranslate nohighlight">\(C\)</span> be the event that a woman has breast cancer</p></li>
@@ -605,7 +610,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>However, neither of these on their own tells the poatient and their doctor what they need to know, which is not <span class="math notranslate nohighlight">\(p(P|C)\)</span> but rather, <span class="math notranslate nohighlight">\(p(C|P)\)</span>.</p>
+<p>However, neither of these on their own tells the patient and their doctor what they need to know, which is not <span class="math notranslate nohighlight">\(p(P|C)\)</span> but rather, <span class="math notranslate nohighlight">\(p(C|P)\)</span>.</p>
+</section>
 <section id="bayes-theorem-p-cause-data">
 <h3>Bayes theorem: p(cause|data)<a class="headerlink" href="#bayes-theorem-p-cause-data" title="Permalink to this heading">#</a></h3>
 <p>Out of the 100000 women, 3835 have a positive screen (alert for possible breast cancer). As one of those women, the patient needs to know what the probability is that she actually has breast cancer.</p>
@@ -613,7 +619,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[p(C|P) = \frac{p(P|C)p(C)}{p(P)}\]</div>
 <p>The marginal probabilty p(C) is found at the first branch point on the tree (0.4% of women in their 40s develop brest cancer, <span class="math notranslate nohighlight">\(p(C)=0.004\)</span>). This is sometimes called the <strong>prior probability</strong> of cancer (the probability we would say any woman had, before we had the information from the screening test).</p>
-<p>The marginal probability <span class="math notranslate nohighlight">\(p(P)\)</span> is found by counting how many positive tests we have altogether from the 100000 women (349+3486 = 3835, so <span class="math notranslate nohighlight">\(p(P) = 3835/100000 = 0.03835\)</span>)</p>
+<p>The marginal probability <span class="math notranslate nohighlight">\(p(P)\)</span> is found by counting how many positive tests we have altogether from the 100000 women (349+3486 = 3835), so <span class="math notranslate nohighlight">\(p(P) = 3835/100000 = 0.03835\)</span></p>
 <p>Putting it all together we find that the probability a woman in her 40s has cancer, given the positive mammogram, is 0.088 (less than 10%).</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Minion_what.jpg" style="width: 15%;" /></a>
 <p>That was surprising, wasn’t it?</p>
@@ -630,7 +636,7 @@ document.write(`
 <h3>Setting the cutoff<a class="headerlink" href="#setting-the-cutoff" title="Permalink to this heading">#</a></h3>
 <p>We have previously seen that when setting a cutoff (the alpha value for a statistical test, or the clinically significant level of some measurement in a diagnostic test) we need to balance the probability of false positives and false negatives, and their implications.</p>
 <p>We see now that the prior probability of each ground trust state of realiyy (the healthy and disease state, for example) is a further ingredient in this decision, as it also affects the probability of false positives and negatives.</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOoffs.png" style="width: 85%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOffs.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOffs.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOffs.png" style="width: 85%;" /></a>
 </section>
 </section>
 </section>
@@ -675,11 +681,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter10_Regression1/regression1_intro.html"
+       href="PaperAndPencilExercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Regression</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Exercises: paper and pencil</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -699,6 +705,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inferring-cause-from-data">2.5.1. Inferring cause from data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cancer-screening-example">Cancer screening example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem-p-cause-data">Bayes theorem: p(cause|data)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-the-cutoff">Setting the cutoff</a></li>
 </ul>
