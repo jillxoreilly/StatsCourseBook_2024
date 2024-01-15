@@ -113,6 +113,8 @@ parts:
         - file: Chapter8_DataGeneratingDistributions/binomial_normal.ipynb
         - file: Chapter8_DataGeneratingDistributions/binomial_normalApprox.ipynb
         - file: Chapter8_DataGeneratingDistributions/TutorialExercises.ipynb
+        - file: Chapter8_DataGeneratingDistributions/CentralLimitTheorem.ipynb
+        - file: Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.ipynb
       - file: Chapter9_Probability/Probability_intro.md
         sections:
         - file: Chapter9_Probability/KolmogorovAxioms.md

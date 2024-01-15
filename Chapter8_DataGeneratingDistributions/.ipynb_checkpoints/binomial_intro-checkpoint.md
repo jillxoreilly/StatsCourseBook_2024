@@ -15,7 +15,7 @@ The probability of a hit is a fixed value ($p$)
 
 The event is repeated a certain number of times ($n$) and we count the number of times ($k$) one of the outcomes (the "hit") occurs
 
-```{image} https://jillxoreilly.github.io/StatsCourseBook/main/images/BinomialTable.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/BinomialTable.png
 :alt: table of examples
 :class: bg-primary mb-1
 :width: 80%
@@ -27,7 +27,7 @@ In each case we can ask:
 
 What is the probability of obtaining
 $k$ (or *at least $k$*) hits out of $n$ trials, given
-that the probability of a hit on any given trial is $p$?*
+that the probability of a hit on any given trial is $p$?
 
 The probability of each value of $k$ is given by the **binomial distribution**
 
