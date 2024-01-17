@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -720,7 +725,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b7023503f4cea5d5fa410076b7a4e49837402612bb33005955332cf1db3bb18a.png" src="../_images/b7023503f4cea5d5fa410076b7a4e49837402612bb33005955332cf1db3bb18a.png" />
+<img alt="../_images/a2563fc1007525c3ff13a085352133574b96c683360688d4fdbf7d1b0f561238.png" src="../_images/a2563fc1007525c3ff13a085352133574b96c683360688d4fdbf7d1b0f561238.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -760,11 +765,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.008132</td>
+      <td>-0.009771</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.008132</td>
+      <td>-0.009771</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -790,7 +795,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0429
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0434
 </pre></div>
 </div>
 </div>
@@ -830,7 +835,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8ace3123153fd3efd6b381361f62a8dc1b3d2627edb5bf71ad63188c8371e55.png" src="../_images/f8ace3123153fd3efd6b381361f62a8dc1b3d2627edb5bf71ad63188c8371e55.png" />
+<img alt="../_images/c8bd66a0864d6937a214fcf2cbd9a1582a32f5cc35cd732a1766980a123574e3.png" src="../_images/c8bd66a0864d6937a214fcf2cbd9a1582a32f5cc35cd732a1766980a123574e3.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -867,11 +872,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.247953</td>
+      <td>0.258022</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.247953</td>
+      <td>0.258022</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -901,7 +906,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.539
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.573
 </pre></div>
 </div>
 </div>
@@ -928,7 +933,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.572
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.547
 </pre></div>
 </div>
 </div>
@@ -966,13 +971,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c564cd79ca0b92fdf8c6ddd9c5a16d7051b248bdad2194d32ca7da7f0d0f8dc9.png" src="../_images/c564cd79ca0b92fdf8c6ddd9c5a16d7051b248bdad2194d32ca7da7f0d0f8dc9.png" />
+<img alt="../_images/988f8c3a502c5beb4d786e50d998909ffb6e7c783fa8fe76dbd971198b3cee93.png" src="../_images/988f8c3a502c5beb4d786e50d998909ffb6e7c783fa8fe76dbd971198b3cee93.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
 <p>Conventionally a power of 80% (indicated by the red dashed line on the graph) is considered desirable (80% is a completely arbitrary value by the way).</p>
 <p>What sample size do we need to get power of 80%? It looks from the graph like you would need around n=120. Here are the results if we run a finer grained simulation in that range:</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSImFine.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSImFine.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSImFine.png" style="width: 75%;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" style="width: 75%;" /></a>
 </section>
 <section id="recap">
 <h2><span class="section-number">4.7.6. </span>Recap<a class="headerlink" href="#recap" title="Permalink to this heading">#</a></h2>

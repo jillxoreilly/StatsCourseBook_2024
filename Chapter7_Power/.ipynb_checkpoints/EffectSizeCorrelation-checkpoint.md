@@ -46,7 +46,7 @@ However you can get straight to the $p$-value by using `scipy.stats` - note that
 
 Here is the syntax to test the correlation between Maths and English scores, assuming these are columns in a dataframe `scores`:
 
-`stats.pearson(scores.maths, scores.english).pvalue`
+`stats.pearsonr(scores.maths, scores.english).pvalue`
 
 ### What counts as a large effect
 

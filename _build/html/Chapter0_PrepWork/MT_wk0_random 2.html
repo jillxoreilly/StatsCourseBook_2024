@@ -282,6 +282,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -649,7 +654,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -694,14 +699,14 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TAILS
 HEADS
-TAILS
-HEADS
-HEADS
 HEADS
 TAILS
 TAILS
 TAILS
 TAILS
+TAILS
+TAILS
+HEADS
 </pre></div>
 </div>
 </div>
@@ -728,7 +733,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
 </pre></div>
 </div>
 </div>
@@ -771,7 +776,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c1c2eac40ce1f60fa9211b690532b71c967737837f412c1b36784655f4c5b16e.png" src="../_images/c1c2eac40ce1f60fa9211b690532b71c967737837f412c1b36784655f4c5b16e.png" />
+<img alt="../_images/c9658b1a17f998f4ecf97f74aae4c6e7e05a7ffcaea05ccbb51be0479d1193fe.png" src="../_images/c9658b1a17f998f4ecf97f74aae4c6e7e05a7ffcaea05ccbb51be0479d1193fe.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -857,7 +862,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/74e39e8bef0660b89390a04f4a6fecdc3c46525134ac3f1c7f479739e3863b6d.png" src="../_images/74e39e8bef0660b89390a04f4a6fecdc3c46525134ac3f1c7f479739e3863b6d.png" />
+<img alt="../_images/36beaa5a549aad742e87d90443e74ae216306718d4222cddbed0bc6e8c8def19.png" src="../_images/36beaa5a549aad742e87d90443e74ae216306718d4222cddbed0bc6e8c8def19.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -1017,7 +1022,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3cd557d39ed3853d29e3e9b3c431e940b1a0a118af5eb386841030b4e14b6462.png" src="../_images/3cd557d39ed3853d29e3e9b3c431e940b1a0a118af5eb386841030b4e14b6462.png" />
+<img alt="../_images/8bc583b536de934625112b49ff9da8e4c3f20e725f7ac3f82a94c23cb470f811.png" src="../_images/8bc583b536de934625112b49ff9da8e4c3f20e725f7ac3f82a94c23cb470f811.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -1042,7 +1047,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2d6f0e5e05f67ed901e44acbeebe70fe1e5770c868e7e95d398fca18d43ee44d.png" src="../_images/2d6f0e5e05f67ed901e44acbeebe70fe1e5770c868e7e95d398fca18d43ee44d.png" />
+<img alt="../_images/e6af41068f1b06772fbc9ff0240590b0a4d0388adc281236f36a89781f526518.png" src="../_images/e6af41068f1b06772fbc9ff0240590b0a4d0388adc281236f36a89781f526518.png" />
 </div>
 </div>
 </section>

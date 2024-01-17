@@ -284,6 +284,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -719,7 +724,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33d35375c759cf4e85b6400caa05270d9d6eb1df5d6fa8b6b0f262cf5264cded.png" src="../_images/33d35375c759cf4e85b6400caa05270d9d6eb1df5d6fa8b6b0f262cf5264cded.png" />
+<img alt="../_images/59f6fba5a154e599afc7757d6859092515e000be601946fa54b83cefd42e05e9.png" src="../_images/59f6fba5a154e599afc7757d6859092515e000be601946fa54b83cefd42e05e9.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -759,11 +764,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.009497</td>
+      <td>-0.003021</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.009497</td>
+      <td>-0.003021</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -792,7 +797,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.04842775155503426, pvalue=0.3692008055483997)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.005572870066274459, pvalue=0.48468050612878805)
 </pre></div>
 </div>
 </div>
@@ -805,7 +810,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3692008055483997
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.48468050612878805
 </pre></div>
 </div>
 </div>
@@ -830,7 +835,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.053
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0483
 </pre></div>
 </div>
 </div>
@@ -876,7 +881,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2ab5d70fffb52ea9284ba1d3919088ce95456c97f7470d6de86296bf597faea.png" src="../_images/e2ab5d70fffb52ea9284ba1d3919088ce95456c97f7470d6de86296bf597faea.png" />
+<img alt="../_images/e238a097688acc4af8cd0b3a7845cfc1abe985f98f5da96f5d36ba0ade801e22.png" src="../_images/e238a097688acc4af8cd0b3a7845cfc1abe985f98f5da96f5d36ba0ade801e22.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -914,11 +919,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.238225</td>
+      <td>0.249042</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.238225</td>
+      <td>0.249042</td>
       <td>1.000000</td>
     </tr>
   </tbody>

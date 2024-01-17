@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -643,7 +648,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.35323074966961454
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08381565492912135
 is it a hit?:            0
 </pre></div>
 </div>
@@ -672,7 +677,7 @@ is it a hit?:            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab64da96a32183059630f0552bc7ad4d77887cfe6a21b7d9e07f26433bc5fe6a.png" src="../_images/ab64da96a32183059630f0552bc7ad4d77887cfe6a21b7d9e07f26433bc5fe6a.png" />
+<img alt="../_images/57701403ee49e0f34fefc179cd8a8c67b79b048fa77e85f967fa810cacfcb0cd.png" src="../_images/57701403ee49e0f34fefc179cd8a8c67b79b048fa77e85f967fa810cacfcb0cd.png" />
 </div>
 </div>
 <p>What if we change <span class="math notranslate nohighlight">\(p\)</span> to be 0.7 instead?</p>
@@ -693,7 +698,7 @@ is it a hit?:            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0371832ef2e0339508b632af20a801fea195361e2229f264751d01da35236d07.png" src="../_images/0371832ef2e0339508b632af20a801fea195361e2229f264751d01da35236d07.png" />
+<img alt="../_images/9a8655eb0125aefb3b7bddf090efcfec2cfcd670a9dba205590d804f7aac37d5.png" src="../_images/9a8655eb0125aefb3b7bddf090efcfec2cfcd670a9dba205590d804f7aac37d5.png" />
 </div>
 </div>
 <p>You should notice after modifying the simulation so that <span class="math notranslate nohighlight">\(p=0.7\)</span>:</p>
@@ -725,7 +730,7 @@ is it a hit?:            0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 6.9901
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean(k) = 7.0025
 np = 7.0
 </pre></div>
 </div>
@@ -754,7 +759,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d455bd332b316a6041863af6710e3022e7b6c5cb3fdbe1e04a5119d7024be0a.png" src="../_images/6d455bd332b316a6041863af6710e3022e7b6c5cb3fdbe1e04a5119d7024be0a.png" />
+<img alt="../_images/57c39b7ec464d77e39eeccaef4e2cad5bc4acd6fdd5a481cb5952df53286c845.png" src="../_images/57c39b7ec464d77e39eeccaef4e2cad5bc4acd6fdd5a481cb5952df53286c845.png" />
 </div>
 </div>
 <p>We can see that the peak of the histogram is where we expect (the most common value of <span class="math notranslate nohighlight">\(k\)</span> is 50, <span class="math notranslate nohighlight">\(np\)</span>) but the spread of the histogram is narrower, compared to the range of possible values for <span class="math notranslate nohighlight">\(k\)</span> (0 to <span class="math notranslate nohighlight">\(n\)</span>) than when <span class="math notranslate nohighlight">\(n\)</span> was lower</p>
@@ -781,7 +786,7 @@ np = 7.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.080716091261152
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>std(k) = 5.012340562052822
 sqrt(npq) = 5.0
 </pre></div>
 </div>

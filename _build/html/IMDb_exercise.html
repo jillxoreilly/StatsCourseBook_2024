@@ -282,6 +282,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -1053,10 +1058,47 @@ mean rating - with profanity = 6.625366193908393
 4446
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Difference of means: no profanity- profanity&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">sample1</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;None&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">sample2</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s1">&#39;Profanity&#39;</span><span class="p">]</span><span class="o">!=</span><span class="s1">&#39;None&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">mDiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">sample1</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">sample2</span><span class="p">[</span><span class="s1">&#39;Rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">mDiff</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/ops/common.py:81,</span> in <span class="ni">_unpack_zerodim_and_defer.&lt;locals&gt;.new_method</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>             <span class="k">return</span> <span class="bp">NotImplemented</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">other</span> <span class="o">=</span> <span class="n">item_from_zerodim</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">81</span> <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arraylike.py:44,</span> in <span class="ni">OpsMixin.__ne__</span><span class="nt">(self, other)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span> <span class="nd">@unpack_zerodim_and_defer</span><span class="p">(</span><span class="s2">&quot;__ne__&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">44</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cmp_method</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">ne</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py:6096,</span> in <span class="ni">Series._cmp_method</span><span class="nt">(self, other, op)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6093</span> <span class="n">rvalues</span> <span class="o">=</span> <span class="n">extract_array</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">extract_numpy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">extract_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6095</span> <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="nb">all</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">6096</span>     <span class="n">res_values</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="n">comparison_op</span><span class="p">(</span><span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6098</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_result</span><span class="p">(</span><span class="n">res_values</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">res_name</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/ops/array_ops.py:293,</span> in <span class="ni">comparison_op</span><span class="nt">(left, right, op)</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>     <span class="k">return</span> <span class="n">invalid_comparison</span><span class="p">(</span><span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span> <span class="k">elif</span> <span class="n">is_object_dtype</span><span class="p">(</span><span class="n">lvalues</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rvalues</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">293</span>     <span class="n">res_values</span> <span class="o">=</span> <span class="n">comp_method_OBJECT_ARRAY</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">res_values</span> <span class="o">=</span> <span class="n">_na_arithmetic_op</span><span class="p">(</span><span class="n">lvalues</span><span class="p">,</span> <span class="n">rvalues</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">is_cmp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/ops/array_ops.py:82,</span> in <span class="ni">comp_method_OBJECT_ARRAY</span><span class="nt">(op, x, y)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">libops</span><span class="o">.</span><span class="n">vec_compare</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">82</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">libops</span><span class="o">.</span><span class="n">scalar_compare</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">y</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
-<img alt="_images/4a0c725f63fb815886842e50560bc5d3fd3a748e353f7d58c97d71c9c4448c8a.png" src="_images/4a0c725f63fb815886842e50560bc5d3fd3a748e353f7d58c97d71c9c4448c8a.png" />
 </div>
 </div>
 <p>Since the difference of means is almost always greater than ero, we can be confident that movies with no profanity really do have higher mean ratings - even if the difference is less than 0.3/10 points!</p>
@@ -1073,10 +1115,10 @@ mean rating - with profanity = 6.625366193908393
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Certificate
-R            1885
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>R            1885
 PG-13        1145
 PG            530
+None          296
 Not Rated     189
 TV-MA         109
 G              70
@@ -1093,7 +1135,7 @@ X               6
 TV-Y7           5
 M               3
 M/PG            2
-Name: count, dtype: int64
+Name: Certificate, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1179,10 +1221,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
     </tr>
     <tr>
@@ -1196,7 +1238,7 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
       <td>Mild</td>
@@ -1213,7 +1255,7 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Moderate</td>
       <td>Mild</td>
       <td>Mild</td>
@@ -1232,8 +1274,8 @@ Name: count, dtype: int64
       <td>NaN</td>
       <td>Mild</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
     </tr>
     <tr>
@@ -1248,10 +1290,10 @@ Name: count, dtype: int64
       <td>E</td>
       <td>NaN</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
     </tr>
     <tr>
       <th>872</th>
@@ -1267,7 +1309,7 @@ Name: count, dtype: int64
       <td>Mild</td>
       <td>Mild</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
     </tr>
     <tr>
@@ -1298,10 +1340,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
     </tr>
     <tr>
@@ -1315,10 +1357,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
     </tr>
     <tr>
@@ -1349,7 +1391,7 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
       <td>Mild</td>
@@ -1366,7 +1408,7 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>E</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
       <td>Mild</td>
@@ -1454,10 +1496,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>TV-G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
       <td>U</td>
     </tr>
@@ -1472,11 +1514,11 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>TV-G</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>U</td>
     </tr>
     <tr>
@@ -1490,10 +1532,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>U</td>
     </tr>
@@ -1508,10 +1550,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Moderate</td>
       <td>U</td>
     </tr>
@@ -1526,10 +1568,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Moderate</td>
       <td>U</td>
     </tr>
@@ -1562,10 +1604,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
       <td>U</td>
     </tr>
@@ -1580,9 +1622,9 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
       <td>U</td>
@@ -1598,10 +1640,10 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>Mild</td>
       <td>U</td>
     </tr>
@@ -1616,9 +1658,9 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
-      <td>NaN</td>
+      <td>None</td>
       <td>Mild</td>
       <td>Mild</td>
       <td>U</td>
@@ -1634,11 +1676,11 @@ Name: count, dtype: int64
       <td>Film</td>
       <td>G</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
       <td>U</td>
     </tr>
   </tbody>

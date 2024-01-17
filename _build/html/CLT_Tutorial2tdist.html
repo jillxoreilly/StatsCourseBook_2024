@@ -284,6 +284,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -653,7 +658,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/be821c530376434010d88b4a91473a751eace68b0bb8900492829a8a00736d21.png" src="_images/be821c530376434010d88b4a91473a751eace68b0bb8900492829a8a00736d21.png" />
+<img alt="_images/659e5c6f9e141a0667fc5e8d8f74a4119874229d869c0e651b8572a8bcd44b81.png" src="_images/659e5c6f9e141a0667fc5e8d8f74a4119874229d869c0e651b8572a8bcd44b81.png" />
 </div>
 </div>
 <p><b>Python Note - matching the PDF to the histogram</b></p>
@@ -704,7 +709,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9f87490d5e30abdd05921025c5c4dbeeebfe63ba7f609af4f46d4f45d3b8a942.png" src="_images/9f87490d5e30abdd05921025c5c4dbeeebfe63ba7f609af4f46d4f45d3b8a942.png" />
+<img alt="_images/c8eb02097b0b6e6174038589d321f74ffef12352ed3ceb535d6ce914dace00ef.png" src="_images/c8eb02097b0b6e6174038589d321f74ffef12352ed3ceb535d6ce914dace00ef.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -734,7 +739,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ebcf50107f3ab4a9c9e2a765b9bfd871dbd1adac6e9c32823f17fb54864c402d.png" src="_images/ebcf50107f3ab4a9c9e2a765b9bfd871dbd1adac6e9c32823f17fb54864c402d.png" />
+<img alt="_images/0cc3a9508054a794e6066313c901c0c6f6a3d271dbeb2c4df0b3be5b29cc6099.png" src="_images/0cc3a9508054a794e6066313c901c0c6f6a3d271dbeb2c4df0b3be5b29cc6099.png" />
 </div>
 </div>
 <p>Note that the Central Limit Theorem does <b><i>not</i></b> tell us that <span class="math notranslate nohighlight">\(s\)</span> is normally distributed - only <span class="math notranslate nohighlight">\(m\)</span> has that honour.</p>
@@ -766,10 +771,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.946716893216908
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.996619442357393
 </pre></div>
 </div>
-<img alt="_images/61872ab541962a0d62b9c8168de43976f026a3978a1800f7bc3545390acab454.png" src="_images/61872ab541962a0d62b9c8168de43976f026a3978a1800f7bc3545390acab454.png" />
+<img alt="_images/e2f3d7aa8eef04de2f1e1c9e93fa08b4ece09d2137bb7ff677106a1db3fc52ba.png" src="_images/e2f3d7aa8eef04de2f1e1c9e93fa08b4ece09d2137bb7ff677106a1db3fc52ba.png" />
 </div>
 </div>
 </section>
@@ -849,13 +854,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.04534180448363
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.02673704948327
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.936368050324622
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.981498972768163
 </pre></div>
 </div>
-<img alt="_images/b683eb8846729119ccd6ccc26c64c7c4fca1ff3216887ecd99e72207f71fee10.png" src="_images/b683eb8846729119ccd6ccc26c64c7c4fca1ff3216887ecd99e72207f71fee10.png" />
+<img alt="_images/9eb77274d74994f74c34fdef0d76b159637eea1d2740210c135ac5d2f86921a6.png" src="_images/9eb77274d74994f74c34fdef0d76b159637eea1d2740210c135ac5d2f86921a6.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="_images/Minion_what.jpg"><img alt="What?!" src="_images/Minion_what.jpg" style="width: 10%;" /></a>
@@ -931,7 +936,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7fc854e30681441ef94f1456f5d94caaf7d4b32c23ee5b4e02725bb5b9c3a457.png" src="_images/7fc854e30681441ef94f1456f5d94caaf7d4b32c23ee5b4e02725bb5b9c3a457.png" />
+<img alt="_images/c332066c7f4f78ef45141ab74327698337171151b003bbc36df1b7b8383f596b.png" src="_images/c332066c7f4f78ef45141ab74327698337171151b003bbc36df1b7b8383f596b.png" />
 </div>
 </div>
 <p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
@@ -943,7 +948,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.13
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14.8
 </pre></div>
 </div>
 </div>
@@ -987,8 +992,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d7647bff07b60a06dc5296a33c7b8591d55a133cf0d0b55618a99542e71a385a.png" src="_images/d7647bff07b60a06dc5296a33c7b8591d55a133cf0d0b55618a99542e71a385a.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1087
+<img alt="_images/88bfa65867544407e86e9dbfacb83d5441ee7c43aced3d243e566a1347bf62af.png" src="_images/88bfa65867544407e86e9dbfacb83d5441ee7c43aced3d243e566a1347bf62af.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.106
 </pre></div>
 </div>
 </div>

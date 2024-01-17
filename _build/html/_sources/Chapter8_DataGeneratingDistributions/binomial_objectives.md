@@ -21,7 +21,7 @@ trials (using the CDF)
 * For a normally distributed variable x~N(m,s), calculate the
 probability that x falls in a given range, using the CDF
 * Convert values of x into Z-scores
-* Understand the relationship of the normal to the binomial distriubtion
+* Understand the relationship of the normal to the binomial distribution
 
 
 ## Python skills 
