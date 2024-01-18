@@ -284,6 +284,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -694,16 +699,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TAILS
 HEADS
 HEADS
 TAILS
-TAILS
-TAILS
+HEADS
 HEADS
 TAILS
 HEADS
 TAILS
+HEADS
 </pre></div>
 </div>
 </div>
@@ -730,7 +735,7 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.0
 </pre></div>
 </div>
 </div>
@@ -753,8 +758,8 @@ TAILS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
-sum = 1.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 0. 1. 1. 1. 1. 1. 1. 1. 0.]
+sum = 8.0
 </pre></div>
 </div>
 </div>
@@ -796,7 +801,7 @@ sum = 1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4986f48c064d88ceee7b35851880e973a5e95c882e78cbba6c288bca09dc8e3.png" src="../_images/e4986f48c064d88ceee7b35851880e973a5e95c882e78cbba6c288bca09dc8e3.png" />
+<img alt="../_images/b66776b78be72fcac504ff5181f9d318a22be5ee51189868f0343658af452af3.png" src="../_images/b66776b78be72fcac504ff5181f9d318a22be5ee51189868f0343658af452af3.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -882,7 +887,7 @@ sum = 1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fa1e607f142b7cc3290bcc3203eb81ae5c3a0b686d9a0ca3f2b5dd2341bc3e11.png" src="../_images/fa1e607f142b7cc3290bcc3203eb81ae5c3a0b686d9a0ca3f2b5dd2341bc3e11.png" />
+<img alt="../_images/641c17cbb099468956b8193df91f113a7aaed53f7897fdb6bb3c76a29c52ea8b.png" src="../_images/641c17cbb099468956b8193df91f113a7aaed53f7897fdb6bb3c76a29c52ea8b.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -1042,7 +1047,7 @@ sum = 1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ea1d8cdf031ca8db8456255aa111de75396e33cfed90f834856ea648e35ecd64.png" src="../_images/ea1d8cdf031ca8db8456255aa111de75396e33cfed90f834856ea648e35ecd64.png" />
+<img alt="../_images/9776cc9d82c9e9433575ea1a362db45d829b99561eed6309d905f994816d0cd0.png" src="../_images/9776cc9d82c9e9433575ea1a362db45d829b99561eed6309d905f994816d0cd0.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -1067,7 +1072,7 @@ sum = 1.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e2dcc53cef4bf9fb2fe17160f1a2deb47ea92369f56908d7f5f83423f801e16.png" src="../_images/2e2dcc53cef4bf9fb2fe17160f1a2deb47ea92369f56908d7f5f83423f801e16.png" />
+<img alt="../_images/d9d99560cc70e92656c5d73722fd20bb968dfaefaa9e84495fa3b35cdc747317.png" src="../_images/d9d99560cc70e92656c5d73722fd20bb968dfaefaa9e84495fa3b35cdc747317.png" />
 </div>
 </div>
 </section>

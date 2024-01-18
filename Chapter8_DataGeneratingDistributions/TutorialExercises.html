@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_DataGeneratingDistributions/TutorialExercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Probability" href="../Chapter9_Probability/Probability_intro.html" />
+    <link rel="next" title="1.10. Extension Work - Central Limit Theorem (reading)" href="CentralLimitTheorem.html" />
     <link rel="prev" title="1.8. Normal distribution" href="binomial_normal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -683,24 +688,28 @@ document.write(`
 <span class="n">p</span> <span class="o">=</span> <span class="mf">0.2</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">binom</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">binom</span> <span class="o">=</span> <span class="c1"># Your code here to find the probabilties for each value of k using the binomial pmf</span>
 
-<span class="n">mu</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">p</span> <span class="c1"># mean of normal distribution</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">))</span><span class="o">**</span><span class="mf">0.5</span> <span class="c1"># std dev of normal distribution</span>
-<span class="n">norm</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="c1"># Your code here for the mean of normal distribution</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="c1"># Your code here for the std dev of normal distribution</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="c1"># Your code here to find the probabilties for each value of k using the binomial pmf</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">binom</span><span class="p">,</span> <span class="s1">&#39;b.-&#39;</span><span class="p">)</span> <span class="c1"># plot binomial PMF as blue line</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="s1">&#39;r.--&#39;</span><span class="p">)</span> <span class="c1"># plot normal PDF as red dashed line</span>
+<span class="c1">#plt.plot(x, binom, &#39;b.-&#39;) # plot binomial PMF as blue line</span>
+<span class="c1">#plt.plot(x, norm, &#39;r.--&#39;) # plot normal PDF as red dashed line</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k hits&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;probability&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">#plt.xlabel(&#39;k hits&#39;)</span>
+<span class="c1">#plt.ylabel(&#39;probability&#39;)</span>
+<span class="c1">#plt.show()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4ed5aab3bf3e0f1f3d0fd96a7b445ad9d4ea682cfd0786a67e13894fd992c9a8.png" src="../_images/4ed5aab3bf3e0f1f3d0fd96a7b445ad9d4ea682cfd0786a67e13894fd992c9a8.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="n">binom</span> <span class="o">=</span> <span class="c1"># Your code here to find the probabilties for each value of k using the binomial pmf</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
 </div>
 </div>
 <p>Now we will explore how good the fit is for different values of <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></p>
@@ -758,15 +767,13 @@ document.write(`
 <span class="n">p</span><span class="o">=</span> <span class="mf">0.5</span>
 
 <span class="c1"># Your code here to generate 10000 values of k</span>
-<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">nReps</span><span class="p">)</span>
 
 <span class="c1"># Your code here to find the proportion in which k&gt;=22</span>
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">k</span><span class="o">&gt;=</span><span class="mi">22</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00806268
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00805143
 </pre></div>
 </div>
 </div>
@@ -825,11 +832,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter9_Probability/Probability_intro.html"
+       href="CentralLimitTheorem.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Probability</p>
+        <p class="prev-next-title"><span class="section-number">1.10. </span>Extension Work - Central Limit Theorem (reading)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -15,15 +15,29 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Tutorial Exercises
+n = 10
+p = 0.2
 
-Here we explore
+x = range(n+1)
+binom = # Your code here to find the probabilties for each value of k using the binomial pmf
+
+mu = # Your code here for the mean of normal distribution
+sigma = # Your code here for the std dev of normal distribution
+norm = # Your code here to find the probabilties for each value of k using the binomial pmf
+
+#plt.plot(x, binom, 'b.-') # plot binomial PMF as blue line
+#plt.plot(x, norm, 'r.--') # plot normal PDF as red dashed line
+
+#plt.xlabel('k hits')
+#plt.ylabel('probability')
+#plt.show()
+
 ------------------
 
 
-[0;36m  Cell [0;32mIn[1], line 3[0;36m[0m
-[0;31m    Here we explore[0m
-[0m         ^[0m
+[0;36m  Cell [0;32mIn[3], line 5[0;36m[0m
+[0;31m    binom = # Your code here to find the probabilties for each value of k using the binomial pmf[0m
+[0m            ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
 

@@ -284,6 +284,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -617,10 +622,10 @@ document.write(`
 <h1>Vacation Assignment<a class="headerlink" href="#vacation-assignment" title="Permalink to this heading">#</a></h1>
 <p>This assignment has two parts.</p>
 <p>In the first part you carry out some hypothesis tests; this is designed for you to practice both the process of running the different tests, and to make sure you understand the choices you are making when running tests.</p>
-<p>The second part, ‘revision’, targets some Python syntax and (mmainly) some concepts that I want to make sure everyone has securely grasped. The answers to all conceptual quesitons can be found in the lectures and reading; searching for them is good revision!</p>
+<p>The second part, ‘revision’, targets some Python syntax and (mainly) some concepts that I want to make sure everyone has securely grasped. The answers to all conceptual questions can be found in the lectures and reading; searching for them is good revision!</p>
 <p>Overall, the idea of this assignment is to help you consolidate what you learned this term and it should prepare you well for the collection in January. Please remember that searching for the answers (in the lecture notes etc) and trying things til it works (for coding) is part of the learning process; you are <em>supposed</em> to need to do that rather than having all the answers at your fingertips.</p>
 <p><font color='red'>This can be distributed to students as a model answer but not until 1st week of HT please, as some tutors will set a hand-in deadline in 0th week (including me!)</p>
-<p><font color='red'>The exercises are quite long so please do feel free to give students the model answer rather than correcting each question part on their script as this will be very long winded for you as markers. You can then give some overall feedback/ detailed commments on any ‘thhoughful’ parts as think useful, or give verbal feedback</p>
+<p><font color='red'>The exercises are quite long so please do feel free to give students the model answer rather than correcting each question part on their script as this will be very long winded for you as markers. You can then give some overall feedback/ detailed comments on any ‘thoughtful’ parts as think useful, or give verbal feedback</p>
 <p><font color='red'>Students should be able to complete all the ‘revision’ questions by revising the lectures and reading from the term. It will be more effective as revision if they need to find the answers by themselves, so I suggest leaving them to tackle these over the vacation.</p>
 <p><font color='red'>The data analysis questions recap the process for t-test, permutation test and rank-based test, with some ‘thinking’ questions thrown in. The student could make a start on these in the tutorial.</p>
 <div class="cell docutils container">
@@ -971,8 +976,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0238, null_distribution=array([ 285.51153846,  127.85      ,   46.49615385, ..., -235.61923077,
-          8.44230769,  122.12692308]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=277.3961538461539, pvalue=0.0234, null_distribution=array([-64.13461538,  96.08076923,  88.50384615, ..., 199.07307692,
+       -78.71153846,  72.70384615]))
 </pre></div>
 </div>
 </div>
@@ -1184,7 +1189,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/084ed714c29b2dcf73e89b12a4a3e8cfc80e9fb45141a3259502c05da06d3300.png" src="../_images/084ed714c29b2dcf73e89b12a4a3e8cfc80e9fb45141a3259502c05da06d3300.png" />
+<img alt="../_images/9ae8312c867e4b78e7efe4a19248e234b4fa975c942f368ff87cc74fac311466.png" src="../_images/9ae8312c867e4b78e7efe4a19248e234b4fa975c942f368ff87cc74fac311466.png" />
 </div>
 </div>
 <p><font color='red'> Your comments here!</p>
@@ -1723,8 +1728,8 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-15.985702127659636, pvalue=0.0982, null_distribution=array([-11.9372766 ,   7.19259574,   3.87787234, ...,   5.34297872,
-        13.58076596,   8.51838298]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-15.985702127659636, pvalue=0.107, null_distribution=array([ 2.92910638, -7.7732766 ,  1.06697872, ...,  0.1026383 ,
+       -0.46451064, -2.13293617]))
 </pre></div>
 </div>
 </div>
@@ -1740,8 +1745,8 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-29.423307496075324, pvalue=0.0002, null_distribution=array([-3.33653465, -3.48560951,  7.09198969, ..., -4.62763754,
-        8.79818899, -4.62417083]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=-29.423307496075324, pvalue=0.0002, null_distribution=array([-4.59059406, -7.06813874, -3.41177941, ..., -3.5435816 ,
+       -3.47784763, -6.18906275]))
 </pre></div>
 </div>
 </div>
@@ -2135,7 +2140,7 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9885e912dd180cefa2ad1c8816166a204da84c5023dec606156249eeb9f6485e.png" src="../_images/9885e912dd180cefa2ad1c8816166a204da84c5023dec606156249eeb9f6485e.png" />
+<img alt="../_images/eb6b4f302632b83a012087763d846b805bbda09b0007dd7d7e0e805151e48935.png" src="../_images/eb6b4f302632b83a012087763d846b805bbda09b0007dd7d7e0e805151e48935.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2152,7 +2157,7 @@ X axes ranges should match to allow for direct comparison of the distributions</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2809fa325de8c2bf949aef5f3461cd46059f59f515866fa03ba64fd888bb7c32.png" src="../_images/2809fa325de8c2bf949aef5f3461cd46059f59f515866fa03ba64fd888bb7c32.png" />
+<img alt="../_images/726671ac3b640606f54079eafb4961d82fc9cf251707e513176cd8ebd62c30ac.png" src="../_images/726671ac3b640606f54079eafb4961d82fc9cf251707e513176cd8ebd62c30ac.png" />
 </div>
 </div>
 <p><strong>c. Get the mean height for brothers and sisters separately</strong></p>
@@ -2239,7 +2244,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0798, null_distribution=array([ 2.48,  1.04,  0.88, ..., -1.76, -1.28, -0.96]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0806, null_distribution=array([ 2.56,  2.32,  0.48, ...,  1.84,  3.12, -2.16]))
 </pre></div>
 </div>
 </div>
@@ -2257,7 +2262,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0002, null_distribution=array([-2.48, -1.2 ,  0.72, ..., -2.  , -1.92, -2.96]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0004, null_distribution=array([-1.68, -2.88, -0.48, ...,  2.56,  0.56,  0.24]))
 </pre></div>
 </div>
 </div>
@@ -2270,7 +2275,7 @@ Name: height, dtype: float64
 <p><font color='red'>In test 1 we didn’t make use of the paired nature of the data, therefore between-families variation was not controlled for</p>
 <p><strong>iii) In each case we specify a function to get the difference of means - what is the difference between <code class="docutils literal notranslate"><span class="pre">dMeans()</span></code> and <code class="docutils literal notranslate"><span class="pre">mDiff()</span></code>?</strong></p>
 <p><font color='red'>Your answer here</p>
-<p><font color='red'>mDiff gets the mean difference within eachh pair and averages those differences; dMeans gets the mean for each group and finds the difference</p>
+<p><font color='red'>mDiff gets the mean difference within each pair and averages those differences; dMeans gets the mean for each group and finds the difference</p>
 <p><strong>iv) The Test Statistic is the same for tests 1 and 2. Can you explain why?</strong></p>
 <p><font color='red'>Your answer here</p>
 <p><font color='red'>The mean difference is the same as the difference of means for any given dataset</p>
@@ -2293,7 +2298,7 @@ Name: height, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8fdc7ce38bdf0607eb08a557f055114e1088d4994969e3570579fc3e5e8383e4.png" src="../_images/8fdc7ce38bdf0607eb08a557f055114e1088d4994969e3570579fc3e5e8383e4.png" />
+<img alt="../_images/f909f6b9fb45e2e6097fee3721265d3b393eda9810161d967aac93d3e18f2aec.png" src="../_images/f909f6b9fb45e2e6097fee3721265d3b393eda9810161d967aac93d3e18f2aec.png" />
 </div>
 </div>
 <p><font color='red'>Your answer here</p>

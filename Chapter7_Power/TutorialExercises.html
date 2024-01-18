@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -665,7 +670,7 @@ document.write(`
 <section id="example-2-t-test">
 <h3>Example 2: t-test<a class="headerlink" href="#example-2-t-test" title="Permalink to this heading">#</a></h3>
 <p>A researcher compares the tail length of mice from islands A and B. He reports the findings as follows:</p>
-<p><em>The tails of mice on island B (n=32) were significantly shorter than those on island A (n=40); <span class="math notranslate nohighlight">\(t_{50}=-2.03, p=0.047\)</span>, independent samples t-test, two-tailed.</em></p>
+<p><em>The tails of mice on island B (n=22) were significantly shorter than those on island A (n=30); <span class="math notranslate nohighlight">\(t_{50}=-2.03, p=0.047\)</span>, independent samples t-test, two-tailed.</em></p>
 <p><strong>a. Recover effect size</strong></p>
 <p>What is the effect size, Cohen’s <span class="math notranslate nohighlight">\(d\)</span>?</p>
 <div class="cell docutils container">
@@ -704,7 +709,6 @@ document.write(`
 <p><strong>a.Effect size</strong></p>
 <p>What is the effect size for the original study?</p>
 <p><em>Your text here</em></p>
-<p>The effect size is simply the correlation coefficient, <span class="math notranslate nohighlight">\(r=0.42\)</span></p>
 <p><strong>b. Convert <span class="math notranslate nohighlight">\(r\)</span> to <span class="math notranslate nohighlight">\(t\)</span></strong></p>
 <p>To run a power analysis on a correlation using <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, we need to convert our correlation to a <span class="math notranslate nohighlight">\(t\)</span>-score. Look up the equation in the notes and implement it in the code block below to obtain <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <div class="cell docutils container">

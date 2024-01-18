@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -595,7 +600,7 @@ document.write(`
 <p>and then the <span class="math notranslate nohighlight">\(p\)</span>-value is obtained from the <span class="math notranslate nohighlight">\(t_{n-2}\)</span> distribution.</p>
 <p>However you can get straight to the <span class="math notranslate nohighlight">\(p\)</span>-value by using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> - note that we are using <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> as the other correlation functions we met in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> do not return a <span class="math notranslate nohighlight">\(p\)</span>-value.</p>
 <p>Here is the syntax to test the correlation between Maths and English scores, assuming these are columns in a dataframe <code class="docutils literal notranslate"><span class="pre">scores</span></code>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">stats.pearson(scores.maths,</span> <span class="pre">scores.english).pvalue</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">stats.pearsonr(scores.maths,</span> <span class="pre">scores.english).pvalue</span></code></p>
 </section>
 <section id="what-counts-as-a-large-effect">
 <h3>What counts as a large effect<a class="headerlink" href="#what-counts-as-a-large-effect" title="Permalink to this heading">#</a></h3>

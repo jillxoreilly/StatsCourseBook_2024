@@ -286,6 +286,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -647,7 +652,7 @@ the value of the variable <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.11659417948012696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.7831933502573566
 </pre></div>
 </div>
 </div>
@@ -665,7 +670,7 @@ the value of the variable <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/74cb33ef19a24dab63a345aba997aab468c2f1fc97c32e36be7c81f48ee08dc7.png" src="../_images/74cb33ef19a24dab63a345aba997aab468c2f1fc97c32e36be7c81f48ee08dc7.png" />
+<img alt="../_images/d3189b27df2d2e6c2d805d9b7aff97053a467c6ab4b588e1eed5975ba5d4337d.png" src="../_images/d3189b27df2d2e6c2d805d9b7aff97053a467c6ab4b588e1eed5975ba5d4337d.png" />
 </div>
 </div>
 <p><strong>Threshold the random number</strong></p>
@@ -690,8 +695,8 @@ the value of the variable <code class="docutils literal notranslate"><span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3019336029593048
-is it a hit?:            1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5717785509894926
+is it a hit?:            0
 </pre></div>
 </div>
 </div>
@@ -710,8 +715,8 @@ and count how many hits we get (<span class="math notranslate nohighlight">\(k=?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.83170856 0.79215866 0.57387156 0.60085544 0.01391251 0.03444413
- 0.98142646 0.82023441 0.32487419 0.44915151]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.88141475 0.42408711 0.95551255 0.02249918 0.57226033 0.08322499
+ 0.4333558  0.29739695 0.75568614 0.43584153]
 </pre></div>
 </div>
 </div>
@@ -724,7 +729,7 @@ and count how many hits we get (<span class="math notranslate nohighlight">\(k=?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False False  True  True False False  True  True]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False  True False  True False  True  True  True False  True]
 </pre></div>
 </div>
 </div>
@@ -738,7 +743,7 @@ and count how many hits we get (<span class="math notranslate nohighlight">\(k=?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
 </pre></div>
 </div>
 </div>
@@ -763,7 +768,7 @@ and count how many hits we get (<span class="math notranslate nohighlight">\(k=?
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>

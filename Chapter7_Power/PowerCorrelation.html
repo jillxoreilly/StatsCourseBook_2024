@@ -284,6 +284,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -718,7 +723,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e45a43ed93be3a0de41e34bc941d1c85f5cda11cbf9971edd0dd834e54befc21.png" src="../_images/e45a43ed93be3a0de41e34bc941d1c85f5cda11cbf9971edd0dd834e54befc21.png" />
+<img alt="../_images/8b742ab5b831a9a6e29e108c23c7712aa430a4042c2fb3cc595001227abd279c.png" src="../_images/8b742ab5b831a9a6e29e108c23c7712aa430a4042c2fb3cc595001227abd279c.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -758,11 +763,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.005569</td>
+      <td>-0.008162</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.005569</td>
+      <td>-0.008162</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -788,7 +793,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0458
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0414
 </pre></div>
 </div>
 </div>
@@ -828,7 +833,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8e0d646b21568af3811ee2b614607198b3a12a00035de4cfc10dba27cd5b3e5b.png" src="../_images/8e0d646b21568af3811ee2b614607198b3a12a00035de4cfc10dba27cd5b3e5b.png" />
+<img alt="../_images/4a72ab78fd14c2dfe63e21ec9123f990fe5cb48cec6fd27e184a07172b1f47d3.png" src="../_images/4a72ab78fd14c2dfe63e21ec9123f990fe5cb48cec6fd27e184a07172b1f47d3.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -865,11 +870,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.250882</td>
+      <td>0.250119</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.250882</td>
+      <td>0.250119</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -899,7 +904,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.534
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.558
 </pre></div>
 </div>
 </div>
@@ -926,7 +931,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.582
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.532
 </pre></div>
 </div>
 </div>
@@ -964,7 +969,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/367421ea0587a4ed8cdc8698f37f9c52d2559abf196ffd3cf6748e07e7923729.png" src="../_images/367421ea0587a4ed8cdc8698f37f9c52d2559abf196ffd3cf6748e07e7923729.png" />
+<img alt="../_images/c696c60c51e3c0376782da6764008d6f4be9b1f3119b18209a857c96711d0629.png" src="../_images/c696c60c51e3c0376782da6764008d6f4be9b1f3119b18209a857c96711d0629.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
@@ -1005,19 +1010,57 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;greater&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pvalue</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:5858,</span> in <span class="ni">NDFrame.sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5855</span> <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:5859,</span> in <span class="ni">NDFrame.sample</span><span class="nt">(self, n, frac, replace, weights, random_state, axis, ignore_index)</span>
 <span class="g g-Whitespace">   </span><span class="mi">5856</span>     <span class="n">weights</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">preprocess_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">5858</span> <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">5859</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5858</span> <span class="n">sampled_indices</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">rs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">5859</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">sampled_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">5861</span> <span class="k">if</span> <span class="n">ignore_index</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">5862</span>     <span class="n">result</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">default_index</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 
-<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/sample.py:151,</span> in <span class="ni">sample</span><span class="nt">(obj_len, size, replace, weights, random_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid weights: weights sum to zero&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">151</span> <span class="k">return</span> <span class="n">random_state</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">obj_len</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="n">replace</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="p">)</span>
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:3909,</span> in <span class="ni">NDFrame.take</span><span class="nt">(self, indices, axis, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3833</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3834</span><span class="sd"> Return the elements in the given *positional* indices along an axis.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3835</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3904</span><span class="sd"> 3    lion  mammal       80.5</span>
+<span class="g g-Whitespace">   </span><span class="mi">3905</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3907</span> <span class="n">nv</span><span class="o">.</span><span class="n">validate_take</span><span class="p">((),</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3909</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_take</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py:3932,</span> in <span class="ni">NDFrame._take</span><span class="nt">(self, indices, axis, convert_indices)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3924</span>     <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3925</span>         <span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="g g-Whitespace">   </span><span class="mi">3926</span>         <span class="ow">and</span> <span class="n">indices</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">3927</span>         <span class="ow">and</span> <span class="n">using_copy_on_write</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3928</span>         <span class="ow">and</span> <span class="n">is_range_indexer</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">3929</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3930</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3932</span> <span class="n">new_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3933</span>     <span class="n">indices</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3934</span>     <span class="n">axis</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_block_manager_axis</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">3935</span>     <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3936</span>     <span class="n">convert_indices</span><span class="o">=</span><span class="n">convert_indices</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3937</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3938</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;take&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:963,</span> in <span class="ni">BaseBlockManager.take</span><span class="nt">(self, indexer, axis, verify, convert_indices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="n">maybe_convert_indices</span><span class="p">(</span><span class="n">indexer</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span> <span class="n">new_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">indexer</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">963</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reindex_indexer</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span>     <span class="n">new_axis</span><span class="o">=</span><span class="n">new_labels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>     <span class="n">indexer</span><span class="o">=</span><span class="n">indexer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">967</span>     <span class="n">allow_dups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span>     <span class="n">copy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">969</span> <span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/internals/managers.py:761,</span> in <span class="ni">BaseBlockManager.reindex_indexer</span><span class="nt">(self, new_axis, indexer, axis, fill_value, allow_dups, copy, only_slice, use_na_proxy)</span>
+<span class="g g-Whitespace">    </span><span class="mi">758</span> <span class="n">new_axes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">759</span> <span class="n">new_axes</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_axis</span>
+<span class="ne">--&gt; </span><span class="mi">761</span> <span class="n">new_mgr</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">from_blocks</span><span class="p">(</span><span class="n">new_blocks</span><span class="p">,</span> <span class="n">new_axes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">762</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span>     <span class="c1"># We can avoid the need to rebuild these</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span>     <span class="n">new_mgr</span><span class="o">.</span><span class="n">_blknos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blknos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
