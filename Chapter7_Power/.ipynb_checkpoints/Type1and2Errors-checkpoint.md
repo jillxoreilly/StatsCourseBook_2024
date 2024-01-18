@@ -16,7 +16,7 @@ As the terminology "Type I Error" and "Type II Error" is easy to mix up, I prefe
 
 We can also classify the 'correct' cases as follows:
 
-* **Hits** when $\mathcal{H_a}$ is true, and we detect that, rejecting the null)
+* **Hits** when $\mathcal{H_a}$ is true, and we detect that (rejecting the null)
 * **Correct Rejects** when $\mathcal{H_o}$ is correct and we detect that (slightly confusingly, a 'correct reject' is when we correctly *fail* to rejct the null!)
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp8_grid_HitsEtc.png
@@ -24,9 +24,9 @@ We can also classify the 'correct' cases as follows:
 :align: center
 ```
 
-## Assuming $\mathcal{H_o}$ vs assuming $\mathcal{H_o}$ 
+## Assuming $\mathcal{H_o}$ vs assuming $\mathcal{H_a}$ 
 
-When calculating the $p$-value for a test, we *assume $\mathcal{H_o}$ is true* and then work out the probabliity that we might reject $\mathcal{H_o}$ due to chance. In other words, we are working on the basis of a certain stats of reality, **assuming $\mathcal{H_o}$ is true**.
+When calculating the $p$-value for a test, we *assume $\mathcal{H_o}$ is true* and then work out the probabliity that we might reject $\mathcal{H_o}$ due to chance. In other words, we are working on the basis of a certain state of reality, **assuming $\mathcal{H_o}$ is true**.
 
 **Assuming $\mathcal{H_o}$ is true**:
 * $p$ is the proportion of false positives
@@ -36,9 +36,9 @@ When calculating the $p$-value for a test, we *assume $\mathcal{H_o}$ is true* a
 :width: 80%
 :align: center
 ```
-<br>
-<br>
-In contrast, in power analysis, we consider the **alternative reality in which $\mathcal{H_a}$ is true**. Power is then theh probaility that we correctly reject the null.
+
+
+In contrast, in power analysis, we consider the **alternative reality in which $\mathcal{H_a}$ is true**. Power is then theh probability that we correctly reject the null.
 
 **Assuming $\mathcal{H_a}$ is true**:
 * **Power** is (1-proportion of false negatives)
@@ -48,8 +48,7 @@ In contrast, in power analysis, we consider the **alternative reality in which $
 :width: 80%
 :align: center
 ```
-<br>
-<br>
+
 **Terminology**
 
 Because the terms *sensitivity* and *specificity* are easy to mix up, I prefer to talk about:
@@ -60,7 +59,7 @@ Because the terms *sensitivity* and *specificity* are easy to mix up, I prefer t
 
 ## Criminal analogy
 
-It can help to think of an anaolgy to a criminal court:
+It can help to think of an analogy to a criminal court:
 
 * $\mathcal{H_o}$: Everyone is innocent until proven guity
 * $\mathcal{H_a}$: He's guilty, dammit!

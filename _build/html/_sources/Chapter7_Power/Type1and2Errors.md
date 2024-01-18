@@ -24,7 +24,7 @@ We can also classify the 'correct' cases as follows:
 :align: center
 ```
 
-## Assuming $\mathcal{H_o}$ vs assuming $\mathcal{H_o}$ 
+## Assuming $\mathcal{H_o}$ vs assuming $\mathcal{H_a}$ 
 
 When calculating the $p$-value for a test, we *assume $\mathcal{H_o}$ is true* and then work out the probabliity that we might reject $\mathcal{H_o}$ due to chance. In other words, we are working on the basis of a certain state of reality, **assuming $\mathcal{H_o}$ is true**.
 

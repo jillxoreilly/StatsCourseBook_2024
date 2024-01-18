@@ -633,7 +633,7 @@ document.write(`
 <p>We can then:</p>
 <ul class="simple">
 <li><p>work out the proportion of false <em>positives</em> we get if <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> is true (by drawing many samples from the null population)</p></li>
-<li><p>work out the proportion of false <em>negatives</em> we get if <span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> is true (by drawing many samples from the null population)</p></li>
+<li><p>work out the proportion of false <em>negatives</em> we get if <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true (by drawing many samples from the null population)</p></li>
 </ul>
 <p>The latter gives us the <strong>power</strong> of the analysis.</p>
 <p>Although we we later see that power analysis can be run using a built-in function in Python library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, it is useful to understand conceptually the simulation approach, as this gives an idea of what power analysis actually <em>is</em></p>
@@ -725,7 +725,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2563fc1007525c3ff13a085352133574b96c683360688d4fdbf7d1b0f561238.png" src="../_images/a2563fc1007525c3ff13a085352133574b96c683360688d4fdbf7d1b0f561238.png" />
+<img alt="../_images/398350dca4f5e8714bd0ead92a90b15d65bbb3aef18c8bc1650f28c871e0bead.png" src="../_images/398350dca4f5e8714bd0ead92a90b15d65bbb3aef18c8bc1650f28c871e0bead.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -765,11 +765,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.009771</td>
+      <td>-0.007207</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.009771</td>
+      <td>-0.007207</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -835,7 +835,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8bd66a0864d6937a214fcf2cbd9a1582a32f5cc35cd732a1766980a123574e3.png" src="../_images/c8bd66a0864d6937a214fcf2cbd9a1582a32f5cc35cd732a1766980a123574e3.png" />
+<img alt="../_images/e67ce0c636cf4abaa6378889c36e0a18312f263d91841b302b400941a298b89b.png" src="../_images/e67ce0c636cf4abaa6378889c36e0a18312f263d91841b302b400941a298b89b.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -872,11 +872,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.258022</td>
+      <td>0.241756</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.258022</td>
+      <td>0.241756</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -906,7 +906,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.573
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.549
 </pre></div>
 </div>
 </div>
@@ -933,7 +933,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.547
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.523
 </pre></div>
 </div>
 </div>
@@ -971,12 +971,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/988f8c3a502c5beb4d786e50d998909ffb6e7c783fa8fe76dbd971198b3cee93.png" src="../_images/988f8c3a502c5beb4d786e50d998909ffb6e7c783fa8fe76dbd971198b3cee93.png" />
+<img alt="../_images/c40180d61db4771c46448a05d6301ab455aaa65c3ce70688a4ad5c8346e2d00a.png" src="../_images/c40180d61db4771c46448a05d6301ab455aaa65c3ce70688a4ad5c8346e2d00a.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
 <p>Conventionally a power of 80% (indicated by the red dashed line on the graph) is considered desirable (80% is a completely arbitrary value by the way).</p>
-<p>What sample size do we need to get power of 80%? It looks from the graph like you would need around n=120. Here are the results if we run a finer grained simulation in that range:</p>
+<p>What sample size do we need to ge
+t power of 80%? It looks from the graph like you would need around n=120. Here are the results if we run a finer grained simulation in that range:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp7_PowerSimFine.png" style="width: 75%;" /></a>
 </section>
 <section id="recap">
