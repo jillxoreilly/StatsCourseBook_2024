@@ -93,7 +93,7 @@ Yikes!
 
 The formula for $t$ for the independent samples $t$-test is:
 
-$$t = \frac{\bar{x_1}-(\bar{x2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
+$$t = \frac{\bar{x_1}-(\bar{x_2}}{s\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
 
 where $\bar{x_1}$,$\bar{x_2}$ are the group means and $n_1, n_2$ are the group standard deviations. 
 
