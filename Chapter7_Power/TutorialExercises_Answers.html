@@ -688,18 +688,18 @@ document.write(`
 <span class="n">analysis</span> <span class="o">=</span> <span class="n">TTestPower</span><span class="p">()</span>
 
 <span class="c1"># solve for power</span>
-<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.383</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
+<span class="n">power</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.383</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;larger&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;power = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">power</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 0.502631885174048
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 0.5854116793095336
 </pre></div>
 </div>
 </div>
 </div>
-<p>You should find the power is 50%. So there is only a 50% chance that we would detect a statistically significant effect of TMR, even if there is indeed an underlying effect.</p>
+<p>You should find the power is 58%. So there is only a 58% chance that we would detect a statistically significant effect of TMR, even if there is indeed an underlying effect.</p>
 <section id="example-2-t-test">
 <h3>Example 2: t-test<a class="headerlink" href="#example-2-t-test" title="Permalink to this heading">#</a></h3>
 <p>A researcher compares the tail length of mice from islands A and B. He reports the findings as follows:</p>
@@ -761,18 +761,18 @@ document.write(`
 
 
 <span class="c1"># solve for power</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.48</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">solve_power</span><span class="p">(</span><span class="n">effect_size</span><span class="o">=</span><span class="mf">0.57</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nobs1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 69.10607514325318
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n = 49.29455400764748
 </pre></div>
 </div>
 </div>
 </div>
-<p>You should find that you need 70 mice per sample for 80% power.</p>
+<p>You should find that you need 50 mice per sample for 80% power.</p>
 </section>
 <section id="example-3-correlation">
 <h3>Example 3: Correlation<a class="headerlink" href="#example-3-correlation" title="Permalink to this heading">#</a></h3>
