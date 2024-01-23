@@ -769,11 +769,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[80 47 27 36 29 34 77 47 58 40 78 41 34 49 80 45 46 26 75 79 40 88 80 82
- 35 78 20 23 82 90 49 46 12 34 83 18 84 35 33 27 81 31 81 79 50 87 29 26
- 49 14  7 44 10 15 77 85 34 52 30 66 34 36 81 40 22 24 10 22 30 83 44 33
- 38 82 84 37 43 49 83 79 32 27 19 84 30 38  7 31 18 26 37 26 15 41 45 28
- 76 38 22 38]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[26 41 17 86 27 38 23 61 31 82 88 78 33 81 83 14 74 73 49 66 47 23 29 78
+ 28 84 51 79 67 41 85 48 80 87 81 15 38 11 39 73 50 34 47 30 29 27 69 22
+ 84 38 31 84 84 32 76 83 38 81 24 86 74 29 87 79 36 37 40 56 71 15 38 77
+ 81 16 71 79 36 85 30 40 29 78 41 87 32 27 40 41 43 27 44 19 25 22 17 88
+ 18 58 22 87]
 </pre></div>
 </div>
 </div>
@@ -791,65 +791,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c3037347b45b27c9559896bd5f5f68882f6fb5226e26f5661f79419c01c290d9.png" src="../_images/c3037347b45b27c9559896bd5f5f68882f6fb5226e26f5661f79419c01c290d9.png" />
+<img alt="../_images/6e403f493eacf2fcab49b028c494b1d6227a5cdb5f4d37882b33e055115a9cb8.png" src="../_images/6e403f493eacf2fcab49b028c494b1d6227a5cdb5f4d37882b33e055115a9cb8.png" />
 </div>
 </div>
 <p>Hopefully we can see that the distribution within the sample resembles the shape of the distribution in the national sample, with two peaks, although somewhat noisier</p>
 <p>Let’s draw a few more random samples, each time of size 100, to check this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">13</span><span class="p">):</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">UKBrexdex</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="mi">100</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># use wider bins for the sample as there are fewer datapoints   </span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># automatically adjust subbplot spacing to accomodate axis labels</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>    
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_69655/3173269395.py:5: UserWarning: The figure layout has changed to tight
-  plt.tight_layout() # automatically adjust subbplot spacing to accomodate axis labels
-</pre></div>
-</div>
-<img alt="../_images/e8b648e7a766d078dc14c0c0b0422ac28528f00b29b8dff2c2f17f86364a7771.png" src="../_images/e8b648e7a766d078dc14c0c0b0422ac28528f00b29b8dff2c2f17f86364a7771.png" />
+<img alt="../_images/8586e6c3c1a8a45d2702dfe4b49a287846e572e1df08130d130515b89e51303f.png" src="../_images/8586e6c3c1a8a45d2702dfe4b49a287846e572e1df08130d130515b89e51303f.png" />
 </div>
 </div>
 <p>Notice that we always manage to reproduce the bimodal shape, albeit with random variability.</p>
@@ -900,7 +862,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;sample mean&#39;)
 </pre></div>
 </div>
-<img alt="../_images/028f0041a1e5cfcaf4b86101d987c9b9a18fe4b22979f4df2b40361706a8f179.png" src="../_images/028f0041a1e5cfcaf4b86101d987c9b9a18fe4b22979f4df2b40361706a8f179.png" />
+<img alt="../_images/333d88a4ae80a210ef930556e687e7c8857ffd180a4ba010930cb0e78fc03c06.png" src="../_images/333d88a4ae80a210ef930556e687e7c8857ffd180a4ba010930cb0e78fc03c06.png" />
 </div>
 </div>
 <p>The distribution of sample means is approximately normal.</p>
@@ -914,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.88042900000001
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.870183000000004
 </pre></div>
 </div>
 </div>
@@ -931,7 +893,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4609481193147897
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4549469355794638
 </pre></div>
 </div>
 </div>
@@ -963,7 +925,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distribution (from simulation) = 2.4609481193147897
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sd of sampling distribution (from simulation) = 2.4549469355794638
 SEM from the formula = 2.479272056187636
 </pre></div>
 </div>
@@ -1004,7 +966,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f15652a2ec0ec17e4269d02fb8e91e6309ca323c928ba9fa1cdf391a9255e7d.png" src="../_images/4f15652a2ec0ec17e4269d02fb8e91e6309ca323c928ba9fa1cdf391a9255e7d.png" />
+<img alt="../_images/024878ed848715068b209c701e85e4cb5574c447c4306b34ba548e6d00ecbde6.png" src="../_images/024878ed848715068b209c701e85e4cb5574c447c4306b34ba548e6d00ecbde6.png" />
 </div>
 </div>
 </section>
@@ -1031,7 +993,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b99bc2557ea2c84504332249bf8e75484c7e8e8322513204750b9092f22563ba.png" src="../_images/b99bc2557ea2c84504332249bf8e75484c7e8e8322513204750b9092f22563ba.png" />
+<img alt="../_images/81a1abf5f967e820b9454a6efd55a472ae0c326e6a75d11c639315cc42a3fef3.png" src="../_images/81a1abf5f967e820b9454a6efd55a472ae0c326e6a75d11c639315cc42a3fef3.png" />
 </div>
 </div>
 <p>Now we make our predicted normal sampling distribution of the mean.</p>
@@ -1084,7 +1046,7 @@ SEM from the formula = 2.479272056187636
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<img alt="../_images/36cca3fac9a1c97cff8367d08ec91daebdc18087b1f3432fbe77e3e79e60bf15.png" src="../_images/36cca3fac9a1c97cff8367d08ec91daebdc18087b1f3432fbe77e3e79e60bf15.png" />
+<img alt="../_images/6ab0676e3bbf1deacfe97a8520c3ec14843fbc2f16badf526655020eaca0ee9e.png" src="../_images/6ab0676e3bbf1deacfe97a8520c3ec14843fbc2f16badf526655020eaca0ee9e.png" />
 </div>
 </div>
 <p>This is not a bad match!</p>
@@ -1113,7 +1075,7 @@ SEM from the formula = 2.479272056187636
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.017 or 1.7000000000000002%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of sample means greater than 55.1 = 0.0192 or 1.92%
 </pre></div>
 </div>
 </div>
