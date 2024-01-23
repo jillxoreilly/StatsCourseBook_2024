@@ -716,8 +716,8 @@ document.write(`
 <ul class="simple">
 <li><p>First try changing <span class="math notranslate nohighlight">\(p\)</span>, keeping <span class="math notranslate nohighlight">\(n\)</span> set to 10.</p>
 <ul>
-<li><p>set <span class="math notranslate nohighlight">\(p=0.5\)</span>*. This should give a good fit</p></li>
-<li><p>set <span class="math notranslate nohighlight">\(p=0.2\)</span>*. Why is the fit not so good now?</p></li>
+<li><p>set <span class="math notranslate nohighlight">\(p=0.5\)</span>. This should give a good fit</p></li>
+<li><p>set <span class="math notranslate nohighlight">\(p=0.2\)</span>. Why is the fit not so good now?</p></li>
 <li><p>what happens when <span class="math notranslate nohighlight">\(p=0.9\)</span>?</p></li>
 </ul>
 </li>
@@ -733,10 +733,10 @@ document.write(`
 </section>
 <section id="how-many-repetitions-is-enough">
 <h2><span class="section-number">1.9.4. </span>How many repetitions is enough?<a class="headerlink" href="#how-many-repetitions-is-enough" title="Permalink to this heading">#</a></h2>
-<p>For the binomial and normal distributions, we have seen how to work out the probability of a certain outcome (eg a certain value of <span class="math notranslate nohighlight">\(k\)</span>) using both <em>numerical methods</em> (simulation) and *analytic methods&amp; (an equation).</p>
+<p>For the binomial and normal distributions, we have seen how to work out the probability of a certain outcome (eg a certain value of <span class="math notranslate nohighlight">\(k\)</span>) using both <em>numerical methods</em> (simulation) and <em>analytic methods</em> (an equation).</p>
 <p>An important difference between the two approaches is that using the equation (or <code class="docutils literal notranslate"><span class="pre">stats.binom.pmf()</span></code>) the answer is the same every time; in contrast, the numerical simulation depends on generating random numbers and will change slightly each time you run it.</p>
 <p>For some data modelling problems, no equation (analystic solution) is available - an important example we have already met is permutation testing.</p>
-<p>Say we want to know the probability of getting 22/20 hits or more (in the blindsight example) - how many reps would we need in a simulation to match the answer from the equation to 2 significant figures?</p>
+<p>Say we want to know the probability of getting 22/30 hits or more (in the blindsight example) - how many reps would we need in a simulation to match the answer from the equation to 2 significant figures?</p>
 <p>Let’s find out.</p>
 <section id="ground-truth-answer">
 <h3>Ground truth answer<a class="headerlink" href="#ground-truth-answer" title="Permalink to this heading">#</a></h3>
@@ -781,7 +781,7 @@ document.write(`
 <p>Hopefully the result you got was close to the ground truth result of 0.00806, but it was probably not a match to two significant figures (or maybe even to one).</p>
 <p>This may be surprising when you see how well the simulation appears to match the predicted distribution overall:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit.png" style="width: 85%;" /></a>
-<p>The problem is that we are interested in the very tail of the distribution and we don’t expect many repetitions to result in values of k that fall in this tail. For example, we expect 54 out of 10000 reps to result in k==22. In fact, we got about 40 cases of k==22, which is an error of only 12 reps (out of 10,000), but it is also an error of over 20% (in the hheight of this particular bar):</p>
+<p>The problem is that we are interested in the very tail of the distribution and we don’t expect many repetitions to result in values of k that fall in this tail. For example, we expect 54 out of 10000 reps to result in k==22. In fact, we got about 40 cases of k==22, which is an error of only 12 reps (out of 10,000), but it is also an error of over 20% (in the height of this particular bar):</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_simfit_tail.png" style="width: 85%;" /></a>
 <p>So when we are interested in the tail of the distribution, as we often are (for example in permutation testing, when we are checking whether a result is in a tail of 5% or 1% of the null distribution) - we need a lot of repetitions to get an accurate result.</p>
 <p>Adjust <code class="docutils literal notranslate"><span class="pre">nReps</span></code> in the code above until the simulated value of p(k&gt;=22) reliably matches the ground truth value to 2 sinificant figures (ie if you run the code block several times does it match most of the time)?</p>
