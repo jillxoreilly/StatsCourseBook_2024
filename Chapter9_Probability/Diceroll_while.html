@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Simulated coin toss &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.8. Tutorial Exercises 2: Rolling a Six &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,9 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter8_DataGeneratingDistributions/binomial_simcointoss';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter9_Probability/Diceroll_while';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.9. Hand In Assignment" href="placeholder.html" />
+    <link rel="prev" title="2.7. Tutorial Exercises 1: Probability Jargon in Python" href="TutorialExercises.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -271,34 +275,34 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="binomial_intro.html">1.1. The Binomial Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_objectives.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_10000reps.html">1.4. Repeat the simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">1.9. Tutorial Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
 
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/Diceroll_while.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter9_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Probability_intro.html">2. Probability</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diagrams.html">2.2. Probability Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Independence.html">2.3. Statsitical Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="placeholder.html">2.9. Hand In Assignment</a></li>
 </ul>
 </li>
 </ul>
@@ -413,7 +417,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter8_DataGeneratingDistributions/binomial_simcointoss.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Chapter9_Probability/Diceroll_while.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter8_DataGeneratingDistributions/binomial_simcointoss.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2FChapter9_Probability/Diceroll_while.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -491,7 +495,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter8_DataGeneratingDistributions/binomial_simcointoss.ipynb" target="_blank"
+      <li><a href="../_sources/Chapter9_Probability/Diceroll_while.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -575,7 +579,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Simulated coin toss</h1>
+    <h1>Tutorial Exercises 2: Rolling a Six</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -585,11 +589,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">Simulate a single coin toss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">Simulate 10 coin tosses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">Use an array to store the outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">2.8.2. Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">2.8.3. Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-outcomes">Distribution of outcomes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">2.8.4. Expected number of rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">2.8.5. Frequency of extreme outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">2.8.6. Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">2.8.7. What am I modelling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-neuroscience">Applications in neuroscience</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -601,31 +616,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <html><head>
-<style>
-body {background-color: powderblue;}
-h1   {color: blue;}
-p    {color: red;}
-</style>
-</head>
-<body><section class="tex2jax_ignore mathjax_ignore" id="simulated-coin-toss">
-<h1>Simulated coin toss<a class="headerlink" href="#simulated-coin-toss" title="Permalink to this heading">#</a></h1>
-<p>To get a feel for how likely different outcomes are, we are going to <i>simulate the data generating process</i></p>
-<a class="reference internal image-reference" href="Chapter8_DataGeneratingDistributions/images/Minion_what.jpg"><img alt="What?!" src="Chapter8_DataGeneratingDistributions/images/Minion_what.jpg" style="width: 10%;" /></a>
-<p>Here is an example of how we could <i>simulate the data generating process</i> in real life:</p>
-<p>To work out how likely we are to get 5 heads out of 10 coin tosses, we could…</p>
-<ul>    
-    <li>get a real coin (but who has cash on them these days?)
-    <li>assume it is fair (<i>p = 0.5</i>)
-    <li>toss it 10 times (because <i>n = 10</i>)
-    <li>count the number of heads (<i>k</i>)
-</ul>
-... 
-<p>Then we could repeat that whole process many times (say, 100 times) and count how often we get exactly 5 heads.</p>
-<p>Or…. we could get the computer to do that.</p>
-<p>Yes, let’s get the computer to do it. That will be less hassle.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-2-rolling-a-six">
+<h1><span class="section-number">2.8. </span>Tutorial Exercises 2: Rolling a Six<a class="headerlink" href="#tutorial-exercises-2-rolling-a-six" title="Permalink to this heading">#</a></h1>
+<p>In these exercises we model the process of rolling a dice until we get a six</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/dice.jpg"><img alt="(display image of dice)" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/dice.jpg" style="width: 25%;" /></a>
+<p>We will meet the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which is different from the more familiar
+<code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,213 +633,293 @@ p    {color: red;}
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
 <span class="kn">import</span> <span class="nn">pandas</span> 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1"># use pretty defaults</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="simulate-a-single-coin-toss">
-<h2>Simulate a single coin toss<a class="headerlink" href="#simulate-a-single-coin-toss" title="Permalink to this heading">#</a></h2>
-<p>The computer doesn’t really toss a coin.</p>
-<p>It does someting mathematically equivalent, namely generates a random number called <tt>x</tt> and applies a test to it that will give a “hit” a certain proportion of the time, defined by <i>p</i>.</p>
-<p>If the outcome is a hit,
-the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is set to zero</p>
-<p>Try running the code block below several times and see if you understand what it does.</p>
+<section id="simulation-of-rolling-a-dice-til-you-get-a-six">
+<h2><span class="section-number">2.8.2. </span>Simulation of rolling a dice til you get a six<a class="headerlink" href="#simulation-of-rolling-a-dice-til-you-get-a-six" title="Permalink to this heading">#</a></h2>
+<p>In many children’s games, players need to roll a six before their counter can start moving round the board.</p>
+<ul>
+<li>What is the probability that you will need four or more tries to roll a six?
+</ul>
+<p>You may recall from school maths that the way we work this out is to calculate the probability that we did <em>not</em> obtain a six on any of rolls 1, 2 or 3. As the dice has six sides, the probability of not obtaining a six on each dice roll is <span class="math notranslate nohighlight">\(\frac{5}{6}\)</span></p>
+<p>As each event is independent, we can multiply the probabilities together:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{5}{6} \times \frac{5}{6} \times \frac{5}{6} = \frac{125}{216}\]</div>
+<p>In other words, the chance that a player needs four or more turns to roll a six is slightly over half.</p>
+<section id="while-loop">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#while-loop" title="Permalink to this heading">#</a></h3>
+<p>If we want to simulate rolling a dice til we get a six, we need to use the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is a loop that keeps repeating until some criterion is fulfilled.</p>
+<p>This is in contrast to the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop which is run for a fixed number of cycles.</p>
+<p>Try running the code below a few times - you should get a different outcome each time</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate a random number between 0 and 1</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value of random number:  &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable r which counts how many times we rolled the virtual dice</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable d1 which stores the outcome of each dice roll</span>
+
+<span class="k">while</span> <span class="n">d</span><span class="o">!=</span><span class="mi">6</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span> <span class="c1"># increase r by 1 each time we go round the loop</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roll &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;. Outcome = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+
+<span class="c1"># the value of r when we leave the loop is how many rolls were needed to get a six</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total rolls needed to get a six: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.7493725167641313
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 1
+roll 2. Outcome = 3
+roll 3. Outcome = 3
+roll 4. Outcome = 2
+roll 5. Outcome = 5
+roll 6. Outcome = 3
+roll 7. Outcome = 6
+Total rolls needed to get a six: 7
 </pre></div>
 </div>
 </div>
 </div>
-<p>What happened?</p>
-<p>We used numpy’s random number generator (<tt>np.random</tt>) to get a number (with decimal places) between 0 and 1. The numbers are drawn from a uniform distribution, which means that any number between 0 and 1 is equally likely.</p>
-<p>Re run the code block above a few times - you should get a different random number every time.</p>
-<p>How do we convert this to a virtual ‘coin toss’? We need to randomly generate “hits” and “misses” rather than decimal numbers.</p>
-<p>To do this we simply add a piece of code that checks whether our random number is greater or less than some number - in this case 0.5, as we should get equal frequencies of random numbers greater than 0.5 and less than 0.5, thus simulating a fair coin.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-<span class="n">p</span><span class="o">=</span><span class="mf">0.5</span>
-<span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-    <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is it a hit?:            1
-</pre></div>
-</div>
-</div>
-</div>
+<p>What happened there?</p>
+<p>The code</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">d!=6:</span></code></p>
+<p>means “check if the value of <code class="docutils literal notranslate"><span class="pre">d</span></code> is 6; if not, repeat the commands inside the loop and come back to check again”</p>
+<p>Initially <code class="docutils literal notranslate"><span class="pre">d=0</span></code> (because that was the value we initially gave it).</p>
+<p>Each time we ‘roll the dice’ we give <code class="docutils literal notranslate"><span class="pre">d</span></code> a new value and come back to check if it is now a six.</p>
+<p>On each pass through the loop we also increment <code class="docutils literal notranslate"><span class="pre">r</span></code> (increase the value of <code class="docutils literal notranslate"><span class="pre">r</span></code> by one) to count how many times we rolled the dice.</p>
+<p>When a six is obtained (<code class="docutils literal notranslate"><span class="pre">d=6</span></code>) we stop going round the loop. The value of <code class="docutils literal notranslate"><span class="pre">r</span></code> at that point tells us how many rolls were needed to obtian a six.</p>
+<p><strong>Comprehension questions</strong></p>
+<ul class="simple">
+<li><p>Change the code above so the dice is rolled until we get a one, instead of a six</p>
+<ul>
+<li><p>Look at the output text and check that the loop does indeed terminate on rolling a 1, not a 6.</p></li>
+</ul>
+</li>
+<li><p>Change the code above to model a 16-sided dice instead of a six sided dice.</p>
+<ul>
+<li><p>It should generally take longer to roll a six on a dice with more sides!  Check this by running the loop a few times.</p></li>
+</ul>
+</li>
+</ul>
 </section>
-<section id="simulate-10-coin-tosses">
-<h2>Simulate 10 coin tosses<a class="headerlink" href="#simulate-10-coin-tosses" title="Permalink to this heading">#</a></h2>
-<p>In our coin tossing example, we need to toss the coin 10 times (<i>n</i> = 10)
-and count how many hits we get (<i>k</i> = ?)</p>
-<p>To do this we will create a loop to repeat the coin toss 10 times</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;value of random number:  &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;is it a hit?:            &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">hit</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.13236193576357058
-is it a hit?:            0
-value of random number:  0.47844543608885726
-is it a hit?:            0
-value of random number:  0.4711623948708905
-is it a hit?:            0
-value of random number:  0.7458999116035853
-is it a hit?:            1
-value of random number:  0.3977429659127242
-is it a hit?:            0
-value of random number:  0.7579230096718905
-is it a hit?:            1
-value of random number:  0.6489752044276156
-is it a hit?:            0
-value of random number:  0.8149283119978848
-is it a hit?:            1
-value of random number:  0.5974009420561908
-is it a hit?:            0
-value of random number:  0.28316929980657746
-is it a hit?:            0
-</pre></div>
-</div>
-</div>
-</div>
-<a class="reference internal image-reference" href="Chapter8_DataGeneratingDistributions/images/Minion_ooph.jpeg"><img alt="What?!" src="Chapter8_DataGeneratingDistributions/images/Minion_ooph.jpeg" style="width: 15%;" /></a>
-<p>OK, well the output of that code block was not really user friendly.</p>
 </section>
-<section id="use-an-array-to-store-the-outcomes">
-<h2>Use an array to store the outcomes<a class="headerlink" href="#use-an-array-to-store-the-outcomes" title="Permalink to this heading">#</a></h2>
-<p>Now that we know how the virtual coin toss works,
-we can dispense with printing out the actual value of the random number <tt>x</tt>
-and just give the 10 binary outcomes (1/0 for hit/miss)</p>
+<section id="repeated-while-loop">
+<h2><span class="section-number">2.8.3. </span>Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#repeated-while-loop" title="Permalink to this heading">#</a></h2>
+<p>How often do we need to wait 2,3,4 or more trials to get a six?</p>
+<p>We can simulate this by repeating our <tt>while</tt> loop lots of times and each time,
+recording how many times we needed to roll the dice to get a six.</p>
+<p>You can think of each repeat of the ‘experiment’ as one player trying to roll a six and recording how many rolls it took to get one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s start by simulating 10 &#39;players&#39; each trying to get a six</span>
+<span class="n">nPlayers</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">)</span>
 
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">):</span>
 
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-0
-0
-1
-0
-0
-0
-0
-1
-1
-</pre></div>
-</div>
-</div>
-</div>
-<p>… but we also want to count the number of hits, so we need to store the outcomes (0/1) in an array</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># create an empty array to store the outcomes</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable r which counts how many times we rolled the virtual dice</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable d1 which stores the outcome of each dice roll</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-
-    <span class="c1"># generate a random number between 0 and 1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># check if it is less than p - this should happen on a proportion of trials equal to p</span>
-    <span class="n">p</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">p</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">hit</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">d</span><span class="o">!=</span><span class="mi">6</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
     
-    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">hit</span> <span class="c1"># store the valuee of &#39;hit&#39; on this trial in place &#39;i&#39; in the array &#39;outcomes&#39;</span>
+    <span class="c1"># the value of r when we leave the loop is how many rolls were needed to get a six</span>
+    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We should have created an array of 10 numbers, each of which is the number of rolls a player needed to get a six.</p>
+<p>Let’s check what’s in there.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outcomes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  5.,  1., 12.,  1.,  2.,  3.,  1.,  7.,  6.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>That was a list of the number of rolls needed to get a six for each of the 10 players.</p>
+<p>Run the simulation again - the answer should have changed.</p>
+<p>How many times did someone need 5 or more rolls to get a six?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">outcomes</span><span class="o">&gt;=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<section id="distribution-of-outcomes">
+<h3>Distribution of outcomes<a class="headerlink" href="#distribution-of-outcomes" title="Permalink to this heading">#</a></h3>
+<p>Overall, what is the most likely number of rolls needed to get a six?</p>
+<p>Let’s simulate loads of players and plot a histogram of how often we need 1,2,3,4… etc rolls to get a six.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s simulate 10,000 players</span>
+<span class="n">nPlayers</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">):</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable r which counts how many times we rolled the virtual dice</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable d1 which stores the outcome of each dice roll</span>
+
+    <span class="k">while</span> <span class="n">d</span><span class="o">!=</span><span class="mi">6</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
     
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outcomes = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">outcomes</span><span class="p">))</span>
+    <span class="c1"># the value of r when we leave the loop is how many rolls were needed to get a six</span>
+    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+    
+<span class="c1"># plot a histogram of the outcomes</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;rolls needed to get a six&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 0. 0. 0. 1. 0. 0.]
-</pre></div>
+<img alt="../_images/c3ec4e7c0399cafb406fa0855737e8a1a10eb79f5b08bf42352d6ac8b1f51f97.png" src="../_images/c3ec4e7c0399cafb406fa0855737e8a1a10eb79f5b08bf42352d6ac8b1f51f97.png" />
 </div>
 </div>
-</div>
-<p>… and then we need to count the hits:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 1.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>Try running the code above a few times and check you understand what is happening.</p>
-<p>Note that the outcome values 0. and 1. have dots after them just because they are floating point numbers
-(numbers that could potentially have something after the decimal place rather than being rounded to the neareest whole number)</p>
-<p>This looks a little awkward but it is just the Python way of writing 0.0 and 1.0 rather than 0 and 1</p>
+<p>Did it surprise you that the most likely number of rolls needed (mode of the distribution) is 1?</p>
+<p>When you think about it:</p>
+<ul class="simple">
+<li><p>The chance of getting a six on Roll 1 is <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span></p></li>
+<li><p>The chance of getting a six on Roll 2 is <span class="math notranslate nohighlight">\(\frac{1}{6} \times \frac{5}{6}\)</span>, that is, the chance of a six on Roll 2, multiplied by the chance of NO six on Roll 1 (as you wouldn’t have done a second roll if the first roll had yielded a six)</p></li>
+<li><p>The chance of getting a six on Roll 3 is <span class="math notranslate nohighlight">\(\frac{1}{6} \times \frac{5}{6} \times \frac{5}{6}\)</span> …</p></li>
+</ul>
+<p>The distribution shown above is called a <em>Geometric</em> distribution</p>
+<div class="math notranslate nohighlight">
+\[ r \sim \mathcal{Geo}(\frac{1}{6}) \]</div>
 </section>
-<section id="use-a-built-in-function">
-<h2>Use a built in function<a class="headerlink" href="#use-a-built-in-function" title="Permalink to this heading">#</a></h2>
-<p>Simulating outcomes is actually something coders do a lot so there is a built in function for it in <tt>numpy</tt>.</p>
-<p>Let’s try - it makes the code a lot more compact</p>
+</section>
+<section id="expected-number-of-rolls">
+<h2><span class="section-number">2.8.4. </span>Expected number of rolls<a class="headerlink" href="#expected-number-of-rolls" title="Permalink to this heading">#</a></h2>
+<p>Although the most likely single outcome (the mode of the distribution) is one roll needed to get a six, the <em>mean</em> or <em>expected</em> number of rolls is not 1.</p>
+<p>We can work out the mean number of rolls needed using <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># generate 10 samples with a 0.5 chance of a hit, and return the number of hits </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;k = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">outcomes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.9053
 </pre></div>
 </div>
 </div>
 </div>
-<p>The single line of code above does everything that our previous code block did
-(it doesn’t return the outcomes themselves, but we don’t actually need them, do we?)</p>
-<a class="reference internal image-reference" href="Chapter8_DataGeneratingDistributions/images/Minion_tadaaa.jpg"><img alt="ta-daa?!" src="Chapter8_DataGeneratingDistributions/images/Minion_tadaaa.jpg" style="width: 15%;" /></a>
+<p>Hopefully you get an answer close to six.</p>
+<p>This means that, in the long run, a person should expect to need about 6 rolls to get a 6, or put another way, if we carry on rolling the dice, we expect to get a six about 1/6 of the time. Which is unsurprising!</p>
+</section>
+<section id="frequency-of-extreme-outcomes">
+<h2><span class="section-number">2.8.5. </span>Frequency of extreme outcomes<a class="headerlink" href="#frequency-of-extreme-outcomes" title="Permalink to this heading">#</a></h2>
+<p>How often did we need over 12 rolls to get a six?</p>
+<p>You should be able to work it out using Python code (I make it about 11% of the time):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">outcomes</span><span class="o">&gt;</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1117
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="expected-frequency-of-sixes-in-n-rolls">
+<h2><span class="section-number">2.8.6. </span>Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls<a class="headerlink" href="#expected-frequency-of-sixes-in-n-rolls" title="Permalink to this heading">#</a></h2>
+<p>Let’s adapt our dice-rolling code to count how many sixes we get, if we just keep rolling the dice a lot of times - let’s say 100 rolls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s simulate 10,000 players</span>
+<span class="n">nPlayers</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">nRolls</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># number of tiems each player rolls the dice</span>
+<span class="n">outcomes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nPlayers</span><span class="p">):</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># count the sixes</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># create the variable d1 which stores the outcome of each dice roll</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nRolls</span><span class="p">):</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">d</span><span class="o">==</span><span class="mi">6</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">+</span><span class="mi">1</span>
+    
+    <span class="c1"># the value of s when we leave the loop is how many sixes we got in nRolls</span>
+    <span class="n">outcomes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+    
+<span class="c1"># plot a histogram of the outcomes</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">outcomes</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">nRolls</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of sixes in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nRolls</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; rolls&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f8ea7a35922d6ff000947a36863acb782eff92762b3c19ccc4e55e20b1e72bd6.png" src="../_images/f8ea7a35922d6ff000947a36863acb782eff92762b3c19ccc4e55e20b1e72bd6.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>The most likely number of sixes is 16 or 17 (<span class="math notranslate nohighlight">\(\frac{100}{6} = 16.67\)</span>)</p></li>
+</ul>
+<p>The eagle-eyed amongst you may have noticed that counting the number of sixes in a hundred dice rolls is actually a binomial-type problem, and we could have generated the graph above rather more easily:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">nRolls</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">nPlayers</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">nRolls</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of sixes in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nRolls</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; rolls&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/af67bf1aebc22d33160156c71523ad23f4483819a41f343484fa40a4a2b8ce46.png" src="../_images/af67bf1aebc22d33160156c71523ad23f4483819a41f343484fa40a4a2b8ce46.png" />
+</div>
+</div>
+</section>
+<section id="what-am-i-modelling">
+<h2><span class="section-number">2.8.7. </span>What am I modelling?<a class="headerlink" href="#what-am-i-modelling" title="Permalink to this heading">#</a></h2>
+<p>In these exercises we saw two different ways of modelling the physical process (rolling a six)</p>
+<ul class="simple">
+<li><p>we looked at the frequency of the outcome of interest (a six) in a fixed number of trials (<code class="docutils literal notranslate"><span class="pre">nRolls</span></code>):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ k \sim \mathcal{B}(nRolls, \frac{1}{6})\]</div>
+<ul class="simple">
+<li><p>we looked at the distribution of <em>intervals</em> between the sixes</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ r \sim \mathcal{Geo}(\frac{1}{6}) \]</div>
+<p>So the appropriate model depends on what <em>outcome</em> we want to model (are we interested in how many sixes we roll over the courwe of a game, or how long it takes to get that first six we need to leave the start square?)</p>
+<section id="applications-in-neuroscience">
+<h3>Applications in neuroscience<a class="headerlink" href="#applications-in-neuroscience" title="Permalink to this heading">#</a></h3>
+<p>Modelling the intervals between events and modelling the number of events in a time window are both of interest in many fields of study. For example, in neuroscience we might be interested in a single neuron.</p>
+<ul class="simple">
+<li><p>A detailed model of the neuron saying when exactly it emits an action potential mimght look like our first <code class="docutils literal notranslate"><span class="pre">while</span></code> loop model</p></li>
+<li><p>A summary of its firing rate (the mean number of action potentials in a time window) will look more like the second model</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -858,7 +936,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Chapter8_DataGeneratingDistributions"
+            path: "./Chapter9_Probability"
         },
         predefinedOutput: true
     }
@@ -875,6 +953,24 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="TutorialExercises.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Tutorial Exercises 1: Probability Jargon in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="placeholder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Hand In Assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -890,11 +986,22 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-coin-toss">Simulate a single coin toss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-10-coin-tosses">Simulate 10 coin tosses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-an-array-to-store-the-outcomes">Use an array to store the outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-built-in-function">Use a built in function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">2.8.2. Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">2.8.3. Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-outcomes">Distribution of outcomes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">2.8.4. Expected number of rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">2.8.5. Frequency of extreme outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">2.8.6. Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">2.8.7. What am I modelling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-neuroscience">Applications in neuroscience</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
