@@ -116,10 +116,10 @@ a) Construct a contingency table for these data
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
+{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
 :width: 80%
 :align: center
-
+```
 
 * Let $E$ be the event that the respondent is a member of an environmental group
 * Let $P$ be the event that the respondent is willing to pay higher prices to protect the environment

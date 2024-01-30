@@ -124,6 +124,9 @@ parts:
         - file: Chapter9_Probability/JointProbability.md
         - file: Chapter9_Probability/BayesTheorem.md
         - file: Chapter9_Probability/PaperAndPencilExercises.md
+        - file: Chapter9_Probability/TutorialExercises1.ipynb
+        - file: Chapter9_Probability/Diceroll_while.md
+        - file: Chapter9_Probability/placeholder.md
     - caption: Regression Models
       numbered: 3
       chapters:

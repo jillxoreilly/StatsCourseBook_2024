@@ -116,10 +116,10 @@ a) Construct a contingency table for these data
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
+{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
 :width: 80%
 :align: center
-
+```
 
 * Let $E$ be the event that the respondent is a member of an environmental group
 * Let $P$ be the event that the respondent is willing to pay higher prices to protect the environment
@@ -144,7 +144,7 @@ b) What is the probability that a member of an environmental group would be will
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-This is $p(P|E) = \frac{30}{96} = 0.31$$
+This is $p(P|E) = \frac{30}{96} = 0.31$
 
 ```
 
@@ -152,7 +152,7 @@ c) What is the probability that a non-member would be willing to pay higher pric
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-This is $$p(P|E^c) = \frac{88}{1021}$$
+This is $p(P|E^c) = \frac{88}{1021}$
 
 ```
 
@@ -219,7 +219,7 @@ The chance the person has COVID is 18%
 
 ```
 
-c) Commment on thhe results of parts a) and b)
+c) Comment on the results of parts a) and b)
 
 ```{admonition} Click to reveal answer
 :class: dropdown

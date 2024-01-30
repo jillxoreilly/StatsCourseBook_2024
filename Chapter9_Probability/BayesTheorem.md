@@ -107,4 +107,4 @@ We have previously seen that when setting a cutoff (the alpha value for a statis
 
 We see now that the prior probability of each ground trust state of realiyy (the healthy and disease state, for example) is a further ingredient in this decision, as it also affects the probability of false positives and negatives.
 
-<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOffs.png" width=85% >
+<img src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_Bayes_CutOff.png" width=85% >

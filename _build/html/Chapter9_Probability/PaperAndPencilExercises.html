@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter9_Probability/PaperAndPencilExercises';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Regression" href="../Chapter10_Regression1/regression1_intro.html" />
+    <link rel="next" title="2.7. Tutorial Exercises 1: Probability Jargon in Python" href="TutorialExercises.html" />
     <link rel="prev" title="2.5. Bayes Theorem" href="BayesTheorem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -300,6 +300,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BayesTheorem.html">2.5. Bayes Theorem</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TutorialExercises.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diceroll_while.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="placeholder.html">2.9. Hand In Assignment</a></li>
 </ul>
 </li>
 </ul>
@@ -651,6 +654,22 @@ document.write(`
 <p>a) Construct a contingency table for these data</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
+<p>{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp9_ExerciseTable.png
+:width: 80%
+:align: center</p>
+</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(E\)</span> be the event that the respondent is a member of an environmental group</p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(P\)</span> be the event that the respondent is willing to pay higher prices to protect the environment</p></li>
+</ul>
+<p>Answer using formal notation as in this example</p>
+<p><strong>Example:</strong> Are <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(P\)</span> mutually exclusive?</p>
+<p><strong>Answer:</strong> No, if <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(P\)</span> were mutually exclusive, <span class="math notranslate nohighlight">\(p(E \cap P)\)</span> would be zero, but in fact <span class="math notranslate nohighlight">\(p(E \cap P) = \frac{30}{1117}\)</span>.</p>
+<p>a) Are <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(P\)</span> statistically independent?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to reveal answer</p>
+<p>No, if they were independent then <span class="math notranslate nohighlight">\(p(P|E)\)</span> should be equal to <span class="math notranslate nohighlight">\(p(P)\)</span>.</p>
+<p>In fact <span class="math notranslate nohighlight">\(p(P|E) = \frac{30}{96} = 0.31\)</span> and <span class="math notranslate nohighlight">\(p(P) = \)</span>frac{118}{1117} = 0.11$</p>
 </div>
 <p>b) What is the probability that a member of an environmental group would be willing to pay higher prices?</p>
 <div class="dropdown admonition">
@@ -756,11 +775,11 @@ We also know <span class="math notranslate nohighlight">\(p(C) = 0.005\)</span> 
       </div>
     </a>
     <a class="right-next"
-       href="../Chapter10_Regression1/regression1_intro.html"
+       href="TutorialExercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Regression</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Tutorial Exercises 1: Probability Jargon in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
