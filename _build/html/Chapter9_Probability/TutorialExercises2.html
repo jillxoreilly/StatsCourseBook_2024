@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial Exercises 2: Rolling a Six &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.8. Tutorial Exercises 2: Rolling a Six &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter9_Probability/TutorialExercises2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.9. Hand In Assignment" href="placeholder.html" />
+    <link rel="prev" title="2.7. Tutorial Exercises 1: Probability Jargon in Python" href="TutorialExercises1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -273,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter8_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
@@ -291,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Probability_intro.html">2. Probability</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Diagrams.html">2.2. Probability Diagrams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Independence.html">2.3. Statsitical Independence</a></li>
@@ -299,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="BayesTheorem.html">2.5. Bayes Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Diceroll_while.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
 <li class="toctree-l2"><a class="reference internal" href="placeholder.html">2.9. Hand In Assignment</a></li>
 </ul>
 </li>
@@ -587,19 +589,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">2.8.2. Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">2.8.3. Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-outcomes">Distribution of outcomes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">Expected number of rolls</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">Frequency of extreme outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">What am I modelling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">2.8.4. Expected number of rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">2.8.5. Frequency of extreme outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">2.8.6. Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">2.8.7. What am I modelling?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-neuroscience">Applications in neuroscience</a></li>
 </ul>
 </li>
@@ -615,13 +617,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-2-rolling-a-six">
-<h1>Tutorial Exercises 2: Rolling a Six<a class="headerlink" href="#tutorial-exercises-2-rolling-a-six" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.8. </span>Tutorial Exercises 2: Rolling a Six<a class="headerlink" href="#tutorial-exercises-2-rolling-a-six" title="Permalink to this heading">#</a></h1>
 <p>In these exercises we model the process of rolling a dice until we get a six</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/dice.jpg"><img alt="(display image of dice)" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/dice.jpg" style="width: 25%;" /></a>
 <p>We will meet the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, which is different from the more familiar
 <code class="docutils literal notranslate"><span class="pre">for</span></code> loop</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -639,7 +641,7 @@ document.write(`
 </div>
 </section>
 <section id="simulation-of-rolling-a-dice-til-you-get-a-six">
-<h2>Simulation of rolling a dice til you get a six<a class="headerlink" href="#simulation-of-rolling-a-dice-til-you-get-a-six" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.2. </span>Simulation of rolling a dice til you get a six<a class="headerlink" href="#simulation-of-rolling-a-dice-til-you-get-a-six" title="Permalink to this heading">#</a></h2>
 <p>In many children’s games, players need to roll a six before their counter can start moving round the board.</p>
 <ul>
 <li>What is the probability that you will need four or more tries to roll a six?
@@ -671,8 +673,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 6
-Total rolls needed to get a six: 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>roll 1. Outcome = 5
+roll 2. Outcome = 4
+roll 3. Outcome = 3
+roll 4. Outcome = 2
+roll 5. Outcome = 4
+roll 6. Outcome = 3
+roll 7. Outcome = 2
+roll 8. Outcome = 2
+roll 9. Outcome = 6
+Total rolls needed to get a six: 9
 </pre></div>
 </div>
 </div>
@@ -701,7 +711,7 @@ Total rolls needed to get a six: 1
 </section>
 </section>
 <section id="repeated-while-loop">
-<h2>Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#repeated-while-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.3. </span>Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop<a class="headerlink" href="#repeated-while-loop" title="Permalink to this heading">#</a></h2>
 <p>How often do we need to wait 2,3,4 or more trials to get a six?</p>
 <p>We can simulate this by repeating our <tt>while</tt> loop lots of times and each time,
 recording how many times we needed to roll the dice to get a six.</p>
@@ -771,7 +781,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </section>
 </section>
 <section id="expected-number-of-rolls">
-<h2>Expected number of rolls<a class="headerlink" href="#expected-number-of-rolls" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.4. </span>Expected number of rolls<a class="headerlink" href="#expected-number-of-rolls" title="Permalink to this heading">#</a></h2>
 <p>Although the most likely single outcome (the mode of the distribution) is one roll needed to get a six, the <em>mean</em> or <em>expected</em> number of rolls is not 1.</p>
 <p>We can work out the mean number of rolls needed using <code class="docutils literal notranslate"><span class="pre">np.mean</span></code>:</p>
 <div class="cell docutils container">
@@ -785,7 +795,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 <p>This means that, in the long run, a person should expect to need about 6 rolls to get a 6, or put another way, if we carry on rolling the dice, we expect to get a six about 1/6 of the time. Which is unsurprising!</p>
 </section>
 <section id="frequency-of-extreme-outcomes">
-<h2>Frequency of extreme outcomes<a class="headerlink" href="#frequency-of-extreme-outcomes" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.5. </span>Frequency of extreme outcomes<a class="headerlink" href="#frequency-of-extreme-outcomes" title="Permalink to this heading">#</a></h2>
 <p>How often did we need over 12 rolls to get a six?</p>
 <p>You should be able to work it out using Python code (I make it about 11% of the time):</p>
 <div class="cell docutils container">
@@ -797,7 +807,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </section>
 <section id="expected-frequency-of-sixes-in-n-rolls">
-<h2>Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls<a class="headerlink" href="#expected-frequency-of-sixes-in-n-rolls" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.6. </span>Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls<a class="headerlink" href="#expected-frequency-of-sixes-in-n-rolls" title="Permalink to this heading">#</a></h2>
 <p>Let’s adapt our dice-rolling code to count how many sixes we get, if we just keep rolling the dice a lot of times - let’s say 100 rolls.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -827,7 +837,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56a30973da6d8401b074913505641d0cc396d9bf58bb23b161621559151f48f6.png" src="../_images/56a30973da6d8401b074913505641d0cc396d9bf58bb23b161621559151f48f6.png" />
+<img alt="../_images/bfdb935092671ba3b54df45f8e4b7fe38e91e551d4f8269506c66019c25d4097.png" src="../_images/bfdb935092671ba3b54df45f8e4b7fe38e91e551d4f8269506c66019c25d4097.png" />
 </div>
 </div>
 <ul class="simple">
@@ -851,7 +861,7 @@ recording how many times we needed to roll the dice to get a six.</p>
 </div>
 </section>
 <section id="what-am-i-modelling">
-<h2>What am I modelling?<a class="headerlink" href="#what-am-i-modelling" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.8.7. </span>What am I modelling?<a class="headerlink" href="#what-am-i-modelling" title="Permalink to this heading">#</a></h2>
 <p>In these exercises we saw two different ways of modelling the physical process (rolling a six)</p>
 <ul class="simple">
 <li><p>we looked at the frequency of the outcome of interest (a six) in a fixed number of trials (<code class="docutils literal notranslate"><span class="pre">nRolls</span></code>):</p></li>
@@ -905,6 +915,24 @@ recording how many times we needed to roll the dice to get a six.</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="TutorialExercises1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.7. </span>Tutorial Exercises 1: Probability Jargon in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="placeholder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.9. </span>Hand In Assignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -920,19 +948,19 @@ recording how many times we needed to roll the dice to get a six.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.8.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-of-rolling-a-dice-til-you-get-a-six">2.8.2. Simulation of rolling a dice til you get a six</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop"><code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-while-loop">2.8.3. Repeated <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-outcomes">Distribution of outcomes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">Expected number of rolls</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">Frequency of extreme outcomes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">What am I modelling?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-number-of-rolls">2.8.4. Expected number of rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-extreme-outcomes">2.8.5. Frequency of extreme outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expected-frequency-of-sixes-in-n-rolls">2.8.6. Expected frequency of sixes in <span class="math notranslate nohighlight">\(n\)</span> rolls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-am-i-modelling">2.8.7. What am I modelling?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-neuroscience">Applications in neuroscience</a></li>
 </ul>
 </li>
