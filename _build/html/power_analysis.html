@@ -298,6 +298,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
 </ul>
 </li>
 </ul>
@@ -725,7 +728,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13c0fbcd4c33903e8aae6fafc9cd6da4bcd88db567f152eb24081d17a2a6a711.png" src="_images/13c0fbcd4c33903e8aae6fafc9cd6da4bcd88db567f152eb24081d17a2a6a711.png" />
+<img alt="_images/8027e4ea65001eac6a760f96368f5eb1915848b5955a99a2aeb451c6a3895acb.png" src="_images/8027e4ea65001eac6a760f96368f5eb1915848b5955a99a2aeb451c6a3895acb.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -765,11 +768,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.012184</td>
+      <td>-0.004944</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.012184</td>
+      <td>-0.004944</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -798,7 +801,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.1577347518813026, pvalue=0.2739511521419298)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.08667455888085454, pvalue=0.5495008664171421)
 </pre></div>
 </div>
 </div>
@@ -811,7 +814,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2739511521419298
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5495008664171421
 </pre></div>
 </div>
 </div>
@@ -835,7 +838,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0542
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0461
 </pre></div>
 </div>
 </div>
@@ -881,7 +884,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6e74d6346fba3325c92e6c59b7ec7b80c8d4edf9c34b039ebe39285b3131fc60.png" src="_images/6e74d6346fba3325c92e6c59b7ec7b80c8d4edf9c34b039ebe39285b3131fc60.png" />
+<img alt="_images/b4ffabfd76ef4260ddd6e9423305bf6d4884a353cc18308aaf94ea4ad5d599b4.png" src="_images/b4ffabfd76ef4260ddd6e9423305bf6d4884a353cc18308aaf94ea4ad5d599b4.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -919,11 +922,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.248618</td>
+      <td>0.241275</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.248618</td>
+      <td>0.241275</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -948,7 +951,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.412
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.368
 </pre></div>
 </div>
 </div>
@@ -974,7 +977,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.378
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.405
 </pre></div>
 </div>
 </div>
@@ -1009,7 +1012,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 40.0%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>power = 40.400000000000006%
 </pre></div>
 </div>
 </div>
@@ -1041,7 +1044,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/47bb22ea5c1723a9f485713eec67ab94c4bc5c1acfbfb5d9790b95c5c2fc4951.png" src="_images/47bb22ea5c1723a9f485713eec67ab94c4bc5c1acfbfb5d9790b95c5c2fc4951.png" />
+<img alt="_images/36023cc695cad423b745db24ecb5cab5f7433a8ada907e4d748f7f52e3303ae8.png" src="_images/36023cc695cad423b745db24ecb5cab5f7433a8ada907e4d748f7f52e3303ae8.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation ould take a long time to run).</p>
@@ -1068,6 +1071,44 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;power&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nReps</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">pop_rNonZero</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">sampleSize</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;Maths&#39;</span><span class="p">],</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;French&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">power</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p</span><span class="o">&lt;</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">power</span><span class="p">,</span><span class="s1">&#39;k.-&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/scipy/stats/_stats_py.py:4826,</span> in <span class="ni">pearsonr</span><span class="nt">(x, y, alternative, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4822</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">PearsonRResult</span><span class="p">(</span><span class="n">statistic</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">pvalue</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4823</span>                             <span class="n">alternative</span><span class="o">=</span><span class="n">alternative</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4824</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="ne">-&gt; </span><span class="mi">4826</span> <span class="n">xmean</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4827</span> <span class="n">ymean</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4829</span> <span class="c1"># By using `astype(dtype)`, we ensure that the intermediate calculations</span>
+<span class="g g-Whitespace">   </span><span class="mi">4830</span> <span class="c1"># use at least 64 bit floating point.</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/_methods.py:169,</span> in <span class="ni">_mean</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span> <span class="n">is_float16_result</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">169</span> <span class="n">rcount</span> <span class="o">=</span> <span class="n">_count_reduce_items</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span> <span class="k">if</span> <span class="n">rcount</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span> <span class="k">else</span> <span class="n">umr_any</span><span class="p">(</span><span class="n">rcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Mean of empty slice.&quot;</span><span class="p">,</span> <span class="ne">RuntimeWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/anaconda3/lib/python3.9/site-packages/numpy/core/_methods.py:72,</span> in <span class="ni">_count_reduce_items</span><span class="nt">(arr, axis, keepdims, where)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="k">if</span> <span class="n">where</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="c1"># no boolean mask given, calculate items according to axis</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="n">axis</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">ndim</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">axis</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>         <span class="n">axis</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis</span><span class="p">,)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
