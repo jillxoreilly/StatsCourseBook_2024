@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>2.5. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+    <title>2.7. Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Regression - Statistical Tests" href="../Chapter12_Regression3/regression3_intro.html" />
-    <link rel="prev" title="2.4. Multiple Regression Q &amp; A" href="regression2_QandA.html" />
+    <link rel="prev" title="2.6. Multivariate analysis and interaction terms" href="InteractionTerms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -589,8 +591,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">2.5.2. ESS data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">2.7.2. ESS data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-regression-model">Simple regression model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-regression-model">Multiple regression model</a></li>
@@ -600,13 +602,14 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-categorical-variable">Further categorical variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction terms</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">2.7.3. Interaction terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.5.3. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-coding-for-interaction-terms">2.7.4. Alternative coding for interaction terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.7.5. Further Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -619,11 +622,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
-<h1><span class="section-number">2.5. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.7. </span>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Permalink to this heading">#</a></h1>
 <p>This week, you will be investigating attitudes to immigration using data from the <a href='https://www.europeansocialsurvey.org'>European Social Survey (ESS)</a>.</p>
 <p>The ESS is a highly respected survey and uses random sampling to achieve a sample that is representative of the population. The survey includes lots of questions about the social and economic circumstances of the household as well as asking a set of questions on political preferences and attitudes.</p>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">2.5.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -631,10 +634,10 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">import</span> <span class="nn">statsmodels.graphics</span> <span class="k">as</span> <span class="nn">smg</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
@@ -642,7 +645,7 @@ document.write(`
 </div>
 </section>
 <section id="ess-data">
-<h2><span class="section-number">2.5.2. </span>ESS data<a class="headerlink" href="#ess-data" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.2. </span>ESS data<a class="headerlink" href="#ess-data" title="Permalink to this heading">#</a></h2>
 <p>Today’s data file is restricted to respondents in the UK. The outcome measure of interest is ‘better’ and is a score from 0-10 in answer to the following question: “Is the UK made a worse or a better place to live by people coming to live here from other countries?” 0 is labelled as “Worse place to live” and 10 as “better place to live”, or respondents could choose an answer in between. Thus, high scores indicate more open attitudes, i.e., those who feel more positive about the consequences of immigration, and low scores the opposite.</p>
 <p>This file contains several explanatory/ controls variables:</p>
 <ul class="simple">
@@ -650,12 +653,12 @@ document.write(`
 <li><p>sex (Male, Female)</p></li>
 <li><p>educ (a categorical measure with 3 levels, where ‘tertiary’ is higher education such as university)</p></li>
 <li><p>vote (a categorical measure of the party the respondent last voted for where 1 = Conservatives, 2 = Labour, 3 = any other party)</p></li>
-<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 0 = the respondent was not born in the UK, and 1 indicates they were).</p></li>
+<li><p>bornuk (a binary measure of whether the respondent was born in the UK where 1 = the respondent was not born in the UK, and 0 indicates they were).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and view the data</span>
-<span class="n">ess</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/immigrationData.csv&#39;</span><span class="p">)</span>
+<span class="n">ess</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/immigrationData.csv&#39;</span><span class="p">)</span>
 <span class="n">ess</span>
 </pre></div>
 </div>
@@ -839,7 +842,7 @@ document.write(`
 <h3>Multiple regression model<a class="headerlink" href="#multiple-regression-model" title="Permalink to this heading">#</a></h3>
 <p>We are going to add a further explanatory variable to the model: sex.</p>
 <p>This is a string variable with two categories: Male and Female.</p>
-<p>Add sex to your model, keeping age in the model too. ou will need to change the formula from <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span></code> to <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span> <span class="pre">+</span> <span class="pre">sex</span></code></p>
+<p>Add sex to your model, keeping age in the model too. You will need to change the formula from <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span></code> to <code class="docutils literal notranslate"><span class="pre">better</span> <span class="pre">~</span> <span class="pre">age</span> <span class="pre">+</span> <span class="pre">sex</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex</span>
@@ -907,10 +910,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:55:21</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>15:00:38</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -999,10 +1002,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:55:21</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>15:00:38</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1105,8 +1108,9 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="interaction-terms">
-<h3>Interaction terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h3>
+<h2><span class="section-number">2.7.3. </span>Interaction terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h2>
 <p>Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable.</p>
 <p>We will do this by modelling the effect of ‘age’ and ‘vote’ on ‘better’, and adding an <strong>interaction term</strong> of age*vote to the model.</p>
 <p>The code in Python for an interaction between A and B is A:B</p>
@@ -1140,10 +1144,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   20.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:55:21</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
+  <th>Time:</th>                 <td>15:00:38</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  1511</td>      <th>  AIC:               </th> <td>   6903.</td>
@@ -1200,7 +1204,7 @@ document.write(`
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
 </div>
 <section id="id1">
-<h4>Interpretation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<h3>Interpretation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>The interaction <code class="docutils literal notranslate"><span class="pre">age:vote</span></code> breaks down the relationship between <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">better</span></code> into three separate relationships for the three categories of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
 <p>We can visualize this using <code class="docutils literal notranslate"><span class="pre">sns.lmeplot</span></code> which plots the linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> - if we use the argument <code class="docutils literal notranslate"><span class="pre">hue='vote'</span></code> this will be done separately for each category of <code class="docutils literal notranslate"><span class="pre">vote</span></code></p>
 <div class="cell docutils container">
@@ -1215,17 +1219,37 @@ document.write(`
   self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="../_images/38d600106fda13f69765860151151f3cff9fe6924ccb97c73445df024cf61099.png" src="../_images/38d600106fda13f69765860151151f3cff9fe6924ccb97c73445df024cf61099.png" />
+<img alt="../_images/1661db994188e782c2767371759f1def623702eff56518fb562745280501e288.png" src="../_images/1661db994188e782c2767371759f1def623702eff56518fb562745280501e288.png" />
 </div>
 </div>
 <p>Interpret the results in your own words.</p>
 <p>Check your understanding with your classmates or your tutor.</p>
 <p>(Hint: where is the gap between between Labour and Conservative supporters smaller, and where it is wider?). Does this make sense to you, in terms of people you know? (Do you know many young Conservatives?)</p>
+<p>Look back at the model output. What is the “main effect” of age, and how should you interpret this?
+Look at the coefficients for the interaction terms. Are these positive or negative, and does this match with your expectations based on the plot?</p>
 </section>
 </section>
+<section id="alternative-coding-for-interaction-terms">
+<h2><span class="section-number">2.7.4. </span>Alternative coding for interaction terms<a class="headerlink" href="#alternative-coding-for-interaction-terms" title="Permalink to this heading">#</a></h2>
+<p>The code we have used for specifying an interaction here is <code class="docutils literal notranslate"><span class="pre">A:B</span></code>, where the colon specifies an interaction between variable A and variable B.</p>
+<p>An alternative approach would be to use <code class="docutils literal notranslate"><span class="pre">A*B</span></code>. This would be specified as below.</p>
+<ul class="simple">
+<li><p>Try it! Do you get the same result?</p></li>
+<li><p>Can you work out how this code differs to the first one you tried?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uncomment this code to run it</span>
+<span class="c1">#reg_formula = sm.regression.linear_model.OLS.from_formula(data = ess, formula = &#39;better ~ sex + age*vote&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Interaction terms should always be added to a model IN ADDITION TO the main effects.</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">A*B</span></code> code adds the main effects for you, the <code class="docutils literal notranslate"><span class="pre">A:B</span></code> just creates the interaction term - so if using <code class="docutils literal notranslate"><span class="pre">A:B</span></code> you need to specify the main terms in your model code, as well as the interaction.</p>
 </section>
 <section id="further-exercises">
-<h2><span class="section-number">2.5.3. </span>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.7.5. </span>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Can you run 3 separate regression models for Conservative voters, Labour voters, and Other?</p></li>
 </ol>
@@ -1277,12 +1301,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="regression2_QandA.html"
+       href="InteractionTerms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Multiple Regression Q &amp; A</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Multivariate analysis and interaction terms</p>
       </div>
     </a>
     <a class="right-next"
@@ -1309,8 +1333,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.5.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">2.5.2. ESS data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">2.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ess-data">2.7.2. ESS data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-regression-model">Simple regression model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-regression-model">Multiple regression model</a></li>
@@ -1320,13 +1344,14 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-categorical-variable">Further categorical variable</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">Interaction terms</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interaction-terms">2.7.3. Interaction terms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.5.3. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-coding-for-interaction-terms">2.7.4. Alternative coding for interaction terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">2.7.5. Further Exercises</a></li>
 </ul>
   </nav></div>
 

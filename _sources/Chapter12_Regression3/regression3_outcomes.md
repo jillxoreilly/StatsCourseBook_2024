@@ -7,7 +7,7 @@ After this week, you should be able to:
 * Understand the equation and interpretation of R-squared and the Root-Mean-Square-Error
 * Understand the equation for finding the standard error and how to interpret the significance test on the slope
 * Understand the standard error, t-statistic, and significance level in the regression table.
-* Assess whether regression assumptions have been met.
+* Discuss regression assumptions.
 
 These points will be covered in the lecture.
 

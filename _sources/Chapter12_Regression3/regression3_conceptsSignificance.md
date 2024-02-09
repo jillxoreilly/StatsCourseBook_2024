@@ -49,7 +49,7 @@ Here, in the mother’s education example, we compute $t$ as follows:
 
 $$t = \frac{b}{se(b)} = \frac{0.294}{0.0149} = 19.73 $$
 
-As the calculated value of $t$, 19.73, is mmuch greater than the critical value 1.96, we can reject $\mathcal{H_0}$, i.e., there is strong evidence that number of years of mother’s education has a positive effect on number of years of education. The slope is statistically significantly different to zero.
+As the calculated value of $t$, 19.73, is much greater than the critical value 1.96, we can reject $\mathcal{H_0}$, i.e., there is strong evidence that number of years of mother’s education has a positive effect on number of years of education. The slope is statistically significantly different to zero.
 
 ```
 
@@ -59,7 +59,7 @@ As the calculated value of $t$, 19.73, is mmuch greater than the critical value 
 ```{admonition} Click to reveal answer
 :class: dropdown
 
-As you saw in back in Michaelmas Term (topic 6), we can use the standard error to find 95% confidence intervals around the slope. We do this with the following equation:
+As you shave seen earlier in ths course, we can use the standard error to find 95% confidence intervals around the slope. We do this with the following equation:
 
 $$CI =  b \pm t(se)$$ 
 

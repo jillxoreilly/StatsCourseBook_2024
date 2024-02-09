@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter11_Regression2/regression2_QandA';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.5. Tutorial Exercises" href="regression2_TutorialExercises.html" />
+    <link rel="next" title="2.5. Handling different variable types in regression analysis" href="VariableTypes.html" />
     <link rel="prev" title="2.3. Different types of multivariate relationship" href="regression2_typesOfRelationship.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -580,19 +582,19 @@ variable?</p></li>
 <p class="admonition-title">Click to reveal answer</p>
 <p>As many as you like! Although there will usually be constraints due to sample size and practicality. We want to keep the model parsimonious and efficient. And all the control variables should be there for good reason.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Last week, we saw the regression equation <span class="math notranslate nohighlight">\(y=a+bx\)</span>
 What is the form of the regression equation when there are several <span class="math notranslate nohighlight">\(x\)</span> variables?</p></li>
 </ol>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
-<p><span class="math notranslate nohighlight">\(y=a+b_1 x_1+b_2 x_2+b_3 x_3\)</span></p>
+<p><span class="math notranslate nohighlight">\(y=a+b_1 x_1+b_2 x_2+b_3 x_3\)</span>…etc</p>
 </div>
 <p>The regression equation is additive. We can add more slope*<span class="math notranslate nohighlight">\(x\)</span>
 elements to the equation. Note that there is always only one
 intercept! Also note that in multiple regression we estimate a
 slope (<span class="math notranslate nohighlight">\(b\)</span>) for each <span class="math notranslate nohighlight">\(x\)</span> variable.</p>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>How does the interpretation of the intercept change in multiple regression?</p></li>
 </ol>
 <div class="dropdown admonition">
@@ -644,11 +646,11 @@ regression equation as follows:</p>
       </div>
     </a>
     <a class="right-next"
-       href="regression2_TutorialExercises.html"
+       href="VariableTypes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Tutorial Exercises</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Handling different variable types in regression analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -629,40 +631,15 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If that threw an error, you may need to install <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> before you can import it.</p>
-<p>Try this code block:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>statsmodels
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: statsmodels in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (0.14.0)
-Requirement already satisfied: numpy&gt;=1.18 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.24.3)
-Requirement already satisfied: scipy!=1.9.2,&gt;=1.4 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (1.10.0)
-Requirement already satisfied: pandas&gt;=1.0 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (2.0.3)
-Requirement already satisfied: patsy&gt;=0.5.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (0.5.3)
-Requirement already satisfied: packaging&gt;=21.3 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from statsmodels) (23.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=1.0-&gt;statsmodels) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=1.0-&gt;statsmodels) (2023.3.post1)
-Requirement already satisfied: tzdata&gt;=2022.1 in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from pandas&gt;=1.0-&gt;statsmodels) (2023.3)
-Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.9/site-packages (from patsy&gt;=0.5.2-&gt;statsmodels) (1.16.0)
-</pre></div>
-</div>
-</div>
-</div>
-<p>… and then rerun the importing block above</p>
 </section>
 <section id="happiness-toy-example">
 <h2><span class="section-number">1.5.2. </span>Happiness toy example<a class="headerlink" href="#happiness-toy-example" title="Permalink to this heading">#</a></h2>
@@ -674,7 +651,7 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import and view data</span>
-<span class="n">happiness</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/happiness10.csv&#39;</span><span class="p">)</span>
+<span class="n">happiness</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/happiness10.csv&#39;</span><span class="p">)</span>
 <span class="n">happiness</span>
 </pre></div>
 </div>
@@ -807,10 +784,10 @@ Requirement already satisfied: six in /Users/joreilly/opt/anaconda3/lib/python3.
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.738</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th>  <td>0.0435</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:54:57</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
+  <th>Time:</th>                 <td>15:00:31</td>     <th>  Log-Likelihood:    </th> <td> -9.1084</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    10</td>      <th>  AIC:               </th> <td>   22.22</td>
@@ -1058,13 +1035,13 @@ dtype: float64
 <li><p>The size of the residual is larger when the difference between <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(\hat{y}\)</span> is larger</p></li>
 </ul>
 <p>Do you think there are any outliers in the data? As we noted earlier, there was one very high and one very low value among the residuals.</p>
-<p>Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s change the happiness measure to ‘NaN’ for these two countries and re-run the regression command.</p>
+<p>Let’s try re-running the regression model without these two potential outliers: Finland and Ukraine. Let’s replace the whole row of the dataframe with ‘NaN’ for these two countries and re-run the regression command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code for changing Finland and Ukraine to NaN</span>
 <span class="n">happiness_clean</span> <span class="o">=</span> <span class="n">happiness</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">happiness_clean</span><span class="p">[</span><span class="n">happiness_clean</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Ukraine&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-<span class="n">happiness_clean</span><span class="p">[</span><span class="n">happiness_clean</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Finland&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happiness_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">happiness_clean</span><span class="o">.</span><span class="n">Country</span><span class="o">==</span><span class="s1">&#39;Ukraine&#39;</span><span class="p">)]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happiness_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">happiness_clean</span><span class="o">.</span><span class="n">Country</span><span class="o">==</span><span class="s1">&#39;Finland&#39;</span><span class="p">)]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 <span class="n">happiness_clean</span>
 </pre></div>
 </div>
@@ -1213,10 +1190,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   5.266</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th>  <td>0.0615</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:54:57</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
+  <th>Time:</th>                 <td>15:00:32</td>     <th>  Log-Likelihood:    </th> <td> -3.9966</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>     8</td>      <th>  AIC:               </th> <td>   11.99</td>
@@ -1269,15 +1246,14 @@ dtype: float64
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="the-calculation-for-the-slope-and-intercept">
 <h1><span class="section-number">1.6. </span>The calculation for the slope and intercept<a class="headerlink" href="#the-calculation-for-the-slope-and-intercept" title="Permalink to this heading">#</a></h1>
-<p>Back in Week 4 when you were learning about correlation and covariance, you saw the formula for calculating <span class="math notranslate nohighlight">\(b\)</span>, the slope coefficient.</p>
-<p>Remember the Height/ Finger length example?</p>
+<p>Here’s a new data set looking at height and finger length among a sample of adults, which we will use to demonstrate how it is possible to calculate regression coefficients, using the equations.</p>
 <p>The equation for finding <span class="math notranslate nohighlight">\(b\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[ b = \frac{s_{xy}}{s^2_x} \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load and view the data</span>
-<span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
+<span class="n">heightFinger</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/HeightFingerInches.csv&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">heightFinger</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1372,9 +1348,9 @@ dtype: float64
 <p>Let’s apply that in Python</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s_x</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">s_y</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">s_xy</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">heightFinger</span><span class="p">[</span><span class="s1">&#39;FingerLength&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s_x</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">s_y</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="o">.</span><span class="n">FingerLength</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">s_xy</span> <span class="o">=</span> <span class="n">heightFinger</span><span class="o">.</span><span class="n">Height</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">heightFinger</span><span class="o">.</span><span class="n">FingerLength</span><span class="p">)</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="n">s_xy</span><span class="o">/</span><span class="p">(</span><span class="n">s_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
@@ -1444,10 +1420,10 @@ dtype: float64
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   2200.</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 30 Jan 2024</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
+  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th>  <td>  0.00</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:54:58</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
+  <th>Time:</th>                 <td>15:00:32</td>     <th>  Log-Likelihood:    </th> <td>  1163.6</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  3000</td>      <th>  AIC:               </th> <td>  -2323.</td>
@@ -1506,7 +1482,7 @@ dtype: float64
 </li>
 <li><p>What do you think ‘std err’ might stand for, in the column after ‘coef’?</p>
 <ul class="simple">
-<li><p>Standard Error. You learned about this important concept in Week 6, and we’ll come back to it again in a couple of weeks.</p></li>
+<li><p>Standard Error. You have learned about this important concept alreaady! We’ll come back to it again in a couple of weeks.</p></li>
 </ul>
 </li>
 </ol>

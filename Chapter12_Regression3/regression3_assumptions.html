@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="regression3_intro.html">3. Regression - Statistical Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -568,10 +570,11 @@ document.write(`
 <li><p>The linear regression model assumes that the relationship between <span class="math notranslate nohighlight">\(x\)</span> and the mean of <span class="math notranslate nohighlight">\(y\)</span> follows a straight line.</p></li>
 <li><p>The conditional distribution of <span class="math notranslate nohighlight">\(y\)</span> is normal.</p></li>
 <li><p>The standard deviation of the conditional distribution is the same at each fixed <span class="math notranslate nohighlight">\(x\)</span> value (homoscedasticity).</p></li>
+<li><p>In addition, we need to be careful that there is not too much overlap between the explanatory variables. Too much overlap is known as multicollinearity.</p></li>
 </ul>
 <p>In practice, the assumptions are never perfectly fulfilled, but the regression model can still be useful. It is adequate to check that no assumption is grossly violated. (Agresti, Chapter 14).</p>
 <p>Note that first assumption – that the sample is randomly selected – depends on the method of data collection. It is not a statistical test!</p>
-<p>The remaining assumptions are statistical assumptions, and we will come to these in the next section.</p>
+<p>The remaining assumptions are statistical assumptions, and we will look at some of these later.</p>
 </section>
 
     <script type="text/x-thebe-config">

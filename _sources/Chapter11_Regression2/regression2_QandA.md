@@ -18,20 +18,20 @@ An explanatory variable is one that is important for the hypothesis being tested
 As many as you like! Although there will usually be constraints due to sample size and practicality. We want to keep the model parsimonious and efficient. And all the control variables should be there for good reason. 
 ```
 
-1. Last week, we saw the regression equation $y=a+bx$ 
+2. Last week, we saw the regression equation $y=a+bx$ 
 What is the form of the regression equation when there are several $x$ variables?
 
 
 ```{admonition} Click to reveal answer
 :class: dropdown
-$y=a+b_1 x_1+b_2 x_2+b_3 x_3$
+$y=a+b_1 x_1+b_2 x_2+b_3 x_3$...etc
 ```
 The regression equation is additive. We can add more slope*$x$
    elements to the equation. Note that there is always only one
    intercept! Also note that in multiple regression we estimate a
    slope ($b$) for each $x$ variable.
 
-1. How does the interpretation of the intercept change in multiple regression?
+3. How does the interpretation of the intercept change in multiple regression?
 
 ```{admonition} Click to reveal answer
 :class: dropdown
