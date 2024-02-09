@@ -56,6 +56,7 @@ To interpret the coefficients, we need to compare them to the omitted category, 
 
 ```{admonition} Click to reveal answer
 :class: dropdown
+5
 ```
 
 

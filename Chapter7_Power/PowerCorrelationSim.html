@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -728,7 +730,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4644d27502b0bff578d83514b6851fbfe6674954be3b59bfb3e62d8011425e03.png" src="../_images/4644d27502b0bff578d83514b6851fbfe6674954be3b59bfb3e62d8011425e03.png" />
+<img alt="../_images/d0c16eed9e76961cf9a19541f1e8a4e4b55154f93a10b165893456c7dd960a41.png" src="../_images/d0c16eed9e76961cf9a19541f1e8a4e4b55154f93a10b165893456c7dd960a41.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -768,11 +770,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>-0.009708</td>
+      <td>-0.007166</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.009708</td>
+      <td>-0.007166</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -798,7 +800,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0457
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0429
 </pre></div>
 </div>
 </div>
@@ -838,7 +840,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83f090eaa4caa8dd48443b2e17650f22badc6bffa01c32765086d3c28aeed287.png" src="../_images/83f090eaa4caa8dd48443b2e17650f22badc6bffa01c32765086d3c28aeed287.png" />
+<img alt="../_images/ae5c3f417902f1e02e01973e3e290f2ab4bad100e2d84fd601633fbdfa151ef7.png" src="../_images/ae5c3f417902f1e02e01973e3e290f2ab4bad100e2d84fd601633fbdfa151ef7.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -874,13 +876,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
   <tbody>
     <tr>
       <th>Maths</th>
-      <td>1.00000</td>
-      <td>0.24461</td>
+      <td>1.000000</td>
+      <td>0.238954</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.24461</td>
-      <td>1.00000</td>
+      <td>0.238954</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
@@ -888,7 +890,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 <section id="simulating-false-negatives">
 <h3>Simulating false negatives<a class="headerlink" href="#simulating-false-negatives" title="Permalink to this heading">#</a></h3>
-<p>Power is the proportion of the time we fail to find a significant effect, given than an effect is present.</p>
+<p>Power is the proportion of the time we find a significant effect, given than an effect is presentin the underlying population (or conversely one minus the proportion of the time we fail to detect and effect, given one is present).</p>
 <p>We can investigate power (false negatives) in our correlation example using the same simulation approach we used above for false positives, but using the correlated population.</p>
 <p>The question for our <em>power analysis</em> is, for samples of size <span class="math notranslate nohighlight">\(n=50\)</span>, what proportion of the time will I obtain a significant correlation (reject the null)?</p>
 <p>To answer that question I am going to draw samples of size <span class="math notranslate nohighlight">\(n=50\)</span> from the population <em>which actually has <span class="math notranslate nohighlight">\(\rho\)</span>=0.25</em> and obtain the sample correlation for each of those samples and its <span class="math notranslate nohighlight">\(p\)</span>-value using <code class="docutils literal notranslate"><span class="pre">stats.pearsonr().pvalue</span></code>.</p>
@@ -909,7 +911,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.527
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.521
 </pre></div>
 </div>
 </div>
@@ -936,7 +938,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.536
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.504
 </pre></div>
 </div>
 </div>
@@ -974,7 +976,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d2062fef6575f3a2dd2086f6f59018ce42e263834f07d1bd13090962f8030d0.png" src="../_images/3d2062fef6575f3a2dd2086f6f59018ce42e263834f07d1bd13090962f8030d0.png" />
+<img alt="../_images/a0eeb5384f7afd71e23a39dc2de500f800d8b29709efcc8690fa962f217f68b6.png" src="../_images/a0eeb5384f7afd71e23a39dc2de500f800d8b29709efcc8690fa962f217f68b6.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>
