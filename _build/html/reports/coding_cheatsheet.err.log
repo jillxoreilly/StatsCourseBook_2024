@@ -25,7 +25,7 @@ df.groupby(['Type', 'Colour']).size().columns
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_18885/2378309076.py[0m in [0;36m?[0;34m()[0m
+[0;32m/var/folders/q4/twg1yll54y142rc02m5wwbt40000gr/T/ipykernel_4353/2378309076.py[0m in [0;36m?[0;34m()[0m
 [0;32m----> 2[0;31m [0mdisplay[0m[0;34m([0m[0mdf[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0;34m[[0m[0;34m'Type'[0m[0;34m,[0m [0;34m'Colour'[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0msize[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mdf[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0;34m[[0m[0;34m'Type'[0m[0;34m,[0m [0;34m'Colour'[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0msize[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mcolumns[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0;31m# as you can see, this spits out an error because 'Type' and 'Colour' are indices not columns[0m[0;34m[0m[0;34m[0m[0m

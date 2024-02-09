@@ -8,13 +8,13 @@ I downloaded these data from the Our World in Data website for all of Europe, th
 
 Here, we’ll focus on the concepts. We’ll get onto the Python code for regression later.
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/regression1_happinessTable.png
 :width: 40%
 :align: center
 ```
 First, we can examine the relationship visually in a scatter plot:
 
-```{image} images/regression1_happinessScatter.png
+```{image} raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/regression1_happinessScatter.png
 :width: 80%
 :align: center
 ```
@@ -56,7 +56,7 @@ week.
 Yes! It becomes clearer when we add the line to the plot. We can see that the line crosses the $y$-axis at 5.85 so that makes sense. And eyeballing the slope, we can roughly see that life satisfaction increases from around 6.2 points to 6.9 points as GDP rises from 20 to 60 thousand (change in $x$ = 40; 40*slope of 0.018 = 0.72). We’ll practise this more.
 ```
 
-```{image} images/regression1_happinessRegplot.png
+```{image} raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/regression1_happinessRegplot.png
 :width: 80%
 :align: center
 ```

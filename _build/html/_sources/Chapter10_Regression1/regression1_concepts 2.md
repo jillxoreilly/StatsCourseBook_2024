@@ -8,13 +8,13 @@ I downloaded these data from the Our World in Data website for all of Europe, th
 
 Here, we’ll focus on the concepts. We’ll get onto the Python code for regression later.
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression1_happinessTable.png
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/regression1_happinessTable.png
 :width: 40%
 :align: center
 ```
 First, we can examine the relationship visually in a scatter plot:
 
-```{image} images/regression1_happinessScatter.png
+```{image} raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/images/regression1_happinessScatter.png
 :width: 80%
 :align: center
 ```

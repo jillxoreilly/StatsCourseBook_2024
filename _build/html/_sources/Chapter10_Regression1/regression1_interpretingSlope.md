@@ -82,7 +82,6 @@ dioxide value. Find the residual and interpret.
 :class: dropdown
 The residual is the difference between the observed and predicted
 value of ($y-\hat{y}$̂).
-```
 
 For the U.S., we know from the first question that, for $x$ = 34.3,
 $\hat{y}̂$=13.1. The observed value for $y$ = 19.7, then the residual
@@ -91,3 +90,6 @@ producing 6.6 metric tons per capita, more CO2 emissions, than
 predicted by the regression line.
 
 If the residual was a negative number, then it would suggest that that country is producing less CO2 emissions than predicted by the regression line. 
+
+```
+

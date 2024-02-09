@@ -1,3 +1,3 @@
 # Hand In Assignment
 
-This will appear on Tuesday 3rd week
+The instructions are on Canvas

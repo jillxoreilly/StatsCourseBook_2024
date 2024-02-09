@@ -162,7 +162,7 @@ This is $p(P|E^c) = \frac{88}{1021}$
 A rapid screening test for COVID19 has the following efficacy statistics:
 
 * For people with COVID19, a positive result occurs 90% of the time
-* For people without COVID19, a negative test result occurs 2% of the time
+* For people without COVID19, a positive test result occurs 2% of the time
 
 In the city of Easton, it is estimated that 10.7% of the population have COVID.
 
