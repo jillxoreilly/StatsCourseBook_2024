@@ -22,7 +22,7 @@ Handling categorical variables follows the same logic as binary variables (thoug
 The first 10 data points look like this: 
 * Note that in this example, health is a self-rated measure that runs from 1 (poor health) to 5 (excellent health).
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyTable2.png 
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyTable1.png 
 :width: 25%
 :align: center
 ```
@@ -32,15 +32,15 @@ We could manipulate the data in the following way, capturing each category as a 
 
 In row 1, the person has a zero for never smoked and a zero for ex-smoker, so they must be a current smoker. The people who have never smoked have a 1 for never smoked, and the ex-smokers have a 1 for ex-smoker. Thus, we get all the information we need without a separate dummy variable for “current smoker” which we will treat, in this example, as the *reference category* or *omitted category* (two terms for the same thing).
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyOutput1.png 
-:width: 80%
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyTable2.png 
+:width: 50%
 :align: center
 ```
 
 The Python output for this example looks like this:
 
-```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyTable2.png 
-:width: 60%
+```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_DummyEg_Output1.png 
+:width: 80%
 :align: center
 ```
 

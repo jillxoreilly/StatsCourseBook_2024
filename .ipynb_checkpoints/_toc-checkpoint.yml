@@ -124,8 +124,8 @@ parts:
         - file: Chapter9_Probability/JointProbability.md
         - file: Chapter9_Probability/BayesTheorem.md
         - file: Chapter9_Probability/PaperAndPencilExercises.md
-        - file: Chapter9_Probability/TutorialExercises.ipynb
-        - file: Chapter9_Probability/Diceroll_while.md
+        - file: Chapter9_Probability/TutorialExercises1.ipynb
+        - file: Chapter9_Probability/TutorialExercises2.ipynb
         - file: Chapter9_Probability/placeholder.md
     - caption: Regression Models
       numbered: 3
@@ -144,6 +144,8 @@ parts:
         - file: Chapter11_Regression2/regression2_concepts.md
         - file: Chapter11_Regression2/regression2_typesOfRelationship.md
         - file: Chapter11_Regression2/regression2_QandA.md
+        - file: Chapter11_Regression2/VariableTypes.md
+        - file: Chapter11_Regression2/InteractionTerms.md
         - file: Chapter11_Regression2/regression2_TutorialExercises.ipynb
         - file: Chapter11_Regression2/regression3_intro.md
       - file: Chapter12_Regression3/regression3_intro.md

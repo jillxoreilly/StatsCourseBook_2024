@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="regression3_intro.html">3. Regression - Statistical Tests</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -605,14 +607,14 @@ And the alternative hypothesis as  <span class="math notranslate nohighlight">\(
 <p>Here, in the mother’s education example, we compute <span class="math notranslate nohighlight">\(t\)</span> as follows:</p>
 <div class="math notranslate nohighlight">
 \[t = \frac{b}{se(b)} = \frac{0.294}{0.0149} = 19.73 \]</div>
-<p>As the calculated value of <span class="math notranslate nohighlight">\(t\)</span>, 19.73, is mmuch greater than the critical value 1.96, we can reject <span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span>, i.e., there is strong evidence that number of years of mother’s education has a positive effect on number of years of education. The slope is statistically significantly different to zero.</p>
+<p>As the calculated value of <span class="math notranslate nohighlight">\(t\)</span>, 19.73, is much greater than the critical value 1.96, we can reject <span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span>, i.e., there is strong evidence that number of years of mother’s education has a positive effect on number of years of education. The slope is statistically significantly different to zero.</p>
 </div>
 <ul class="simple">
 <li><p>How would you find a 95% confidence interval for the population slope.</p></li>
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">Click to reveal answer</p>
-<p>As you saw in back in Michaelmas Term (topic 6), we can use the standard error to find 95% confidence intervals around the slope. We do this with the following equation:</p>
+<p>As you shave seen earlier in ths course, we can use the standard error to find 95% confidence intervals around the slope. We do this with the following equation:</p>
 <div class="math notranslate nohighlight">
 \[CI =  b \pm t(se)\]</div>
 <p>…where <span class="math notranslate nohighlight">\(t\)</span> is the tabulated two-sided 5% level value with degrees of freedom = <span class="math notranslate nohighlight">\(n-2\)</span></p>

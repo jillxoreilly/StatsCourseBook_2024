@@ -145,6 +145,7 @@ parts:
         - file: Chapter11_Regression2/regression2_typesOfRelationship.md
         - file: Chapter11_Regression2/regression2_QandA.md
         - file: Chapter11_Regression2/VariableTypes.md
+        - file: Chapter11_Regression2/InteractionTerms.md
         - file: Chapter11_Regression2/regression2_TutorialExercises.ipynb
         - file: Chapter11_Regression2/regression3_intro.md
       - file: Chapter12_Regression3/regression3_intro.md

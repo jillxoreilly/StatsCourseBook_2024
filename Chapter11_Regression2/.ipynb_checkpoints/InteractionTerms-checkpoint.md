@@ -4,7 +4,7 @@ Let’s continue working with the same example here – smoking and health. This
 The output from Python, with age added to the model, is: 
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_InteractionTable1.png 
-:width: 80%
+:width: 50%
 :align: center
 ```
 
@@ -35,7 +35,7 @@ We have added age to the model which is an important explanatory variable for he
 As our final model in the smoking example, let’s take a look at the interaction term between age and smoking. Remember that an interaction term helps us to understand if the effect of a variable x1 is the same for all values of a second variable, x2. Here is the model output table from Python after specifying the new model with the interaction term:
 
 ```{image} https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/Chp11_InteractionTable2.png 
-:width: 80%
+:width: 50%
 :align: center
 ```
 
