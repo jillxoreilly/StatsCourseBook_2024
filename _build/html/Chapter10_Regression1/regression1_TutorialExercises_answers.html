@@ -320,7 +320,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -620,8 +622,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 </pre></div>
@@ -634,7 +637,7 @@ document.write(`
 <p>Let’s import the full dataset for life satisfaction vs GDP</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/All_countries_lifesat_2020.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/All_countries_lifesat_2020.csv&#39;</span><span class="p">)</span>
 <span class="n">happy</span>
 </pre></div>
 </div>
@@ -746,7 +749,8 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how many Nans there are in each column</span>
+<span class="n">happy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -761,6 +765,32 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check distribution of LifeSat</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/17edc07b3b1ce1d4c56fe516f3c99702c638c1023e447d5adc9213ab604096b6.png" src="../_images/17edc07b3b1ce1d4c56fe516f3c99702c638c1023e447d5adc9213ab604096b6.png" />
+</div>
+</div>
+<p><font color=red>There are no obviously problematic values in the histogram</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check distribution of GDPpc</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6a521552cdf91a2209ca243f41515e34cb18f180f8c5ca0e94f0b69993cbe0f0.png" src="../_images/6a521552cdf91a2209ca243f41515e34cb18f180f8c5ca0e94f0b69993cbe0f0.png" />
+</div>
+</div>
+<p><font color=red>It looks like there are suspiciously many values of GDP near zero. Let’s check if they are exactly zero, in which case they are probably dummy values rather than real values.</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">happy</span><span class="o">.</span><span class="n">GDPpc</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -771,35 +801,53 @@ dtype: int64
 </div>
 </div>
 </div>
+<p><font color=red>Yes, I think we need to replace those with NaNs</font></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">happy</span><span class="o">.</span><span class="n">GDPpc</span><span class="o">==</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="c1"># check it worked</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LifeSat&#39;, ylabel=&#39;Count&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/86c48148a77e70a8cde2b666eb7231081ecf1060f0dc1d6ef701152fc549be87.png" src="../_images/86c48148a77e70a8cde2b666eb7231081ecf1060f0dc1d6ef701152fc549be87.png" />
+<img alt="../_images/d899aae8314b97d4a486df07766fda53bb2ee5bd11b39c819074280ab0182f92.png" src="../_images/d899aae8314b97d4a486df07766fda53bb2ee5bd11b39c819074280ab0182f92.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;GDPpc&#39;, ylabel=&#39;Count&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/df2807c5d42e86ed324709c8b18c6412749e01cc14cb3702cc45975c1d52ade8.png" src="../_images/df2807c5d42e86ed324709c8b18c6412749e01cc14cb3702cc45975c1d52ade8.png" />
-</div>
-</div>
+<p><font color=red>Looks good! The spike at zero has gone.</font></p>
 <ul class="simple">
 <li><p>How many valid data points do you have?</p></li>
 </ul>
+<p><font color=red>You could check how many cases are non-nan in each column quite easily.</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Country    238
+LifeSat    146
+GDPpc      191
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><font color=red>If you want to check how many complete rows we have (countries with no nan for any variable) you need to do this:</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">happy</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>141
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="describing-the-data">
 <h3>Describing the data<a class="headerlink" href="#describing-the-data" title="Permalink to this heading">#</a></h3>
@@ -810,12 +858,29 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for the scatterplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># OR</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b8215ef57c8df96db1d424675d93ca1af50c9098506514a11429188f6cd00b77.png" src="../_images/b8215ef57c8df96db1d424675d93ca1af50c9098506514a11429188f6cd00b77.png" />
+<img alt="../_images/f0d1112716062fd5058d2a911264e67f7f3095d4df5b6cec11696fa5ab5a39b6.png" src="../_images/f0d1112716062fd5058d2a911264e67f7f3095d4df5b6cec11696fa5ab5a39b6.png" />
 </div>
 </div>
 <ul class="simple">
 <li><p>What are your initial conclusions about the relationship between GDP and life satisfaction?</p></li>
+</ul>
+<font color=red>
+<ul class="simple">
+<li><p>LifeSat goes up as GDPpc goes up</p></li>
+<li><p>The relationship is non-linear (asyptote at high GDPpc) - so for poor countries, a small increase in GDP translates to a big increase in lifesat</p></li>
+<li><p>Many data points are clustered at low GDPpc
+</font></p></li>
 </ul>
 </section>
 <section id="regression-model">
@@ -846,25 +911,25 @@ dtype: int64
 <div class="output text_html"><table class="simpletable">
 <caption>OLS Regression Results</caption>
 <tr>
-  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.530</td>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.547</td>
 </tr>
 <tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.527</td>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.544</td>
 </tr>
 <tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   162.3</td>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   168.1</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>2.30e-25</td>
+  <th>Date:</th>             <td>Tue, 13 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.07e-25</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>13:44:01</td>     <th>  Log-Likelihood:    </th> <td> -163.73</td>
+  <th>Time:</th>                 <td>16:00:02</td>     <th>  Log-Likelihood:    </th> <td> -156.58</td>
 </tr>
 <tr>
-  <th>No. Observations:</th>      <td>   146</td>      <th>  AIC:               </th> <td>   331.5</td>
+  <th>No. Observations:</th>      <td>   141</td>      <th>  AIC:               </th> <td>   317.2</td>
 </tr>
 <tr>
-  <th>Df Residuals:</th>          <td>   144</td>      <th>  BIC:               </th> <td>   337.4</td>
+  <th>Df Residuals:</th>          <td>   139</td>      <th>  BIC:               </th> <td>   323.1</td>
 </tr>
 <tr>
   <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
@@ -878,32 +943,44 @@ dtype: int64
       <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
 <tr>
-  <th>Intercept</th> <td>    4.7733</td> <td>    0.087</td> <td>   54.814</td> <td> 0.000</td> <td>    4.601</td> <td>    4.945</td>
+  <th>Intercept</th> <td>    4.7338</td> <td>    0.089</td> <td>   53.052</td> <td> 0.000</td> <td>    4.557</td> <td>    4.910</td>
 </tr>
 <tr>
-  <th>GDPpc</th>     <td>    0.0381</td> <td>    0.003</td> <td>   12.738</td> <td> 0.000</td> <td>    0.032</td> <td>    0.044</td>
+  <th>GDPpc</th>     <td>    0.0391</td> <td>    0.003</td> <td>   12.967</td> <td> 0.000</td> <td>    0.033</td> <td>    0.045</td>
 </tr>
 </table>
 <table class="simpletable">
 <tr>
-  <th>Omnibus:</th>       <td>18.051</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+  <th>Omnibus:</th>       <td>20.169</td> <th>  Durbin-Watson:     </th> <td>   1.854</td>
 </tr>
 <tr>
-  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  20.836</td>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  23.974</td>
 </tr>
 <tr>
-  <th>Skew:</th>          <td>-0.828</td> <th>  Prob(JB):          </th> <td>2.99e-05</td>
+  <th>Skew:</th>          <td>-0.919</td> <th>  Prob(JB):          </th> <td>6.22e-06</td>
 </tr>
 <tr>
-  <th>Kurtosis:</th>      <td> 3.827</td> <th>  Cond. No.          </th> <td>    41.0</td>
+  <th>Kurtosis:</th>      <td> 3.837</td> <th>  Cond. No.          </th> <td>    42.4</td>
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
 </div>
 <p>Look at the Python regression output.</p>
 <ul class="simple">
-<li><p>Find the intercept and the slope.</p></li>
-<li><p>Write out the regression equation (on your computer or by hand on paper).</p></li>
-<li><p>Make notes on how to interpret the intercept and the slope. E.g., “the intercept is the average life satisfaction in a country with…” And “the slope of x.xx means that for every additional $1000 in GDP…”</p></li>
+<li><p>Find the intercept and the slope.</p>
+<ul>
+<li><p><font color=red>intercept=4.73, slope=0.0391</font></p></li>
+</ul>
+</li>
+<li><p>Write out the regression equation (on your computer or by hand on paper).</p>
+<ul>
+<li><p><font color=red> lifesat = 4.73 + 0.0391 <span class="math notranslate nohighlight">\(\times\)</span> GDPpc</font></p></li>
+</ul>
+</li>
+<li><p>Make notes on how to interpret the intercept and the slope. E.g., “the intercept is the average life satisfaction in a country with…” And “the slope of x.xx means that for every additional 1000 dollars in GDP…”</p>
+<ul>
+<li><p><font color=red> The intercept is the average life satisfaction in a country with a zero GDP (although no countries have a GDP which is actually zero, some are close to zero so this does make some sense). The slope of 0.0391 means that for every additional 1000 dolalrs in GDP, lifesat increases by 0.0391 points - or about 25000 dollars in GDP is needed to increase lifesat by one whole point</font></p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="regression-plot">
@@ -914,19 +991,153 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for a scatterplot with regression line using sns.regplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/33b4c5d44b657ca090530147b84f0e3fcd921c81723ccd5f8619fa8ed96b5c34.png" src="../_images/33b4c5d44b657ca090530147b84f0e3fcd921c81723ccd5f8619fa8ed96b5c34.png" />
 </div>
-<p>Eyeballing the scatterplot, how well do you think the regression line fits the data points? Do you think there are any outliers? We can see that several countries with very large GDPs are below the regression line. Also, that many countries with very low GDP are a long way from the regression line. We can examine potential outliers more systematically, by asking Python to calculate residuals (and predicted values) for us.</p>
+</div>
+<p>Eyeballing the scatterplot, how well do you think the regression line fits the data points? Do you think there are any outliers?</p>
+<font color=red>
+<ul class="simple">
+<li><p>The relationship is non-linear (asyptote at high GDPpc) - so for poor countries, a small increase in GDP translates to a big increase in lifesat</p></li>
+<li><p>Many data points are clustered at low GDPpc
+</font></p></li>
+</ul>
+<p>We can see that several countries with very large GDPs are below the regression line. Also, that many countries with very low GDP are a long way from the regression line. We can examine potential outliers more systematically, by asking Python to calculate residuals (and predicted values) for us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to generate predictions (y-hat) and residuals for each data point.</span>
-<span class="c1"># add them as columns to your datafram</span>
+<span class="c1"># add them as columns to your dataframe</span>
 <span class="c1"># view the resulting dataframe</span>
+<span class="n">happy</span><span class="p">[</span><span class="s1">&#39;yhat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.73</span> <span class="o">+</span> <span class="mf">0.0391</span><span class="o">*</span><span class="n">happy</span><span class="o">.</span><span class="n">GDPpc</span>
+<span class="n">happy</span><span class="p">[</span><span class="s1">&#39;resid&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">happy</span><span class="o">.</span><span class="n">LifeSat</span> <span class="o">-</span> <span class="n">happy</span><span class="o">.</span><span class="n">yhat</span>
+<span class="n">happy</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>LifeSat</th>
+      <th>GDPpc</th>
+      <th>yhat</th>
+      <th>resid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2.40</td>
+      <td>1.97</td>
+      <td>4.807027</td>
+      <td>-2.407027</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>5.20</td>
+      <td>13.19</td>
+      <td>5.245729</td>
+      <td>-0.045729</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>5.12</td>
+      <td>10.74</td>
+      <td>5.149934</td>
+      <td>-0.029934</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>American Samoa</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andorra</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>233</th>
+      <td>Western Sahara</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>World</td>
+      <td>NaN</td>
+      <td>16.19</td>
+      <td>5.363029</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Yemen</td>
+      <td>4.20</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Zambia</td>
+      <td>3.76</td>
+      <td>3.28</td>
+      <td>4.858248</td>
+      <td>-1.098248</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Zimbabwe</td>
+      <td>3.00</td>
+      <td>3.35</td>
+      <td>4.860985</td>
+      <td>-1.860985</td>
+    </tr>
+  </tbody>
+</table>
+<p>238 rows × 5 columns</p>
+</div></div></div>
 </div>
 </section>
 <section id="sse">
@@ -936,6 +1147,13 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for squaring then adding up all the residuals.</span>
+<span class="n">SSE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">happy</span><span class="o">.</span><span class="n">resid</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">SSE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76.086046738647
 </pre></div>
 </div>
 </div>
@@ -947,17 +1165,24 @@ dtype: int64
 </ul>
 </li>
 </ul>
-<p>The sum of squared residuals is provided by <code class="docutils literal notranslate"><span class="pre">statsomdels</span></code> as <code class="docutils literal notranslate"><span class="pre">reg_results.ssr</span></code> -</p>
+<p>The sum of squared residuals is provided by <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> as <code class="docutils literal notranslate"><span class="pre">reg_results.ssr</span></code> -</p>
 <ul class="simple">
 <li><p>check that the sum of squared residuals you calculated matches the output of <code class="docutils literal notranslate"><span class="pre">reg_results.ssr</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">ssr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76.08438406844218
 </pre></div>
 </div>
 </div>
 </div>
+<p><font color=red>Yes, the value from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> matches the one we calculated</font></p>
 </section>
 <section id="check-datapoints-that-are-not-well-fit-by-the-model">
 <h3>Check datapoints that are not well fit by the model<a class="headerlink" href="#check-datapoints-that-are-not-well-fit-by-the-model" title="Permalink to this heading">#</a></h3>
@@ -966,12 +1191,386 @@ dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+<span class="n">happy</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;resid&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>LifeSat</th>
+      <th>GDPpc</th>
+      <th>yhat</th>
+      <th>resid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2.40</td>
+      <td>1.97</td>
+      <td>4.807027</td>
+      <td>-2.407027</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Lebanon</td>
+      <td>2.96</td>
+      <td>11.49</td>
+      <td>5.179259</td>
+      <td>-2.219259</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Singapore</td>
+      <td>6.48</td>
+      <td>93.40</td>
+      <td>8.381940</td>
+      <td>-1.901940</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Zimbabwe</td>
+      <td>3.00</td>
+      <td>3.35</td>
+      <td>4.860985</td>
+      <td>-1.860985</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Botswana</td>
+      <td>3.47</td>
+      <td>14.65</td>
+      <td>5.302815</td>
+      <td>-1.832815</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Luxembourg</td>
+      <td>7.40</td>
+      <td>112.56</td>
+      <td>9.131096</td>
+      <td>-1.731096</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Rwanda</td>
+      <td>3.27</td>
+      <td>2.10</td>
+      <td>4.812110</td>
+      <td>-1.542110</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;resid&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>LifeSat</th>
+      <th>GDPpc</th>
+      <th>yhat</th>
+      <th>resid</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>110</th>
+      <td>Kosovo</td>
+      <td>6.46</td>
+      <td>10.71</td>
+      <td>5.148761</td>
+      <td>1.311239</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>Finland</td>
+      <td>7.82</td>
+      <td>47.15</td>
+      <td>6.573565</td>
+      <td>1.246435</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>Nicaragua</td>
+      <td>6.16</td>
+      <td>5.28</td>
+      <td>4.936448</td>
+      <td>1.223552</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Guatemala</td>
+      <td>6.26</td>
+      <td>8.39</td>
+      <td>5.058049</td>
+      <td>1.201951</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>Israel</td>
+      <td>7.36</td>
+      <td>39.06</td>
+      <td>6.257246</td>
+      <td>1.102754</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>Honduras</td>
+      <td>6.02</td>
+      <td>5.14</td>
+      <td>4.930974</td>
+      <td>1.089026</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">font</span> <span class="n">color</span><span class="o">=</span><span class="n">red</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">size</span> <span class="n">largest</span> <span class="n">residuals</span> <span class="n">are</span> <span class="nb">all</span> <span class="n">negative</span><span class="o">.</span>
+
+<span class="n">Now</span> <span class="n">we</span> <span class="n">exclude</span> <span class="n">them</span><span class="o">&lt;/</span><span class="n">font</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="o">&lt;</span><span class="n">font</span> <span class="n">color</span><span class="o">=</span><span class="n">red</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">size</span> <span class="n">largest</span> <span class="n">residuals</span> <span class="n">are</span> <span class="nb">all</span> <span class="n">negative</span><span class="o">.</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy_clean</span><span class="o">=</span><span class="n">happy</span>
+<span class="n">happy_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">happy</span><span class="o">.</span><span class="n">resid</span><span class="o">&lt;-</span><span class="mf">1.7</span><span class="p">),</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">happy_clean</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;resid&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>LifeSat</th>
+      <th>GDPpc</th>
+      <th>resid</th>
+      <th>yhat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>NaN</td>
+      <td>1.97</td>
+      <td>-2.407027</td>
+      <td>4.807027</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Lebanon</td>
+      <td>NaN</td>
+      <td>11.49</td>
+      <td>-2.219259</td>
+      <td>5.179259</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Singapore</td>
+      <td>NaN</td>
+      <td>93.40</td>
+      <td>-1.901940</td>
+      <td>8.381940</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Zimbabwe</td>
+      <td>NaN</td>
+      <td>3.35</td>
+      <td>-1.860985</td>
+      <td>4.860985</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Botswana</td>
+      <td>NaN</td>
+      <td>14.65</td>
+      <td>-1.832815</td>
+      <td>5.302815</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>Luxembourg</td>
+      <td>NaN</td>
+      <td>112.56</td>
+      <td>-1.731096</td>
+      <td>9.131096</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Rwanda</td>
+      <td>3.27</td>
+      <td>2.10</td>
+      <td>-1.542110</td>
+      <td>4.812110</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>In the new analysis with the six outliers excluded, do your conclusions about the relationship between GDP and life satisfaction change, or stay the same?</p>
 <p>We will learn more about the assumptions of regression in the next week or two, but looking back at the scatterplot, have you noticed any potential concerns about the model?</p>
+<p><font color=red>We could re-run the regression plot and the regression itself</font></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for a scatterplot with regression line using sns.regplot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy_clean</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/db07dd52d5fe9e27162af644c804b0b2cb0cb879303ee2a53705fa5b44b8da64.png" src="../_images/db07dd52d5fe9e27162af644c804b0b2cb0cb879303ee2a53705fa5b44b8da64.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code for regression model</span>
+<span class="c1"># run the regression model</span>
+
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happy_clean</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;LifeSat ~ GDPpc&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+
+<span class="c1"># note you get a warning message because the dataset is quite small - disregard this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.632</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.629</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   228.2</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 13 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.21e-30</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>15:31:32</td>     <th>  Log-Likelihood:    </th> <td> -124.49</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   135</td>      <th>  AIC:               </th> <td>   253.0</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   133</td>      <th>  BIC:               </th> <td>   258.8</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    4.7369</td> <td>    0.079</td> <td>   60.196</td> <td> 0.000</td> <td>    4.581</td> <td>    4.893</td>
+</tr>
+<tr>
+  <th>GDPpc</th>     <td>    0.0433</td> <td>    0.003</td> <td>   15.107</td> <td> 0.000</td> <td>    0.038</td> <td>    0.049</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 5.933</td> <th>  Durbin-Watson:     </th> <td>   2.163</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.051</td> <th>  Jarque-Bera (JB):  </th> <td>   5.578</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.488</td> <th>  Prob(JB):          </th> <td>  0.0615</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.195</td> <th>  Cond. No.          </th> <td>    41.0</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p><font color=red>The values of the intercept and slope change but both are still significant.</font></p>
 </section>
 </section>
 </section>
