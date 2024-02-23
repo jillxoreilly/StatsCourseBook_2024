@@ -660,6 +660,7 @@ power for two-tailed= 77.1820789888645%
 </div>
 </div>
 </div>
+<p>power is higher for a one-tailed test as, given the direction of effect is known, a lower difference of means is needed to achieve statistical significance for a one-tailed test tahn a two-tailed test</p>
 <p><strong>4.	The heights of 10 English adult men and 10 Dutch adult men are measured. The means and standard deviations for the groups are as follows:</strong></p>
 <ul class="simple">
 <li><p>English: mean = 177cm, sd = 7.7cm</p></li>
@@ -734,11 +735,11 @@ power for two-tailed= 77.1820789888645%
 </div>
 </div>
 </div>
-<p>Probability of a false negative is 55%</p>
+<p>Probability of a false negative is 1-0.55 = 45%</p>
 <p><strong>5.	It is sometimes said that significant effects in studies with small sample sizes (underpowered studies) are more likely to be false positives than effects in larger studies. Can you explain why? Key terms to include in your answer are ‘false positive’, ‘power’ and ‘file drawer effect’ – if unsure about the last one (which was mentioned only briefly in the lecture), you can try Googling it!</strong></p>
 <p>The file drawer effect is the phenomenon that studies with statistically significant effects are much more likely to be published. These will be a mixture of true positives and false positives.</p>
 <p>When sample size is small, the power is low and therefore the probability of false negatives is high. Conversely the probability of true positives is low.</p>
-<p>The probability of false positives if the null is true is fixed at 5% (at alpha=0.05%)</p>
+<p>The probability of false positives if the null is true is fixed at 5% (at alpha=0.05%) regardless of sample size</p>
 <p>Therefore, amongst the published (statistically significant results), we expect the same number of false posives for small and large studies, but many fewer true positives for small studies than large studies. Therefore the <em>proportion</em> of published studies that are true positives will be lower for small studies.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="binomial-and-normal-distributions">
@@ -766,7 +767,7 @@ power for two-tailed= 77.1820789888645%
 <p>66%</p>
 <p><strong>3.	The normal distribution is a good approximation to the binomial when np and nq are both greater than 5. Explain why the approximation breaks down when these conditions are not met (ie, when n is low, or when p is close to 0 or 1).</strong></p>
 <p>The normal-like shape emerges from the number of permutations for each value of k, when n is high.</p>
-<p>The shape f the binomial distribution depends on the number of permutations giving each value of k, and the probability of hits and misses within each permutation. When the probability of hits and misses is even (p=0.5) the dostribbution is symmmetrical but as p goes away from 0.5 (towards 1 or 0) the distribution becomes skewed.</p>
+<p>The shape of the binomial distribution depends on the number of permutations giving each value of k, and the probability of hits and misses within each permutation. When the probability of hits and misses is even (p=0.5) the dostribbution is symmmetrical but as p goes away from 0.5 (towards 1 or 0) the distribution becomes skewed.</p>
 <p>As n increases, the skew at a given value of p becomes less prominent, therefore a roughly-symmetrical distribution is obtained even for values of p far from 0.5</p>
 <p><strong>4.	How do we define the ‘best fitting normal distribution’ when fitting a normal approximation to the binomial</strong></p>
 <div class="math notranslate nohighlight">
@@ -784,16 +785,17 @@ power for two-tailed= 77.1820789888645%
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note the cutoff point will be *below* the mean for infected individuals*</span>
 
 <span class="c1"># Solution 1: use ppf (would have needed to look this up in the help of scipy stats)</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">27000</span><span class="p">,</span><span class="mi">3320</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mi">27000</span><span class="p">,</span><span class="mi">3320</span><span class="p">))</span>
 
 <span class="c1"># Solution 2: change the first argument of cdf until you get the right answer</span>
 <span class="c1"># approximate start point obtained by rule of thumb that 99% of values lie within 3sd of the mean</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">19300</span><span class="p">,</span><span class="mi">27000</span><span class="p">,</span><span class="mi">3320</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">19300</span><span class="p">,</span><span class="mi">27000</span><span class="p">,</span><span class="mi">3320</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010190007915349361
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19276.52505818441
+0.010190007915349361
 </pre></div>
 </div>
 </div>
@@ -802,23 +804,23 @@ power for two-tailed= 77.1820789888645%
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># note it will be healthy people with scores *over* the cutoff</span>
-<span class="mi">1</span><span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">19300</span><span class="p">,</span> <span class="mi">14300</span><span class="p">,</span> <span class="mi">1540</span><span class="p">)</span>
+<span class="mi">1</span><span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">19277</span><span class="p">,</span> <span class="mi">14300</span><span class="p">,</span> <span class="mi">1540</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.000583647728826242
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0006150264753376211
 </pre></div>
 </div>
 </div>
 </div>
-<p>0.05%</p>
+<p>0.061%</p>
 <p><strong>4.	A given patient is called back for further testing. What is the probability he has the disease?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pD</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># prior probability/base rate for disease</span>
 <span class="n">pTgD</span> <span class="o">=</span> <span class="mf">0.99</span> <span class="c1"># p(T|D)=0.99; this is the probability of being called back if infected</span>
-<span class="n">pTgDc</span> <span class="o">=</span> <span class="mf">0.000583647728826242</span> <span class="c1">#p(T|Dc); this is the probability of being called back if healthy, as calculated above</span>
+<span class="n">pTgDc</span> <span class="o">=</span> <span class="mf">0.000615026</span> <span class="c1">#p(T|Dc); this is the probability of being called back if healthy, as calculated above</span>
 <span class="n">pT</span> <span class="o">=</span> <span class="p">(</span><span class="n">pTgD</span> <span class="o">*</span> <span class="n">pD</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">pTgDc</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">pD</span><span class="p">))</span>
 
 <span class="c1"># Bayes Theorem</span>
@@ -829,26 +831,12 @@ power for two-tailed= 77.1820789888645%
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6293449910249981
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6170488833866578
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">62</span><span class="o">%</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">62</span><span class="o">%</span>
-       <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
+<p>62%</p>
 <p><strong>5.	If one million patients are screened, how many would we expect to get an incorrect result from the screening test?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,7 +844,7 @@ power for two-tailed= 77.1820789888645%
 <span class="n">fn</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="o">*</span> <span class="mf">0.001</span> <span class="o">*</span> <span class="mf">0.01</span>
 
 <span class="c1"># false positives = n * proportion infected * p(false positive given not infected) - latter is from q3</span>
-<span class="n">fp</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.001</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.000583647728826242</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="mi">1000000</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.001</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.000615026</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
@@ -866,13 +854,13 @@ power for two-tailed= 77.1820789888645%
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
-583.0640810974159
-593.0640810974159
+614.410974
+624.410974
 </pre></div>
 </div>
 </div>
 </div>
-<p>593 people will get a wrong result, of whom 10 are false negatives and 583 are false positives</p>
+<p>624 people will get a wrong result, of whom 10 are false negatives and 614 are false positives</p>
 <p><strong>Consider the screening as a hypothesis testing problem in which the null hypothesis is that the patient is not infected:</strong></p>
 <p><strong>6. Define a type I and type II error in this context</strong></p>
 <p>Type I is false positive - ie telling the person they are infected when they are not (false alarm, may lead to unnecessary treatment)</p>
@@ -880,11 +868,11 @@ power for two-tailed= 77.1820789888645%
 <p><strong>7.	What would happen to the number of type I and type II errors if a lower protein level was used as the cut-off? Is this desirable?</strong></p>
 <p>Since high levels are indicative of disease, lowering the cutoff would reduce false negatives but increase false positives. It would mean fewer cases are missed, but at the expense of many more people getting unnecessary biopsies. Since there are already 58 unnecessary biopsies per missed case, it may be undesirable to tip the balance even further - but it depends on the consequences of missing a case (will the disease still be treatable if detected later on?)</p>
 <p><strong>8. Without calculation, state which would affect the greater number of patients, the increase in type I or type II errors? Give a reason.</strong></p>
-<p>The increased false positives (Type I) will affect more patients as thhe disease is rare and the cutoff already gives 58 false positives for each false negaitves</p>
+<p>The increased false positives (Type I) will affect more patients as the disease is rare and the cutoff already gives 58 false positives for each false negaitves</p>
 <p><strong>9. What else would you need to know to decide whether to lower the cutoff point?</strong></p>
 <p>the consequences of missing a case (will the disease still be treatable if detected later on?)</p>
 <p><strong>10. Say the prevalence of the disease in the population was 10%. Without calculation: would the proportion of individuals being mis-diagnosed change? Give a reason.</strong></p>
-<p>Yes, the number of false negatives would increase as the proportion of true cases missed would be fixed, but the number would increase in line with the increase in disease prevalence</p>
+<p>Yes, the number of false negatives would increase as the proportion of true cases missed would be fixed, but the number would increase in line with the increase in disease prevalence. The number of false positives would decrease for similar reasons, but not necessarily by a matching amount.</p>
 </section>
 
     <script type="text/x-thebe-config">
