@@ -907,10 +907,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Fri, 23 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:17:20</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:05:18</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -999,10 +999,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   65.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
+  <th>Date:</th>             <td>Fri, 23 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.82e-52</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:17:20</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
+  <th>Time:</th>                 <td>11:05:18</td>     <th>  Log-Likelihood:    </th> <td> -4804.3</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  2097</td>      <th>  AIC:               </th> <td>   9619.</td>
@@ -1089,17 +1089,17 @@ document.write(`
 
 <span class="c1"># For example, for a person who is 41, female and tertiary educated, and was born in the UK, the value should be calculated as follows:</span>
 <span class="c1"># better = intercept + coef(age)*41 + coef(sex[T.male])*0 + coef(educ[T.tertiary])*1 + coef(bornuk)*1</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">41</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mf">1.1765</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">41</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">0</span> <span class="o">+</span> <span class="mf">1.1765</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># For example, for a person who is 43, male and lower secondary educated, and was born outside the UK, the value should be calculated as follows:</span>
 <span class="c1"># better = intercept + coef(age)*43 + coef(sex[T.male])*1 + coef(educ[T.Lower Secondary])*1 + coef(bornuk)*0</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">44</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.6699</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">5.9264</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.0118</span><span class="o">*</span><span class="mi">43</span> <span class="o">+</span> <span class="mf">0.0390</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="o">-</span><span class="mf">0.6699</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1.1811</span><span class="o">*</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.8002
-4.7763
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.6191
+5.9692
 </pre></div>
 </div>
 </div>
@@ -1108,11 +1108,11 @@ document.write(`
 <section id="interaction-terms">
 <h3>Interaction terms<a class="headerlink" href="#interaction-terms" title="Permalink to this heading">#</a></h3>
 <p>Finally, we are going to explore the effect of age, according to different political preferences using the ‘vote’ variable.</p>
-<p>We will do this by modelling the effect of ‘age’ and ‘vote’ on ‘better’, and adding an <strong>interaction term</strong> of age*vote to the model.</p>
+<p>We will do this by modelling the effect of ‘age’ and ‘vote’ on ‘better’, and adding an <strong>interaction term</strong> of age:vote to the model.</p>
 <p>The code in Python for an interaction between A and B is A:B</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model Y = better, x1 = age, x2 = sex, x3 = education, x4 = bornuk, x5=age*vote</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to run a regression model  Y = better, x1 = age, x2 = sex, x3 = vote, x4=age*vote, x5=age*vote</span>
 <span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
 <span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">ess</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;better ~ age + sex + vote + age:vote&#39;</span><span class="p">)</span>
                                                           
@@ -1140,10 +1140,10 @@ document.write(`
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   20.77</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Fri, 09 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
+  <th>Date:</th>             <td>Fri, 23 Feb 2024</td> <th>  Prob (F-statistic):</th> <td>1.71e-23</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>15:17:20</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
+  <th>Time:</th>                 <td>11:05:18</td>     <th>  Log-Likelihood:    </th> <td> -3444.4</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>  1511</td>      <th>  AIC:               </th> <td>   6903.</td>
@@ -1215,7 +1215,7 @@ document.write(`
   self._figure.tight_layout(*args, **kwargs)
 </pre></div>
 </div>
-<img alt="../_images/b97be47bbfefacfe60c3ea3640980ffa703cafad871777140cc5530767c5462a.png" src="../_images/b97be47bbfefacfe60c3ea3640980ffa703cafad871777140cc5530767c5462a.png" />
+<img alt="../_images/40bad750d59a65de5b208960eaf5df66bfb885c0f962beaea8f80c8e00fde437.png" src="../_images/40bad750d59a65de5b208960eaf5df66bfb885c0f962beaea8f80c8e00fde437.png" />
 </div>
 </div>
 <p>Interpret the results in your own words.</p>
