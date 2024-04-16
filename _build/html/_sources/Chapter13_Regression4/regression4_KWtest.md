@@ -56,6 +56,8 @@ $$ H = \left[ \frac{12}{N(N+1)} \sum_{i=1}^K \frac{R^2_i}{n_i} \right] - 3(N+1) 
 
 $$ H = \left[ \left[ \frac{12}{10(11)} \right] \times \left[ \frac{6^2}{3} + \frac{33^2}{4} +  \frac{16^2}{3} \right] \right] - \left[  3 \times 11\right] $$
 
+$$ H = 7.318 $$
+
 ```
 
 With 2 df, the critical value of $H$ = 5.99 (Look up <a href=https://www.socscistatistics.com/tests/criticalvalues/default.aspx>here</a> again).

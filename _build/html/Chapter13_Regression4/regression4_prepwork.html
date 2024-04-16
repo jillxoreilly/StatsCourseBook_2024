@@ -320,7 +320,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -618,10 +620,17 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -631,7 +640,7 @@ document.write(`
 <h2><span class="section-number">4.8.2. </span>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chimps</span><span class="o">=</span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/chimps.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chimps</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/chimps.csv&#39;</span><span class="p">)</span>
 <span class="n">chimps</span>
 </pre></div>
 </div>
@@ -826,7 +835,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             sum_sq    df         F    PR(&gt;F)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+             sum_sq    df         F    PR(&gt;F)
 group     31.607895   3.0  11.66343  0.000333
 Residual  13.550000  15.0       NaN       NaN
 </pre></div>
@@ -849,7 +859,8 @@ Residual  13.550000  15.0       NaN       NaN
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             sum_sq    df          F    PR(&gt;F)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+             sum_sq    df          F    PR(&gt;F)
 group     27.701754   3.0  13.907182  0.000237
 age3       4.918421   2.0   3.703811  0.053331
 Residual   8.631579  13.0        NaN       NaN
@@ -875,7 +886,8 @@ Residual   8.631579  13.0        NaN       NaN
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               sum_sq   df          F    PR(&gt;F)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+               sum_sq   df          F    PR(&gt;F)
 group       27.701754  3.0  13.850877  0.002496
 age3         4.918421  2.0   3.688816  0.080526
 group:age3   3.964912  6.0   0.991228  0.496102
@@ -895,10 +907,10 @@ Residual     4.666667  7.0        NaN       NaN
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># annoyingly, we have to give stats.kruskall each group&#39;s data as a separate series</span>
 
-<span class="n">stats</span><span class="o">.</span><span class="n">kruskal</span><span class="p">(</span><span class="n">chimps</span><span class="p">[</span><span class="n">chimps</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="s1">&#39;Baboons&#39;</span><span class="p">][</span><span class="s1">&#39;yawns&#39;</span><span class="p">],</span> 
-              <span class="n">chimps</span><span class="p">[</span><span class="n">chimps</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="s1">&#39;Control (human, no yawn)&#39;</span><span class="p">][</span><span class="s1">&#39;yawns&#39;</span><span class="p">],</span>
-              <span class="n">chimps</span><span class="p">[</span><span class="n">chimps</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="s1">&#39;Familiar humans&#39;</span><span class="p">][</span><span class="s1">&#39;yawns&#39;</span><span class="p">],</span>
-              <span class="n">chimps</span><span class="p">[</span><span class="n">chimps</span><span class="o">.</span><span class="n">group</span> <span class="o">==</span> <span class="s1">&#39;Unfamiliar humans&#39;</span><span class="p">][</span><span class="s1">&#39;yawns&#39;</span><span class="p">],)</span>
+<span class="n">stats</span><span class="o">.</span><span class="n">kruskal</span><span class="p">(</span><span class="n">chimps</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == &quot;Baboons&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">yawns</span><span class="p">,</span> 
+              <span class="n">chimps</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == &quot;Control (human, no yawn)&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">yawns</span><span class="p">,</span> 
+              <span class="n">chimps</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == &quot;Familiar humans&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">yawns</span><span class="p">,</span> 
+              <span class="n">chimps</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;group == &quot;Unfamiliar humans&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">yawns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -908,7 +920,7 @@ Residual     4.666667  7.0        NaN       NaN
 </div>
 </div>
 </div>
-<p>The Kruskal-Wallis test produces an H-statistic of 12.894 and a p-value of 0.0049. It therefore gives the same result as the one-way ANOVA, suggesting a statistically significant difference between treatment groups in the chimp experiment.</p>
+<p>The Kruskal-Wallis test produces an H-statistic of 13.314 and a p-value of 0.004. It therefore gives the same conclusion as the one-way ANOVA, suggesting a statistically significant difference between treatment groups in the chimp experiment.</p>
 </section>
 </section>
 

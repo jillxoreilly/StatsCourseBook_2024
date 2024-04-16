@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -630,10 +632,17 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
 </pre></div>
 </div>
 </div>
@@ -643,7 +652,7 @@ document.write(`
 <h2><span class="section-number">5.6.2. </span>Import and view the data<a class="headerlink" href="#import-and-view-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/evolution.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/evolution.csv&#39;</span><span class="p">)</span>
 <span class="n">evolution</span>
 </pre></div>
 </div>
@@ -789,10 +798,10 @@ document.write(`
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Fri, 09 Feb 2024</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
+  <th>Date:</th>            <td>Tue, 16 Apr 2024</td> <th>  Pseudo R-squ.:     </th>  <td>0.08140</td> 
 </tr>
 <tr>
-  <th>Time:</th>                <td>13:46:10</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
+  <th>Time:</th>                <td>15:10:00</td>     <th>  Log-Likelihood:    </th> <td> -316.87</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -344.95</td> 
@@ -855,12 +864,8 @@ dtype: float64
 <p>Here, we can interpret the model output as follows:</p>
 <ul class="simple">
 <li><p>The odds ratio of 1.47 for political views suggests that for each additional point along the scale from conservative to liberal is associated with a 1.47 times greater likelihood of agreeing that humans evolved from earlier species.</p></li>
-</ul>
-<p>The output from python provides confidence intervals too. The 95% confidence intervals for the odds ratio are 1.29 – 1.68.</p>
-<ul class="simple">
 <li><p>For age, the odds ratio tells us that for each additional year the odds of answering ‘true’ are 0.02 (or 2%) lower (using 1-0.98 for the effect size). Here I will not interpret ‘colsci’ as it is not statistically significant.</p></li>
 </ul>
-<p>We know this from the p-value but also because the confidence intervals include 1. Note the contrast with the original model with log odds in this regard).</p>
 </section>
 <section id="making-a-prediction">
 <h3>Making a prediction<a class="headerlink" href="#making-a-prediction" title="Permalink to this heading">#</a></h3>
@@ -893,6 +898,7 @@ dtype: float64
 <h2><span class="section-number">5.6.4. </span>Assessing the model<a class="headerlink" href="#assessing-the-model" title="Permalink to this heading">#</a></h2>
 <p>Just as we did in linear regression, we can obtain predicted values for the model for the people in the original dataset - that is for each person in the original dataframe, we get the model’s predicted probability they believe in evolution (we also know the ground truth, whether they replied that they do believe in evolution, or not)</p>
 <p>The predicted values can help us to understand how well our model did. They take a value between 0 and 1 and can be treated as a predicted probability of each individual answering ‘true’ to the survey question, given the <span class="math notranslate nohighlight">\(x\)</span> variables that we have modelled</p>
+<p>Here, instead of a dictionary, we give the function <code class="docutils literal notranslate"><span class="pre">logistic_model.predict()</span></code> a reduced version of the pandas dataframe, containing the columns <code class="docutils literal notranslate"><span class="pre">['age','polviews','colsci']</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get predicted values for each row of the dataframe</span>
@@ -917,7 +923,7 @@ Length: 503, dtype: float64
 </div>
 </div>
 </div>
-<p>We can compare how well the model prediction matches the observed data byb classifying (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, and comparing to whether the observed value was true or false.</p>
+<p>We can compare how well the model prediction matches the observed data by classifying (using Pr(y=1)&gt;0.5 as cut-off) which cases would be predicted as true or false, and comparing to whether the observed value was true or false.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get predicted values for each row of the dataframe</span>
@@ -929,9 +935,10 @@ Length: 503, dtype: float64
 
 <span class="c1"># work out proportion correctly classified</span>
 <span class="c1"># a participant (row) is correctly classified if columns &#39;evolved&#39; and &#39;prediction&#39; match</span>
-<span class="n">correct</span> <span class="o">=</span> <span class="n">evolution</span><span class="p">[(</span><span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;evolved&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">])]</span>
+<span class="n">evolution</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">evolution</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">evolution</span><span class="o">.</span><span class="n">evolved</span><span class="o">==</span><span class="n">evolution</span><span class="o">.</span><span class="n">prediction</span><span class="p">),</span> <span class="s1">&#39;correct&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
 
-<span class="nb">len</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">evolution</span><span class="p">)</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">evolution</span><span class="o">.</span><span class="n">correct</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">evolution</span><span class="o">.</span><span class="n">correct</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -641,6 +641,12 @@ p    {color: red;}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+Intel MKL WARNING: Support of Intel(R) Streaming SIMD Extensions 4.2 (Intel(R) SSE4.2) enabled only processors has been deprecated. Intel oneAPI Math Kernel Library 2025.0 will require Intel(R) Advanced Vector Extensions (Intel(R) AVX) instructions.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="simulate-a-single-coin-toss">
@@ -659,7 +665,7 @@ the value of the variable <tt>hit</tt> is set to 1, otherwise <tt>hit</tt> is se
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.17956986102941508
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.21719742100693307
 </pre></div>
 </div>
 </div>
@@ -712,26 +718,26 @@ and count how many hits we get (<i>k</i> = ?)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.44313906129385827
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>value of random number:  0.682124277263875
 is it a hit?:            0
-value of random number:  0.5090056430320147
+value of random number:  0.6879614235438319
 is it a hit?:            0
-value of random number:  0.22273707505894969
-is it a hit?:            0
-value of random number:  0.16455305256874975
-is it a hit?:            0
-value of random number:  0.34450213980026845
-is it a hit?:            0
-value of random number:  0.6842453401648512
-is it a hit?:            0
-value of random number:  0.03300843197166681
-is it a hit?:            0
-value of random number:  0.02870072754454267
-is it a hit?:            0
-value of random number:  0.5475884585815373
-is it a hit?:            0
-value of random number:  0.8534015842153981
+value of random number:  0.8100417352393082
 is it a hit?:            1
+value of random number:  0.8568299465586761
+is it a hit?:            1
+value of random number:  0.9469657438352916
+is it a hit?:            1
+value of random number:  0.766837446865036
+is it a hit?:            1
+value of random number:  0.6974509063257285
+is it a hit?:            0
+value of random number:  0.038268604066909795
+is it a hit?:            0
+value of random number:  0.4679838781667848
+is it a hit?:            0
+value of random number:  0.04054262998298008
+is it a hit?:            0
 </pre></div>
 </div>
 </div>
@@ -762,16 +768,16 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-0
-0
-0
-0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 0
 0
 1
 0
-1
+0
+0
+0
+0
+0
 </pre></div>
 </div>
 </div>
@@ -800,7 +806,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 0. 1. 0. 0. 0. 1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>outcomes = [0. 0. 0. 0. 0. 0. 0. 1. 1. 0.]
 </pre></div>
 </div>
 </div>
@@ -836,7 +842,7 @@ and just give the 10 binary outcomes (1/0 for hit/miss)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>k = 6
 </pre></div>
 </div>
 </div>
