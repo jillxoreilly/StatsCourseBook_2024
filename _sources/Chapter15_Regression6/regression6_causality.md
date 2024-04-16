@@ -1,6 +1,6 @@
 # Causality
 
-Here is a recap of the three criteria for establishing causality (you saw these in Week 6 last term, section 14 of the online coursebook).
+Here is a recap of the three criteria for establishing causality (you saw these in Week 6 last term, "Regression Models, Multivariate Analysis").
 
 The three criteria for causation are:
 

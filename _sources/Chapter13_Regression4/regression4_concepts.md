@@ -30,7 +30,7 @@ The means of the three groups in *a* are clearly different to each other.
 
 In *b* there is more overlap between the data points, and it is harder to tell just by eyeballing the data whether there is a difference in means in the three groups.
 
-In this example, the means of the three groups, and the overall mean, are the same in *a* and *b* which means that the variability between groups is the same in *a* and *b*. However, the variability within groups is lower in *a* than in *b*. Low variability within groups suggests that the groups have means that are statistically different to each other.
+In this example, the means of the three groups, and the overall mean, are the same in *a* and *b* which means that the variability **between** groups is the same in *a* and *b*. However, the variability **within** groups is lower in *a* than in *b*. Low variability within groups suggests that the groups have means that are statistically different to each other.
 
 ANOVA uses the $F$-statistic to test whether there are significant differences in means across groups. The $F$-statistic is a ratio of the between-groups variance divided by the within-group variance as follows:
 

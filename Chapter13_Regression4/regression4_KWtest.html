@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -646,6 +648,8 @@ document.write(`
 \[ H = \left[ \frac{12}{N(N+1)} \sum_{i=1}^K \frac{R^2_i}{n_i} \right] - 3(N+1) \]</div>
 <div class="math notranslate nohighlight">
 \[ H = \left[ \left[ \frac{12}{10(11)} \right] \times \left[ \frac{6^2}{3} + \frac{33^2}{4} +  \frac{16^2}{3} \right] \right] - \left[  3 \times 11\right] \]</div>
+<div class="math notranslate nohighlight">
+\[ H = 7.318 \]</div>
 </div>
 <p>With 2 df, the critical value of <span class="math notranslate nohighlight">\(H\)</span> = 5.99 (Look up <a href=https://www.socscistatistics.com/tests/criticalvalues/default.aspx>here</a> again).</p>
 <p>As 7.318 &gt; 5.99, we reject the null hypothesis and conclude that there is a difference between groups.</p>

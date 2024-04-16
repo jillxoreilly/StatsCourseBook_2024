@@ -322,7 +322,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -582,7 +584,7 @@ document.write(`
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression4_AgrestiDataset.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression4_AgrestiDataset.png" class="align-center" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/regression4_AgrestiDataset.png" style="width: 80%;" /></a>
 <p>The means of the three groups in <em>a</em> are clearly different to each other.</p>
 <p>In <em>b</em> there is more overlap between the data points, and it is harder to tell just by eyeballing the data whether there is a difference in means in the three groups.</p>
-<p>In this example, the means of the three groups, and the overall mean, are the same in <em>a</em> and <em>b</em> which means that the variability between groups is the same in <em>a</em> and <em>b</em>. However, the variability within groups is lower in <em>a</em> than in <em>b</em>. Low variability within groups suggests that the groups have means that are statistically different to each other.</p>
+<p>In this example, the means of the three groups, and the overall mean, are the same in <em>a</em> and <em>b</em> which means that the variability <strong>between</strong> groups is the same in <em>a</em> and <em>b</em>. However, the variability <strong>within</strong> groups is lower in <em>a</em> than in <em>b</em>. Low variability within groups suggests that the groups have means that are statistically different to each other.</p>
 <p>ANOVA uses the <span class="math notranslate nohighlight">\(F\)</span>-statistic to test whether there are significant differences in means across groups. The <span class="math notranslate nohighlight">\(F\)</span>-statistic is a ratio of the between-groups variance divided by the within-group variance as follows:</p>
 <div class="math notranslate nohighlight">
 \[  F = \frac{\textrm{Between-groups estimate of variance } σ^2}{\textrm{Within-groups estimate of variance } σ^2} \]</div>
