@@ -1,0 +1,2297 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.7. Standardizing data &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1.3_DataWrangling/1.3.8_ZScoreQuantiles';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.8. Preparing a report" href="1.3.9_ReportExample.html" />
+    <link rel="prev" title="3.6. Creating new variables/columns" href="1.3.7_CreateColumns.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Introduction to Statistics and Data Science - Home"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Introduction to Statistics and Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="1.3.1_Intro.html">3. Data Wrangling</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">3. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">3.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">3.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">3.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">3.6. Power analysis by simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">3.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">3.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">3.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">3.11. Concepts Review</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/1.3_DataWrangling/1.3.8_ZScoreQuantiles.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2F1.3_DataWrangling/1.3.8_ZScoreQuantiles.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/1.3_DataWrangling/1.3.8_ZScoreQuantiles.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Standardizing data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">3.7.3. Z score</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages-of-the-z-score">Disadvantages of the Z score</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">3.7.4. Quantiles</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="standardizing-data">
+<h1><span class="section-number">3.7. </span>Standardizing data<a class="headerlink" href="#standardizing-data" title="Link to this heading">#</a></h1>
+<p>Some data are recorded in naturally meaningful units; examples are</p>
+<ul class="simple">
+<li><p>height of adults in cm</p></li>
+<li><p>temperature in <span class="math notranslate nohighlight">\(^{\circ}C\)</span></p></li>
+</ul>
+<p>In other cases, units may be hard to interpret because we don’t have a sense of what a typical score is, based on general knowledge</p>
+<ul class="simple">
+<li><p>scores on an IQ test marked out of 180</p></li>
+<li><p>height of 6-year-olds in cm</p></li>
+</ul>
+<p>A further problem is quantifying how unusual a data value is when values are presented as different units</p>
+<ul class="simple">
+<li><p>High school grades from different countries or systems (A-levels vs IB vs Abitur vs…..)</p></li>
+</ul>
+<p>In all cases it can be useful to present data in standard units.</p>
+<p>Two common ways of doing this are:</p>
+<ul class="simple">
+<li><p>Convert data to Z-scores</p></li>
+<li><p>Convert data to quantiles</p></li>
+</ul>
+<p>In this section we will review both these approaches.</p>
+<p><strong>Here is a video about standardizing data using centiles</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/i162CImD2BI?si=AKYH2absqZ6n8WLG&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/i162CImD2BI?si=AKYH2absqZ6n8WLG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+<p><strong>Here is a video about standardizing data using Z-Scores</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%HTML</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/SPgQ_D0I_q4?si=YvukrU2VD6iZSTKQ&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;YouTube video player&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot;</span> <span class="na">referrerpolicy</span><span class="o">=</span><span class="s">&quot;strict-origin-when-cross-origin&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/SPgQ_D0I_q4?si=YvukrU2VD6iZSTKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+</div>
+<section id="set-up-python-libraries">
+<h2><span class="section-number">3.7.1. </span>Set up Python Libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
+<p>As usual you will need to run this code block to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-a-dataset-to-work-with">
+<h2><span class="section-number">3.7.2. </span>Import a dataset to work with<a class="headerlink" href="#import-a-dataset-to-work-with" title="Link to this heading">#</a></h2>
+<p>Let’s look at a fictional dataset containing some body measurements for 50 individuals</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BodyData.csv&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="z-score">
+<h2><span class="section-number">3.7.3. </span>Z score<a class="headerlink" href="#z-score" title="Link to this heading">#</a></h2>
+<p>The Z-score tells us how many standard deviations above or below the mean of the distribution a given value lies.</p>
+<p>Let’s convert our weights to Z-scores. We will need to know the mean and standard deviation of weight:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73.73
+7.891438140058334
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then calculate a Z-score for each person’s weight.</p>
+<ul class="simple">
+<li><p>Someone whose weight is exactly on the mean (74kg) will have a Z-score of 0.</p></li>
+<li><p>Someone whose weight is one standard deviation below the mean (65kg) will have a Z-score of -1
+etc</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new column and put the calcualted z-scores in it</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;WeightZ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+      <th>WeightZ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+      <td>-1.131606</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+      <td>-0.713431</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+      <td>0.807204</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+      <td>-2.398802</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+      <td>-1.232982</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+      <td>1.858977</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+      <td>-1.030230</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+      <td>-0.181209</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+      <td>-1.334358</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+      <td>-0.396632</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+      <td>2.707998</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+      <td>-1.537109</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+      <td>-0.079833</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+      <td>-0.510680</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+      <td>-0.713431</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+      <td>0.465061</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+      <td>0.135590</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+      <td>0.249638</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+      <td>-0.928855</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+      <td>-1.334358</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+      <td>-0.827479</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+      <td>1.035299</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+      <td>1.973024</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+      <td>1.035299</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+      <td>0.579109</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+      <td>0.465061</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+      <td>1.263395</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+      <td>-0.295257</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+      <td>-0.181209</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+      <td>0.363685</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+      <td>-1.828564</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+      <td>-1.131606</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+      <td>0.921252</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+      <td>0.034214</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+      <td>-0.827479</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Look down the table for some heavy and light people. Do their z-scores look like you would expect?</p>
+<section id="disadvantages-of-the-z-score">
+<h3>Disadvantages of the Z score<a class="headerlink" href="#disadvantages-of-the-z-score" title="Link to this heading">#</a></h3>
+<p>Z score tells us how many standard deviations above or below the mean a datapoint lies.</p>
+<p>We can use some hand ‘rules of thumb’ to know how unusual a Z-score is, as long as the data distribution is approximately normal:
+* Don’t worry if you don’t know what the Normal distribution is yet - you will learn about this in detail later in the course</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreRuleOfThumb.png" style="width: 75%;" /></a>
+<p>The Z-score does have a couple of disadvantages:</p>
+<ul class="simple">
+<li><p>it is only really meaningful for symmetrical data distributions (especially the Normal distribution) - for skewed distributions, there will be momre datapoints with a Z-score of, say, +2, than -2</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk3_ZscoreSkew.png" style="width: 75%;" /></a>
+<p>Additionally, the Z-score is not easily understood by non statistically trained people</p>
+<p>It is therefore sometimes more meaningful to standardize data by presenting them as <em>quantiles</em></p>
+</section>
+</section>
+<section id="quantiles">
+<h2><span class="section-number">3.7.4. </span>Quantiles<a class="headerlink" href="#quantiles" title="Link to this heading">#</a></h2>
+<p>Quantiles (or centiles) tell us what proportion of data points are expected to exceed a certain value. This is easy to interpret.</p>
+<p>For example, say my six year old daughter is 125cm tall, would you say she is tall for her age? You probably have no idea - this is in contrast to adult heights where people might have a sense of the distribution due to general knowledge (eg 150cm is small and 180cm is tall)</p>
+<p>In fact, a a 6 year old with height 125cm lies on the 95th centile, which means they are taller than 95% of children the same age (will definitley look tall in the playground).</p>
+<p>To calculate a given quantile of a dataset we use <code class="docutils literal notranslate"><span class="pre">df.quantile()</span></code>, eg</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the 90th centile for height in out dataframe</span>
+<span class="n">data</span><span class="o">.</span><span class="n">height</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span> <span class="c1"># get 90th centile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The 90th centile is 181cm, ie 10% of people are taller than 181cm.</p>
+<p>Adding quantiles to the table can be done using <code class="docutils literal notranslate"><span class="pre">df.qcut()</span></code>, which categorizes the data into quantiles. For example, I can produe a table saying which decile each person’s weight falls into as follows:</p>
+<ul class="simple">
+<li><p>Deciles are 10ths, in the same way that centiles are 100ths</p>
+<ul>
+<li><p>if someone’s weight in the 0th decile, that means their weight is in the bottom 10% of the sample</p></li>
+<li><p>if someone’s weight is in the 9th decile, it mmeans they are in teh top 10% ot the sample (heavier than 90% of people)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weightQ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> 
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>sex</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>age</th>
+      <th>WeightZ</th>
+      <th>weightQ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>101708</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>35</td>
+      <td>-1.131606</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>101946</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>42</td>
+      <td>-0.713431</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>108449</td>
+      <td>F</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>31</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>108796</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>31</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>113449</td>
+      <td>F</td>
+      <td>179</td>
+      <td>80.1</td>
+      <td>31</td>
+      <td>0.807204</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>114688</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>42</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>119187</td>
+      <td>F</td>
+      <td>148</td>
+      <td>54.8</td>
+      <td>45</td>
+      <td>-2.398802</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>120679</td>
+      <td>F</td>
+      <td>160</td>
+      <td>64.0</td>
+      <td>44</td>
+      <td>-1.232982</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>120735</td>
+      <td>F</td>
+      <td>188</td>
+      <td>88.4</td>
+      <td>32</td>
+      <td>1.858977</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>124269</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>29</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>124713</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>26</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>127076</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>28</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>131626</td>
+      <td>M</td>
+      <td>162</td>
+      <td>65.6</td>
+      <td>35</td>
+      <td>-1.030230</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>132218</td>
+      <td>M</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>29</td>
+      <td>-0.181209</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>132609</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>41</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>134660</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>34</td>
+      <td>-1.334358</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>135195</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>42</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>140073</td>
+      <td>F</td>
+      <td>168</td>
+      <td>70.6</td>
+      <td>34</td>
+      <td>-0.396632</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>140114</td>
+      <td>M</td>
+      <td>195</td>
+      <td>95.1</td>
+      <td>41</td>
+      <td>2.707998</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>145185</td>
+      <td>F</td>
+      <td>157</td>
+      <td>61.6</td>
+      <td>45</td>
+      <td>-1.537109</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>146279</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>30</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>146519</td>
+      <td>F</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>34</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>151451</td>
+      <td>F</td>
+      <td>171</td>
+      <td>73.1</td>
+      <td>37</td>
+      <td>-0.079833</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>152597</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>27</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>154672</td>
+      <td>M</td>
+      <td>167</td>
+      <td>69.7</td>
+      <td>39</td>
+      <td>-0.510680</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>155594</td>
+      <td>F</td>
+      <td>165</td>
+      <td>68.1</td>
+      <td>25</td>
+      <td>-0.713431</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>158165</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>45</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>159457</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>36</td>
+      <td>0.465061</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>162323</td>
+      <td>M</td>
+      <td>173</td>
+      <td>74.8</td>
+      <td>31</td>
+      <td>0.135590</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>166948</td>
+      <td>M</td>
+      <td>174</td>
+      <td>75.7</td>
+      <td>28</td>
+      <td>0.249638</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>168411</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>29</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>168574</td>
+      <td>F</td>
+      <td>163</td>
+      <td>66.4</td>
+      <td>30</td>
+      <td>-0.928855</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>169209</td>
+      <td>F</td>
+      <td>159</td>
+      <td>63.2</td>
+      <td>45</td>
+      <td>-1.334358</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>171236</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>34</td>
+      <td>-0.827479</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>172289</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>27</td>
+      <td>1.035299</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>173925</td>
+      <td>M</td>
+      <td>189</td>
+      <td>89.3</td>
+      <td>25</td>
+      <td>1.973024</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>176598</td>
+      <td>F</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>37</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>177002</td>
+      <td>F</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>36</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>178659</td>
+      <td>M</td>
+      <td>181</td>
+      <td>81.9</td>
+      <td>26</td>
+      <td>1.035299</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>180992</td>
+      <td>F</td>
+      <td>177</td>
+      <td>78.3</td>
+      <td>31</td>
+      <td>0.579109</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>183304</td>
+      <td>F</td>
+      <td>176</td>
+      <td>77.4</td>
+      <td>30</td>
+      <td>0.465061</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>184706</td>
+      <td>M</td>
+      <td>183</td>
+      <td>83.7</td>
+      <td>40</td>
+      <td>1.263395</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>185138</td>
+      <td>M</td>
+      <td>169</td>
+      <td>71.4</td>
+      <td>28</td>
+      <td>-0.295257</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>185223</td>
+      <td>F</td>
+      <td>170</td>
+      <td>72.3</td>
+      <td>41</td>
+      <td>-0.181209</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>186041</td>
+      <td>M</td>
+      <td>175</td>
+      <td>76.6</td>
+      <td>25</td>
+      <td>0.363685</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>186887</td>
+      <td>M</td>
+      <td>154</td>
+      <td>59.3</td>
+      <td>26</td>
+      <td>-1.828564</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>187016</td>
+      <td>M</td>
+      <td>161</td>
+      <td>64.8</td>
+      <td>32</td>
+      <td>-1.131606</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>198157</td>
+      <td>M</td>
+      <td>180</td>
+      <td>81.0</td>
+      <td>33</td>
+      <td>0.921252</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>199112</td>
+      <td>M</td>
+      <td>172</td>
+      <td>74.0</td>
+      <td>33</td>
+      <td>0.034214</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>199614</td>
+      <td>F</td>
+      <td>164</td>
+      <td>67.2</td>
+      <td>31</td>
+      <td>-0.827479</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>NOTE</strong> this is a bit fiddly as <code class="docutils literal notranslate"><span class="pre">df.qcut</span></code> won’t create empty bins. Since this dataset is quite small, we can’t create one bin for each centile as naturally some will be empty (as there are less than 100 datapoints)</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./1.3_DataWrangling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1.3.7_CreateColumns.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.6. </span>Creating new variables/columns</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1.3.9_ReportExample.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.8. </span>Preparing a report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-dataset-to-work-with">3.7.2. Import a dataset to work with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score">3.7.3. Z score</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages-of-the-z-score">Disadvantages of the Z score</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantiles">3.7.4. Quantiles</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tutorial Exercises II: the \(t\) distribution &#8212; Introduction to Statistics and Data Science</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'CLT_Tutorial2tdist';</script>
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,22 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -158,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,145 +181,83 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.3_DataWrangling/1.3.1_Intro.html">3. Data Wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.8_ZScoreQuantiles.html">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
-</ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_functions.html">1.6. Python Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HandInAssignment.html">3.9. Vacation Assignment</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.4_Power/2.4.1_power_intro.html">3. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.2_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.3_Type1and2Errors.html">3.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.4_EffectSize.html">3.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.5_EffectSizeCorrelation.html">3.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.6_PowerCorrelationSim.html">3.6. Power analysis by simulation</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.7_BuiltInPowerCalc.html">3.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.8_DeterminingEffectSize.html">3.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.9_SampleSizeAndPower.html">3.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.10_power_conceptCheck.html">3.11. Concepts Review</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
-</ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -315,15 +266,17 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -333,8 +286,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -344,8 +297,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -353,14 +306,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -376,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -385,14 +338,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -417,14 +370,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/CLT_Tutorial2tdist.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -548,10 +501,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -559,14 +512,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -602,7 +555,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note -</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-tt-ppf-tt">Percent point function (<tt>ppf</tt>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-ppf">Percent point function (<tt>ppf</tt>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
 </ul>
 </li>
@@ -615,16 +568,16 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises-ii-the-t-distribution">
-<h1>Tutorial Exercises II: the <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#tutorial-exercises-ii-the-t-distribution" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial Exercises II: the <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#tutorial-exercises-ii-the-t-distribution" title="Link to this heading">#</a></h1>
 <p>When <span class="math notranslate nohighlight">\(n\)</span> is small, the Central Limit Theorem does not apply</p>
 <p>However as we shall see here, if the parent or population distribution is normal, the sampling distribution of the mean for small samples has a known shape, namely the <span class="math notranslate nohighlight">\(t\)</span> distribution</p>
 <p>The <span class="math notranslate nohighlight">\(t\)</span> distribution looks quite like a normal distribution but has a pointy top and heavy tails.</p>
 <p>The difference in the tails, whilst visually not that striking, is really important, because samples means of interest (those which area long way above or below the population mean) are, by definition, in the tails ofthe distribution.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -641,7 +594,7 @@ document.write(`
 </div>
 </section>
 <section id="create-the-simulated-dataset">
-<h2>Create the simulated dataset<a class="headerlink" href="#create-the-simulated-dataset" title="Permalink to this heading">#</a></h2>
+<h2>Create the simulated dataset<a class="headerlink" href="#create-the-simulated-dataset" title="Link to this heading">#</a></h2>
 <p>We use the function <tt>np.random</tt> to simulate the heights of 10,000 women, drawn from a normal distribution</p>
 <p>Let’s plot a histogram of the hieghts and overlay the (theoretical) PDF used to generate the data, for comparison</p>
 <div class="cell docutils container">
@@ -661,7 +614,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2cc258afacf85ea683b944049b89598c2db19b0ad709dfce6433f4b5152f1e9d.png" src="_images/2cc258afacf85ea683b944049b89598c2db19b0ad709dfce6433f4b5152f1e9d.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/7a6dda9eda1b05017b41099e7e94211edac8ff692a1093f778f6660cd6b246e0.png" src="_images/7a6dda9eda1b05017b41099e7e94211edac8ff692a1093f778f6660cd6b246e0.png" />
 </div>
 </div>
 <p><b>Python Note - matching the PDF to the histogram</b></p>
@@ -680,7 +637,7 @@ document.write(`
 <li> <tt>range</tt> can only return integer values, so if I want decimal values (as for the bins above) I need to use <tt>np.arange()</tt>
 </ul> </section>
 <section id="large-sample-size">
-<h2>Large sample size<a class="headerlink" href="#large-sample-size" title="Permalink to this heading">#</a></h2>
+<h2>Large sample size<a class="headerlink" href="#large-sample-size" title="Link to this heading">#</a></h2>
 <p>Here I draw 10,000 samples of size 100 and show that the sampling distribution of the mean is Normal using a histogram and a Q-Q plot:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,7 +669,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/817384a7bd1abd89476dd1e87b148b84f9d1568327068de9cfaeb73692a3cfcc.png" src="_images/817384a7bd1abd89476dd1e87b148b84f9d1568327068de9cfaeb73692a3cfcc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/d1b2bc412315ed261a52170b8e0d7d5e6ece33c6331aaeaf8ee4c1266c7c8455.png" src="_images/d1b2bc412315ed261a52170b8e0d7d5e6ece33c6331aaeaf8ee4c1266c7c8455.png" />
 </div>
 </div>
 <p>We note that:</p>
@@ -720,7 +681,7 @@ document.write(`
     <li> The predicted normal curve lies neatly over the simulation histogram indicating a good fit
     <li> Most of the points in the Q-Q plot fall on a straight line, indicating a good fit, including in the tails of the distribution
 </ul><section id="estimating-sigma-with-s">
-<h3>Estimating <span class="math notranslate nohighlight">\(\sigma\)</span> with <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#estimating-sigma-with-s" title="Permalink to this heading">#</a></h3>
+<h3>Estimating <span class="math notranslate nohighlight">\(\sigma\)</span> with <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#estimating-sigma-with-s" title="Link to this heading">#</a></h3>
 <p>Above, we calculated the sample mean <span class="math notranslate nohighlight">\(m\)</span> for each sample. We can think of each of these sample means <span class="math notranslate nohighlight">\(m\)</span> as an estimate of the mean <span class="math notranslate nohighlight">\(\mu\)</span> of the parent (population) distribution - in real life we would usually <i>only</i> have one sample and therefore our (single) value of <span class="math notranslate nohighlight">\(m\)</span> would be the only estimate we have of <span class="math notranslate nohighlight">\(\mu\)</span></p>
 <p>We can similarly estimate the population standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> using the sample standard deviation <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <p>Let’s do this for 10,000 samples and plot a histogram:</p>
@@ -742,7 +703,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/33236d7f55ce0ec9baf86de282c04281ef23712acb20e0478264b3296326362f.png" src="_images/33236d7f55ce0ec9baf86de282c04281ef23712acb20e0478264b3296326362f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/da2efe3ef3a22e7e902c8e07e742a1bc65bacf407c12fae44fb0d16012164cac.png" src="_images/da2efe3ef3a22e7e902c8e07e742a1bc65bacf407c12fae44fb0d16012164cac.png" />
 </div>
 </div>
 <p>Note that the Central Limit Theorem does <b><i>not</i></b> tell us that <span class="math notranslate nohighlight">\(s\)</span> is normally distributed - only <span class="math notranslate nohighlight">\(m\)</span> has that honour.</p>
@@ -774,16 +739,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 7.021458722178795
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of s is 6.928196549072981
 </pre></div>
 </div>
-<img alt="_images/8521892143b5ed25c5523333efb03ed5fc84add55b61220ac486a0aa3a005a80.png" src="_images/8521892143b5ed25c5523333efb03ed5fc84add55b61220ac486a0aa3a005a80.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/9da59c269149d9cdcef071f828ce70766848f201eb22538321f383191acdb2de.png" src="_images/9da59c269149d9cdcef071f828ce70766848f201eb22538321f383191acdb2de.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="small-sample-size">
-<h2>Small sample size<a class="headerlink" href="#small-sample-size" title="Permalink to this heading">#</a></h2>
+<h2>Small sample size<a class="headerlink" href="#small-sample-size" title="Link to this heading">#</a></h2>
 <p>Now we will repeat the simulation with a smaller value of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>I’ve grouped together the code to sample <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(s\)</span> into a single code block so you can try a few values of <span class="math notranslate nohighlight">\(n\)</span> and see how the distributions of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(s\)</span> change</p>
 <div class="cell docutils container">
@@ -857,11 +826,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.0026482486187
-mean simulated value of s is 7.031282865041749
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
 </pre></div>
 </div>
-<img alt="_images/c15031b70c76cb79aa4a4fc3a3c6696f64dbd7cf10b5a2f54c12544732d4c59b.png" src="_images/c15031b70c76cb79aa4a4fc3a3c6696f64dbd7cf10b5a2f54c12544732d4c59b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean simulated value of m is 162.0090349369506
+mean simulated value of s is 6.922467996106836
+</pre></div>
+</div>
+<img alt="_images/4aef0821811e6046a269ad83f341e1d91594275e691f13d7bee112ecb20c027f.png" src="_images/4aef0821811e6046a269ad83f341e1d91594275e691f13d7bee112ecb20c027f.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="_images/Minion_what.jpg"><img alt="What?!" src="_images/Minion_what.jpg" style="width: 10%;" /></a>
@@ -873,7 +848,7 @@ mean simulated value of s is 7.031282865041749
 <li> The Q-Q plot shows that normal distribution is not a bad fit to the sampling distribution of m and s (but note as mentioned above, the distribution of s is actually a different-shaped distribution, the gamma, which looks normal-ish for large n)
 </ul></p>
 <section id="try-changing-n">
-<h3>Try changing <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#try-changing-n" title="Permalink to this heading">#</a></h3>
+<h3>Try changing <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#try-changing-n" title="Link to this heading">#</a></h3>
 <p>Now I want you to reduce <span class="math notranslate nohighlight">\(n\)</span> to a small value, say <span class="math notranslate nohighlight">\(n=5\)</span></p>
 <p>What do you notice changes in the plots?</p>
 <ul>
@@ -888,7 +863,7 @@ mean simulated value of s is 7.031282865041749
 </section>
 </section>
 <section id="the-t-distribution">
-<h2>The <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#the-t-distribution" title="Permalink to this heading">#</a></h2>
+<h2>The <span class="math notranslate nohighlight">\(t\)</span> distribution<a class="headerlink" href="#the-t-distribution" title="Link to this heading">#</a></h2>
 <p>The phenomena above can be summaried as follows - for data drawn from a Normal parent or population distribution</p>
 <ul>
 <li> The sampling distribution of the mean, m, is always normal for any value of n
@@ -937,7 +912,11 @@ mean simulated value of s is 7.031282865041749
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/acdb00ed35eb07610f8c147ca4bfe2a13bea40e47c7e14d34c802ec9d19ebd30.png" src="_images/acdb00ed35eb07610f8c147ca4bfe2a13bea40e47c7e14d34c802ec9d19ebd30.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/a4b6de93f5c020a6baa15cdfd1368afeeb642c3d2bc438def0da9967a410a153.png" src="_images/a4b6de93f5c020a6baa15cdfd1368afeeb642c3d2bc438def0da9967a410a153.png" />
 </div>
 </div>
 <p>We can see a particular problem in the tails of the distribution - the fit between the predicted Normal and the simulated histogram is poor.</p>
@@ -949,21 +928,21 @@ mean simulated value of s is 7.031282865041749
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.81
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.24
 </pre></div>
 </div>
 </div>
 </div>
 <p>Uh-oh, 15% of the time instead of 5%!</p>
 <section id="student-s-t">
-<h3>Student’s <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#student-s-t" title="Permalink to this heading">#</a></h3>
+<h3>Student’s <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#student-s-t" title="Link to this heading">#</a></h3>
 <p>Fortunately, over a hundred years ago William Gosset (pen name Student) did the maths are worked out an equivalent equation for normal data when <span class="math notranslate nohighlight">\(n\)</span> is small, namely the <span class="math notranslate nohighlight">\(t\)</span> distribution</p>
 <div class="math notranslate nohighlight">
 \[ t = \frac{x-\bar{x}}{\frac{s}{\sqrt{n}}} \]</div>
 <p>The <span class="math notranslate nohighlight">\(t\)</span> distribution takes into account the skewed estimate of <span class="math notranslate nohighlight">\(\sigma\)</span> resulting in ‘heavy tails’ and a pointy top. The <span class="math notranslate nohighlight">\(t\)</span> distribution is actually a different shape for different values of <span class="math notranslate nohighlight">\(n\)</span> (the smaller <span class="math notranslate nohighlight">\(n\)</span> is, the heavier the tails and the pointier the top!)</p>
 <p>Let’s try overlaying the t distribution over our histogram:</p>
 <section id="note">
-<h4>Note -<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h4>
+<h4>Note -<a class="headerlink" href="#note" title="Link to this heading">#</a></h4>
 <p>You will notice the syntax for the <span class="math notranslate nohighlight">\(t\)</span> PDF, <tt>stats.t.pdf()</tt> is similar to the syntax <tt>stats.norm.pdf()</tt> but has an additional argument <tt>n-1</tt>, which reflects the fact that the <span class="math notranslate nohighlight">\(t\)</span> distriubtion actually changes shape as <span class="math notranslate nohighlight">\(n\)</span> increases. The term <tt>(n-1)</tt> is technically the <i>degrees of freedom</i> of the t-distribution (don’t worry at this stage if that sounds like unfamiliar jargon).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -993,8 +972,12 @@ mean simulated value of s is 7.031282865041749
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2b1f2a53fb7ba25721ac3dfa030101dddccd97519e17932bfa49cad49357ac74.png" src="_images/2b1f2a53fb7ba25721ac3dfa030101dddccd97519e17932bfa49cad49357ac74.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1056
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="_images/4a7021245302ecccabd84e7157443325fae5565bff2dcdef0d21143376cbbde4.png" src="_images/4a7021245302ecccabd84e7157443325fae5565bff2dcdef0d21143376cbbde4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1064
 </pre></div>
 </div>
 </div>
@@ -1022,8 +1005,8 @@ mean simulated value of s is 7.031282865041749
 <p>If you are getting an unstable estimate of the proportion of trials on which t&gt;=2.13, you may need to increase nReps until the simulation is stable to the degree of precision (say, 2 significant figures) that you desire.</p>
 </section>
 </section>
-<section id="percent-point-function-tt-ppf-tt">
-<h3>Percent point function (<tt>ppf</tt>)<a class="headerlink" href="#percent-point-function-tt-ppf-tt" title="Permalink to this heading">#</a></h3>
+<section id="percent-point-function-ppf">
+<h3>Percent point function (<tt>ppf</tt>)<a class="headerlink" href="#percent-point-function-ppf" title="Link to this heading">#</a></h3>
 <p>You may recall that there are some commonly used Z values, such as Z=1.96 - under the normal distribution a Z score exceeding -1.96 or +1.96 occures only 5% of the time</p>
 <p>Since the <span class="math notranslate nohighlight">\(t\)</span> distribution changes shape depending on <span class="math notranslate nohighlight">\(n\)</span>, there is not such an easy set of ‘critical values’ to memorise.</p>
 <p>Luckily there is a Python function to help us, <tt>stats.t.ppf()</tt>. This is the inverse of the function <tt>stats.t.cdf()</tt> in that:</p>
@@ -1064,7 +1047,7 @@ mean simulated value of s is 7.031282865041749
 </div>
 </section>
 <section id="further-exercises">
-<h3>Further Exercises<a class="headerlink" href="#further-exercises" title="Permalink to this heading">#</a></h3>
+<h3>Further Exercises<a class="headerlink" href="#further-exercises" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Try changing <span class="math notranslate nohighlight">\(n\)</span> in the simulation above and observe how the <span class="math notranslate nohighlight">\(t\)</span> distribution changes (and becomes more like the  distribution when <span class="math notranslate nohighlight">\(n\)</span> is large)</p></li>
 <li><p>What value of <span class="math notranslate nohighlight">\(n\)</span> is needed for the 95% ppf of the <span class="math notranslate nohighlight">\(t(n-1)\)</span> distribution (the <span class="math notranslate nohighlight">\(t\)</span> distribution for a sample of size <span class="math notranslate nohighlight">\(n\)</span>) to match that of the <span class="math notranslate nohighlight">\(Z\)</span> distribution to 3 significant figures?</p></li>
@@ -1114,7 +1097,7 @@ mean simulated value of s is 7.031282865041749
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -1125,6 +1108,7 @@ mean simulated value of s is 7.031282865041749
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1147,7 +1131,7 @@ mean simulated value of s is 7.031282865041749
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note -</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-tt-ppf-tt">Percent point function (<tt>ppf</tt>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#percent-point-function-ppf">Percent point function (<tt>ppf</tt>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">Further Exercises</a></li>
 </ul>
 </li>
@@ -1175,7 +1159,7 @@ By Jill O'Reilly & Lindsay Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1199,8 +1183,8 @@ By Jill O'Reilly & Lindsay Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

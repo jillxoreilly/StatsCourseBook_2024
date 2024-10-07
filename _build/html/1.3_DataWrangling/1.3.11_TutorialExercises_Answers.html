@@ -1,0 +1,1526 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1.3_DataWrangling/1.3.11_TutorialExercises_Answers';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Introduction to Statistics and Data Science - Home"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Introduction to Statistics and Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.3.1_Intro.html">3. Data Wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.8_ZScoreQuantiles.html">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">3. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">3.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">3.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">3.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">3.6. Power analysis by simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">3.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">3.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">3.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">3.11. Concepts Review</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/1.3_DataWrangling/1.3.11_TutorialExercises_Answers.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2F1.3_DataWrangling/1.3.11_TutorialExercises_Answers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/1.3_DataWrangling/1.3.11_TutorialExercises_Answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crime-survey-data">Crime Survey Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-the-dataset">Variables in the dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-variables">Getting to know the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-most-likely-to-be-a-victim-of-crime">Who is most likely to be a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-demographics">Do attitudes differ depending on demographics?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age">age</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deprivation-index">deprivation index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ses">SES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">Do attitudes differ depending on whether the respondant has been a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Link to this heading">#</a></h1>
+<p>These tutorial exercises are designed to help you prepare for the first assignment.</p>
+<p>As a researcher, there are two distinct phases to data analysis:</p>
+<ul class="simple">
+<li><p>Understanding the dataset yourself - this involves making lots of quick plots and descriptive statistics to</p>
+<ul>
+<li><p>check for outliers</p></li>
+<li><p>find out the data distributions</p></li>
+<li><p>look for differences between categories</p></li>
+<li><p>look for associations between variables
+<br></p></li>
+</ul>
+</li>
+<li><p>Preparing a report for a reader - this involves a focus on readability and the reader</p>
+<ul>
+<li><p>explain any key features of the dataset</p></li>
+<li><p>highlighting key results with descriptive statistics and figures</p></li>
+<li><p>figures should be well labelled and tweaked to make your point as clearly as possible</p></li>
+<li><p>there should be clear, readable explanatory text</p></li>
+<li><p>for most readers/clients, non technical language should be used</p></li>
+<li><p>in all cases, jargon should be avoided</p></li>
+</ul>
+</li>
+</ul>
+<p>In these tutorial exercises, you will complete some guided tasks (and some open-ended ones) to explore the dataset for yourself.</p>
+<p>For the hand-in assignment, you will produce a report on the same dataset for a specified reader.</p>
+<section id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
+<p>The idea here is primarily to try ‘playing around’ with the data - make lots of plots and see what you can see. The refined report will come later (for homework).</p>
+<p>I find students can be quite focussed on the process of making plots etc actually work (ie the coding - or in the past the process of drawing it with pencil and paper). Of course what we really want you to do is look at the output, think about what it means and come up with some follow-up questions.</p>
+<p>The learning objective is to give you practice in interpreting graphs and descriptive statistics, looking at the output, think about what it means and come up with some follow-up questions.</p>
+<p>A secondary objective is to give you lots of practice with producing graphs and tables and a sense of which settings work well, when.</p>
+<p>Below I have my own ‘answers’ to the questions - as you can see it’s really just rough work exploring the dataset. This is the type of thing I am hoping students would produce!</p>
+<p>NOTE - one exercise asks you to recognize Z-scored variables. z-scoring was covered in the reading and lecture.</p>
+</section>
+<section id="crime-survey-data">
+<h2>Crime Survey Data<a class="headerlink" href="#crime-survey-data" title="Link to this heading">#</a></h2>
+<p>We will work with a dataset extracted from the Crime Survey England and Wales 2013.</p>
+<p>I obtained the data from the UK Data Service, a data repository run by the UK Research Councils. This text is from their introduction to the dataset:</p>
+<p><em>The Crime Survey for England and Wales (CSEW) is a face-to-face victimisation survey in which
+people resident in households in England and Wales are asked about their experiences of a range of
+crimes in the 12 months prior to the interview. Respondents to the survey are also asked about their
+perceptions of crime and attitudes towards crime related issues such as the police and criminal justice
+system.</em></p>
+<p>The dataset I have given you contains only some of the questions that respondants were asked, containing information about the respondants’ individual demographic features, neighbourhood, perceptions of crime and attitudes towards the police and criminal justice system.</p>
+<p>The brief for the  hand-in report will be to write a short report for the Home Secretary addressing two topics:</p>
+<ol class="arabic simple">
+<li><p>Which groups are the most likely to be victims of crime? and</p></li>
+<li><p>What factors affect confidence in policing and crimial justice?’,</p></li>
+</ol>
+<p>Note that the idea is to write for a generic Home Secretary  - they have responsibility for Law and Order and as a politician are interested in how different sections of the public perceive these issues. You can assume they have no statistical training. However there is no need to accommodate the political attitudes or personal characteristics of any particular Home Secretary.</p>
+<p>In these preparatory exercises you will play around with the data to try and work out which factors are important predictors of that confidence.</p>
+<p>I have put my own conclusions at the bottom of this page - this is just to give an idea of the kinds of things you might look at.</p>
+<section id="note">
+<h3>Note<a class="headerlink" href="#note" title="Link to this heading">#</a></h3>
+<p>The survey was conducted in 2013 in the UK. Events of recent years may have affected the confidence of certain groups in the police; this would not be reflected in the data used here.</p>
+</section>
+<section id="set-up-python-libraries">
+<h3>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-the-data">
+<h3>Import the data<a class="headerlink" href="#import-the-data" title="Link to this heading">#</a></h3>
+<p>Download the dataset from Canvas and import them as a dataframe called <code class="docutils literal notranslate"><span class="pre">crime</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/CrimeData.csv&#39;</span><span class="p">)</span>
+<span class="n">crime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>AgeGroup</th>
+      <th>EthnicGroup</th>
+      <th>Education</th>
+      <th>SES</th>
+      <th>DeprivationIndex</th>
+      <th>Victim</th>
+      <th>effectx</th>
+      <th>fairx</th>
+      <th>confx</th>
+      <th>antisocx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>135230170.0</td>
+      <td>Male</td>
+      <td>45.0</td>
+      <td>4</td>
+      <td>White</td>
+      <td>University</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.290506</td>
+      <td>3.42</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>135230210.0</td>
+      <td>Male</td>
+      <td>28.0</td>
+      <td>2</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>-0.755949</td>
+      <td>NaN</td>
+      <td>-0.349198</td>
+      <td>-0.52</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>135231010.0</td>
+      <td>Female</td>
+      <td>58.0</td>
+      <td>5</td>
+      <td>Black or Black British</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>-1.344910</td>
+      <td>-0.544786</td>
+      <td>0.381797</td>
+      <td>2.27</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>135231210.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>Asian or Asian British</td>
+      <td>GCSE</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>135233210.0</td>
+      <td>Female</td>
+      <td>64.0</td>
+      <td>5</td>
+      <td>White</td>
+      <td>Other</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>0.152448</td>
+      <td>0.914933</td>
+      <td>-0.613168</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9295</th>
+      <td>147638210.0</td>
+      <td>Male</td>
+      <td>43.0</td>
+      <td>3</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>-0.436513</td>
+      <td>NaN</td>
+      <td>-1.029429</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>9296</th>
+      <td>147639090.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.132483</td>
+      <td>NaN</td>
+      <td>1.051876</td>
+      <td>-0.45</td>
+    </tr>
+    <tr>
+      <th>9297</th>
+      <td>147639130.0</td>
+      <td>Female</td>
+      <td>80.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.808211</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>9298</th>
+      <td>147639250.0</td>
+      <td>Male</td>
+      <td>86.0</td>
+      <td>7</td>
+      <td>White</td>
+      <td>University</td>
+      <td>1.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>-0.446495</td>
+      <td>0.408086</td>
+      <td>1.711802</td>
+      <td>-0.56</td>
+    </tr>
+    <tr>
+      <th>9299</th>
+      <td>147639290.0</td>
+      <td>Male</td>
+      <td>70.0</td>
+      <td>6</td>
+      <td>White</td>
+      <td>NaN</td>
+      <td>2.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>1.579928</td>
+      <td>NaN</td>
+      <td>-0.115685</td>
+      <td>-1.22</td>
+    </tr>
+  </tbody>
+</table>
+<p>9300 rows × 13 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="variables-in-the-dataset">
+<h3>Variables in the dataset<a class="headerlink" href="#variables-in-the-dataset" title="Link to this heading">#</a></h3>
+<p>Information about the respondant and their neighbourhood:</p>
+<ul class="simple">
+<li><p><strong>ID</strong> a unique number for each participant</p></li>
+<li><p><strong>Sex</strong></p></li>
+<li><p><strong>Age</strong> in years</p></li>
+<li><p><strong>Age Group</strong> ages in 10-year groups</p></li>
+<li><p><strong>Ethnic Group</strong> the categories given are the ones recorded in the original survey</p></li>
+<li><p><strong>Education</strong> highest level of education completed; modern British qualifications are used as a short hand for any equivalent, for example ‘A-Levels’ includes any equivalent of completing high school to age 18.</p></li>
+<li><p><strong>SES</strong> socio-economic status</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>Managerial and professional occs</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>Intermediate occs</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>Small employers and own account workers</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>Lower supervisory and technical occupations</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>Semi-routine and routine occupations</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="6">
+<li><p>Never worked and long term unemployed</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="7">
+<li><p>Full-time students</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="8">
+<li><p>Not classified</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>Deprivation Index</strong> this is a neighbourhood-level measure of poverty, in qunitiles</p>
+<ul>
+<li><p>1 is the most deprived (poorest) 20% of neighbourhoods</p></li>
+<li><p>5 is the least deprived (wealthiest) 20%</p></li>
+</ul>
+</li>
+<li><p><strong>Victim</strong> has the respondant been a victim of crime in the last 12 months?</p></li>
+</ul>
+<p>Information about the respondant’s attitudes on the following questions (each variable actually reflects a combination of the respondant’s answers to several questions; for example <strong>antisocx</strong> is based on several questions asking about different antisocial behaviours- ‘is there vandalism in your neighbourhood’, ‘are there gangs present in your neighbourhood’ etc):</p>
+<ul class="simple">
+<li><p><strong>effectx</strong> how effective is the criminal justice system?</p></li>
+<li><p><strong>fairx</strong> how fair is the criminal justice system?</p></li>
+<li><p><strong>confx</strong> how confident are you in the policing of your neighbourhood?</p></li>
+<li><p><strong>antisocx</strong> how much antisocial behaviour is there in your neighbourhood?</p></li>
+</ul>
+</section>
+</section>
+<section id="getting-to-know-the-variables">
+<h2>Getting to know the variables<a class="headerlink" href="#getting-to-know-the-variables" title="Link to this heading">#</a></h2>
+<p>In this first section you will explore each variable individually by making suitable graphs. Complete each code block to produce a suitable plot or descriptive statistic. There are no right answers but in each case you should look at what you produced and evaluate whether your learned something from it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Are there more men or women in the sample?</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/db05daadd556f5d7079641e9d4493c32ce995cd9d4031d305c7b1c442ca37a3c.png" src="../_images/db05daadd556f5d7079641e9d4493c32ce995cd9d4031d305c7b1c442ca37a3c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What ages were included in the survey and what is the distribution of respondants&#39; ages?</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crime</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">crime</span><span class="o">.</span><span class="n">Age</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="../_images/70510bf2139f039970157672f14f44e2837550d31635af14f1b1ed78c741cf19.png" src="../_images/70510bf2139f039970157672f14f44e2837550d31635af14f1b1ed78c741cf19.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.0
+99.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What are the bins used for the variable AgeGroup?</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="../_images/8ecc7df37f46dca8798dec68e216e6ffc119cf3bd2d51b84e96e11f90f274620.png" src="../_images/8ecc7df37f46dca8798dec68e216e6ffc119cf3bd2d51b84e96e11f90f274620.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many respondants came from each ethnic group?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">crime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ID</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="c1"># I counted the IDs in each ethnic group - without this you woudl get a table giving the counts for each variable (minus missing data) in each ethnic group</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7ca3bc3552ce0db2bcfff09c2c8c4f7a04d8c71af6847b7254750a4a0dd59de2.png" src="../_images/7ca3bc3552ce0db2bcfff09c2c8c4f7a04d8c71af6847b7254750a4a0dd59de2.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EthnicGroup
+Asian or Asian British     390
+Black or Black British     255
+Chinese or other           116
+Mixed                       81
+White                     8445
+Name: ID, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What proportion of respondants have been a victim of crime in the last 12 months?</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">crime</span><span class="o">.</span><span class="n">Victim</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># get nummerical value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/399fe03e34d863615f568324eb74001298766b1db9c50c91993b9546154dbb45.png" src="../_images/399fe03e34d863615f568324eb74001298766b1db9c50c91993b9546154dbb45.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1560215053763441
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of the attitude variables (effectx, fairx, confx and antisocx) plot the distribution?</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;effectx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;antisocx&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<img alt="../_images/ebc8c298a74e64fef8a54de3bc26bba385403b273c1e367422e2335db64ca50b.png" src="../_images/ebc8c298a74e64fef8a54de3bc26bba385403b273c1e367422e2335db64ca50b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, None)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>NOTE -</strong>
+We note that these variables take positive and negative values (in fact they have been Z-scored so the mean is zero)</p>
+<ul class="simple">
+<li><p>For fairness (fairx) and effectiveness (effectx) of the criminal justice system, the distribution was fairly symmetrical</p></li>
+<li><p>For confidence in the police there is a strong spike around zzero (many people have a neutral attitude - or are they disengaged or have no experience with the police? - later we will break this down by victims/non victims) - there is also a strong positive tail</p></li>
+<li><p>For perceptions of ‘antisocial behaviour in my neighbourhood’ there is a strong positive tail - could it depend on neighbourhood characteristics?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the attitude variables (effectx, fairx, confx and antisocx) what is the mean and standard deviation?</span>
+<span class="c1"># Can you guess how these attitude variables ended up with that mean and standard deviation (think back to the section on standardizing data)?</span>
+<span class="n">crime</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;effectx&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="s1">&#39;fairx&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="s1">&#39;confx&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="s1">&#39;antisocx&#39;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>effectx</th>
+      <th>fairx</th>
+      <th>confx</th>
+      <th>antisocx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>-2.591708e-18</td>
+      <td>6.772233e-18</td>
+      <td>2.864762e-17</td>
+      <td>-0.000870</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000872</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The means are 1 and the sd is 0 for each - they have been Z-scored.</p>
+<p>You may need to discuss the use of scientific notation with students, who imght not understand e-17 etc</p>
+<p>You might need to alert students to the fact that a tiny tiny number is basically zero (due to noise/rounding error)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which variables have a lot of missing data?</span>
+<span class="c1"># HINT use df.isna() and sum()</span>
+<span class="n">crime</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID                     0
+Sex                    0
+Age                   29
+AgeGroup               0
+EthnicGroup           13
+Education           1993
+SES                    0
+DeprivationIndex     748
+Victim                 0
+effectx             2446
+fairx               4054
+confx                619
+antisocx             624
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Most demomgraphic variables are near complete (exception is education)</p>
+<p>Two of the attitude questions (fairness and effectiveness of the criminal justce system) are incomplete for a high number of respondants.</p>
+<p>You or your students might be interested in whether non-response is higher for certain groups; annoyingly I can find no straightforward way to integrate isna() and groupby() - there are ways but they are all fiddly. You can check using df.count() and df.size() as below but only for one variable at a time.</p>
+<p>If anyone knows a good solution to this please let me know!</p>
+<p>Incidentally, playing around with this I think the groups with the lower response rates are ‘Chinese and Other’ ethnic group and the ‘Other’ education group</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">effectx</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">/</span><span class="n">crime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EthnicGroup
+Asian or Asian British    0.587179
+Black or Black British    0.654902
+Chinese or other          0.698276
+Mixed                     0.851852
+White                     0.745885
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="who-is-most-likely-to-be-a-victim-of-crime">
+<h2>Who is most likely to be a victim of crime?<a class="headerlink" href="#who-is-most-likely-to-be-a-victim-of-crime" title="Link to this heading">#</a></h2>
+<p>Explore which demographic variables make a different to the chance of being a victim of crime. Are more men than women victims of crime? etc</p>
+<p><strong>HINT</strong> as <tt>Victim</tt> is coded as 1 (if they have been a victim of crime in the past 12 months) and 0 (otherwise), you can obtain the proportion of people who have been a victim by taking the mean value of the column <tt>Victim</tt>.</p>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">sns.barplot()</span></code> with the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">hue</span></code> arguments to plot the proportion who are victims of crime within each category (each age group, etc).</p>
+<p>You can also try disaggregating by a second variable, eg does whether men or women are more likely to be victims of crime differ by ethnic group?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You will add several code blocks here to explore the data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">most</span> <span class="n">likely</span> <span class="n">people</span> <span class="n">to</span> <span class="n">be</span> <span class="n">victims</span> <span class="n">of</span> <span class="n">crime</span> <span class="n">are</span> <span class="n">young</span> <span class="n">people</span><span class="p">,</span> <span class="n">students</span><span class="p">,</span> <span class="ow">and</span> <span class="n">those</span> <span class="n">living</span> <span class="ow">in</span> <span class="n">areas</span> <span class="n">of</span> <span class="n">high</span> <span class="n">deprivation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">The</span> <span class="n">most</span> <span class="n">likely</span> <span class="n">people</span> <span class="n">to</span> <span class="n">be</span> <span class="n">victims</span> <span class="n">of</span> <span class="n">crime</span> <span class="n">are</span> <span class="n">young</span> <span class="n">people</span><span class="p">,</span> <span class="n">students</span><span class="p">,</span> <span class="ow">and</span> <span class="n">those</span> <span class="n">living</span> <span class="ow">in</span> <span class="n">areas</span> <span class="n">of</span> <span class="n">high</span> <span class="n">deprivation</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/976df9175292c27e5216d15d2a6cf0c1bfb83665f7af6d81195ade43b054700e.png" src="../_images/976df9175292c27e5216d15d2a6cf0c1bfb83665f7af6d81195ade43b054700e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/298dacfa44726715557b023e6bfeb1c61a41041b8373afb263fcf288291df876.png" src="../_images/298dacfa44726715557b023e6bfeb1c61a41041b8373afb263fcf288291df876.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b5605d0c5a3b828d6ae350df811b58b891e3fce64efaa67f32d5e363ed7e1e62.png" src="../_images/b5605d0c5a3b828d6ae350df811b58b891e3fce64efaa67f32d5e363ed7e1e62.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c7b324213412d9d2cf11f98a63ddcad3f3b35404b4eec69b14e7893500818a01.png" src="../_images/c7b324213412d9d2cf11f98a63ddcad3f3b35404b4eec69b14e7893500818a01.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c08fb927ed8a5716ba9b22338a9f6cd971b6ffb455443f59a4800e6845ac6bfc.png" src="../_images/c08fb927ed8a5716ba9b22338a9f6cd971b6ffb455443f59a4800e6845ac6bfc.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Sex&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;EthnicGroup&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ee5d053a3625093e61b68babe934576ade587991b945923170f49d394463bcfe.png" src="../_images/ee5d053a3625093e61b68babe934576ade587991b945923170f49d394463bcfe.png" />
+</div>
+</div>
+<p>Are students victims of crime because they live in deprived neighbourhoods? Interestingly, whilst for most people there is a relatinoship between deprivation index and likeligood of being a victim of crime, this relationship breaks down for under 25’s and for those in the student, unemployed and unclassified SES brackets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;AgeGroup&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/9db70feeb6c29f32f3cb533b2d2a0194694d22280ed9feffbf3fa374b09c11db.png" src="../_images/9db70feeb6c29f32f3cb533b2d2a0194694d22280ed9feffbf3fa374b09c11db.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;SES&#39;, ylabel=&#39;Victim&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/95cbb40a6c35d8a54997ff431b28ba1f2b1f997e13369671568de7a063bab233.png" src="../_images/95cbb40a6c35d8a54997ff431b28ba1f2b1f997e13369671568de7a063bab233.png" />
+</div>
+</div>
+</section>
+<section id="do-attitudes-differ-depending-on-demographics">
+<h2>Do attitudes differ depending on demographics?<a class="headerlink" href="#do-attitudes-differ-depending-on-demographics" title="Link to this heading">#</a></h2>
+<p>Looking at the attitude variables (effectx, fairx, confx and antisocx), which demographic factors seem to influence these?</p>
+<p>I found it most helpful to make KDE plots for the distribution of each attitude variable in each demographic group; because there are often many groups to compare, the simplicity of the KDE plot (without shading) is helpful.</p>
+<p>Because there are different numbers of people in each group, you may want to normalize all the KDE plots to have the same area using the argument <code class="docutils literal notranslate"><span class="pre">commmon_normm=False</span></code> as below - this makes it easier to compare groups</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Under 25&#39;</span><span class="p">,</span><span class="s1">&#39;25-34&#39;</span><span class="p">,</span><span class="s1">&#39;35-44&#39;</span><span class="p">,</span><span class="s1">&#39;45-54&#39;</span><span class="p">,</span><span class="s1">&#39;55-64&#39;</span><span class="p">,</span><span class="s1">&#39;65-74&#39;</span><span class="p">,</span><span class="s1">&#39;75+&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" src="../_images/7a5c1997bd1c0cac9de0e1e1d8339a010dc9e33cf18a78a44261e4e394eb2b0b.png" />
+</div>
+</div>
+<p>TUTORS - there is no right answer to how to break the data down!</p>
+<p>You may notice that respondants’ experience of antisocial behaviour tends to be higher in groups who are more likely to be victims of crime (young people, low SES and those living in areas of high deprivation).</p>
+<p>We see some different patterns in the attitudes to the criminal justice system and police, with younger people generally having more positive attitudes. You might also notice that people in with high SES and in areas of low deprivation are more likely to express a neutral attitude on ‘confidence in the police’.</p>
+<section id="age">
+<h3>age<a class="headerlink" href="#age" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;effectx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;antisocx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;AgeGroup&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d93fa914139f4ae577ab48804a350ffe2a5e13ae588b55c1193a3cda8556f55a.png" src="../_images/d93fa914139f4ae577ab48804a350ffe2a5e13ae588b55c1193a3cda8556f55a.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, None)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="deprivation-index">
+<h2>deprivation index<a class="headerlink" href="#deprivation-index" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;effectx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;antisocx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;DeprivationIndex&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7d7d8b9ef92a55dd6e9fdcf7e195951f9e0797fa68d2f50a2f8cd041f142c379.png" src="../_images/7d7d8b9ef92a55dd6e9fdcf7e195951f9e0797fa68d2f50a2f8cd041f142c379.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, None)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ses">
+<h2>SES<a class="headerlink" href="#ses" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;effectx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;antisocx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;SES&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1b340938dec9fb0cc5fcfb29e74cfe71a2aa3cfe4f3e6845868e04d300c7ec57.png" src="../_images/1b340938dec9fb0cc5fcfb29e74cfe71a2aa3cfe4f3e6845868e04d300c7ec57.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, None)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">
+<h2>Do attitudes differ depending on whether the respondant has been a victim of crime?<a class="headerlink" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime" title="Link to this heading">#</a></h2>
+<p>You can use a similar approach to that used for demographic factors above.</p>
+<p>You imght think about disaggregating by some demographic factors - does being a victimm of crime make some groups more confident in the police (etc) and other groups, less confident? What might this say about different groups/ interactions with the police?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;effectx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fairx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;confx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">crime</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;antisocx&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Victim&#39;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(),</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9588251270876f4940ba134aeffbe14ead66de3c6c75071e114735a45c73311a.png" src="../_images/9588251270876f4940ba134aeffbe14ead66de3c6c75071e114735a45c73311a.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If anything, those who have been a victim of crime have slightly mmore positive attitudes to the criminal justice system and police than those who ave not.</p>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
+<p>Young people, students and those living in areas of high deprivation are more likely to be victims of crime and are more likely to experience antisocial behaviour in their neighbourhood.</p>
+<p>Perhaps surprisingly, there is little diference in attitudes to the police and criminal justice system between these groups, and those groups who experience much less crime and antisocial behaviour; there is a slight effect that people of low SES or in areas of deprivation have momre positive, rather than neutral, attitudes to the police. There is quite a strong effect that young people have more positive attitudes to the criminal justice system than older people, despite experiencing mmore crime and antisocial behaviour.</p>
+<p>Those who have been a victim of crime have slightly higher average confidence in the police than those who have not; mainly, a large proportion of people who have not been victims of crime expressed neutral attitudes to the police.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./1.3_DataWrangling"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crime-survey-data">Crime Survey Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-data">Import the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-in-the-dataset">Variables in the dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-to-know-the-variables">Getting to know the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-most-likely-to-be-a-victim-of-crime">Who is most likely to be a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-demographics">Do attitudes differ depending on demographics?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#age">age</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deprivation-index">deprivation index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ses">SES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#do-attitudes-differ-depending-on-whether-the-respondant-has-been-a-victim-of-crime">Do attitudes differ depending on whether the respondant has been a victim of crime?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

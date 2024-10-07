@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Sensitivity, power, reproducibility &#8212; Introduction to Statistics and Data Science</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Power_correlation';</script>
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,22 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
@@ -158,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,145 +181,83 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_datacamp.html">1.2. Datacamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_JupyterLab.html">1.3. Using Anaconda and JupyterLab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_Colab.html">1.4. Using Google Colab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter0_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
 </ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_intro.html">1. Describing Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Skew.html">1.5. Skew</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_Correlation.html">1.6. Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_conceptCheck.html">1.7. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_PythonIndexing.html">1.8. Python: Descriptives and Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_tables.html">1.9. Tables of descriptive statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter1_DescribingData/MT_wk1_TutorialExercises.html">1.10. Tutorial Exercises</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="1.3_DataWrangling/1.3.1_Intro.html">3. Data Wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.8_ZScoreQuantiles.html">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_DataWrangling/1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_intro.html">2. Data Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_outcomes.html">2.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_histogram.html">2.4. Visualizing Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_boxplot.html">2.5. Comparing Categories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_lineplot.html">2.7. Timeseries data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_tweaks.html">2.8. Tweaking plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter2_DataVisualization/MT_wk2_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_intro.html">3. Data Wrangling</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_outcomes.html">3.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_NanHandling.html">3.5. Handling NaNs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_disaggregation.html">3.6. Data Disaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_CreateColumns.html">3.7. Creating new variables/columns</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ZScoreQuantiles.html">3.8. Standardizing data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_ReportExample.html">3.9. Preparing a report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_Assignment1_ModelAnswer.html">3.10. Model Client Report</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter3_DataWrangling/MT_wk3_TutorialExercises.html">3.11. Tutorial Exercises</a></li>
-</ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_intro.html">1. Permutation Testing</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_outcomes.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_functions.html">1.6. Python Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_paired.html">1.7. Permutation test for paired data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter4_PermutationTest/MT_wk5_permutation_TutorialExercises.html">1.11. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_classictests_intro.html">2. Rank-Based Tests</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_outcomes.html">2.3. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_intro.html">2.4. Rank-based tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter5_ClassicTests/MT_wk6_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter6_ttest/ttest_intro.html">3. t-Test</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/NormalDistribution.html">3.3. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/BestFittingNormal.html">3.4. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/tDistribution.html">3.5. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_oneSample.html">3.6. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter6_ttest/HandInAssignment.html">3.9. Vacation Assignment</a></li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="2.4_Power/2.4.1_power_intro.html">3. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.2_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.3_Type1and2Errors.html">3.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.4_EffectSize.html">3.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.5_EffectSizeCorrelation.html">3.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.6_PowerCorrelationSim.html">3.6. Power analysis by simulation</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.7_BuiltInPowerCalc.html">3.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.8_DeterminingEffectSize.html">3.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.9_SampleSizeAndPower.html">3.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_Power/2.4.10_power_conceptCheck.html">3.11. Concepts Review</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter7_Power/power_intro.html">4. Power analysis</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/Type1and2Errors.html">4.3. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/SampleSizeAndPower.html">4.10. Sample size and power</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/power_conceptCheck.html">4.11. Concepts Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter7_Power/TutorialExercises.html">4.12. Tutorial Exercises</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="Chapter8_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter9_Probability/Probability_intro.html">2. Probability</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/Independence.html">2.3. Statsitical Independence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/EventCombinations.html">2.4. Event combinations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter9_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
-</ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter10_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
@@ -315,15 +266,17 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_TutorialExercises.html">2.5. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
@@ -333,8 +286,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
@@ -344,8 +297,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
@@ -353,14 +306,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter15_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -376,7 +329,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -385,14 +338,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -417,14 +370,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/Power_correlation.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -548,10 +501,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -559,14 +512,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -644,10 +597,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-power-reproducibility">
-<h1>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Permalink to this heading">#</a></h1>
+<h1>Sensitivity, power, reproducibility<a class="headerlink" href="#sensitivity-power-reproducibility" title="Link to this heading">#</a></h1>
 <p>As we saw in the lecture, the concepts of sensitivity and power are concerned with controlling the rate of type I and type II errors respectively, where type I errors are false positives and type II errors are false negatives.</p>
 <a class="reference internal image-reference" href="_images/t1t2_error.png"><img alt="_images/t1t2_error.png" src="_images/t1t2_error.png" style="width: 80%;" /></a>
 <p>Think about it this way:</p>
@@ -656,7 +609,7 @@ document.write(`
 <li><p>When we are talking about power (controlling type II errors) we are proposing that the true populaiton effect is non-zero (say correlation and we are interested in how frequently we fail to reject the null hypothesis.</p></li>
 </ul>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Permalink to this heading">#</a></h2>
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,26 +626,26 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-correlation">
-<h1>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Permalink to this heading">#</a></h1>
+<h1>Power of a Correlation<a class="headerlink" href="#power-of-a-correlation" title="Link to this heading">#</a></h1>
 <p>I collect data on end-ofyear exam scores in Maths and French for 50 high school studehts. Then I calculate the correlation coefficient, Pearson’s r, between Maths and French scores across my sample of 50 participants.</p>
 <ul class="simple">
 <li><p>I observe a correlation of r=0.25</p></li>
 </ul>
 <p>Can I trust this result?</p>
 <section id="eyeballing-the-data">
-<h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Permalink to this heading">#</a></h2>
+<h2>Eyeballing the data<a class="headerlink" href="#eyeballing-the-data" title="Link to this heading">#</a></h2>
 <p>What does a correlation of 0.25 look like for 50 data points?
 Here are some examples of datasets that actually have r=0.25:</p>
 <a class="reference internal image-reference" href="_images/r25_examples.png"><img alt="_images/r25_examples.png" src="_images/r25_examples.png" style="width: 100%;" /></a>
 <p>Would you trust those correlations?</p>
 </section>
 <section id="specificity">
-<h2>Specificity<a class="headerlink" href="#specificity" title="Permalink to this heading">#</a></h2>
+<h2>Specificity<a class="headerlink" href="#specificity" title="Link to this heading">#</a></h2>
 <p>A Type 1 error occurs when the null hypothesis is true (as it is for our simulated population with zero correlation), but is nonetheless rejected.</p>
 <p>The specificity of a test is the probability of avoiding a Type 1 Error, if the null is true. So say the null hypothesis is true and we test at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level. The probability of a Type 1 error is (by definition) 5% and the specificity of the test is 95%.</p>
 <p>In this section we check that we do indeed get a false positive (ie a Type 1 error) 5% of the time when testing at the <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 level in a population here the null is true.</p>
 <section id="our-example">
-<h3>Our example:<a class="headerlink" href="#our-example" title="Permalink to this heading">#</a></h3>
+<h3>Our example:<a class="headerlink" href="#our-example" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span> Under the null hypothesis there is no correlation between maths scores and French scores</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> Under the alternative hypothesis, there is a correlation</p></li>
@@ -727,7 +680,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d0c76394512fe7c87737e52bbeb0af3f7d97356243d8fbcd2b7138369d924a4e.png" src="_images/d0c76394512fe7c87737e52bbeb0af3f7d97356243d8fbcd2b7138369d924a4e.png" />
+<img alt="_images/5cf036161b42e2aa0ee2fa057d5b10e1b3523bf63ffe1a82d2734f654a20f1f2.png" src="_images/5cf036161b42e2aa0ee2fa057d5b10e1b3523bf63ffe1a82d2734f654a20f1f2.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -767,11 +720,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.007751</td>
+      <td>0.010366</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.007751</td>
+      <td>0.010366</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -780,12 +733,12 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </section>
 <section id="specificity-or-probability-of-a-type-1-error">
-<h3>Specificity or probability of a Type 1 error<a class="headerlink" href="#specificity-or-probability-of-a-type-1-error" title="Permalink to this heading">#</a></h3>
+<h3>Specificity or probability of a Type 1 error<a class="headerlink" href="#specificity-or-probability-of-a-type-1-error" title="Link to this heading">#</a></h3>
 <p>A Type 1 error occurs when the null hypothesis is true (as it is for our simulated population with zero correlation), but is nonetheless rejected.</p>
 <p>If I choose an alpha value of 0.05, this means I would reject the null hypothesis if the <span class="math notranslate nohighlight">\(p\)</span>-value for my obtained correlation is less than 0.05.</p>
 <p>By definition, for random samples from a population with no correlation, this should happen 5% of the time.</p>
 <section id="how-to-we-get-the-p-value-for-a-correlation">
-<h4>How to we get the p-value for a correlation?<a class="headerlink" href="#how-to-we-get-the-p-value-for-a-correlation" title="Permalink to this heading">#</a></h4>
+<h4>How to we get the p-value for a correlation?<a class="headerlink" href="#how-to-we-get-the-p-value-for-a-correlation" title="Link to this heading">#</a></h4>
 <p>For a given values of Pearson’s <span class="math notranslate nohighlight">\(r\)</span>, we can work out a t-score using the equation:</p>
 <div class="math notranslate nohighlight">
 \[ t=\frac{r}{\sqrt{(1-r^2)(n-2)}} \]</div>
@@ -800,7 +753,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=-0.04911404231475211, pvalue=0.6325856371731865)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PearsonRResult(statistic=0.1776762266070228, pvalue=0.1085206718745823)
 </pre></div>
 </div>
 </div>
@@ -813,14 +766,14 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6325856371731865
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1085206718745823
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="back-to-probability-of-a-type-1-errror">
-<h4>Back to probability of a Type 1 errror<a class="headerlink" href="#back-to-probability-of-a-type-1-errror" title="Permalink to this heading">#</a></h4>
+<h4>Back to probability of a Type 1 errror<a class="headerlink" href="#back-to-probability-of-a-type-1-errror" title="Link to this heading">#</a></h4>
 <p>Let’s try drawing 10000 samples from our no-correlation population and see how often we do get a significant result!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -838,7 +791,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0523
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1044
 </pre></div>
 </div>
 </div>
@@ -848,11 +801,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="power">
-<h2>Power<a class="headerlink" href="#power" title="Permalink to this heading">#</a></h2>
+<h2>Power<a class="headerlink" href="#power" title="Link to this heading">#</a></h2>
 <p>A Type 2 error occurs hen the alternative hypothesis is true, but we fail to reject the null.</p>
 <p>The probability of correctly rejecting the null when <span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> is true is the sensitivity or power of a test. So if the probability of a Type 2 error for a given test is 20%, the sensitivity or power of the test is 80%.</p>
 <section id="power-by-simulation">
-<h3>Power by simulation<a class="headerlink" href="#power-by-simulation" title="Permalink to this heading">#</a></h3>
+<h3>Power by simulation<a class="headerlink" href="#power-by-simulation" title="Link to this heading">#</a></h3>
 <p>We can investigate power in our correlation example using the same simulation approach as above, but now we need to <i>assume the true population correlation <span class="math notranslate nohighlight">\(\rho\)</span> is 0.25<i></p>
 <p>First, I’m going to generate a population (25 000 pairs of values) in which the true correlation between two variables (let’s call them ‘anxiety’ and ‘risk aversion’) is 0.25. Again don’t worry too much about understanding this code block.</p>
 <div class="cell docutils container">
@@ -884,7 +837,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c8964d84d719465ecec316094dddd83217f4061b0c1bd7a896eb04ff0816c222.png" src="_images/c8964d84d719465ecec316094dddd83217f4061b0c1bd7a896eb04ff0816c222.png" />
+<img alt="_images/78389ca1c7e31feed8afdfe86f2bffe27229dbf1416a77bba4d13978b43b736a.png" src="_images/78389ca1c7e31feed8afdfe86f2bffe27229dbf1416a77bba4d13978b43b736a.png" />
 </div>
 </div>
 <p>Hopefully the scatterplot shows some data with a weak correlation (the datapoints are no longer spread on a circle, but stretched into an oval shape).</p>
@@ -921,13 +874,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
   <tbody>
     <tr>
       <th>Maths</th>
-      <td>1.00000</td>
-      <td>0.24651</td>
+      <td>1.000000</td>
+      <td>0.240199</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.24651</td>
-      <td>1.00000</td>
+      <td>0.240199</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
@@ -953,7 +906,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="ne">TypeError</span>: float() argument must be a string or a number, not &#39;PearsonRResult&#39;
+<span class="ne">TypeError</span>: float() argument must be a string or a real number, not &#39;PearsonRResult&#39;
 
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
@@ -999,14 +952,14 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section id="sample-size">
-<h2>Sample size<a class="headerlink" href="#sample-size" title="Permalink to this heading">#</a></h2>
+<h2>Sample size<a class="headerlink" href="#sample-size" title="Link to this heading">#</a></h2>
 <p>We have just seen that a large sample size is needed to get good power for a weak correlation. In general, the power of a test (1 - chance of a Type 2 error) increases with <span class="math notranslate nohighlight">\(n\)</span> whilst the specificity (1 - chance of a type 1 error) does not. Why?</p>
 <section id="the-probability-of-a-type-1-error-does-not-depend-on-sample-size">
-<h3>The probability of a Type 1 error does not depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
+<h3>The probability of a Type 1 error does not depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-not-depend-on-sample-size" title="Link to this heading">#</a></h3>
 <p>Statistical tests are designed to control the probability of a type 1 error. When calculating the critical value of the test statistic (in the case of correlation, the test statistic is <span class="math notranslate nohighlight">\(r\)</span> and the critical value is minimum <span class="math notranslate nohighlight">\(r\)</span> value that would be considered significant for a given sample size <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(n\)</span> is directly taken into account. Therefore, the probably of a type 1 error is fixed regardless of sample size.</p>
 </section>
 <section id="the-probability-of-a-type-1-error-does-depend-on-sample-size">
-<h3>The probability of a Type 1 error <em>does</em> depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-depend-on-sample-size" title="Permalink to this heading">#</a></h3>
+<h3>The probability of a Type 1 error <em>does</em> depend on sample size<a class="headerlink" href="#the-probability-of-a-type-1-error-does-depend-on-sample-size" title="Link to this heading">#</a></h3>
 <p>The above is <em>not</em> true for type 2 error. The probability of Type 2 error (and hence the power of the test) varies with sample size.</p>
 <p>If we increase the sample size, the power of the test increases.</p>
 <p>Let’s try it! Change the sample size in the code block below to 10,100 and 1000. How does the power change</p>
@@ -1096,19 +1049,19 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-calculations-in-practice">
-<h1>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Permalink to this heading">#</a></h1>
+<h1>Power calculations in practice<a class="headerlink" href="#power-calculations-in-practice" title="Link to this heading">#</a></h1>
 <p>Power is defined as the proportion of the time we would expect to get a statistically significant effect in samples of size <span class="math notranslate nohighlight">\(n\)</span>, given that there is a true effect of a certain size (for example <span class="math notranslate nohighlight">\(r\)</span>=0.25) in the population.</p>
 <p>An obvious problem with this is that in a real experiment you wouldn’t know the true effect sizze in the underlying population - that is what you are trying to measure! So how can you calculate the power for a given planned sample size, or the sample size needed to achieve 80% power, in advance?</p>
 <p>Unfortunately, it is often impossible to have an accurate estimate of the expected effect size in advance. Sometimes we can estimate the effect size (such as the correlation in the underlying population) from looking at similar studies in the literature, but usually such guesses will give only a very rough estimate of the effect size that will arise in our planned experiment. An alternative is to conduct a pilot experiment to determine effect size - this is more likely to be practical in the context of a large study (such as a drug trial) than a small-scale experiment (such as an undergraduate psychology project).</p>
 <section id="clinically-significant-effect-size">
-<h2>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Permalink to this heading">#</a></h2>
+<h2>Clinically significant effect size<a class="headerlink" href="#clinically-significant-effect-size" title="Link to this heading">#</a></h2>
 <p>One context in which power can definitely be meaningfully defined, is when we kno hat size of effect we would <em>care about</em>, even if we don’t know what the underlying effect size in the population is.</p>
 <p>Say for example we are testing a new analgesic drug. We may not kno how much the drug will ruduce pain scores (the true effect sizze) but we can certainly define a minimum effect size that would be clinically meaningful You could say that you would only consider the effect of the drug clinically significant if there is a 10% change in pain scores (otherwise, the drug won’t be worth taking). That is different from statstistical significance - if you test enough patients you could detect a statstically significant result even for a very small change in clinical outcome but it still wouldn’t mean your drug is an effective painkiller.</p>
 <p>If we conduct a power analysis assuming that the effect size in the population is the minimmum clincally significant effect, this will tell us how many participants we need to detect such a clinically significant effect with (say) 80% power. By definition a smaller effect would need more participants to detect it (but we wouldn’t be interested in such a small effect from a clinical perspective, so that doesn’t matter). Any effect larger than the minimum clinically significant effect ould have more than 80% power, as larger effects are easier to detect.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="power-of-a-t-test">
-<h1>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Permalink to this heading">#</a></h1>
+<h1>Power of a t-test<a class="headerlink" href="#power-of-a-t-test" title="Link to this heading">#</a></h1>
 <p>Let us now look at power analysis for a t-test for difference of means.</p>
 <p>A researcher hypothesises that geography students are taller than psychology students.</p>
 <p><span class="math notranslate nohighlight">\(\mathcal{H_o}:\)</span> The mean heights of psychology (<span class="math notranslate nohighlight">\(\mu_p\)</span>) and geography (<span class="math notranslate nohighlight">\(\mu_g\)</span>) students are the same; <span class="math notranslate nohighlight">\(\mu_p = \mu_g\)</span></p>
@@ -1316,7 +1269,7 @@ Name: height, dtype: float64
 </div>
 <p>The difference is <em>just</em> significant at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05 - our <span class="math notranslate nohighlight">\(p\)</span>-value is 0.0456</p>
 <section id="effect-size">
-<h2>Effect size<a class="headerlink" href="#effect-size" title="Permalink to this heading">#</a></h2>
+<h2>Effect size<a class="headerlink" href="#effect-size" title="Link to this heading">#</a></h2>
 <p>The mean height of the geography students is 5.14 cm greater than the mean height of the psychology students</p>
 <p>Is this a large difference? Would it be obvious in a psychology-geography student party who is a psychology student and who is a geography student, just from their heights?</p>
 <p>We can visualise how much the populations overlap by plotting them:</p>
@@ -1417,7 +1370,7 @@ Name: height, dtype: float64
 <p>It’s more striking if you see them on the same axis:</p>
 <p>Hence we can this of our effect size is a ‘pure’ measure of the overlap between the groups.</p>
 <section id="power-simulate-a-dataset-with-d-0-760">
-<h3>Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span><a class="headerlink" href="#power-simulate-a-dataset-with-d-0-760" title="Permalink to this heading">#</a></h3>
+<h3>Power: Simulate a dataset with <span class="math notranslate nohighlight">\(d = 0.760\)</span><a class="headerlink" href="#power-simulate-a-dataset-with-d-0-760" title="Link to this heading">#</a></h3>
 <p>We are assuming the data are normally distributed so if we create two datasets that are normally distributed with a standard deviation of 1, and a difference of means of 0.760, they will have an effect size for difference of means of <span class="math notranslate nohighlight">\(d = 0.760\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1438,7 +1391,7 @@ Name: height, dtype: float64
 </div>
 </section>
 <section id="draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect">
-<h3>Draw 10000 random samples and see how often we get a significant effect<a class="headerlink" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect" title="Permalink to this heading">#</a></h3>
+<h3>Draw 10000 random samples and see how often we get a significant effect<a class="headerlink" href="#draw-10000-random-samples-and-see-how-often-we-get-a-significant-effect" title="Link to this heading">#</a></h3>
 <p>Now we simulate drawing many samples from our population with <span class="math notranslate nohighlight">\(d=0.760\)</span>, conducting an independent samples t-test on each one, and counting what proportion are significant.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1485,7 +1438,7 @@ Name: height, dtype: float64
 </section>
 </section>
 <section id="built-in-function-for-power">
-<h2>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Permalink to this heading">#</a></h2>
+<h2>Built in function for power<a class="headerlink" href="#built-in-function-for-power" title="Link to this heading">#</a></h2>
 <p>There is a built in function in a package called <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for doing power analysis.</p>
 <p>You can use it to find the power for a given sample size:</p>
 <div class="cell docutils container">
@@ -1542,7 +1495,7 @@ Name: height, dtype: float64
 <li><p><code class="docutils literal notranslate"><span class="pre">ratio</span></code> tells us the ratio n2/n1</p></li>
 </ul>
 <section id="running-it">
-<h3>Running it<a class="headerlink" href="#running-it" title="Permalink to this heading">#</a></h3>
+<h3>Running it<a class="headerlink" href="#running-it" title="Link to this heading">#</a></h3>
 <p>When we run power analysis using <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code> we first run an analysis that models the relationship between the four factors for the test in question (independent samples t-test in this case, but it could have been a paired t-test, or something else that we haven’e met yet like an ANOVA or Chi Square test):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1579,13 +1532,13 @@ required alpha = 0.20952367203411126
 </div>
 </section>
 <section id="note-on-effect-size">
-<h3>Note on effect size<a class="headerlink" href="#note-on-effect-size" title="Permalink to this heading">#</a></h3>
+<h3>Note on effect size<a class="headerlink" href="#note-on-effect-size" title="Link to this heading">#</a></h3>
 <p>In this case we worked out the effect size in our actual sample of 12 psychologists and 8 geographers, as 0.760, and conducted a power analysis using that effect size. This is sometimes called a post-hoc power analysis. It told us that we should have tested 19 and 28 people rather than 12 and 8. This isn’t quite the intended purpose of poewr analysis (to work out the required sample size in advance) but is how power analysis is often used in reality - to evaluate post hoc, or after the fact, whether a study was sufficiently well powered.</p>
 </section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="paired-sample-t-test">
-<h1>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Permalink to this heading">#</a></h1>
+<h1>Paired sample t-test<a class="headerlink" href="#paired-sample-t-test" title="Link to this heading">#</a></h1>
 <p>There is a version of the power analysis for paired samples t-test (indeed, there are versions for various analyses, although not for correlation annoyingly).</p>
 <p>The version for paired samples t-test is called <code class="docutils literal notranslate"><span class="pre">TTestPower()</span></code> as opposed to <code class="docutils literal notranslate"><span class="pre">TTestIndPower</span></code></p>
 <p>See if you can work out how to use this to find the sample size required for 80% power for an effect size of <span class="math notranslate nohighlight">\(d=0.5\)</span>, testing at <span class="math notranslate nohighlight">\(\alpha\)</span>=0.05.</p>
@@ -1612,7 +1565,7 @@ required alpha = 0.20952367203411126
 </div>
 </div>
 <section id="another-example">
-<h2>another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
+<h2>another example<a class="headerlink" href="#another-example" title="Link to this heading">#</a></h2>
 <p>… think back to how we calculated d, see if you can run one from the raw data.</p>
 <p>Let’s look at the brother-sister heights data.</p>
 <div class="cell docutils container">
@@ -1851,7 +1804,7 @@ required alpha = 0.20952367203411126
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -1862,6 +1815,7 @@ required alpha = 0.20952367203411126
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1941,7 +1895,7 @@ By Jill O'Reilly & Lindsay Richards
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1965,8 +1919,8 @@ By Jill O'Reilly & Lindsay Richards
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
