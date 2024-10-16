@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.7. Paired Samples t-test &#8212; Introduction to Statistics and Data Science</title>
+    <title>3.6. Paired Samples t-test &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '2.3_ttest/2.3.7_ttest_pairedSamples';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.8. Independent samples t-test" href="2.3.8_ttest_independentSamples.html" />
-    <link rel="prev" title="3.6. One sample t-test" href="2.3.6_ttest_oneSample.html" />
+    <link rel="next" title="3.7. Independent samples t-test" href="2.3.8_ttest_independentSamples.html" />
+    <link rel="prev" title="3.5. One sample t-test" href="2.3.6_ttest_oneSample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +181,21 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_JupyterLab.html">1.2. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_Colab.html">1.3. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_datacamp.html">1.4. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
@@ -242,14 +256,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="2.3.1_ttest_intro.html">3. t-Test</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="2.3.2_HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.3_NormalDistribution.html">3.3. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.4_BestFittingNormal.html">3.4. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.5_tDistribution.html">3.5. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.6_ttest_oneSample.html">3.6. One sample t-test</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.7. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.8_ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2.3.9_HandInAssignment.html">3.9. Vacation Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.3_NormalDistribution.html">3.2. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.4_BestFittingNormal.html">3.3. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.5_tDistribution.html">3.4. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.6_ttest_oneSample.html">3.5. One sample t-test</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.6. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.8_ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.9_HandInAssignment.html">3.8. Vacation Assignment</a></li>
 
 </ul>
 </details></li>
@@ -584,8 +597,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.2. Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.6.2. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatterplot">Scatterplot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-assumption-of-normality">Check assumption of normality</a></li>
@@ -596,8 +609,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">3.7.3. Write-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">3.7.4. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">3.6.3. Write-up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">3.6.4. Further Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -610,9 +623,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="paired-samples-t-test">
-<h1><span class="section-number">3.7. </span>Paired Samples t-test<a class="headerlink" href="#paired-samples-t-test" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.6. </span>Paired Samples t-test<a class="headerlink" href="#paired-samples-t-test" title="Link to this heading">#</a></h1>
 <section id="set-up-python-libraries">
-<h2><span class="section-number">3.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,13 +638,15 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">warnings</span> 
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="example">
-<h2><span class="section-number">3.7.2. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6.2. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/horror.jpg"><img alt="There should be a picture from a horror movie here" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/images/horror.jpg" style="width: 30%;" /></a>
 <p>A scientist hypothesises that watching horror movies raises the heart rate in human subjects.
 She measures the heart rate of 20 volunteers watching a horror movie,
@@ -793,7 +808,7 @@ and the same volunteers watching a cookery show.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c23f3a39586a8aed77f044f45af2da562454af7c91509d76b095e56703623d7e.png" src="../_images/c23f3a39586a8aed77f044f45af2da562454af7c91509d76b095e56703623d7e.png" />
+<img alt="../_images/407c5e6791b0b069debe1970ad3aeca481bdd722d4235b9c4f365285ee208e24.png" src="../_images/407c5e6791b0b069debe1970ad3aeca481bdd722d4235b9c4f365285ee208e24.png" />
 </div>
 </div>
 <p>It looks like</p>
@@ -974,12 +989,6 @@ the differences between conditions (for each participant) are normally distribut
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
-/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
-</pre></div>
-</div>
 <img alt="../_images/cdfc2e68d286cbc8f1e7e42ff093b6c74ef2a60a84b05becc05b6cbe4abda952.png" src="../_images/cdfc2e68d286cbc8f1e7e42ff093b6c74ef2a60a84b05becc05b6cbe4abda952.png" />
 </div>
 </div>
@@ -1124,7 +1133,7 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
 </section>
 </section>
 <section id="write-up">
-<h2><span class="section-number">3.7.3. </span>Write-up<a class="headerlink" href="#write-up" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6.3. </span>Write-up<a class="headerlink" href="#write-up" title="Link to this heading">#</a></h2>
 <br>
 <div style = "    padding-top: 10px;
     padding-bottom: 10px;
@@ -1152,7 +1161,7 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5861b7d1b02d0b1e7ca6e4ce33a1b2f54cbc740aa5995bc158bfdc1646d53361.png" src="../_images/5861b7d1b02d0b1e7ca6e4ce33a1b2f54cbc740aa5995bc158bfdc1646d53361.png" />
+<img alt="../_images/f57f68ef56f06cde34187f146f471a5605f0f30d1356976393b6607027f217de.png" src="../_images/f57f68ef56f06cde34187f146f471a5605f0f30d1356976393b6607027f217de.png" />
 </div>
 </div>
 <p><strong>Note</strong> - <em>the red dashed line is the line of equality <span class="math notranslate nohighlight">\((x=y)\)</span>; heart rate is generally higher for each individual in the horror condition (most points lie above teh line <span class="math notranslate nohighlight">\((x=y)\)</span>. There is a strong correlation between the two measures of heart rate for each individual, indicating an individual differences in heart rate regardless of condition, which should be controlled by the use of a repeated measures design.</em></p>
@@ -1253,12 +1262,6 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
-/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Density&#39;)
 </pre></div>
 </div>
@@ -1282,7 +1285,7 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
 <p>As p&lt;0.05 we conclude that on average, individuals’ heart rates increase when watching horror shows as opposed to cookery shows.</p>
 </section>
 <section id="further-exercises">
-<h2><span class="section-number">3.7.4. </span>Further Exercises<a class="headerlink" href="#further-exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6.4. </span>Further Exercises<a class="headerlink" href="#further-exercises" title="Link to this heading">#</a></h2>
 <ol>
 <li> What do you think would happen if you ran an independent samples t-test on the data - would the p value become more or less significant? Why?
 <li> Change the code to actually run an independent samples test. Was you intuition correct?
@@ -1326,7 +1329,7 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.6. </span>One sample t-test</p>
+        <p class="prev-next-title"><span class="section-number">3.5. </span>One sample t-test</p>
       </div>
     </a>
     <a class="right-next"
@@ -1334,7 +1337,7 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.8. </span>Independent samples t-test</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Independent samples t-test</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1354,8 +1357,8 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.7.1. Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.7.2. Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">3.6.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">3.6.2. Example</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatterplot">Scatterplot</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-assumption-of-normality">Check assumption of normality</a></li>
@@ -1366,8 +1369,8 @@ that mean of the first input <tt>heartRate.horror</tt> is greater than the secon
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">Interpretation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">3.7.3. Write-up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">3.7.4. Further Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-up">3.6.3. Write-up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-exercises">3.6.4. Further Exercises</a></li>
 </ul>
   </nav></div>
 

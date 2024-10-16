@@ -7,15 +7,15 @@ parts:
     - caption: Preparation
       numbered: 3
       chapters:
-      - file: Chapter0_PrepWork/MT_wk0_intro.md
+      - file: 0.1_PrepWork/MT_wk0_intro.md
         sections:
-        - file: Chapter0_PrepWork/MT_wk0_datacamp.md
-        - file: Chapter0_PrepWork/MT_wk0_JupyterLab.md
-        - file: Chapter0_PrepWork/MT_wk0_Colab.md
-        - file: Chapter0_PrepWork/MT_wk0_For.ipynb
-        - file: Chapter0_PrepWork/MT_wk0_ForIf.ipynb
-        - file: Chapter0_PrepWork/MT_wk0_random.ipynb
-        - file: Chapter0_PrepWork/MT_wk0_ChatGPT.ipynb
+        - file: 0.1_PrepWork/MT_wk0_JupyterLab.md
+        - file: 0.1_PrepWork/MT_wk0_Colab.md
+        - file: 0.1_PrepWork/MT_wk0_datacamp.md
+        - file: 0.1_PrepWork/MT_wk0_For.ipynb
+        - file: 0.1_PrepWork/MT_wk0_ForIf.ipynb
+        - file: 0.1_PrepWork/MT_wk0_random.ipynb
+        - file: 0.1_PrepWork/MT_wk0_ChatGPT.ipynb
     - caption: Exploring Data
       numbered: 3
       chapters:

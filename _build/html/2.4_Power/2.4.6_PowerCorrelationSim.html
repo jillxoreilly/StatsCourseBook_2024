@@ -181,7 +181,21 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_JupyterLab.html">1.2. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_Colab.html">1.3. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_datacamp.html">1.4. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
@@ -242,14 +256,13 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../2.3_ttest/2.3.1_ttest_intro.html">3. t-Test</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.2_HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.3_NormalDistribution.html">3.3. Normal Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.4_BestFittingNormal.html">3.4. Best fitting Normal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.5_tDistribution.html">3.5. The t distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.6_ttest_oneSample.html">3.6. One sample t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.7_ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.8_ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.9_HandInAssignment.html">3.9. Vacation Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.3_NormalDistribution.html">3.2. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.4_BestFittingNormal.html">3.3. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.5_tDistribution.html">3.4. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.6_ttest_oneSample.html">3.5. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.7_ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.8_ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.9_HandInAssignment.html">3.8. Vacation Assignment</a></li>
 
 </ul>
 </details></li>
@@ -666,6 +679,8 @@ document.write(`
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">warnings</span> 
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -741,7 +756,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08062e5f37469230e386af02d808985a7a850596848cda6498995e8dd954078e.png" src="../_images/08062e5f37469230e386af02d808985a7a850596848cda6498995e8dd954078e.png" />
+<img alt="../_images/b834ebd4f6970fe2c1af1943f9ff03fe8cfb00315b868a3d718f45f3a09e65d1.png" src="../_images/b834ebd4f6970fe2c1af1943f9ff03fe8cfb00315b868a3d718f45f3a09e65d1.png" />
 </div>
 </div>
 <p>The generated dataset has two columns and 25,000 rows.</p>
@@ -780,13 +795,13 @@ Here are some examples of datasets that actually have r=0.25:</p>
   <tbody>
     <tr>
       <th>Maths</th>
-      <td>1.00000</td>
-      <td>-0.00565</td>
+      <td>1.000000</td>
+      <td>0.005595</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>-0.00565</td>
-      <td>1.00000</td>
+      <td>0.005595</td>
+      <td>1.000000</td>
     </tr>
   </tbody>
 </table>
@@ -811,7 +826,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0964
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1046
 </pre></div>
 </div>
 </div>
@@ -851,7 +866,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/017ed980d4b25711f6532029167c46c2d11a0880fb5791a946edb4f373ada184.png" src="../_images/017ed980d4b25711f6532029167c46c2d11a0880fb5791a946edb4f373ada184.png" />
+<img alt="../_images/66d8cb33209192e91d4f8c6eed157686f81269f778935170e72184dc7ed8bae8.png" src="../_images/66d8cb33209192e91d4f8c6eed157686f81269f778935170e72184dc7ed8bae8.png" />
 </div>
 </div>
 <p>We can check the correlation in the full population of 25000 samples, hopefully this should be close to 0.25.</p>
@@ -888,11 +903,11 @@ Here are some examples of datasets that actually have r=0.25:</p>
     <tr>
       <th>Maths</th>
       <td>1.000000</td>
-      <td>0.244716</td>
+      <td>0.244408</td>
     </tr>
     <tr>
       <th>French</th>
-      <td>0.244716</td>
+      <td>0.244408</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -922,7 +937,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.518
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.53
 </pre></div>
 </div>
 </div>
@@ -949,7 +964,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.547
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.526
 </pre></div>
 </div>
 </div>
@@ -987,7 +1002,7 @@ Here are some examples of datasets that actually have r=0.25:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/29a80af60f79def2784b78e1805d975893672d78e0d2449b6acfd327e4927414.png" src="../_images/29a80af60f79def2784b78e1805d975893672d78e0d2449b6acfd327e4927414.png" />
+<img alt="../_images/449b8dad4773470733213dca30b787446daea7b20e5ab8e48ba369e51424bf0d.png" src="../_images/449b8dad4773470733213dca30b787446daea7b20e5ab8e48ba369e51424bf0d.png" />
 </div>
 </div>
 <p>The relationship between sample size and power is slightly bumpy as we checked only 1000 simulated samples at each sample size. If you increased nReps to 10,000 the curve would look smoother (but the simulation would take a long time to run).</p>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Simulating a random process &#8212; Introduction to Statistics and Data Science</title>
+    <title>1.7. Simulating a random process &#8212; Introduction to Statistics and Data Science</title>
   
   
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '0.1_PrepWork/MT_wk0_random';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.9. ChatGPT" href="MT_wk0_ChatGPT.html" />
+    <link rel="prev" title="1.6. FOR loop with IF statement" href="MT_wk0_ForIf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,7 +179,21 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="MT_wk0_intro.html">1. Preparatory Work</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_JupyterLab.html">1.2. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_Colab.html">1.3. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_datacamp.html">1.4. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. Simulating a random process</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
@@ -239,77 +253,120 @@
 <li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">3. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">3.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">3.3. False positives and False negatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">3.4. Effect size (Cohen’s d)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">3.5. Effect size (Pearson’s r)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">3.6. Power analysis by simulation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.3_ttest/2.3.1_ttest_intro.html">3. t-Test</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.3_NormalDistribution.html">3.2. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.4_BestFittingNormal.html">3.3. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.5_tDistribution.html">3.4. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.6_ttest_oneSample.html">3.5. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.7_ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.8_ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.9_HandInAssignment.html">3.8. Vacation Assignment</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">3.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">3.9. Knowing the effect size</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">3.10. Sample size and power</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">3.11. Concepts Review</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">4. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">4.11. Concepts Review</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.2_Probability/Probability_intro.html">2. Probability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Independence.html">2.3. Statsitical Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter10_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.1_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter10_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter11_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter11_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.2_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter12_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.3_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter12_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter13_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter13_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.4_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter14_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter14_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.5_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter15_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_causality.html">6.4. Causality</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter15_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.6_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
 </ul>
 </details></li>
 </ul>
@@ -538,25 +595,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simulating a random process</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">Random number</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.7. Simulating a random process</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.7.2. Random number</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">Simulated coin flip</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">Count the heads</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">Double loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.8. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.8.1. Count the heads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.8.2. Double loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension-questions">Comprehension questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.8.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-ball">Simulate a single ball</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Comprehension Questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Double Loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">Significance of the Galton Board simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.8.4. Double Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.8.5. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.8.6. Significance of the Galton Board simulation</a></li>
 </ul>
 </li>
 </ul>
@@ -572,13 +629,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simulating-a-random-process">
-<h1>Simulating a random process<a class="headerlink" href="#simulating-a-random-process" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1.7. </span>Simulating a random process<a class="headerlink" href="#simulating-a-random-process" title="Link to this heading">#</a></h1>
 <p>In statistics we are interested in understanding how random variability affects a measurement.</p>
 <p>For example, a person takes a multiple choice style IQ test. Their score will reflect their true IQ, bubt also some elment of random chance (they will have guessed the questions they couldn’t answer, and may have been lucky or unlucky in terms of how many guesses were correct).</p>
 <p>As we will see in the course, randomness has predictable properties (!), for example, the influecne of randomm chance tends to average out over lots of measurements (you might be lucky and guess 3/3 questions correctly, but not 100/100)</p>
 <p>To understand the impact of randomess on our measureents, we can simulate a random process. That is what we will do in the next section.</p>
 <section id="set-up-python-libraries">
-<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.1. </span>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
 <p>As usual, run the code cell below to import the relevant Python libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,7 +654,7 @@ document.write(`
 </div>
 </section>
 <section id="random-number">
-<h2>Random number<a class="headerlink" href="#random-number" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.7.2. </span>Random number<a class="headerlink" href="#random-number" title="Link to this heading">#</a></h2>
 <p>We can ask the computer to generate a random number. The <code class="docutils literal notranslate"><span class="pre">np.random()</span></code> library is good for this!</p>
 <p>For example, the following code block generates a random integer between 0 and 9.</p>
 <ul class="simple">
@@ -610,7 +667,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -632,7 +689,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="simulated-coin-flip">
-<h1>Simulated coin flip<a class="headerlink" href="#simulated-coin-flip" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1.8. </span>Simulated coin flip<a class="headerlink" href="#simulated-coin-flip" title="Link to this heading">#</a></h1>
 <p>A random number can act as a model for a real world process.</p>
 <p>For example, if we flip a fair coin, the chance of getting ‘heads’ is 0.5.</p>
 <p>If we pick a random integer in the range <tt>[0,2)</tt> (ie, we pick <tt>0</tt> or <tt>1</tt>), the chance of getting <tt>1</tt> is 0.5.</p>
@@ -656,19 +713,19 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HEADS
 TAILS
 HEADS
-HEADS
 TAILS
 HEADS
 HEADS
 TAILS
 HEADS
-HEADS
+TAILS
+TAILS
 </pre></div>
 </div>
 </div>
 </div>
 <section id="count-the-heads">
-<h2>Count the heads<a class="headerlink" href="#count-the-heads" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.1. </span>Count the heads<a class="headerlink" href="#count-the-heads" title="Link to this heading">#</a></h2>
 <p>Ultimately we might not be so interested in the whole sequence as some summary of it - for example how likely is it that we can get 8/10 ‘heads’ for a fair coin?</p>
 <ul class="simple">
 <li><p>Uncomment the code below and modify it so that it fills up the output array ‘heads’ with 1s and 0s according to the random ‘coin toss’</p></li>
@@ -689,7 +746,7 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
 </pre></div>
 </div>
 </div>
@@ -712,15 +769,15 @@ HEADS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [0. 1. 1. 0. 0. 0. 1. 1. 0. 1.]
-sum = 5.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>output array: [1. 1. 1. 0. 0. 1. 1. 0. 1. 1.]
+sum = 7.0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="double-loop">
-<h2>Double loop<a class="headerlink" href="#double-loop" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.2. </span>Double loop<a class="headerlink" href="#double-loop" title="Link to this heading">#</a></h2>
 <p>What if we are interested in how much more often we get a ‘close-to-even’ outcome (4/10, 5/10, 6/10) vs an extreme outcome?</p>
 <p>We need to run the 10-coin-toss simulation lots of times and note how any heads we got (out of 10) each time.</p>
 <ul class="simple">
@@ -759,7 +816,7 @@ sum = 5.0
   with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
 </pre></div>
 </div>
-<img alt="../_images/d381f2fb2851b96a6560e80e434b35269324d41b98491bad2dad219e66e43800.png" src="../_images/d381f2fb2851b96a6560e80e434b35269324d41b98491bad2dad219e66e43800.png" />
+<img alt="../_images/213b90763b54aff7e54f9d225902a5a0d64ef19422c9a423c8c825020b7c5325.png" src="../_images/213b90763b54aff7e54f9d225902a5a0d64ef19422c9a423c8c825020b7c5325.png" />
 </div>
 </div>
 <p>Indeed, the fairer outcomes are more likely</p>
@@ -786,7 +843,7 @@ sum = 5.0
 </section>
 </section>
 <section id="exercise-galton-board-simulation">
-<h2>Exercise: Galton Board simulation<a class="headerlink" href="#exercise-galton-board-simulation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.3. </span>Exercise: Galton Board simulation<a class="headerlink" href="#exercise-galton-board-simulation" title="Link to this heading">#</a></h2>
 <p>In the Galton Board, ball bearings are dropped from a funnel onto a board with pins sticking out.</p>
 <p>As each ball bearing goes down the board, each time it hits a pin it bounces left or right:</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg"><img alt="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg" src="https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/images/MT_wk1_GaltonBoard.jpg" style="width: 30%;" /></a>
@@ -845,7 +902,7 @@ sum = 5.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/790475b3a5dacc99295b350b170023300faaf425a34356aa23360fe6d5386eeb.png" src="../_images/790475b3a5dacc99295b350b170023300faaf425a34356aa23360fe6d5386eeb.png" />
+<img alt="../_images/225f62e433b962640b3a0737fcf406946d44ea0814c38ca43743a511cfd3f7f3.png" src="../_images/225f62e433b962640b3a0737fcf406946d44ea0814c38ca43743a511cfd3f7f3.png" />
 </div>
 </div>
 <p>If you run the code block above a few times, you should see the simulated trajectory change each time</p>
@@ -908,7 +965,7 @@ sum = 5.0
 </section>
 </section>
 <section id="id2">
-<h2>Double Loop<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.4. </span>Double Loop<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>The point of the Galton Board is to release lots of ball bearings and observe where they are omre <em>likely</em> to end up</p>
 <p>To simulate this we create an outer loop that runs our one-ball simmulation many times</p>
 <p>If you are feeling adventurous, you can try yourself to complete the second loop around the outside of the code below!</p>
@@ -1005,7 +1062,7 @@ sum = 5.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a0f9e5149f32aaf03881c2334f7b563e28b7f81254d19e523a16c032eb6cfa9f.png" src="../_images/a0f9e5149f32aaf03881c2334f7b563e28b7f81254d19e523a16c032eb6cfa9f.png" />
+<img alt="../_images/9380626ba71c1aef9717d6537441a83e3c99da162ae6ba6666dc75403d3aefe7.png" src="../_images/9380626ba71c1aef9717d6537441a83e3c99da162ae6ba6666dc75403d3aefe7.png" />
 </div>
 </div>
 <p>The darker lines are places where more than one ball has passed through</p>
@@ -1034,19 +1091,19 @@ sum = 5.0
   with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
 </pre></div>
 </div>
-<img alt="../_images/fd3c4e2eac04de62b13588b7418131d58902c90068bcf10f7d225d9bf7edaa84.png" src="../_images/fd3c4e2eac04de62b13588b7418131d58902c90068bcf10f7d225d9bf7edaa84.png" />
+<img alt="../_images/9a2bdee465d4b7649205b994ad52e9e2d5dfc7a74ccae40e56ceebdd28c9de4e.png" src="../_images/9a2bdee465d4b7649205b994ad52e9e2d5dfc7a74ccae40e56ceebdd28c9de4e.png" />
 </div>
 </div>
 </section>
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.5. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You may like to increase the number of balls in the simulation - you should get a tidier-looking distribution of end points with more balls</p></li>
 <li><p>You could try increasing the number of pins. What happens to the histogram of endpoints when you do this?</p></li>
 </ul>
 </section>
 <section id="significance-of-the-galton-board-simulation">
-<h2>Significance of the Galton Board simulation<a class="headerlink" href="#significance-of-the-galton-board-simulation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.8.6. </span>Significance of the Galton Board simulation<a class="headerlink" href="#significance-of-the-galton-board-simulation" title="Link to this heading">#</a></h2>
 <p>The Galton board illustrates how a combination of multiple random influences produces a certain pattern of final outcomes, namely a Normal Distribution.</p>
 <p>We will meet this idea again in the block on Statistical Theory.</p>
 </section>
@@ -1082,6 +1139,24 @@ sum = 5.0
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="MT_wk0_ForIf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>FOR loop with IF statement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MT_wk0_ChatGPT.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>ChatGPT</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1098,25 +1173,25 @@ sum = 5.0
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Simulating a random process</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">Random number</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1.7. Simulating a random process</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">1.7.1. Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-number">1.7.2. Random number</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">Simulated coin flip</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">Count the heads</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">Double loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulated-coin-flip">1.8. Simulated coin flip</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-the-heads">1.8.1. Count the heads</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-loop">1.8.2. Double loop</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehension-questions">Comprehension questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-galton-board-simulation">1.8.3. Exercise: Galton Board simulation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulate-a-single-ball">Simulate a single ball</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Comprehension Questions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Double Loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">Significance of the Galton Board simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.8.4. Double Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">1.8.5. Exercises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance-of-the-galton-board-simulation">1.8.6. Significance of the Galton Board simulation</a></li>
 </ul>
 </li>
 </ul>
