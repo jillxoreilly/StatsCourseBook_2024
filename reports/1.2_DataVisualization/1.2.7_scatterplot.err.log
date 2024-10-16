@@ -1,0 +1,196 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/anaconda3/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+heightData = pd.read_csv('https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BrotherSisterData.csv')
+display(heightData)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mgaierror[0m                                  Traceback (most recent call last)
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:1348[0m, in [0;36mAbstractHTTPHandler.do_open[0;34m(self, http_class, req, **http_conn_args)[0m
+[1;32m   1347[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1348[0m     h[38;5;241m.[39mrequest(req[38;5;241m.[39mget_method(), req[38;5;241m.[39mselector, req[38;5;241m.[39mdata, headers,
+[1;32m   1349[0m               encode_chunked[38;5;241m=[39mreq[38;5;241m.[39mhas_header([38;5;124m'[39m[38;5;124mTransfer-encoding[39m[38;5;124m'[39m))
+[1;32m   1350[0m [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m err: [38;5;66;03m# timeout error[39;00m
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:1294[0m, in [0;36mHTTPConnection.request[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1293[0m [38;5;250m[39m[38;5;124;03m"""Send a complete request to the server."""[39;00m
+[0;32m-> 1294[0m [38;5;28mself[39m[38;5;241m.[39m_send_request(method, url, body, headers, encode_chunked)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:1340[0m, in [0;36mHTTPConnection._send_request[0;34m(self, method, url, body, headers, encode_chunked)[0m
+[1;32m   1339[0m     body [38;5;241m=[39m _encode(body, [38;5;124m'[39m[38;5;124mbody[39m[38;5;124m'[39m)
+[0;32m-> 1340[0m [38;5;28mself[39m[38;5;241m.[39mendheaders(body, encode_chunked[38;5;241m=[39mencode_chunked)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:1289[0m, in [0;36mHTTPConnection.endheaders[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1288[0m     [38;5;28;01mraise[39;00m CannotSendHeader()
+[0;32m-> 1289[0m [38;5;28mself[39m[38;5;241m.[39m_send_output(message_body, encode_chunked[38;5;241m=[39mencode_chunked)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:1048[0m, in [0;36mHTTPConnection._send_output[0;34m(self, message_body, encode_chunked)[0m
+[1;32m   1047[0m [38;5;28;01mdel[39;00m [38;5;28mself[39m[38;5;241m.[39m_buffer[:]
+[0;32m-> 1048[0m [38;5;28mself[39m[38;5;241m.[39msend(msg)
+[1;32m   1050[0m [38;5;28;01mif[39;00m message_body [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   1051[0m 
+[1;32m   1052[0m     [38;5;66;03m# create a consistent interface to message_body[39;00m
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:986[0m, in [0;36mHTTPConnection.send[0;34m(self, data)[0m
+[1;32m    985[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mauto_open:
+[0;32m--> 986[0m     [38;5;28mself[39m[38;5;241m.[39mconnect()
+[1;32m    987[0m [38;5;28;01melse[39;00m:
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:1459[0m, in [0;36mHTTPSConnection.connect[0;34m(self)[0m
+[1;32m   1457[0m [38;5;124m"[39m[38;5;124mConnect to a host on a given (SSL) port.[39m[38;5;124m"[39m
+[0;32m-> 1459[0m [38;5;28msuper[39m()[38;5;241m.[39mconnect()
+[1;32m   1461[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_tunnel_host:
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/http/client.py:952[0m, in [0;36mHTTPConnection.connect[0;34m(self)[0m
+[1;32m    951[0m sys[38;5;241m.[39maudit([38;5;124m"[39m[38;5;124mhttp.client.connect[39m[38;5;124m"[39m, [38;5;28mself[39m, [38;5;28mself[39m[38;5;241m.[39mhost, [38;5;28mself[39m[38;5;241m.[39mport)
+[0;32m--> 952[0m [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_create_connection(
+[1;32m    953[0m     ([38;5;28mself[39m[38;5;241m.[39mhost,[38;5;28mself[39m[38;5;241m.[39mport), [38;5;28mself[39m[38;5;241m.[39mtimeout, [38;5;28mself[39m[38;5;241m.[39msource_address)
+[1;32m    954[0m [38;5;66;03m# Might fail in OSs that don't implement TCP_NODELAY[39;00m
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/socket.py:827[0m, in [0;36mcreate_connection[0;34m(address, timeout, source_address, all_errors)[0m
+[1;32m    826[0m exceptions [38;5;241m=[39m []
+[0;32m--> 827[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m getaddrinfo(host, port, [38;5;241m0[39m, SOCK_STREAM):
+[1;32m    828[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/socket.py:962[0m, in [0;36mgetaddrinfo[0;34m(host, port, family, type, proto, flags)[0m
+[1;32m    961[0m addrlist [38;5;241m=[39m []
+[0;32m--> 962[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m _socket[38;5;241m.[39mgetaddrinfo(host, port, family, [38;5;28mtype[39m, proto, flags):
+[1;32m    963[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+[0;31mgaierror[0m: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+[0;31mURLError[0m                                  Traceback (most recent call last)
+Cell [0;32mIn[4], line 1[0m
+[0;32m----> 1[0m heightData [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mhttps://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BrotherSisterData.csv[39m[38;5;124m'[39m)
+[1;32m      2[0m display(heightData)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:948[0m, in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m
+[1;32m    935[0m kwds_defaults [38;5;241m=[39m _refine_defaults_read(
+[1;32m    936[0m     dialect,
+[1;32m    937[0m     delimiter,
+[0;32m   (...)[0m
+[1;32m    944[0m     dtype_backend[38;5;241m=[39mdtype_backend,
+[1;32m    945[0m )
+[1;32m    946[0m kwds[38;5;241m.[39mupdate(kwds_defaults)
+[0;32m--> 948[0m [38;5;28;01mreturn[39;00m _read(filepath_or_buffer, kwds)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:611[0m, in [0;36m_read[0;34m(filepath_or_buffer, kwds)[0m
+[1;32m    608[0m _validate_names(kwds[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mnames[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+[1;32m    610[0m [38;5;66;03m# Create the parser.[39;00m
+[0;32m--> 611[0m parser [38;5;241m=[39m TextFileReader(filepath_or_buffer, [38;5;241m*[39m[38;5;241m*[39mkwds)
+[1;32m    613[0m [38;5;28;01mif[39;00m chunksize [38;5;129;01mor[39;00m iterator:
+[1;32m    614[0m     [38;5;28;01mreturn[39;00m parser
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1448[0m, in [0;36mTextFileReader.__init__[0;34m(self, f, engine, **kwds)[0m
+[1;32m   1445[0m     [38;5;28mself[39m[38;5;241m.[39moptions[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m] [38;5;241m=[39m kwds[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m]
+[1;32m   1447[0m [38;5;28mself[39m[38;5;241m.[39mhandles: IOHandles [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[0;32m-> 1448[0m [38;5;28mself[39m[38;5;241m.[39m_engine [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_make_engine(f, [38;5;28mself[39m[38;5;241m.[39mengine)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1705[0m, in [0;36mTextFileReader._make_engine[0;34m(self, f, engine)[0m
+[1;32m   1703[0m     [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m mode:
+[1;32m   1704[0m         mode [38;5;241m+[39m[38;5;241m=[39m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m
+[0;32m-> 1705[0m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;241m=[39m get_handle(
+[1;32m   1706[0m     f,
+[1;32m   1707[0m     mode,
+[1;32m   1708[0m     encoding[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39moptions[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mencoding[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m),
+[1;32m   1709[0m     compression[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39moptions[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mcompression[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m),
+[1;32m   1710[0m     memory_map[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39moptions[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mmemory_map[39m[38;5;124m"[39m, [38;5;28;01mFalse[39;00m),
+[1;32m   1711[0m     is_text[38;5;241m=[39mis_text,
+[1;32m   1712[0m     errors[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39moptions[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mencoding_errors[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mstrict[39m[38;5;124m"[39m),
+[1;32m   1713[0m     storage_options[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39moptions[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mstorage_options[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m),
+[1;32m   1714[0m )
+[1;32m   1715[0m [38;5;28;01massert[39;00m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[1;32m   1716[0m f [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhandles[38;5;241m.[39mhandle
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/common.py:718[0m, in [0;36mget_handle[0;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[1;32m    715[0m     codecs[38;5;241m.[39mlookup_error(errors)
+[1;32m    717[0m [38;5;66;03m# open URLs[39;00m
+[0;32m--> 718[0m ioargs [38;5;241m=[39m _get_filepath_or_buffer(
+[1;32m    719[0m     path_or_buf,
+[1;32m    720[0m     encoding[38;5;241m=[39mencoding,
+[1;32m    721[0m     compression[38;5;241m=[39mcompression,
+[1;32m    722[0m     mode[38;5;241m=[39mmode,
+[1;32m    723[0m     storage_options[38;5;241m=[39mstorage_options,
+[1;32m    724[0m )
+[1;32m    726[0m handle [38;5;241m=[39m ioargs[38;5;241m.[39mfilepath_or_buffer
+[1;32m    727[0m handles: [38;5;28mlist[39m[BaseBuffer]
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/common.py:372[0m, in [0;36m_get_filepath_or_buffer[0;34m(filepath_or_buffer, encoding, compression, mode, storage_options)[0m
+[1;32m    370[0m [38;5;66;03m# assuming storage_options is to be interpreted as headers[39;00m
+[1;32m    371[0m req_info [38;5;241m=[39m urllib[38;5;241m.[39mrequest[38;5;241m.[39mRequest(filepath_or_buffer, headers[38;5;241m=[39mstorage_options)
+[0;32m--> 372[0m [38;5;28;01mwith[39;00m urlopen(req_info) [38;5;28;01mas[39;00m req:
+[1;32m    373[0m     content_encoding [38;5;241m=[39m req[38;5;241m.[39mheaders[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mContent-Encoding[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[1;32m    374[0m     [38;5;28;01mif[39;00m content_encoding [38;5;241m==[39m [38;5;124m"[39m[38;5;124mgzip[39m[38;5;124m"[39m:
+[1;32m    375[0m         [38;5;66;03m# Override compression based on Content-Encoding header[39;00m
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/site-packages/pandas/io/common.py:274[0m, in [0;36murlopen[0;34m(*args, **kwargs)[0m
+[1;32m    268[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m    269[0m [38;5;124;03mLazy-import wrapper for stdlib urlopen, as that imports a big chunk of[39;00m
+[1;32m    270[0m [38;5;124;03mthe stdlib.[39;00m
+[1;32m    271[0m [38;5;124;03m"""[39;00m
+[1;32m    272[0m [38;5;28;01mimport[39;00m [38;5;21;01murllib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mrequest[39;00m
+[0;32m--> 274[0m [38;5;28;01mreturn[39;00m urllib[38;5;241m.[39mrequest[38;5;241m.[39murlopen([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:216[0m, in [0;36murlopen[0;34m(url, data, timeout, cafile, capath, cadefault, context)[0m
+[1;32m    214[0m [38;5;28;01melse[39;00m:
+[1;32m    215[0m     opener [38;5;241m=[39m _opener
+[0;32m--> 216[0m [38;5;28;01mreturn[39;00m opener[38;5;241m.[39mopen(url, data, timeout)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:519[0m, in [0;36mOpenerDirector.open[0;34m(self, fullurl, data, timeout)[0m
+[1;32m    516[0m     req [38;5;241m=[39m meth(req)
+[1;32m    518[0m sys[38;5;241m.[39maudit([38;5;124m'[39m[38;5;124murllib.Request[39m[38;5;124m'[39m, req[38;5;241m.[39mfull_url, req[38;5;241m.[39mdata, req[38;5;241m.[39mheaders, req[38;5;241m.[39mget_method())
+[0;32m--> 519[0m response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_open(req, data)
+[1;32m    521[0m [38;5;66;03m# post-process response[39;00m
+[1;32m    522[0m meth_name [38;5;241m=[39m protocol[38;5;241m+[39m[38;5;124m"[39m[38;5;124m_response[39m[38;5;124m"[39m
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:536[0m, in [0;36mOpenerDirector._open[0;34m(self, req, data)[0m
+[1;32m    533[0m     [38;5;28;01mreturn[39;00m result
+[1;32m    535[0m protocol [38;5;241m=[39m req[38;5;241m.[39mtype
+[0;32m--> 536[0m result [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_call_chain([38;5;28mself[39m[38;5;241m.[39mhandle_open, protocol, protocol [38;5;241m+[39m
+[1;32m    537[0m                           [38;5;124m'[39m[38;5;124m_open[39m[38;5;124m'[39m, req)
+[1;32m    538[0m [38;5;28;01mif[39;00m result:
+[1;32m    539[0m     [38;5;28;01mreturn[39;00m result
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:496[0m, in [0;36mOpenerDirector._call_chain[0;34m(self, chain, kind, meth_name, *args)[0m
+[1;32m    494[0m [38;5;28;01mfor[39;00m handler [38;5;129;01min[39;00m handlers:
+[1;32m    495[0m     func [38;5;241m=[39m [38;5;28mgetattr[39m(handler, meth_name)
+[0;32m--> 496[0m     result [38;5;241m=[39m func([38;5;241m*[39margs)
+[1;32m    497[0m     [38;5;28;01mif[39;00m result [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m    498[0m         [38;5;28;01mreturn[39;00m result
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:1391[0m, in [0;36mHTTPSHandler.https_open[0;34m(self, req)[0m
+[1;32m   1390[0m [38;5;28;01mdef[39;00m [38;5;21mhttps_open[39m([38;5;28mself[39m, req):
+[0;32m-> 1391[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39mdo_open(http[38;5;241m.[39mclient[38;5;241m.[39mHTTPSConnection, req,
+[1;32m   1392[0m         context[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_context, check_hostname[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39m_check_hostname)
+
+File [0;32m/opt/anaconda3/anaconda3/lib/python3.11/urllib/request.py:1351[0m, in [0;36mAbstractHTTPHandler.do_open[0;34m(self, http_class, req, **http_conn_args)[0m
+[1;32m   1348[0m         h[38;5;241m.[39mrequest(req[38;5;241m.[39mget_method(), req[38;5;241m.[39mselector, req[38;5;241m.[39mdata, headers,
+[1;32m   1349[0m                   encode_chunked[38;5;241m=[39mreq[38;5;241m.[39mhas_header([38;5;124m'[39m[38;5;124mTransfer-encoding[39m[38;5;124m'[39m))
+[1;32m   1350[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mOSError[39;00m [38;5;28;01mas[39;00m err: [38;5;66;03m# timeout error[39;00m
+[0;32m-> 1351[0m         [38;5;28;01mraise[39;00m URLError(err)
+[1;32m   1352[0m     r [38;5;241m=[39m h[38;5;241m.[39mgetresponse()
+[1;32m   1353[0m [38;5;28;01mexcept[39;00m:
+
+[0;31mURLError[0m: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+

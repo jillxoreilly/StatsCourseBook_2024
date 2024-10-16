@@ -1,0 +1,1313 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.8. Vacation Assignment &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2.3_ttest/2.3.9_HandInAssignment';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Power analysis" href="../2.4_Power/2.4.1_power_intro.html" />
+    <link rel="prev" title="3.7. Independent samples t-test" href="2.3.8_ttest_independentSamples.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Introduction to Statistics and Data Science - Home"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Introduction to Statistics and Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_intro.html">1. Preparatory Work</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_JupyterLab.html">1.2. Using Anaconda and JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_Colab.html">1.3. Using Google Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_datacamp.html">1.4. Datacamp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_For.html">1.5. The FOR loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ForIf.html">1.6. FOR loop with IF statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_random.html">1.7. Simulating a random process</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../0.1_PrepWork/MT_wk0_ChatGPT.html">1.9. ChatGPT</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.3_DataWrangling/1.3.1_Intro.html">3. Data Wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.8_ZScoreQuantiles.html">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="2.3.1_ttest_intro.html">3. t-Test</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.3.3_NormalDistribution.html">3.2. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.4_BestFittingNormal.html">3.3. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.5_tDistribution.html">3.4. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.6_ttest_oneSample.html">3.5. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.7_ttest_pairedSamples.html">3.6. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3.8_ttest_independentSamples.html">3.7. Independent samples t-test</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.8. Vacation Assignment</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">4. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">4.11. Concepts Review</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.2_Probability/Probability_intro.html">2. Probability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Independence.html">2.3. Statsitical Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.1_Regression1/regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_prepwork.html">1.5. Regression models in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../4.1_Regression1/regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.2_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.3_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.4_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.5_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.6_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/2.3_ttest/2.3.9_HandInAssignment.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2F2.3_ttest/2.3.9_HandInAssignment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2.3_ttest/2.3.9_HandInAssignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vacation Assignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.8. Vacation Assignment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-data-analysis-exercises">3.9. Part 1 - data analysis exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-cloud-seeding">3.9.1. Question 1 - Cloud seeding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-colouring-books">3.9.2. Question 2: Colouring books</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-reaction-times">3.9.3. Question 3: Reaction times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-more-revision">3.9.4. Part 2 - More Revision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-vs-wideform-data">Long vs wideform data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-design">Experimental design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-vs-two-tailed-tests">One vs Two-tailed tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vacation-assignment">
+<h1><span class="section-number">3.8. </span>Vacation Assignment<a class="headerlink" href="#vacation-assignment" title="Link to this heading">#</a></h1>
+<p>This assignment has two parts.</p>
+<p>In the first part you carry out some hypothesis tests; this is designed for you to practice both the process of running the different tests, and to make sure you understand the choices you are making when running tests.</p>
+<p>The second part, ‘revision’, targets some Python syntax and (mmainly) some concepts that I want to make sure everyone has securely grasped. The answers to all conceptual quesitons can be found in the lectures and reading; searching for them is good revision!</p>
+<p>Overall, the idea of this assignment is to help you consolidate what you learned this term and it should prepare you well for the collection in January. Please remember that searching for the answers (in the lecture notes etc) and trying things til it works (for coding) is part of the learning process; you are <em>supposed</em> to need to do that rather than having all the answers at your fingertips.</p>
+<p>If you get stuck on something, try the lecture notes, try the reading, and try Google as there are many helpful ‘how to’ blogs out there and many blogs explaining statistical concepts. If you still are stuck after all that I suggest you leave a note on the particular question part for your tutor, perhaps offering your best guess at the answer. Try not to email them as they need a break over the vacation!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+<span class="kn">import</span> <span class="nn">warnings</span> 
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="part-1-data-analysis-exercises">
+<h1><span class="section-number">3.9. </span>Part 1 - data analysis exercises<a class="headerlink" href="#part-1-data-analysis-exercises" title="Link to this heading">#</a></h1>
+<p>In these questions you need to carry out various statistical tests. Please read the questions carefully and answer all parts - in particular if you are asked to <em>comment</em> on your results you must comment; this usually means interpret the results in plain English.</p>
+<section id="question-1-cloud-seeding">
+<h2><span class="section-number">3.9.1. </span>Question 1 - Cloud seeding<a class="headerlink" href="#question-1-cloud-seeding" title="Link to this heading">#</a></h2>
+<p>Cloud seeding is a process by which a light aircraft dumps particulate matter into a cloud in the hope of causing precipitation (rain). The file CloudSeeding.csv contains standardized rainfall yield measures for seeded and unseeded clouds. These are real data from a study in 1975.</p>
+<p>As a side note, cloud seeding does work and <a href='https://www.independent.co.uk/sport/olympics/how-beijing-used-rockets-to-keep-opening-ceremony-dry-890294.html'> is used to <em>prevent</em> rain </a> during important outdoor events - although it mimght have the side effect of causing a deluge nearby!</p>
+<p><strong>a)  Download the data file and load the data into a <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> dataframe called <code class="docutils literal notranslate"><span class="pre">clouds</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clouds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/cloudSeeding.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>b) Plot the data for seeded and unseeded clouds in a way that shows the distribution of rainfall yields</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>c) Calculate the parameters of the best fitting Normal distributions for seeded and unseeded clouds respectively</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><font color='red'>State the parameters here</p>
+<p><strong>d) Is a normal distribution a good fit to the data?</strong></p>
+<p><em>The here we overlay the best fitting normal on the data KDE plot:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">seeded</span><span class="o">=</span><span class="n">clouds</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;status==&quot;Seeded&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rainfall</span>
+<span class="n">unseeded</span><span class="o">=</span><span class="n">clouds</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;status==&quot;Unseeded&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rainfall</span>
+
+<span class="c1"># seeded clouds</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">seeded</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">seeded</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">seeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">seeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0022</span><span class="p">])</span>
+
+<span class="c1"># unseeded clouds</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">4000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">unseeded</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">unseeded</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">unseeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">unseeded</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0022</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/805ea0309b8e502103fd110aafada92e72f37f6683b83391edfbef7b1ed4ca12.png" src="../_images/805ea0309b8e502103fd110aafada92e72f37f6683b83391edfbef7b1ed4ca12.png" />
+</div>
+</div>
+<p><em>Based on the plot above, the data are not well fitted by a normal distribution. Comment on the what you can see in the graph that suggests the normal distribution is a poor fit.</em></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>e) Conduct three statistical tests of the researcher’s hypothesis, based on:</strong></p>
+<p><em>I.	Assumption of normality</em></p>
+<p><em>II.	Permutation</em></p>
+<p><em>III.	Ranked values</em></p>
+<p><em>… in each case you should:</em></p>
+<ul class="simple">
+<li><p>State the null and alternative hypothesis and the alpha value</p></li>
+<li><p>Report appropriate descriptive statistics for the test in question</p></li>
+<li><p>Carry out the test</p></li>
+<li><p>State the results of the test including the test statistic and p value. For the t-test, degrees of freedom should also be stated.</p></li>
+<li><p>Report your practical conclusion in plain English</p></li>
+</ul>
+<p><strong>f) Comment on the relative merits of each possible choice of test for this dataset.</strong></p>
+</section>
+<section id="question-2-colouring-books">
+<h2><span class="section-number">3.9.2. </span>Question 2: Colouring books<a class="headerlink" href="#question-2-colouring-books" title="Link to this heading">#</a></h2>
+<p>A researcher hypothesises that working on adult colouring books is particularly relaxing and will lower resting heart rate.</p>
+<p>She measures resting heart rate after one hour of colouring and after one hour of reading a novel in the same participants. The data are provided in the file ColouringHeartRate.csv. These are made-up data.</p>
+<p>Download the data file and load the data into a Pandas dataframe called heartRate:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heartRate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/ColouringHeartRate.csv&#39;</span><span class="p">)</span>
+<span class="n">heartRate</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>participantID</th>
+      <th>colouring</th>
+      <th>reading</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>a</td>
+      <td>62</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>b</td>
+      <td>66</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>c</td>
+      <td>61</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>d</td>
+      <td>68</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>e</td>
+      <td>74</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>f</td>
+      <td>62</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>g</td>
+      <td>68</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>h</td>
+      <td>62</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>i</td>
+      <td>55</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>j</td>
+      <td>59</td>
+      <td>65</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>b) Plot the data and comment.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><font color='red'> Your comments here!</p>
+<p><strong>c)	This is a within-subjects or repeated-measures design. With reference to your graph, explain the advantages of a within-subjects design in this particular experiment.</strong></p>
+<p><strong>d) Control condition</strong></p>
+<ul class="simple">
+<li><p>Why do you think the researcher chose to compare heart rate after one hour of colouring to heart rate after one hour of reading, as opposed to comparing heart rate before and after colouring?*</p></li>
+</ul>
+<p><font color='red'>Your answer here</p>
+<p><strong>e)	Conduct three statistical tests of the researcher’s hypothesis, based on</strong></p>
+<p><em>I.	Assumption of normality</em></p>
+<p><em>II.	Permutation</em></p>
+<p><em>III.	Ranked values</em></p>
+<p><em>… in each case you should:</em></p>
+<ul class="simple">
+<li><p>State the null and alternative hypothesis and the alpha value</p></li>
+<li><p>Report appropriate descriptive statistics for the test in question</p></li>
+<li><p>Carry out the test</p></li>
+<li><p>State the results of the test including the test statistic and p value. For the t-test, degrees of freedom should also be stated.</p></li>
+<li><p>Report your practical conclusion in plain English</p></li>
+</ul>
+<p><strong>f) Assumption of normality</strong></p>
+<p><em>The use of the t-test rests on an assumption of normality. For a paired test, it is the <strong>differences</strong> that must be normally distributed for the t-test to be valid</em></p>
+<p><em>Can you explain why it is the distribution of the differences, rather than the data, that is important?</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>Let’s check if the distribution of differences is normal:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">heartRate</span><span class="o">.</span><span class="n">colouring</span><span class="o">-</span><span class="n">heartRate</span><span class="o">.</span><span class="n">reading</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">heartRate</span><span class="p">[</span><span class="s1">&#39;diff&#39;</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a0d79afbd7cce5ea9fc467d68bd820c68b6c3979e2962e318bf02312bd347cf1.png" src="../_images/a0d79afbd7cce5ea9fc467d68bd820c68b6c3979e2962e318bf02312bd347cf1.png" />
+</div>
+</div>
+<p><em>It seems not - the differences have a distribution with positive skew (to be fair the sample size is too small to be really confident about this, but if unsure, it is better to avoid assuming normality)</em></p>
+<p><strong>g) Which statistical test do you think was the best choice for this dataset?</strong></p>
+<p><font color='red'>Your answer here</p>
+</section>
+<section id="question-3-reaction-times">
+<h2><span class="section-number">3.9.3. </span>Question 3: Reaction times<a class="headerlink" href="#question-3-reaction-times" title="Link to this heading">#</a></h2>
+<p><em>Two participants, A and B, perform a choice reaction time task in which they must press one of two buttons depending on whether a word was a real or made-up word</em></p>
+<p><em>The data are provided in the file ChoiceRTs.csv. These are made-up data</em></p>
+<p><em>Download the data file and load the data into a Pandas dataframe called ChoiceRTs:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ChoiceRTs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/ChoiceRTs.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>a) Plot the data</strong></p>
+<p><em>Plot the data for each participant in a way that illustrates the distribution of reaction times for each person and allows them to be compared. Two subplots within a single figure would be a good choice here.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>c) Comment on the plot</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>d) Data cleaning decision</strong></p>
+<p><em>The researcher decides that reaction times under 300ms (very fast responses) and over 700ms (very slow responses) should be excluded.</em></p>
+<p><em>Do you think this is justified? Explain your answer.</em></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>e) Data cleaning implementation</strong></p>
+<p><em>Make a new dataframe called <code class="docutils literal notranslate"><span class="pre">ChoiceRTs_clean</span></code> with the data with RTs outside the range 300-700ms replaced by <code class="docutils literal notranslate"><span class="pre">NaN</span></code></em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>f) Calculate the mean and sd of reaction time</strong></p>
+<ul class="simple">
+<li><p>before and</p></li>
+<li><p>after excluding data outside the range 300-700 ms</p></li>
+</ul>
+<p><em>Comment on the difference in results</em></p>
+<p><strong>g) Statistical test</strong></p>
+<p><em>In each case:</em></p>
+<p>i)	all the data</p>
+<p>ii) the data with RTs outside the range 300-700ms excluded</p>
+<p><em>conduct a permutation test to determine whether there is a difference in the mean reaction time between the two participants</em></p>
+<p><strong>HINT you will need to replace the function <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> with <code class="docutils literal notranslate"><span class="pre">np.nanmean()</span></code> as np.mean() returns a NaN if any of the values being averaged are NaN</strong></p>
+<p><strong>h) Comment on the difference in results when outliers are excluded</strong></p>
+<p>Comment on the difference in results for the permutation test, with data outside the range 300-700ms omitted or not</p>
+<p><font color='red'>Your answer here</p>
+</section>
+<section id="part-2-more-revision">
+<h2><span class="section-number">3.9.4. </span>Part 2 - More Revision<a class="headerlink" href="#part-2-more-revision" title="Link to this heading">#</a></h2>
+<section id="long-vs-wideform-data">
+<h3>Long vs wideform data<a class="headerlink" href="#long-vs-wideform-data" title="Link to this heading">#</a></h3>
+<p><em>Pandas dataframes can be in longform or wideform (definitions <a href='https://www.statology.org/long-vs-wide-data/'>here</a>. We have seen examples of both throughout the term. Let’s check you are comfortable with using both formats.</em></p>
+<p><em>Here are same data are provided in longform and wideform:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heightsWideform</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BrotherSisterData.csv&#39;</span><span class="p">)</span>
+<span class="n">heightsLongform</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/BrotherSisterDataLongform.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>a. Plot the data as a KDE plot (plot brothers and sisters as two separate KDEs)</strong></p>
+<p>You might need to look back through the notes for examples of how to do this, or just try a few options to see what works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to plot the longform data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to plot the wideform data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>b. Plot the data as a scatterplot of brother vs sister’s height</strong></p>
+<p><em>Let’s do this for both longform and wideform data. <strong>Use the function <code class="docutils literal notranslate"><span class="pre">sns.regplot()</span></code></strong> which adds the best fitting regression line (the straight line that best fits through the data points) and add the line x=y:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to plot the wideform data</span>
+<span class="c1"># use sns.regplot to make a sctterplot with regression line</span>
+
+<span class="c1"># add the line x=y as a red dashed line</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to plot the longform data</span>
+<span class="c1"># use sns.regplot to make a sctterplot with regression line</span>
+
+<span class="c1"># add the line x=y as a red dashed line</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>c. Get the mean height for brothers and sisters separately</strong></p>
+<p><em>Do this for the longform and wideform dataframes</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code to get the mean brother and sister heights from the wideform data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code to get the mean brother and sister heights from the wideform data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="experimental-design">
+<h3>Experimental design<a class="headerlink" href="#experimental-design" title="Link to this heading">#</a></h3>
+<p><strong>a. Paired design</strong></p>
+<p><em>i) What is a <em>paired</em> design (also called a <em>matched-pairs</em> design)?</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>ii) What are the advantages of a paired design (compared to a independent samples design?)</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>iii) In a paired design, we are testing whether the average <em>difference</em> withing pairs is significantly different from zero. For example, is the difference between each brother and his own sister reliably positive (brothers are taller than sisters)?</em></p>
+<p><em>Look at the scatterplot above. In this case, why is it particularly helpful to use a</em> paired <em>design rather than an independent samples design?</em></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>b) Repeated measures design</strong></p>
+<p><em>A <strong>repeated measures</strong> design is a type of paired design.</em></p>
+<p><em>i) Explain what is the difference between a paired design (in general) and a repeated measures design.</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>ii) Give an example of a study in which a repeated measures design could be used (ie, ‘if we wanted to test xxx, we could use a repeated measures design in which we measure…..’)</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>iii) What potential pitfalls are there with repeated measures designs? How might they be mitigated?</em></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>d) Detailed example</strong></p>
+<p><em>A researcher hypothesises that men are taller than women:</em></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span>: the mean height of men is equal to that of women</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span>: the mean height of men is greater than that of women</p>
+<p><em>She conducts two permutation tests on the brother-sister data as follows:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TEST 1:</span>
+<span class="k">def</span> <span class="nf">dMeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">results1</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">heightsWideform</span><span class="o">.</span><span class="n">brother</span><span class="p">,</span> <span class="n">heightsWideform</span><span class="o">.</span><span class="n">sister</span><span class="p">),</span> 
+                                   <span class="n">dMeans</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;independent&#39;</span><span class="p">)</span>
+<span class="n">results1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.078, null_distribution=array([ 1.04,  0.  , -1.12, ..., -1.36,  5.04,  1.04]))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TEST 2:</span>
+<span class="k">def</span> <span class="nf">mDiff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">results2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">permutation_test</span><span class="p">((</span><span class="n">heightsWideform</span><span class="o">.</span><span class="n">brother</span><span class="p">,</span> <span class="n">heightsWideform</span><span class="o">.</span><span class="n">sister</span><span class="p">),</span> 
+                                   <span class="n">dMeans</span><span class="p">,</span> <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">)</span>
+<span class="n">results2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PermutationTestResult(statistic=4.640000000000015, pvalue=0.0002, null_distribution=array([ 0.48, -0.4 ,  1.76, ...,  1.44,  0.4 , -1.2 ]))
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>i) Which test was correct and why?</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>ii) The p-value for Test 2 is smaller, why?</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>iii) In each case we specify a function to get the difference of means - what is the difference between <code class="docutils literal notranslate"><span class="pre">dMeans()</span></code> and <code class="docutils literal notranslate"><span class="pre">mDiff()</span></code>?</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>iv) The Test Statistic is the same for tests 1 and 2. Can you explain why?</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>v) The null distribution for tests 1 and 2 is quite different. Can you explain why?</strong></p>
+<p>The null distributions are plotted for you here to help:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">results1</span><span class="o">.</span><span class="n">null_distribution</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;difference of group means&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">results2</span><span class="o">.</span><span class="n">null_distribution</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mean pairwise difference&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/149ba91d08bd1edbb5b462cc0fe964c7e2a22921f9153ce952a114c25be0bd8e.png" src="../_images/149ba91d08bd1edbb5b462cc0fe964c7e2a22921f9153ce952a114c25be0bd8e.png" />
+</div>
+</div>
+<p><font color='red'>Your answer here</p>
+</section>
+<section id="one-vs-two-tailed-tests">
+<h3>One vs Two-tailed tests<a class="headerlink" href="#one-vs-two-tailed-tests" title="Link to this heading">#</a></h3>
+<p><em>If we know the direction in which we expect an effect (men are taller than women) we can run a one-tailed test. Otherwise we must run a two-tailed test.</em></p>
+<p><em>Load the following (made-up) data comparing the heights of female Psychology and female BMS students:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook_2024/main/data/PsyBMSheights.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>A researcher hypothesises that BMS students are taller than psychology students. She limits her analysis to female students:</em></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> The mean height of (female) psychology and BMS students are the same</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_a}\)</span> The mean height of (female) psychology students is less than the mean height of BMS students</p>
+<p><em>She decides to test at the <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> level</em></p>
+<p><strong>a) Is this a one or two tailed test?</strong></p>
+<p><font color='red'>Your answer here</p>
+<p><strong>b) What’s wrong in the following example?</strong></p>
+<p>The researcher used a t-test to test her hypothesis as follows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;BMS&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">heights</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;subject==&quot;Psychology&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;less&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=1.823852779167176, pvalue=0.9627982812018988)
+</pre></div>
+</div>
+</div>
+</div>
+<p>What has she done wrong?</p>
+<p><font color='red'>Your answer here</p>
+<p><strong>c) Correct the mistake</strong></p>
+<p><em>Re-run the test, correcting the researcher’s mistake</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>d) Run a two-tailed test</strong></p>
+<p><em>Say the researcher had no a-priori hypothesis about which subject hahs taller students. Then she should have stated her hypotheses as follows, and run a two-tailed test</em></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> The mean height of (female) psychology and BMS students are the same</p>
+<p><span class="math notranslate nohighlight">\(\mathcal{H_o}\)</span> The mean height of (female) psychology students is different from mean height of BMS students</p>
+<p><em>She still wishes to test at the <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> level</em>*</p>
+<p><strong>Run the test yourself</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>i) How does the <span class="math notranslate nohighlight">\(p\)</span>-value from the two tailed test relate to that of (correct version of) the one-tailed test above?</em></p>
+<p><font color='red'>Your answer here</p>
+<p><em>ii) The two-tailed test is not significant at the 5% level whilst the one-tailed test was significant. Can you explain why?</em></p>
+<ul class="simple">
+<li><p>Key terms for your answer are the <em>critical region</em> of the test and the <em>critical value</em> or <em>cut-off value</em></p></li>
+<li><p>These were introduced in lectures but if you don’t remember them, a quick good brings up several tutorials</p></li>
+</ul>
+<p><font color='red'>Your answer here</p>
+<p><strong>e) “Peeking”</strong></p>
+<p><em>Why did the researcher think that BMS students would be taller in the first place? Because when she plotted the data to check for outliers (which is indeed correct procedure), she noticed that the BMS students looked taller:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">heights</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f636d67eea4d61c6ffaa23e1d52e939195c7ec901a33b75bcbbabc5961b95c25.png" src="../_images/f636d67eea4d61c6ffaa23e1d52e939195c7ec901a33b75bcbbabc5961b95c25.png" />
+</div>
+</div>
+<p>If the psychology students had looked taller, she would have done a one-tailed test in the other direction.</p>
+<p>Using this approach (sometiems called “peeking” at the data) is wrong, because means that the chance of getting a ‘significant’ result if the null was true (the false positive rate) is double.</p>
+<p>Can you explain why?</p>
+<p><font color='red'>Your answer here</p>
+<p><em>It is not wrong to inspect your data before running a test, but <strong>your hypotheses (and in particular justification for a one-tailed test) should reflect predictions you would be able to make without seeing the particular sample of data</strong>.</em></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2.3_ttest"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.3.8_ttest_independentSamples.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3.7. </span>Independent samples t-test</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2.4_Power/2.4.1_power_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Power analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3.8. Vacation Assignment</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-data-analysis-exercises">3.9. Part 1 - data analysis exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-cloud-seeding">3.9.1. Question 1 - Cloud seeding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-colouring-books">3.9.2. Question 2: Colouring books</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-reaction-times">3.9.3. Question 3: Reaction times</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-more-revision">3.9.4. Part 2 - More Revision</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-vs-wideform-data">Long vs wideform data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experimental-design">Experimental design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-vs-two-tailed-tests">One vs Two-tailed tests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

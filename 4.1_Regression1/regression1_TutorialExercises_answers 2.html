@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tutorial Exercises &#8212; Introduction to Statistics and Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '4.1_Regression1/regression1_TutorialExercises_answers 2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/dice.jpg" class="logo__image only-light" alt="Introduction to Statistics and Data Science - Home"/>
+    <script>document.write(`<img src="../_static/dice.jpg" class="logo__image only-dark" alt="Introduction to Statistics and Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exploring Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.1_DescribingData/1.1.1_Intro.html">1. Describing Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.2_Outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.3_MeanMedianMode.html">1.3. Mean, median and mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.4_StDevIQR.html">1.4. Standard Deviation and IQR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.5_Skew.html">1.5. Skew</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.6_Correlation.html">1.6. Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.8_PythonIndexing.html">1.7. Python: Descriptives and Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.9_tables.html">1.8. Tables of descriptive statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.1_DescribingData/1.1.10_TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.2_DataVisualization/1.2.1_Intro.html">2. Data Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.3_ChoosingPlots.html">2.2. Choosing and interpreting plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.4_snsplt.html">2.3. <code class="docutils literal notranslate"><span class="pre">Seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.5_histogram.html">2.4. Visualizing Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.6_boxplot.html">2.5. Comparing Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.7_scatterplot.html">2.6. 2D Data: Correlation and Pairwise Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.8_lineplot.html">2.7. Timeseries data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.9_tweaks.html">2.8. Tweaking plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.2_DataVisualization/1.2.10_TutorialExercises.html">2.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1.3_DataWrangling/1.3.1_Intro.html">3. Data Wrangling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.2_Outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.3_FindOutliers.html">3.3. Locating bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.4_NaNing.html">3.4. Neutralizing bad datapoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.5_NanHandling.html">3.5. Handling NaNs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.7_CreateColumns.html">3.6. Creating new variables/columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.8_ZScoreQuantiles.html">3.7. Standardizing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.9_ReportExample.html">3.8. Preparing a report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.10_Assignment1_ModelAnswer.html">3.9. Model Client Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1.3_DataWrangling/1.3.11_TutorialExercises.html">3.10. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Hypothesis Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.1_PermutationTest/2.1.1_permutation_intro.html">1. Permutation Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.2_permutation_outcomes.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.3_HypothesisTesting.html">1.3. Hypothesis testing concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.4_OneTwoTail.html">1.4. One- and two-tailed tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.5_PermutationTypes.html">1.5. Permutation testing overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.6_functions.html">1.6. Python Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.7_permutation_paired.html">1.7. Permutation test for paired data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.8_permutation_unpaired.html">1.8. Permutation test for unpaired or independent samples data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.9_permutation_correlation.html">1.9. Permutation test for correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.1_PermutationTest/2.1.10_permutation_practice.html">1.10. Permutation testing - more practice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.2_RankBasedTests/2.2.1_classictests_intro.html">2. Rank-Based Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.2_outcomes.html">2.3. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.3_nonpara_intro.html">2.4. Rank-based tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.4_nonpara_MannWhitneyU.html">2.5. Rank Sum Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.5_nonpara_WilcoxonSignRank.html">2.6. The Wilcoxon Sign-Rank Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.6_spearman.html">2.7. Spearman’s Rank Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.2_RankBasedTests/2.2.7_TutorialExercises.html">2.8. Tutorial Exercises: non-parametric tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.3_ttest/2.3.1_ttest_intro.html">3. t-Test</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.2_HypothesisTestingRecap.html">3.2. Hypothesis testing roundup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.3_NormalDistribution.html">3.3. Normal Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.4_BestFittingNormal.html">3.4. Best fitting Normal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.5_tDistribution.html">3.5. The t distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.6_ttest_oneSample.html">3.6. One sample t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.7_ttest_pairedSamples.html">3.7. Paired Samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.8_ttest_independentSamples.html">3.8. Independent samples t-test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.3_ttest/2.3.9_HandInAssignment.html">3.9. Vacation Assignment</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2.4_Power/2.4.1_power_intro.html">4. Power analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.2_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.3_Type1and2Errors.html">4.3. False positives and False negatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.4_EffectSize.html">4.4. Effect size (Cohen’s d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.5_EffectSizeCorrelation.html">4.5. Effect size (Pearson’s r)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.6_PowerCorrelationSim.html">4.6. Power analysis by simulation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.7_BuiltInPowerCalc.html">4.8. Power analysis with <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.8_DeterminingEffectSize.html">4.9. Knowing the effect size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.9_SampleSizeAndPower.html">4.10. Sample size and power</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2.4_Power/2.4.10_power_conceptCheck.html">4.11. Concepts Review</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistical Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_overallIntro.html">1. Data generating distributions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_intro.html">1.1. The Binomial Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_objectives.html">1.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_singlecoin.html">1.3. Simulated coin toss</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_10000reps.html">1.4. Repeat the simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_nandp.html">1.5. Changing <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_PMFandCDF.html">1.6. Binomial PMF and CDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/AnalyticVsNumerical.html">1.7. Analytical vs numerical approaches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/binomial_normal.html">1.8. Normal distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises.html">1.9. Tutorial Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/CentralLimitTheorem.html">1.10. Extension Work - Central Limit Theorem (reading)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../3.1_DataGeneratingDistributions/TutorialExercises_CentralLimitTheorem.html">1.12. Extension Work: The Central Limit Theorem (Exercises)</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3.2_Probability/Probability_intro.html">2. Probability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/KolmogorovAxioms.html">2.1. Kolmogorov Axioms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Diagrams.html">2.2. Probability Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/Independence.html">2.3. Statsitical Independence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/EventCombinations.html">2.4. Event combinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/BayesTheorem.html">2.5. Bayes Theorem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/PaperAndPencilExercises.html">2.6. Exercises: paper and pencil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises1.html">2.7. Tutorial Exercises 1: Probability Jargon in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/TutorialExercises2.html">2.8. Tutorial Exercises 2: Rolling a Six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3.2_Probability/placeholder.html">2.9. Hand In Assignment</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Regression Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="regression1_intro.html">1. Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="regression1_outcomes.html">1.1. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression1_concepts.html">1.2. Regression Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression1_interpretingSlope.html">1.3. Interpreting the slope and intercept, prediction and residuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression1_QandA.html">1.4. Regression, Covariance and Correlation Q&amp;A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regression1_prepwork.html">1.5. Regression models in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="regression1_TutorialExercises.html">1.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.2_Regression2/regression2_intro.html">2. Multivariate Analysis</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_concepts.html">2.2. Multivariate Analysis Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_typesOfRelationship.html">2.3. Different types of multivariate relationship</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_QandA.html">2.4. Multiple Regression Q &amp; A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/VariableTypes.html">2.5. Handling different variable types in regression analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/InteractionTerms.html">2.6. Multivariate analysis and interaction terms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.2_Regression2/regression2_TutorialExercises.html">2.7. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.3_Regression3/regression3_intro.html">3. Regression - Statistical Tests</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_outcomes.html">3.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsR2.html">3.3. Model fit: <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsConditionals.html">3.4. Conditional Distributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_conceptsSignificance.html">3.5. Statistical Significance in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_assumptions.html">3.6. Assumptions in Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_prepwork.html">3.7. Assessing Regression models in Python.</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../4.3_Regression3/regression3_TutorialExercises.html">3.9. Tutorial Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.4_Regression4/regression4_intro.html">4. ANOVA</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_outcomes.html">4.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_concepts.html">4.3. ANOVA Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_longhandExample.html">4.4. Longhand calculation example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_equations.html">4.5. ANOVA Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_KWtest.html">4.6. Kruskall-Wallis test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_ANOVAregression.html">4.7. ANOVA versus Regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_prepwork.html">4.8. ANOVA and Kruskal-Wallis in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.4_Regression4/regression4_TutorialExercises.html">4.9. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.5_Regression5/regression5_intro.html">5. Logistic Regression</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_outcomes.html">5.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_concepts.html">5.3. Odds, logs and log odds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_LogisticEquation.html">5.4. Logistic Regression Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_workedExample.html">5.5. Predicted probabilities (worked example)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_prepwork.html">5.6. Logistic Regression in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.5_Regression5/regression5_TutorialExercises.html">5.7. Tutorial exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4.6_Regression6/regression6_intro.html">6. Research Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_outcomes.html">6.2. Learning Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_concepts.html">6.3. Research Design Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_causality.html">6.4. Causality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4.6_Regression6/regression6_TutorialExercises.html">6.5. Tutorial exercises</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jillxoreilly/StatsCourseBook_2024/blob/master/4.1_Regression1/regression1_TutorialExercises_answers 2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jillxoreilly/StatsCourseBook_2024/issues/new?title=Issue%20on%20page%20%2F4.1_Regression1/regression1_TutorialExercises_answers 2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/4.1_Regression1/regression1_TutorialExercises_answers 2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial Exercises</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#life-satisfaction-full-dataset">Life satisfaction full dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-the-data">Describing the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-model">Regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-plot">Regression plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sse">SSE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-datapoints-that-are-not-well-fit-by-the-model">Check datapoints that are not well fit by the model</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-exercises">
+<h1>Tutorial Exercises<a class="headerlink" href="#tutorial-exercises" title="Link to this heading">#</a></h1>
+<p>We will be using the statsmodels package in Python, so we will need to import this along with the other Python packages we have been using.</p>
+<section id="set-up-python-libraries">
+<h2>Set up Python libraries<a class="headerlink" href="#set-up-python-libraries" title="Link to this heading">#</a></h2>
+<p>As usual, run the code cell below to import the relevant Python libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set-up Python libraries - you need to run this but you don&#39;t need to change it</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">pandas</span> 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="life-satisfaction-full-dataset">
+<h2>Life satisfaction full dataset<a class="headerlink" href="#life-satisfaction-full-dataset" title="Link to this heading">#</a></h2>
+<p>Let’s import the full dataset for life satisfaction vs GDP</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jillxoreilly/StatsCourseBook/main/data/All_countries_lifesat_2020.csv&#39;</span><span class="p">)</span>
+<span class="n">happy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>LifeSat</th>
+      <th>GDPpc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>2.40</td>
+      <td>1.97</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>5.20</td>
+      <td>13.19</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>5.12</td>
+      <td>10.74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>American Samoa</td>
+      <td>NaN</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andorra</td>
+      <td>NaN</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>233</th>
+      <td>Western Sahara</td>
+      <td>NaN</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>World</td>
+      <td>NaN</td>
+      <td>16.19</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>Yemen</td>
+      <td>4.20</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>Zambia</td>
+      <td>3.76</td>
+      <td>3.28</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Zimbabwe</td>
+      <td>3.00</td>
+      <td>3.35</td>
+    </tr>
+  </tbody>
+</table>
+<p>238 rows × 3 columns</p>
+</div></div></div>
+</div>
+<section id="data-cleaning">
+<h3>Data cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h3>
+<p>We are working with real data here! We need to examine it and take any necessary steps to clean the data before we begin analysis.</p>
+<ul class="simple">
+<li><p>What steps do you need to take to clean the data?</p></li>
+<li><p>Are there any data points that look wrong (e.g., too low or too high)? Change any suspicious values to ‘NaN’.</p></li>
+<li><p>How many missing data points do you have on lifesat?</p></li>
+<li><p>How many missing data points do you have on GDP per capita?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">happy</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Country     0
+LifeSat    92
+GDPpc       0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">happy</span><span class="o">.</span><span class="n">GDPpc</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;LifeSat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;LifeSat&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/628442a4458e928fa7619fbe173b805e0134cc506bf34b32fe59708fc543de4f.png" src="../_images/628442a4458e928fa7619fbe173b805e0134cc506bf34b32fe59708fc543de4f.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">happy</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GDPpc&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/anaconda3/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
+  with pd.option_context(&#39;mode.use_inf_as_na&#39;, True):
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;GDPpc&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/70ad9d910454007acd94f26a0323041db20545656048dd78f08b9b474666a380.png" src="../_images/70ad9d910454007acd94f26a0323041db20545656048dd78f08b9b474666a380.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>How many valid data points do you have?</p></li>
+</ul>
+</section>
+<section id="describing-the-data">
+<h3>Describing the data<a class="headerlink" href="#describing-the-data" title="Link to this heading">#</a></h3>
+<p>Let’s begin with some descriptive analysis before running our first regression model.</p>
+<p>Run a scatterplot.</p>
+<p>Be sure to plot <span class="math notranslate nohighlight">\(y\)</span> on the <span class="math notranslate nohighlight">\(y\)</span>-axis and <span class="math notranslate nohighlight">\(x\)</span> on the <span class="math notranslate nohighlight">\(x\)</span>-axis.
+(If you are not sure which is which, discuss with your tutor).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for the scatterplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>What are your initial conclusions about the relationship between GDP and life satisfaction?</p></li>
+</ul>
+</section>
+<section id="regression-model">
+<h3>Regression model<a class="headerlink" href="#regression-model" title="Link to this heading">#</a></h3>
+<p>It’s time to run the regression model.</p>
+<p>The basic code can be copied from the worked examples in the previous notebook, but you will need to modify it.</p>
+<p>Where do you tell Python which is the <span class="math notranslate nohighlight">\(y\)</span> variable, and which is the <span class="math notranslate nohighlight">\(x\)</span>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># code for regression model</span>
+<span class="c1"># run the regression model</span>
+
+<span class="c1"># first we run this line to tell statsmodels where to find the data and the explanatory variables</span>
+<span class="n">reg_formula</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">regression</span><span class="o">.</span><span class="n">linear_model</span><span class="o">.</span><span class="n">OLS</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">happy</span><span class="p">,</span> <span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;LifeSat ~ GDPpc&#39;</span><span class="p">)</span>
+
+<span class="c1"># then we run this line to fit the regression (work out the values of intercept and slope)</span>
+<span class="c1"># the output is a structure which we will call reg_results</span>
+<span class="n">reg_results</span> <span class="o">=</span> <span class="n">reg_formula</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># let&#39;s view a summary of the regression results</span>
+<span class="n">reg_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span> 
+
+<span class="c1"># note you get a warning message because the dataset is quite small - disregard this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>LifeSat</td>     <th>  R-squared:         </th> <td>   0.530</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.527</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   162.3</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Thu, 26 Sep 2024</td> <th>  Prob (F-statistic):</th> <td>2.30e-25</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>11:26:55</td>     <th>  Log-Likelihood:    </th> <td> -163.73</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   146</td>      <th>  AIC:               </th> <td>   331.5</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   144</td>      <th>  BIC:               </th> <td>   337.4</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>    4.7733</td> <td>    0.087</td> <td>   54.814</td> <td> 0.000</td> <td>    4.601</td> <td>    4.945</td>
+</tr>
+<tr>
+  <th>GDPpc</th>     <td>    0.0381</td> <td>    0.003</td> <td>   12.738</td> <td> 0.000</td> <td>    0.032</td> <td>    0.044</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>18.051</td> <th>  Durbin-Watson:     </th> <td>   1.844</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  20.836</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-0.828</td> <th>  Prob(JB):          </th> <td>2.99e-05</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 3.827</td> <th>  Cond. No.          </th> <td>    41.0</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+<p>Look at the Python regression output.</p>
+<ul class="simple">
+<li><p>Find the intercept and the slope.</p></li>
+<li><p>Write out the regression equation (on your computer or by hand on paper).</p></li>
+<li><p>Make notes on how to interpret the intercept and the slope. E.g., “the intercept is the average life satisfaction in a country with…” And “the slope of x.xx means that for every additional $1000 in GDP…”</p></li>
+</ul>
+</section>
+<section id="regression-plot">
+<h3>Regression plot<a class="headerlink" href="#regression-plot" title="Link to this heading">#</a></h3>
+<p>Let’s add the regression line to the scatterplot in Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">seaborn</span></code> has a special plotting function for plotting a scatterplot with regression line included, called <code class="docutils literal notranslate"><span class="pre">sns.regplot</span></code>.</p>
+<p>Give it a try, the syntax is the same as for <code class="docutils literal notranslate"><span class="pre">sns.scatterplot</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here for a scatterplot with regression line using sns.regplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eyeballing the scatterplot, how well do you think the regression line fits the data points? Do you think there are any outliers? We can see that several countries with very large GDPs are below the regression line. Also, that many countries with very low GDP are a long way from the regression line. We can examine potential outliers more systematically, by asking Python to calculate residuals (and predicted values) for us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here to generate predictions (y-hat) and residuals for each data point.</span>
+<span class="c1"># add them as columns to your datafram</span>
+<span class="c1"># view the resulting dataframe</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sse">
+<h3>SSE<a class="headerlink" href="#sse" title="Link to this heading">#</a></h3>
+<p>Can you find the sum of squared residuals using an equation?</p>
+<p>Hint: The code for <span class="math notranslate nohighlight">\(x^2\)</span> in Python is <code class="docutils literal notranslate"><span class="pre">x**2</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here for squaring then adding up all the residuals.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>How meaningful is the sum of squared residuals (or “sum of squared error” - SSE)? What does it tell us?</p>
+<ul>
+<li><p>We know this is the minimized residual. Because this line is fitted using the method of least squares, there is no other line that could fit the data with a lower SSE.</p></li>
+</ul>
+</li>
+</ul>
+<p>The sum of squared residuals is provided by <code class="docutils literal notranslate"><span class="pre">statsomdels</span></code> as <code class="docutils literal notranslate"><span class="pre">reg_results.ssr</span></code> -</p>
+<ul class="simple">
+<li><p>check that the sum of squared residuals you calculated matches the output of <code class="docutils literal notranslate"><span class="pre">reg_results.ssr</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-datapoints-that-are-not-well-fit-by-the-model">
+<h3>Check datapoints that are not well fit by the model<a class="headerlink" href="#check-datapoints-that-are-not-well-fit-by-the-model" title="Link to this heading">#</a></h3>
+<p>Sort and display the data and find any very large residuals (remember outliers could have a positive or negative residual. Look for both!). Choose the 6 largest residuals (in absolute terms). Which countries are they? Are they in the same region, are they rich or poor?</p>
+<p>Now change the life satisfaction for these six countries to ‘NaN’ so that we can exclude them from the analysis. Store the data with the excluded outliers with a new name. Then re-run the regression, and the scatterplot with regression line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the new analysis with the six outliers excluded, do your conclusions about the relationship between GDP and life satisfaction change, or stay the same?</p>
+<p>We will learn more about the assumptions of regression in the next week or two, but looking back at the scatterplot, have you noticed any potential concerns about the model?</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./4.1_Regression1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-python-libraries">Set up Python libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#life-satisfaction-full-dataset">Life satisfaction full dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-the-data">Describing the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-model">Regression model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-plot">Regression plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sse">SSE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-datapoints-that-are-not-well-fit-by-the-model">Check datapoints that are not well fit by the model</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jill O'Reilly & Lindsay Richards
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
